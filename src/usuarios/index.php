@@ -17,8 +17,8 @@
     <div class="row mt-3">
 
         <div class="row">
-            <div class='col-md-2'>NOME</div>
-            <div class='col-md-2'>E-MAIL</div>
+            <div class='col-md-4'>NOME</div>
+            <div class='col-md-4'>E-MAIL</div>
             <div class='col-md-2'>SITUAÇÃO</div>
             <div class='col-md-2'>AÇÕES</div>
         </div>
