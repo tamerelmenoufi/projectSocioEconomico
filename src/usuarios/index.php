@@ -16,7 +16,7 @@
 
     <div class="row mt-3">
 
-        <div class="row">
+        <div class="row d-none d-md-block">
             <div class='col-md-4'>NOME</div>
             <div class='col-md-4'>E-MAIL</div>
             <div class='col-md-2'>SITUAÇÃO</div>
