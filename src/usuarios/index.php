@@ -18,15 +18,15 @@
 
         <div class="d-none d-md-block">
             <div class="row">
-                <div class='col-md-4'>NOME</div>
-                <div class='col-md-4'>E-MAIL</div>
-                <div class='col-md-2'>SITUAÇÃO</div>
-                <div class='col-md-2'>AÇÕES</div>
+                <div class='col-md-4'><b>NOME</b></div>
+                <div class='col-md-4'><b>E-MAIL</b></div>
+                <div class='col-md-2'><b>SITUAÇÃO</b></div>
+                <div class='col-md-2'><b>AÇÕES</b></div>
             </div>
         </div>
 
         <?php
-            $query = "select * from usuarios order by nome";
+            $query = "select * from usuarios order by nome limit 0, 20";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
         ?>
