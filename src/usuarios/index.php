@@ -33,7 +33,7 @@
             <div class='col-md-4'><?=$d->email?></div>
             <div class='col-md-2'><?=$d->situacao?></div>
             <div class='col-md-2'>
-                <div class="d-flex justify-content-end">
+                <div class="d-flex justify-content-between">
                     <button
                         class="btn btn-success"
                         data-bs-toggle="offcanvas"
