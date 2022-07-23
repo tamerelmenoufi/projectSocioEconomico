@@ -15,7 +15,36 @@
     </div>
 
     <div class="row mt-3">
-        Dados do sistema atual
+
+        <div class="row">
+            <div class='col-md-2'>NOME</div>
+            <div class='col-md-2'>E-MAIL</div>
+            <div class='col-md-2'>SITUAÇÃO</div>
+            <div class='col-md-2'>AÇÕES</div>
+        </div>
+
+        <?php
+            $query = "select * from usuarios order by nome";
+            $result = mysqli_query($con, $query);
+            while($d = mysqli_fetch_object($result)){
+        ?>
+        <div class="row">
+            <div class='col-md-2'><?=$d->nome?></div>
+            <div class='col-md-2'><?=$d->email?></div>
+            <div class='col-md-2'><?=$d->situacao?></div>
+            <div class='col-md-2'>
+                <button class="btn btn-success">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <button class="btn btn-danger">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+
+            </div>
+        </div>
+        <?
+            }
+        ?>
     </div>
 
 </div>
