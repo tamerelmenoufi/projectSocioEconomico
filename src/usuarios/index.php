@@ -69,6 +69,7 @@
             Carregando();
             $.ajax({
                 url:"src/usuarios/form.php",
+                type:"POST",
                 data:{
                     cod,
                 },
