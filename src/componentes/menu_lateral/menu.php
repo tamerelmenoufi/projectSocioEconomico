@@ -3,11 +3,11 @@
 ?>
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header">
-    <img src="img/logo_h60.png" style="height:60px;" alt="Sistema de Gestão QrAtivos">
+    <img src="img/logo_h60.png" style="height:60px;" alt="">
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
-    <h5>Sistema de Gestão de O.S.</h5>
+    <h5>Project Map Censo - AADESAM</h5>
 
     <div class="row mb-1">
       <div class="col">

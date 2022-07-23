@@ -5,25 +5,22 @@ include("{$_SERVER['DOCUMENT_ROOT']}/app/projectRestaurantes/lib/includes.php");
         $login = $_POST['login'];
         $senha = md5($_POST['senha']);
 
-        // $login = 'tamer';
-        // $senha = md5('Mf6t1y76');
-
         $query = "select * from usuarios where login = '{$login}' and senha = '{$senha}'";
         $result = mysqli_query($con, $query);
 
         if(mysqli_num_rows($result)){
             $d = mysqli_fetch_object($result);
-            $_SESSION['QrAtivosLogin'] = $d->codigo;
+            $_SESSION['ProjectSeLogin'] = $d;
             $retorno = [
                 'sucesso' => true,
-                'QrAtivosLogin' => $d->codigo,
+                'ProjectSeLogin' => $d->codigo,
                 'MaterConnectado' => $_POST['MaterConnectado'],
                 'msg' => 'Login Realizado com sucesso',
             ];
         }else{
             $retorno = [
                 'sucesso' => false,
-                'QrAtivosLogin' => false,
+                'ProjectSeLogin' => false,
                 'MaterConnectado' => false,
                 'msg' => 'Ocorreu um erro no seu login',
             ];
@@ -204,8 +201,8 @@ include("{$_SERVER['DOCUMENT_ROOT']}/app/projectRestaurantes/lib/includes.php");
                 success:function(dados){
                     // let retorno = JSON.parse(dados);
                     // $.alert(dados.sucesso);
-                    console.log(dados.QrAtivosLogin);
-                    if(dados.QrAtivosLogin > 0){
+                    console.log(dados.ProjectSeLogin);
+                    if(dados.ProjectSeLogin > 0){
                         window.location.href='./';
                     }else{
                         $.alert('Ocorreu um erro.<br>Favor confira os dados do login.')
