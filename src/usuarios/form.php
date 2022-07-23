@@ -113,8 +113,9 @@
                 }
 
                 campos.push({name: 'acao', value: 'salvar'})
-
+                alert('1')
                 Carregando();
+                alert('2')
                 $.ajax({
                     url:"src/usuarios/form.php",
                     type:"POST",
@@ -123,11 +124,13 @@
                     data: campos,
                     success:function(dados){
                         // if(dados.status){
+                            alert('3')
                             $.ajax({
                                 url:"src/usuarios/index.php",
                                 type:"POST",
                                 success:function(dados){
                                     $("#paginaHome").html(dados);
+                                    alert('4')
                                 }
                             });
                         // }
