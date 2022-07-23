@@ -84,10 +84,9 @@
                     <input type="text" name="situacao" id="situacao" class="form-control" placeholder="Situação" value="<?=$d->situacao?>">
                     <label for="situacao">Situação*</label>
                 </div>
-
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
     <div class="row">
         <div class="col">
             <div style="display:flex; justify-content:end">
