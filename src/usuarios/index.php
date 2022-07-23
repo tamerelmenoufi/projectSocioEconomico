@@ -33,13 +33,14 @@
             <div class='col-md-4'><?=$d->email?></div>
             <div class='col-md-2'><?=$d->situacao?></div>
             <div class='col-md-2'>
-                <button class="btn btn-success">
-                    <i class="fa-solid fa-pen-to-square"></i>
-                </button>
-                <button class="btn btn-danger">
-                    <i class="fa-solid fa-trash"></i>
-                </button>
-
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-success">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                    <button class="btn btn-danger">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
             </div>
         </div>
         <?
