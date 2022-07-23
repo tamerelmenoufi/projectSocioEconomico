@@ -29,8 +29,8 @@
             while($d = mysqli_fetch_object($result)){
         ?>
         <div class="row">
-            <div class='col-md-2'><?=$d->nome?></div>
-            <div class='col-md-2'><?=$d->email?></div>
+            <div class='col-md-4'><?=$d->nome?></div>
+            <div class='col-md-4'><?=$d->email?></div>
             <div class='col-md-2'><?=$d->situacao?></div>
             <div class='col-md-2'>
                 <button class="btn btn-success">
