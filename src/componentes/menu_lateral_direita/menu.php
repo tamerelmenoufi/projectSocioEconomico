@@ -14,3 +14,10 @@
   </div>
   <div class="offcanvas-body LateralDireita"></div>
 </div>
+
+<!--
+class="btn btn-primary"
+data-bs-toggle="offcanvas"
+href="#offcanvasDireita"
+role="button"
+aria-controls="offcanvasDireita" -->

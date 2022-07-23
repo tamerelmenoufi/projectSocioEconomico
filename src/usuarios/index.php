@@ -34,7 +34,13 @@
             <div class='col-md-2'><?=$d->situacao?></div>
             <div class='col-md-2'>
                 <div class="d-flex justify-content-end">
-                    <button class="btn btn-success">
+                    <button
+                        class="btn btn-success"
+                        data-bs-toggle="offcanvas"
+                        href="#offcanvasDireita"
+                        role="button"
+                        aria-controls="offcanvasDireita"
+                    >
                         <i class="fa-solid fa-pen-to-square"></i>
                     </button>
                     <button class="btn btn-danger">
