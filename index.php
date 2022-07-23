@@ -7,7 +7,7 @@
         exit();
     }
 
-    if($_SESSION['QrAtivosLogin']){
+    if($_SESSION['ProjectSeLogin']){
         $url = "src/home/index.php";
     }else{
         $url = "src/login/index.php";
