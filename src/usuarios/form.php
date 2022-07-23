@@ -92,7 +92,7 @@
         <div class="col">
             <div style="display:flex; justify-content:end">
                 <button type="submit" SalvarFoto class="btn btn-success btn-ms">Salvar</button>
-                <input type="hidden" id="cod" value="<?=$_POST['cod']?>" />
+                <input type="hidden" id="codigo" value="<?=$_POST['cod']?>" />
             </div>
         </div>
     </div>
