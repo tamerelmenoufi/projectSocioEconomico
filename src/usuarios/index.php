@@ -42,10 +42,14 @@
                         href="#offcanvasDireita"
                         role="button"
                         aria-controls="offcanvasDireita"
+                        editarUsuario="<?=$d->codigo?>"
                     >
                         <i class="fa-solid fa-pen-to-square"></i>
                     </button>
-                    <button class="btn btn-danger">
+                    <button
+                        class="btn btn-danger"
+                        excluirUsuario="<?=$d->codigo?>"
+                    >
                         <i class="fa-solid fa-trash"></i>
                     </button>
                 </div>
@@ -55,5 +59,24 @@
             }
         ?>
     </div>
-
 </div>
+
+<script>
+    $(function(){
+        $("button[editarUsuario]").click(function(){
+
+            cod = $(this).attr("editarUsuario");
+            Carregando();
+            $.ajax({
+                url:"src/usuarios/form.php",
+                data:{
+                    cod,
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            })
+
+        });
+    })
+</script>
