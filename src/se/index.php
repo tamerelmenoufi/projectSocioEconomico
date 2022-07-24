@@ -35,7 +35,7 @@
                     <h5 class="card-header"><?=$d->nome?> - <?=$d->cpf?></h5>
                     <div class="card-body">
 
-                        <h5 class="card-title"><?=$d->municipio?> - <?=$d->bairro_comunidade?> (<?=$d->tipo?>)</h5>
+                        <h5 class="card-title"><?=$d->municipio?> - <?=$d->bairro_comunidade?> (<?=$d->local?>)</h5>
                         <p class="card-text">
                             <?=$d->telefone?><br><?=$d->email?><br><?=$d->situacao?>
                         </p>
