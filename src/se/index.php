@@ -187,6 +187,7 @@
             Carregando();
             $.ajax({
                 url:"src/se/index.php",
+                type:"POST",
                 data:{
                     delFiltro
                 },
