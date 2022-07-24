@@ -54,6 +54,9 @@
     }
     .rotuloFultro i{
         color:red;
+        font-size:14px;
+        font-weight:bold;
+        padding:5px;
     }
 </style>
 <div class="container">
