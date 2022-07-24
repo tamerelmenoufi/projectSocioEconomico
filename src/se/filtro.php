@@ -69,7 +69,7 @@
                             $r = mysqli_query($con, $q);
                             while($s = mysqli_fetch_object($r)){
                         ?>
-                        <option value="<?=$s->codigo?>"><?=$s->municipio?></option>
+                        <option value="<?=$s->codigo?>" <?=(($_SESSION['filtro_municipio'] == $s->codigo)?'selected':false)?>><?=$s->municipio?></option>
                         <?php
                             }
                         ?>
@@ -80,8 +80,8 @@
                 <div class="form-floating mb-3">
                     <select name="tipo" id="tipo" class="form-control" placeholder="Zona">
                         <option value="">::Selecione a Zona::</option>
-                        <option value="Urbano">Urbano</option>
-                        <option value="Rural">Rural</option>
+                        <option value="Urbano" <?=(($_SESSION['filtro_tipo'] == 'Urbano')?'selected':false)?>>Urbano</option>
+                        <option value="Rural" <?=(($_SESSION['filtro_tipo'] == 'Rural')?'selected':false)?>>Rural</option>
                     </select>
                     <label for="tipo">Zona</label>
                 </div>
@@ -94,7 +94,7 @@
                             $r = mysqli_query($con, $q);
                             while($s = mysqli_fetch_object($r)){
                         ?>
-                        <option value="<?=$s->codigo?>"><?=$s->descricao?> (<?=$s->tipo?>)</option>
+                        <option value="<?=$s->codigo?>" <?=(($_SESSION['filtro_bairro_comunidade'] == $s->codigo)?'selected':false)?>><?=$s->descricao?> (<?=$s->tipo?>)</option>
                         <?php
                             }
                         ?>
@@ -107,23 +107,23 @@
                 <h5>Específico</h5>
 
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>">
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$_SESSION['filtro_nome']?>">
                     <label for="nome">Nome*</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>">
+                    <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$_SESSION['filtro_cpf']?>">
                     <label for="cpf">CPF*</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="rg" id="rg" class="form-control" placeholder="RG" value="<?=$d->rg?>">
+                    <input type="text" name="rg" id="rg" class="form-control" placeholder="RG" value="<?=$_SESSION['filtro_rg']?>">
                     <label for="cpf">RG*</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="telefone" id="telefone" class="form-control" placeholder="telefone" value="<?=$d->telefone?>">
+                    <input type="text" name="telefone" id="telefone" class="form-control" placeholder="telefone" value="<?=$_SESSION['filtro_telefone']?>">
                     <label for="telefone">Telefone*</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$d->email?>">
+                    <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$_SESSION['filtro_email']?>">
                     <label for="email">E-mail*</label>
                 </div>
             </div>
