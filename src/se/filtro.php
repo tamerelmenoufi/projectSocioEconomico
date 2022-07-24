@@ -236,23 +236,36 @@
         });
 
         $("button[LimparFiltro]").click(function(){
-            $.ajax({
-                url:"src/se/filtro.php",
-                type:"POST",
-                data:{
-                    acao:'limpar_filtro'
-                },
-                success:function(dados){
 
-                    $.ajax({
-                        url:"src/se/index.php",
-                        success:function(dados){
-                            $("#paginaHome").html(dados);
-                        }
-                    });
+            $.confirm({
+                content:"Deseja realmente limpar o filtro?",
+                buttons:{
+                    'SIM':function(){
+                        $.ajax({
+                            url:"src/se/filtro.php",
+                            type:"POST",
+                            data:{
+                                acao:'limpar_filtro'
+                            },
+                            success:function(dados){
 
+                                $.ajax({
+                                    url:"src/se/index.php",
+                                    success:function(dados){
+                                        $("#paginaHome").html(dados);
+                                    }
+                                });
+
+                            }
+                        });
+                    },
+                    'NÃO':function(){
+
+                    }
                 }
             });
+
+
         })
 
     })
