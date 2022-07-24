@@ -37,7 +37,7 @@
             </div>
 
             <div class="form-floating mb-3">
-                <select name="municipio" id="municipio">
+                <select name="municipio" id="municipio" class="form-control" placeholder="Município">
                     <option value="">::Selecione o Município::</option>
                     <?php
                         $q = "select * from municipios order by municipio";
