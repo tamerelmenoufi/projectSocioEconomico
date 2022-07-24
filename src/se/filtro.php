@@ -100,12 +100,6 @@
             </div>
 
 
-            <div class="form-floating mb-3">
-                <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$d->email?>">
-                <label for="email">Região</label>
-            </div>
-
-
         </div>
     </div>
 
@@ -123,11 +117,13 @@
     $(function(){
         Carregando('none');
 
-        $("#tipo").change(function(){
-            bairro_comunidade = $("#municipio").val();
-            tipo = $(this).val();
+        var filtro = (bairro_comunidade, tipo) => {
             if(!bairro_comunidade){
                 $.alert('Favor selecione o município!');
+                return false;
+            }
+            if(!tipo){
+                $.alert('Favor selecione a zona!');
                 return false;
             }
             $.ajax({
@@ -142,8 +138,18 @@
                     $("#bairro_comunidade").html(dados);
                 }
             });
+        }
+
+        $("#tipo").change(function(){
+            bairro_comunidade = $("#municipio").val();
+            tipo = $(this).val();
+            filtro(bairro_comunidade, tipo);
         });
 
-
+        $("#bairro_comunidade").change(function(){
+            tipo = $("#tipo").val();
+            bairro_comunidade = $(this).val();
+            filtro(bairro_comunidade, tipo);
+        });
     })
 </script>
