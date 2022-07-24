@@ -38,7 +38,38 @@
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
         ?>
-        <div class="row" style="border-bottom:1px #ccc solid; margin-bottom:2px; margin-top:2px;">
+
+        <div class="card">
+        <h5 class="card-header"><?=$d->nome?> - <?=$d->cpf?></h5>
+        <div class="card-body">
+
+            <h5 class="card-title"><?=$d->municipio?> - <?=$d->bairro_comunidade?></h5>
+            <p class="card-text">
+                <?=$d->telefone?><br><?=$d->email?><br><?=$d->situacao?>
+            </p>
+
+            <button
+                class="btn btn-success"
+                data-bs-toggle="offcanvas"
+                href="#offcanvasDireita"
+                role="button"
+                aria-controls="offcanvasDireita"
+                editarSe="<?=$d->codigo?>"
+            >
+                <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button
+                class="btn btn-danger"
+                excluirSe="<?=$d->codigo?>"
+            >
+                <i class="fa-solid fa-trash"></i>
+            </button>
+
+        </div>
+        </div>
+
+
+        <!-- <div class="row" style="border-bottom:1px #ccc solid; margin-bottom:2px; margin-top:2px;">
             <div class='col-md-3'><?=$d->municipio?><br><?=$d->bairro_comunidade?></div>
             <div class='col-md-3'><?=$d->nome?><br><?=$d->cpf?></div>
             <div class='col-md-2'><?=$d->telefone?><br><?=$d->email?></div>
@@ -63,7 +94,7 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </div> -->
         <?
             }
         ?>
