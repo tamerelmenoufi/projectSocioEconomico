@@ -115,7 +115,8 @@
                 url:"src/se/filtro.php",
                 type:"POST",
                 data:{
-                    bairro_comunidade
+                    bairro_comunidade,
+                    acao:'bairro_comunidade'
                 },
                 success:function(dados){
                     $("#bairro_comunidade").html(dados);
