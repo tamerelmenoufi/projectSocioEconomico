@@ -184,6 +184,9 @@
     $(function(){
         Carregando('none');
 
+        $("#cpf").mask("999.999.999-99");
+        $("#telefone").mask("(99) 99999-9999");
+
         var filtro = (bairro_comunidade, tipo) => {
             if(!municipio){
                 $.alert('Favor selecione o município!');
