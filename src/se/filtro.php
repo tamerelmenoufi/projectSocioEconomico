@@ -276,7 +276,14 @@
 
                             }
                         });
-                        $("#form-<?= $md5 ?>")[0].reset();
+                        $("#nome").val('');
+                        $("#cpf").val('');
+                        $("#rg").val('');
+                        $("#telefone").val('');
+                        $("#email").val('');
+                        $("#municipio").val('');
+                        $("#tipo").val('');
+                        $("#bairro_comunidade").val('');
                         // let myOffCanvas = document.getElementById('offcanvasDireita');
                         // let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
                         // openedCanvas.hide();
