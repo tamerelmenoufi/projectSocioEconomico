@@ -148,10 +148,31 @@
     <div class="row">
         <div class="col">
             <div class="Botao<?=$md5?>">
-                <button type="button" GerarFiltro class="btn btn-success btn-ms">
+                <button
+                    type="button"
+                    GerarFiltro
+                    class="btn btn-success btn-ms"
+
+                    data-bs-toggle="offcanvas"
+                    href="#offcanvasDireita"
+                    role="button"
+                    aria-controls="offcanvasDireita"
+
+                >
                     <i class="fa-solid fa-filter"></i>
                 </button>
-                <button type="button" LimparFiltro class="btn btn-danger btn-ms">
+                <button
+                    type="button"
+                    LimparFiltro
+                    class="btn btn-danger btn-ms"
+
+                    data-bs-toggle="offcanvas"
+                    href="#offcanvasDireita"
+                    role="button"
+                    aria-controls="offcanvasDireita"
+
+
+                >
                     <i class="fa-solid fa-filter-circle-xmark"></i>
                 </button>
             </div>
