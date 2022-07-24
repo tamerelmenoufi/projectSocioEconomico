@@ -68,33 +68,6 @@
             </div>
         </div>
 
-
-        <!-- <div class="row" style="border-bottom:1px #ccc solid; margin-bottom:2px; margin-top:2px;">
-            <div class='col-md-3'><?=$d->municipio?><br><?=$d->bairro_comunidade?></div>
-            <div class='col-md-3'><?=$d->nome?><br><?=$d->cpf?></div>
-            <div class='col-md-2'><?=$d->telefone?><br><?=$d->email?></div>
-            <div class='col-md-2'><?=$d->situacao?></div>
-            <div class='col-md-2'>
-                <div class="d-flex justify-content-between">
-                    <button
-                        class="btn btn-success"
-                        data-bs-toggle="offcanvas"
-                        href="#offcanvasDireita"
-                        role="button"
-                        aria-controls="offcanvasDireita"
-                        editarSe="<?=$d->codigo?>"
-                    >
-                        <i class="fa-solid fa-pen-to-square"></i>
-                    </button>
-                    <button
-                        class="btn btn-danger"
-                        excluirSe="<?=$d->codigo?>"
-                    >
-                        <i class="fa-solid fa-trash"></i>
-                    </button>
-                </div>
-            </div>
-        </div> -->
         <?
             }
         ?>
