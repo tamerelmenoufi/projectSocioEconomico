@@ -183,7 +183,7 @@
 
 
         $("i[delFiltro]").click(function(){
-            sessao = $(this).attr("delFiltro");
+            delFiltro = $(this).attr("delFiltro");
             Carregando();
             $.ajax({
                 url:"src/se/index.php",
