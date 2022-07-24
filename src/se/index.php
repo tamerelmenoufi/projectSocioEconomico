@@ -11,31 +11,43 @@
         global $_SESSION;
         global $con;
         $retorno = [];
+        $_SESSION['where_ou'] = [];
         if($_SESSION['filtro_nome']){
             $retorno[] = "<span class='rotuloFultro'>{$_SESSION['filtro_nome']} <i class='fa-solid fa-xmark' delFiltro='filtro_nome'></i></span>";
+            $n = explode(" ",$_SESSION['filtro_nome']);
+            for($i=0;$i<count($n);$i++){
+                $_SESSION['where_ou'][] = "nome LIKE '%{$n[$i]}%'";
+            }
         }
         if($_SESSION['filtro_cpf']){
             $retorno[] = "<span class='rotuloFultro'>{$_SESSION['filtro_cpf']} <i class='fa-solid fa-xmark' delFiltro='filtro_cpf'></i></span>";
+            $_SESSION['where_ou'][] = "cpf = '{$_SESSION['filtro_cpf']}'";
         }
         if($_SESSION['filtro_rg']){
             $retorno[] = "<span class='rotuloFultro'>{$_SESSION['filtro_rg']} <i class='fa-solid fa-xmark' delFiltro='filtro_rg'></i></span>";
+            $_SESSION['where_ou'][] = "rg = '{$_SESSION['filtro_rg']}'";
         }
         if($_SESSION['filtro_telefone']){
             $retorno[] = "<span class='rotuloFultro'>{$_SESSION['filtro_telefone']} <i class='fa-solid fa-xmark' delFiltro='filtro_telefone'></i></span>";
+            $_SESSION['where_ou'][] = "telefone = '{$_SESSION['filtro_telefone']}'";
         }
         if($_SESSION['filtro_email']){
             $retorno[] = "<span class='rotuloFultro'>{$_SESSION['filtro_email']} <i class='fa-solid fa-xmark' delFiltro='filtro_email'></i></span>";
+            $_SESSION['where_ou'][] = "email = '{$_SESSION['filtro_email']}'";
         }
         if($_SESSION['filtro_municipio']){
             list($dado) = mysqli_fetch_row(mysqli_query($con, "select municipio from municipios where codigo = '{$_SESSION['filtro_municipio']}'"));
             $retorno[] = "<span class='rotuloFultro'>{$dado} <i class='fa-solid fa-xmark' delFiltro='filtro_municipio'></i></span>";
+            $_SESSION['where_ou'][] = "municipio = '{$_SESSION['filtro_municipio']}'";
         }
         if($_SESSION['filtro_tipo']){
             $retorno[] = "<span class='rotuloFultro'>{$_SESSION['filtro_tipo']} <i class='fa-solid fa-xmark' delFiltro='filtro_tipo'></i></span>";
+            $_SESSION['where_ou'][] = "tipo = '{$_SESSION['filtro_tipo']}'";
         }
         if($_SESSION['filtro_bairro_comunidade']){
             list($dado) = mysqli_fetch_row(mysqli_query($con, "select descricao from bairros_comunidades where codigo = '{$_SESSION['filtro_bairro_comunidade']}'"));
             $retorno[] = "<span class='rotuloFultro'>{$dado} <i class='fa-solid fa-xmark' delFiltro='filtro_bairro_comunidade'></i></span>";
+            $_SESSION['where_ou'][] = "bairro_comunidade = '{$_SESSION['filtro_bairro_comunidade']}'";
         }
 
         if($retorno){
@@ -94,6 +106,10 @@
 
             Filtros();
 
+            if($_SESSION['where_ou']){
+                $where = implode(" AND ", $_SESSION['where_ou']);
+            }
+
             $query = "select
                             a.*,
                             b.municipio as municipio,
@@ -101,6 +117,9 @@
                         from se a
                             left join municipios b on a.municipio = b.codigo
                             left join bairros_comunidades c on a.bairro_comunidade = c.codigo
+
+                        where 1=1 ".(($where)?" AND ".$where:false)."
+
                         order by nome limit 0, 20";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
