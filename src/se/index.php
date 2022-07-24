@@ -34,7 +34,7 @@
         }
 
         if($retorno){
-            echo 'FILTRO: ' . print_r($retorno);
+            echo 'FILTRO: ' . implode(" ", $retorno);
         }
 
     }
