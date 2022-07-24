@@ -108,11 +108,13 @@
 
         <?php
 
+            Filtros();
+
             if($_SESSION['where_ou']){
                 $where = implode(" AND ", $_SESSION['where_ou']);
             }
 
-            if(Filtros()){
+            if($_SESSION['where_ou']){
 
             $query = "select
                             a.*,
