@@ -38,7 +38,7 @@
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
         ?>
-        <div class="row" style="border-bottom:1px #ccc solid; margin-bottom:2px;">
+        <div class="row" style="border-bottom:1px #ccc solid; margin-bottom:2px; margin-top:2px;">
             <div class='col-md-3'><?=$d->municipio?><br><?=$d->bairro_comunidade?></div>
             <div class='col-md-3'><?=$d->nome?><br><?=$d->cpf?></div>
             <div class='col-md-2'><?=$d->telefone?><br><?=$d->email?></div>
