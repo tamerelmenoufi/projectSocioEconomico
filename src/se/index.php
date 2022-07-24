@@ -40,32 +40,32 @@
         ?>
 
         <div class="card mt-3">
-        <h5 class="card-header"><?=$d->nome?> - <?=$d->cpf?></h5>
-        <div class="card-body">
+            <h5 class="card-header"><?=$d->nome?> - <?=$d->cpf?></h5>
+            <div class="card-body">
 
-            <h5 class="card-title"><?=$d->municipio?> - <?=$d->bairro_comunidade?></h5>
-            <p class="card-text">
-                <?=$d->telefone?><br><?=$d->email?><br><?=$d->situacao?>
-            </p>
+                <h5 class="card-title"><?=$d->municipio?> - <?=$d->bairro_comunidade?></h5>
+                <p class="card-text">
+                    <?=$d->telefone?><br><?=$d->email?><br><?=$d->situacao?>
+                </p>
 
-            <button
-                class="btn btn-success"
-                data-bs-toggle="offcanvas"
-                href="#offcanvasDireita"
-                role="button"
-                aria-controls="offcanvasDireita"
-                editarSe="<?=$d->codigo?>"
-            >
-                <i class="fa-solid fa-pen-to-square"></i>
-            </button>
-            <button
-                class="btn btn-danger"
-                excluirSe="<?=$d->codigo?>"
-            >
-                <i class="fa-solid fa-trash"></i>
-            </button>
+                <button
+                    class="btn btn-success"
+                    data-bs-toggle="offcanvas"
+                    href="#offcanvasDireita"
+                    role="button"
+                    aria-controls="offcanvasDireita"
+                    editarSe="<?=$d->codigo?>"
+                >
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <button
+                    class="btn btn-danger"
+                    excluirSe="<?=$d->codigo?>"
+                >
+                    <i class="fa-solid fa-trash"></i>
+                </button>
 
-        </div>
+            </div>
         </div>
 
 
