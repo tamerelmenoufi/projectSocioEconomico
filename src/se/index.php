@@ -47,6 +47,9 @@
         border-radius:3px;
         border:#eee;
         color:#a1a1a1;
+        width:auto;
+        margin:2px;
+        float:left;
     }
 </style>
 <div class="container">
