@@ -1,6 +1,11 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
+    if($_POST['delFiltro']){
+        $_SESSION[$_POST['delFiltro']] = false;
+        // exit();
+    }
+
 
     function Filtros(){
         global $_SESSION;
@@ -142,6 +147,9 @@
 
 <script>
     $(function(){
+
+        Carregando('none');
+
         $("button[editarSe]").click(function(){
 
             cod = $(this).attr("editarSe");
@@ -170,6 +178,22 @@
                     $(".LateralDireita").html(dados);
                 }
             })
+
+        });
+
+
+        $("i[delFiltro]").click(function(){
+            sessao = $(this).attr("delFiltro");
+            Carregando();
+            $.ajax({
+                url:"src/se/index.php",
+                data:{
+                    delFiltro
+                },
+                success:function(dados){
+                    $("#paginaHome").html(dados);
+                }
+            });
 
         });
     })
