@@ -283,7 +283,7 @@
                         $("#email").val('');
                         $("#municipio").val('');
                         $("#tipo").val('');
-                        $("#bairro_comunidade").val('');
+                        $("#bairro_comunidade").html('<option value="">::Selecione a Localização::</option>');
                         // let myOffCanvas = document.getElementById('offcanvasDireita');
                         // let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
                         // openedCanvas.hide();
