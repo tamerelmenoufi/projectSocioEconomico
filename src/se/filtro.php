@@ -33,7 +33,7 @@
     .Botao<?=$md5?>{
         position:absolute;
         right:20px;
-        top:10px;
+        top:5px;
         z-index:0;
     }
 </style>
