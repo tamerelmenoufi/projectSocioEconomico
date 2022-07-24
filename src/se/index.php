@@ -52,6 +52,9 @@
         margin:2px;
         float:left;
     }
+    .rotuloFultro i{
+        color:red;
+    }
 </style>
 <div class="container">
     <div class="row mt-3">
