@@ -37,7 +37,7 @@
     <div class="row">
         <div class="col">
 
-            <div class="card p-3">
+            <div class="card p-3 mb-3">
                 <h5>Geral</h5>
 
                 <div class="form-floating mb-3">
