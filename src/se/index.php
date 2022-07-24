@@ -13,6 +13,7 @@
 
                 <button
                     class="btn btn-warning"
+                    data-bs-toggle="offcanvas"
                     href="#offcanvasDireita"
                     role="button"
                     aria-controls="offcanvasDireita"
