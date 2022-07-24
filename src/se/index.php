@@ -108,11 +108,11 @@
 
         <?php
 
-            Filtros();
-
             if($_SESSION['where_ou']){
                 $where = implode(" AND ", $_SESSION['where_ou']);
             }
+
+            if(Filtros()){
 
             $query = "select
                             a.*,
@@ -167,7 +167,13 @@
         ?>
     </div>
 </div>
-
+<?php
+        }else{
+?>
+        <h3>Não tem nada</h3>
+<?php
+        }
+?>
 <script>
     $(function(){
 
