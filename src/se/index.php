@@ -16,7 +16,7 @@
 
     <div class="row mt-3">
 
-        <div class="d-none d-md-block mb-2">
+        <!-- <div class="d-none d-md-block mb-2">
             <div class="row">
                 <div class='col-md-3'><b>LOCALIZAÇÃO</b></div>
                 <div class='col-md-3'><b>IDENTIFICAÇÃO</b></div>
@@ -24,7 +24,7 @@
                 <div class='col-md-2'><b>SITUAÇÃO</b></div>
                 <div class='col-md-2'><b>AÇÕES</b></div>
             </div>
-        </div>
+        </div> -->
 
         <?php
             $query = "select
@@ -39,7 +39,7 @@
             while($d = mysqli_fetch_object($result)){
         ?>
 
-        <div class="card">
+        <div class="card mt-3">
         <h5 class="card-header"><?=$d->nome?> - <?=$d->cpf?></h5>
         <div class="card-body">
 
