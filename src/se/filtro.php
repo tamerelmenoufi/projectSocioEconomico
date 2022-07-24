@@ -165,13 +165,6 @@
                     type="button"
                     LimparFiltro
                     class="btn btn-danger btn-ms"
-
-                    data-bs-toggle="offcanvas"
-                    href="#offcanvasDireita"
-                    role="button"
-                    aria-controls="offcanvasDireita"
-
-
                 >
                     <i class="fa-solid fa-filter-circle-xmark"></i>
                 </button>
@@ -283,6 +276,11 @@
 
                             }
                         });
+
+                        let myOffCanvas = document.getElementById('offcanvasDireita');
+                        let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+                        openedCanvas.hide();
+
                     },
                     'NÃO':function(){
 
