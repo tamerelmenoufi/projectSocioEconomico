@@ -28,50 +28,37 @@
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
         ?>
-<div class="row">
-    <div class="col">
-        <div class="card">
-        <div class="card-header">
-            Featured
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        </div>
-    </div>
-</div>
 
+        <div class="row">
+            <div class="col">
+                <div class="card mt-3">
+                    <h5 class="card-header"><?=$d->nome?> - <?=$d->cpf?></h5>
+                    <div class="card-body">
 
+                        <h5 class="card-title"><?=$d->municipio?> - <?=$d->bairro_comunidade?></h5>
+                        <p class="card-text">
+                            <?=$d->telefone?><br><?=$d->email?><br><?=$d->situacao?>
+                        </p>
 
+                        <button
+                            class="btn btn-success"
+                            data-bs-toggle="offcanvas"
+                            href="#offcanvasDireita"
+                            role="button"
+                            aria-controls="offcanvasDireita"
+                            editarSe="<?=$d->codigo?>"
+                        >
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+                        <button
+                            class="btn btn-danger"
+                            excluirSe="<?=$d->codigo?>"
+                        >
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
 
-        <div class="card mt-3">
-            <h5 class="card-header"><?=$d->nome?> - <?=$d->cpf?></h5>
-            <div class="card-body">
-
-                <h5 class="card-title"><?=$d->municipio?> - <?=$d->bairro_comunidade?></h5>
-                <p class="card-text">
-                    <?=$d->telefone?><br><?=$d->email?><br><?=$d->situacao?>
-                </p>
-
-                <button
-                    class="btn btn-success"
-                    data-bs-toggle="offcanvas"
-                    href="#offcanvasDireita"
-                    role="button"
-                    aria-controls="offcanvasDireita"
-                    editarSe="<?=$d->codigo?>"
-                >
-                    <i class="fa-solid fa-pen-to-square"></i>
-                </button>
-                <button
-                    class="btn btn-danger"
-                    excluirSe="<?=$d->codigo?>"
-                >
-                    <i class="fa-solid fa-trash"></i>
-                </button>
-
+                    </div>
+                </div>
             </div>
         </div>
 
