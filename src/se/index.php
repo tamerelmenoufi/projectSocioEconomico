@@ -114,7 +114,7 @@
                 $where = implode(" AND ", $_SESSION['where_ou']);
             }
 
-            echo $query = "select
+            $query = "select
                             a.*,
                             b.municipio as municipio,
                             c.descricao as bairro_comunidade
