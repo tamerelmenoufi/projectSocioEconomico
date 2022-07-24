@@ -30,6 +30,12 @@
         top:8px;
         z-index:0;
     }
+    .Botao<?=$md5?>{
+        position:absolute;
+        right:20px;
+        top:10px;
+        z-index:0;
+    }
 </style>
 <h4 class="Titulo<?=$md5?>">Filtro de Busca</h4>
 
@@ -112,7 +118,7 @@
     <div class="row">
         <div class="col">
             <div style="display:flex; justify-content:end">
-                <button type="submit" SalvarFoto class="btn btn-success btn-ms">Salvar</button>
+                <button type="submit" SalvarFoto class="btn btn-success btn-ms Botao<?=$md5?>">Salvar</button>
                 <input type="hidden" id="codigo" value="<?=$_POST['cod']?>" />
             </div>
         </div>
