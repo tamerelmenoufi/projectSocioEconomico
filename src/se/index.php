@@ -27,7 +27,14 @@
         </div>
 
         <?php
-            $query = "select * from se order by nome limit 0, 20";
+            $query = "select
+                            a.*,
+                            b.municipio as municipio,
+                            c.descricao as bairros_comunidades
+                        from se
+                            left join municipios b on a.municipio = b.codigo
+                            left join bairros_comunidades c on a.bairros_comunidades = c.codigo
+                        order by nome limit 0, 20";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
         ?>
