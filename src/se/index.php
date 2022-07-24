@@ -27,7 +27,7 @@
         </div>
 
         <?php
-            $query = "select
+            echo $query = "select
                             a.*,
                             b.municipio as municipio,
                             c.descricao as bairros_comunidades
