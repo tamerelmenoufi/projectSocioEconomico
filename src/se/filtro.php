@@ -3,14 +3,20 @@
 
     if($_POST['acao'] == 'bairro_comunidade'){
 
-        $q = "select * from bairros_comunidades where municipio = '{$_POST['bairro_comunidade']}' order by descricao";
+        $q = "select * from bairros_comunidades
+
+                where
+                        municipio = '{$_POST['bairro_comunidade']}'
+                        and tipo = '{$_POST['tipo']}'
+
+                order by descricao";
         $r = mysqli_query($con, $q);
 ?>
         <option value="">::Selecione a Localização::</option>
 <?php
         while($s = mysqli_fetch_object($r)){
 ?>
-        <option value="<?=$s->codigo?>"><?=$s->descricao?></option>
+        <option value="<?=$s->codigo?>"><?=$s->descricao?> (<?=$s->tipo?>)</option>
 <?php
         }
         exit();
@@ -68,6 +74,14 @@
                 <label for="email">Município</label>
             </div>
 
+            <div class="form-floating mb-3">
+                <select name="tipo" id="tipo" class="form-control" placeholder="Zona">
+                    <option value="">::Selecione a Zona::</option>
+                    <option value="Urbana">Urbana</option>
+                    <option value="Rural">Rural</option>
+                </select>
+                <label for="tipo">Zona</label>
+            </div>
 
             <div class="form-floating mb-3">
                 <select name="bairro_comunidade" id="bairro_comunidade" class="form-control" placeholder="Bairro">
@@ -77,7 +91,7 @@
                         $r = mysqli_query($con, $q);
                         while($s = mysqli_fetch_object($r)){
                     ?>
-                    <option value="<?=$s->codigo?>"><?=$s->descricao?></option>
+                    <option value="<?=$s->codigo?>"><?=$s->descricao?> (<?=$s->tipo?>)</option>
                     <?php
                         }
                     ?>
@@ -109,21 +123,27 @@
     $(function(){
         Carregando('none');
 
-        $("#municipio").change(function(){
-            bairro_comunidade = $(this).val();
+        $("#tipo").change(function(){
+            bairro_comunidade = $("#municipio").val();
+            tipo = $(this).val();
+            if(!bairro_comunidade){
+                $.alert('Favor selecione o município!');
+                return false;
+            }
             $.ajax({
                 url:"src/se/filtro.php",
                 type:"POST",
                 data:{
                     bairro_comunidade,
+                    tipo,
                     acao:'bairro_comunidade'
                 },
                 success:function(dados){
                     $("#bairro_comunidade").html(dados);
                 }
             });
-
         });
+
 
     })
 </script>
