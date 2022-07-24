@@ -1,6 +1,6 @@
 <?php
 
-    $con = mysqli_connect("localhost","root","", "manutencao");
+    $con = mysqli_connect("project.mohatron.com","root","SenhaDoBanco", "manutencao");
     $dados = file_get_contents("lista5.csv");
 
     function M($d){
