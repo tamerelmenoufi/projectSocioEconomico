@@ -77,7 +77,7 @@
             <div class="form-floating mb-3">
                 <select name="tipo" id="tipo" class="form-control" placeholder="Zona">
                     <option value="">::Selecione a Zona::</option>
-                    <option value="Urbana">Urbana</option>
+                    <option value="Urbano">Urbano</option>
                     <option value="Rural">Rural</option>
                 </select>
                 <label for="tipo">Zona</label>
