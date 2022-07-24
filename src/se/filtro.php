@@ -37,69 +37,75 @@
     <div class="row">
         <div class="col">
 
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>">
-                <label for="nome">Nome*</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>">
-                <label for="cpf">CPF*</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>">
-                <label for="cpf">RG*</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" name="telefone" id="telefone" class="form-control" placeholder="telefone" value="<?=$d->telefone?>">
-                <label for="telefone">Telefone*</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$d->email?>">
-                <label for="email">E-mail*</label>
+            <div class="card p-3">
+                <h5>Geral</h5>
+
+                <div class="form-floating mb-3">
+                    <select name="municipio" id="municipio" class="form-control" placeholder="Município">
+                        <option value="">::Selecione o Município::</option>
+                        <?php
+                            $q = "select * from municipios order by municipio";
+                            $r = mysqli_query($con, $q);
+                            while($s = mysqli_fetch_object($r)){
+                        ?>
+                        <option value="<?=$s->codigo?>"><?=$s->municipio?></option>
+                        <?php
+                            }
+                        ?>
+                    </select>
+                    <label for="email">Município</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <select name="tipo" id="tipo" class="form-control" placeholder="Zona">
+                        <option value="">::Selecione a Zona::</option>
+                        <option value="Urbano">Urbano</option>
+                        <option value="Rural">Rural</option>
+                    </select>
+                    <label for="tipo">Zona</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <select name="bairro_comunidade" id="bairro_comunidade" class="form-control" placeholder="Bairro">
+                        <option value="">::Selecione a Localização::</option>
+                        <?php
+                            $q = "select * from bairros_comunidades where municipio = '{$_SESSION['filtro_municipio']}' order by descricao";
+                            $r = mysqli_query($con, $q);
+                            while($s = mysqli_fetch_object($r)){
+                        ?>
+                        <option value="<?=$s->codigo?>"><?=$s->descricao?> (<?=$s->tipo?>)</option>
+                        <?php
+                            }
+                        ?>
+                    </select>
+                    <label for="bairro_comunidade">Bairro/Comunidade</label>
+                </div>
             </div>
 
-            <div class="form-floating mb-3">
-                <select name="municipio" id="municipio" class="form-control" placeholder="Município">
-                    <option value="">::Selecione o Município::</option>
-                    <?php
-                        $q = "select * from municipios order by municipio";
-                        $r = mysqli_query($con, $q);
-                        while($s = mysqli_fetch_object($r)){
-                    ?>
-                    <option value="<?=$s->codigo?>"><?=$s->municipio?></option>
-                    <?php
-                        }
-                    ?>
-                </select>
-                <label for="email">Município</label>
+            <div class="card p-3">
+                <h5>Específico</h5>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>">
+                    <label for="nome">Nome*</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>">
+                    <label for="cpf">CPF*</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>">
+                    <label for="cpf">RG*</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="telefone" id="telefone" class="form-control" placeholder="telefone" value="<?=$d->telefone?>">
+                    <label for="telefone">Telefone*</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$d->email?>">
+                    <label for="email">E-mail*</label>
+                </div>
             </div>
-
-            <div class="form-floating mb-3">
-                <select name="tipo" id="tipo" class="form-control" placeholder="Zona">
-                    <option value="">::Selecione a Zona::</option>
-                    <option value="Urbano">Urbano</option>
-                    <option value="Rural">Rural</option>
-                </select>
-                <label for="tipo">Zona</label>
-            </div>
-
-            <div class="form-floating mb-3">
-                <select name="bairro_comunidade" id="bairro_comunidade" class="form-control" placeholder="Bairro">
-                    <option value="">::Selecione a Localização::</option>
-                    <?php
-                        $q = "select * from bairros_comunidades where municipio = '{$_SESSION['filtro_municipio']}' order by descricao";
-                        $r = mysqli_query($con, $q);
-                        while($s = mysqli_fetch_object($r)){
-                    ?>
-                    <option value="<?=$s->codigo?>"><?=$s->descricao?> (<?=$s->tipo?>)</option>
-                    <?php
-                        }
-                    ?>
-                </select>
-                <label for="bairro_comunidade">Bairro/Comunidade</label>
-            </div>
-
-
         </div>
     </div>
 
