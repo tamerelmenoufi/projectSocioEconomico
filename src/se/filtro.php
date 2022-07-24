@@ -276,7 +276,7 @@
 
                             }
                         });
-                        $("#form-<?= $md5 ?>").reset();
+                        $("#form-<?= $md5 ?>")[0].reset();
                         // let myOffCanvas = document.getElementById('offcanvasDireita');
                         // let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
                         // openedCanvas.hide();
