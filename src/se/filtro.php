@@ -15,6 +15,20 @@
         exit();
     }
 
+    if($_POST['acao'] == 'limpar_filtro'){
+
+        $_SESSION['filtro_nome'] = false;
+        $_SESSION['filtro_cpf'] =false;
+        $_SESSION['filtro_rg'] = false;
+        $_SESSION['filtro_telefone'] = false;
+        $_SESSION['filtro_email'] = false;
+        $_SESSION['filtro_municipio'] = false;
+        $_SESSION['filtro_tipo'] = false;
+        $_SESSION['filtro_bairro_comunidade'] = false;
+
+        exit();
+    }
+
 
     if($_POST['acao'] == 'bairro_comunidade'){
 
@@ -126,15 +140,20 @@
                     <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$_SESSION['filtro_email']?>">
                     <label for="email">E-mail*</label>
                 </div>
+
             </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col">
-            <div style="display:flex; justify-content:end">
-                <button type="button" GerarFiltro class="btn btn-success btn-ms Botao<?=$md5?>">Filtrar</button>
-                <input type="hidden" id="codigo" value="<?=$_POST['cod']?>" />
+            <div class="Botao<?=$md5?>">
+                <button type="button" GerarFiltro class="btn btn-success btn-ms">
+                    <i class="fa-solid fa-filter"></i>
+                </button>
+                <button type="button" LimparFiltro class="btn btn-danger btn-ms">
+                    <i class="fa-solid fa-filter-circle-xmark"></i>
+                </button>
             </div>
         </div>
     </div>
@@ -214,8 +233,27 @@
                     });
                 }
             });
-
-
         });
+
+        $("button[GerarFiltro]").click(function(){
+            $.ajax({
+                url:"src/se/filtro.php",
+                type:"POST",
+                data:{
+                    acao:'limpar_filtro'
+                },
+                success:function(dados){
+
+                    $.ajax({
+                        url:"src/se/index.php",
+                        success:function(dados){
+                            $("#paginaHome").html(dados);
+                        }
+                    });
+
+                }
+            });
+        })
+
     })
 </script>
