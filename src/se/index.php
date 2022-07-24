@@ -42,7 +42,7 @@
         }
         if($_SESSION['filtro_tipo']){
             $retorno[] = "<span class='rotuloFultro'>{$_SESSION['filtro_tipo']} <i class='fa-solid fa-xmark' delFiltro='filtro_tipo'></i></span>";
-            $_SESSION['where_ou'][] = "a.tipo = '{$_SESSION['filtro_tipo']}'";
+            $_SESSION['where_ou'][] = "a.local = '{$_SESSION['filtro_tipo']}'";
         }
         if($_SESSION['filtro_bairro_comunidade']){
             list($dado) = mysqli_fetch_row(mysqli_query($con, "select descricao from bairros_comunidades where codigo = '{$_SESSION['filtro_bairro_comunidade']}'"));
