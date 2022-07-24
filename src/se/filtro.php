@@ -6,7 +6,7 @@
         $q = "select * from bairros_comunidades
 
                 where
-                        municipio = '{$_POST['bairro_comunidade']}'
+                        municipio = '{$_POST['municipio']}'
                         and tipo = '{$_POST['tipo']}'
 
                 order by descricao";
@@ -118,7 +118,7 @@
         Carregando('none');
 
         var filtro = (bairro_comunidade, tipo) => {
-            if(!bairro_comunidade){
+            if(!municipio){
                 $.alert('Favor selecione o município!');
                 return false;
             }
@@ -130,7 +130,7 @@
                 url:"src/se/filtro.php",
                 type:"POST",
                 data:{
-                    bairro_comunidade,
+                    municipio,
                     tipo,
                     acao:'bairro_comunidade'
                 },
@@ -141,15 +141,15 @@
         }
 
         $("#tipo").change(function(){
-            bairro_comunidade = $("#municipio").val();
+            municipio = $("#municipio").val();
             tipo = $(this).val();
-            filtro(bairro_comunidade, tipo);
+            filtro(municipio, tipo);
         });
 
-        $("#bairro_comunidade").change(function(){
+        $("#municipio").change(function(){
             tipo = $("#tipo").val();
-            bairro_comunidade = $(this).val();
-            filtro(bairro_comunidade, tipo);
+            municipio = $(this).val();
+            filtro(municipio, tipo);
         });
     })
 </script>
