@@ -7,30 +7,30 @@
         global $con;
         $retorno = [];
         if($_SESSION['filtro_nome']){
-            $retorno[] = `<span class="rotuloFultro">{$_SESSION['filtro_nome']} <i class="fa-solid fa-xmark delFiltro='filtro_nome'"></i></span>`;
+            $retorno[] = "<span class='rotuloFultro'>{$_SESSION['filtro_nome']} <i class='fa-solid fa-xmark' delFiltro='filtro_nome'></i></span>";
         }
         if($_SESSION['filtro_cpf']){
-            $retorno[] = `<span class="rotuloFultro">{$_SESSION['filtro_cpf']} <i class="fa-solid fa-xmark delFiltro='filtro_cpf'"></i></span>`;
+            $retorno[] = "<span class='rotuloFultro'>{$_SESSION['filtro_cpf']} <i class='fa-solid fa-xmark' delFiltro='filtro_cpf'></i></span>";
         }
         if($_SESSION['filtro_rg']){
-            $retorno[] = `<span class="rotuloFultro">{$_SESSION['filtro_rg']} <i class="fa-solid fa-xmark delFiltro='filtro_rg'"></i></span>`;
+            $retorno[] = "<span class='rotuloFultro'>{$_SESSION['filtro_rg']} <i class='fa-solid fa-xmark' delFiltro='filtro_rg'></i></span>";
         }
         if($_SESSION['filtro_telefone']){
-            $retorno[] = `<span class="rotuloFultro">{$_SESSION['filtro_telefone']} <i class="fa-solid fa-xmark delFiltro='filtro_telefone'"></i></span>`;
+            $retorno[] = "<span class='rotuloFultro'>{$_SESSION['filtro_telefone']} <i class='fa-solid fa-xmark' delFiltro='filtro_telefone'></i></span>";
         }
         if($_SESSION['filtro_email']){
-            $retorno[] = `<span class="rotuloFultro">{$_SESSION['filtro_email']} <i class="fa-solid fa-xmark delFiltro='filtro_email'"></i></span>`;
+            $retorno[] = "<span class='rotuloFultro'>{$_SESSION['filtro_email']} <i class='fa-solid fa-xmark' delFiltro='filtro_email'></i></span>";
         }
         if($_SESSION['filtro_municipio']){
             list($dado) = mysqli_fetch_row(mysqli_query($con, "select municipio from municipios where codigo = '{$_SESSION['filtro_municipio']}'"));
-            $retorno[] = `<span class="rotuloFultro">{$dado} <i class="fa-solid fa-xmark delFiltro='filtro_municipio'"></i></span>`;
+            $retorno[] = "<span class='rotuloFultro'>{$dado} <i class='fa-solid fa-xmark' delFiltro='filtro_municipio'></i></span>";
         }
         if($_SESSION['filtro_tipo']){
-            $retorno[] = `<span class="rotuloFultro">{$_SESSION['filtro_tipo']} <i class="fa-solid fa-xmark delFiltro='filtro_tipo'"></i></span>`;
+            $retorno[] = "<span class='rotuloFultro'>{$_SESSION['filtro_tipo']} <i class='fa-solid fa-xmark' delFiltro='filtro_tipo'></i></span>";
         }
         if($_SESSION['filtro_bairro_comunidade']){
             list($dado) = mysqli_fetch_row(mysqli_query($con, "select descricao from bairros_comunidades where codigo = '{$_SESSION['filtro_bairro_comunidade']}'"));
-            $retorno[] = `<span class="rotuloFultro">{$dado} <i class="fa-solid fa-xmark delFiltro='filtro_bairro_comunidade'"></i></span>`;
+            $retorno[] = "<span class='rotuloFultro'>{$dado} <i class='fa-solid fa-xmark' delFiltro='filtro_bairro_comunidade'></i></span>";
         }
 
         if($retorno){
