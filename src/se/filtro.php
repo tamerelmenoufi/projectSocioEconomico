@@ -235,7 +235,7 @@
             });
         });
 
-        $("button[GerarFiltro]").click(function(){
+        $("button[LimparFiltro]").click(function(){
             $.ajax({
                 url:"src/se/filtro.php",
                 type:"POST",
