@@ -239,6 +239,7 @@
 
             $.confirm({
                 content:"Deseja realmente limpar o filtro?",
+                title:false,
                 buttons:{
                     'SIM':function(){
                         $.ajax({
