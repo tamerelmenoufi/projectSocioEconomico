@@ -10,6 +10,16 @@
                 <button class="btn btn-primary">
                     Novo
                 </button>
+
+                <button
+                    class="btn btn-warning"
+                    href="#offcanvasDireita"
+                    role="button"
+                    aria-controls="offcanvasDireita"
+                    BuscaFiltro
+                >
+                    Filtro
+                </button>
             </div>
         </div>
     </div>
@@ -80,6 +90,20 @@
                 data:{
                     cod,
                 },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            })
+
+        });
+
+
+        $("button[BuscaFiltro]").click(function(){
+
+            Carregando();
+            $.ajax({
+                url:"src/se/filtro.php",
+                type:"POST",
                 success:function(dados){
                     $(".LateralDireita").html(dados);
                 }
