@@ -182,11 +182,11 @@
 
         var filtro = (bairro_comunidade, tipo) => {
             if(!municipio){
-                $.alert('Favor selecione o município!');
+                $("#bairro_comunidade").html('<option value="">::Selecione a Localização::</option>');
                 return false;
             }
             if(!tipo){
-                $.alert('Favor selecione a zona!');
+                $("#bairro_comunidade").html('<option value="">::Selecione a Localização::</option>');
                 return false;
             }
             $.ajax({
