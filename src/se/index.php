@@ -56,7 +56,8 @@
         color:red;
         font-size:14px;
         font-weight:bold;
-        padding:5px;
+        padding-left:5px;
+        cursor:pointer;
     }
 </style>
 <div class="container">
