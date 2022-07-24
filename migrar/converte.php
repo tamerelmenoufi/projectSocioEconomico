@@ -77,8 +77,7 @@
     // echo "</table>";
 
     // insert into `municipios` (municipio) select municipio from se group by municipio order by municipio
-    // insert into `bairros_comunidades` (municipio, descricao, tipo) select municipio_cod, localidade, tipo from se group by municipio, localidade, tipo
-
-
     // update se a set a.municipio_cod = (select codigo from municipios where a.municipio = municipio)
-    // update se a set localidade_cod = (select codigo from bairros_comunidades where a.municipio_cod = municipio and a.localidade = descricao and a.tipo = tipo)
+
+    // insert into `bairros_comunidades` (municipio, descricao, tipo) select municipio_cod, localidade, tipo from se group by municipio, localidade, tipo
+    // update se a set a.localidade_cod = (select b.codigo from bairros_comunidades b where a.municipio_cod = b.municipio and a.localidade = b.descricao and a.tipo = b.tipo)

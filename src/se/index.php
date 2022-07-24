@@ -32,7 +32,7 @@
             while($d = mysqli_fetch_object($result)){
         ?>
         <div class="row">
-            <div class='col-md-3'><?=$d->municipio?><br><?=$d->bairro?></div>
+            <div class='col-md-3'><?=$d->municipio?><br><?=$d->bairro_comunidade?></div>
             <div class='col-md-3'><?=$d->nome?><br><?=$d->cpf?></div>
             <div class='col-md-2'><?=$d->telefone?><br><?=$d->email?></div>
             <div class='col-md-2'><?=$d->situacao?></div>
