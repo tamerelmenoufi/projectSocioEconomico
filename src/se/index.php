@@ -34,7 +34,7 @@
         }
 
         if($retorno){
-            return implode(" ", $retorno);
+            echo 'FILTRO: ' . implode(" ", $retorno);
         }
 
     }
@@ -69,7 +69,7 @@
 
         <?php
 
-            echo Filtros();
+            Filtros();
 
             $query = "select
                             a.*,
