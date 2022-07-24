@@ -1,6 +1,22 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
+
+    if($_POST['acao'] == 'bairro_comunidade'){
+
+        $q = "select * from bairros_comunidades where municipio = '{$_POST['bairro_comunidade']}' order by descricao";
+        $r = mysqli_query($con, $q);
 ?>
+        <option value="">::Selecione a Localização::</option>
+<?php
+        while($s = mysqli_fetch_object($r)){
+?>
+        <option value="<?=$s->codigo?>"><?=$s->descricao?></option>
+<?php
+        }
+        exit();
+    }
+?>
+
 <style>
     .Titulo<?=$md5?>{
         position:absolute;
@@ -52,10 +68,23 @@
                 <label for="email">Município</label>
             </div>
 
+
             <div class="form-floating mb-3">
-                <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$d->email?>">
-                <label for="email">Bairro</label>
+                <select name="bairro_comunidade" id="bairro_comunidade" class="form-control" placeholder="Bairro">
+                    <option value="">::Selecione a Localização::</option>
+                    <?php
+                        $q = "select * from bairros_comunidades where municipio = '{$_SESSION['filtro_municipio']}' order by descricao";
+                        $r = mysqli_query($con, $q);
+                        while($s = mysqli_fetch_object($r)){
+                    ?>
+                    <option value="<?=$s->codigo?>"><?=$s->descricao?></option>
+                    <?php
+                        }
+                    ?>
+                </select>
+                <label for="bairro_comunidade">Bairro/Comunidade</label>
             </div>
+
 
             <div class="form-floating mb-3">
                 <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$d->email?>">
@@ -79,6 +108,21 @@
 <script>
     $(function(){
         Carregando('none');
+
+        $("#municipio").change(function(){
+            bairro_comunidade = $(this).val();
+            $.ajax({
+                url:"src/se/filtro.php",
+                type:"POST",
+                data:{
+                    bairro_comunidade
+                },
+                success:function(dados){
+                    $("#bairro_comunidade").html(dados);
+                }
+            });
+
+        });
 
     })
 </script>
