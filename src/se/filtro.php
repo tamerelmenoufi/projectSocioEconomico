@@ -7,7 +7,7 @@
 
                 where
                         municipio = '{$_POST['bairro_comunidade']}'
-                        /*and tipo = '{$_POST['tipo']}'*/
+                        and tipo = '{$_POST['tipo']}'
 
                 order by descricao";
         $r = mysqli_query($con, $q);
