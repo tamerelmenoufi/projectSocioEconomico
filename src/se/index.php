@@ -31,7 +31,7 @@
                             a.*,
                             b.municipio as municipio,
                             c.descricao as bairros_comunidades
-                        from se
+                        from se a
                             left join municipios b on a.municipio = b.codigo
                             left join bairros_comunidades c on a.bairros_comunidades = c.codigo
                         order by nome limit 0, 20";
