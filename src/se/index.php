@@ -44,9 +44,10 @@
     .rotuloFultro{
         padding:5px;
         background-color:#d2ffc8;
-        border-radius:3px;
+        border-radius:7px;
         border:#eee;
-        color:#a1a1a1;
+        font-size:12px;
+        color:#333;
         width:auto;
         margin:2px;
         float:left;
