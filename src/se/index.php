@@ -28,6 +28,9 @@
     <div class="row mt-3">
 
         <?php
+
+            print_r($_SESSION);
+
             $query = "select
                             a.*,
                             b.municipio as municipio,

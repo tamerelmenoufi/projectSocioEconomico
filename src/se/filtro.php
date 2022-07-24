@@ -1,6 +1,21 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
+    if($_POST['acao'] == 'gerar_filtro'){
+
+        $_SESSION['filtro_nome'] = $_POST['nome'];
+        $_SESSION['filtro_cpf'] = $_POST['cpf'];
+        $_SESSION['filtro_rg'] = $_POST['rg'];
+        $_SESSION['filtro_telefone'] = $_POST['telefone'];
+        $_SESSION['filtro_email'] = $_POST['email'];
+        $_SESSION['filtro_municipio'] = $_POST['municipio'];
+        $_SESSION['filtro_tipo'] = $_POST['tipo'];
+        $_SESSION['filtro_bairro_comunidade'] = $_POST['bairro_comunidade'];
+
+        exit();
+    }
+
+
     if($_POST['acao'] == 'bairro_comunidade'){
 
         $q = "select * from bairros_comunidades
@@ -100,7 +115,7 @@
                     <label for="cpf">CPF*</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>">
+                    <input type="text" name="rg" id="rg" class="form-control" placeholder="RG" value="<?=$d->rg?>">
                     <label for="cpf">RG*</label>
                 </div>
                 <div class="form-floating mb-3">
@@ -118,7 +133,7 @@
     <div class="row">
         <div class="col">
             <div style="display:flex; justify-content:end">
-                <button type="submit" SalvarFoto class="btn btn-success btn-ms Botao<?=$md5?>">Salvar</button>
+                <button type="button" GerarFiltro class="btn btn-success btn-ms Botao<?=$md5?>">Filtrar</button>
                 <input type="hidden" id="codigo" value="<?=$_POST['cod']?>" />
             </div>
         </div>
@@ -162,6 +177,45 @@
             tipo = $("#tipo").val();
             municipio = $(this).val();
             filtro(municipio, tipo);
+        });
+
+        $("button[GerarFiltro]").click(function(){
+
+            nome = $("#nome").val();
+            cpf = $("#cpf").val();
+            rg = $("#rg").val();
+            telefone = $("#telefone").val();
+            email = $("#email").val();
+            municipio = $("#municipio").val();
+            tipo = $("#tipo").val();
+            bairro_comunidade = $("#bairro_comunidade").val();
+
+
+            $.ajax({
+                url:"src/se/filtro.php",
+                type:"POST",
+                data:{
+                    nome,
+                    cpf,
+                    rg,
+                    telefone,
+                    email,
+                    municipio,
+                    tipo,
+                    bairro_comunidade,
+                    acao:'gerar_filtro'
+                },
+                success:function(dados){
+                    $.ajax({
+                        url:"src/se/index.php",
+                        success:function(dados){
+                            $("#paginaHome").html(dados);
+                        }
+                    });
+                }
+            });
+
+
         });
     })
 </script>
