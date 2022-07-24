@@ -40,7 +40,15 @@
     }
 
 ?>
-
+<style>
+    .rotuloFultro{
+        padding:5px;
+        background-color:#d2ffc8;
+        border-radius:3px;
+        border:#eee;
+        color:#a1a1a1;
+    }
+</style>
 <div class="container">
     <div class="row mt-3">
         <div class="d-flex justify-content-between">
