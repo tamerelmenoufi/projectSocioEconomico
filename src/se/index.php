@@ -14,12 +14,14 @@
         $_SESSION['where_ou'] = [];
         if($_SESSION['filtro_nome']){
             $retorno[] = "<span class='rotuloFultro'>{$_SESSION['filtro_nome']} <i class='fa-solid fa-xmark' delFiltro='filtro_nome'></i></span>";
-            $n = explode(" ",$_SESSION['filtro_nome']);
-            $v = [];
-            for($i=0;$i<count($n);$i++){
-                $v[] = "a.nome LIKE '%{$n[$i]}%'";
-            }
-            $_SESSION['where_ou'][] = "(".implode(" OR ", $v).")";
+            // $n = explode(" ",$_SESSION['filtro_nome']);
+            // $v = [];
+            // for($i=0;$i<count($n);$i++){
+            //     $v[] = "a.nome LIKE '%{$n[$i]}%'";
+            // }
+            // $_SESSION['where_ou'][] = "(".implode(" OR ", $v).")";
+            $_SESSION['where_ou'][] = "a.nome LIKE '%{$_SESSION['filtro_nome']}%'";
+
         }
         if($_SESSION['filtro_cpf']){
             $retorno[] = "<span class='rotuloFultro'>{$_SESSION['filtro_cpf']} <i class='fa-solid fa-xmark' delFiltro='filtro_cpf'></i></span>";
