@@ -173,7 +173,8 @@
         }else{
 ?>
         <div style="display:flex; flex-direction:row; justify-content:center; align-items:center; width:100%; min-height:400px; background-color:green;">
-            <h3>Não tem nada </h3>
+            <i class="fa-solid fa-users" style="font-size:100px;"></i>
+            <p>Utilize o Filtro para mconsultar os beneficiários</p>
         </div>
 <?php
         }
