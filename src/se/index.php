@@ -80,6 +80,22 @@
         padding-left:5px;
         cursor:pointer;
     }
+    .SemRegistros{
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+        align-items:center;
+        width:100%;
+        min-height:400px;
+        background-color:green;
+        color:#a1a1a1;
+    }
+    .SemRegistros i{
+        font-size:100px;
+    }
+    .SemRegistros p{
+        font-size:10px;
+    }
 </style>
 <div class="container">
     <div class="row mt-3">
@@ -172,8 +188,8 @@
 <?php
         }else{
 ?>
-        <div style="display:flex; flex-direction:row; justify-content:center; align-items:center; width:100%; min-height:400px; background-color:green;">
-            <i class="fa-solid fa-users" style="font-size:100px;"></i>
+        <div class="SemRegistros">
+            <i class="fa-solid fa-users"></i>
             <p>Utilize o Filtro para mconsultar os beneficiários</p>
         </div>
 <?php
