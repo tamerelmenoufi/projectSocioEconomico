@@ -113,7 +113,7 @@
                     aria-controls="offcanvasDireita"
                     BuscaFiltro
                 >
-                    Filtro
+                    <i class="fa-solid fa-filter"></i> Filtro
                 </button>
             </div>
         </div>
