@@ -189,12 +189,16 @@
 
         <?
             }
+            if($_SESSION['filtro_total_reg'] >= $_SESSION['filtro_atual_reg']){
         ?>
         <div class="row">
             <button type="button" class="btn btn-outline-success btn-block mt-3 mb-3">
                 Carregar mais resultados
             </button>
         </div>
+        <?php
+            }
+        ?>
         </div>
         <?php
             }else{
