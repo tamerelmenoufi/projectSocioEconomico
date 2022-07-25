@@ -8,3 +8,10 @@
 
   </div>
 </div>
+
+<script>
+  $(function(){
+    Carregando('none');
+
+  })
+</script>

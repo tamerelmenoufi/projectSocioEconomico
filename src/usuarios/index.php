@@ -63,6 +63,7 @@
 
 <script>
     $(function(){
+        Carregando('none');
         $("button[editarUsuario]").click(function(){
 
             cod = $(this).attr("editarUsuario");

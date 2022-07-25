@@ -99,7 +99,7 @@
 
     <script>
         $(function(){
-
+            Carregando('none');
             $('#form-<?=$md5?>').submit(function (e) {
 
                 e.preventDefault();
