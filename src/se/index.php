@@ -120,7 +120,7 @@
     </div>
 
     <div class="row mt-3">
-
+        <div CampoResultados>
         <?php
 
 
@@ -195,6 +195,7 @@
                 Carregar mais resultados
             </button>
         </div>
+        </div>
         <?php
             }else{
         ?>
@@ -268,6 +269,18 @@
                 }
             });
 
+        });
+
+
+        $("button[maisResultados]").click(function(){
+            obj = $(this);
+            $.ajax({
+                url:"src/se/carregando.php",
+                success:function(dados){
+                    $("div[CampoResultados]").append(dados);
+                    obj.remove();
+                }
+            });
         });
     })
 </script>
