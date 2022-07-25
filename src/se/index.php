@@ -145,10 +145,10 @@
             $result = mysqli_query($con, $query);
             $total = mysqli_num_rows($result);
             $_SESSION['filtro_total_reg'] = $total;
-
+            $_SESSION['filtro_atual_reg'] = 50;
             Filtros($total);
 
-            $query = $query." limit 0, 20";
+            $query = $query." limit 0, 50";
             $result = mysqli_query($con, $query);
             if(mysqli_num_rows($result)){
             while($d = mysqli_fetch_object($result)){
@@ -189,6 +189,13 @@
 
         <?
             }
+        ?>
+        <div class="row">
+            <button type="button" class="btn btn-outline-success btn-block mt-3 mb-3">
+                Carregar mais resultados
+            </button>
+        </div>
+        <?php
             }else{
         ?>
         <div class="SemRegistros">
