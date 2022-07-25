@@ -54,7 +54,7 @@
         }
 
         if($retorno){
-            echo '<b>FILTRO: <small style="color:#a1a1a1; font-size:10px;">'.$t.' Registro(s)</small> </b>' . implode(" ", $retorno);
+            echo '<b>FILTRO: <small total style="color:#a1a1a1; font-size:10px;"></small> </b>' . implode(" ", $retorno);
         }
 
     }
@@ -228,6 +228,8 @@
     $(function(){
 
         Carregando('none');
+
+        $("small[total]").html('<?=$total?> Registro(s)')
 
         $("button[editarSe]").click(function(){
 
