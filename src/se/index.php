@@ -172,7 +172,7 @@
 <?php
         }else{
 ?>
-        <div style="width:100%; min-height:400px; bottom:0; background-color:green;">
+        <div style="width:100%; min-height:400px; background-color:green;">
             <h3>Não tem nada </h3>
         </div>
 <?php
