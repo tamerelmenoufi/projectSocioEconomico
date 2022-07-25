@@ -22,7 +22,7 @@
         $vetor = $v['vetor'];
         $rotulo = $v['rotulo'];
 
-        $lista[] = '<div class="mb-3"><label for="email">'.$rotulo.'</label></div>';
+        $lista[] = '<div class="mb-3"><label for="'.$campo.'"><p>'.$rotulo.'</p></label></div>';
         for($i=0;$i<count($vetor);$i++){
             $lista[] = '  <div class="mb-3 form-check">
             <input type="checkbox" name="'.$campo.'[]" value="'.$vetor[$i].'" class="form-check-input" id="'.$campo.$i.'">
