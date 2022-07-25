@@ -193,7 +193,7 @@
             if($_SESSION['filtro_total_reg'] >= $_SESSION['filtro_atual_reg']){
         ?>
         <div class="row">
-            <button type="button" class="btn btn-outline-success btn-block mt-3 mb-3">
+            <button maisResultados type="button" class="btn btn-outline-success btn-block mt-3 mb-3">
                 Carregar mais resultados
             </button>
         </div>
@@ -279,11 +279,13 @@
 
         $("button[maisResultados]").click(function(){
             obj = $(this);
+            Carregando();
             $.ajax({
                 url:"src/se/carregando.php",
                 success:function(dados){
                     $("div[CampoResultados]").append(dados);
                     obj.remove();
+                    Carregando('none');
                 }
             });
         });
