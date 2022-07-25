@@ -6,7 +6,6 @@
         // exit();
     }
 
-
     function Filtros($t){
         global $_SESSION;
         global $con;

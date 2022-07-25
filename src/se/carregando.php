@@ -3,6 +3,11 @@
 
     $_SESSION['filtro_atual_reg'] = ($_SESSION['filtro_atual_reg'] + 50);
 
+
+    if($_SESSION['where_ou']){
+        $where = implode(" AND ", $_SESSION['where_ou']);
+    }
+
     $query = "select
                     a.*,
                     b.municipio as municipio,
