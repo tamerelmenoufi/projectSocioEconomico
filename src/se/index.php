@@ -143,6 +143,7 @@
 
                         order by nome limit 0, 20";
             $result = mysqli_query($con, $query);
+            if(mysqli_num_rows($result)){
             while($d = mysqli_fetch_object($result)){
         ?>
 
@@ -181,6 +182,14 @@
 
         <?
             }
+            }else{
+        ?>
+        <div class="SemRegistros">
+            <i class="fa-solid fa-face-sad-tear"></i>
+            <p>Não foi encontrado nenhum registro com o filtro definido!</p>
+        </div>
+        <?php
+            }
         ?>
     </div>
 </div>
@@ -189,7 +198,7 @@
 ?>
         <div class="SemRegistros">
             <i class="fa-solid fa-users"></i>
-            <p>Utilize o Filtro para mconsultar os beneficiários</p>
+            <p>Utilize o Filtro para consultar os beneficiários</p>
         </div>
 <?php
         }
