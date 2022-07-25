@@ -101,9 +101,9 @@
         <div class="d-flex justify-content-between">
             <div class="p-10"><h3>Registros de Beneficiarios</h3></div>
             <div class="p-2">
-                <button class="btn btn-primary">
+                <!-- <button class="btn btn-primary">
                     Novo
-                </button>
+                </button> -->
 
                 <button
                     class="btn btn-warning"
