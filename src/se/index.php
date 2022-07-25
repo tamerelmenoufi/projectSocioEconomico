@@ -122,7 +122,9 @@
         <div CampoResultados>
         <?php
 
-
+            echo "<div class='row'>";
+            Filtros($total);
+            echo "</div>";
 
             if($_SESSION['where_ou']){
                 $where = implode(" AND ", $_SESSION['where_ou']);
@@ -145,11 +147,11 @@
             $total = mysqli_num_rows($result);
             $_SESSION['filtro_total_reg'] = $total;
             $_SESSION['filtro_atual_reg'] = 50;
-            echo "<div class='row'>";
-            Filtros($total);
-            echo "</div>";
+
             $query = $query." limit 0, 50";
             $result = mysqli_query($con, $query);
+
+
             if(mysqli_num_rows($result)){
             while($d = mysqli_fetch_object($result)){
         ?>
