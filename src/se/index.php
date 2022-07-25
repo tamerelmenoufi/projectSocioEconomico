@@ -55,7 +55,7 @@
         }
 
         if($retorno){
-            echo '<b>FILTRO: <small>'.$t.' Registro(s)</small> </b>' . implode(" ", $retorno);
+            echo '<b>FILTRO: <small style="color:#a1a1a1; font-size:10px;">'.$t.' Registro(s)</small> </b>' . implode(" ", $retorno);
         }
 
     }
