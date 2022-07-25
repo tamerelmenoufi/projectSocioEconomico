@@ -191,7 +191,7 @@
             }
         ?>
         <div class="row">
-            <div class="col">
+            <div class="col-12">
                 <button type="button" class="btn btn-outline-success btn-block mt-3 mb-3">
                     Carregar mais resultados
                 </button>
