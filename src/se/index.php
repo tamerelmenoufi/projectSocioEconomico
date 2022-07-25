@@ -277,7 +277,7 @@
         });
 
 
-        $("button[maisResultados]").click(function(){
+        $(document).on('click', 'button[maisResultados]', function(){
             obj = $(this);
             Carregando();
             $.ajax({
