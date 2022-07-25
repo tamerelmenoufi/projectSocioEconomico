@@ -172,7 +172,7 @@
 <?php
         }else{
 ?>
-        <div style="width:100%; min-height:400px; background-color:green;">
+        <div style="position:flex; flex-direction:row; justify-items:center; content-align:center; width:100%; min-height:400px; background-color:green;">
             <h3>Não tem nada </h3>
         </div>
 <?php
