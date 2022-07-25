@@ -104,7 +104,7 @@
                     <select name="bairro_comunidade" id="bairro_comunidade" class="form-control" placeholder="Bairro">
                         <option value="">::Selecione a Localização::</option>
                         <?php
-                            $q = "select * from bairros_comunidades where municipio = '{$_SESSION['filtro_municipio']}' order by descricao";
+                            $q = "select * from bairros_comunidades where municipio = '{$_SESSION['filtro_municipio']}' ".(($_SESSION['filtro_tipo'])?" and tipo = '{$_SESSION['filtro_tipo']}'":false)." order by descricao";
                             $r = mysqli_query($con, $q);
                             while($s = mysqli_fetch_object($r)){
                         ?>
