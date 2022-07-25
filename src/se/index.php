@@ -87,7 +87,6 @@
         align-items:center;
         width:100%;
         min-height:400px;
-        background-color:green;
         color:#a1a1a1;
     }
     .SemRegistros i{
