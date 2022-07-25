@@ -141,7 +141,7 @@
 
                         where 1=1 ".(($where)?" AND ".$where:false)."
 
-                        order by nome limit 0, 20";
+                        order by nome";
             $result = mysqli_query($con, $query);
             $total = mysqli_num_rows($result);
             $_SESSION['filtro_total_reg'] = $total;
