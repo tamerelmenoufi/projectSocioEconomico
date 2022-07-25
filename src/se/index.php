@@ -168,12 +168,12 @@
                         >
                             <i class="fa-solid fa-pen-to-square"></i>
                         </button>
-                        <button
+                        <!-- <button
                             class="btn btn-danger"
                             excluirSe="<?=$d->codigo?>"
                         >
                             <i class="fa-solid fa-trash"></i>
-                        </button>
+                        </button> -->
 
                     </div>
                 </div>
