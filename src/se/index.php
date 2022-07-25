@@ -280,7 +280,7 @@
         });
 
 
-        $(document).off.('click').on('click', 'button[maisResultados]', function(){
+        $(document).off('click').on('click', 'button[maisResultados]', function(){
             obj = $(this);
             Carregando();
             $.ajax({
