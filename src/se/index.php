@@ -191,9 +191,11 @@
             }
         ?>
         <div class="row">
-            <button type="button" class="btn btn-outline-success btn-block m-3">
-                Carregar mais resultados
-            </button>
+            <div class="col">
+                <button type="button" class="btn btn-outline-success btn-block mt-3 mb-3">
+                    Carregar mais resultados
+                </button>
+            </div>
         </div>
         <?php
             }else{
