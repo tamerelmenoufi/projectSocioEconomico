@@ -177,6 +177,18 @@
                         >
                             <i class="fa-solid fa-pen-to-square"></i>
                         </button>
+
+                        <button
+                            class="btn btn-primary"
+                            data-bs-toggle="offcanvas"
+                            href="#offcanvasDireita"
+                            role="button"
+                            aria-controls="offcanvasDireita"
+                            pesquisaSe="<?=$d->codigo?>"
+                        >
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+
                         <!-- <button
                             class="btn btn-danger"
                             excluirSe="<?=$d->codigo?>"
@@ -237,6 +249,24 @@
             Carregando();
             $.ajax({
                 url:"src/se/form.php",
+                type:"POST",
+                data:{
+                    cod,
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            })
+
+        });
+
+
+        $("button[pesquisaSe]").click(function(){
+
+            cod = $(this).attr("pesquisaSe");
+            Carregando();
+            $.ajax({
+                url:"src/se/se.php",
                 type:"POST",
                 data:{
                     cod,
