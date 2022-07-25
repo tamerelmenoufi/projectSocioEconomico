@@ -7,7 +7,7 @@
     }
 
 
-    function Filtros(){
+    function Filtros($t){
         global $_SESSION;
         global $con;
         $retorno = [];
@@ -55,7 +55,7 @@
         }
 
         if($retorno){
-            echo '<b>FILTRO: </b>' . implode(" ", $retorno);
+            echo '<b>FILTRO: <small>'.$t.' Registro(s)</small> </b>' . implode(" ", $retorno);
         }
 
     }
@@ -146,7 +146,7 @@
             $total = mysqli_num_rows($result);
             $_SESSION['filtro_total_reg'] = $total;
 
-            Filtros();
+            Filtros($total);
 
             $query = $query." limit 0, 20";
             $result = mysqli_query($con, $query);
