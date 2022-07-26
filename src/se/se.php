@@ -34,6 +34,23 @@
         }
     }
 
+    function montaRadio($v){
+        $campo = $v['campo'];
+        $vetor = $v['vetor'];
+        $rotulo = $v['rotulo'];
+
+        $lista[] = '<div class="mb-3"><label for="'.$campo.'"><b>'.$rotulo.'</b></label></div>';
+        for($i=0;$i<count($vetor);$i++){
+            $lista[] = '  <div class="mb-3 form-check">
+            <input type="radio" name="'.$campo.'" value="'.$vetor[$i].'" class="form-check-input" id="'.$campo.$i.'">
+            <label class="form-check-label" for="'.$campo.$i.'">'.$vetor[$i].'</label>
+            </div>';
+        }
+        if($lista){
+            return implode(" ",$lista);
+        }
+    }
+
 
     $query = "select * from se where codigo = '{$_POST['cod']}'";
     $result = mysqli_query($con, $query);
@@ -124,36 +141,301 @@
                     <label for="email">Bairro / Comunidade</label>
                 </div>
 
+                <div class="form-floating mb-3">
+                    <select name="local" id="local" class="form-control" >
+                        <option value="">::Selecione a Zona</option>
+                        <option value="Urbano" <?=(($d->local == 'Urbano')?'selected':false)?>>Urbano</option>
+                        <option value="Rural" <?=(($d->local == 'Rural')?'selected':false)?>>Rural</option>
+                    </select>
+                    <label for="email">Zona</label>
+                </div>
 
+                <div class="form-floating mb-3">
+                    <input type="text" name="endereco" id="endereco" class="form-control" placeholder="Endereço" value="<?=$d->endereco?>">
+                    <label for="endereco">Endereço</label>
+                </div>
 
+                <div class="form-floating mb-3">
+                    <input type="text" name="ponto_referencia" id="ponto_referencia" class="form-control" placeholder="Ponto de Referência" value="<?=$d->ponto_referencia?>">
+                    <label for="ponto_referencia">Ponto de Referência</label>
+                </div>
 
+                <div class="form-floating mb-3">
+                    <select name="genero" id="genero" class="form-control" >
+                        <option value="">::Selecione o Genero</option>
+                        <option value="Masculino" <?=(($d->genero == 'Masculino')?'selected':false)?>>Masculino</option>
+                        <option value="Feminino" <?=(($d->genero == 'Feminino')?'selected':false)?>>Feminino</option>
+                    </select>
+                    <label for="email">Genero</label>
+                </div>
 
+                <div class="form-floating mb-3">
+                    <input type="text" name="data_nascimento" id="data_nascimento" class="form-control" placeholder="Ponto de Referência" value="<?=$d->data_nascimento?>">
+                    <label for="data_nascimento">Data de Nascimento</label>
+                </div>
 
+                <div class="form-floating mb-3">
+                    <select name="estado_civil" id="estado_civil" class="form-control" >
+                        <option value="">::Selecione o Genero</option>
+                        <option value="Solteiro" <?=(($d->estado_civil == 'Solteiro')?'selected':false)?>>Solteiro</option>
+                        <option value="Casado" <?=(($d->estado_civil == 'Casado')?'selected':false)?>>Casado</option>
+                        <option value="Divorciado" <?=(($d->estado_civil == 'Divorciado')?'selected':false)?>>Divorciado</option>
+                        <option value="Viúvo" <?=(($d->estado_civil == 'Viúvo')?'selected':false)?>>Viúvo</option>
+                        <option value="Outros" <?=(($d->estado_civil == 'Outros')?'selected':false)?>>Outros</option>
+                    </select>
+                    <label for="email">Estado Civil</label>
+                </div>
 
-
-
-
-
-
-
+                <div class="form-floating mb-3">
+                    <?=montaCheckbox([
+                        'rotulo' => 'Meio(s) de Trasporte(s)',
+                        'campo' => 'meio_transporte',
+                        'vetor' => [
+                            'A Pé',
+                            'Bicicleta',
+                            'Moto',
+                            'Ônibus',
+                            'Carro próprio',
+                            'Fluvial',
+                            'Outros'
+                        ]
+                    ])?>
+                </div>
 
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="perfil" id="perfil" class="form-control" placeholder="perfil" value="<?=$d->perfil?>">
-                    <label for="perfil">Perfil*</label>
+                    <?=montaRadio([
+                        'rotulo' => 'Tipo de Imóvel ',
+                        'campo' => 'tipo_imovel',
+                        'vetor' => [
+                            'Própria',
+                            'Emprestado/Cedido',
+                            'Financiado',
+                            'Invasão',
+                            'Alugado',
+                            'Outros',
+                        ]
+                    ])?>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <?=montaCheckbox([
+                        'rotulo' => 'Tipo de Moradia',
+                        'campo' => 'tipo_moradia',
+                        'vetor' => [
+                            'Madeira',
+                            'Alvenaria',
+                            'Palafita',
+                            'Flutuante',
+                            'Apartamento',
+                            'Outros',
+                        ]
+                    ])?>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <?=montaRadio([
+                        'rotulo' => 'Quantidade de Cômodos',
+                        'campo' => 'quantidade_comodos',
+                        'vetor' => [
+                            '1 Cômodo',
+                            '2 Cômodos',
+                            '3 Cômodos',
+                            '4 Cômodos',
+                            'Mais de 4 Cômodos',
+                        ]
+                    ])?>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <?=montaRadio([
+                        'rotulo' => 'Grau de Escolaridade',
+                        'campo' => 'grau_escolaridade',
+                        'vetor' => [
+                            'Ensino Fundamental I Completo',
+                            'Ensino Fundamental II Completo',
+                            'Ensino Médio Completo',
+                            'Ensino Técnico/Profissionalizante',
+                            'Ensino Superior Completo',
+                        ]
+                    ])?>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <?=montaRadio([
+                        'rotulo' => 'Cursos Técnico/Profissionalizante',
+                        'campo' => 'curos_profissionais',
+                        'vetor' => [
+                            'Sim',
+                            'Não',
+                        ]
+                    ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="login" id="login" class="form-control" placeholder="Login" value="<?=$d->login?>">
-                    <label for="login">Login*</label>
+                    <textarea name="curos_profissionais" id="curos_profissionais" class="form-control" placeholder="Cursos Técnico/Profissionalizante" ><?=$d->curos_profissionais?></textarea>
+                    <label for="curos_profissionais">Descreve os Cursos Técnico/Profissionalizante</label>
                 </div>
+
                 <div class="form-floating mb-3">
-                    <input type="text" name="senha" id="senha" class="form-control" placeholder="Senha" value="<?=$d->senha?>">
-                    <label for="senha">Senha*</label>
+                    <?=montaRadio([
+                        'rotulo' => 'Cursos Técnico/Profissionalizante',
+                        'campo' => 'curos_profissionais',
+                        'vetor' => [
+                            'Nenhuma',
+                            '1 salário mínimo',
+                            '2 salários mínimos',
+                            '3 salários mínimos',
+                            '4 salários mínimos',
+                            'Acima de 4 Salários mínimos'
+                        ]
+                    ])?>
                 </div>
+
                 <div class="form-floating mb-3">
-                    <input type="text" name="situacao" id="situacao" class="form-control" placeholder="Situação" value="<?=$d->situacao?>">
-                    <label for="situacao">Situação*</label>
+                    <?=montaRadio([
+                        'rotulo' => 'Denefício Social',
+                        'campo' => 'beneficio_social',
+                        'vetor' => [
+                            'Sim',
+                            'Não',
+                        ]
+                    ])?>
                 </div>
+
+                <div class="form-floating mb-3">
+                    <textarea name="beneficio_social_descricao" id="beneficio_social_descricao" class="form-control" placeholder="Descrição do Benefício Social" ><?=$d->beneficio_social_descricao?></textarea>
+                    <label for="beneficio_social_descricao">Descrição do Benefício Social</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <?=montaRadio([
+                        'rotulo' => 'Serviço de Saúde',
+                        'campo' => 'servico_saude',
+                        'vetor' => [
+                           'SUS',
+                            'Associações/PlanodeSaúde',
+                            'Outros',
+                        ]
+                    ])?>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <?=montaRadio([
+                        'rotulo' => 'Vacina COVID19',
+                        'campo' => 'vacina_covid',
+                        'vetor' => [
+                            'Não',
+                            '1a Dose',
+                            '2a Dose',
+                            '3a Dose',
+                            '4a Dose',
+                        ]
+                    ])?>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <?=montaCheckbox([
+                        'rotulo' => 'Opinião falhas na Saúde',
+                        'campo' => 'opiniao_saude',
+                        'vetor' => [
+                            'Acesso a Medicamentos',
+                            'Marcação de Consultas',
+                            'Realização de Exames',
+                            'Realização de Procedimentos Médicos e/ou Cirurgia',
+                        ]
+                    ])?>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <?=montaCheckbox([
+                        'rotulo' => 'Opinião falhas na Educação',
+                        'campo' => 'opiniao_educacao',
+                        'vetor' => [
+                            'Não Tem',
+                        ]
+                    ])?>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <?=montaCheckbox([
+                        'rotulo' => 'Opinião falhas na Cidadania',
+                        'campo' => 'opiniao_cidadania',
+                        'vetor' => [
+                            'Não Tem',
+                        ]
+                    ])?>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <?=montaCheckbox([
+                        'rotulo' => 'Opinião falhas na Infraestrutura',
+                        'campo' => 'opiniao_infraestrutura',
+                        'vetor' => [
+                            'Má Iluminação',
+                            'Ausência de Asfalto e/ou Precariedade',
+                            'Falta de Saneamento básico e/ou Melhoria',
+                            'Abastecimento de Água',
+                            'Abastecimento de Energia',
+                        ]
+                    ])?>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <?=montaCheckbox([
+                        'rotulo' => 'Opinião falhas na Assistência Social',
+                        'campo' => 'opiniao_assistencia_social',
+                        'vetor' => [
+                            'Alimentação Básica',
+                            'Auxílios Governamentais',
+                            'Assistência Psicológica',
+                        ]
+                    ])?>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <?=montaCheckbox([
+                        'rotulo' => 'Opinião falhas nos Direitos Humanos',
+                        'campo' => 'opiniao_direitos_humanos',
+                        'vetor' => [
+                            'Não Tem',
+                        ]
+                    ])?>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <?=montaCheckbox([
+                        'rotulo' => 'Opinião falhas na Segurança',
+                        'campo' => 'opiniao_seguranca',
+                        'vetor' => [
+                            'Atendimento de Chamado para Policiamento',
+                        ]
+                    ])?>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <?=montaCheckbox([
+                        'rotulo' => 'Opinião falhas no Esporte e Lazer',
+                        'campo' => 'opiniao_esporte_lazer',
+                        'vetor' => [
+                            'Areas para pratica de atividades esportivas',
+                        ]
+                    ])?>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <textarea name="opiniao_outros" id="opiniao_outros" class="form-control" placeholder="Outras Opiniões" ><?=$d->opiniao_outros?></textarea>
+                    <label for="opiniao_outros">Outras Opiniões</label>
+                </div>
+
+
             </div>
         </div>
 
