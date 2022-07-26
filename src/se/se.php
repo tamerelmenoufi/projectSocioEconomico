@@ -91,6 +91,41 @@
                 </div>
 
                 <div class="form-floating mb-3">
+                    <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$d->email?>">
+                    <select name="municipio" id="municipio" class="form-control" >
+                        <option value="">::Selecione o Município</option>
+                        <?php
+                            $q = "select * from municipios order by municipio asc";
+                            $r = mysqli_query($con, $q);
+                            while($s = mysqli_fetch_object($result)){
+                        ?>
+                        <option value="<?=$s->codigo?>" <?=(($d->municipio == $s->codigo)?'selected':false)?>><?=$s->municipio?></option>
+                        <?php
+                            }
+                        ?>
+                    </select>
+                    <label for="email">Município</label>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="form-floating mb-3">
                     <input type="text" name="perfil" id="perfil" class="form-control" placeholder="perfil" value="<?=$d->perfil?>">
                     <label for="perfil">Perfil*</label>
                 </div>
