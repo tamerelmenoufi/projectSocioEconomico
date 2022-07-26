@@ -508,6 +508,7 @@
                     data: campos,
                     success:function(dados){
                         $.alert(dados.query);
+                        Carregando('none');
                     },
                     error:function(erro){
 
