@@ -189,6 +189,17 @@
                             <i class="fa-solid fa-pen-to-square"></i>
                         </button>
 
+                        <button
+                            class="btn btn-primary"
+                            data-bs-toggle="offcanvas"
+                            href="#offcanvasDireita"
+                            role="button"
+                            aria-controls="offcanvasDireita"
+                            SeEf="<?=$d->codigo?>"
+                        >
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+
                         <!-- <button
                             class="btn btn-danger"
                             excluirSe="<?=$d->codigo?>"
@@ -278,6 +289,22 @@
 
         });
 
+        $("button[SeEf]").click(function(){
+
+            cod = $(this).attr("pesquisaSe");
+            Carregando();
+            $.ajax({
+                url:"src/se/ef.php",
+                type:"POST",
+                data:{
+                    cod,
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            })
+
+        });
 
         $("button[BuscaFiltro]").click(function(){
 
