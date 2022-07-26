@@ -108,7 +108,21 @@
 
 
 
-
+                <div class="form-floating mb-3">
+                    <select name="bairro_comunidade" id="bairro_comunidade" class="form-control" >
+                        <option value="">::Selecione o Bairro/Comunidade</option>
+                        <?php
+                            $q = "select * from bairros_comunidades where municipio='{$d->municipio}' order by descricao asc";
+                            $r = mysqli_query($con, $q);
+                            while($s = mysqli_fetch_object($r)){
+                        ?>
+                        <option value="<?=$s->codigo?>" <?=(($d->bairro_comunidade == $s->codigo)?'selected':false)?>><?=$s->municipio?></option>
+                        <?php
+                            }
+                        ?>
+                    </select>
+                    <label for="email">Bairro / Comunidade</label>
+                </div>
 
 
 
