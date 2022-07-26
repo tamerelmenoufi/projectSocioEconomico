@@ -91,7 +91,6 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$d->email?>">
                     <select name="municipio" id="municipio" class="form-control" >
                         <option value="">::Selecione o Município</option>
                         <?php
