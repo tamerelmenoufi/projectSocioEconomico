@@ -5,10 +5,31 @@
     if($_POST['acao'] == 'salvar'){
 
 
+        $data = $_POST;
+        $attr = [];
+
+        unset($data['codigo']);
+        unset($data['acao']);
+
+        foreach ($data as $name => $value) {
+            $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
+        }
+        $attr = implode(', ', $attr);
+
+        if($_POST['codigo']){
+            $query = "update usuarios set {$attr} where codigo = '{$_POST['codigo']}'";
+            // mysqli_query($con, $query);
+            $cod = $_POST['codigo'];
+        }else{
+            $query = "insert into usuarios set data_cadastro = NOW(), {$attr}";
+            // mysqli_query($con, $query);
+            $cod = mysqli_insert_id($con);
+        }
 
         $retorno = [
             'status' => true,
-            'codigo' => $cod
+            'codigo' => $cod,
+            'query' => $query,
         ];
 
         echo json_encode($retorno);
@@ -486,7 +507,7 @@
                     mimeType: 'multipart/form-data',
                     data: campos,
                     success:function(dados){
-
+                        $.alert(dados.query);
                     },
                     error:function(erro){
 
