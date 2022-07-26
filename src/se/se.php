@@ -507,7 +507,7 @@
                     mimeType: 'multipart/form-data',
                     data: campos,
                     success:function(dados){
-                        $.alert(dados.query);
+                        $.alert(dados);
                         Carregando('none');
                     },
                     error:function(erro){
