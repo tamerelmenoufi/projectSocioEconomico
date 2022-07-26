@@ -309,8 +309,8 @@
 
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Cursos Técnico/Profissionalizante',
-                        'campo' => 'curos_profissionais',
+                        'rotulo' => 'Renda Mensal',
+                        'campo' => 'renda_mensal',
                         'vetor' => [
                             'Nenhuma',
                             '1 salário mínimo',
