@@ -96,7 +96,7 @@
                         <?php
                             $q = "select * from municipios order by municipio asc";
                             $r = mysqli_query($con, $q);
-                            while($s = mysqli_fetch_object($result)){
+                            while($s = mysqli_fetch_object($r)){
                         ?>
                         <option value="<?=$s->codigo?>" <?=(($d->municipio == $s->codigo)?'selected':false)?>><?=$s->municipio?></option>
                         <?php
