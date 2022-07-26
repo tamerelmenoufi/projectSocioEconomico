@@ -12,6 +12,9 @@
         unset($data['acao']);
 
         foreach ($data as $name => $value) {
+
+            if(is_array($value)) $value = json_encode($value);
+
             $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
         }
         $attr = implode(', ', $attr);
