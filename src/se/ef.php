@@ -159,12 +159,12 @@
                         'campo' => 'ef_necessita_documentos',
                         'vetor' => [
                             'Não',
-                            'RCN',
-                            'RCC',
-                            'RG',
-                            'CPF',
-                            'CTPS',
-                            'TE',
+                            'RCN', // - Registro Civil de Nascimento
+                            'RCC', // -
+                            'RG', // - Registro Geral
+                            'CPF', //- Cadastro de Pessoa Física
+                            'CTPS', // - Carteira de Trabalho e Previdencia Social
+                            'TE', //- Título Eleitoral
                         ]
                     ])?>
                 </div>
