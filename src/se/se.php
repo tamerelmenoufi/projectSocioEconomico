@@ -303,7 +303,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Denefício Social',
+                        'rotulo' => 'Benefício Social',
                         'campo' => 'beneficio_social',
                         'vetor' => [
                             'Sim',
@@ -441,8 +441,8 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <textarea name="opiniao_outros" id="opiniao_outros" class="form-control" placeholder="Outras Opiniões" ><?=$d->opiniao_outros?></textarea>
-                    <label for="opiniao_outros">Outras Opiniões</label>
+                    <textarea name="opiniao_outros" id="opiniao_outros" class="form-control" placeholder="Outras Opiniões / Detalhes" ><?=$d->opiniao_outros?></textarea>
+                    <label for="opiniao_outros">Outras Opiniões / Detalhes</label>
                 </div>
 
 
