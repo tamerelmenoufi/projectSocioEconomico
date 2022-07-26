@@ -69,26 +69,105 @@
         <div class="row">
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>">
-                    <label for="nome">Nome*</label>
+                    <input type="text" class="form-control" id="ef_nome" name="ef_nome" placeholder="Nome completo" value="<?=$d->ef_nome?>">
+                    <label for="ef_nome">Nome</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <?=montaRadio([
+                        'rotulo' => 'Grau de Parentesco',
+                        'campo' => 'ef_grau_parentesco',
+                        'vetor' => [
+                            'Não',
+                        ]
+                    ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>">
-                    <label for="cpf">CPF*</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" name="rg" id="rg" class="form-control" placeholder="RG" value="<?=$d->rg?>">
-                    <label for="rg">RG*</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" name="rg_orgao" id="rg_orgao" class="form-control" placeholder="RG - Orgão Emissor" value="<?=$d->rg_orgao?>">
-                    <label for="rg_orgao">RG (Orgão Emissor)*</label>
+                    <input type="text" name="ef_data_nascimento" id="ef_data_nascimento" class="form-control" placeholder="Data de Nascimento" value="<?=$d->ef_data_nascimento?>">
+                    <label for="ef_data_nascimento">Data de Nascimento</label>
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" name="telefone" id="telefone" class="form-control" placeholder="telefone" value="<?=$d->telefone?>">
                     <label for="telefone">Telefone*</label>
                 </div>
+                <div class="form-floating mb-3">
+                    <?=montaRadio([
+                        'rotulo' => 'Renda Mensal',
+                        'campo' => 'ef_renda_mensal',
+                        'vetor' => [
+                            'Nenhuma',
+                            '1 salário mínimo',
+                            '2 salários mínimos',
+                            '3 salários mínimos',
+                            '4 salários mínimos',
+                            'Acima de 4 Salários mínimos'
+                        ]
+                    ])?>
+                </div>
+                <div class="form-floating mb-3">
+                    <?=montaRadio([
+                        'rotulo' => 'Tratamento de Saúde',
+                        'campo' => 'ef_tratamento_saude',
+                        'vetor' => [
+                            'Não',
+                            'Sim',
+                        ]
+                    ])?>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="ef_tratamento_saude_descricao" id="ef_tratamento_saude_descricao" class="form-control" placeholder="Descreva o Tratamento de Saúde" value="<?=$d->ef_tratamento_saude_descricao?>">
+                    <label for="ef_tratamento_saude_descricao">Descreva o Tratamento de Saúde</label>
+                </div>
 
+                <div class="form-floating mb-3">
+                    <?=montaRadio([
+                        'rotulo' => 'Doenças Crônicas',
+                        'campo' => 'ef_doencas_cronicas	',
+                        'vetor' => [
+                            'Não',
+                            'Sim',
+                        ]
+                    ])?>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="ef_doencas_cronicas_descricao" id="ef_doencas_cronicas_descricao" class="form-control" placeholder="Descreva o Tratamento de Saúde" value="<?=$d->ef_doencas_cronicas_descricao?>">
+                    <label for="ef_doencas_cronicas_descricao">Descreva a(s) Doença(s) Crônica(s)</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <?=montaRadio([
+                        'rotulo' => 'Portador de Deficiência',
+                        'campo' => 'ef_portador_deficiencia',
+                        'vetor' => [
+                            'Não',
+                            'Sim',
+                        ]
+                    ])?>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="ef_portador_deficiencia_descricao" id="ef_portador_deficiencia_descricao" class="form-control" placeholder="Descreva a Definiência" value="<?=$d->ef_portador_deficiencia_descricao?>">
+                    <label for="ef_portador_deficiencia_descricao">Descreva a Definiência</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="ef_gastos_saude" id="rg_orgao" class="form-control" placeholder="Gastos com Saúde" value="<?=$d->ef_gastos_saude?>">
+                    <label for="ef_gastos_saude">Gastos com Saúde</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <?=montaCheckbox([
+                        'rotulo' => 'Necessita de Documentos',
+                        'campo' => 'ef_necessita_documentos',
+                        'vetor' => [
+                            'Não',
+                            'RCN',
+                            'RCC',
+                            'RG',
+                            'CPF',
+                            'CTPS',
+                            'TE',
+                        ]
+                    ])?>
+                </div>
 
             </div>
         </div>
