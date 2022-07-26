@@ -156,18 +156,26 @@
                 </div>
 
                 <div class="form-floating mb-3">
+                    <input type="text" name="cep" id="cep" class="form-control" placeholder="CEP" value="<?=$d->cep?>">
+                    <label for="cep">CEP</label>
+                </div>
+
+                <div class="form-floating mb-3">
                     <input type="text" name="ponto_referencia" id="ponto_referencia" class="form-control" placeholder="Ponto de Referência" value="<?=$d->ponto_referencia?>">
                     <label for="ponto_referencia">Ponto de Referência</label>
                 </div>
 
                 <div class="form-floating mb-3">
-                    <select name="genero" id="genero" class="form-control" >
-                        <option value="">::Selecione o Genero</option>
-                        <option value="Masculino" <?=(($d->genero == 'Masculino')?'selected':false)?>>Masculino</option>
-                        <option value="Feminino" <?=(($d->genero == 'Feminino')?'selected':false)?>>Feminino</option>
-                    </select>
-                    <label for="email">Genero</label>
+                    <?=montaRadio([
+                        'rotulo' => 'Genero',
+                        'campo' => 'genero',
+                        'vetor' => [
+                            'Masculino',
+                            'Feminino',
+                        ]
+                    ])?>
                 </div>
+
 
                 <div class="form-floating mb-3">
                     <input type="text" name="data_nascimento" id="data_nascimento" class="form-control" placeholder="Ponto de Referência" value="<?=$d->data_nascimento?>">
@@ -175,15 +183,17 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <select name="estado_civil" id="estado_civil" class="form-control" >
-                        <option value="">::Selecione o Genero</option>
-                        <option value="Solteiro" <?=(($d->estado_civil == 'Solteiro')?'selected':false)?>>Solteiro</option>
-                        <option value="Casado" <?=(($d->estado_civil == 'Casado')?'selected':false)?>>Casado</option>
-                        <option value="Divorciado" <?=(($d->estado_civil == 'Divorciado')?'selected':false)?>>Divorciado</option>
-                        <option value="Viúvo" <?=(($d->estado_civil == 'Viúvo')?'selected':false)?>>Viúvo</option>
-                        <option value="Outros" <?=(($d->estado_civil == 'Outros')?'selected':false)?>>Outros</option>
-                    </select>
-                    <label for="email">Estado Civil</label>
+                    <?=montaRadio([
+                        'rotulo' => 'Estado Civil',
+                        'campo' => 'estado_civil',
+                        'vetor' => [
+                            'Solteiro',
+                            'Casado',
+                            'Divorciado',
+                            'Viúvo',
+                            'Outros',
+                        ]
+                    ])?>
                 </div>
 
                 <div class="form-floating mb-3">
