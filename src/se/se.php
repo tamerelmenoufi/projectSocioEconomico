@@ -13,9 +13,10 @@
 
         foreach ($data as $name => $value) {
 
-            // if(is_array($value)) {
-            //     $value = json_encode($value);
-            // }else{
+            if(is_array($value)) {
+                $value = json_encode($value);
+            }
+            // else{
             //     $value = mysqli_real_escape_string($con, $value);
             // }
 
