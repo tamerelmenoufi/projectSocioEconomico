@@ -62,7 +62,7 @@
             </div>';
         }
         if($lista){
-            return print_r($dados, true).implode(" ",$lista);
+            return print_r($dados).implode(" ",$lista);
         }
     }
 
