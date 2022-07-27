@@ -20,7 +20,7 @@
             //     $value = mysqli_real_escape_string($con, $value);
             // }
 
-            $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
+            $attr[] = "{$name} = '" . mysqli_real_escape_string($con, utf8_decode($value)) . "'";
         }
         $attr = implode(', ', $attr);
 
