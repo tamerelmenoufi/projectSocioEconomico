@@ -45,11 +45,19 @@
         $campo = $v['campo'];
         $vetor = $v['vetor'];
         $rotulo = $v['rotulo'];
+        $dados = json_decode($v['dados']);
 
         $lista[] = '<div class="mb-3"><label for="'.$campo.'"><b>'.$rotulo.'</b></label></div>';
         for($i=0;$i<count($vetor);$i++){
             $lista[] = '  <div class="mb-3 form-check">
-            <input type="checkbox" name="'.$campo.'[]" value="'.$vetor[$i].'" class="form-check-input" id="'.$campo.$i.'">
+            <input
+                    type="checkbox"
+                    name="'.$campo.'[]"
+                    value="'.$vetor[$i].'"
+                    class="form-check-input"
+                    id="'.$campo.$i.'"
+                    '.((in_array($vetor[$i],$dados))?'checked':false).'
+            >
             <label class="form-check-label" for="'.$campo.$i.'">'.$vetor[$i].'</label>
             </div>';
         }
@@ -62,11 +70,19 @@
         $campo = $v['campo'];
         $vetor = $v['vetor'];
         $rotulo = $v['rotulo'];
+        $dados = json_decode($v['dados']);
 
         $lista[] = '<div class="mb-3"><label for="'.$campo.'"><b>'.$rotulo.'</b></label></div>';
         for($i=0;$i<count($vetor);$i++){
             $lista[] = '  <div class="mb-3 form-check">
-            <input type="radio" name="'.$campo.'" value="'.$vetor[$i].'" class="form-check-input" id="'.$campo.$i.'">
+            <input
+                    type="radio"
+                    name="'.$campo.'"
+                    value="'.$vetor[$i].'"
+                    class="form-check-input"
+                    id="'.$campo.$i.'"
+                    '.((in_array($vetor[$i],$dados))?'checked':false).'
+            >
             <label class="form-check-label" for="'.$campo.$i.'">'.$vetor[$i].'</label>
             </div>';
         }
@@ -127,7 +143,8 @@
                             'Instagram',
                             'Youtube',
                             'Linkedin'
-                        ]
+                        ],
+                        'dados' => $d->redes_sociais
                     ])?>
                 </div>
 
@@ -196,7 +213,8 @@
                         'vetor' => [
                             'Masculino',
                             'Feminino',
-                        ]
+                        ],
+                        'dados' => $d->genero
                     ])?>
                 </div>
 
@@ -216,7 +234,8 @@
                             'Divorciado',
                             'Viúvo',
                             'Outros',
-                        ]
+                        ],
+                        'dados' => $d->estado_civil
                     ])?>
                 </div>
 
@@ -232,7 +251,8 @@
                             'Carro próprio',
                             'Fluvial',
                             'Outros'
-                        ]
+                        ],
+                        'dados' => $d->meio_transporte
                     ])?>
                 </div>
 
@@ -248,7 +268,8 @@
                             'Invasão',
                             'Alugado',
                             'Outros',
-                        ]
+                        ],
+                        'dados' => $d->tipo_imovel
                     ])?>
                 </div>
 
@@ -263,7 +284,8 @@
                             'Flutuante',
                             'Apartamento',
                             'Outros',
-                        ]
+                        ],
+                        'dados' => $d->tipo_moradia
                     ])?>
                 </div>
 
@@ -277,7 +299,8 @@
                             '3 Cômodos',
                             '4 Cômodos',
                             'Mais de 4 Cômodos',
-                        ]
+                        ],
+                        'dados' => $d->quantidade_comodos
                     ])?>
                 </div>
 
@@ -291,7 +314,8 @@
                             'Ensino Médio Completo',
                             'Ensino Técnico/Profissionalizante',
                             'Ensino Superior Completo',
-                        ]
+                        ],
+                        'dados' => $d->grau_escolaridade
                     ])?>
                 </div>
 
@@ -302,7 +326,8 @@
                         'vetor' => [
                             'Sim',
                             'Não',
-                        ]
+                        ],
+                        'dados' => $d->curos_profissionais
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
@@ -321,7 +346,8 @@
                             '3 salários mínimos',
                             '4 salários mínimos',
                             'Acima de 4 Salários mínimos'
-                        ]
+                        ],
+                        'dados' => $d->renda_mensal
                     ])?>
                 </div>
 
@@ -332,7 +358,8 @@
                         'vetor' => [
                             'Sim',
                             'Não',
-                        ]
+                        ],
+                        'dados' => $d->beneficio_social
                     ])?>
                 </div>
 
@@ -349,7 +376,8 @@
                            'SUS',
                             'Associações/PlanodeSaúde',
                             'Outros',
-                        ]
+                        ],
+                        'dados' => $d->servico_saude
                     ])?>
                 </div>
 
@@ -364,7 +392,8 @@
                             '2a Dose',
                             '3a Dose',
                             '4a Dose',
-                        ]
+                        ],
+                        'dados' => $d->vacina_covid
                     ])?>
                 </div>
 
@@ -377,7 +406,8 @@
                             'Marcação de Consultas',
                             'Realização de Exames',
                             'Realização de Procedimentos Médicos e/ou Cirurgia',
-                        ]
+                        ],
+                        'dados' => $d->opiniao_saude
                     ])?>
                 </div>
 
@@ -388,7 +418,8 @@
                         'campo' => 'opiniao_educacao',
                         'vetor' => [
                             'Não Tem',
-                        ]
+                        ],
+                        'dados' => $d->opiniao_educacao
                     ])?>
                 </div>
 
@@ -399,7 +430,8 @@
                         'campo' => 'opiniao_cidadania',
                         'vetor' => [
                             'Não Tem',
-                        ]
+                        ],
+                        'dados' => $d->opiniao_cidadania
                     ])?>
                 </div>
 
@@ -414,7 +446,8 @@
                             'Falta de Saneamento básico e/ou Melhoria',
                             'Abastecimento de Água',
                             'Abastecimento de Energia',
-                        ]
+                        ],
+                        'dados' => $d->opiniao_infraestrutura
                     ])?>
                 </div>
 
@@ -427,7 +460,8 @@
                             'Alimentação Básica',
                             'Auxílios Governamentais',
                             'Assistência Psicológica',
-                        ]
+                        ],
+                        'dados' => $d->opiniao_assistencia_social
                     ])?>
                 </div>
 
@@ -438,7 +472,8 @@
                         'campo' => 'opiniao_direitos_humanos',
                         'vetor' => [
                             'Não Tem',
-                        ]
+                        ],
+                        'dados' => $d->opiniao_direitos_humanos
                     ])?>
                 </div>
 
@@ -449,7 +484,8 @@
                         'campo' => 'opiniao_seguranca',
                         'vetor' => [
                             'Atendimento de Chamado para Policiamento',
-                        ]
+                        ],
+                        'dados' => $d->opiniao_seguranca
                     ])?>
                 </div>
 
@@ -460,7 +496,8 @@
                         'campo' => 'opiniao_esporte_lazer',
                         'vetor' => [
                             'Areas para pratica de atividades esportivas',
-                        ]
+                        ],
+                        'dados' => $d->opiniao_esporte_lazer
                     ])?>
                 </div>
 
