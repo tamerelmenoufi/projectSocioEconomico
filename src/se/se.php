@@ -76,7 +76,7 @@
         $campo = $v['campo'];
         $vetor = $v['vetor'];
         $rotulo = $v['rotulo'];
-        $dados = $v['dados'];
+        $dados = utf8_encode($v['dados']);
 
         $lista[] = '<div class="mb-3"><label for="'.$campo.'"><b>'.$rotulo.'</b></label></div>';
         for($i=0;$i<count($vetor);$i++){
