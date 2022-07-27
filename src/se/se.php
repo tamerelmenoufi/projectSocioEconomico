@@ -13,13 +13,13 @@
 
         foreach ($data as $name => $value) {
 
-            if(is_array($value)) {
-                $value = json_encode(mysqli_real_escape_string($con, $value));
-            }else{
-                $value = mysqli_real_escape_string($con, $value);
-            }
+            // if(is_array($value)) {
+            //     $value = json_encode($value);
+            // }else{
+            //     $value = mysqli_real_escape_string($con, $value);
+            // }
 
-            $attr[] = "{$name} = '" . $value . "'";
+            $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
         }
         $attr = implode(', ', $attr);
 
