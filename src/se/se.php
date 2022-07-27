@@ -46,7 +46,7 @@
         $vetor = $v['vetor'];
         $rotulo = $v['rotulo'];
         $dados = json_decode($v['dados']);
-
+        $lista[] = print_r($dados, true);
         $lista[] = '<div class="mb-3"><label for="'.$campo.'"><b>'.$rotulo.'</b></label></div>';
         for($i=0;$i<count($vetor);$i++){
             $lista[] = '  <div class="mb-3 form-check">
@@ -61,8 +61,9 @@
             <label class="form-check-label" for="'.$campo.$i.'">'.$vetor[$i].'</label>
             </div>';
         }
+
         if($lista){
-            return print_r($dados).implode(" ",$lista);
+            return implode(" ",$lista);
         }
     }
 
