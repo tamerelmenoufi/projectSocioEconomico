@@ -45,7 +45,8 @@
         $campo = $v['campo'];
         $vetor = $v['vetor'];
         $rotulo = $v['rotulo'];
-        $dados = json_decode(($v['dados'])?:[]);
+        $no_array = [];
+        $dados = json_decode(($v['dados'])?:$no_array);
 
         $lista[] = '<div class="mb-3"><label for="'.$campo.'"><b>'.$rotulo.'</b></label></div>';
         for($i=0;$i<count($vetor);$i++){
@@ -70,7 +71,8 @@
         $campo = $v['campo'];
         $vetor = $v['vetor'];
         $rotulo = $v['rotulo'];
-        $dados = json_decode(($v['dados'])?:[]);
+        $no_array = [];
+        $dados = json_decode(($v['dados'])?:$no_array);
 
         $lista[] = '<div class="mb-3"><label for="'.$campo.'"><b>'.$rotulo.'</b></label></div>';
         for($i=0;$i<count($vetor);$i++){
