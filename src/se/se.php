@@ -488,6 +488,8 @@
 
             Carregando('none');
 
+            $("#cpf").mask('999.999.999-99');
+
             $('#form-<?=$md5?>').submit(function (e) {
 
                 e.preventDefault();
