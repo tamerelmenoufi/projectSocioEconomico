@@ -20,7 +20,7 @@
             //     $value = mysqli_real_escape_string($con, $value);
             // }
 
-            $attr[] = "{$name} = '" . utf8_decode($value) . "'";
+            $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
         }
         $attr = implode(', ', $attr);
 
@@ -50,7 +50,7 @@
         $campo = $v['campo'];
         $vetor = $v['vetor'];
         $rotulo = $v['rotulo'];
-        $dados = json_decode(utf8_encode($v['dados']));
+        $dados = json_decode($v['dados']);
         $lista[] = print_r($dados, true);
         $lista[] = '<div class="mb-3"><label for="'.$campo.'"><b>'.$rotulo.'</b></label></div>';
         for($i=0;$i<count($vetor);$i++){
@@ -76,7 +76,7 @@
         $campo = $v['campo'];
         $vetor = $v['vetor'];
         $rotulo = $v['rotulo'];
-        $dados = utf8_encode($v['dados']);
+        $dados = $v['dados'];
 
         $lista[] = '<div class="mb-3"><label for="'.$campo.'"><b>'.$rotulo.'</b></label></div>';
         for($i=0;$i<count($vetor);$i++){
