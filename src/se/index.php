@@ -167,7 +167,7 @@
                             <?=$d->telefone?><br><?=$d->email?><br><?=$d->situacao?>
                         </p>
 
-                        <button
+                        <!-- <button
                             class="btn btn-success"
                             data-bs-toggle="offcanvas"
                             href="#offcanvasDireita"
@@ -176,7 +176,7 @@
                             editarSe="<?=$d->codigo?>"
                         >
                             <i class="fa-solid fa-pen-to-square"></i>
-                        </button>
+                        </button> -->
 
                         <button
                             class="btn btn-primary"
@@ -197,7 +197,7 @@
                             aria-controls="offcanvasDireita"
                             SeEf="<?=$d->codigo?>"
                         >
-                            <i class="fa-solid fa-pen-to-square"></i>
+                            <i class="fa-solid fa-users"></i>
                         </button>
 
                         <!-- <button
