@@ -15,9 +15,9 @@
         padding:20px;
         position: absolute;
         bottom:10px;
-        top:100px;
-        left:10px;
-        right:10px;
+        top:105px;
+        left:15px;
+        right:15px;
     }
 </style>
 <h4 class="Titulo<?=$md5?>">Estrutura Familiar</h4>
