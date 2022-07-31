@@ -60,20 +60,20 @@
 
         // echo "</tr>
         // ";
-        if($i%10 == 0 and $i > 0) {
+        if($i%100 == 0 and $i > 0) {
             $query =  $start.implode(", ",$comando);
-            // if(mysqli_query($con, $query)){
-            //     echo "ok<hr>";
-            // }else{
-            //     echo $query."<hr>";
-            // }
-            // $quey = false;
+            if(mysqli_query($con, $query)){
+                echo "ok<hr>";
+            }else{
+                echo $query."<hr>";
+            }
+            $quey = false;
             $comando = [];
 
         }
         if($i === 10) {
-            echo $query."<hr>";
-            break;
+            // echo $query."<hr>";
+            // break;
         }
     }
 
