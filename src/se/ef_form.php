@@ -234,7 +234,8 @@
                     mimeType: 'multipart/form-data',
                     data: campos,
                     success:function(dados){
-                        $.alert(dados.mensagem)
+                        $.alert(dados.query);
+                        Carregando('none')
                     },
                     error:function(erro){
 
