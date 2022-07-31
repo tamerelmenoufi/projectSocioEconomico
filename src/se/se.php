@@ -18,7 +18,7 @@
             if(is_array($value)) {
                 $value = json_encode($value);
             }
-            $qt = (($value)?$qt++:$qt);
+            $qt = (($value)?($qt+1):$qt);
             $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
         }
             $pct = (100*$qt/$tot);
