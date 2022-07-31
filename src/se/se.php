@@ -115,7 +115,7 @@
 </style>
 <h4 class="Titulo<?=$md5?>">Pesquisa Socioeconomico</h4>
     <form id="form-<?= $md5 ?>">
-        <div class="row">
+        <div class="row" style="margin-bottom:50px;">
             <div class="col">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>">
