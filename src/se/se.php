@@ -110,7 +110,7 @@
         z-index:0;
     }
     textarea{
-        height:200px;
+        height:200px !important;
     }
 </style>
 <h4 class="Titulo<?=$md5?>">Pesquisa Socioeconomico</h4>
