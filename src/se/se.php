@@ -109,6 +109,12 @@
         top:8px;
         z-index:0;
     }
+    label{
+        background-color:#fff;
+    }
+    textarea{
+        height:150px;
+    }
 </style>
 <h4 class="Titulo<?=$md5?>">Pesquisa Socioeconomico</h4>
     <form id="form-<?= $md5 ?>">
