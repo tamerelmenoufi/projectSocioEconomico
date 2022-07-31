@@ -4,11 +4,42 @@
 
     if($_POST['acao'] == 'salvar'){
 
+        $data = $_POST;
+        $attr = [];
 
+        unset($data['codigo']);
+        unset($data['acao']);
+
+        $tot = count($data);
+        $qt = 0;
+        foreach ($data as $name => $value) {
+
+            if(is_array($value)) {
+                $value = json_encode($value);
+            }
+            $qt = (($value)?($qt+1):$qt);
+            $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
+        }
+            $pct = (100*$qt/$tot);
+            $attr[] = "percentual = '" . $pct . "'";
+
+        $attr = implode(', ', $attr);
+
+        if($_POST['codigo']){
+            $query = "update se_estrutura_familiar set {$attr} where codigo = '{$_POST['codigo']}'";
+            mysqli_query($con, $query);
+            $cod = $_POST['codigo'];
+        }else{
+            $query = "insert into se_estrutura_familiar set data_cadastro = NOW(), {$attr}";
+            mysqli_query($con, $query);
+            $cod = mysqli_insert_id($con);
+        }
 
         $retorno = [
             'status' => true,
-            'codigo' => $cod
+            'codigo' => $cod,
+            'mensagem' => "Cadastro registrado com sucesso!",
+            'query' => $query,
         ];
 
         echo json_encode($retorno);
@@ -197,13 +228,13 @@
                 Carregando();
 
                 $.ajax({
-                    url:"src/se/se.php",
+                    url:"src/se/se_form.php",
                     type:"POST",
-                    typeData:"JSON",
+                    dataType:"JSON",
                     mimeType: 'multipart/form-data',
                     data: campos,
                     success:function(dados){
-
+                        $.alert(dados.mensagem)
                     },
                     error:function(erro){
 
