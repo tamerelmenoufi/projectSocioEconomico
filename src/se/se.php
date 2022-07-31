@@ -468,8 +468,8 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <textarea name="opiniao_infraesctrutura_descricao" id="opiniao_infraesctrutura_descricao" class="form-control" placeholder="Outras Opiniões falhas na Infraestrutura" ><?=$d->opiniao_infraesctrutura_descricao?></textarea>
-                    <label for="opiniao_infraesctrutura_descricao">Outras Opiniões falhas na Infraestrutura</label>
+                    <textarea name="opiniao_infraestrutura_descricao" id="opiniao_infraestrutura_descricao" class="form-control" placeholder="Outras Opiniões falhas na Infraestrutura" ><?=$d->opiniao_infraestrutura_descricao?></textarea>
+                    <label for="opiniao_infraestrutura_descricao">Outras Opiniões falhas na Infraestrutura</label>
                 </div>
 
                 <div class="form-floating mb-3">
