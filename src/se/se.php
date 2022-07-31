@@ -37,7 +37,7 @@
         $retorno = [
             'status' => true,
             'codigo' => $cod,
-            'query' => $query,
+            'mensagem' => "Pesquisa registrada com sucesso!",
         ];
 
         echo json_encode($retorno);
@@ -51,7 +51,7 @@
         $vetor = $v['vetor'];
         $rotulo = $v['rotulo'];
         $dados = json_decode($v['dados']);
-        $lista[] = print_r($dados, true);
+        // $lista[] = print_r($dados, true);
         $lista[] = '<div class="mb-3"><label for="'.$campo.'"><b>'.$rotulo.'</b></label></div>';
         for($i=0;$i<count($vetor);$i++){
             $lista[] = '  <div class="mb-3 form-check">
@@ -583,7 +583,7 @@
                     mimeType: 'multipart/form-data',
                     data: campos,
                     success:function(dados){
-                        $.alert(dados);
+                        $.alert(dados.mensagem);
                         Carregando('none');
                     },
                     error:function(erro){
