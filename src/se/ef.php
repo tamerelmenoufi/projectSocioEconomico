@@ -13,6 +13,8 @@
         border-bottom:1px #ccc solid;
         border-left:1px #ccc solid;
         padding:20px;
+        position: absolute;
+        bottom:10px;
     }
 </style>
 <h4 class="Titulo<?=$md5?>">Estrutura Familiar</h4>
@@ -81,6 +83,7 @@
             $("button[estruturaFamiliar]").click(function(){
                 url = $(this).attr("estruturaFamiliar");
                 target = $(this).attr("data-bs-target");
+                Carregando();
                 $.ajax({
                     url,
                     success:function(dados){
