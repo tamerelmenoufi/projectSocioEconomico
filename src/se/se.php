@@ -583,7 +583,7 @@
                     mimeType: 'multipart/form-data',
                     data: campos,
                     success:function(dados){
-                        $.alert(dados.mensagem);
+                        $.alert(dados);
                         Carregando('none');
                     },
                     error:function(erro){
