@@ -416,31 +416,42 @@
                         'dados' => $d->opiniao_saude
                     ])?>
                 </div>
-
+                <div class="form-floating mb-3">
+                    <textarea name="opiniao_saude_descricao" id="opiniao_saude_descricao" class="form-control" placeholder="Outras Opiniões / Detalhes" ><?=$d->opiniao_saude_descricao?></textarea>
+                    <label for="opiniao_saude_descricao">Outras Opiniões Falhas na Saúde</label>
+                </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaCheckbox([
+                    <?=montaRadio([
                         'rotulo' => 'Opinião falhas na Educação',
                         'campo' => 'opiniao_educacao',
                         'vetor' => [
-                            'Não Tem',
+                            'Não',
+                            'Sim'
                         ],
                         'dados' => $d->opiniao_educacao
                     ])?>
                 </div>
-
+                <div class="form-floating mb-3">
+                    <textarea name="opiniao_educacao_descricao" id="opiniao_educacao_descricao" class="form-control" placeholder="Outras Opiniões falhas na Educação" ><?=$d->opiniao_educacao_descricao?></textarea>
+                    <label for="opiniao_educacao_descricao">Outras Opiniões falhas na Educação</label>
+                </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaCheckbox([
+                    <?=montaRadio([
                         'rotulo' => 'Opinião falhas na Cidadania',
                         'campo' => 'opiniao_cidadania',
                         'vetor' => [
-                            'Não Tem',
+                            'Não',
+                            'Sim'
                         ],
                         'dados' => $d->opiniao_cidadania
                     ])?>
                 </div>
-
+                <div class="form-floating mb-3">
+                    <textarea name="opiniao_cidadania_descricao" id="opiniao_cidadania_descricao" class="form-control" placeholder="Outras Opiniões falhas na Cidadania" ><?=$d->opiniao_cidadania_descricao?></textarea>
+                    <label for="opiniao_cidadania_descricao">Outras Opiniões falhas na Cidadania</label>
+                </div>
 
                 <div class="form-floating mb-3">
                     <?=montaCheckbox([
@@ -456,7 +467,10 @@
                         'dados' => $d->opiniao_infraestrutura
                     ])?>
                 </div>
-
+                <div class="form-floating mb-3">
+                    <textarea name="opiniao_infraesctrutura_descricao" id="opiniao_infraesctrutura_descricao" class="form-control" placeholder="Outras Opiniões falhas na Infraestrutura" ><?=$d->opiniao_infraesctrutura_descricao?></textarea>
+                    <label for="opiniao_infraesctrutura_descricao">Outras Opiniões falhas na Infraestrutura</label>
+                </div>
 
                 <div class="form-floating mb-3">
                     <?=montaCheckbox([
@@ -470,19 +484,26 @@
                         'dados' => $d->opiniao_assistencia_social
                     ])?>
                 </div>
-
+                <div class="form-floating mb-3">
+                    <textarea name="opiniao_assistencia_social_descricao" id="opiniao_assistencia_social_descricao" class="form-control" placeholder="Outras Opiniões falhas na Assistência Social" ><?=$d->opiniao_assistencia_social_descricao?></textarea>
+                    <label for="opiniao_assistencia_social_descricao">Outras Opiniões falhas na Assistência Social</label>
+                </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaCheckbox([
+                    <?=montaRadio([
                         'rotulo' => 'Opinião falhas nos Direitos Humanos',
                         'campo' => 'opiniao_direitos_humanos',
                         'vetor' => [
-                            'Não Tem',
+                            'Não',
+                            'Sim'
                         ],
                         'dados' => $d->opiniao_direitos_humanos
                     ])?>
                 </div>
-
+                <div class="form-floating mb-3">
+                    <textarea name="opiniao_direitos_humanos_descricao" id="opiniao_direitos_humanos_descricao" class="form-control" placeholder="Outras Opiniões falhas na Direitos Humanos" ><?=$d->opiniao_direitos_humanos_descricao?></textarea>
+                    <label for="opiniao_direitos_humanos_descricao">Outras Opiniões falhas na Direitos Humanos</label>
+                </div>
 
                 <div class="form-floating mb-3">
                     <?=montaCheckbox([
@@ -494,7 +515,10 @@
                         'dados' => $d->opiniao_seguranca
                     ])?>
                 </div>
-
+                <div class="form-floating mb-3">
+                    <textarea name="opiniao_seguranca_descricao" id="opiniao_seguranca_descricao" class="form-control" placeholder="Outras Opiniões falhas na Segurança" ><?=$d->opiniao_seguranca_descricao?></textarea>
+                    <label for="opiniao_seguranca_descricao">Outras Opiniões falhas na Segurança</label>
+                </div>
 
                 <div class="form-floating mb-3">
                     <?=montaCheckbox([
@@ -505,6 +529,10 @@
                         ],
                         'dados' => $d->opiniao_esporte_lazer
                     ])?>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea name="opiniao_esporte_lazer_descricao" id="opiniao_esporte_lazer_descricao" class="form-control" placeholder="Outras Opiniões falhas no Esporte e Lazer" ><?=$d->opiniao_esporte_lazer_descricao?></textarea>
+                    <label for="opiniao_esporte_lazer_descricao">Outras Opiniões falhas no Esporte e Lazer</label>
                 </div>
 
                 <div class="form-floating mb-3">
