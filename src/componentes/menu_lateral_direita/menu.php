@@ -7,7 +7,7 @@
     tabindex="-1"
     id="offcanvasDireita"
     aria-labelledby="offcanvasDireitaLabel"
-    XXXstyle="--bs-offcanvas-width:60%;"
+    style="--bs-offcanvas-width:500px;"
   >
   <div class="offcanvas-header">
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
