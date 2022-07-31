@@ -34,9 +34,11 @@ aria-controls="offcanvasDireita" -->
  || navigator.userAgent.match(/Windows Phone/i)
  ){
     alert('mobile');
+    $("#offcanvasDireita").css("--bs-offcanvas-width","500px")
   }
  else {
     alert('pc');
+    $("#offcanvasDireita").css("--bs-offcanvas-width","50%")
   }
 
 
