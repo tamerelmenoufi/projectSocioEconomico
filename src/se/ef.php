@@ -79,10 +79,10 @@
             });
 
             $("button[estruturaFamiliar]").click(function(){
-                local = $(this).attr("estruturaFamiliar");
+                url = $(this).attr("estruturaFamiliar");
                 target = $(this).attr("data-bs-target");
                 $.ajax({
-                    url:"src/se/ef_lista.php",
+                    url,
                     success:function(dados){
                         $(target).html(dados);
                     },
