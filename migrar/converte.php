@@ -1,7 +1,7 @@
 <?php
 
     $con = mysqli_connect("project.mohatron.com","root","SenhaDoBanco", "manutencao");
-    $dados = file_get_contents("lista5.csv");
+    $dados = file_get_contents("lista6.csv");
 
     function M($d){
         global $con;
@@ -38,9 +38,21 @@
         $c = explode(":", $l[$i]);
         $campos = [];
         for($k=0;$k<count($c);$k++){
+            if($k == 1){
+                $cpf = str_pad($c[$k], 11, "0", STR_PAD_LEFT);
+                $p1 = substr($cpf, 0,3);
+                $p2 = substr($cpf, 4,3);
+                $p3 = substr($cpf, 7,3);
+                $p4 = substr($cpf, 10,2);
 
-            // echo "<td>{$c[$k]}</td>";
-            $campos[] = "{$c[$k]}";
+                $cpf = "{$p1}.{$p2}.{$p3}-{$p4}";
+
+                $campos[] = "{$cpf}";
+            }else{
+                // echo "<td>{$c[$k]}</td>";
+                $campos[] = "{$c[$k]}";
+            }
+
 
         }
 
@@ -48,19 +60,20 @@
 
         // echo "</tr>
         // ";
-        if($i%100 == 0 and $i > 0) {
+        if($i%10 == 0 and $i > 0) {
             $query =  $start.implode(", ",$comando);
-            if(mysqli_query($con, $query)){
-                echo "ok<hr>";
-            }else{
-                echo $query."<hr>";
-            }
-            $quey = false;
+            // if(mysqli_query($con, $query)){
+            //     echo "ok<hr>";
+            // }else{
+            //     echo $query."<hr>";
+            // }
+            // $quey = false;
             $comando = [];
 
         }
-        if($i === 300) {
-            //break;
+        if($i === 10) {
+            echo $query."<hr>";
+            break;
         }
     }
 
