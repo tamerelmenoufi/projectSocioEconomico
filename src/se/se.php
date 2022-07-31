@@ -547,7 +547,7 @@
             </div>
         </div>
 
-        <div style="position:absolute; bottom:0; width:100%; height:60px; background-color:#ccc;">
+        <div style="position:absolute; bottom:0;left:0; right:0; height:50px; background-color:#ccc;">
             <div style="display:flex; justify-content:end">
                 <button type="submit" SalvarFoto class="btn btn-success btn-ms">Salvar</button>
                 <input type="hidden" id="codigo" value="<?=$_POST['cod']?>" />
