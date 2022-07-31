@@ -67,6 +67,7 @@
         border-right:1px #ccc solid;
         border-bottom:1px #ccc solid;
         border-left:1px #ccc solid;
+        padding:20px;
     }
 </style>
 <h4 class="Titulo<?=$md5?>">Estrutura Familiar</h4>
