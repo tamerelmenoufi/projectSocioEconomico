@@ -168,7 +168,7 @@
         </div>
 
 
-        <div style="position:absolute; bottom:0; left:0; right:20px; height:40px; background-color:#fff">
+        <div style="position:absolute; bottom:0; left:0; right:20px; height:40px; background-color:#fff; padding:10px;">
             <div style="display:flex; justify-content:end">
                 <button type="submit" SalvarFoto class="btn btn-success btn-ms">Salvar</button>
                 <input type="hidden" id="codigo" value="<?=$_POST['cod']?>" />
