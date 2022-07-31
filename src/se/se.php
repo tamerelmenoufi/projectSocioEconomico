@@ -337,8 +337,8 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <textarea name="curos_profissionais" id="curos_profissionais" class="form-control" placeholder="Cursos Técnico/Profissionalizante" ><?=$d->curos_profissionais?></textarea>
-                    <label for="curos_profissionais">Descreve os Cursos Técnico/Profissionalizante</label>
+                    <textarea name="curos_profissionais_descricao" id="curos_profissionais_descricao" class="form-control" placeholder="Cursos Técnico/Profissionalizante" ><?=$d->curos_profissionais_descricao?></textarea>
+                    <label for="curos_profissionais_descricao">Descreve os Cursos Técnico/Profissionalizante</label>
                 </div>
 
                 <div class="form-floating mb-3">
