@@ -33,12 +33,10 @@ aria-controls="offcanvasDireita" -->
  || navigator.userAgent.match(/BlackBerry/i)
  || navigator.userAgent.match(/Windows Phone/i)
  ){
-    alert('mobile');
-    $("#offcanvasDireita").css("--bs-offcanvas-width","500px")
+    $("#offcanvasDireita").css("--bs-offcanvas-width","100%")
   }
  else {
-    alert('pc');
-    $("#offcanvasDireita").css("--bs-offcanvas-width","50%")
+    $("#offcanvasDireita").css("--bs-offcanvas-width","500px")
   }
 
 
