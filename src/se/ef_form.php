@@ -226,10 +226,10 @@
             || navigator.userAgent.match(/BlackBerry/i)
             || navigator.userAgent.match(/Windows Phone/i)
         ){
-            $("div[BtnSalvar<?=$md5?>]").css("width","calc(100%-40px)")
+            $("div[BtnSalvar<?=$md5?>]").css("width","100%")
         }
         else {
-            $("div[BtnSalvar<?=$md5?>]").css("width","calc(500px-40px)")
+            $("div[BtnSalvar<?=$md5?>]").css("width","500px")
         }
 
     </script>
