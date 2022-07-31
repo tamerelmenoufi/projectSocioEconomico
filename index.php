@@ -46,6 +46,15 @@
                 }
             });
         })
+
+
+        //Jconfirm
+        jconfirm.defaults = {
+            typeAnimated: true,
+            type: "blue",
+            smoothContent: true,
+        }
+
     </script>
 
   </body>
