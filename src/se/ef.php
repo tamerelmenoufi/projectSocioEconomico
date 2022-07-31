@@ -19,7 +19,6 @@
         left:16px;
         right:15px;
         overflow:auto;
-        margin-bottom:50px;
     }
 </style>
 <h4 class="Titulo<?=$md5?>">Estrutura Familiar</h4>
