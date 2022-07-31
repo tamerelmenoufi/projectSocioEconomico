@@ -11,17 +11,19 @@
         unset($data['codigo']);
         unset($data['acao']);
 
+        $tot = count($data);
+        $qt = 0;
         foreach ($data as $name => $value) {
 
             if(is_array($value)) {
                 $value = json_encode($value);
             }
-            // else{
-            //     $value = mysqli_real_escape_string($con, $value);
-            // }
-
+            $qt = (($value)?$qt++:$qt);
             $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
         }
+            $pct = (100*$qt/$tot);
+            $attr[] = "percentual = '" . $pct . "'";
+
         $attr = implode(', ', $attr);
 
         if($_POST['codigo']){
