@@ -61,7 +61,7 @@
 </style>
 
    <form id="form-<?= $md5 ?>">
-        <div class="row">
+        <div class="row" style="margin-bottom:50px;">
             <div class="col">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="ef_nome" name="ef_nome" placeholder="Nome completo" value="<?=$d->ef_nome?>">
@@ -167,12 +167,11 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col">
-                <div style="display:flex; justify-content:end">
-                    <button type="submit" SalvarFoto class="btn btn-success btn-ms">Salvar</button>
-                    <input type="hidden" id="codigo" value="<?=$_POST['cod']?>" />
-                </div>
+
+        <div style="position:absolute; bottom:0; left:0; right:20px; height:40px; background-color:#fff">
+            <div style="display:flex; justify-content:end">
+                <button type="submit" SalvarFoto class="btn btn-success btn-ms">Salvar</button>
+                <input type="hidden" id="codigo" value="<?=$_POST['cod']?>" />
             </div>
         </div>
     </form>
