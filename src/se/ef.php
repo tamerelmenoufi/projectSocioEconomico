@@ -1,5 +1,8 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
+
+    if($_POST['cod']) $_SESSION['se_codigo'] = $_POST['cod'];
+
 ?>
 <style>
     .Titulo<?=$md5?>{

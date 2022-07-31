@@ -291,7 +291,7 @@
 
         $("button[SeEf]").click(function(){
 
-            cod = $(this).attr("pesquisaSe");
+            cod = $(this).attr("SeEf");
             Carregando();
             $.ajax({
                 url:"src/se/ef.php",
