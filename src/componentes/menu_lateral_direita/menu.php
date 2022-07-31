@@ -21,3 +21,15 @@ data-bs-toggle="offcanvas"
 href="#offcanvasDireita"
 role="button"
 aria-controls="offcanvasDireita" -->
+
+<script>
+
+if (WURFL.is_mobile === true && WURFL.form_factor === "Smartphone") {
+    // moblie
+    alert('mobile');
+} else {
+    //nao mobile
+    alert('pc');
+}
+
+</script>
