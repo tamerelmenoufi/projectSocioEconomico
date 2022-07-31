@@ -96,7 +96,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaCheckbox([
                         'rotulo' => 'Grau de Parentesco',
                         'campo' => 'ef_grau_parentesco',
                         'vetor' => [
