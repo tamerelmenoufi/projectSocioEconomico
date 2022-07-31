@@ -587,7 +587,6 @@
                     dataType:"JSON",
                     data: campos,
                     success:function(dados){
-                        console.log(dados.mensagem)
                         $.alert(dados.query);
                         Carregando('none');
                     },
