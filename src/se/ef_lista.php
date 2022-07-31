@@ -8,7 +8,7 @@
 <h3>Aqui é a lista completa</h3>
 <?php
 
-$query = "select * from ef where se_codigo = '{$_SESSION['se_codigo']}'";
+echo $query = "select * from ef where se_codigo = '{$_SESSION['se_codigo']}'";
 $result = mysqli_query($con, $query);
 while($d = mysqli_fetch_object($result)){
 ?>
