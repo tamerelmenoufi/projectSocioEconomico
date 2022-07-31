@@ -1,8 +1,12 @@
 <?php
-    exit();
+
     $con = mysqli_connect("project.mohatron.com","root","SenhaDoBanco", "manutencao");
     $dados = file_get_contents("lista6.csv");
 
+    mysqli_query($con, "insert into `municipios` (municipio) select municipio from se group by municipio order by municipio");
+
+    echo "ok - query 1";
+    exit();
     function M($d){
         global $con;
 
