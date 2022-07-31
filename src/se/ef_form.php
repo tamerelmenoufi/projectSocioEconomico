@@ -168,7 +168,7 @@
         </div>
 
 
-        <div style="position:fixed; bottom:10px; left:0; right:40px; height:50px; background-color:#fff; padding:0px;">
+        <div BtnSalvar<?=$md5?> style="position:fixed; bottom:10px; left:0; right:40px; height:50px; background-color:#fff; padding:0px;">
             <div style="display:flex; justify-content:end">
                 <button type="submit" SalvarFoto class="btn btn-success btn-ms">Salvar</button>
                 <input type="hidden" id="codigo" value="<?=$_POST['cod']?>" />
@@ -215,4 +215,21 @@
             });
 
         })
+
+
+
+        if( navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)
+        ){
+            $("div[BtnSalvar<?=$md5?>]").css("width","100%")
+        }
+        else {
+            $("div[BtnSalvar<?=$md5?>]").css("width","500px")
+        }
+
     </script>
