@@ -98,3 +98,6 @@
 
     // insert into `bairros_comunidades` (municipio, descricao, tipo) select municipio_cod, localidade, tipo from se group by municipio, localidade, tipo
     // update se a set a.localidade_cod = (select b.codigo from bairros_comunidades b where a.municipio_cod = b.municipio and a.localidade = b.descricao and a.tipo = b.tipo)
+
+
+    // insert into app.se (nome, cpf, telefone, municipio, bairro_comunidade, local, endereco) SELECT nome, cpf, telefone, municipio_cod, localidade_cod, tipo, endereco FROM manutencao.se WHERE municipio_cod = 66
