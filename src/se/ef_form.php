@@ -18,7 +18,7 @@
             }
             $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
         }
-
+            $attr[] = "se_codigo = '" . $_SESSION['se_codigo'] . "'";
         $attr = implode(', ', $attr);
 
         if($_POST['codigo']){
