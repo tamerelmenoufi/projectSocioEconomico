@@ -40,6 +40,7 @@
             'status' => true,
             'codigo' => $cod,
             'mensagem' => "Pesquisa registrada com sucesso!",
+            'query' => $query,
         ];
 
         echo json_encode($retorno);
@@ -587,7 +588,7 @@
                     data: campos,
                     success:function(dados){
                         console.log(dados.mensagem)
-                        $.alert(dados.mensagem);
+                        $.alert(dados.query);
                         Carregando('none');
                     },
                     error:function(erro){
