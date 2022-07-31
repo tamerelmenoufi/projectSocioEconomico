@@ -10,18 +10,14 @@
         unset($data['codigo']);
         unset($data['acao']);
 
-        $tot = count($data);
-        $qt = 0;
+
         foreach ($data as $name => $value) {
 
             if(is_array($value)) {
                 $value = json_encode($value);
             }
-            $qt = (($value)?($qt+1):$qt);
             $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
         }
-            $pct = (100*$qt/$tot);
-            $attr[] = "percentual = '" . $pct . "'";
 
         $attr = implode(', ', $attr);
 
@@ -113,8 +109,8 @@
                     <label for="ef_data_nascimento">Data de Nascimento</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="telefone" id="telefone" class="form-control" placeholder="telefone" value="<?=$d->telefone?>">
-                    <label for="telefone">Telefone*</label>
+                    <input type="text" name="ef_telefone" id="ef_telefone" class="form-control" placeholder="Telefone" value="<?=$d->ef_telefone?>">
+                    <label for="ef_telefone">Telefone*</label>
                 </div>
                 <div class="form-floating mb-3">
                     <?=montaRadio([
