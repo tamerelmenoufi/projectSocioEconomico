@@ -168,7 +168,7 @@
         </div>
 
 
-        <div BtnSalvar<?=$md5?> style="position:fixed; bottom:10px; left:0; right:40px; height:50px; background-color:#fff; padding:0px;">
+        <div BtnSalvar<?=$md5?> style="position:fixed; bottom:10px; right:40px; height:50px; background-color:#fff; padding:0px;">
             <div style="display:flex; justify-content:end">
                 <button type="submit" SalvarFoto class="btn btn-success btn-ms">Salvar</button>
                 <input type="hidden" id="codigo" value="<?=$_POST['cod']?>" />
