@@ -41,9 +41,9 @@
             if($k == 1){
                 $cpf = str_pad($c[$k], 11, "0", STR_PAD_LEFT);
                 $p1 = substr($cpf, 0,3);
-                $p2 = substr($cpf, 4,3);
-                $p3 = substr($cpf, 7,3);
-                $p4 = substr($cpf, 10,2);
+                $p2 = substr($cpf, 3,3);
+                $p3 = substr($cpf, 6,3);
+                $p4 = substr($cpf, 9,2);
 
                 $cpf = "{$p1}.{$p2}.{$p3}-{$p4}";
 
