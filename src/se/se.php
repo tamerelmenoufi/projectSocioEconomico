@@ -579,7 +579,7 @@
                 $.ajax({
                     url:"src/se/se.php",
                     type:"POST",
-                    typeData:"JSON",
+                    dataType:"JSON",
                     data: campos,
                     success:function(dados){
                         console.log(dados.mensagem)
