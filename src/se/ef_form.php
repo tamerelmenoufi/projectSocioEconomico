@@ -228,7 +228,7 @@
                 Carregando();
 
                 $.ajax({
-                    url:"src/se/se_form.php",
+                    url:"src/se/ef_form.php",
                     type:"POST",
                     dataType:"JSON",
                     mimeType: 'multipart/form-data',
