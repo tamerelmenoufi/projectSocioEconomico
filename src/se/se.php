@@ -580,7 +580,6 @@
                     url:"src/se/se.php",
                     type:"POST",
                     typeData:"JSON",
-                    mimeType: 'multipart/form-data',
                     data: campos,
                     success:function(dados){
                         console.log(dados.mensagem)
