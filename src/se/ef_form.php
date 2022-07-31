@@ -61,7 +61,7 @@
 </style>
 
    <form id="form-<?= $md5 ?>">
-        <div class="row" style="margin-bottom:60px;">
+        <div class="row">
             <div class="col">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="ef_nome" name="ef_nome" placeholder="Nome completo" value="<?=$d->ef_nome?>">
