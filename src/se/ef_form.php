@@ -228,8 +228,28 @@
                     mimeType: 'multipart/form-data',
                     data: campos,
                     success:function(dados){
-                        $.alert(dados.query);
-                        Carregando('none')
+                        // Carregando('none')
+
+
+                        $.ajax({
+                            url:"src/se/ef_lista.php",
+                            success:function(dados){
+                                $("#EstruturaFamiliar").html(dados);
+
+                                $("#lista-tab").addClass("active")
+                                $("#lista-tab").attr("aria-selected","true")
+                                $("#form-tab").removeClass("active")
+                                $("#form-tab").attr("aria-selected","false")
+
+                            },
+                            error:function(erro){
+                                Carregando('none');
+                                // $.alert('Ocorreu um erro!' + erro.toString());
+                                //dados de teste
+                            }
+                        });
+
+
                     },
                     error:function(erro){
 
