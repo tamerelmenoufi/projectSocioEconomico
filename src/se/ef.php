@@ -71,7 +71,7 @@
             $.ajax({
                 url:"src/se/ef_lista.php",
                 success:function(dados){
-                    $("#listaEstruturaFamiliar").html(dados);
+                    $("#EstruturaFamiliar").html(dados);
                 },
                 error:function(erro){
                     Carregando('none');
