@@ -76,7 +76,7 @@ while($d = mysqli_fetch_object($result)){
 
         $("button[deleteEf]").click(function(){
 
-            $,confirm({
+            $.confirm({
                 content:"Deseja realmente excluir o registro?",
                 title:false,
                 buttons:{
