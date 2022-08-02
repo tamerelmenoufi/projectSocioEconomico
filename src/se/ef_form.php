@@ -9,6 +9,7 @@
 
         unset($data['codigo']);
         unset($data['acao']);
+        unset($data['ef_data_nascimento']);
 
 
         foreach ($data as $name => $value) {
@@ -19,6 +20,7 @@
             $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
         }
             $attr[] = "se_codigo = '" . $_SESSION['se_codigo'] . "'";
+            $attr[] = "ef_data_nascimento = '" . dataMysql($_POST['ef_data_nascimento']) . "'";
 
         $attr = implode(', ', $attr);
 
@@ -42,41 +44,6 @@
         echo json_encode($retorno);
 
         exit();
-    }
-
-
-    function montaCheckbox($v){
-        $campo = $v['campo'];
-        $vetor = $v['vetor'];
-        $rotulo = $v['rotulo'];
-
-        $lista[] = '<div class="mb-3"><label for="'.$campo.'"><b>'.$rotulo.'</b></label></div>';
-        for($i=0;$i<count($vetor);$i++){
-            $lista[] = '  <div class="mb-3 form-check">
-            <input type="checkbox" name="'.$campo.'[]" value="'.$vetor[$i].'" class="form-check-input" id="'.$campo.$i.'">
-            <label class="form-check-label" for="'.$campo.$i.'">'.$vetor[$i].'</label>
-            </div>';
-        }
-        if($lista){
-            return implode(" ",$lista);
-        }
-    }
-
-    function montaRadio($v){
-        $campo = $v['campo'];
-        $vetor = $v['vetor'];
-        $rotulo = $v['rotulo'];
-
-        $lista[] = '<div class="mb-3"><label for="'.$campo.'"><b>'.$rotulo.'</b></label></div>';
-        for($i=0;$i<count($vetor);$i++){
-            $lista[] = '  <div class="mb-3 form-check">
-            <input type="radio" name="'.$campo.'" value="'.$vetor[$i].'" class="form-check-input" id="'.$campo.$i.'">
-            <label class="form-check-label" for="'.$campo.$i.'">'.$vetor[$i].'</label>
-            </div>';
-        }
-        if($lista){
-            return implode(" ",$lista);
-        }
     }
 
 
@@ -122,11 +89,12 @@
                             'Avó',
                             'Avô',
                             'Outros',
-                        ]
+                        ],
+                        'dados' => $d->ef_grau_parentesco
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="ef_data_nascimento" id="ef_data_nascimento" class="form-control" placeholder="Data de Nascimento" value="<?=$d->ef_data_nascimento?>">
+                    <input type="text" name="ef_data_nascimento" id="ef_data_nascimento" class="form-control" placeholder="Data de Nascimento" value="<?=dataBr($d->ef_data_nascimento)?>">
                     <label for="ef_data_nascimento">Data de Nascimento</label>
                 </div>
                 <div class="form-floating mb-3">
@@ -143,8 +111,9 @@
                             '2 salários mínimos',
                             '3 salários mínimos',
                             '4 salários mínimos',
-                            'Acima de 4 Salários mínimos'
-                        ]
+                            'Acima de 4 Salários mínimos',
+                        ],
+                        'dados' => $d->ef_renda_mensal
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
@@ -154,7 +123,8 @@
                         'vetor' => [
                             'Não',
                             'Sim',
-                        ]
+                        ],
+                        'dados' => $d->ef_tratamento_saude
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
@@ -169,7 +139,8 @@
                         'vetor' => [
                             'Não',
                             'Sim',
-                        ]
+                        ],
+                        'dados' => $d->ef_doencas_cronicas
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
@@ -184,7 +155,8 @@
                         'vetor' => [
                             'Não',
                             'Sim',
-                        ]
+                        ],
+                        'dados' => $d->ef_portador_deficiencia
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
@@ -208,7 +180,8 @@
                             'CPF', //- Cadastro de Pessoa Física
                             'CTPS', // - Carteira de Trabalho e Previdencia Social
                             'TE', //- Título Eleitoral
-                        ]
+                        ],
+                        'dados' => $d->ef_necessita_documentos
                     ])?>
                 </div>
 

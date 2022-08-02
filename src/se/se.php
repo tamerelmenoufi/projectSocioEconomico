@@ -52,58 +52,6 @@
     }
 
 
-    function montaCheckbox($v){
-        $campo = $v['campo'];
-        $vetor = $v['vetor'];
-        $rotulo = $v['rotulo'];
-        $dados = json_decode($v['dados']);
-        // $lista[] = print_r($dados, true);
-        $lista[] = '<div class="mb-3"><label for="'.$campo.'"><b>'.$rotulo.'</b></label></div>';
-        for($i=0;$i<count($vetor);$i++){
-            $lista[] = '  <div class="mb-3 form-check">
-            <input
-                    type="checkbox"
-                    name="'.$campo.'[]"
-                    value="'.$vetor[$i].'"
-                    class="form-check-input"
-                    id="'.$campo.$i.'"
-                    '.((@in_array($vetor[$i],$dados))?'checked':false).'
-            >
-            <label class="form-check-label" for="'.$campo.$i.'">'.$vetor[$i].'</label>
-            </div>';
-        }
-
-        if($lista){
-            return implode(" ",$lista);
-        }
-    }
-
-    function montaRadio($v){
-        $campo = $v['campo'];
-        $vetor = $v['vetor'];
-        $rotulo = $v['rotulo'];
-        $dados = $v['dados'];
-
-        $lista[] = '<div class="mb-3"><label for="'.$campo.'"><b>'.$rotulo.'</b></label></div>';
-        for($i=0;$i<count($vetor);$i++){
-            $lista[] = '  <div class="mb-3 form-check">
-            <input
-                    type="radio"
-                    name="'.$campo.'"
-                    value="'.$vetor[$i].'"
-                    class="form-check-input"
-                    id="'.$campo.$i.'"
-                    '.(($vetor[$i] == $dados)?'checked':false).'
-            >
-            <label class="form-check-label" for="'.$campo.$i.'">'.$vetor[$i].'</label>
-            </div>';
-        }
-        if($lista){
-            return implode(" ",$lista);
-        }
-    }
-
-
     $query = "select * from se where codigo = '{$_POST['cod']}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
