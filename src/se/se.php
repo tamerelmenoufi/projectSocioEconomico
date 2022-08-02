@@ -10,6 +10,7 @@
 
         unset($data['codigo']);
         unset($data['acao']);
+        unset($data['data_nascimento']);
 
         $tot = count($data);
         $qt = 0;
@@ -23,6 +24,8 @@
         }
             $pct = (100*$qt/$tot);
             $attr[] = "percentual = '" . $pct . "'";
+            $attr[] = "data_nascimento = '" . dataMysql($_POST['data_nascimento']) . "'";
+
 
         $attr = implode(', ', $attr);
 
@@ -232,7 +235,7 @@
 
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="data_nascimento" id="data_nascimento" class="form-control" placeholder="Ponto de Referência" value="<?=$d->data_nascimento?>">
+                    <input type="text" name="data_nascimento" id="data_nascimento" class="form-control" placeholder="Ponto de Referência" value="<?=dataBr($d->data_nascimento)?>">
                     <label for="data_nascimento">Data de Nascimento</label>
                 </div>
 
@@ -565,6 +568,9 @@
             Carregando('none');
 
             $("#cpf").mask('999.999.999-99');
+            $("#telefone").mask('(99) 99999-9999');
+            $("#cep").mask('99999-999');
+            $("#data_nascimento").mask('99/99/9999');
 
             $('#form-<?=$md5?>').submit(function (e) {
 
