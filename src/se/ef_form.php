@@ -85,7 +85,9 @@
     $d = mysqli_fetch_object($result);
 ?>
 <style>
-
+    textarea{
+        height:200px !important;
+    }
 </style>
 
    <form id="form-<?= $md5 ?>">
@@ -226,6 +228,10 @@
         $(function(){
 
             Carregando('none');
+
+            $("#ef_data_nascimento").mask("99/99/9999");
+            $("#ef_telefone").mask("(99) 99999-9999");
+
 
             $('#form-<?=$md5?>').submit(function (e) {
 
