@@ -33,11 +33,7 @@ while($d = mysqli_fetch_object($result)){
 
                         <button
                             class="btn btn-danger"
-                            data-bs-toggle="offcanvas"
-                            href="#offcanvasDireita"
-                            role="button"
-                            aria-controls="offcanvasDireita"
-                            SeEf="<?=$d->codigo?>"
+                            deleteEf="<?=$d->codigo?>"
                         >
                             <i class="fa-solid fa-trash"></i>
                         </button>
@@ -77,6 +73,42 @@ while($d = mysqli_fetch_object($result)){
                 }
             });
         });
+
+        $("button[deleteEf]").click(function(){
+
+            $,confirm({
+                content:"Deseja realmente excluir o registro?",
+                title:false,
+                buttons:{
+                    'SIM':function(){
+                        Carregando();
+                       $.ajax({
+                            url:"src/se/ef_lista.php",
+                            success:function(dados){
+                                $("#EstruturaFamiliar").html(dados);
+
+                                $("#lista-tab").addClass("active")
+                                $("#lista-tab").attr("aria-selected","true")
+                                $("#form-tab").removeClass("active")
+                                $("#form-tab").attr("aria-selected","false")
+
+                            },
+                            error:function(erro){
+                                Carregando('none');
+
+                            }
+                        });
+                    },
+                    'Não':function(){
+
+                    }
+                }
+            })
+
+
+
+        })
+
 
     })
 </script>
