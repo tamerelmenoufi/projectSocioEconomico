@@ -1,5 +1,10 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
+
+    if($_POST['del']){
+        mysqli_query("delete from se_estrutura_familiar where codigo = '{$_POST['del']}'");
+    }
+
 ?>
 <style>
 
@@ -75,7 +80,7 @@ while($d = mysqli_fetch_object($result)){
         });
 
         $("button[deleteEf]").click(function(){
-
+            del = $(this).attr("deleteEf");
             $.confirm({
                 content:"Deseja realmente excluir o registro?",
                 title:false,
@@ -84,6 +89,10 @@ while($d = mysqli_fetch_object($result)){
                         Carregando();
                        $.ajax({
                             url:"src/se/ef_lista.php",
+                            type:"POST",
+                            data:{
+                                del
+                            },
                             success:function(dados){
                                 $("#EstruturaFamiliar").html(dados);
 
