@@ -97,11 +97,29 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaCheckbox([
+                    <?=montaRadio([
                         'rotulo' => 'Grau de Parentesco',
                         'campo' => 'ef_grau_parentesco',
                         'vetor' => [
-                            'Não',
+                            'Mãe',
+                            'Pai',
+                            'Esposo',
+                            'Esposa',
+                            'Filho',
+                            'Filha',
+                            'Entiado',
+                            'Entiada',
+                            'Neto',
+                            'Neta',
+                            'Tia',
+                            'Tio',
+                            'Sobrinho',
+                            'Sobrinha',
+                            'Primo',
+                            'Prima',
+                            'Avó',
+                            'Avô',
+                            'Outros',
                         ]
                     ])?>
                 </div>
