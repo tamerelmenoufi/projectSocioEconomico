@@ -55,6 +55,7 @@ while($d = mysqli_fetch_object($result)){
     $(function(){
 
         Carregando('none');
+
         $("button[editarEf]").click(function(){
             cod = $(this).attr("editarEf");
             $("#form-tab").addClass("active")
@@ -86,7 +87,7 @@ while($d = mysqli_fetch_object($result)){
                 buttons:{
                     'SIM':function(){
                         Carregando();
-                       $.ajax({
+                        $.ajax({
                             url:"src/se/ef_lista.php",
                             type:"POST",
                             data:{
