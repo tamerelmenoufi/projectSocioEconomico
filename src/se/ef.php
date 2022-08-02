@@ -31,7 +31,7 @@
   <li class="nav-item" role="presentation">
     <button
             class="nav-link active"
-            id="home-tab"
+            id="lista-tab"
             data-bs-toggle="tab"
             data-bs-target="#EstruturaFamiliar"
             type="button"
@@ -44,7 +44,7 @@
   <li class="nav-item" role="presentation">
     <button
             class="nav-link"
-            id="profile-tab"
+            id="form-tab"
             data-bs-toggle="tab"
             data-bs-target="#EstruturaFamiliar"
             type="button"

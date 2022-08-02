@@ -26,11 +26,7 @@ while($d = mysqli_fetch_object($result)){
 
                         <button
                             class="btn btn-primary"
-                            data-bs-toggle="offcanvas"
-                            href="#offcanvasDireita"
-                            role="button"
-                            aria-controls="offcanvasDireita"
-                            pesquisaSe="<?=$d->codigo?>"
+                            editarEf="<?=$d->codigo?>"
                         >
                             <i class="fa-solid fa-pen-to-square"></i>
                         </button>
@@ -59,7 +55,22 @@ while($d = mysqli_fetch_object($result)){
     $(function(){
 
         Carregando('none');
-
+        $("button[editarEf]").click(function(){
+            cod = $(this).attr("editarEf");
+            $.ajax({
+                url:"src/se/ef_form.php",
+                type:"POST",
+                data:{
+                    cod
+                },
+                success:function(dados){
+                    $("#EstruturaFamiliar").html(dados);
+                },
+                error:function(erro){
+                    Carregando('none');
+                }
+            });
+        });
 
     })
 </script>
