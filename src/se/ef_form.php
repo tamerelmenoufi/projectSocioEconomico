@@ -80,7 +80,7 @@
     }
 
 
-    $query = "select * from ef where codigo = '{$_POST['cod']}'";
+    $query = "select * from se_estrutura_familiar where codigo = '{$_POST['cod']}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 ?>
