@@ -58,7 +58,10 @@ while($d = mysqli_fetch_object($result)){
         $("button[editarEf]").click(function(){
             cod = $(this).attr("editarEf");
             $("#form-tab").addClass("active")
+            $("#form-tab").attr("aria-selected","true")
             $("#list-tab").removeClass("active")
+            $("#list-tab").attr("aria-selected","false")
+
             $.ajax({
                 url:"src/se/ef_form.php",
                 type:"POST",
