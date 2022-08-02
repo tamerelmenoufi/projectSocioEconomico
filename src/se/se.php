@@ -549,7 +549,7 @@
                     dataType:"JSON",
                     data: campos,
                     success:function(dados){
-                        $.alert(d'Dados atualizados com sucesso!');
+                        $.alert('Dados atualizados com sucesso!');
                         Carregando('none');
                     },
                     error:function(erro){
