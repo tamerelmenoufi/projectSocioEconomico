@@ -10,7 +10,6 @@
 
 </style>
 
-<h3>Aqui é a lista completa</h3>
 <?php
 
 $query = "select * from se_estrutura_familiar where se_codigo = '{$_SESSION['se_codigo']}'";
@@ -26,7 +25,7 @@ while($d = mysqli_fetch_object($result)){
 
                         <h5 class="card-title"><?=$d->ef_telefone?></h5>
                         <p class="card-text">
-                            Outras Informações
+                            <?=dataBr($d->ef_data_nascimento)?>
                         </p>
 
                         <button
