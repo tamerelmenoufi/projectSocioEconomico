@@ -503,7 +503,15 @@
 
         <div style="position:absolute; bottom:0;left:0; right:20px; height:50px; padding-right:10px; background-color:#fff;">
             <div style="display:flex; justify-content:end">
-                <button type="submit" SalvarFoto class="btn btn-success btn-ms">Salvar</button>
+                <button
+                    type="submit"
+                    SalvarFoto
+                    class="btn btn-success btn-ms"
+                    data-bs-toggle="offcanvas"
+                    href="#offcanvasDireita"
+                    role="button"
+                    aria-controls="offcanvasDireita"
+                >Salvar</button>
                 <input type="hidden" id="codigo" value="<?=$_POST['cod']?>" />
             </div>
         </div>
@@ -541,7 +549,7 @@
                     dataType:"JSON",
                     data: campos,
                     success:function(dados){
-                        $.alert(dados.query);
+                        $.alert(d'Dados atualizados com sucesso!');
                         Carregando('none');
                     },
                     error:function(erro){
