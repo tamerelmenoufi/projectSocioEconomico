@@ -33,10 +33,10 @@
             class="nav-link active"
             id="home-tab"
             data-bs-toggle="tab"
-            data-bs-target="#listaEstruturaFamiliar"
+            data-bs-target="#EstruturaFamiliar"
             type="button"
             role="tab"
-            aria-controls="listaEstruturaFamiliar"
+            aria-controls="EstruturaFamiliar"
             aria-selected="true"
             estruturaFamiliar="src/se/ef_lista.php"
     >Lista dos cadastros</button>
@@ -46,10 +46,10 @@
             class="nav-link"
             id="profile-tab"
             data-bs-toggle="tab"
-            data-bs-target="#formEstruturaFamiliar"
+            data-bs-target="#EstruturaFamiliar"
             type="button"
             role="tab"
-            aria-controls="formEstruturaFamiliar"
+            aria-controls="EstruturaFamiliar"
             aria-selected="false"
             estruturaFamiliar="src/se/ef_form.php"
     >Formulário de Cadastro</button>
@@ -58,18 +58,11 @@
 <div class="tab-content" id="myTabContent">
   <div
         class="tab-pane fade show active"
-        id="listaEstruturaFamiliar"
+        id="EstruturaFamiliar"
         role="tabpanel"
         aria-labelledby="lista-tab"
         tabindex="0"
-    >Lista dos cadastros</div>
-  <div
-        class="tab-pane fade"
-        id="formEstruturaFamiliar"
-        role="tabpanel"
-        aria-labelledby="form-tab"
-        tabindex="0"
-    >Formulários dos cadastros</div>
+    ></div>
 </div>
 
     <script>
