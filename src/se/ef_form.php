@@ -161,7 +161,7 @@
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" name="ef_portador_deficiencia_descricao" id="ef_portador_deficiencia_descricao" class="form-control" placeholder="Descreva a Definiência" value="<?=$d->ef_portador_deficiencia_descricao?>">
-                    <label for="ef_portador_deficiencia_descricao">Descreva a Definiência</label>
+                    <label for="ef_portador_deficiencia_descricao">Descreva a Deficiência</label>
                 </div>
 
                 <div class="form-floating mb-3">
