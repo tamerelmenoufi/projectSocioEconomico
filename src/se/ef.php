@@ -39,7 +39,7 @@
             aria-controls="EstruturaFamiliar"
             aria-selected="true"
             estruturaFamiliar="src/se/ef_lista.php"
-    >Lista dos cadastros</button>
+    >Lista de cadastros</button>
   </li>
   <li class="nav-item" role="presentation">
     <button
@@ -52,7 +52,7 @@
             aria-controls="EstruturaFamiliar"
             aria-selected="false"
             estruturaFamiliar="src/se/ef_form.php"
-    >Formulário de Cadastro</button>
+    >Formulário</button>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
