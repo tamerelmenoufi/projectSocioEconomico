@@ -10,6 +10,13 @@
 
 </style>
 
+<div class="row">
+    <div class="col">
+        <div style="display:flex; justify-content:end">
+            <button class="btn btn-primary btn-sm">Novo</button>
+        </div>
+    </div>
+</div>
 <?php
 
 $query = "select * from se_estrutura_familiar where se_codigo = '{$_SESSION['se_codigo']}'";
