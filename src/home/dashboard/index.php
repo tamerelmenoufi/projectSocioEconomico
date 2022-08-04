@@ -134,11 +134,11 @@
         });
     }
 
-    // $("div[grafico]").each(function(){
-    //   local = $(this).attr("grafico");
-    //   rotulo = $(this).parent('div').parent('div').children('h5').text();
-    //   Graficos({local, rotulo});
-    // })
+    $("div[grafico]").each(function(){
+      local = $(this).attr("grafico");
+      rotulo = $(this).parent('div').parent('div').children('h5').text();
+      Graficos({local, rotulo});
+    })
 
 
 
@@ -159,11 +159,11 @@
         });
     }
 
-    // $("div[tabela]").each(function(){
-    //   local = $(this).attr("tabela");
-    //   rotulo = $(this).parent('div').parent('div').children('h5').text();
-    //   Tabelas({local, rotulo});
-    // })
+    $("div[tabela]").each(function(){
+      local = $(this).attr("tabela");
+      rotulo = $(this).parent('div').parent('div').children('h5').text();
+      Tabelas({local, rotulo});
+    })
 
 
     $.ajax({
