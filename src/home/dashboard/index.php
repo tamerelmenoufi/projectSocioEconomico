@@ -31,7 +31,7 @@
         <div class="card">
           <h5 class="card-header">Usuários por município</h5>
           <div class="card-body">
-            <div grafico="municipio"></div>
+            <div grafico="municipios"></div>
           </div>
         </div>
       </div>
