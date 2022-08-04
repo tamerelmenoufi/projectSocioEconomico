@@ -12,7 +12,6 @@
 
 ?>
 
-<div class="col">
     <div class="col-md-3">
         <h4>Total de Beneficiários</h4>
         <h1><?=$d->total?></h1>
@@ -32,4 +31,3 @@
         <h4>Pesquisas Concluídas</h4>
         <h1><?=$d->concluidas?></h1>
     </div>
-</div>
