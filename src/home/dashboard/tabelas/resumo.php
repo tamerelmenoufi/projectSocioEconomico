@@ -13,22 +13,22 @@
 ?>
 <div class="row" style="margin:0; padding:0;">
     <div class="col-md-3">
-        <h4>Total de Beneficiários</h4>
-        <h1><?=$d->total?></h1>
+        <h5>Total de Beneficiários</h5>
+        <h3><?=$d->total?></h3>
     </div>
 
     <div class="col-md-3">
-        <h4>Pesquisas Iniciadas</h4>
-        <h1><?=$d->iniciadas?></h1>
+        <h5>Pesquisas Iniciadas</h5>
+        <h3><?=$d->iniciadas?></h3>
     </div>
 
     <div class="col-md-3">
-        <h4>Pesquisas Pendentes</h4>
-        <h1><?=$d->pendentes?></h1>
+        <h5>Pesquisas Pendentes</h5>
+        <h3><?=$d->pendentes?></h3>
     </div>
 
     <div class="col-md-3">
-        <h4>Pesquisas Concluídas</h4>
-        <h1><?=$d->concluidas?></h1>
+        <h5>Pesquisas Concluídas</h5>
+        <h3><?=$d->concluidas?></h3>
     </div>
 </div>
