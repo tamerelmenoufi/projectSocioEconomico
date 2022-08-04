@@ -26,6 +26,18 @@
 
   <!-- Pesquisa de satisfação Gráficos -->
     <div class="row" style="margin-top:20px; margin-bottom:20px;">
+      <div class="col-md-12">
+        <div class="card">
+          <h5 class="card-header">Identificação no mapa</h5>
+          <div class="card-body">
+            <div mapa="geral" style="width:100%; height:400px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Pesquisa de satisfação Gráficos -->
+    <div class="row" style="margin-top:20px; margin-bottom:20px;">
 
       <div class="col-md-3">
         <div class="card">
@@ -155,6 +167,21 @@
       Tabelas({local, rotulo});
     })
 
+
+    $.ajax({
+      url:`src/home/dashboard/mapas/geral.php`,
+      type:"POST",
+      data:{
+        rotulo:r.rotulo,
+        local:r.local,
+      },
+      success:function(dados){
+        $(`div[mapa="geral"]`).html(dados);
+      },
+      error:function(){
+        console.log('Erro');
+      }
+    });
 
 
   })
