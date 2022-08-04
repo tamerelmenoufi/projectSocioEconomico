@@ -8,7 +8,7 @@
         (select count(*) from se where percentual = 100) as concluidas
     ";
     $result = mysqli_query($con, $query);
-    $d = mysqli_fetch_object($query);
+    $d = mysqli_fetch_object($result);
 
 ?>
 
