@@ -63,7 +63,7 @@
     // });
 
 function icones(local){
-    geocoder<?=$md5?>.geocode({ 'address': local + ', Manaus, Amazonas, Brasil', 'region': 'BR' }, (results, status) => {
+    geocoder<?=$md5?>.geocode({ 'address': local + ', Amazonas, Brasil', 'region': 'BR' }, (results, status) => {
 
         if (status == google.maps.GeocoderStatus.OK) {
             if (results[0] && !coordenadas<?=$md5?>) {
@@ -94,7 +94,19 @@ function icones(local){
 
 }
 
-var enderecos = ['centro', 'alvorada', 'flores', 'cidade nova'];
+<?php
+
+    $query = "select * from municipios";
+    $result = mysqli_query($con, $query);
+    $mun = [];
+    while($d = mysqli_fetch_object($result)){
+        $mun[] = $d->municipio;
+    }
+
+?>
+
+
+var enderecos = ['<?=implode("','",$mun)?>'];
 
 for(i=0;i<enderecos.length;i++){
     console.log(enderecos[i])
