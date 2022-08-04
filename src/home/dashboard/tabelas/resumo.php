@@ -13,6 +13,8 @@
 ?>
 <style>
     .painel{
+        display:flex;
+        flex-direction:column;
         width:80%;
         height:90px;
         background-color:blue;
