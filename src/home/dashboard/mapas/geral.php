@@ -97,8 +97,8 @@ function icones(local, qt){
 <?php
 
     $query = "select
-                    a.*,
-                    (select count(*) from se where municipio = a.codigo) as qt
+                    a.*/*,
+                    (select count(*) from se where municipio = a.codigo) as qt*/
                 from municipios a
             ";
     $result = mysqli_query($con, $query);
