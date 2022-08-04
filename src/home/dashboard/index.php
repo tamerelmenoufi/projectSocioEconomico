@@ -18,7 +18,7 @@
         <div class="card">
           <h5 class="card-header">Resumo Geral</h5>
           <div class="card-body">
-            <div class="col" tabela="resumo"></div>
+            <div tabela="resumo" style="width:100%; border:solid 1px, red"></div>
           </div>
         </div>
       </div>
