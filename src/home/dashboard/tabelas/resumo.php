@@ -12,7 +12,7 @@
 
 ?>
 
-<div class="row">
+<div class="col">
     <div class="col-md-3">
         <h4>Total de Beneficiários</h4>
         <h1><?=$d->total?></h1>
