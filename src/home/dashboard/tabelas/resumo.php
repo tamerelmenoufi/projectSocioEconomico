@@ -17,8 +17,6 @@
         flex-direction:column;
         width:80%;
         height:90px;
-        background-color:blue;
-        border:solid 1px blue;
         border-radius:9px;
         text-align:center;
         justify-content:center;
@@ -28,28 +26,28 @@
 </style>
 <div class="row" style="margin:0; padding:0;">
     <div class="col-md-3">
-        <div class="painel">
+        <div class="painel" style="background-color:blue;">
             <h5>Total de Beneficiários</h5>
             <h3><?=$d->total?></h3>
         </div>
     </div>
 
     <div class="col-md-3">
-        <div class="painel">
+        <div class="painel" style="background-color:orange;">
             <h5>Pesquisas Iniciadas</h5>
             <h3><?=$d->iniciadas?></h3>
         </div>
     </div>
 
     <div class="col-md-3">
-        <div class="painel">
+        <div class="painel" style="background-color:grey;">
             <h5>Pesquisas Pendentes</h5>
             <h3><?=$d->pendentes?></h3>
         </div>
     </div>
 
     <div class="col-md-3">
-        <div class="painel">
+        <div class="painel" style="background-color:green;">
             <h5>Pesquisas Concluídas</h5>
             <h3><?=$d->concluidas?></h3>
         </div>
