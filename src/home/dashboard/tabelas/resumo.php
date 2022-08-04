@@ -13,25 +13,23 @@
 ?>
 
 <div class="col">
-    <div class="row">
-        <div class="col-md-3">
-            <h4>Total de Beneficiários</h4>
-            <h1><?=$d->total?></h1>
-        </div>
+    <div class="col-md-3">
+        <h4>Total de Beneficiários</h4>
+        <h1><?=$d->total?></h1>
+    </div>
 
-        <div class="col-md-3">
-            <h4>Pesquisas Iniciadas</h4>
-            <h1><?=$d->iniciadas?></h1>
-        </div>
+    <div class="col-md-3">
+        <h4>Pesquisas Iniciadas</h4>
+        <h1><?=$d->iniciadas?></h1>
+    </div>
 
-        <div class="col-md-3">
-            <h4>Pesquisas Pendentes</h4>
-            <h1><?=$d->pendentes?></h1>
-        </div>
+    <div class="col-md-3">
+        <h4>Pesquisas Pendentes</h4>
+        <h1><?=$d->pendentes?></h1>
+    </div>
 
-        <div class="col-md-3">
-            <h4>Pesquisas Concluídas</h4>
-            <h1><?=$d->concluidas?></h1>
-        </div>
+    <div class="col-md-3">
+        <h4>Pesquisas Concluídas</h4>
+        <h1><?=$d->concluidas?></h1>
     </div>
 </div>
