@@ -63,7 +63,7 @@
     // });
 
 function icones(local){
-    geocoder<?=$md5?>.geocode({ 'address': endereco<?=$md5?> + ', Manaus, Amazonas, Brasil', 'region': 'BR' }, (results, status) => {
+    geocoder<?=$md5?>.geocode({ 'address': local + ', Manaus, Amazonas, Brasil', 'region': 'BR' }, (results, status) => {
 
         if (status == google.maps.GeocoderStatus.OK) {
             if (results[0] && !coordenadas<?=$md5?>) {
@@ -98,6 +98,7 @@ var enderecos = ['centro', 'alvorada', 'flores', 'cidade nova'];
 
 for(i=0;i<enderecos.length;i++){
     console.log(enderecos[i])
+    icones(enderecos[i])
 }
 
 </script>
