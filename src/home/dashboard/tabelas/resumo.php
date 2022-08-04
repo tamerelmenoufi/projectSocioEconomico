@@ -21,28 +21,28 @@
     }
 </style>
 <div class="row" style="margin:0; padding:0;">
-    <div class="col-md-3 painel">
+    <div class="col-md-3">
         <div class="painel">
             <h5>Total de Beneficiários</h5>
             <h3><?=$d->total?></h3>
         </div>
     </div>
 
-    <div class="col-md-3 painel">
+    <div class="col-md-3">
         <div class="painel">
             <h5>Pesquisas Iniciadas</h5>
             <h3><?=$d->iniciadas?></h3>
         </div>
     </div>
 
-    <div class="col-md-3 painel">
+    <div class="col-md-3">
         <div class="painel">
             <h5>Pesquisas Pendentes</h5>
             <h3><?=$d->pendentes?></h3>
         </div>
     </div>
 
-    <div class="col-md-3 painel">
+    <div class="col-md-3">
         <div class="painel">
             <h5>Pesquisas Concluídas</h5>
             <h3><?=$d->concluidas?></h3>
