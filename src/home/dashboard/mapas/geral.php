@@ -62,7 +62,7 @@
     //     alert(`Lat ${latLng.lat()} & Lng ${latLng.lng()}`)
     // });
 
-function icones(local){
+function icones(local, qt){
     geocoder<?=$md5?>.geocode({ 'address': local + ', Amazonas, Brasil', 'region': 'BR' }, (results, status) => {
 
         if (status == google.maps.GeocoderStatus.OK) {
@@ -82,7 +82,7 @@ function icones(local){
                 marker<?=$md5?> = new google.maps.Marker({
                     position: { lat: latitude<?=$md5?>, lng: longitude<?=$md5?> },
                     map:map<?=$md5?>,
-                    title: "Hello World!",
+                    title: qt + " Beneficiários",
                     draggable:false,
                 });
 
@@ -96,21 +96,28 @@ function icones(local){
 
 <?php
 
-    $query = "select * from municipios";
+    $query = "select
+                    a.*,
+                    (select count(*) from se where municipio = a.codigo) as qt
+                from municipios a
+            ";
     $result = mysqli_query($con, $query);
     $mun = [];
+    $qt = [];
     while($d = mysqli_fetch_object($result)){
         $mun[] = $d->municipio;
+        $qt[] = $d->qt;
     }
 
 ?>
 
 
 var enderecos = ['<?=implode("','",$mun)?>'];
+var qt = ['<?=implode("','",$qt)?>'];
 
 for(i=0;i<enderecos.length;i++){
     console.log(enderecos[i])
-    icones(enderecos[i])
+    icones(enderecos[i], qt[i])
 }
 
 </script>
