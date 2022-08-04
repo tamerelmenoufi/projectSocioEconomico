@@ -17,6 +17,7 @@
             b.municipio as municipio
         FROM se a
         left join municipios b on a.municipio = b.codigo
+        where municipio != 66
         group by a.municipio
         order by b.municipio
     ";
