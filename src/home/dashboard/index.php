@@ -171,10 +171,6 @@
     $.ajax({
       url:`src/home/dashboard/mapas/geral.php`,
       type:"POST",
-      data:{
-        rotulo:r.rotulo,
-        local:r.local,
-      },
       success:function(dados){
         $(`div[mapa="geral"]`).html(dados);
       },
