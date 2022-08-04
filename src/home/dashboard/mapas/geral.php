@@ -96,7 +96,7 @@ function icones(local){
 
 var enderecos = ['centro', 'alvorada', 'flores', 'cidade nova'];
 
-for(i=0;i<enderecos.lenght;i++){
+for(i=0;i<enderecos.length;i++){
     console.log(enderecos[i])
 }
 
