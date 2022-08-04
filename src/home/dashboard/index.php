@@ -24,6 +24,48 @@
       </div>
     </div>
 
+  <!-- Pesquisa de satisfação Gráficos -->
+    <div class="row" style="margin-top:20px; margin-bottom:20px;">
+
+      <div class="col-md-3">
+        <div class="card">
+          <h5 class="card-header">Usuários por Zona</h5>
+          <div class="card-body">
+            <div tabela="zona_geral" style="width:100%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card">
+          <h5 class="card-header">Zona Urbana</h5>
+          <div class="card-body">
+            <div tabela="urbana" style="width:100%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card">
+          <h5 class="card-header">Zona Rural</h5>
+          <div class="card-body">
+            <div tabela="rural" style="width:100%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card">
+          <h5 class="card-header">Evolução da Pesquisa</h5>
+          <div class="card-body">
+            <div tabela="pesquisa" style="width:100%;"></div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
 
     <!-- Pesquisa de satisfação Gráficos -->
     <div class="row" style="margin-top:20px; margin-bottom:20px;">
