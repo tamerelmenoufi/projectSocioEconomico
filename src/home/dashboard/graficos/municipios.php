@@ -19,7 +19,7 @@
         left join municipios b on a.municipio = b.codigo
         where a.municipio != 66
         group by a.municipio
-        order by b.municipio
+        order by quantidade desc
     ";
     $result = mysqli_query($con, $query);
     $Rotulos = [];
