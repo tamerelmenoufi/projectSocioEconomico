@@ -13,7 +13,7 @@
     $query = "
                 select
                     (select count(*) from se where percentual > 0 and percentual < 100) as iniciadas,
-                    (select count(*) from se where percentual = 0 ) as pemdemtes,
+                    (select count(*) from se where percentual = 0 ) as pendentes,
                     (select count(*) from se where percentual = 100) as concluidas
                 from se limit 1
     ";
