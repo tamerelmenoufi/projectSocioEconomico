@@ -29,9 +29,7 @@
       <div class="col-md-12">
         <div class="card">
           <h5 class="card-header">Identificação no mapa</h5>
-          <div class="card-body">
             <div mapa="geral" style="width:100%; height:400px;"></div>
-          </div>
         </div>
       </div>
     </div>
