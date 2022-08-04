@@ -82,7 +82,7 @@ function icones(local, qt){
                 marker<?=$md5?> = new google.maps.Marker({
                     position: { lat: latitude<?=$md5?>, lng: longitude<?=$md5?> },
                     map:map<?=$md5?>,
-                    title: qt + " Beneficiários",
+                    title: qt + " Beneficiários em "+local,
                     draggable:false,
                 });
 
@@ -97,8 +97,8 @@ function icones(local, qt){
 <?php
 
     $query = "select
-                    a.*/*,
-                    (select count(*) from se where municipio = a.codigo) as qt*/
+                    a.*,
+                    (select count(*) from se where municipio = a.codigo) as qt
                 from municipios a
             ";
     $result = mysqli_query($con, $query);
