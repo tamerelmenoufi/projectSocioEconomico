@@ -28,7 +28,7 @@
         mapTypeControl: false,
         draggable: true,
         scaleControl: true,
-        scrollwheel: false,
+        scrollwheel: true,
         navigationControl: false,
         streetViewControl: false,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
