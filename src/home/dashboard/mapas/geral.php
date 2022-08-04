@@ -50,12 +50,12 @@
     }*/
     );
 
-    marker<?=$md5?> = new google.maps.Marker({
-        position: { lat: -3.986913, lng: -63.931869 },
-        map:map<?=$md5?>,
-        title: "Hello World!",
-        draggable:false,
-    });
+    // marker<?=$md5?> = new google.maps.Marker({
+    //     position: { lat: -3.986913, lng: -63.931869 },
+    //     map:map<?=$md5?>,
+    //     title: "Hello World!",
+    //     draggable:false,
+    // });
 
     // google.maps.event.addListener(marker<?=$md5?>, 'dragend', function(marker) {
     //     var latLng = marker.latLng;
@@ -63,25 +63,34 @@
     // });
 
 
-    // geocoder<?=$md5?>.geocode({ 'address': endereco<?=$md5?> + ', Manaus, Amazonas, Brasil', 'region': 'BR' }, (results, status) => {
+    geocoder<?=$md5?>.geocode({ 'address': endereco<?=$md5?> + ', Manaus, Amazonas, Brasil', 'region': 'BR' }, (results, status) => {
 
-    //     if (status == google.maps.GeocoderStatus.OK) {
-    //         if (results[0] && !coordenadas<?=$md5?>) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            if (results[0] && !coordenadas<?=$md5?>) {
 
-    //             var latitude<?=$md5?> = results[0].geometry.location.lat();
-    //             var longitude<?=$md5?> = results[0].geometry.location.lng();
-    //             console.log('Coordenadas:')
-    //             console.log('Lat:'+latitude<?=$md5?>)
-    //             console.log('Lng:'+longitude<?=$md5?>)
+                var latitude<?=$md5?> = results[0].geometry.location.lat();
+                var longitude<?=$md5?> = results[0].geometry.location.lng();
+                console.log('Coordenadas:')
+                console.log('Lat:'+latitude<?=$md5?>)
+                console.log('Lng:'+longitude<?=$md5?>)
 
-    //             var location<?=$md5?> = new google.maps.LatLng(latitude<?=$md5?>, longitude<?=$md5?>);
-    //             marker<?=$md5?>.setPosition(location<?=$md5?>);
-    //             map<?=$md5?>.setCenter(location<?=$md5?>);
-    //             map<?=$md5?>.setZoom(18);
+                // var location<?=$md5?> = new google.maps.LatLng(latitude<?=$md5?>, longitude<?=$md5?>);
+                // marker<?=$md5?>.setPosition(location<?=$md5?>);
+                // map<?=$md5?>.setCenter(location<?=$md5?>);
+                // map<?=$md5?>.setZoom(18);
 
-    //         }
-    //     }
-    // });
+                marker<?=$md5?> = new google.maps.Marker({
+                    position: { lat: latitude<?=$md5?>, lng: longitude<?=$md5?> },
+                    map:map<?=$md5?>,
+                    title: "Hello World!",
+                    draggable:false,
+                });
+
+
+
+            }
+        }
+    });
 
 
 
