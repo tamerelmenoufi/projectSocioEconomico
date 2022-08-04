@@ -115,6 +115,9 @@ function icones(local, qt){
 var enderecos = ['<?=implode("','",$mun)?>'];
 var qt = ['<?=implode("','",$qt)?>'];
 
+var enderecos = ['MANAUS'];
+var qt = ['10'];
+
 for(i=0;i<enderecos.length;i++){
     console.log(enderecos[i])
     icones(enderecos[i], qt[i])
