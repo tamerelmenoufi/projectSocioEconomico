@@ -27,7 +27,7 @@
         zoomControl: true,
         mapTypeControl: false,
         draggable: true,
-        scaleControl: false,
+        scaleControl: true,
         scrollwheel: false,
         navigationControl: false,
         streetViewControl: false,
