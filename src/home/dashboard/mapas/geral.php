@@ -24,23 +24,24 @@
     endereco<?=$md5?> = "<?=$endereco?>";
     geocoder<?=$md5?> = new google.maps.Geocoder();
     map<?=$md5?> = new google.maps.Map(document.getElementById("map<?=$md5?>"), {
-        zoomControl: false,
+        zoomControl: true,
         mapTypeControl: false,
-        draggable: false,
+        draggable: true,
         scaleControl: false,
         scrollwheel: false,
         navigationControl: false,
         streetViewControl: false,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
-        fullscreenControl: false,
+        fullscreenControl: true,
         <?php
-        if($coordenadas){
+        // if($coordenadas){
+            // -3.986913, -63.931869
         ?>
-        center: { lat: <?=$coordenada[0]?>, lng: <?=$coordenada[1]?> },
-        zoom: 18,
+        center: { lat: -3.986913, lng: -63.931869 },
+        zoom: 10,
 
         <?php
-        }
+        // }
         ?>
     }
     /*{
@@ -50,7 +51,7 @@
     );
 
     marker<?=$md5?> = new google.maps.Marker({
-        position: { lat: <?=(($coordenada[0])?:0)?>, lng: <?=(($coordenada[1])?:0)?> },
+        position: { lat: -3.986913, lng: -63.931869 },
         map:map<?=$md5?>,
         title: "Hello World!",
         draggable:false,
@@ -62,25 +63,25 @@
     // });
 
 
-    geocoder<?=$md5?>.geocode({ 'address': endereco<?=$md5?> + ', Manaus, Amazonas, Brasil', 'region': 'BR' }, (results, status) => {
+    // geocoder<?=$md5?>.geocode({ 'address': endereco<?=$md5?> + ', Manaus, Amazonas, Brasil', 'region': 'BR' }, (results, status) => {
 
-        if (status == google.maps.GeocoderStatus.OK) {
-            if (results[0] && !coordenadas<?=$md5?>) {
+    //     if (status == google.maps.GeocoderStatus.OK) {
+    //         if (results[0] && !coordenadas<?=$md5?>) {
 
-                var latitude<?=$md5?> = results[0].geometry.location.lat();
-                var longitude<?=$md5?> = results[0].geometry.location.lng();
-                console.log('Coordenadas:')
-                console.log('Lat:'+latitude<?=$md5?>)
-                console.log('Lng:'+longitude<?=$md5?>)
+    //             var latitude<?=$md5?> = results[0].geometry.location.lat();
+    //             var longitude<?=$md5?> = results[0].geometry.location.lng();
+    //             console.log('Coordenadas:')
+    //             console.log('Lat:'+latitude<?=$md5?>)
+    //             console.log('Lng:'+longitude<?=$md5?>)
 
-                var location<?=$md5?> = new google.maps.LatLng(latitude<?=$md5?>, longitude<?=$md5?>);
-                marker<?=$md5?>.setPosition(location<?=$md5?>);
-                map<?=$md5?>.setCenter(location<?=$md5?>);
-                map<?=$md5?>.setZoom(18);
+    //             var location<?=$md5?> = new google.maps.LatLng(latitude<?=$md5?>, longitude<?=$md5?>);
+    //             marker<?=$md5?>.setPosition(location<?=$md5?>);
+    //             map<?=$md5?>.setCenter(location<?=$md5?>);
+    //             map<?=$md5?>.setZoom(18);
 
-            }
-        }
-    });
+    //         }
+    //     }
+    // });
 
 
 
