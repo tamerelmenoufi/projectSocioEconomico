@@ -18,6 +18,10 @@
         background-color:blue;
         border:solid 1px blue;
         border-radius:9px;
+        text-align:center;
+        justify-content:center;
+        align-items:center;
+        color:#fff;
     }
 </style>
 <div class="row" style="margin:0; padding:0;">
