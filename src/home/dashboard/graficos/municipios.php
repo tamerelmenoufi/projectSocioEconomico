@@ -36,7 +36,7 @@
 
     const Tipos<?=$md5?> = new Chart(TiposCtx<?=$md5?>,
         {
-            type: 'pie',
+            type: 'bar',
             data: {
                 labels: [<?=$R?>],
                 datasets: [{
