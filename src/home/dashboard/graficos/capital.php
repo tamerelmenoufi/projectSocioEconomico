@@ -25,7 +25,7 @@
     $Rotulos = [];
     $Quantidade = [];
     while($d = mysqli_fetch_object($result)){
-      $Rotulos[] = ($d->cairro);
+      $Rotulos[] = ($d->bairro);
       $Quantidade[] = $d->quantidade;
     }
     $R = (($Rotulos)?"'".implode("','",$Rotulos)."'":0);
