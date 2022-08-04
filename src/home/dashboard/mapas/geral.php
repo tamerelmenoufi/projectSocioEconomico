@@ -66,7 +66,7 @@ function icones(local, qt){
     geocoder<?=$md5?>.geocode({ 'address': local + ', Amazonas, Brasil', 'region': 'BR' }, (results, status) => {
 
         if (status == google.maps.GeocoderStatus.OK) {
-            if (results[0] && !coordenadas<?=$md5?>) {
+            // if (results[0] && !coordenadas<?=$md5?>) {
 
                 var latitude<?=$md5?> = results[0].geometry.location.lat();
                 var longitude<?=$md5?> = results[0].geometry.location.lng();
@@ -88,7 +88,7 @@ function icones(local, qt){
 
 
 
-            }
+            // }
         }
     });
 
