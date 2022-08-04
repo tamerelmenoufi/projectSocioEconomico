@@ -27,20 +27,11 @@
 
     <!-- Pesquisa de satisfação Gráficos -->
     <div class="row" style="margin-top:20px; margin-bottom:20px;">
-      <div class="col-md-6">
+      <div class="col-md-12">
         <div class="card">
           <h5 class="card-header">Usuários por município</h5>
           <div class="card-body">
             <div grafico="municipios"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="card">
-          <h5 class="card-header">Tabela Bom - por Unidade</h5>
-          <div class="card-body">
-            <div tabela="votos_bom_unidade"></div>
           </div>
         </div>
       </div>
