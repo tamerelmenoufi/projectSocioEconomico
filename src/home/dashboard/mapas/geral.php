@@ -70,7 +70,7 @@ function icones(local, qt){
 
                 var latitude<?=$md5?> = results[0].geometry.location.lat();
                 var longitude<?=$md5?> = results[0].geometry.location.lng();
-                console.log('Coordenadas:')
+                console.log('Coordenadas:', local)
                 console.log('Lat:'+latitude<?=$md5?>)
                 console.log('Lng:'+longitude<?=$md5?>)
 
