@@ -94,7 +94,7 @@ const Icons = (local) => {
 
 }
 
-const enderecos = ['centro', 'alvorada', 'flores', 'cidade nova'];
+enderecos = ['centro', 'alvorada', 'flores', 'cidade nova'];
 
 enderecos.each(function(e){
     console.log(e)
