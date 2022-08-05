@@ -326,10 +326,31 @@
                     ])?>
                 </div>
 
+
+
+
                 <div class="form-floating mb-3">
                     <textarea name="beneficio_social_descricao" id="beneficio_social_descricao" class="form-control" placeholder="Descrição do Benefício Social" ><?=$d->beneficio_social_descricao?></textarea>
                     <label for="beneficio_social_descricao">Descrição do Benefício Social</label>
                 </div>
+
+                 <div class="form-floating mb-3">
+                    <?=montaRadio([
+                        'rotulo' => 'Como Avalia o Benefício',
+                        'campo' => 'avaliacao_beneficios',
+                        'vetor' => [
+                           'Ruim',
+                            'Bom',
+                            'Ótimo',
+                        ],
+                        'dados' => $d->avaliacao_beneficios
+                    ])?>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea name="avaliacao_beneficios_descricao" id="avaliacao_beneficios_descricao" class="form-control" placeholder="Descrição da Avaliação do Benefício" ><?=$d->avaliacao_beneficios_descricao?></textarea>
+                    <label for="avaliacao_beneficios_descricao">Descrição da Avaliação do Benefício</label>
+                </div>
+
 
                 <div class="form-floating mb-3">
                     <?=montaRadio([
