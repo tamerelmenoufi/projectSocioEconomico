@@ -334,7 +334,7 @@
                     <label for="beneficio_social_descricao">Descrição do Benefício Social</label>
                 </div>
 
-                 <div class="form-floating mb-3">
+                <div class="form-floating mb-3">
                     <?=montaRadio([
                         'rotulo' => 'Como Avalia o Benefício',
                         'campo' => 'avaliacao_beneficios',
@@ -349,6 +349,22 @@
                 <div class="form-floating mb-3">
                     <textarea name="avaliacao_beneficios_descricao" id="avaliacao_beneficios_descricao" class="form-control" placeholder="Descrição da Avaliação do Benefício" ><?=$d->avaliacao_beneficios_descricao?></textarea>
                     <label for="avaliacao_beneficios_descricao">Descrição da Avaliação do Benefício</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <?=montaRadio([
+                        'rotulo' => 'Benefício atende as Necessidades?',
+                        'campo' => 'atende_necessidades',
+                        'vetor' => [
+                           'Sim',
+                            'Não',
+                        ],
+                        'dados' => $d->atende_necessidades
+                    ])?>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea name="atende_necessidades_descricao" id="atende_necessidades_descricao" class="form-control" placeholder="Descrição de Benefício que atende ou não as Necessidades" ><?=$d->atende_necessidades_descricao?></textarea>
+                    <label for="atende_necessidades_descricao">Descrição de Benefício que atende ou não as Necessidades</label>
                 </div>
 
 
