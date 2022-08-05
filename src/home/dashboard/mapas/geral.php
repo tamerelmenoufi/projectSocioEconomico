@@ -25,12 +25,12 @@
     geocoder<?=$md5?> = new google.maps.Geocoder();
     map<?=$md5?> = new google.maps.Map(document.getElementById("map<?=$md5?>"), {
         zoomControl: true,
-        mapTypeControl: false,
+        mapTypeControl: true, //
         draggable: true,
         scaleControl: true,
         scrollwheel: true,
-        navigationControl: false,
-        streetViewControl: false,
+        navigationControl: true,//
+        streetViewControl: true,//
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         fullscreenControl: true,
         <?php
