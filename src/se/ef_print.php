@@ -101,8 +101,7 @@
                     <label for="ef_tratamento_saude_descricao">Descreva o Tratamento de Saúde</label>
                 </div>
 
-</div>
-<div class="col-6">
+
 
                 <div class="form-floating mb-3">
                     <?=montaOpcPrint([
@@ -119,7 +118,8 @@
                     <div textarea type="text" name="ef_doencas_cronicas_descricao" id="ef_doencas_cronicas_descricao" class="form-control form-control-sm" placeholder="Descreva o Tratamento de Saúde" value="<?=$d->ef_doencas_cronicas_descricao?>"></div>
                     <label for="ef_doencas_cronicas_descricao">Descreva a(s) Doença(s) Crônica(s)</label>
                 </div>
-
+</div>
+<div class="col-6">
                 <div class="form-floating mb-3">
                     <?=montaOpcPrint([
                         'rotulo' => 'É portador de alguma deficiência?',
