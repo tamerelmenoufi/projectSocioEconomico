@@ -19,8 +19,6 @@
 <div class="container">
         <div class="row" style="margin-bottom:50px;">
 
-<div class="row">
-    <div class="col-6">
             <div class="col">
                 <div class="form-floating mb-3">
                     <div type="text" class="form-control form-control-sm" id="ef_nome" name="ef_nome" placeholder="Nome completo" value="<?=$d->ef_nome?>"></div>
@@ -69,9 +67,12 @@
                         </div>
                     </div>
                 </div>
+
+<div class="row">
+    <div class="col-6">
                 <div class="form-floating mb-3">
                     <?=montaOpcPrint([
-                        'rotulo' => 'Qua a renda mensal?',
+                        'rotulo' => 'Qual a renda mensal?',
                         'campo' => 'ef_renda_mensal',
                         'vetor' => [
                             'Nenhuma',
