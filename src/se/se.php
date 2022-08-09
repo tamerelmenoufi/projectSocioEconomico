@@ -363,6 +363,24 @@
 
 
 
+                <div class="form-floating mb-3">
+                    <?=montaCheckbox([
+                        'rotulo' => 'Necessita de Documentos',
+                        'campo' => 'necessita_documentos',
+                        'vetor' => [
+                            'Não',
+                            'RCN', // - Registro Civil de Nascimento
+                            'RCC', // -
+                            'RG', // - Registro Geral
+                            'CPF', //- Cadastro de Pessoa Física
+                            'CTPS', // - Carteira de Trabalho e Previdencia Social
+                            'TE', //- Título Eleitoral
+                        ],
+                        'dados' => $d->necessita_documentos
+                    ])?>
+                </div>
+
+
 
 
                     <!-- XXXXXXXXXXXXXXXXXXXXXXXX -->
