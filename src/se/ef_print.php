@@ -52,13 +52,19 @@
                         'dados' => $d->ef_grau_parentesco
                     ])?>
                 </div>
-                <div class="form-floating mb-3">
-                    <div type="text" name="ef_data_nascimento" id="ef_data_nascimento" class="form-control form-control-sm" placeholder="Data de Nascimento" value="<?=dataBr($d->ef_data_nascimento)?>"></div>
-                    <label for="ef_data_nascimento">Data de Nascimento</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <div type="text" name="ef_telefone" id="ef_telefone" class="form-control form-control-sm" placeholder="Telefone" value="<?=$d->ef_telefone?>"></div>
-                    <label for="ef_telefone">Telefone*</label>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            <div type="text" name="ef_data_nascimento" id="ef_data_nascimento" class="form-control form-control-sm" placeholder="Data de Nascimento" value="<?=dataBr($d->ef_data_nascimento)?>"></div>
+                            <label for="ef_data_nascimento">Data de Nascimento</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            <div type="text" name="ef_telefone" id="ef_telefone" class="form-control form-control-sm" placeholder="Telefone" value="<?=$d->ef_telefone?>"></div>
+                            <label for="ef_telefone">Telefone*</label>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-floating mb-3">
                     <?=montaOpcPrint([
