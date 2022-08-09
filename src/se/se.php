@@ -647,7 +647,7 @@
 
                     ])?>
                 </div>
-                <div class="ocultar" opiniao_esporte_lazer_descricao>
+                <div class="oculto" opiniao_esporte_lazer_descricao>
                     <div class="form-floating mb-3">
                         <textarea name="opiniao_esporte_lazer_descricao" id="opiniao_esporte_lazer_descricao" class="form-control" placeholder="Outras Opiniões falhas no Esporte e Lazer" ><?=$d->opiniao_esporte_lazer_descricao?></textarea>
                         <label for="opiniao_esporte_lazer_descricao">Outras Opiniões falhas no Esporte e Lazer</label>
