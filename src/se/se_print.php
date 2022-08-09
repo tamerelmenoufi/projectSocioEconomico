@@ -33,7 +33,13 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-3">
+                        <div class="form-floating mb-3">
+                            <div type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>"></div>
+                            <label for="nome">Data de Nascimento*</label>
+                        </div>
+                    </div>
+                    <div class="col-3">
                         <div class="form-floating mb-3">
                             <div type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>"></div>
                             <label for="nome">Telefone*</label>
