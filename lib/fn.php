@@ -82,7 +82,7 @@
         $lista[] = '<div class="mt-3" style="width:100%; float:none;"><b>'.$rotulo.'</b></div><div style="width:100%; float:none;">';
         for($i=0;$i<count($vetor);$i++){
             $lista[] = '  <span margin-left:15px;">
-            <i class="fa-solid fa-square" style="color:#ccc"></i> '.$vetor[$i].'</div>';
+            <i class="fa-solid fa-square" style="color:#ccc"></i> '.$vetor[$i].'</span>';
         }
         $lista[] = '</div>';
         if($lista){
