@@ -54,7 +54,7 @@
         }
 
         if($retorno){
-            echo '<b>FILTRO: <small total style="color:#a1a1a1; font-size:10px;"></small> </b>' . implode(" ", $retorno);
+            echo '<b>FILTRO: <small total style="color:#cccccc; font-size:14px;"></small> </b>' . implode(" ", $retorno);
         }
 
     }
@@ -103,7 +103,6 @@
                 <!-- <button class="btn btn-primary">
                     Novo
                 </button> -->
-
                 <button
                     class="btn btn-warning"
                     data-bs-toggle="offcanvas"
