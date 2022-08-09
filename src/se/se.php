@@ -171,7 +171,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Genero',
+                        'rotulo' => 'Genero?',
                         'campo' => 'genero',
                         'vetor' => [
                             'Masculino',
@@ -189,7 +189,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Estado Civil',
+                        'rotulo' => 'Qual o seu Estado Civil',
                         'campo' => 'estado_civil',
                         'vetor' => [
                             'Solteiro',
@@ -204,7 +204,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaCheckbox([
-                        'rotulo' => 'Meio(s) de Trasporte(s)',
+                        'rotulo' => 'Qual é o principal meio de transporte utilizado?',
                         'campo' => 'meio_transporte',
                         'vetor' => [
                             'A Pé',
@@ -222,7 +222,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Tipo de Imóvel ',
+                        'rotulo' => 'Você reside em Imóvel:',
                         'campo' => 'tipo_imovel',
                         'vetor' => [
                             'Própria',
@@ -238,7 +238,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaCheckbox([
-                        'rotulo' => 'Tipo de Moradia',
+                        'rotulo' => 'Tipos de Moradia:',
                         'campo' => 'tipo_moradia',
                         'vetor' => [
                             'Madeira',
@@ -254,7 +254,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Quantidade de Cômodos',
+                        'rotulo' => 'Quantos Cômodos possui sua residência?',
                         'campo' => 'quantidade_comodos',
                         'vetor' => [
                             '1 Cômodo',
@@ -269,7 +269,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Grau de Escolaridade',
+                        'rotulo' => 'Qual o seu Grau de escolaridade?',
                         'campo' => 'grau_escolaridade',
                         'vetor' => [
                             'Ensino Fundamental I Completo',
@@ -284,7 +284,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Cursos Técnico/Profissionalizante',
+                        'rotulo' => 'Você possui algum Curso Técnico/Profissionalizante?',
                         'campo' => 'curos_profissionais',
                         'vetor' => [
                             'Sim',
@@ -300,7 +300,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Renda Mensal',
+                        'rotulo' => 'Qual sua Renda Mensal?',
                         'campo' => 'renda_mensal',
                         'vetor' => [
                             'Nenhuma',
@@ -316,7 +316,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Benefício Social',
+                        'rotulo' => 'Você possui algum Benefício Social?',
                         'campo' => 'beneficio_social',
                         'vetor' => [
                             'Sim',
@@ -326,51 +326,15 @@
                     ])?>
                 </div>
 
-
-
-
                 <div class="form-floating mb-3">
                     <textarea name="beneficio_social_descricao" id="beneficio_social_descricao" class="form-control" placeholder="Descrição do Benefício Social" ><?=$d->beneficio_social_descricao?></textarea>
                     <label for="beneficio_social_descricao">Descrição do Benefício Social</label>
                 </div>
 
-                <div class="form-floating mb-3">
-                    <?=montaRadio([
-                        'rotulo' => 'Como Avalia o Benefício',
-                        'campo' => 'avaliacao_beneficios',
-                        'vetor' => [
-                           'Ruim',
-                            'Bom',
-                            'Ótimo',
-                        ],
-                        'dados' => $d->avaliacao_beneficios
-                    ])?>
-                </div>
-                <div class="form-floating mb-3">
-                    <textarea name="avaliacao_beneficios_descricao" id="avaliacao_beneficios_descricao" class="form-control" placeholder="Descrição da Avaliação do Benefício" ><?=$d->avaliacao_beneficios_descricao?></textarea>
-                    <label for="avaliacao_beneficios_descricao">Descrição da Avaliação do Benefício</label>
-                </div>
 
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Benefício atende as Necessidades?',
-                        'campo' => 'atende_necessidades',
-                        'vetor' => [
-                           'Sim',
-                            'Não',
-                        ],
-                        'dados' => $d->atende_necessidades
-                    ])?>
-                </div>
-                <div class="form-floating mb-3">
-                    <textarea name="atende_necessidades_descricao" id="atende_necessidades_descricao" class="form-control" placeholder="Descrição de Benefício que atende ou não as Necessidades" ><?=$d->atende_necessidades_descricao?></textarea>
-                    <label for="atende_necessidades_descricao">Descrição de Benefício que atende ou não as Necessidades</label>
-                </div>
-
-
-                <div class="form-floating mb-3">
-                    <?=montaRadio([
-                        'rotulo' => 'Serviço de Saúde',
+                        'rotulo' => 'Qual Serviço de Saúde você utiliza?',
                         'campo' => 'servico_saude',
                         'vetor' => [
                            'SUS',
@@ -384,7 +348,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Vacina COVID19',
+                        'rotulo' => 'Já tomou a vacina contra o Covid-19? Quantas doses já tomou?',
                         'campo' => 'vacina_covid',
                         'vetor' => [
                             'Não',
@@ -397,9 +361,56 @@
                     ])?>
                 </div>
 
+
+
+
+
+                    <!-- XXXXXXXXXXXXXXXXXXXXXXXX -->
+
+
+
+                    <div class="form-floating mb-3">
+                    <?=montaRadio([
+                        'rotulo' => 'Como você avalia o Beneficio?',
+                        'campo' => 'avaliacao_beneficios',
+                        'vetor' => [
+                           'Ruim',
+                            'Bom',
+                            'Ótimo',
+                        ],
+                        'dados' => $d->avaliacao_beneficios
+                    ])?>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea name="avaliacao_beneficios_descricao" id="avaliacao_beneficios_descricao" class="form-control" placeholder="Descrição da Avaliação do Benefício" ><?=$d->avaliacao_beneficios_descricao?></textarea>
+                    <label for="avaliacao_beneficios_descricao">Descrição de sua Avaliação do Benefício</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <?=montaRadio([
+                        'rotulo' => 'O beneficio tem atendido suas Necessidades?',
+                        'campo' => 'atende_necessidades',
+                        'vetor' => [
+                           'Sim',
+                            'Não',
+                        ],
+                        'dados' => $d->atende_necessidades
+                    ])?>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea name="atende_necessidades_descricao" id="atende_necessidades_descricao" class="form-control" placeholder="Descrição de Benefício que atende ou não as Necessidades" ><?=$d->atende_necessidades_descricao?></textarea>
+                    <label for="atende_necessidades_descricao">Descrição de Benefício que atende ou não as Necessidades</label>
+                </div>
+
+                <!-- XXXXXXXXXXXXXXXXXXXXXXXX -->
+
+
+                <div class="form-floating mb-3">
+                    <p><b>Na sua opinião dentro da estrutura do governo, em qual área abaixo descrita, necessita de melhorias para desenvolvimento na qualidade de vida da sua família e/ou da sua comunidade:</b></p>
+                </div>
                 <div class="form-floating mb-3">
                     <?=montaCheckbox([
-                        'rotulo' => 'Opinião falhas na Saúde',
+                        'rotulo' => 'Na Saúde?',
                         'campo' => 'opiniao_saude',
                         'vetor' => [
                             'Acesso a Medicamentos',
@@ -417,7 +428,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Opinião falhas na Educação',
+                        'rotulo' => 'Na Educação?',
                         'campo' => 'opiniao_educacao',
                         'vetor' => [
                             'Não',
@@ -433,7 +444,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Opinião falhas na Cidadania',
+                        'rotulo' => 'Na Cidadania?',
                         'campo' => 'opiniao_cidadania',
                         'vetor' => [
                             'Não',
@@ -449,7 +460,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaCheckbox([
-                        'rotulo' => 'Opinião falhas na Infraestrutura',
+                        'rotulo' => 'Na Infraestrutura?',
                         'campo' => 'opiniao_infraestrutura',
                         'vetor' => [
                             'Má Iluminação',
@@ -468,7 +479,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaCheckbox([
-                        'rotulo' => 'Opinião falhas na Assistência Social',
+                        'rotulo' => 'Na Assistência Social?',
                         'campo' => 'opiniao_assistencia_social',
                         'vetor' => [
                             'Alimentação Básica',
@@ -485,7 +496,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Opinião falhas nos Direitos Humanos',
+                        'rotulo' => 'Nos Direitos Humanos?',
                         'campo' => 'opiniao_direitos_humanos',
                         'vetor' => [
                             'Não',
@@ -501,7 +512,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaCheckbox([
-                        'rotulo' => 'Opinião falhas na Segurança',
+                        'rotulo' => 'Na Segurança?',
                         'campo' => 'opiniao_seguranca',
                         'vetor' => [
                             'Atendimento de Chamado para Policiamento',
@@ -516,7 +527,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaCheckbox([
-                        'rotulo' => 'Opinião falhas no Esporte e Lazer',
+                        'rotulo' => 'No Esporte e Lazer?',
                         'campo' => 'opiniao_esporte_lazer',
                         'vetor' => [
                             'Areas para pratica de atividades esportivas',
