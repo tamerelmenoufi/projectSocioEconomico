@@ -11,7 +11,7 @@
         <div class="row" style="margin-bottom:50px;">
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="ef_nome" name="ef_nome" placeholder="Nome completo" value="<?=$d->ef_nome?>">
+                    <div type="text" class="form-control" id="ef_nome" name="ef_nome" placeholder="Nome completo" value="<?=$d->ef_nome?>"></div>
                     <label for="ef_nome">Nome</label>
                 </div>
 
@@ -44,11 +44,11 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="ef_data_nascimento" id="ef_data_nascimento" class="form-control" placeholder="Data de Nascimento" value="<?=dataBr($d->ef_data_nascimento)?>">
+                    <div type="text" name="ef_data_nascimento" id="ef_data_nascimento" class="form-control" placeholder="Data de Nascimento" value="<?=dataBr($d->ef_data_nascimento)?>"></div>
                     <label for="ef_data_nascimento">Data de Nascimento</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="ef_telefone" id="ef_telefone" class="form-control" placeholder="Telefone" value="<?=$d->ef_telefone?>">
+                    <div type="text" name="ef_telefone" id="ef_telefone" class="form-control" placeholder="Telefone" value="<?=$d->ef_telefone?>"></div>
                     <label for="ef_telefone">Telefone*</label>
                 </div>
                 <div class="form-floating mb-3">
@@ -78,7 +78,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="ef_tratamento_saude_descricao" id="ef_tratamento_saude_descricao" class="form-control" placeholder="Descreva o Tratamento de Saúde" value="<?=$d->ef_tratamento_saude_descricao?>">
+                    <div type="text" name="ef_tratamento_saude_descricao" id="ef_tratamento_saude_descricao" class="form-control" placeholder="Descreva o Tratamento de Saúde" value="<?=$d->ef_tratamento_saude_descricao?>"></div>
                     <label for="ef_tratamento_saude_descricao">Descreva o Tratamento de Saúde</label>
                 </div>
 
@@ -94,7 +94,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="ef_doencas_cronicas_descricao" id="ef_doencas_cronicas_descricao" class="form-control" placeholder="Descreva o Tratamento de Saúde" value="<?=$d->ef_doencas_cronicas_descricao?>">
+                    <div type="text" name="ef_doencas_cronicas_descricao" id="ef_doencas_cronicas_descricao" class="form-control" placeholder="Descreva o Tratamento de Saúde" value="<?=$d->ef_doencas_cronicas_descricao?>"></div>
                     <label for="ef_doencas_cronicas_descricao">Descreva a(s) Doença(s) Crônica(s)</label>
                 </div>
 
@@ -111,7 +111,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="ef_portador_deficiencia_descricao" id="ef_portador_deficiencia_descricao" class="form-control" placeholder="Descreva a Definiência" value="<?=$d->ef_portador_deficiencia_descricao?>">
+                    <div type="text" name="ef_portador_deficiencia_descricao" id="ef_portador_deficiencia_descricao" class="form-control" placeholder="Descreva a Definiência" value="<?=$d->ef_portador_deficiencia_descricao?>"></div>
                     <label for="ef_portador_deficiencia_descricao">Descreva a Deficiência</label>
                 </div>
 
@@ -133,7 +133,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaCheckbox([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Necessita de Documentos',
                         'campo' => 'ef_necessita_documentos',
                         'vetor' => [
@@ -149,14 +149,6 @@
                     ])?>
                 </div>
 
-            </div>
-        </div>
-
-
-        <div BtnSalvar<?=$md5?> style="position:fixed; bottom:11px; right:40px; height:50px; background-color:#fff; padding:0px;">
-            <div style="display:flex; justify-content:end">
-                <button type="submit" SalvarFoto class="btn btn-success btn-ms">Salvar</button>
-                <input type="hidden" id="codigo" value="<?=$_POST['cod']?>" />
             </div>
         </div>
 </div>
