@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <div class="col-3">
-                        <div class="form-floating mb-3">
+                        <div class="form-floating mb-6">
                             <div type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>"></div>
                             <label for="cpf">E-mail*</label>
                         </div>
@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaCheckbox([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Quais Redes Sociais você possui?',
                         'campo' => 'redes_sociais',
                         'vetor' => [
@@ -95,7 +95,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Genero?',
                         'campo' => 'genero',
                         'vetor' => [
@@ -113,7 +113,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Qual o seu Estado Civil?',
                         'campo' => 'estado_civil',
                         'vetor' => [
@@ -128,7 +128,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaCheckbox([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Qual é o principal meio de transporte utilizado?',
                         'campo' => 'meio_transporte',
                         'vetor' => [
@@ -146,7 +146,7 @@
 
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Você reside em Imóvel:',
                         'campo' => 'tipo_imovel',
                         'vetor' => [
@@ -162,7 +162,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaCheckbox([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Tipos de Moradia:',
                         'campo' => 'tipo_moradia',
                         'vetor' => [
@@ -178,7 +178,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Quantos Cômodos possui sua residência?',
                         'campo' => 'quantidade_comodos',
                         'vetor' => [
@@ -193,7 +193,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Qual o seu Grau de escolaridade?',
                         'campo' => 'grau_escolaridade',
                         'vetor' => [
@@ -208,7 +208,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Você possui algum Curso Técnico/Profissionalizante?',
                         'campo' => 'curos_profissionais',
                         'vetor' => [
@@ -224,7 +224,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Qual sua Renda Mensal?',
                         'campo' => 'renda_mensal',
                         'vetor' => [
@@ -240,7 +240,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Você possui algum Benefício Social?',
                         'campo' => 'beneficio_social',
                         'vetor' => [
@@ -258,7 +258,7 @@
 
 
                 <!-- <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Qual Serviço de Saúde você utiliza?',
                         'campo' => 'servico_saude',
                         'vetor' => [
@@ -272,7 +272,7 @@
 
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Já tomou a vacina contra o Covid-19? Quantas doses já tomou?',
                         'campo' => 'vacina_covid',
                         'vetor' => [
@@ -289,7 +289,7 @@
 
 
                 <div class="form-floating mb-3">
-                    <?=montaCheckbox([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Necessita de Documentos',
                         'campo' => 'necessita_documentos',
                         'vetor' => [
@@ -313,7 +313,7 @@
 
 
                     <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Como você avalia o Beneficio?',
                         'campo' => 'avaliacao_beneficios',
                         'vetor' => [
@@ -330,7 +330,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaOpcPrint([
                         'rotulo' => 'O beneficio tem atendido suas Necessidades?',
                         'campo' => 'atende_necessidades',
                         'vetor' => [
@@ -352,7 +352,7 @@
                     <p><b>Na sua opinião dentro da estrutura do governo, em qual área abaixo descrita, necessita de melhorias para desenvolvimento na qualidade de vida da sua família e/ou da sua comunidade:</b></p>
                 </div>
                 <div class="form-floating mb-3">
-                    <?=montaCheckbox([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Na Saúde?',
                         'campo' => 'opiniao_saude',
                         'vetor' => [
@@ -370,7 +370,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Na Educação?',
                         'campo' => 'opiniao_educacao',
                         'vetor' => [
@@ -386,7 +386,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Na Cidadania?',
                         'campo' => 'opiniao_cidadania',
                         'vetor' => [
@@ -402,7 +402,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaCheckbox([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Na Infraestrutura?',
                         'campo' => 'opiniao_infraestrutura',
                         'vetor' => [
@@ -421,7 +421,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaCheckbox([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Na Assistência Social?',
                         'campo' => 'opiniao_assistencia_social',
                         'vetor' => [
@@ -438,7 +438,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Nos Direitos Humanos?',
                         'campo' => 'opiniao_direitos_humanos',
                         'vetor' => [
@@ -454,7 +454,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaCheckbox([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Na Segurança?',
                         'campo' => 'opiniao_seguranca',
                         'vetor' => [
@@ -469,7 +469,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaCheckbox([
+                    <?=montaOpcPrint([
                         'rotulo' => 'No Esporte e Lazer?',
                         'campo' => 'opiniao_esporte_lazer',
                         'vetor' => [

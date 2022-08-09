@@ -70,3 +70,22 @@
             return implode(" ",$lista);
         }
     }
+
+
+
+    function montaOpcPrint($v){
+        $campo = $v['campo'];
+        $vetor = $v['vetor'];
+        $rotulo = $v['rotulo'];
+        $dados = json_decode($v['dados']);
+        // $lista[] = print_r($dados, true);
+        $lista[] = '<div class="mb-3"><label for="'.$campo.'"><b>'.$rotulo.'</b></label></div>';
+        for($i=0;$i<count($vetor);$i++){
+            $lista[] = '  <div style="width:auto; margin-left:10px; float:left">
+            <i class="fa-solid fa-square" style="color:#ccc"></i> '.$vetor[$i].'</div>';
+        }
+
+        if($lista){
+            return implode(" ",$lista);
+        }
+    }
