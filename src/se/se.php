@@ -66,6 +66,9 @@
     textarea{
         height:200px !important;
     }
+    .oculto{
+        display:none;
+    }
 </style>
 <h4 class="Titulo<?=$md5?>">Pesquisa Socioeconomico</h4>
     <form id="form-<?= $md5 ?>">
@@ -291,14 +294,16 @@
                             'Sim',
                             'Não',
                         ],
-                        'dados' => $d->curos_profissionais
+                        'dados' => $d->curos_profissionais,
+                        'exibir' => ['Sim' => 'curos_profissionais_descricao']
                     ])?>
                 </div>
-                <div class="form-floating mb-3">
-                    <textarea name="curos_profissionais_descricao" id="curos_profissionais_descricao" class="form-control" placeholder="Cursos Técnico/Profissionalizante" ><?=$d->curos_profissionais_descricao?></textarea>
-                    <label for="curos_profissionais_descricao">Descreve os Cursos Técnico/Profissionalizante</label>
+                <div class="oculto" curos_profissionais_descricao>
+                    <div class="form-floating mb-3">
+                        <textarea name="curos_profissionais_descricao" id="curos_profissionais_descricao" class="form-control" placeholder="Cursos Técnico/Profissionalizante" ><?=$d->curos_profissionais_descricao?></textarea>
+                        <label for="curos_profissionais_descricao">Descreve os Cursos Técnico/Profissionalizante</label>
+                    </div>
                 </div>
-
                 <div class="form-floating mb-3">
                     <?=montaRadio([
                         'rotulo' => 'Qual sua Renda Mensal?',
