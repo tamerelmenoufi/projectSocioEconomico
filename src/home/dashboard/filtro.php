@@ -3,28 +3,28 @@
 
     if($_POST['acao'] == 'gerar_filtro'){
 
-        $_SESSION['filtro_nome'] = $_POST['nome'];
-        $_SESSION['filtro_cpf'] = $_POST['cpf'];
-        $_SESSION['filtro_rg'] = $_POST['rg'];
-        $_SESSION['filtro_telefone'] = $_POST['telefone'];
-        $_SESSION['filtro_email'] = $_POST['email'];
-        $_SESSION['filtro_municipio'] = $_POST['municipio'];
-        $_SESSION['filtro_tipo'] = $_POST['tipo'];
-        $_SESSION['filtro_bairro_comunidade'] = $_POST['bairro_comunidade'];
+        $_SESSION['filtro_relatorio_nome'] = $_POST['nome'];
+        $_SESSION['filtro_relatorio_cpf'] = $_POST['cpf'];
+        $_SESSION['filtro_relatorio_rg'] = $_POST['rg'];
+        $_SESSION['filtro_relatorio_telefone'] = $_POST['telefone'];
+        $_SESSION['filtro_relatorio_email'] = $_POST['email'];
+        $_SESSION['filtro_relatorio_municipio'] = $_POST['municipio'];
+        $_SESSION['filtro_relatorio_tipo'] = $_POST['tipo'];
+        $_SESSION['filtro_relatorio_bairro_comunidade'] = $_POST['bairro_comunidade'];
 
         exit();
     }
 
     if($_POST['acao'] == 'limpar_filtro'){
 
-        $_SESSION['filtro_nome'] = false;
-        $_SESSION['filtro_cpf'] =false;
-        $_SESSION['filtro_rg'] = false;
-        $_SESSION['filtro_telefone'] = false;
-        $_SESSION['filtro_email'] = false;
-        $_SESSION['filtro_municipio'] = false;
-        $_SESSION['filtro_tipo'] = false;
-        $_SESSION['filtro_bairro_comunidade'] = false;
+        $_SESSION['filtro_relatorio_nome'] = false;
+        $_SESSION['filtro_relatorio_cpf'] =false;
+        $_SESSION['filtro_relatorio_rg'] = false;
+        $_SESSION['filtro_relatorio_telefone'] = false;
+        $_SESSION['filtro_relatorio_email'] = false;
+        $_SESSION['filtro_relatorio_municipio'] = false;
+        $_SESSION['filtro_relatorio_tipo'] = false;
+        $_SESSION['filtro_relatorio_bairro_comunidade'] = false;
 
         exit();
     }
@@ -83,7 +83,7 @@
                             $r = mysqli_query($con, $q);
                             while($s = mysqli_fetch_object($r)){
                         ?>
-                        <option value="<?=$s->codigo?>" <?=(($_SESSION['filtro_municipio'] == $s->codigo)?'selected':false)?>><?=$s->municipio?></option>
+                        <option value="<?=$s->codigo?>" <?=(($_SESSION['filtro_relatorio_municipio'] == $s->codigo)?'selected':false)?>><?=$s->municipio?></option>
                         <?php
                             }
                         ?>
@@ -94,8 +94,8 @@
                 <div class="form-floating mb-3">
                     <select name="tipo" id="tipo" class="form-control" placeholder="Zona">
                         <option value="">::Selecione a Zona::</option>
-                        <option value="Urbano" <?=(($_SESSION['filtro_tipo'] == 'Urbano')?'selected':false)?>>Urbano</option>
-                        <option value="Rural" <?=(($_SESSION['filtro_tipo'] == 'Rural')?'selected':false)?>>Rural</option>
+                        <option value="Urbano" <?=(($_SESSION['filtro_relatorio_tipo'] == 'Urbano')?'selected':false)?>>Urbano</option>
+                        <option value="Rural" <?=(($_SESSION['filtro_relatorio_tipo'] == 'Rural')?'selected':false)?>>Rural</option>
                     </select>
                     <label for="tipo">Zona</label>
                 </div>
@@ -104,11 +104,11 @@
                     <select name="bairro_comunidade" id="bairro_comunidade" class="form-control" placeholder="Bairro">
                         <option value="">::Selecione a Localização::</option>
                         <?php
-                            $q = "select * from bairros_comunidades where municipio = '{$_SESSION['filtro_municipio']}' ".(($_SESSION['filtro_tipo'])?" and tipo = '{$_SESSION['filtro_tipo']}'":false)." order by descricao";
+                            $q = "select * from bairros_comunidades where municipio = '{$_SESSION['filtro_relatorio_municipio']}' ".(($_SESSION['filtro_relatorio_tipo'])?" and tipo = '{$_SESSION['filtro_relatorio_tipo']}'":false)." order by descricao";
                             $r = mysqli_query($con, $q);
                             while($s = mysqli_fetch_object($r)){
                         ?>
-                        <option value="<?=$s->codigo?>" <?=(($_SESSION['filtro_bairro_comunidade'] == $s->codigo)?'selected':false)?>><?=$s->descricao?> (<?=$s->tipo?>)</option>
+                        <option value="<?=$s->codigo?>" <?=(($_SESSION['filtro_relatorio_bairro_comunidade'] == $s->codigo)?'selected':false)?>><?=$s->descricao?> (<?=$s->tipo?>)</option>
                         <?php
                             }
                         ?>
@@ -121,23 +121,23 @@
                 <h5>Específico</h5>
 
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$_SESSION['filtro_nome']?>">
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$_SESSION['filtro_relatorio_nome']?>">
                     <label for="nome">Nome*</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$_SESSION['filtro_cpf']?>">
+                    <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$_SESSION['filtro_relatorio_cpf']?>">
                     <label for="cpf">CPF*</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="rg" id="rg" class="form-control" placeholder="RG" value="<?=$_SESSION['filtro_rg']?>">
+                    <input type="text" name="rg" id="rg" class="form-control" placeholder="RG" value="<?=$_SESSION['filtro_relatorio_rg']?>">
                     <label for="cpf">RG*</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="telefone" id="telefone" class="form-control" placeholder="telefone" value="<?=$_SESSION['filtro_telefone']?>">
+                    <input type="text" name="telefone" id="telefone" class="form-control" placeholder="telefone" value="<?=$_SESSION['filtro_relatorio_telefone']?>">
                     <label for="telefone">Telefone*</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$_SESSION['filtro_email']?>">
+                    <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$_SESSION['filtro_relatorio_email']?>">
                     <label for="email">E-mail*</label>
                 </div>
 
@@ -190,7 +190,7 @@
                 return false;
             }
             $.ajax({
-                url:"src/se/filtro.php",
+                url:"src/home/dashboard/filtro.php",
                 type:"POST",
                 data:{
                     municipio,
@@ -228,7 +228,7 @@
 
 
             $.ajax({
-                url:"src/se/filtro.php",
+                url:"src/home/dashboard/filtro.php",
                 type:"POST",
                 data:{
                     nome,
@@ -243,7 +243,7 @@
                 },
                 success:function(dados){
                     $.ajax({
-                        url:"src/se/index.php",
+                        url:"src/home/dashboard/index.php",
                         success:function(dados){
                             $("#paginaHome").html(dados);
                         }
@@ -260,7 +260,7 @@
                 buttons:{
                     'SIM':function(){
                         $.ajax({
-                            url:"src/se/filtro.php",
+                            url:"src/home/dashboard/filtro.php",
                             type:"POST",
                             data:{
                                 acao:'limpar_filtro'
@@ -268,7 +268,7 @@
                             success:function(dados){
 
                                 $.ajax({
-                                    url:"src/se/index.php",
+                                    url:"src/home/dashboard/index.php",
                                     success:function(dados){
                                         $("#paginaHome").html(dados);
                                     }

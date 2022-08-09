@@ -194,7 +194,7 @@
     $("button[filtrar]").click(function(){
       Carregando();
       $.ajax({
-          url:"src/home/dashboard/filtros.php",
+          url:"src/home/dashboard/filtro.php",
           success:function(dados){
               $(".LateralDireita").html(dados);
           }
