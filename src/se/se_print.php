@@ -378,6 +378,7 @@
 
 <footer class="Rodape"></footer>
 
+<header class="Topo"></header>
 
 <div class="row">
 <div class="col-6">
