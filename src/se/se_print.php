@@ -467,7 +467,8 @@
                     <div textarea name="opiniao_assistencia_social_descricao" id="opiniao_assistencia_social_descricao" class="form-control form-control-sm" placeholder="Outras Opiniões falhas na Assistência Social" ><?=$d->opiniao_assistencia_social_descricao?></div>
                     <label for="opiniao_assistencia_social_descricao">Desreva suas Opiniões falhas na Assistência Social</label>
                 </div>
-
+</div>
+<div class="col-6">
                 <div class="form-floating mb-3">
                     <?=montaOpcPrint([
                         'rotulo' => 'Nos Direitos Humanos?',
