@@ -295,7 +295,8 @@
                             'Não',
                         ],
                         'dados' => $d->curos_profissionais,
-                        'exibir' => ['Sim' => 'curos_profissionais_descricao']
+                        'exibir' => ['Sim' => 'curos_profissionais_descricao'],
+                        'ocultar' => 'curos_profissionais_descricao',
                     ])?>
                 </div>
                 <div class="oculto" curos_profissionais_descricao>
