@@ -9,8 +9,21 @@
 </style>
 <div class="col">
   <div class="m-3">
-
-    <h4>Relatórios e estatísticas</h4>
+    <div class="row" style="margin-top:20px; margin-bottom:20px;">
+      <div class="col-md-10">
+        <h4>Relatórios e estatísticas</h4>
+      </div>
+      <div class="col-md-2">
+        <button
+          filtrar
+          class="btn btn-primary"
+          data-bs-toggle="offcanvas"
+          href="#offcanvasDireita"
+          role="button"
+          aria-controls="offcanvasDireita"
+        >Filtrar</button>
+      </div>
+    </div>
 
   <!-- Pesquisa de satisfação Gráficos -->
     <div class="row" style="margin-top:20px; margin-bottom:20px;">
@@ -175,6 +188,17 @@
       error:function(){
         console.log('Erro');
       }
+    });
+
+
+    $("button[filtrar]").click(function(){
+      Carregando();
+      $.ajax({
+          url:"src/home/dashboard/filtros.php",
+          success:function(dados){
+              $(".LateralDireita").html(dados);
+          }
+      })
     });
 
 
