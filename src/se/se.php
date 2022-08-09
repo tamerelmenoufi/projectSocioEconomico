@@ -729,6 +729,18 @@
                     $(this).parent("div").parent("div").children("div").children("input[ocultar]").each(function(){
                         $(this).prop("checked",false);
                     })
+
+                    exibe = false;
+                    $(this).parent("div").parent("div").children("div").children("input[ocultar]").each(function(){
+                        if($(this).prop("checked")){
+                            exibe = true;
+                        }
+                    })
+
+                    if(exibe){
+                        $(`div[${$(this).attr('exibir')}]`).css("display","block");
+                    }
+
                 }
 
                 if($(this).attr('exibir')){
@@ -736,6 +748,9 @@
                         $(`div[${$(this).attr('exibir')}]`).css("display","block");
                     }
                 }
+
+
+
             })
 
             $("input[ocultar]").click(function(){
@@ -744,11 +759,26 @@
                     $(this).parent("div").parent("div").children("div").children("input[exibir]").each(function(){
                         $(this).prop("checked",false);
                     })
+
+                    exibe = false;
+                    $(this).parent("div").parent("div").children("div").children("input[ocultar]").each(function(){
+                        if($(this).prop("checked")){
+                            exibe = true;
+                        }
+                    })
+
+                    if(exibe){
+                        $(`div[${$(this).attr('exibir')}]`).css("display","block");
+                    }
+
                 }
 
                 if($(this).prop("checked") == true){
                     $(`div[${$(this).attr('ocultar')}]`).css("display","none");
                 }
+
+
+
 
             })
 
