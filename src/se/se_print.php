@@ -13,16 +13,22 @@
     <div class="row" style="margin-bottom:50px;">
             <div class="col">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-6">
                         <div class="form-floating mb-3">
                             <div type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>"></div>
                             <label for="nome">Nome*</label>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-3">
                         <div class="form-floating mb-3">
                             <div type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>"></div>
                             <label for="cpf">CPF*</label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-floating mb-3">
+                            <div type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>"></div>
+                            <label for="cpf">RG*</label>
                         </div>
                     </div>
                 </div>
