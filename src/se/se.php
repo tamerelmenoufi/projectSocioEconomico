@@ -731,7 +731,7 @@
                         $(this).prop("checked",false);
                     })
 
-                    n = $(this).parent("div").parent("div").children("div").children("input[exibir]").lenght;
+                    n = $(this).parent("div").parent("div").children("div").children("input[exibir]").length;
                     console.log(n)
                     if(n){
                         $(`div[${$(this).attr('exibir')}]`).css("display","block");
