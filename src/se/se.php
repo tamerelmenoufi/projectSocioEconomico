@@ -726,6 +726,12 @@
             });
 
 
+            $("input[exibir]").parent("div").parent("div").children("div").children("input[exibir]").each(function(){
+                if($(this).prop("checked") == true){
+                    $(`div[${$(this).attr('exibir')}]`).removeClass("oculto");
+                }
+            })
+
             $("input[exibir]").click(function(){
 
                 if($(this).attr("type") == 'checkbox' && $(this).prop("checked") == true){
