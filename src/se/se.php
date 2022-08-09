@@ -321,8 +321,6 @@
                             'Acima de 4 Salários mínimos'
                         ],
                         'dados' => $d->renda_mensal,
-                        'exibir' => false,
-                        'campo_destino' =>false
                     ])?>
                 </div>
 
@@ -726,14 +724,19 @@
 
 
             $("input[exibir]").click(function(){
-                if($(this).prop("checked") == true){
-                    $(`div[${$(this).attr('exibir')}]`).css("display","block");
+                if($(this).attr('exibir')){
+                    if($(this).prop("checked") == true){
+                        $(`div[${$(this).attr('exibir')}]`).css("display","block");
+                    }
                 }
             })
 
             $("input[ocultar]").click(function(){
-                if($(this).prop("checked") == true){
-                    $(`div[${$(this).attr('ocultar')}]`).css("display","none");
+                if($(this).attr('ocultar')){
+                    if($(this).prop("checked") == true){
+
+                        $(`div[${$(this).attr('ocultar')}]`).css("display","none");
+                    }
                 }
             })
 
