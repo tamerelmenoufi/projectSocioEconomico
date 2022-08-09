@@ -7,7 +7,7 @@
         font-size:11px;
     }
     div[textarea]{
-        height:110px !important;
+        height:70px !important;
     }
     .form-control-sm{
         height:35px !important;
