@@ -674,7 +674,7 @@
                     <div class="card-body">
                         <div class="form-floating mb-3">
                             <?=montaRadio([
-                                'rotulo' => ' Como fui Recebido?',
+                                'rotulo' => 'Como fui Recebido?',
                                 'campo' => 'recepcao_entrevistado',
                                 'vetor' => [
                                     'Ruim',
