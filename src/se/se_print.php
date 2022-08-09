@@ -39,8 +39,8 @@
                             <label for="nome">Telefone*</label>
                         </div>
                     </div>
-                    <div class="col-3">
-                        <div class="form-floating mb-6">
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
                             <div type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>"></div>
                             <label for="cpf">E-mail*</label>
                         </div>
