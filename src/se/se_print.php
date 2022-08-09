@@ -63,22 +63,6 @@
                     </div>
                 </div>
 
-                <div class="form-floating mb-3">
-                    <?=montaOpcPrint([
-                        'rotulo' => 'Quais Redes Sociais você possui?',
-                        'campo' => 'redes_sociais',
-                        'vetor' => [
-                            'FaceBook',
-                            'Twitter',
-                            'Instagram',
-                            'Youtube',
-                            'Linkedin'
-                        ],
-                        'dados' => $d->redes_sociais
-                    ])?>
-                </div>
-
-
                 <div class="row">
                     <div class="col-5">
                         <div class="form-floating mb-3">
@@ -151,6 +135,21 @@
                             'Outros',
                         ],
                         'dados' => $d->estado_civil
+                    ])?>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <?=montaOpcPrint([
+                        'rotulo' => 'Quais Redes Sociais você possui?',
+                        'campo' => 'redes_sociais',
+                        'vetor' => [
+                            'FaceBook',
+                            'Twitter',
+                            'Instagram',
+                            'Youtube',
+                            'Linkedin'
+                        ],
+                        'dados' => $d->redes_sociais
                     ])?>
                 </div>
 

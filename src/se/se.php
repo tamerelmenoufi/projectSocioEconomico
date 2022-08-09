@@ -103,21 +103,6 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaCheckbox([
-                        'rotulo' => 'Quais Redes Sociais você possui?',
-                        'campo' => 'redes_sociais',
-                        'vetor' => [
-                            'FaceBook',
-                            'Twitter',
-                            'Instagram',
-                            'Youtube',
-                            'Linkedin'
-                        ],
-                        'dados' => $d->redes_sociais
-                    ])?>
-                </div>
-
-                <div class="form-floating mb-3">
                     <select name="municipio" id="municipio" class="form-control" >
                         <option value="">::Selecione o Município</option>
                         <?php
@@ -199,6 +184,22 @@
                             'Outros',
                         ],
                         'dados' => $d->estado_civil
+                    ])?>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <?=montaCheckbox([
+                        'rotulo' => 'Quais Redes Sociais você possui?',
+                        'campo' => 'redes_sociais',
+                        'vetor' => [
+                            'FaceBook',
+                            'Twitter',
+                            'Instagram',
+                            'Youtube',
+                            'Linkedin'
+                        ],
+                        'dados' => $d->redes_sociais
                     ])?>
                 </div>
 
