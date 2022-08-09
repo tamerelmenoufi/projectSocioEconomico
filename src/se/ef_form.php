@@ -67,7 +67,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Grau de Parentesco',
+                        'rotulo' => 'Qual o grau de parentesco?',
                         'campo' => 'ef_grau_parentesco',
                         'vetor' => [
                             'Mãe',
@@ -103,7 +103,7 @@
                 </div>
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Renda Mensal',
+                        'rotulo' => 'Qua a renda mensal?',
                         'campo' => 'ef_renda_mensal',
                         'vetor' => [
                             'Nenhuma',
@@ -118,7 +118,7 @@
                 </div>
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Tratamento de Saúde',
+                        'rotulo' => 'Precisa de tratamento de saúde?',
                         'campo' => 'ef_tratamento_saude',
                         'vetor' => [
                             'Não',
@@ -134,7 +134,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Doenças Crônicas',
+                        'rotulo' => 'Possui alguma doença crônica?',
                         'campo' => 'ef_doencas_cronicas	',
                         'vetor' => [
                             'Não',
@@ -150,7 +150,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Portador de Deficiência',
+                        'rotulo' => 'É portador de alguma deficiência?',
                         'campo' => 'ef_portador_deficiencia',
                         'vetor' => [
                             'Não',
@@ -159,15 +159,29 @@
                         'dados' => $d->ef_portador_deficiencia
                     ])?>
                 </div>
+
                 <div class="form-floating mb-3">
                     <input type="text" name="ef_portador_deficiencia_descricao" id="ef_portador_deficiencia_descricao" class="form-control" placeholder="Descreva a Definiência" value="<?=$d->ef_portador_deficiencia_descricao?>">
                     <label for="ef_portador_deficiencia_descricao">Descreva a Deficiência</label>
                 </div>
 
+
                 <div class="form-floating mb-3">
-                    <input type="text" name="ef_gastos_saude" id="rg_orgao" class="form-control" placeholder="Gastos com Saúde" value="<?=$d->ef_gastos_saude?>">
-                    <label for="ef_gastos_saude">Gastos com Saúde</label>
+                    <?=montaRadio([
+                        'rotulo' => 'Informe o valor, se possui gastos fixos com saúde?',
+                        'campo' => 'ef_gastos_saude',
+                        'vetor' => [
+                            'Não Possuo',
+                            'Até R$ 100,00',
+                            'Acima R$ 100,00 até R$ 200,00',
+                            'Acima R$ 200,00 até R$ 400,00',
+                            'Acima R$ 400,00 até R$ 600,00',
+                            'Acima R$ 600,00',
+                        ],
+                        'dados' => $d->ef_gastos_saude
+                    ])?>
                 </div>
+
                 <div class="form-floating mb-3">
                     <?=montaCheckbox([
                         'rotulo' => 'Necessita de Documentos',
