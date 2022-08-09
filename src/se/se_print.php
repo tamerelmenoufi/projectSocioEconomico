@@ -264,7 +264,8 @@
                         'dados' => $d->renda_mensal
                     ])?>
                 </div>
-
+</div>
+<div class="col-6">
                 <div class="form-floating mb-3">
                     <?=montaOpcPrint([
                         'rotulo' => 'Você possui algum Benefício Social?',
