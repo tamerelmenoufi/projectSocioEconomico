@@ -363,7 +363,8 @@
                 </div>
 
                 <!-- XXXXXXXXXXXXXXXXXXXXXXXX -->
-
+</div>
+<div class="col-6">
 
                 <div class="form-floating mb-3">
                     <p><b>Na sua opinião dentro da estrutura do governo, em qual área abaixo descrita, necessita de melhorias para desenvolvimento na qualidade de vida da sua família e/ou da sua comunidade:</b></p>
