@@ -738,11 +738,10 @@
                     }
                 }
 
-                n = $(this).parent("div").parent("div").children("div").children("input[exibir]").attr('checked').length;
-                console.log(n)
-                if(!n){
-                    $(`div[${$(this).attr('exibir')}]`).css("display","none");
-                }
+                $(`div[${$(this).attr('exibir')}]`).css("display","none");
+                $(this).parent("div").parent("div").children("div").children("input[exibir]").each(function(){
+                    $(`div[${$(this).attr('exibir')}]`).css("display","block");
+                })
 
             })
 
