@@ -28,25 +28,23 @@
                     <div class="col-3">
                         <div class="form-floating mb-3">
                             <div type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>"></div>
-                            <label for="cpf">RG*</label>
+                            <label for="cpf">RG/Orgão Emissor*</label>
                         </div>
                     </div>
                 </div>
-                <div class="form-floating mb-3">
-                    <div type="text" name="rg" id="rg" class="form-control" placeholder="RG" value="<?=$d->rg?>"></div>
-                    <label for="rg">RG*</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <div type="text" name="rg_orgao" id="rg_orgao" class="form-control" placeholder="RG - Orgão Emissor" value="<?=$d->rg_orgao?>"></div>
-                    <label for="rg_orgao">RG (Orgão Emissor)*</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <div type="text" name="telefone" id="telefone" class="form-control" placeholder="telefone" value="<?=$d->telefone?>"></div>
-                    <label for="telefone">Telefone*</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <div type="text" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$d->email?>"></div>
-                    <label for="email">E-mail*</label>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            <div type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>"></div>
+                            <label for="nome">Telefone*</label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-floating mb-3">
+                            <div type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>"></div>
+                            <label for="cpf">E-mail*</label>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-floating mb-3">
