@@ -5,6 +5,10 @@
     div[textarea]{
         height:100px !important;
     }
+    .form-control-sm{
+        height:35px !important;
+    }
+
 </style>
 
 <div class="container">
