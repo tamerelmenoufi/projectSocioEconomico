@@ -20,7 +20,7 @@
         <div class="row" style="margin-bottom:50px;">
             <div class="col">
                 <div class="form-floating mb-3">
-                    <div type="text" class="form-control" id="ef_nome" name="ef_nome" placeholder="Nome completo" value="<?=$d->ef_nome?>"></div>
+                    <div type="text" class="form-control form-control-sm" id="ef_nome" name="ef_nome" placeholder="Nome completo" value="<?=$d->ef_nome?>"></div>
                     <label for="ef_nome">Nome</label>
                 </div>
 
@@ -53,11 +53,11 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div type="text" name="ef_data_nascimento" id="ef_data_nascimento" class="form-control" placeholder="Data de Nascimento" value="<?=dataBr($d->ef_data_nascimento)?>"></div>
+                    <div type="text" name="ef_data_nascimento" id="ef_data_nascimento" class="form-control form-control-sm" placeholder="Data de Nascimento" value="<?=dataBr($d->ef_data_nascimento)?>"></div>
                     <label for="ef_data_nascimento">Data de Nascimento</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <div type="text" name="ef_telefone" id="ef_telefone" class="form-control" placeholder="Telefone" value="<?=$d->ef_telefone?>"></div>
+                    <div type="text" name="ef_telefone" id="ef_telefone" class="form-control form-control-sm" placeholder="Telefone" value="<?=$d->ef_telefone?>"></div>
                     <label for="ef_telefone">Telefone*</label>
                 </div>
                 <div class="form-floating mb-3">
@@ -87,7 +87,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div type="text" name="ef_tratamento_saude_descricao" id="ef_tratamento_saude_descricao" class="form-control" placeholder="Descreva o Tratamento de Saúde" value="<?=$d->ef_tratamento_saude_descricao?>"></div>
+                    <div type="text" name="ef_tratamento_saude_descricao" id="ef_tratamento_saude_descricao" class="form-control form-control-sm" placeholder="Descreva o Tratamento de Saúde" value="<?=$d->ef_tratamento_saude_descricao?>"></div>
                     <label for="ef_tratamento_saude_descricao">Descreva o Tratamento de Saúde</label>
                 </div>
 
@@ -103,7 +103,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div type="text" name="ef_doencas_cronicas_descricao" id="ef_doencas_cronicas_descricao" class="form-control" placeholder="Descreva o Tratamento de Saúde" value="<?=$d->ef_doencas_cronicas_descricao?>"></div>
+                    <div type="text" name="ef_doencas_cronicas_descricao" id="ef_doencas_cronicas_descricao" class="form-control form-control-sm" placeholder="Descreva o Tratamento de Saúde" value="<?=$d->ef_doencas_cronicas_descricao?>"></div>
                     <label for="ef_doencas_cronicas_descricao">Descreva a(s) Doença(s) Crônica(s)</label>
                 </div>
 
@@ -120,7 +120,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <div type="text" name="ef_portador_deficiencia_descricao" id="ef_portador_deficiencia_descricao" class="form-control" placeholder="Descreva a Definiência" value="<?=$d->ef_portador_deficiencia_descricao?>"></div>
+                    <div type="text" name="ef_portador_deficiencia_descricao" id="ef_portador_deficiencia_descricao" class="form-control form-control-sm" placeholder="Descreva a Definiência" value="<?=$d->ef_portador_deficiencia_descricao?>"></div>
                     <label for="ef_portador_deficiencia_descricao">Descreva a Deficiência</label>
                 </div>
 
