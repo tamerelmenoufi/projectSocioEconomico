@@ -36,7 +36,7 @@ aria-controls="offcanvasDireita" -->
     $("#offcanvasDireita").css("--bs-offcanvas-width","100%")
   }
  else {
-    $("#offcanvasDireita").css("--bs-offcanvas-width","500px")
+    $("#offcanvasDireita").css("--bs-offcanvas-width","600px")
   }
 
 
