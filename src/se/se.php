@@ -296,8 +296,8 @@
                         ],
                         'dados' => $d->curos_profissionais,
                         'exibir' => [
-                            'Sim'=>false,
-                            'Não'=>true,
+                            'Sim'=>true,
+                            'Não'=>false,
                         ],
                         'campo_destino' => 'curos_profissionais_descricao',
                     ])?>
@@ -332,13 +332,19 @@
                             'Sim',
                             'Não',
                         ],
-                        'dados' => $d->beneficio_social
+                        'dados' => $d->beneficio_social,
+                        'exibir'=>[
+                            'Sim'=>true,
+                            'Não'=>false,
+                        ],
+                        'campo_destino'=>'beneficio_social_descricao',
                     ])?>
                 </div>
-
-                <div class="form-floating mb-3">
-                    <textarea name="beneficio_social_descricao" id="beneficio_social_descricao" class="form-control" placeholder="Descrição do Benefício Social" ><?=$d->beneficio_social_descricao?></textarea>
-                    <label for="beneficio_social_descricao">Descrição do Benefício Social</label>
+                <div class="oculto" beneficio_social_descricao>
+                    <div class="form-floating mb-3">
+                        <textarea name="beneficio_social_descricao" id="beneficio_social_descricao" class="form-control" placeholder="Descrição do Benefício Social" ><?=$d->beneficio_social_descricao?></textarea>
+                        <label for="beneficio_social_descricao">Descrição do Benefício Social</label>
+                    </div>
                 </div>
 
 
@@ -406,12 +412,20 @@
                             'Bom',
                             'Ótimo',
                         ],
-                        'dados' => $d->avaliacao_beneficios
+                        'dados' => $d->avaliacao_beneficios,
+                        'exibir' => [
+                            'Ruim'=>true,
+                            'Bom'=>true,
+                            'Ótimo'=>true,
+                        ],
+                        'campo_destino'=>'avaliacao_beneficios_descricao'
                     ])?>
                 </div>
-                <div class="form-floating mb-3">
-                    <textarea name="avaliacao_beneficios_descricao" id="avaliacao_beneficios_descricao" class="form-control" placeholder="Descrição da Avaliação do Benefício" ><?=$d->avaliacao_beneficios_descricao?></textarea>
-                    <label for="avaliacao_beneficios_descricao">Descrição de sua Avaliação do Benefício</label>
+                <div class='oculto' avaliacao_beneficios_descricao>
+                    <div class="form-floating mb-3">
+                        <textarea name="avaliacao_beneficios_descricao" id="avaliacao_beneficios_descricao" class="form-control" placeholder="Descrição da Avaliação do Benefício" ><?=$d->avaliacao_beneficios_descricao?></textarea>
+                        <label for="avaliacao_beneficios_descricao">Descrição de sua Avaliação do Benefício</label>
+                    </div>
                 </div>
 
                 <div class="form-floating mb-3">
@@ -422,14 +436,21 @@
                            'Sim',
                             'Não',
                         ],
-                        'dados' => $d->atende_necessidades
+                        'dados' => $d->atende_necessidades,
+                        'exibir' => [
+                           'Sim'=>true,
+                            'Não'=>false,
+                        ],
+                        'campo_destino'=>'atende_necessidades_descricao'
                     ])?>
-                </div>
-                <div class="form-floating mb-3">
-                    <textarea name="atende_necessidades_descricao" id="atende_necessidades_descricao" class="form-control" placeholder="Descrição de Benefício que atende ou não as Necessidades" ><?=$d->atende_necessidades_descricao?></textarea>
-                    <label for="atende_necessidades_descricao">Descrição de Benefício que atende ou não as Necessidades</label>
-                </div>
 
+                </div>
+                <div class="oculto" atende_necessidades_descricao>
+                    <div class="form-floating mb-3">
+                        <textarea name="atende_necessidades_descricao" id="atende_necessidades_descricao" class="form-control" placeholder="Descrição de Benefício que atende ou não as Necessidades" ><?=$d->atende_necessidades_descricao?></textarea>
+                        <label for="atende_necessidades_descricao">Descrição de Benefício que atende ou não as Necessidades</label>
+                    </div>
+                </div>
                 <!-- XXXXXXXXXXXXXXXXXXXXXXXX -->
 
 
@@ -441,49 +462,72 @@
                         'rotulo' => 'Na Saúde?',
                         'campo' => 'opiniao_saude',
                         'vetor' => [
+                            'Não Necessita',
                             'Acesso a Medicamentos',
                             'Marcação de Consultas',
                             'Realização de Exames',
                             'Realização de Procedimentos Médicos e/ou Cirurgia',
                         ],
-                        'dados' => $d->opiniao_saude
+                        'dados' => $d->opiniao_saude,
+                        'exibir' => [
+                            'Não Necessita'=>false,
+                            'Acesso a Medicamentos'=>true,
+                            'Marcação de Consultas'=>true,
+                            'Realização de Exames'=>true,
+                            'Realização de Procedimentos Médicos e/ou Cirurgia'=>true,
+                         ],
+                         'campo_destino'=>'opiniao_saude_descricao'
                     ])?>
                 </div>
-                <div class="form-floating mb-3">
-                    <textarea name="opiniao_saude_descricao" id="opiniao_saude_descricao" class="form-control" placeholder="Outras Opiniões / Detalhes" ><?=$d->opiniao_saude_descricao?></textarea>
-                    <label for="opiniao_saude_descricao">Desreva suas Opiniões Falhas na Saúde</label>
+                <div class="oculto" opiniao_saude_descricao>
+                    <div class="form-floating mb-3">
+                        <textarea name="opiniao_saude_descricao" id="opiniao_saude_descricao" class="form-control" placeholder="Outras Opiniões / Detalhes" ><?=$d->opiniao_saude_descricao?></textarea>
+                        <label for="opiniao_saude_descricao">Desreva suas Opiniões Falhas na Saúde</label>
+                    </div>
                 </div>
-
                 <div class="form-floating mb-3">
                     <?=montaRadio([
                         'rotulo' => 'Na Educação?',
                         'campo' => 'opiniao_educacao',
                         'vetor' => [
-                            'Não',
-                            'Sim'
+                            'Não Necessita',
+                            'Sim Necessita'
                         ],
-                        'dados' => $d->opiniao_educacao
+                        'dados' => $d->opiniao_educacao,
+                        'exibir' => [
+                            'Não Necessita'=>false,
+                            'Sim Necessita'=>true
+                         ],
+                         'campo_destino'=>'opiniao_educacao_descricao'
                     ])?>
                 </div>
-                <div class="form-floating mb-3">
-                    <textarea name="opiniao_educacao_descricao" id="opiniao_educacao_descricao" class="form-control" placeholder="Outras Opiniões falhas na Educação" ><?=$d->opiniao_educacao_descricao?></textarea>
-                    <label for="opiniao_educacao_descricao">Desreva suas Opiniões falhas na Educação</label>
+                <div class="oculto" opiniao_educacao_descricao>
+                    <div class="form-floating mb-3">
+                        <textarea name="opiniao_educacao_descricao" id="opiniao_educacao_descricao" class="form-control" placeholder="Outras Opiniões falhas na Educação" ><?=$d->opiniao_educacao_descricao?></textarea>
+                        <label for="opiniao_educacao_descricao">Desreva suas Opiniões falhas na Educação</label>
+                    </div>
                 </div>
-
                 <div class="form-floating mb-3">
                     <?=montaRadio([
                         'rotulo' => 'Na Cidadania?',
                         'campo' => 'opiniao_cidadania',
                         'vetor' => [
-                            'Não',
-                            'Sim'
+                            'Não Nacessita',
+                            'Sim Necessita'
                         ],
-                        'dados' => $d->opiniao_cidadania
+                        'dados' => $d->opiniao_cidadania,
+                        'exibir' => [
+                            'Não Nacessita'=>false,
+                            'Sim Necessita'=>true
+                         ],
+                         'campo_destino'=>'opiniao_cidadania_descricao'
                     ])?>
                 </div>
-                <div class="form-floating mb-3">
-                    <textarea name="opiniao_cidadania_descricao" id="opiniao_cidadania_descricao" class="form-control" placeholder="Outras Opiniões falhas na Cidadania" ><?=$d->opiniao_cidadania_descricao?></textarea>
-                    <label for="opiniao_cidadania_descricao">Desreva suas Opiniões falhas na Cidadania</label>
+                <div class="oculto" opiniao_cidadania_descricao>
+                    <div class="form-floating mb-3">
+                        <textarea name="opiniao_cidadania_descricao" id="opiniao_cidadania_descricao" class="form-control" placeholder="Outras Opiniões falhas na Cidadania" ><?=$d->opiniao_cidadania_descricao?></textarea>
+                        <label for="opiniao_cidadania_descricao">Desreva suas Opiniões falhas na Cidadania</label>
+                    </div>
                 </div>
 
                 <div class="form-floating mb-3">
@@ -491,83 +535,124 @@
                         'rotulo' => 'Na Infraestrutura?',
                         'campo' => 'opiniao_infraestrutura',
                         'vetor' => [
+                            'Não Necessita',
                             'Má Iluminação',
                             'Ausência de Asfalto e/ou Precariedade',
                             'Falta de Saneamento básico e/ou Melhoria',
                             'Abastecimento de Água',
                             'Abastecimento de Energia',
                         ],
-                        'dados' => $d->opiniao_infraestrutura
+                        'dados' => $d->opiniao_infraestrutura,
+                        'exibir' => [
+                            'Não Necessita'=>false,
+                            'Má Iluminação'=>true,
+                            'Ausência de Asfalto e/ou Precariedade'=>true,
+                            'Falta de Saneamento básico e/ou Melhoria'=>true,
+                            'Abastecimento de Água'=>true,
+                            'Abastecimento de Energia'=>true,
+                         ],
+                         'campo_destino'=>'opiniao_infraestrutura_descricao'
                     ])?>
                 </div>
-                <div class="form-floating mb-3">
-                    <textarea name="opiniao_infraestrutura_descricao" id="opiniao_infraestrutura_descricao" class="form-control" placeholder="Outras Opiniões falhas na Infraestrutura" ><?=$d->opiniao_infraestrutura_descricao?></textarea>
-                    <label for="opiniao_infraestrutura_descricao">Desreva suas Opiniões falhas na Infraestrutura</label>
+                <div class="oculto" opiniao_infraestrutura_descricao>
+                    <div class="form-floating mb-3">
+                        <textarea name="opiniao_infraestrutura_descricao" id="opiniao_infraestrutura_descricao" class="form-control" placeholder="Outras Opiniões falhas na Infraestrutura" ><?=$d->opiniao_infraestrutura_descricao?></textarea>
+                        <label for="opiniao_infraestrutura_descricao">Desreva suas Opiniões falhas na Infraestrutura</label>
+                    </div>
                 </div>
-
                 <div class="form-floating mb-3">
                     <?=montaCheckbox([
                         'rotulo' => 'Na Assistência Social?',
                         'campo' => 'opiniao_assistencia_social',
                         'vetor' => [
+                            'Não Necessita',
                             'Alimentação Básica',
                             'Auxílios Governamentais',
                             'Assistência Psicológica',
                         ],
-                        'dados' => $d->opiniao_assistencia_social
+                        'dados' => $d->opiniao_assistencia_social,
+                        'exibir' => [
+                            'Não Necessita'=>false,
+                            'Alimentação Básica'=>true,
+                            'Auxílios Governamentais'=>true,
+                            'Assistência Psicológica'=>true,
+                         ],
+                         'campo_destino'=>'opiniao_assistencia_social_descricao'
                     ])?>
                 </div>
-                <div class="form-floating mb-3">
-                    <textarea name="opiniao_assistencia_social_descricao" id="opiniao_assistencia_social_descricao" class="form-control" placeholder="Outras Opiniões falhas na Assistência Social" ><?=$d->opiniao_assistencia_social_descricao?></textarea>
-                    <label for="opiniao_assistencia_social_descricao">Desreva suas Opiniões falhas na Assistência Social</label>
+                <div class="oculto" opiniao_assistencia_social_descricao>
+                    <div class="form-floating mb-3">
+                        <textarea name="opiniao_assistencia_social_descricao" id="opiniao_assistencia_social_descricao" class="form-control" placeholder="Outras Opiniões falhas na Assistência Social" ><?=$d->opiniao_assistencia_social_descricao?></textarea>
+                        <label for="opiniao_assistencia_social_descricao">Desreva suas Opiniões falhas na Assistência Social</label>
+                    </div>
                 </div>
-
                 <div class="form-floating mb-3">
                     <?=montaRadio([
                         'rotulo' => 'Nos Direitos Humanos?',
                         'campo' => 'opiniao_direitos_humanos',
                         'vetor' => [
-                            'Não',
-                            'Sim'
+                            'Não Necessita',
+                            'Sim Necessita'
                         ],
-                        'dados' => $d->opiniao_direitos_humanos
+                        'dados' => $d->opiniao_direitos_humanos,
+                        'exibir' => [
+                            'Não Necessita'=>false,
+                            'Sim Necessita'=>true
+                         ],
+                         'campo_destino'=>'opiniao_direitos_humanos_descricao'
                     ])?>
                 </div>
-                <div class="form-floating mb-3">
-                    <textarea name="opiniao_direitos_humanos_descricao" id="opiniao_direitos_humanos_descricao" class="form-control" placeholder="Outras Opiniões falhas na Direitos Humanos" ><?=$d->opiniao_direitos_humanos_descricao?></textarea>
-                    <label for="opiniao_direitos_humanos_descricao">Desreva suas Opiniões falhas na Direitos Humanos</label>
+                <div class="oculto" opiniao_direitos_humanos_descricao>
+                    <div class="form-floating mb-3">
+                        <textarea name="opiniao_direitos_humanos_descricao" id="opiniao_direitos_humanos_descricao" class="form-control" placeholder="Outras Opiniões falhas na Direitos Humanos" ><?=$d->opiniao_direitos_humanos_descricao?></textarea>
+                        <label for="opiniao_direitos_humanos_descricao">Desreva suas Opiniões falhas na Direitos Humanos</label>
+                    </div>
                 </div>
-
                 <div class="form-floating mb-3">
                     <?=montaCheckbox([
                         'rotulo' => 'Na Segurança?',
                         'campo' => 'opiniao_seguranca',
                         'vetor' => [
+                            'Não Necessita',
                             'Atendimento de Chamado para Policiamento',
                         ],
-                        'dados' => $d->opiniao_seguranca
+                        'dados' => $d->opiniao_seguranca,
+                        'exibir' => [
+                            'Não Necessita'=>false,
+                            'Atendimento de Chamado para Policiamento'=>true,
+                         ],
+                         'campo_destino'=>'opiniao_seguranca_descricao'
                     ])?>
                 </div>
-                <div class="form-floating mb-3">
-                    <textarea name="opiniao_seguranca_descricao" id="opiniao_seguranca_descricao" class="form-control" placeholder="Outras Opiniões falhas na Segurança" ><?=$d->opiniao_seguranca_descricao?></textarea>
-                    <label for="opiniao_seguranca_descricao">Desreva suas Opiniões falhas na Segurança</label>
+                <div class="oculto" opiniao_seguranca_descricao>
+                    <div class="form-floating mb-3">
+                        <textarea name="opiniao_seguranca_descricao" id="opiniao_seguranca_descricao" class="form-control" placeholder="Outras Opiniões falhas na Segurança" ><?=$d->opiniao_seguranca_descricao?></textarea>
+                        <label for="opiniao_seguranca_descricao">Desreva suas Opiniões falhas na Segurança</label>
+                    </div>
                 </div>
-
                 <div class="form-floating mb-3">
                     <?=montaCheckbox([
                         'rotulo' => 'No Esporte e Lazer?',
                         'campo' => 'opiniao_esporte_lazer',
                         'vetor' => [
+                            'Não Necessita',
                             'Areas para pratica de atividades esportivas',
                         ],
-                        'dados' => $d->opiniao_esporte_lazer
+                        'dados' => $d->opiniao_esporte_lazer,
+                        'exibir' => [
+                            'Não Necessita'=>false,
+                            'Areas para pratica de atividades esportivas'=>true,
+                         ],
+                         'campo_destino'=>'opiniao_esporte_lazer_descricao'
+
                     ])?>
                 </div>
-                <div class="form-floating mb-3">
-                    <textarea name="opiniao_esporte_lazer_descricao" id="opiniao_esporte_lazer_descricao" class="form-control" placeholder="Outras Opiniões falhas no Esporte e Lazer" ><?=$d->opiniao_esporte_lazer_descricao?></textarea>
-                    <label for="opiniao_esporte_lazer_descricao">Outras Opiniões falhas no Esporte e Lazer</label>
+                <div class="ocultar" opiniao_esporte_lazer_descricao>
+                    <div class="form-floating mb-3">
+                        <textarea name="opiniao_esporte_lazer_descricao" id="opiniao_esporte_lazer_descricao" class="form-control" placeholder="Outras Opiniões falhas no Esporte e Lazer" ><?=$d->opiniao_esporte_lazer_descricao?></textarea>
+                        <label for="opiniao_esporte_lazer_descricao">Outras Opiniões falhas no Esporte e Lazer</label>
+                    </div>
                 </div>
-
                 <div class="form-floating mb-3">
                     <textarea name="opiniao_outros" id="opiniao_outros" class="form-control" placeholder="Outras Opiniões / Detalhes" ><?=$d->opiniao_outros?></textarea>
                     <label for="opiniao_outros">Desreva suas Opiniões / Detalhes</label>
