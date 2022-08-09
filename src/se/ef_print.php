@@ -3,8 +3,17 @@
 
 ?>
 <style>
-    textarea{
-        height:200px !important;
+    body{
+        font-size:11px;
+    }
+    div[textarea]{
+        height:110px !important;
+    }
+    .form-control-sm{
+        height:35px !important;
+    }
+    .form-floating label{
+        font-size:9px !important;
     }
 </style>
 <div class="container">
