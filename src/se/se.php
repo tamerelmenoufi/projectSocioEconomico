@@ -739,6 +739,8 @@
 
                     if(exibe){
                         $(`div[${$(this).attr('exibir')}]`).css("display","block");
+                    }else{
+                        $(`div[${$(this).attr('exibir')}]`).css("display","none");
                     }
 
                 }
@@ -769,6 +771,8 @@
 
                     if(exibe){
                         $(`div[${$(this).attr('exibir')}]`).css("display","block");
+                    }else{
+                        $(`div[${$(this).attr('exibir')}]`).css("display","none");
                     }
 
                 }
