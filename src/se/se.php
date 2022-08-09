@@ -87,6 +87,12 @@
                     <input type="text" name="rg_orgao" id="rg_orgao" class="form-control" placeholder="RG - Orgão Emissor" value="<?=$d->rg_orgao?>">
                     <label for="rg_orgao">RG (Orgão Emissor)*</label>
                 </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="data_nascimento" id="data_nascimento" class="form-control" placeholder="Ponto de Referência" value="<?=dataBr($d->data_nascimento)?>">
+                    <label for="data_nascimento">Data de Nascimento</label>
+                </div>
+
                 <div class="form-floating mb-3">
                     <input type="text" name="telefone" id="telefone" class="form-control" placeholder="telefone" value="<?=$d->telefone?>">
                     <label for="telefone">Telefone*</label>
@@ -179,12 +185,6 @@
                         ],
                         'dados' => $d->genero
                     ])?>
-                </div>
-
-
-                <div class="form-floating mb-3">
-                    <input type="text" name="data_nascimento" id="data_nascimento" class="form-control" placeholder="Ponto de Referência" value="<?=dataBr($d->data_nascimento)?>">
-                    <label for="data_nascimento">Data de Nascimento</label>
                 </div>
 
                 <div class="form-floating mb-3">

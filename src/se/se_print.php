@@ -114,6 +114,9 @@
 
 
 
+<div class="row">
+    <div class="col">
+
                 <div class="form-floating mb-3">
                     <?=montaOpcPrint([
                         'rotulo' => 'Genero?',
@@ -124,12 +127,6 @@
                         ],
                         'dados' => $d->genero
                     ])?>
-                </div>
-
-
-                <div class="form-floating mb-3">
-                    <div type="text" name="data_nascimento" id="data_nascimento" class="form-control" placeholder="Ponto de Referência" value="<?=dataBr($d->data_nascimento)?>"></div>
-                    <label for="data_nascimento">Data de Nascimento</label>
                 </div>
 
                 <div class="form-floating mb-3">
@@ -507,6 +504,10 @@
                     <div textarea name="opiniao_outros" id="opiniao_outros" class="form-control" placeholder="Outras Opiniões / Detalhes" ><?=$d->opiniao_outros?></div>
                     <label for="opiniao_outros">Desreva suas Opiniões / Detalhes</label>
                 </div>
+    </div>
+</div>
+
+
 
 
             </div>
