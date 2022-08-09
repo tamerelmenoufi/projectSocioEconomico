@@ -87,7 +87,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div type="text" name="ef_tratamento_saude_descricao" id="ef_tratamento_saude_descricao" class="form-control form-control-sm" placeholder="Descreva o Tratamento de Saúde" value="<?=$d->ef_tratamento_saude_descricao?>"></div>
+                    <div textarea type="text" name="ef_tratamento_saude_descricao" id="ef_tratamento_saude_descricao" class="form-control form-control-sm" placeholder="Descreva o Tratamento de Saúde" value="<?=$d->ef_tratamento_saude_descricao?>"></div>
                     <label for="ef_tratamento_saude_descricao">Descreva o Tratamento de Saúde</label>
                 </div>
 
@@ -103,7 +103,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div type="text" name="ef_doencas_cronicas_descricao" id="ef_doencas_cronicas_descricao" class="form-control form-control-sm" placeholder="Descreva o Tratamento de Saúde" value="<?=$d->ef_doencas_cronicas_descricao?>"></div>
+                    <div textarea type="text" name="ef_doencas_cronicas_descricao" id="ef_doencas_cronicas_descricao" class="form-control form-control-sm" placeholder="Descreva o Tratamento de Saúde" value="<?=$d->ef_doencas_cronicas_descricao?>"></div>
                     <label for="ef_doencas_cronicas_descricao">Descreva a(s) Doença(s) Crônica(s)</label>
                 </div>
 
@@ -120,7 +120,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <div type="text" name="ef_portador_deficiencia_descricao" id="ef_portador_deficiencia_descricao" class="form-control form-control-sm" placeholder="Descreva a Definiência" value="<?=$d->ef_portador_deficiencia_descricao?>"></div>
+                    <div textarea type="text" name="ef_portador_deficiencia_descricao" id="ef_portador_deficiencia_descricao" class="form-control form-control-sm" placeholder="Descreva a Definiência" value="<?=$d->ef_portador_deficiencia_descricao?>"></div>
                     <label for="ef_portador_deficiencia_descricao">Descreva a Deficiência</label>
                 </div>
 
