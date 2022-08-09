@@ -296,8 +296,8 @@
                         ],
                         'dados' => $d->curos_profissionais,
                         'exibir' => [
-                            'Sim'=>true,
-                            'Não'=>false,
+                            'Sim'=>false,
+                            'Não'=>true,
                         ],
                         'campo_destino' => 'curos_profissionais_descricao',
                     ])?>
