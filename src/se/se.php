@@ -693,6 +693,9 @@
 
                 e.preventDefault();
 
+                $(".oculto").remove();
+
+
                 var codigo = $('#codigo').val();
                 var campos = $(this).serializeArray();
 
