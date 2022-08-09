@@ -320,7 +320,9 @@
                             '4 salários mínimos',
                             'Acima de 4 Salários mínimos'
                         ],
-                        'dados' => $d->renda_mensal
+                        'dados' => $d->renda_mensal,
+                        'exibir' => false,
+                        'campo_destino' =>false
                     ])?>
                 </div>
 
