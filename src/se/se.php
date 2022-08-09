@@ -802,18 +802,16 @@
                     }
                 }
 
-                if($(this).attr('exibir')){
-                    obj = $(`div[${$(this).attr('exibir')}]`);
-                    // obj.css("display","none");
-                    obj.addClass("oculto");
+                obj = $(`div[${$(this).attr('exibir')}]`);
+                // obj.css("display","none");
+                obj.addClass("oculto");
 
-                    $(this).parent("div").parent("div").children("div").children("input[exibir]").each(function(){
-                        if($(this).prop("checked") == true){
-                            // obj.css("display","block");
-                            obj.removeClass("oculto");
-                        }
-                    })
-                }
+                $(this).parent("div").parent("div").children("div").children("input[exibir]").each(function(){
+                    if($(this).prop("checked") == true){
+                        // obj.css("display","block");
+                        obj.removeClass("oculto");
+                    }
+                })
 
             })
 
