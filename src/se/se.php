@@ -182,7 +182,9 @@
                             'Masculino',
                             'Feminino',
                         ],
-                        'dados' => $d->genero
+                        'dados' => $d->genero,
+                        'exibir' => false,
+                        'campo_destino' => false
                     ])?>
                 </div>
 
@@ -197,7 +199,9 @@
                             'Viúvo',
                             'Outros',
                         ],
-                        'dados' => $d->estado_civil
+                        'dados' => $d->estado_civil,
+                        'exibir' => false,
+                        'campo_destino' => false
                     ])?>
                 </div>
 
@@ -213,7 +217,9 @@
                             'Youtube',
                             'Linkedin'
                         ],
-                        'dados' => $d->redes_sociais
+                        'dados' => $d->redes_sociais,
+                        'exibir' => false,
+                        'campo_destino' => false
                     ])?>
                 </div>
 
@@ -230,7 +236,9 @@
                             'Fluvial',
                             'Outros'
                         ],
-                        'dados' => $d->meio_transporte
+                        'dados' => $d->meio_transporte,
+                        'exibir' => false,
+                        'campo_destino' => false
                     ])?>
                 </div>
 
@@ -247,7 +255,9 @@
                             'Alugado',
                             'Outros',
                         ],
-                        'dados' => $d->tipo_imovel
+                        'dados' => $d->tipo_imovel,
+                        'exibir' => false,
+                        'campo_destino' => false
                     ])?>
                 </div>
 
@@ -263,7 +273,9 @@
                             'Apartamento',
                             'Outros',
                         ],
-                        'dados' => $d->tipo_moradia
+                        'dados' => $d->tipo_moradia,
+                        'exibir' => false,
+                        'campo_destino' => false
                     ])?>
                 </div>
 
@@ -278,7 +290,9 @@
                             '4 Cômodos',
                             'Mais de 4 Cômodos',
                         ],
-                        'dados' => $d->quantidade_comodos
+                        'dados' => $d->quantidade_comodos,
+                        'exibir' => false,
+                        'campo_destino' => false
                     ])?>
                 </div>
 
@@ -293,7 +307,9 @@
                             'Ensino Técnico/Profissionalizante',
                             'Ensino Superior Completo',
                         ],
-                        'dados' => $d->grau_escolaridade
+                        'dados' => $d->grau_escolaridade,
+                        'exibir' => false,
+                        'campo_destino' => false
                     ])?>
                 </div>
 
@@ -332,6 +348,8 @@
                             'Acima de 4 Salários mínimos'
                         ],
                         'dados' => $d->renda_mensal,
+                        'exibir' => false,
+                        'campo_destino' => false
                     ])?>
                 </div>
 
@@ -368,7 +386,9 @@
                             'Associações/PlanodeSaúde',
                             'Outros',
                         ],
-                        'dados' => $d->servico_saude
+                        'dados' => $d->servico_saude,
+                        'exibir' => false,
+                        'campo_destino' => false
                     ])?>
                 </div> -->
 
@@ -384,7 +404,9 @@
                             '3a Dose',
                             '4a Dose',
                         ],
-                        'dados' => $d->vacina_covid
+                        'dados' => $d->vacina_covid,
+                        'exibir' => false,
+                        'campo_destino' => false
                     ])?>
                 </div>
 
@@ -403,7 +425,9 @@
                             'CTPS', // - Carteira de Trabalho e Previdencia Social
                             'TE', //- Título Eleitoral
                         ],
-                        'dados' => $d->necessita_documentos
+                        'dados' => $d->necessita_documentos,
+                        'exibir' => false,
+                        'campo_destino' => false
                     ])?>
                 </div>
 
@@ -682,6 +706,8 @@
                                     'Ótimo',
                                 ],
                                 'dados' => $d->recepcao_entrevistado,
+                                'exibir' => false,
+                                'campo_destino' => false
                             ])?>
                         </div>
                     </div>
