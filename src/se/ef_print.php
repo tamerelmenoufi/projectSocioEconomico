@@ -18,6 +18,9 @@
 </style>
 <div class="container">
         <div class="row" style="margin-bottom:50px;">
+
+<div class="row">
+    <div class="col-6">
             <div class="col">
                 <div class="form-floating mb-3">
                     <div type="text" class="form-control form-control-sm" id="ef_nome" name="ef_nome" placeholder="Nome completo" value="<?=$d->ef_nome?>"></div>
@@ -125,6 +128,11 @@
                     ])?>
                 </div>
 
+
+</div>
+<div class="col-6">
+
+
                 <div class="form-floating mb-3">
                     <div textarea type="text" name="ef_portador_deficiencia_descricao" id="ef_portador_deficiencia_descricao" class="form-control form-control-sm" placeholder="Descreva a Definiência" value="<?=$d->ef_portador_deficiencia_descricao?>"></div>
                     <label for="ef_portador_deficiencia_descricao">Descreva a Deficiência</label>
@@ -163,6 +171,10 @@
                         'dados' => $d->ef_necessita_documentos
                     ])?>
                 </div>
+
+</div>
+</div>
+
 
             </div>
         </div>
