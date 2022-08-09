@@ -22,7 +22,7 @@ for($i=0;$i<2;$i++){
 ?>
 
 <div class="container">
-        <div class="row" style="margin-bottom:50px;">
+        <div class="row">
 
             <div class="col">
                 <div class="form-floating mb-3">
