@@ -738,9 +738,13 @@
                     }
                 }
 
-                $(`div[${$(this).attr('exibir')}]`).css("display","none");
+                obj = $(`div[${$(this).attr('exibir')}]`);
+                obj.css("display","none");
+
                 $(this).parent("div").parent("div").children("div").children("input[exibir]").each(function(){
-                    $(`div[${$(this).attr('exibir')}]`).css("display","block");
+                    if($(this).prop("checked") == true){
+                        obj.css("display","block");
+                    }
                 })
 
             })
