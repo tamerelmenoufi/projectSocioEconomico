@@ -380,7 +380,7 @@
 
 <header class="Topo" style="margin:20px;"></header>
 
-<div class="row">
+<div class="row" style="margin-bottom:50px;">
 <div class="col-6">
 
                 <div class="form-floating mb-3">
