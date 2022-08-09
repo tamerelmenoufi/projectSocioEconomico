@@ -2,12 +2,6 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 ?>
 <style>
-    .Titulo<?=$md5?>{
-        position:absolute;
-        left:60px;
-        top:8px;
-        z-index:0;
-    }
     div[textarea]{
         height:200px !important;
     }
