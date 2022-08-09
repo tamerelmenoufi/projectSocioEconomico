@@ -2,6 +2,9 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 ?>
 <style>
+    body{
+        font-size:11px;
+    }
     div[textarea]{
         height:100px !important;
     }
