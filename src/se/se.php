@@ -737,16 +737,16 @@
 
                 if($(this).attr('exibir')){
                     if($(this).prop("checked") == true){
-                        $(`div[${$(this).attr('exibir')}]`).css("display","block");
+                        $(`div[${$(this).attr('exibir')}]`).addClass("oculto");
                     }
                 }
 
                 obj = $(`div[${$(this).attr('exibir')}]`);
-                obj.css("display","none");
+                obj.removeClass("oculto");
 
                 $(this).parent("div").parent("div").children("div").children("input[exibir]").each(function(){
                     if($(this).prop("checked") == true){
-                        obj.css("display","block");
+                        obj.addClass("oculto");
                     }
                 })
 
@@ -761,7 +761,7 @@
                 }
 
                 if($(this).prop("checked") == true){
-                    $(`div[${$(this).attr('ocultar')}]`).css("display","none");
+                    $(`div[${$(this).attr('ocultar')}]`).removeClass("oculto");
                 }
 
             })
