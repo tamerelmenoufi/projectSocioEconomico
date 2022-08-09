@@ -79,7 +79,7 @@
         $rotulo = $v['rotulo'];
         $dados = json_decode($v['dados']);
         // $lista[] = print_r($dados, true);
-        $lista[] = '<div class="mb-3"><label for="'.$campo.'"><b>'.$rotulo.'</b></label></div><div style="width:100%;">';
+        $lista[] = '<div class="mb-3" style="width:100%;"><label for="'.$campo.'"><b>'.$rotulo.'</b></label></div><div style="width:100%;">';
         for($i=0;$i<count($vetor);$i++){
             $lista[] = '  <div style="width:auto; margin-left:10px; float:left">
             <i class="fa-solid fa-square" style="color:#ccc"></i> '.$vetor[$i].'</div>';
