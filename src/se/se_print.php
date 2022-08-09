@@ -8,10 +8,12 @@
         top:8px;
         z-index:0;
     }
-    textarea{
+    div[textarea]{
         height:200px !important;
     }
 </style>
+
+<div class="container">
 <h4 class="Titulo<?=$md5?>">Pesquisa Socioeconomico</h4>
 
     <div class="row" style="margin-bottom:50px;">
@@ -213,7 +215,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div name="curos_profissionais_descricao" id="curos_profissionais_descricao" class="form-control" placeholder="Cursos Técnico/Profissionalizante" ><?=$d->curos_profissionais_descricao?></div>
+                    <div textarea name="curos_profissionais_descricao" id="curos_profissionais_descricao" class="form-control" placeholder="Cursos Técnico/Profissionalizante" ><?=$d->curos_profissionais_descricao?></div>
                     <label for="curos_profissionais_descricao">Descreve os Cursos Técnico/Profissionalizante</label>
                 </div>
 
@@ -246,7 +248,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <div name="beneficio_social_descricao" id="beneficio_social_descricao" class="form-control" placeholder="Descrição do Benefício Social" ><?=$d->beneficio_social_descricao?></div>
+                    <div textarea name="beneficio_social_descricao" id="beneficio_social_descricao" class="form-control" placeholder="Descrição do Benefício Social" ><?=$d->beneficio_social_descricao?></div>
                     <label for="beneficio_social_descricao">Descrição do Benefício Social</label>
                 </div>
 
@@ -319,7 +321,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div name="avaliacao_beneficios_descricao" id="avaliacao_beneficios_descricao" class="form-control" placeholder="Descrição da Avaliação do Benefício" ><?=$d->avaliacao_beneficios_descricao?></div>
+                    <div textarea name="avaliacao_beneficios_descricao" id="avaliacao_beneficios_descricao" class="form-control" placeholder="Descrição da Avaliação do Benefício" ><?=$d->avaliacao_beneficios_descricao?></div>
                     <label for="avaliacao_beneficios_descricao">Descrição de sua Avaliação do Benefício</label>
                 </div>
 
@@ -335,7 +337,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div name="atende_necessidades_descricao" id="atende_necessidades_descricao" class="form-control" placeholder="Descrição de Benefício que atende ou não as Necessidades" ><?=$d->atende_necessidades_descricao?></div>
+                    <div textarea name="atende_necessidades_descricao" id="atende_necessidades_descricao" class="form-control" placeholder="Descrição de Benefício que atende ou não as Necessidades" ><?=$d->atende_necessidades_descricao?></div>
                     <label for="atende_necessidades_descricao">Descrição de Benefício que atende ou não as Necessidades</label>
                 </div>
 
@@ -359,7 +361,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div name="opiniao_saude_descricao" id="opiniao_saude_descricao" class="form-control" placeholder="Outras Opiniões / Detalhes" ><?=$d->opiniao_saude_descricao?></div>
+                    <div textarea name="opiniao_saude_descricao" id="opiniao_saude_descricao" class="form-control" placeholder="Outras Opiniões / Detalhes" ><?=$d->opiniao_saude_descricao?></div>
                     <label for="opiniao_saude_descricao">Desreva suas Opiniões Falhas na Saúde</label>
                 </div>
 
@@ -375,7 +377,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div name="opiniao_educacao_descricao" id="opiniao_educacao_descricao" class="form-control" placeholder="Outras Opiniões falhas na Educação" ><?=$d->opiniao_educacao_descricao?></div>
+                    <div textarea name="opiniao_educacao_descricao" id="opiniao_educacao_descricao" class="form-control" placeholder="Outras Opiniões falhas na Educação" ><?=$d->opiniao_educacao_descricao?></div>
                     <label for="opiniao_educacao_descricao">Desreva suas Opiniões falhas na Educação</label>
                 </div>
 
@@ -391,7 +393,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div name="opiniao_cidadania_descricao" id="opiniao_cidadania_descricao" class="form-control" placeholder="Outras Opiniões falhas na Cidadania" ><?=$d->opiniao_cidadania_descricao?></div>
+                    <div textarea name="opiniao_cidadania_descricao" id="opiniao_cidadania_descricao" class="form-control" placeholder="Outras Opiniões falhas na Cidadania" ><?=$d->opiniao_cidadania_descricao?></div>
                     <label for="opiniao_cidadania_descricao">Desreva suas Opiniões falhas na Cidadania</label>
                 </div>
 
@@ -410,7 +412,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div name="opiniao_infraestrutura_descricao" id="opiniao_infraestrutura_descricao" class="form-control" placeholder="Outras Opiniões falhas na Infraestrutura" ><?=$d->opiniao_infraestrutura_descricao?></div>
+                    <div textarea name="opiniao_infraestrutura_descricao" id="opiniao_infraestrutura_descricao" class="form-control" placeholder="Outras Opiniões falhas na Infraestrutura" ><?=$d->opiniao_infraestrutura_descricao?></div>
                     <label for="opiniao_infraestrutura_descricao">Desreva suas Opiniões falhas na Infraestrutura</label>
                 </div>
 
@@ -427,7 +429,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div name="opiniao_assistencia_social_descricao" id="opiniao_assistencia_social_descricao" class="form-control" placeholder="Outras Opiniões falhas na Assistência Social" ><?=$d->opiniao_assistencia_social_descricao?></div>
+                    <div textarea name="opiniao_assistencia_social_descricao" id="opiniao_assistencia_social_descricao" class="form-control" placeholder="Outras Opiniões falhas na Assistência Social" ><?=$d->opiniao_assistencia_social_descricao?></div>
                     <label for="opiniao_assistencia_social_descricao">Desreva suas Opiniões falhas na Assistência Social</label>
                 </div>
 
@@ -443,7 +445,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div name="opiniao_direitos_humanos_descricao" id="opiniao_direitos_humanos_descricao" class="form-control" placeholder="Outras Opiniões falhas na Direitos Humanos" ><?=$d->opiniao_direitos_humanos_descricao?></div>
+                    <div textarea name="opiniao_direitos_humanos_descricao" id="opiniao_direitos_humanos_descricao" class="form-control" placeholder="Outras Opiniões falhas na Direitos Humanos" ><?=$d->opiniao_direitos_humanos_descricao?></div>
                     <label for="opiniao_direitos_humanos_descricao">Desreva suas Opiniões falhas na Direitos Humanos</label>
                 </div>
 
@@ -458,7 +460,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div name="opiniao_seguranca_descricao" id="opiniao_seguranca_descricao" class="form-control" placeholder="Outras Opiniões falhas na Segurança" ><?=$d->opiniao_seguranca_descricao?></div>
+                    <div textarea name="opiniao_seguranca_descricao" id="opiniao_seguranca_descricao" class="form-control" placeholder="Outras Opiniões falhas na Segurança" ><?=$d->opiniao_seguranca_descricao?></div>
                     <label for="opiniao_seguranca_descricao">Desreva suas Opiniões falhas na Segurança</label>
                 </div>
 
@@ -473,19 +475,19 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div name="opiniao_esporte_lazer_descricao" id="opiniao_esporte_lazer_descricao" class="form-control" placeholder="Outras Opiniões falhas no Esporte e Lazer" ><?=$d->opiniao_esporte_lazer_descricao?></div>
+                    <div textarea name="opiniao_esporte_lazer_descricao" id="opiniao_esporte_lazer_descricao" class="form-control" placeholder="Outras Opiniões falhas no Esporte e Lazer" ><?=$d->opiniao_esporte_lazer_descricao?></div>
                     <label for="opiniao_esporte_lazer_descricao">Outras Opiniões falhas no Esporte e Lazer</label>
                 </div>
 
                 <div class="form-floating mb-3">
-                    <div name="opiniao_outros" id="opiniao_outros" class="form-control" placeholder="Outras Opiniões / Detalhes" ><?=$d->opiniao_outros?></div>
+                    <div textarea name="opiniao_outros" id="opiniao_outros" class="form-control" placeholder="Outras Opiniões / Detalhes" ><?=$d->opiniao_outros?></div>
                     <label for="opiniao_outros">Desreva suas Opiniões / Detalhes</label>
                 </div>
 
 
             </div>
         </div>
-
+</div>
 
 
     <script>
