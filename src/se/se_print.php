@@ -3,7 +3,7 @@
 ?>
 <style>
     div[textarea]{
-        height:200px !important;
+        height:100px !important;
     }
 </style>
 
@@ -15,19 +15,19 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="form-floating mb-3">
-                            <div type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>"></div>
+                            <div type="text" class="form-control form-control-sm" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>"></div>
                             <label for="nome">Nome*</label>
                         </div>
                     </div>
                     <div class="col-3">
                         <div class="form-floating mb-3">
-                            <div type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>"></div>
+                            <div type="text" name="cpf" id="cpf" class="form-control form-control-sm" placeholder="CPF" value="<?=$d->cpf?>"></div>
                             <label for="cpf">CPF*</label>
                         </div>
                     </div>
                     <div class="col-3">
                         <div class="form-floating mb-3">
-                            <div type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>"></div>
+                            <div type="text" name="cpf" id="cpf" class="form-control form-control-sm" placeholder="CPF" value="<?=$d->cpf?>"></div>
                             <label for="cpf">RG/Orgão Emissor*</label>
                         </div>
                     </div>
@@ -35,19 +35,19 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="form-floating mb-3">
-                            <div type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>"></div>
+                            <div type="text" class="form-control form-control-sm" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>"></div>
                             <label for="nome">Data de Nascimento*</label>
                         </div>
                     </div>
                     <div class="col-3">
                         <div class="form-floating mb-3">
-                            <div type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>"></div>
+                            <div type="text" class="form-control form-control-sm" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>"></div>
                             <label for="nome">Telefone*</label>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-floating mb-3">
-                            <div type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>"></div>
+                            <div type="text" name="cpf" id="cpf" class="form-control form-control-sm" placeholder="CPF" value="<?=$d->cpf?>"></div>
                             <label for="cpf">E-mail*</label>
                         </div>
                     </div>
@@ -72,19 +72,19 @@
                 <div class="row">
                     <div class="col-5">
                         <div class="form-floating mb-3">
-                            <div type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>"></div>
+                            <div type="text" class="form-control form-control-sm" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>"></div>
                             <label for="nome">Município*</label>
                         </div>
                     </div>
                     <div class="col-5">
                         <div class="form-floating mb-3">
-                            <div type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>"></div>
+                            <div type="text" name="cpf" id="cpf" class="form-control form-control-sm" placeholder="CPF" value="<?=$d->cpf?>"></div>
                             <label for="cpf">Bairro*</label>
                         </div>
                     </div>
                     <div class="col-2">
                         <div class="form-floating mb-3">
-                            <div type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>"></div>
+                            <div type="text" name="cpf" id="cpf" class="form-control form-control-sm" placeholder="CPF" value="<?=$d->cpf?>"></div>
                             <label for="cpf">Zona*</label>
                         </div>
                     </div>
@@ -94,19 +94,19 @@
                 <div class="row">
                     <div class="col-5">
                         <div class="form-floating mb-3">
-                            <div type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>"></div>
+                            <div type="text" class="form-control form-control-sm" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>"></div>
                             <label for="nome">Endereço*</label>
                         </div>
                     </div>
                     <div class="col-2">
                         <div class="form-floating mb-3">
-                            <div type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>"></div>
+                            <div type="text" name="cpf" id="cpf" class="form-control form-control-sm" placeholder="CPF" value="<?=$d->cpf?>"></div>
                             <label for="cpf">CEP*</label>
                         </div>
                     </div>
                     <div class="col-5">
                         <div class="form-floating mb-3">
-                            <div type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>"></div>
+                            <div type="text" name="cpf" id="cpf" class="form-control form-control-sm" placeholder="CPF" value="<?=$d->cpf?>"></div>
                             <label for="cpf">Ponto de Referência</label>
                         </div>
                     </div>
@@ -236,7 +236,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div textarea name="curos_profissionais_descricao" id="curos_profissionais_descricao" class="form-control" placeholder="Cursos Técnico/Profissionalizante" ><?=$d->curos_profissionais_descricao?></div>
+                    <div textarea name="curos_profissionais_descricao" id="curos_profissionais_descricao" class="form-control form-control-sm" placeholder="Cursos Técnico/Profissionalizante" ><?=$d->curos_profissionais_descricao?></div>
                     <label for="curos_profissionais_descricao">Descreve os Cursos Técnico/Profissionalizante</label>
                 </div>
 
@@ -269,7 +269,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <div textarea name="beneficio_social_descricao" id="beneficio_social_descricao" class="form-control" placeholder="Descrição do Benefício Social" ><?=$d->beneficio_social_descricao?></div>
+                    <div textarea name="beneficio_social_descricao" id="beneficio_social_descricao" class="form-control form-control-sm" placeholder="Descrição do Benefício Social" ><?=$d->beneficio_social_descricao?></div>
                     <label for="beneficio_social_descricao">Descrição do Benefício Social</label>
                 </div>
 
@@ -342,7 +342,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div textarea name="avaliacao_beneficios_descricao" id="avaliacao_beneficios_descricao" class="form-control" placeholder="Descrição da Avaliação do Benefício" ><?=$d->avaliacao_beneficios_descricao?></div>
+                    <div textarea name="avaliacao_beneficios_descricao" id="avaliacao_beneficios_descricao" class="form-control form-control-sm" placeholder="Descrição da Avaliação do Benefício" ><?=$d->avaliacao_beneficios_descricao?></div>
                     <label for="avaliacao_beneficios_descricao">Descrição de sua Avaliação do Benefício</label>
                 </div>
 
@@ -358,7 +358,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div textarea name="atende_necessidades_descricao" id="atende_necessidades_descricao" class="form-control" placeholder="Descrição de Benefício que atende ou não as Necessidades" ><?=$d->atende_necessidades_descricao?></div>
+                    <div textarea name="atende_necessidades_descricao" id="atende_necessidades_descricao" class="form-control form-control-sm" placeholder="Descrição de Benefício que atende ou não as Necessidades" ><?=$d->atende_necessidades_descricao?></div>
                     <label for="atende_necessidades_descricao">Descrição de Benefício que atende ou não as Necessidades</label>
                 </div>
 
@@ -383,7 +383,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div textarea name="opiniao_saude_descricao" id="opiniao_saude_descricao" class="form-control" placeholder="Outras Opiniões / Detalhes" ><?=$d->opiniao_saude_descricao?></div>
+                    <div textarea name="opiniao_saude_descricao" id="opiniao_saude_descricao" class="form-control form-control-sm" placeholder="Outras Opiniões / Detalhes" ><?=$d->opiniao_saude_descricao?></div>
                     <label for="opiniao_saude_descricao">Desreva suas Opiniões Falhas na Saúde</label>
                 </div>
 
@@ -399,7 +399,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div textarea name="opiniao_educacao_descricao" id="opiniao_educacao_descricao" class="form-control" placeholder="Outras Opiniões falhas na Educação" ><?=$d->opiniao_educacao_descricao?></div>
+                    <div textarea name="opiniao_educacao_descricao" id="opiniao_educacao_descricao" class="form-control form-control-sm" placeholder="Outras Opiniões falhas na Educação" ><?=$d->opiniao_educacao_descricao?></div>
                     <label for="opiniao_educacao_descricao">Desreva suas Opiniões falhas na Educação</label>
                 </div>
 
@@ -415,7 +415,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div textarea name="opiniao_cidadania_descricao" id="opiniao_cidadania_descricao" class="form-control" placeholder="Outras Opiniões falhas na Cidadania" ><?=$d->opiniao_cidadania_descricao?></div>
+                    <div textarea name="opiniao_cidadania_descricao" id="opiniao_cidadania_descricao" class="form-control form-control-sm" placeholder="Outras Opiniões falhas na Cidadania" ><?=$d->opiniao_cidadania_descricao?></div>
                     <label for="opiniao_cidadania_descricao">Desreva suas Opiniões falhas na Cidadania</label>
                 </div>
 
@@ -434,7 +434,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div textarea name="opiniao_infraestrutura_descricao" id="opiniao_infraestrutura_descricao" class="form-control" placeholder="Outras Opiniões falhas na Infraestrutura" ><?=$d->opiniao_infraestrutura_descricao?></div>
+                    <div textarea name="opiniao_infraestrutura_descricao" id="opiniao_infraestrutura_descricao" class="form-control form-control-sm" placeholder="Outras Opiniões falhas na Infraestrutura" ><?=$d->opiniao_infraestrutura_descricao?></div>
                     <label for="opiniao_infraestrutura_descricao">Desreva suas Opiniões falhas na Infraestrutura</label>
                 </div>
 
@@ -451,7 +451,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div textarea name="opiniao_assistencia_social_descricao" id="opiniao_assistencia_social_descricao" class="form-control" placeholder="Outras Opiniões falhas na Assistência Social" ><?=$d->opiniao_assistencia_social_descricao?></div>
+                    <div textarea name="opiniao_assistencia_social_descricao" id="opiniao_assistencia_social_descricao" class="form-control form-control-sm" placeholder="Outras Opiniões falhas na Assistência Social" ><?=$d->opiniao_assistencia_social_descricao?></div>
                     <label for="opiniao_assistencia_social_descricao">Desreva suas Opiniões falhas na Assistência Social</label>
                 </div>
 
@@ -467,7 +467,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div textarea name="opiniao_direitos_humanos_descricao" id="opiniao_direitos_humanos_descricao" class="form-control" placeholder="Outras Opiniões falhas na Direitos Humanos" ><?=$d->opiniao_direitos_humanos_descricao?></div>
+                    <div textarea name="opiniao_direitos_humanos_descricao" id="opiniao_direitos_humanos_descricao" class="form-control form-control-sm" placeholder="Outras Opiniões falhas na Direitos Humanos" ><?=$d->opiniao_direitos_humanos_descricao?></div>
                     <label for="opiniao_direitos_humanos_descricao">Desreva suas Opiniões falhas na Direitos Humanos</label>
                 </div>
 
@@ -482,7 +482,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div textarea name="opiniao_seguranca_descricao" id="opiniao_seguranca_descricao" class="form-control" placeholder="Outras Opiniões falhas na Segurança" ><?=$d->opiniao_seguranca_descricao?></div>
+                    <div textarea name="opiniao_seguranca_descricao" id="opiniao_seguranca_descricao" class="form-control form-control-sm" placeholder="Outras Opiniões falhas na Segurança" ><?=$d->opiniao_seguranca_descricao?></div>
                     <label for="opiniao_seguranca_descricao">Desreva suas Opiniões falhas na Segurança</label>
                 </div>
 
@@ -497,12 +497,12 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <div textarea name="opiniao_esporte_lazer_descricao" id="opiniao_esporte_lazer_descricao" class="form-control" placeholder="Outras Opiniões falhas no Esporte e Lazer" ><?=$d->opiniao_esporte_lazer_descricao?></div>
+                    <div textarea name="opiniao_esporte_lazer_descricao" id="opiniao_esporte_lazer_descricao" class="form-control form-control-sm" placeholder="Outras Opiniões falhas no Esporte e Lazer" ><?=$d->opiniao_esporte_lazer_descricao?></div>
                     <label for="opiniao_esporte_lazer_descricao">Outras Opiniões falhas no Esporte e Lazer</label>
                 </div>
 
                 <div class="form-floating mb-3">
-                    <div textarea name="opiniao_outros" id="opiniao_outros" class="form-control" placeholder="Outras Opiniões / Detalhes" ><?=$d->opiniao_outros?></div>
+                    <div textarea name="opiniao_outros" id="opiniao_outros" class="form-control form-control-sm" placeholder="Outras Opiniões / Detalhes" ><?=$d->opiniao_outros?></div>
                     <label for="opiniao_outros">Desreva suas Opiniões / Detalhes</label>
                 </div>
     </div>
