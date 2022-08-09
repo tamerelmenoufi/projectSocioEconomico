@@ -54,7 +54,7 @@
         }
 
         if($retorno){
-            echo '<b>FILTRO: <small total style="color:#333333; font-size:14px;"></small> </b>' . implode(" ", $retorno);
+            echo '<b>FILTRO: <small total style="color:bule; font-size:14px;"></small> </b>' . implode(" ", $retorno);
         }
 
     }
