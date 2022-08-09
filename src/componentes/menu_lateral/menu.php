@@ -33,6 +33,14 @@
       </div>
     </div>
 
+    <div class="row mb-1">
+      <div class="col">
+        <a href="./print.php?<?=base64_encode("src/se/se_print.php")?>" target="formSocioEconimico" class="text-decoration-none">
+          <i class="fa-solid fa-list-ol"></i> Formulário Socioeconômico
+        </a>
+      </div>
+    </div>
+
   </div>
 </div>
 
