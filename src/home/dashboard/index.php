@@ -41,7 +41,7 @@
         <div class="card">
           <h5 class="card-header">Usuários por Zona</h5>
           <div class="card-body">
-            <div grafico="zona_geral" tipo="pie" style="width:100%;"></div>
+            <div grafico="zona_geral" style="width:100%;"></div>
           </div>
         </div>
       </div>
@@ -50,7 +50,7 @@
         <div class="card">
           <h5 class="card-header">Zona Urbana</h5>
           <div class="card-body">
-            <div grafico="urbana" tipo="pie" style="width:100%;"></div>
+            <div grafico="urbana" style="width:100%;"></div>
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@
         <div class="card">
           <h5 class="card-header">Zona Rural</h5>
           <div class="card-body">
-            <div grafico="rural" tipo="pie" style="width:100%;"></div>
+            <div grafico="rural" style="width:100%;"></div>
           </div>
         </div>
       </div>
@@ -68,7 +68,7 @@
         <div class="card">
           <h5 class="card-header">Evolução da Pesquisa</h5>
           <div class="card-body">
-            <div grafico="pesquisa" tipo="pie" style="width:100%;"></div>
+            <div grafico="pesquisa" style="width:100%;"></div>
           </div>
         </div>
       </div>
@@ -83,7 +83,7 @@
         <div class="card">
           <h5 class="card-header">Usuários por município</h5>
           <div class="card-body">
-            <div grafico="municipios" tipo="bar"></div>
+            <div grafico="municipios"></div>
           </div>
         </div>
       </div>
@@ -95,7 +95,7 @@
         <div class="card">
           <h5 class="card-header">Usuários na capital Manaus</h5>
           <div class="card-body">
-            <div grafico="capital" tipo="bar"></div>
+            <div grafico="capital"></div>
           </div>
         </div>
       </div>
@@ -118,10 +118,8 @@
     Carregando('none');
 
     const Graficos = (r) => {
-
-
         $.ajax({
-          url:`src/home/dashboard/graficos/load_${r.tipo}.php`,
+          url:`src/home/dashboard/graficos/${r.local}.php`,
           type:"POST",
           data:{
             rotulo:r.rotulo,
@@ -129,46 +127,24 @@
           },
           success:function(dados){
             $(`div[grafico="${r.local}"]`).html(dados);
-
-            $.ajax({
-              url:`src/home/dashboard/graficos/${r.local}.php`,
-              type:"POST",
-              data:{
-                rotulo:r.rotulo,
-                local:r.local,
-              },
-              success:function(dados){
-                $(`div[grafico="${r.local}"]`).html(dados);
-              },
-              error:function(){
-                console.log('Erro');
-              }
-            });
-
-
           },
           error:function(){
             console.log('Erro');
           }
         });
-
-
-
     }
 
     $("div[grafico]").each(function(){
       local = $(this).attr("grafico");
-      tipo = $(this).attr("tipo");
       rotulo = $(this).parent('div').parent('div').children('h5').text();
-      Graficos({local, rotulo, tipo});
+      Graficos({local, rotulo});
     })
 
 
 
     const Tabelas = (r) => {
-
         $.ajax({
-          url:`src/home/dashboard/tabelas/load_table.php`,
+          url:`src/home/dashboard/tabelas/${r.local}.php`,
           type:"POST",
           data:{
             rotulo:r.rotulo,
@@ -176,30 +152,11 @@
           },
           success:function(dados){
             $(`div[tabela="${r.local}"]`).html(dados);
-
-            $.ajax({
-              url:`src/home/dashboard/tabelas/${r.local}.php`,
-              type:"POST",
-              data:{
-                rotulo:r.rotulo,
-                local:r.local,
-              },
-              success:function(dados){
-                $(`div[tabela="${r.local}"]`).html(dados);
-              },
-              error:function(){
-                console.log('Erro');
-              }
-            });
-
-
           },
           error:function(){
             console.log('Erro');
           }
         });
-
-
     }
 
     $("div[tabela]").each(function(){
@@ -209,31 +166,16 @@
     })
 
 
-
     $.ajax({
-      url:`src/home/dashboard/mapas/load_map.php`,
+      url:`src/home/dashboard/mapas/geral.php`,
       type:"POST",
       success:function(dados){
         $(`div[mapa="geral"]`).html(dados);
-
-        $.ajax({
-          url:`src/home/dashboard/mapas/geral.php`,
-          type:"POST",
-          success:function(dados){
-            $(`div[mapa="geral"]`).html(dados);
-          },
-          error:function(){
-            console.log('Erro');
-          }
-        });
-
       },
       error:function(){
         console.log('Erro');
       }
     });
-
-
 
 
   })
