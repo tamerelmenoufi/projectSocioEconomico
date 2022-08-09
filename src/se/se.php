@@ -722,5 +722,13 @@
 
             });
 
+
+            $("input[exibir]").click(function(){
+                if($(this).prop("checked") == true){
+                    $(`div[${$(this).attr('exibir')}]`).css("display","block");
+                    $(`div[${$(this).attr('ocultar')}]`).css("display","none");
+                }
+            })
+
         })
     </script>
