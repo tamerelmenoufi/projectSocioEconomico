@@ -332,7 +332,7 @@
                 </div>
 
 
-                <div class="form-floating mb-3">
+                <!-- <div class="form-floating mb-3">
                     <?=montaRadio([
                         'rotulo' => 'Qual Serviço de Saúde você utiliza?',
                         'campo' => 'servico_saude',
@@ -343,7 +343,7 @@
                         ],
                         'dados' => $d->servico_saude
                     ])?>
-                </div>
+                </div> -->
 
 
                 <div class="form-floating mb-3">
