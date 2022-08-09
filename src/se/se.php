@@ -715,7 +715,6 @@
                     success:function(dados){
                         $.alert('Dados atualizados com sucesso!');
                         Carregando('none');
-                        //Teste
                     },
                     error:function(erro){
 
