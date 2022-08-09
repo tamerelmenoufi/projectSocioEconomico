@@ -741,7 +741,7 @@
                 n = $(this).parent("div").parent("div").children("div").children("input[exibir][ckecked]").length;
                 console.log(n)
                 if(!n){
-                    $(`div[${$(this).attr('exibir')}]`).css("display","block");
+                    $(`div[${$(this).attr('exibir')}]`).css("display","none");
                 }
 
             })
