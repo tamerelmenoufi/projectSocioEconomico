@@ -26,7 +26,7 @@
         $rotulo = $v['rotulo'];
         $dados = json_decode($v['dados']);
         $exibir = $v['exibir'];
-        $ocultar = $v['ocultar'];
+        $destino = $v['campo_destino'];
         // $lista[] = print_r($dados, true);
         $lista[] = '<div class="mb-3"><label for="'.$campo.'"><b>'.$rotulo.'</b></label></div>';
         for($i=0;$i<count($vetor);$i++){
@@ -38,7 +38,7 @@
                     class="form-check-input"
                     id="'.$campo.$i.'"
                     '.((@in_array($vetor[$i],$dados))?'checked':false).'
-                    '.(($exibir[$vetor[$i]])?' exibir="'.$exibir[$vetor[$i]].'" ':' ocultar="'.$ocultar.'"').'
+                    '.(($exibir[$vetor[$i]])?' exibir="'.$destino.'" ':' ocultar="'.$destino.'"').'
             >
             <label class="form-check-label" for="'.$campo.$i.'">'.$vetor[$i].'</label>
             </div>';
@@ -55,7 +55,7 @@
         $rotulo = $v['rotulo'];
         $dados = $v['dados'];
         $exibir = $v['exibir'];
-        $ocultar = $v['ocultar'];
+        $destino = $v['campo_destino'];
 
         $lista[] = '<div class="mb-3"><label for="'.$campo.'"><b>'.$rotulo.'</b></label></div>';
         for($i=0;$i<count($vetor);$i++){
@@ -67,7 +67,7 @@
                     class="form-check-input"
                     id="'.$campo.$i.'"
                     '.(($vetor[$i] == $dados)?'checked':false).'
-                    '.(($exibir[$vetor[$i]])?' exibir="'.$exibir[$vetor[$i]].'" ':' ocultar="'.$ocultar.'"').'
+                    '.(($exibir[$vetor[$i]])?' exibir="'.$destino.'" ':' ocultar="'.$destino.'"').'
             >
             <label class="form-check-label" for="'.$campo.$i.'">'.$vetor[$i].'</label>
             </div>';
