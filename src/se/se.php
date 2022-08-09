@@ -732,7 +732,7 @@
                 }
 
                 campos.push({name: 'acao', value: 'salvar'})
-
+                console.log(campos)
                 Carregando();
 
                 $.ajax({
