@@ -45,7 +45,7 @@
             height:70px;
             background-image:url("img/rodape_gov.png");
             background-position:right;
-            background-size:100%;
+            background-size:100% 80px;
             background-repeat:no-repeat;
             z-index:99;
         }
