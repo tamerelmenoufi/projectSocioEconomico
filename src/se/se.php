@@ -669,6 +669,23 @@
                     <label for="opiniao_outros">Desreva suas Opiniões / Detalhes</label>
                 </div>
 
+                <div class="card border-warning">
+                    <h5 class="card-header">Avaliação do Técnico</h5>
+                    <div class="card-body">
+                        <div class="form-floating mb-3">
+                            <?=montaRadio([
+                                'rotulo' => ' Como fui Recebido?',
+                                'campo' => 'recepcao_entrevistado',
+                                'vetor' => [
+                                    'Ruim',
+                                    'Bom',
+                                    'Ótimo',
+                                ],
+                                'dados' => $d->recepcao_entrevistado,
+                            ])?>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
