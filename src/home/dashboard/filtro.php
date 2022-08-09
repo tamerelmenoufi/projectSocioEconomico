@@ -3,11 +3,11 @@
 
     if($_POST['acao'] == 'gerar_filtro'){
 
-        $_SESSION['filtro_relatorio_nome'] = $_POST['nome'];
-        $_SESSION['filtro_relatorio_cpf'] = $_POST['cpf'];
-        $_SESSION['filtro_relatorio_rg'] = $_POST['rg'];
-        $_SESSION['filtro_relatorio_telefone'] = $_POST['telefone'];
-        $_SESSION['filtro_relatorio_email'] = $_POST['email'];
+        // $_SESSION['filtro_relatorio_nome'] = $_POST['nome'];
+        // $_SESSION['filtro_relatorio_cpf'] = $_POST['cpf'];
+        // $_SESSION['filtro_relatorio_rg'] = $_POST['rg'];
+        // $_SESSION['filtro_relatorio_telefone'] = $_POST['telefone'];
+        // $_SESSION['filtro_relatorio_email'] = $_POST['email'];
         $_SESSION['filtro_relatorio_municipio'] = $_POST['municipio'];
         $_SESSION['filtro_relatorio_tipo'] = $_POST['tipo'];
         $_SESSION['filtro_relatorio_bairro_comunidade'] = $_POST['bairro_comunidade'];
@@ -17,11 +17,11 @@
 
     if($_POST['acao'] == 'limpar_filtro'){
 
-        $_SESSION['filtro_relatorio_nome'] = false;
-        $_SESSION['filtro_relatorio_cpf'] =false;
-        $_SESSION['filtro_relatorio_rg'] = false;
-        $_SESSION['filtro_relatorio_telefone'] = false;
-        $_SESSION['filtro_relatorio_email'] = false;
+        // $_SESSION['filtro_relatorio_nome'] = false;
+        // $_SESSION['filtro_relatorio_cpf'] =false;
+        // $_SESSION['filtro_relatorio_rg'] = false;
+        // $_SESSION['filtro_relatorio_telefone'] = false;
+        // $_SESSION['filtro_relatorio_email'] = false;
         $_SESSION['filtro_relatorio_municipio'] = false;
         $_SESSION['filtro_relatorio_tipo'] = false;
         $_SESSION['filtro_relatorio_bairro_comunidade'] = false;
@@ -117,7 +117,7 @@
                 </div>
             </div>
 
-            <div class="card p-3 mb-3">
+            <!-- <div class="card p-3 mb-3">
                 <h5>Específico</h5>
 
                 <div class="form-floating mb-3">
@@ -141,7 +141,7 @@
                     <label for="email">E-mail*</label>
                 </div>
 
-            </div>
+            </div> -->
         </div>
     </div>
 
@@ -177,8 +177,8 @@
     $(function(){
         Carregando('none');
 
-        $("#cpf").mask("999.999.999-99");
-        $("#telefone").mask("(99) 99999-9999");
+        // $("#cpf").mask("999.999.999-99");
+        // $("#telefone").mask("(99) 99999-9999");
 
         var filtro = (bairro_comunidade, tipo) => {
             if(!municipio){
@@ -217,11 +217,11 @@
 
         $("button[GerarFiltro]").click(function(){
 
-            nome = $("#nome").val();
-            cpf = $("#cpf").val();
-            rg = $("#rg").val();
-            telefone = $("#telefone").val();
-            email = $("#email").val();
+            // nome = $("#nome").val();
+            // cpf = $("#cpf").val();
+            // rg = $("#rg").val();
+            // telefone = $("#telefone").val();
+            // email = $("#email").val();
             municipio = $("#municipio").val();
             tipo = $("#tipo").val();
             bairro_comunidade = $("#bairro_comunidade").val();
@@ -231,11 +231,11 @@
                 url:"src/home/dashboard/filtro.php",
                 type:"POST",
                 data:{
-                    nome,
-                    cpf,
-                    rg,
-                    telefone,
-                    email,
+                    // nome,
+                    // cpf,
+                    // rg,
+                    // telefone,
+                    // email,
                     municipio,
                     tipo,
                     bairro_comunidade,
@@ -276,11 +276,11 @@
 
                             }
                         });
-                        $("#nome").val('');
-                        $("#cpf").val('');
-                        $("#rg").val('');
-                        $("#telefone").val('');
-                        $("#email").val('');
+                        // $("#nome").val('');
+                        // $("#cpf").val('');
+                        // $("#rg").val('');
+                        // $("#telefone").val('');
+                        // $("#email").val('');
                         $("#municipio").val('');
                         $("#tipo").val('');
                         $("#bairro_comunidade").html('<option value="">::Selecione a Localização::</option>');
