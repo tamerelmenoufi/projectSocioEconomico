@@ -74,7 +74,7 @@
                     <label for="email">E-mail</label>
                 </div>
                 <?php
-                if($d->codigo != 1){
+                if($d->codigo != 1 and $d->perfil == 'adm'){
                 ?>
                 <div class="form-floating mb-3">
                     <select name="perfil" class="form-control" id="perfil">
@@ -97,8 +97,25 @@
                     <label for="senha">Senha</label>
                 </div>
                 <?php
-                if($d->codigo != 1){
+                if($d->codigo != 1 and $d->perfil == 'adm' ){
                 ?>
+
+                <div class="form-floating mb-3">
+                    <select name="coordenador" id="coordenador" class="form-control" placeholder="Coordenador">
+                        <option value="">::Selecione o Coordenador::</option>
+                        <?php
+                            $q = "select * from usuarios where perfil in ('adm', 'crd') and situacao = '1' order by nome";
+                            $r = mysqli_query($con, $q);
+                            while($s = mysqli_fetch_object($r)){
+                        ?>
+                        <option value="<?=$s->codigo?>" <?=(($d->coordenador == $s->codigo)?'selected':false)?>><?=$s->nome?></option>
+                        <?php
+                            }
+                        ?>
+                    </select>
+                    <label for="coordenador">Coordenador</label>
+                </div>
+
                 <div class="form-floating mb-3">
                     <select name="situacao" class="form-control" id="situacao">
                         <option value="1" <?=(($d->situacao == '1')?'selected':false)?>>Liberado</option>
