@@ -168,7 +168,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Informe o valor, se possui gastos fixos com saúde?',
+                        'rotulo' => 'Informe o custo mensal, se possui gastos fixos com saúde?',
                         'campo' => 'ef_gastos_saude',
                         'vetor' => [
                             'Não Possuo',

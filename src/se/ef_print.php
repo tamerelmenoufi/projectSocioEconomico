@@ -149,7 +149,7 @@ for($i=0;$i<2;$i++){
 
                 <div class="form-floating mb-3">
                     <?=montaOpcPrint([
-                        'rotulo' => 'Informe o valor, se possui gastos fixos com saúde?',
+                        'rotulo' => 'Informe o custo mensal, se possui gastos fixos com saúde?',
                         'campo' => 'ef_gastos_saude',
                         'vetor' => [
                             'Não Possuo',
@@ -165,7 +165,7 @@ for($i=0;$i<2;$i++){
 
                 <div class="form-floating mb-3">
                     <?=montaOpcPrint([
-                        'rotulo' => 'Necessita de Documentos',
+                        'rotulo' => 'Necessita de Documentos?',
                         'campo' => 'ef_necessita_documentos',
                         'vetor' => [
                             'Não',
