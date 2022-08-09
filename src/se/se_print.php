@@ -375,7 +375,7 @@
                 <!-- XXXXXXXXXXXXXXXXXXXXXXXX -->
 </div>
 </div>
-<div style="page-break-after: always"></div>
+
 <div class="row">
 <div class="col-6">
 
