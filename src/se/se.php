@@ -439,7 +439,7 @@
                         'dados' => $d->atende_necessidades,
                         'exibir' => [
                            'Sim'=>true,
-                            'Não'=>false,
+                            'Não'=>true,
                         ],
                         'campo_destino'=>'atende_necessidades_descricao'
                     ])?>
