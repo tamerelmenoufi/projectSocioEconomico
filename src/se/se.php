@@ -98,7 +98,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaCheckbox([
-                        'rotulo' => 'Redes Sociais',
+                        'rotulo' => 'Quais Redes Sociais você possui?',
                         'campo' => 'redes_sociais',
                         'vetor' => [
                             'FaceBook',
@@ -189,7 +189,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaRadio([
-                        'rotulo' => 'Qual o seu Estado Civil',
+                        'rotulo' => 'Qual o seu Estado Civil?',
                         'campo' => 'estado_civil',
                         'vetor' => [
                             'Solteiro',
@@ -337,7 +337,7 @@
                         'rotulo' => 'Qual Serviço de Saúde você utiliza?',
                         'campo' => 'servico_saude',
                         'vetor' => [
-                           'SUS',
+                            'SUS',
                             'Associações/PlanodeSaúde',
                             'Outros',
                         ],
@@ -423,7 +423,7 @@
                 </div>
                 <div class="form-floating mb-3">
                     <textarea name="opiniao_saude_descricao" id="opiniao_saude_descricao" class="form-control" placeholder="Outras Opiniões / Detalhes" ><?=$d->opiniao_saude_descricao?></textarea>
-                    <label for="opiniao_saude_descricao">Outras Opiniões Falhas na Saúde</label>
+                    <label for="opiniao_saude_descricao">Desreva suas Opiniões Falhas na Saúde</label>
                 </div>
 
                 <div class="form-floating mb-3">
@@ -439,7 +439,7 @@
                 </div>
                 <div class="form-floating mb-3">
                     <textarea name="opiniao_educacao_descricao" id="opiniao_educacao_descricao" class="form-control" placeholder="Outras Opiniões falhas na Educação" ><?=$d->opiniao_educacao_descricao?></textarea>
-                    <label for="opiniao_educacao_descricao">Outras Opiniões falhas na Educação</label>
+                    <label for="opiniao_educacao_descricao">Desreva suas Opiniões falhas na Educação</label>
                 </div>
 
                 <div class="form-floating mb-3">
@@ -455,7 +455,7 @@
                 </div>
                 <div class="form-floating mb-3">
                     <textarea name="opiniao_cidadania_descricao" id="opiniao_cidadania_descricao" class="form-control" placeholder="Outras Opiniões falhas na Cidadania" ><?=$d->opiniao_cidadania_descricao?></textarea>
-                    <label for="opiniao_cidadania_descricao">Outras Opiniões falhas na Cidadania</label>
+                    <label for="opiniao_cidadania_descricao">Desreva suas Opiniões falhas na Cidadania</label>
                 </div>
 
                 <div class="form-floating mb-3">
@@ -474,7 +474,7 @@
                 </div>
                 <div class="form-floating mb-3">
                     <textarea name="opiniao_infraestrutura_descricao" id="opiniao_infraestrutura_descricao" class="form-control" placeholder="Outras Opiniões falhas na Infraestrutura" ><?=$d->opiniao_infraestrutura_descricao?></textarea>
-                    <label for="opiniao_infraestrutura_descricao">Outras Opiniões falhas na Infraestrutura</label>
+                    <label for="opiniao_infraestrutura_descricao">Desreva suas Opiniões falhas na Infraestrutura</label>
                 </div>
 
                 <div class="form-floating mb-3">
@@ -491,7 +491,7 @@
                 </div>
                 <div class="form-floating mb-3">
                     <textarea name="opiniao_assistencia_social_descricao" id="opiniao_assistencia_social_descricao" class="form-control" placeholder="Outras Opiniões falhas na Assistência Social" ><?=$d->opiniao_assistencia_social_descricao?></textarea>
-                    <label for="opiniao_assistencia_social_descricao">Outras Opiniões falhas na Assistência Social</label>
+                    <label for="opiniao_assistencia_social_descricao">Desreva suas Opiniões falhas na Assistência Social</label>
                 </div>
 
                 <div class="form-floating mb-3">
@@ -507,7 +507,7 @@
                 </div>
                 <div class="form-floating mb-3">
                     <textarea name="opiniao_direitos_humanos_descricao" id="opiniao_direitos_humanos_descricao" class="form-control" placeholder="Outras Opiniões falhas na Direitos Humanos" ><?=$d->opiniao_direitos_humanos_descricao?></textarea>
-                    <label for="opiniao_direitos_humanos_descricao">Outras Opiniões falhas na Direitos Humanos</label>
+                    <label for="opiniao_direitos_humanos_descricao">Desreva suas Opiniões falhas na Direitos Humanos</label>
                 </div>
 
                 <div class="form-floating mb-3">
@@ -522,7 +522,7 @@
                 </div>
                 <div class="form-floating mb-3">
                     <textarea name="opiniao_seguranca_descricao" id="opiniao_seguranca_descricao" class="form-control" placeholder="Outras Opiniões falhas na Segurança" ><?=$d->opiniao_seguranca_descricao?></textarea>
-                    <label for="opiniao_seguranca_descricao">Outras Opiniões falhas na Segurança</label>
+                    <label for="opiniao_seguranca_descricao">Desreva suas Opiniões falhas na Segurança</label>
                 </div>
 
                 <div class="form-floating mb-3">
@@ -542,7 +542,7 @@
 
                 <div class="form-floating mb-3">
                     <textarea name="opiniao_outros" id="opiniao_outros" class="form-control" placeholder="Outras Opiniões / Detalhes" ><?=$d->opiniao_outros?></textarea>
-                    <label for="opiniao_outros">Outras Opiniões / Detalhes</label>
+                    <label for="opiniao_outros">Desreva suas Opiniões / Detalhes</label>
                 </div>
 
 
