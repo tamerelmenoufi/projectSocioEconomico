@@ -38,7 +38,7 @@
                     class="form-check-input"
                     id="'.$campo.$i.'"
                     '.((@in_array($vetor[$i],$dados))?'checked':false).'
-                    '.(($exibir[$vetor[$i]])?' exibir="'.$destino.'" ':' ocultar="'.$destino.'"').'
+                    '.(($exibir[$i])?' exibir="'.$destino.'" ':' ocultar="'.$destino.'"').'
             >
             <label class="form-check-label" for="'.$campo.$i.'">'.$vetor[$i].'</label>
             </div>';
@@ -67,7 +67,7 @@
                     class="form-check-input"
                     id="'.$campo.$i.'"
                     '.(($vetor[$i] == $dados)?'checked':false).'
-                    '.(($exibir[$vetor[$i]])?' exibir="'.$destino.'" ':' ocultar="'.$destino.'"').'
+                    '.(($exibir[$i])?' exibir="'.$destino.'" ':' ocultar="'.$destino.'"').'
             >
             <label class="form-check-label" for="'.$campo.$i.'">'.$vetor[$i].'</label>
             </div>';
