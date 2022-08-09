@@ -730,13 +730,6 @@
                     $(this).parent("div").parent("div").children("div").children("input[ocultar]").each(function(){
                         $(this).prop("checked",false);
                     })
-
-                    n = $(this).parent("div").parent("div").children("div").children("input[exibir]").length;
-                    console.log(n)
-                    if(n){
-                        $(`div[${$(this).attr('exibir')}]`).css("display","block");
-                    }
-
                 }
 
                 if($(this).attr('exibir')){
@@ -745,7 +738,11 @@
                     }
                 }
 
-
+                n = $(this).parent("div").parent("div").children("div").children("input[exibir][ckecked]").length;
+                console.log(n)
+                if(!n){
+                    $(`div[${$(this).attr('exibir')}]`).css("display","block");
+                }
 
             })
 
