@@ -41,6 +41,14 @@
       </div>
     </div>
 
+    <div class="row mb-1">
+      <div class="col">
+        <a href="./print.php?u=<?=base64_encode("src/se/ef_print.php")?>" target="formEstruturaFamiliar" class="text-decoration-none">
+          <i class="fa-solid fa-list-ol"></i> Formulário Estrutura Familiar
+        </a>
+      </div>
+    </div>
+
   </div>
 </div>
 
