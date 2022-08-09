@@ -734,7 +734,7 @@
             $("input[ocultar]").click(function(){
                 if($(this).attr('ocultar')){
 
-                    if($(this).attr("type") == 'checkbox'){
+                    if($(this).attr("type") == 'checkbox' && $(this).prop("checked") == true){
                         console.log($(this).val())
                         $(this).parent("div").parent("div").children("div").children("input[exibir]").each(function(){
                             console.log($(this).attr('exibir'))
