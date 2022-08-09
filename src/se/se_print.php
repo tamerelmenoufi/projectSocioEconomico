@@ -376,6 +376,9 @@
 </div>
 </div>
 
+<footer class="Rodape"></footer>
+
+
 <div class="row">
 <div class="col-6">
 
