@@ -85,22 +85,28 @@
                 </div>
 
 
-
-
-                <div class="form-floating mb-3">
-                    <div type="text" name="endereco" id="endereco" class="form-control" placeholder="Endereço" value="<?=$d->endereco?>"></div>
-                    <label for="endereco">Endereço</label>
+                <div class="row">
+                    <div class="col-5">
+                        <div class="form-floating mb-3">
+                            <div type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>"></div>
+                            <label for="nome">Endereço*</label>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-floating mb-3">
+                            <div type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>"></div>
+                            <label for="cpf">CEP*</label>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="form-floating mb-3">
+                            <div type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>"></div>
+                            <label for="cpf">Ponto de Referência</label>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="form-floating mb-3">
-                    <div type="text" name="cep" id="cep" class="form-control" placeholder="CEP" value="<?=$d->cep?>"></div>
-                    <label for="cep">CEP</label>
-                </div>
 
-                <div class="form-floating mb-3">
-                    <div type="text" name="ponto_referencia" id="ponto_referencia" class="form-control" placeholder="Ponto de Referência" value="<?=$d->ponto_referencia?>"></div>
-                    <label for="ponto_referencia">Ponto de Referência</label>
-                </div>
 
                 <div class="form-floating mb-3">
                     <?=montaOpcPrint([
