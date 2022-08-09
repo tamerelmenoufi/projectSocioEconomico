@@ -8,6 +8,9 @@
     .form-control-sm{
         height:35px !important;
     }
+    .form-floating label{
+        font-size:9px !important;
+    }
 
 </style>
 
