@@ -101,6 +101,9 @@
                     <label for="ef_tratamento_saude_descricao">Descreva o Tratamento de Saúde</label>
                 </div>
 
+</div>
+<div class="col-6">
+
                 <div class="form-floating mb-3">
                     <?=montaOpcPrint([
                         'rotulo' => 'Possui alguma doença crônica?',
@@ -130,8 +133,7 @@
                 </div>
 
 
-</div>
-<div class="col-6">
+
 
 
                 <div class="form-floating mb-3">
