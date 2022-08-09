@@ -724,6 +724,15 @@
 
 
             $("input[exibir]").click(function(){
+
+                if($(this).attr("type") == 'checkbox' && $(this).prop("checked") == true){
+                    console.log($(this).val())
+                    $(this).parent("div").parent("div").children("div").children("input[ocultar]").each(function(){
+                        console.log($(this).attr('ocultar'))
+                        $(this).prop("checked",false);
+                    })
+                }
+
                 if($(this).attr('exibir')){
                     if($(this).prop("checked") == true){
                         $(`div[${$(this).attr('exibir')}]`).css("display","block");
@@ -732,20 +741,19 @@
             })
 
             $("input[ocultar]").click(function(){
-                if($(this).attr('ocultar')){
 
-                    if($(this).attr("type") == 'checkbox' && $(this).prop("checked") == true){
-                        console.log($(this).val())
-                        $(this).parent("div").parent("div").children("div").children("input[exibir]").each(function(){
-                            console.log($(this).attr('exibir'))
-                            $(this).prop("checked",false);
-                        })
-                    }
-
-                    if($(this).prop("checked") == true){
-                        $(`div[${$(this).attr('ocultar')}]`).css("display","none");
-                    }
+                if($(this).attr("type") == 'checkbox' && $(this).prop("checked") == true){
+                    console.log($(this).val())
+                    $(this).parent("div").parent("div").children("div").children("input[exibir]").each(function(){
+                        console.log($(this).attr('exibir'))
+                        $(this).prop("checked",false);
+                    })
                 }
+
+                if($(this).prop("checked") == true){
+                    $(`div[${$(this).attr('ocultar')}]`).css("display","none");
+                }
+
             })
 
         })
