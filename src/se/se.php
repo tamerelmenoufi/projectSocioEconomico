@@ -736,6 +736,7 @@
 
                     if($(this).attr("type") == 'checkbox'){
                         $(this).parent("div").children("input[exibir]").each(function(){
+                            console.log($(this).val())
                             $(this).prop("checked",false);
                         })
                     }
