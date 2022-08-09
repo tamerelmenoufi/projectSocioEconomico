@@ -726,6 +726,11 @@
             $("input[exibir]").click(function(){
                 if($(this).prop("checked") == true){
                     $(`div[${$(this).attr('exibir')}]`).css("display","block");
+                }
+            })
+
+            $("input[ocultar]").click(function(){
+                if($(this).prop("checked") == true){
                     $(`div[${$(this).attr('ocultar')}]`).css("display","none");
                 }
             })
