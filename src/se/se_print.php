@@ -62,22 +62,30 @@
                     ])?>
                 </div>
 
-                <div class="form-floating mb-3">
-                    <div type="text" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$d->email?>"></div>
-                    <label for="email">Município</label>
+
+                <div class="row">
+                    <div class="col-5">
+                        <div class="form-floating mb-3">
+                            <div type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>"></div>
+                            <label for="nome">Município*</label>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="form-floating mb-3">
+                            <div type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>"></div>
+                            <label for="cpf">Bairro*</label>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-floating mb-3">
+                            <div type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>"></div>
+                            <label for="cpf">Zona*</label>
+                        </div>
+                    </div>
                 </div>
 
 
 
-                <div class="form-floating mb-3">
-                    <div type="text" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$d->email?>"></div>
-                    <label for="email">Bairro / Comunidade</label>
-                </div>
-
-                <div class="form-floating mb-3">
-                    <div type="text" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$d->email?>"></div>
-                    <label for="email">Zona</label>
-                </div>
 
                 <div class="form-floating mb-3">
                     <div type="text" name="endereco" id="endereco" class="form-control" placeholder="Endereço" value="<?=$d->endereco?>"></div>
