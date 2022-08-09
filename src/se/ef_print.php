@@ -1,63 +1,13 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
-
-    if($_POST['acao'] == 'salvar'){
-
-        $data = $_POST;
-        $attr = [];
-
-        unset($data['codigo']);
-        unset($data['acao']);
-        unset($data['ef_data_nascimento']);
-
-
-        foreach ($data as $name => $value) {
-
-            if(is_array($value)) {
-                $value = json_encode($value);
-            }
-            $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
-        }
-            $attr[] = "se_codigo = '" . $_SESSION['se_codigo'] . "'";
-            $attr[] = "ef_data_nascimento = '" . dataMysql($_POST['ef_data_nascimento']) . "'";
-
-        $attr = implode(', ', $attr);
-
-        if($_POST['codigo']){
-            $query = "update se_estrutura_familiar set {$attr} where codigo = '{$_POST['codigo']}'";
-            mysqli_query($con, $query);
-            $cod = $_POST['codigo'];
-        }else{
-            $query = "insert into se_estrutura_familiar set data_cadastro = NOW(), {$attr}";
-            mysqli_query($con, $query);
-            $cod = mysqli_insert_id($con);
-        }
-
-        $retorno = [
-            'status' => true,
-            'codigo' => $cod,
-            'mensagem' => "Cadastro registrado com sucesso!",
-            'query' => $query,
-        ];
-
-        echo json_encode($retorno);
-
-        exit();
-    }
-
-
-    $query = "select * from se_estrutura_familiar where codigo = '{$_POST['cod']}'";
-    $result = mysqli_query($con, $query);
-    $d = mysqli_fetch_object($result);
 ?>
 <style>
     textarea{
         height:200px !important;
     }
 </style>
-
-   <form id="form-<?= $md5 ?>">
+<div class="container">
         <div class="row" style="margin-bottom:50px;">
             <div class="col">
                 <div class="form-floating mb-3">
@@ -66,7 +16,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Qual o grau de parentesco?',
                         'campo' => 'ef_grau_parentesco',
                         'vetor' => [
@@ -102,7 +52,7 @@
                     <label for="ef_telefone">Telefone*</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Qua a renda mensal?',
                         'campo' => 'ef_renda_mensal',
                         'vetor' => [
@@ -117,7 +67,7 @@
                     ])?>
                 </div>
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Precisa de tratamento de saúde?',
                         'campo' => 'ef_tratamento_saude',
                         'vetor' => [
@@ -133,7 +83,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Possui alguma doença crônica?',
                         'campo' => 'ef_doencas_cronicas	',
                         'vetor' => [
@@ -149,7 +99,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaOpcPrint([
                         'rotulo' => 'É portador de alguma deficiência?',
                         'campo' => 'ef_portador_deficiencia',
                         'vetor' => [
@@ -167,7 +117,7 @@
 
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaOpcPrint([
                         'rotulo' => 'Informe o valor, se possui gastos fixos com saúde?',
                         'campo' => 'ef_gastos_saude',
                         'vetor' => [
@@ -209,87 +159,4 @@
                 <input type="hidden" id="codigo" value="<?=$_POST['cod']?>" />
             </div>
         </div>
-    </form>
-
-    <script>
-        $(function(){
-
-            Carregando('none');
-
-            $("#ef_data_nascimento").mask("99/99/9999");
-            $("#ef_telefone").mask("(99) 99999-9999");
-
-
-            $('#form-<?=$md5?>').submit(function (e) {
-
-                e.preventDefault();
-
-                var codigo = $('#codigo').val();
-                var campos = $(this).serializeArray();
-
-                if (codigo) {
-                    campos.push({name: 'codigo', value: codigo})
-                }
-
-                campos.push({name: 'acao', value: 'salvar'})
-
-                Carregando();
-
-                $.ajax({
-                    url:"src/se/ef_form.php",
-                    type:"POST",
-                    dataType:"JSON",
-                    mimeType: 'multipart/form-data',
-                    data: campos,
-                    success:function(dados){
-                        // Carregando('none')
-
-
-                        $.ajax({
-                            url:"src/se/ef_lista.php",
-                            success:function(dados){
-                                $("#EstruturaFamiliar").html(dados);
-
-                                $("#lista-tab").addClass("active")
-                                $("#lista-tab").attr("aria-selected","true")
-                                $("#form-tab").removeClass("active")
-                                $("#form-tab").attr("aria-selected","false")
-
-                            },
-                            error:function(erro){
-                                Carregando('none');
-                                // $.alert('Ocorreu um erro!' + erro.toString());
-                                //dados de teste
-                            }
-                        });
-
-
-                    },
-                    error:function(erro){
-
-                        // $.alert('Ocorreu um erro!' + erro.toString());
-                        //dados de teste
-                    }
-                });
-
-            });
-
-        })
-
-
-
-        if( navigator.userAgent.match(/Android/i)
-            || navigator.userAgent.match(/webOS/i)
-            || navigator.userAgent.match(/iPhone/i)
-            || navigator.userAgent.match(/iPad/i)
-            || navigator.userAgent.match(/iPod/i)
-            || navigator.userAgent.match(/BlackBerry/i)
-            || navigator.userAgent.match(/Windows Phone/i)
-        ){
-            $("div[BtnSalvar<?=$md5?>]").css("width","calc(100% - 58px)")
-        }
-        else {
-            $("div[BtnSalvar<?=$md5?>]").css("width","calc(500px - 58px)")
-        }
-
-    </script>
+</div>
