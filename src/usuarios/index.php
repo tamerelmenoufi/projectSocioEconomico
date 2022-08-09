@@ -1,84 +1,181 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
+
+    if($_POST['delete']){
+      $query = "delete from usuarios where codigo = '{$_POST['delete']}'";
+      mysqli_query($con, $query);
+    }
+
+    if($_POST['situacao']){
+      $query = "update usuarios set situacao = '{$_POST['opc']}' where codigo = '{$_POST['situacao']}'";
+      mysqli_query($con, $query);
+      exit();
+    }
 ?>
 
-<div class="container">
-    <div class="row mt-3">
-        <div class="d-flex justify-content-between">
-            <div class="p-10"><h3>Usuários do Sistema</h3></div>
-            <div class="p-2">
-                <button class="btn btn-primary">
-                    Novo
-                </button>
+<div class="col">
+  <div class="m-3">
+
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <h5 class="card-header">Lista de Usuários</h5>
+          <div class="card-body">
+            <div style="display:flex; justify-content:end">
+                <button
+                    novoCadastro
+                    class="btn btn-success"
+                    data-bs-toggle="offcanvas"
+                    href="#offcanvasDireita"
+                    role="button"
+                    aria-controls="offcanvasDireita"
+                >Novo</button>
             </div>
+
+
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Nome</th>
+                  <th scope="col">CPF</th>
+                  <th scope="col">Telefone</th>
+                  <th scope="col">E-mail</th>
+                  <th scope="col">Situação</th>
+                  <th scope="col">Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                  $query = "select * from usuarios order by nome asc";
+                  $result = mysqli_query($con, $query);
+                  while($d = mysqli_fetch_object($result)){
+                ?>
+                <tr>
+                  <td><?=$d->nome?></td>
+                  <td><?=$d->cpf?></td>
+                  <td><?=$d->telefone?></td>
+                  <td><?=$d->email?></td>
+                  <td>
+
+                  <div class="form-check form-switch">
+                    <input class="form-check-input situacao" type="checkbox" <?=(($d->codigo == 1)?'disabled':false)?> <?=(($d->situacao)?'checked':false)?> usuario="<?=$d->codigo?>">
+                  </div>
+
+                  </td>
+                  <td>
+                    <button
+                      class="btn btn-primary"
+                      edit="<?=$d->codigo?>"
+                      data-bs-toggle="offcanvas"
+                      href="#offcanvasDireita"
+                      role="button"
+                      aria-controls="offcanvasDireita"
+                    >
+                      Editar
+                    </button>
+                    <?php
+                    if($d->codigo != 1){
+                    ?>
+                    <button class="btn btn-danger" delete="<?=$d->codigo?>">
+                      Excluir
+                    </button>
+                    <?php
+                    }
+                    ?>
+                  </td>
+                </tr>
+                <?php
+                  }
+                ?>
+              </tbody>
+            </table>
+          </div>
         </div>
+      </div>
     </div>
 
-    <div class="row mt-3">
-
-        <div class="d-none d-md-block mb-2">
-            <div class="row">
-                <div class='col-md-4'><b>NOME</b></div>
-                <div class='col-md-4'><b>E-MAIL</b></div>
-                <div class='col-md-2'><b>SITUAÇÃO</b></div>
-                <div class='col-md-2'><b>AÇÕES</b></div>
-            </div>
-        </div>
-
-        <?php
-            $query = "select * from usuarios order by nome limit 0, 20";
-            $result = mysqli_query($con, $query);
-            while($d = mysqli_fetch_object($result)){
-        ?>
-        <div class="row">
-            <div class='col-md-4'><?=$d->nome?></div>
-            <div class='col-md-4'><?=$d->email?></div>
-            <div class='col-md-2'><?=$d->situacao?></div>
-            <div class='col-md-2'>
-                <div class="d-flex justify-content-between">
-                    <button
-                        class="btn btn-success"
-                        data-bs-toggle="offcanvas"
-                        href="#offcanvasDireita"
-                        role="button"
-                        aria-controls="offcanvasDireita"
-                        editarUsuario="<?=$d->codigo?>"
-                    >
-                        <i class="fa-solid fa-pen-to-square"></i>
-                    </button>
-                    <button
-                        class="btn btn-danger"
-                        excluirUsuario="<?=$d->codigo?>"
-                    >
-                        <i class="fa-solid fa-trash"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <?
-            }
-        ?>
-    </div>
+  </div>
 </div>
+
 
 <script>
     $(function(){
         Carregando('none');
-        $("button[editarUsuario]").click(function(){
+        $("button[novoCadastro]").click(function(){
+            $.ajax({
+                url:"src/usuarios/form.php",
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            })
+        })
 
-            cod = $(this).attr("editarUsuario");
-            Carregando();
+        $("button[edit]").click(function(){
+            cod = $(this).attr("edit");
             $.ajax({
                 url:"src/usuarios/form.php",
                 type:"POST",
                 data:{
-                    cod,
+                  cod
                 },
                 success:function(dados){
                     $(".LateralDireita").html(dados);
                 }
             })
+        })
+
+        $("button[delete]").click(function(){
+            deletar = $(this).attr("delete");
+            $.confirm({
+                content:"Deseja realmente excluir o cadastro ?",
+                title:false,
+                buttons:{
+                    'SIM':function(){
+                        $.ajax({
+                            url:"src/usuarios/index.php",
+                            type:"POST",
+                            data:{
+                                delete:deletar
+                            },
+                            success:function(dados){
+                                $("#paginaHome").html(dados);
+                            }
+                        })
+                    },
+                    'NÃO':function(){
+
+                    }
+                }
+            });
+
+        })
+
+
+        $(".situacao").change(function(){
+
+            situacao = $(this).attr("usuario");
+            opc = false;
+
+            if($(this).prop("checked") == true){
+              opc = '1';
+            }else{
+              opc = '0';
+            }
+
+
+            $.ajax({
+                url:"src/usuarios/index.php",
+                type:"POST",
+                data:{
+                    situacao,
+                    opc
+                },
+                success:function(dados){
+                    // $("#paginaHome").html(dados);
+                }
+            })
 
         });
+
     })
 </script>

@@ -9,15 +9,10 @@
 
         unset($data['codigo']);
         unset($data['acao']);
-        unset($data['senha']);
 
         foreach ($data as $name => $value) {
             $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
         }
-        if($_POST['senha']){
-            $attr[] = "senha = '" . md5($_POST['senha']) . "'";
-        }
-
         $attr = implode(', ', $attr);
 
         if($_POST['codigo']){
@@ -53,7 +48,7 @@
         z-index:0;
     }
 </style>
-<h4 class="Titulo<?=$md5?>">Cadastro do Usuário</h4>
+<h4 class="Titulo<?=$md5?>">Editar Usuário</h4>
     <form id="form-<?= $md5 ?>">
         <div class="row">
             <div class="col">
@@ -71,50 +66,31 @@
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$d->email?>">
-                    <label for="email">E-mail</label>
+                    <label for="email">E-mail*</label>
                 </div>
-                <?php
-                if($d->codigo != 1){
-                ?>
                 <div class="form-floating mb-3">
-                    <select name="perfil" class="form-control" id="perfil">
-                        <option value="Usuário" <?=(($d->perfil == 'Usuário')?'selected':false)?>>Usuário</option>
-                        <option value="Administrador" <?=(($d->perfil == 'Administrador')?'selected':false)?>>Administrador</option>
-                    </select>
-                    <label for="email">Perfil</label>
+                    <input type="text" name="perfil" id="perfil" class="form-control" placeholder="perfil" value="<?=$d->perfil?>">
+                    <label for="perfil">Perfil*</label>
                 </div>
-
                 <div class="form-floating mb-3">
                     <input type="text" name="login" id="login" class="form-control" placeholder="Login" value="<?=$d->login?>">
-                    <label for="login">Login</label>
+                    <label for="login">Login*</label>
                 </div>
-                <?php
-                }
-                ?>
                 <div class="form-floating mb-3">
-                    <input type="text" name="senha" id="senha" class="form-control" placeholder="E-mail" value="">
-                    <label for="senha">Senha</label>
+                    <input type="text" name="senha" id="senha" class="form-control" placeholder="Senha" value="<?=$d->senha?>">
+                    <label for="senha">Senha*</label>
                 </div>
-                <?php
-                if($d->codigo != 1){
-                ?>
                 <div class="form-floating mb-3">
-                    <select name="situacao" class="form-control" id="situacao">
-                        <option value="1" <?=(($d->situacao == '1')?'selected':false)?>>Liberado</option>
-                        <option value="0" <?=(($d->situacao == '0')?'selected':false)?>>Bloqueado</option>
-                    </select>
-                    <label for="email">Situação</label>
+                    <input type="text" name="situacao" id="situacao" class="form-control" placeholder="Situação" value="<?=$d->situacao?>">
+                    <label for="situacao">Situação*</label>
                 </div>
-                <?php
-                }
-                ?>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
                 <div style="display:flex; justify-content:end">
-                    <button type="submit" class="btn btn-success btn-ms">Salvar</button>
+                    <button type="submit" SalvarFoto class="btn btn-success btn-ms">Salvar</button>
                     <input type="hidden" id="codigo" value="<?=$_POST['cod']?>" />
                 </div>
             </div>
@@ -124,10 +100,6 @@
     <script>
         $(function(){
             Carregando('none');
-
-            $("#cpf").mask("999.999.999-99");
-            $("#telefone").mask("(99) 99999-9999");
-
             $('#form-<?=$md5?>').submit(function (e) {
 
                 e.preventDefault();
@@ -156,9 +128,6 @@
                                 type:"POST",
                                 success:function(dados){
                                     $("#paginaHome").html(dados);
-                                    let myOffCanvas = document.getElementById('offcanvasDireita');
-                                    let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
-                                    openedCanvas.hide();
                                 }
                             });
                         // }

@@ -25,6 +25,17 @@
             $pct = (100*$qt/$tot);
             $attr[] = "percentual = '" . $pct . "'";
             $attr[] = "data_nascimento = '" . dataMysql($_POST['data_nascimento']) . "'";
+            $attr[] = "data = NOW()";
+            $attr[] = "monitor_social = '{$_SESSION['ProjectSeLogin']->codigo}'";
+            $attr[] = "coordenador = '{$_SESSION['ProjectSeLogin']->coordenador}'";
+
+            if($pct == 100){
+                $attr[] = "pesquisa_realizada = 'Sim'";
+            }elseif($pct > 0){
+                $attr[] = "pesquisa_realizada = 'Pendente'";
+            }else{
+                $attr[] = "pesquisa_realizada = ''";
+            }
 
 
         $attr = implode(', ', $attr);
