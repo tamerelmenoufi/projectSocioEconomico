@@ -733,8 +733,14 @@
 
             $("input[ocultar]").click(function(){
                 if($(this).attr('ocultar')){
-                    if($(this).prop("checked") == true){
 
+                    if($(this).attr("type") == 'checkbox'){
+                        $(this).parent("div").children("input").each(function(){
+                            $(this).prop("checked",false);
+                        })
+                    }
+
+                    if($(this).prop("checked") == true){
                         $(`div[${$(this).attr('ocultar')}]`).css("display","none");
                     }
                 }
