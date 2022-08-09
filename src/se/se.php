@@ -825,7 +825,9 @@
 
                 if($(this).prop("checked") == true){
                     // $(`div[${$(this).attr('ocultar')}]`).css("display","none");
-                    // $(`div[${$(this).attr('ocultar')}]`).addClass("oculto");
+                    if($(this).attr('ocultar')){
+                        $(`div[${$(this).attr('ocultar')}]`).addClass("oculto");
+                    }
                 }
 
             })
