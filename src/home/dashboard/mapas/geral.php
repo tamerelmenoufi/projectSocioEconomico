@@ -64,6 +64,7 @@
 
     async function icones(local, qt){
         address =  `${local}, Amazonas, Brasil`
+        console.log(address)
     geocoder<?=$md5?>.geocode({ 'address':address, 'region': 'BR' }, (results, status) => {
 
         if (status == google.maps.GeocoderStatus.OK) {
@@ -71,9 +72,9 @@
 
                 var latitude<?=$md5?> = results[0].geometry.location.lat();
                 var longitude<?=$md5?> = results[0].geometry.location.lng();
-                console.log('Coordenadas:', local)
-                console.log('Lat:'+latitude<?=$md5?>)
-                console.log('Lng:'+longitude<?=$md5?>)
+                // console.log('Coordenadas:', local)
+                // console.log('Lat:'+latitude<?=$md5?>)
+                // console.log('Lng:'+longitude<?=$md5?>)
 
                 // var location<?=$md5?> = new google.maps.LatLng(latitude<?=$md5?>, longitude<?=$md5?>);
                 // marker<?=$md5?>.setPosition(location<?=$md5?>);
@@ -91,8 +92,8 @@
 
             // }
         }else{
-            console.log('Não encontrado:', local)
-            console.log('Quantidade:', qt)
+            // console.log('Não encontrado:', local)
+            // console.log('Quantidade:', qt)
         }
     });
 
