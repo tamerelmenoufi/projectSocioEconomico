@@ -23,7 +23,7 @@
   <body>
     <?php
 
-    $query = "select a.*, b.municipio from bairros_comunidades a left join municipios b on a.municipio = b.codigo where a.coordenadas = '' limit 10";
+    $query = "select a.*, b.municipio from bairros_comunidades a left join municipios b on a.municipio = b.codigo where a.coordenadas = '' order by a.municipio desc limit 10";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
         $codigos[] = $d->codigo;
