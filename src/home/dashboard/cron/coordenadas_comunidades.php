@@ -27,7 +27,7 @@
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
         $codigos[] = $d->codigo;
-        $dados[] = "Município de {$d->municipio}, comunidade {$d->descricao} na zona {$d->tipo}";
+        $dados[] = "{$d->descricao}, zona {$d->tipo}, {$d->municipio}";
     }
 
 
