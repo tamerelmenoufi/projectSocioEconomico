@@ -62,7 +62,7 @@
     //     alert(`Lat ${latLng.lat()} & Lng ${latLng.lng()}`)
     // });
 
-    async function icones(local, qt){
+    function icones(local, qt){
         address =  `${local}, Amazonas, Brasil`
 
     geocoder<?=$md5?>.geocode({ 'address':address, 'region': 'BR' }, (results, status) => {
