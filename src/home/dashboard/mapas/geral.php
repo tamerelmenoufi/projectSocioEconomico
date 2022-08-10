@@ -109,11 +109,26 @@
         $qt[] = $d->qt;
     }
 
+
+
+    $query = "SELECT * FROM dashboard where grafico = 'mapas/geral'";
+    $result = mysqli_query($con, $query);
+    $Rotulos = [];
+    $Quantidade = [];
+    $d = mysqli_fetch_object($result);
+    $esquema = json_decode($d->esquema);
+    // print_r($esquema);
+    $Rotulos = $esquema->Rotulos;
+    $Quantidade = $esquema->Quantidade;
+    $R = (($Rotulos)?"'".implode("','",$Rotulos)."'":0);
+    $Q = (($Quantidade)?implode(",",$Quantidade):0);
+
+
+
 ?>
 
-
-var enderecos = ['<?=implode("','",$mun)?>'];
-var qt = ['<?=implode("','",$qt)?>'];
+var enderecos = [<?=$R?>];
+var qt = [<?=$Q?>];
 
 for(i=0;i<enderecos.length;i++){
     console.log(enderecos[i])
