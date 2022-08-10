@@ -89,26 +89,14 @@
 
 
             // }
+        }else{
+            console.log('Não encontrado:', local)
         }
     });
 
 }
 
 <?php
-
-    $query = "select
-                    a.*/*,
-                    (select count(*) from se where municipio = a.codigo) as qt*/
-                from municipios a
-            ";
-    $result = mysqli_query($con, $query);
-    $mun = [];
-    $qt = [];
-    while($d = mysqli_fetch_object($result)){
-        $mun[] = $d->municipio;
-        $qt[] = $d->qt;
-    }
-
 
 
     $query = "SELECT * FROM dashboard where grafico = 'mapas/geral'";
