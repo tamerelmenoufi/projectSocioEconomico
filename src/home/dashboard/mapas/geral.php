@@ -150,22 +150,22 @@ for(i=0;i<10;i++){
     console.log(enderecos[i])
     icones(enderecos[i], qt[i], '<?=$md5?>', i)
 }
-sleep(1000)
+sleep(2200)
 for(i=10;i<20;i++){
     console.log(enderecos[i])
     icones(enderecos[i], qt[i], '<?=$md5?>', i)
 }
-sleep(1000)
+sleep(2200)
 for(i=20;i<30;i++){
     console.log(enderecos[i])
     icones(enderecos[i], qt[i], '<?=$md5?>', i)
 }
-sleep(1000)
+sleep(2200)
 for(i=30;i<40;i++){
     console.log(enderecos[i])
     icones(enderecos[i], qt[i], '<?=$md5?>', i)
 }
-sleep(1000)
+sleep(2200)
 for(i=40;i<50;i++){
     console.log(enderecos[i])
     icones(enderecos[i], qt[i], '<?=$md5?>', i)
