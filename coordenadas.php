@@ -1,6 +1,17 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
+    if($_POST['lat'] and $_POST['lng'] and $_POST['codigo']){
+        mysqli_query($con, "update municipios set coordenadas = '{$_POST['lat']}, {$_POST['lng']}' where codigo = '{$_POST['codigo']}'");
+        exit();
+    }
+
+    $query = "select * from municipios where coordenadas = '' limit 10";
+    $result = mysqli_query($con, $query);
+    while($d = mysqli_fetch_object($result)){
+        $codigos[] = $d->codigo;
+        $dados[] = $d->municipio;
+    }
 ?>
 <!doctype html>
 <html lang="en">
