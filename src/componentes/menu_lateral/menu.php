@@ -36,7 +36,7 @@
 
     <div class="row mb-1">
       <div class="col">
-        <a href="./docs/se_print.php" target="formSocioEconimico" class="text-decoration-none">
+        <a href="./docs/se_print.pdf" target="formSocioEconimico" class="text-decoration-none">
           <i class="fa-solid fa-list-ol"></i> Formulário Socioeconômico
         </a>
       </div>
@@ -44,7 +44,7 @@
 
     <div class="row mb-1">
       <div class="col">
-        <a href="./docs/ef_print.php" target="formEstruturaFamiliar" class="text-decoration-none">
+        <a href="./docs/ef_print.pdf" target="formEstruturaFamiliar" class="text-decoration-none">
           <i class="fa-solid fa-list-ol"></i> Formulário Estrutura Familiar
         </a>
       </div>
