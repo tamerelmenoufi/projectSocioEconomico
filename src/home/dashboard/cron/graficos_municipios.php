@@ -2,7 +2,7 @@
 
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
-    $query_geral = "select * from municipios";
+    $query_geral = "select * from municipios limit 1";
     $result_geral = mysqli_query($con, $query_geral);
     while($d_eral = mysqli_fetch_object($result_geral)){
 
