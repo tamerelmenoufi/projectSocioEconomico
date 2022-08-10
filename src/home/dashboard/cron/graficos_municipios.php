@@ -112,35 +112,35 @@
 
 
 
-        // RELATÓRIO "mapas/geral"
-        $grafico = 'mapas/geral/'.$d_geral->codigo;
-        $md5 = md5($grafico.$md5);
-        $query = "select
-                        a.*,
-                        (select count(*) from se where bairro_comunidade = a.codigo) as qt
-                    from bairros_comunidades a where a.coordenadas != '' order by a.codigo desc
-                ";
-        $result = mysqli_query($con, $query);
-        $Rotulos = [];
-        $Quantidade = [];
-        $Lat = [];
-        $Lng = [];
-        while($d = mysqli_fetch_object($result)){
-            set_time_limit(90);
-            $coord = explode(",", $d->coordenadas);
-            $Rotulos[] = $d->municipio;
-            $Quantidade[] = $d->qt;
-            $Lat[] = trim($coord[0]);
-            $Lng[] = trim($coord[1]);
-        }
-        $esquema = json_encode([
-            'Rotulos' => $Rotulos,
-            'Quantidade' => $Quantidade,
-            'Lat' => $Lat,
-            'Lng' => $Lng,
-            ]
-        );
-        $Values[] = "('{$grafico}','{$esquema}')";
+        // // RELATÓRIO "mapas/geral"
+        // $grafico = 'mapas/geral/'.$d_geral->codigo;
+        // $md5 = md5($grafico.$md5);
+        // $query = "select
+        //                 a.*,
+        //                 (select count(*) from se where bairro_comunidade = a.codigo) as qt
+        //             from bairros_comunidades a where a.coordenadas != '' order by a.codigo desc
+        //         ";
+        // $result = mysqli_query($con, $query);
+        // $Rotulos = [];
+        // $Quantidade = [];
+        // $Lat = [];
+        // $Lng = [];
+        // while($d = mysqli_fetch_object($result)){
+        //     set_time_limit(90);
+        //     $coord = explode(",", $d->coordenadas);
+        //     $Rotulos[] = $d->municipio;
+        //     $Quantidade[] = $d->qt;
+        //     $Lat[] = trim($coord[0]);
+        //     $Lng[] = trim($coord[1]);
+        // }
+        // $esquema = json_encode([
+        //     'Rotulos' => $Rotulos,
+        //     'Quantidade' => $Quantidade,
+        //     'Lat' => $Lat,
+        //     'Lng' => $Lng,
+        //     ]
+        // );
+        // $Values[] = "('{$grafico}','{$esquema}')";
 
 
 
