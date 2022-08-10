@@ -101,13 +101,7 @@
 
 // }
 
-async function icones(local, qt, md5, cod){
-
-    await function Tempo(){
-        setTimeout(() => {
-
-        }, 500);
-    }
+function icones(local, qt, md5, cod){
 
     $.ajax({
         url:"src/home/dashboard/mapas/icons.php",
@@ -122,6 +116,11 @@ async function icones(local, qt, md5, cod){
             $("#map<?=$md5?>").append(dados);
         }
     });
+}
+
+function sleep(milliSeconds) {
+  var startTime = new Date().getTime();
+  while (new Date().getTime() < startTime + milliSeconds);
 }
 
 
@@ -150,6 +149,7 @@ var qt = [<?=$Q?>];
 for(i=0;i<enderecos.length;i++){
     console.log(enderecos[i])
     icones(enderecos[i], qt[i], '<?=$md5?>', i)
+    sleep(2200)
     // icones(enderecos[i], qt[i])
 }
 
