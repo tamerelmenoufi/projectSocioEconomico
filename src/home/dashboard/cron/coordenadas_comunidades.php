@@ -53,10 +53,10 @@ $(function(){
 
 
 
-        function icones(local, codigo){
+        async function icones(local, codigo){
                 address =  `${local}, Amazonas, Brasil`
                 geocoder<?=$md5?> = new google.maps.Geocoder();
-                geocoder<?=$md5?>.geocode({ 'address':address, 'region': 'BR' }, (results, status) => {
+                await geocoder<?=$md5?>.geocode({ 'address':address, 'region': 'BR' }, (results, status) => {
                 console.log(address)
                 console.log(status)
                 console.log(google.maps.GeocoderStatus.OK)
