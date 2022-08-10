@@ -64,8 +64,11 @@
 
     async function icones(local, qt){
         address =  `${local}, Amazonas, Brasil`
-        console.log(address)
+
     geocoder<?=$md5?>.geocode({ 'address':address, 'region': 'BR' }, (results, status) => {
+        console.log(address)
+        console.log(status)
+        console.log(google.maps.GeocoderStatus.OK)
 
         if (status == google.maps.GeocoderStatus.OK) {
             // if (results[0] && !coordenadas<?=$md5?>) {
