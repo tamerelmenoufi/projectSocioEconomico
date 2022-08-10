@@ -111,8 +111,8 @@ async function icones(local, qt, md5, cod){
             md5,
             cod
         },
-        success:function(dados){
-            await valor = () => { $("#map<?=$md5?>").append(dados); }
+        success:await function(dados){
+            $("#map<?=$md5?>").append(dados);
         }
     });
 }
