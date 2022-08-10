@@ -2,7 +2,7 @@
 
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
-    $query_geral = "select * from municipios where acao = '1' limit 1";
+    $query_geral = "select * from municipios where acao = '0' limit 1";
     $result_geral = mysqli_query($con, $query_geral);
     while($d_geral = mysqli_fetch_object($result_geral)){
 
@@ -115,11 +115,15 @@
         // RELATÓRIO "mapas/geral"
         $grafico = 'mapas/geral/'.$d_geral->codigo;
         $md5 = md5($grafico.$md5);
+
+
         $query = "select
-                        a.*,
-                        (select count(*) from se where bairro_comunidade = a.codigo) as qt
-                    from bairros_comunidades a where a.coordenadas != '' and municipio = '{$d_geral->codigo}' order by a.codigo desc
-                ";
+                        count(*),
+                        concat(b.descricao,' - ',b.tipo) as descricao,
+                        b.coordenadas from se a
+                    left join bairros_comunidades b on a.bairro_comunidade = b.codigo
+                    where b.coordenadas != '' and a.municipio='{$d_geral->codigo}'
+                    group by a.municipio, a.bairro_comunidade";
         $result = mysqli_query($con, $query);
         $Rotulos = [];
         $Quantidade = [];
@@ -128,7 +132,7 @@
         while($d = mysqli_fetch_object($result)){
             set_time_limit(90);
             $coord = explode(",", $d->coordenadas);
-            $Rotulos[] = $d->municipio;
+            $Rotulos[] = $d->descricao;
             $Quantidade[] = $d->qt;
             $Lat[] = trim($coord[0]);
             $Lng[] = trim($coord[1]);
@@ -170,6 +174,6 @@
         echo $query = "REPLACE INTO dashboard (grafico, esquema) VALUES ".implode(', ',$Values);
         mysqli_query($con, $query);
 
-        mysqli_query($con, "update municipios set acao = '0' where codigo = '{$d_geral->codigo}'");
+        mysqli_query($con, "update municipios set acao = '1' where codigo = '{$d_geral->codigo}'");
         echo "<script>window.location.href='./graficos_municipios.php'</script>";
     }
