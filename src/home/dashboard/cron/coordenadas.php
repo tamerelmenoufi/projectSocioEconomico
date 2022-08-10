@@ -42,29 +42,6 @@
 ></script>
     <script>
 
-    map<?=$md5?> = new google.maps.Map(document.getElementById("map<?=$md5?>"), {
-        zoomControl: true,
-        mapTypeControl: true, //
-        draggable: true,
-        scaleControl: true,
-        scrollwheel: true,
-        navigationControl: true,//
-        streetViewControl: true,//
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        fullscreenControl: true,
-        <?php
-        // if($coordenadas){
-            // -3.986913, -63.931869
-        ?>
-        center: { lat: -3.986913, lng: -63.931869 },
-        zoom: 5,
-
-        <?php
-        // }
-        ?>
-    })
-
-
 
         function icones(local, codigo){
                 address =  `${local}, Amazonas, Brasil`
@@ -107,13 +84,15 @@
 
         }
 
-        codigos = ['<?=implode("','",$codigos)?>'];
-        enderecos = ['<?=implode("','",$dados)?>'];
+        $(function(){
+            codigos = ['<?=implode("','",$codigos)?>'];
+            enderecos = ['<?=implode("','",$dados)?>'];
 
-        for(i=0;i<enderecos.length;i++){
-            console.log(enderecos[i], codigos[i])
-            icones(enderecos[i], codigos[i])
-        }
+            for(i=0;i<enderecos.length;i++){
+                console.log(enderecos[i], codigos[i])
+                icones(enderecos[i], codigos[i])
+            }
+        })
 
     </script>
 
