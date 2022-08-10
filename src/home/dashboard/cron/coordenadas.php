@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="img/icone.png">
     <title>Coordenadas</title>
-    <script src="lib/vendor/jquery-3.6.0/jquery-3.6.0.min.js" ></script>
+    <script src="../../../../lib/vendor/jquery-3.6.0/jquery-3.6.0.min.js" ></script>
     <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSnblPMOwEdteX5UPYXf7XUtJYcbypx6w&language=pt&region=BR"
     async
