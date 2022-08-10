@@ -124,16 +124,13 @@
 
 
 
-
-
-
 <script>
   $(function(){
     Carregando('none');
 
     const Graficos = (r) => {
         $.ajax({
-          url:`src/home/dashboard/graficos/${r.local}.php`,
+          url:`src/home/dashboard/graficos/municipio/${r.local}.php`,
           type:"POST",
           data:{
             rotulo:r.rotulo,
@@ -158,7 +155,7 @@
 
     const Tabelas = (r) => {
         $.ajax({
-          url:`src/home/dashboard/tabelas/${r.local}.php`,
+          url:`src/home/dashboard/tabelas/municipio/${r.local}.php`,
           type:"POST",
           data:{
             rotulo:r.rotulo,
@@ -181,7 +178,7 @@
 
 
     $.ajax({
-      url:`src/home/dashboard/mapas/geral.php`,
+      url:`src/home/dashboard/mapas/municipio/geral.php`,
       type:"POST",
       success:function(dados){
         $(`div[mapa="geral"]`).html(dados);
