@@ -41,7 +41,10 @@
     if(!$dados) exit();
 
     ?>
-
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSnblPMOwEdteX5UPYXf7XUtJYcbypx6w&language=pt&region=BR"
+    async
+></script>
     <script>
 
         function icones(local, codigo){
@@ -94,9 +97,6 @@
         }
 
     </script>
-    <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSnblPMOwEdteX5UPYXf7XUtJYcbypx6w&language=pt&region=BR"
-    async
-></script>
+
   </body>
 </html>
