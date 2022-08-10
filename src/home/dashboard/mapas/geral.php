@@ -149,7 +149,9 @@ var qt = [<?=$Q?>];
 for(i=0;i<enderecos.length;i++){
     console.log(enderecos[i])
     icones(enderecos[i], qt[i], '<?=$md5?>', i)
-    sleep(2200)
+    if(i%10 === 0){
+        sleep(2200)
+    }
     // icones(enderecos[i], qt[i])
 }
 
