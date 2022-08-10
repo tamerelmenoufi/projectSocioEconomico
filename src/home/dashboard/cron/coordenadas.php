@@ -1,9 +1,6 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
-
-    echo "MD5:".$md5;
-
     if($_POST['lat'] and $_POST['lng'] and $_POST['codigo']){
         mysqli_query($con, "update municipios set coordenadas = '{$_POST['lat']}, {$_POST['lng']}' where codigo = '{$_POST['codigo']}'");
         exit();
