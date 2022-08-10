@@ -171,19 +171,23 @@
     $query = "select
                     a.*,
                     (select count(*) from se where municipio = a.codigo) as qt
-                from municipios a order by a.codigo desc
+                from municipios a where a.coordendas != '' order by a.codigo desc
             ";
     $result = mysqli_query($con, $query);
     $Rotulos = [];
     $Quantidade = [];
     while($d = mysqli_fetch_object($result)){
         set_time_limit(90);
+        $coord = explode(",", $d->coordenadas);
         $Rotulos[] = $d->municipio;
         $Quantidade[] = $d->qt;
+        $Coordenadas[] = [trim($coord[0]), trim($coord[1])];
     }
     $esquema = json_encode([
         'Rotulos' => $Rotulos,
-        'Quantidade' => $Quantidade]
+        'Quantidade' => $Quantidade,
+        'Coordenadas' => $Coordenadas,
+        ]
     );
     $Values[] = "('{$grafico}','{$esquema}')";
 
