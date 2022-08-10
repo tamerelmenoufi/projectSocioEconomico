@@ -4,7 +4,7 @@
 
     $query_geral = "select * from municipios limit 1";
     $result_geral = mysqli_query($con, $query_geral);
-    while($d_eral = mysqli_fetch_object($result_geral)){
+    while($d_geral = mysqli_fetch_object($result_geral)){
 
         set_time_limit(100);
 
