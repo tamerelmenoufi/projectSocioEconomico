@@ -12,18 +12,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="img/icone.png">
     <title>Coordenadas</title>
     <script src="../../../../lib/vendor/jquery-3.6.0/jquery-3.6.0.min.js" ></script>
-
     <style>
 
     </style>
-
   </head>
   <body>
-
-
     <?php
 
     $query = "select * from municipios where coordenadas = '' limit 10";
@@ -38,16 +33,42 @@
     if(!$dados) exit();
 
     ?>
+
+    <div id="map<?=$md5?>"></div>
+
     <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSnblPMOwEdteX5UPYXf7XUtJYcbypx6w&language=pt&region=BR"
     async
 ></script>
     <script>
 
-        geocoder<?=$md5?> = new google.maps.Geocoder();
+    map<?=$md5?> = new google.maps.Map(document.getElementById("map<?=$md5?>"), {
+        zoomControl: true,
+        mapTypeControl: true, //
+        draggable: true,
+        scaleControl: true,
+        scrollwheel: true,
+        navigationControl: true,//
+        streetViewControl: true,//
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        fullscreenControl: true,
+        <?php
+        // if($coordenadas){
+            // -3.986913, -63.931869
+        ?>
+        center: { lat: -3.986913, lng: -63.931869 },
+        zoom: 5,
+
+        <?php
+        // }
+        ?>
+    }
+
+
 
         function icones(local, codigo){
                 address =  `${local}, Amazonas, Brasil`
+                geocoder<?=$md5?> = new google.maps.Geocoder();
                 geocoder<?=$md5?>.geocode({ 'address':address, 'region': 'BR' }, (results, status) => {
                 console.log(address)
                 console.log(status)
