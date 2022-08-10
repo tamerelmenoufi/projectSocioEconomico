@@ -10,24 +10,14 @@
 
 <?php
 
-    $query = "
-        SELECT
-            a.*,
-            count(*) as quantidade,
-            b.descricao as bairro
-        FROM se a
-        left join bairros_comunidades b on a.bairro_comunidade = b.codigo
-        where a.municipio = 66
-        group by a.bairro_comunidade
-        order by quantidade desc
-    ";
+    $query = "SELECT * FROM dashboard where grafico = 'graficos/capital'";
     $result = mysqli_query($con, $query);
     $Rotulos = [];
     $Quantidade = [];
-    while($d = mysqli_fetch_object($result)){
-      $Rotulos[] = ($d->bairro);
-      $Quantidade[] = $d->quantidade;
-    }
+    $d = mysqli_fetch_object($result);
+    $esquema = json_decode($d->esquema);
+    $Rotulos[] = $esquema['Rotulos'];
+    $Quantidade[] = $esquema['Quantidade'];
     $R = (($Rotulos)?"'".implode("','",$Rotulos)."'":0);
     $Q = (($Quantidade)?implode(",",$Quantidade):0);
 
