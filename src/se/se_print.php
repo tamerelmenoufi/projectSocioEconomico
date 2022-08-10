@@ -492,14 +492,14 @@
                         'dados' => $d->opiniao_direitos_humanos
                     ])?>
                 </div>
-                <?php
-                //*/
-                ?>
+
                 <div class="form-floating mb-3">
                     <div textarea name="opiniao_direitos_humanos_descricao" id="opiniao_direitos_humanos_descricao" class="form-control form-control-sm" placeholder="Outras Opiniões falhas na Direitos Humanos" ><?=$d->opiniao_direitos_humanos_descricao?></div>
                     <label for="opiniao_direitos_humanos_descricao">Desreva suas Opiniões falhas na Direitos Humanos</label>
                 </div>
-
+                <?php
+                //*/
+                ?>
                 <div class="form-floating mb-3">
                     <?=montaOpcPrint([
                         'rotulo' => 'Na Segurança?',
