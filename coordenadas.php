@@ -39,6 +39,7 @@
     <<script>
 
 
+
 function icones(local, codigo){
         address =  `${local}, Amazonas, Brasil`
         geocoder<?=$md5?> = new google.maps.Geocoder();
@@ -80,13 +81,15 @@ function icones(local, codigo){
 
 }
 
-codigos = ['<?=implode("','",$codigos)?>'];
-enderecos = ['<?=implode("','",$dados)?>'];
+$(function(){
+    codigos = ['<?=implode("','",$codigos)?>'];
+    enderecos = ['<?=implode("','",$dados)?>'];
 
-for(i=0;i<enderecos.length;i++){
-    console.log(enderecos[i], codigos[i])
-    icones(enderecos[i], codigos[i])
-}
+    for(i=0;i<enderecos.length;i++){
+        console.log(enderecos[i], codigos[i])
+        icones(enderecos[i], codigos[i])
+    }
+})
 
 </script>
 
