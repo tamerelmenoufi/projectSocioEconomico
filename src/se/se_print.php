@@ -380,12 +380,17 @@
 
 <header class="Topo" style="margin:20px;"></header>
 
+
+<div class="row" style="margin-bottom:35px;">
+    <div class="col-12">
+        <div class="form-floating mb-3">
+            <p><b>Na sua opinião dentro da estrutura do governo, em qual área abaixo descrita, necessita de melhorias para desenvolvimento na qualidade de vida da sua família e/ou da sua comunidade:</b></p>
+        </div>
+    </div>
+</div>
+
 <div class="row" style="margin-bottom:35px;">
 <div class="col-6">
-
-                <div class="form-floating mb-3">
-                    <p><b>Na sua opinião dentro da estrutura do governo, em qual área abaixo descrita, necessita de melhorias para desenvolvimento na qualidade de vida da sua família e/ou da sua comunidade:</b></p>
-                </div>
                 <div class="form-floating mb-3">
                     <?=montaOpcPrint([
                         'rotulo' => 'Na Saúde?',
