@@ -118,7 +118,7 @@
 
 
         $query = "select
-                        count(*),
+                        count(*) as qt,
                         concat(b.descricao,' - ',b.tipo) as descricao,
                         b.coordenadas from se a
                     left join bairros_comunidades b on a.bairro_comunidade = b.codigo
