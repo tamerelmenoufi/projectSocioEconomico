@@ -103,7 +103,7 @@ $(function(){
                     // sleep(5000);
                     icones(enderecos[i], codigos[i])
                 }
-                window.location.href='./coordenadas/comunidades.php';
+                window.location.href='./coordenadas_comunidades.php';
         }, 5000);
 
 })
