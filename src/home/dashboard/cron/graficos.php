@@ -171,7 +171,7 @@
     $query = "select
                     a.*,
                     (select count(*) from se where municipio = a.codigo) as qt
-                from municipios a
+                from municipios a order by a.codigo desc
             ";
     $result = mysqli_query($con, $query);
     $Rotulos = [];
