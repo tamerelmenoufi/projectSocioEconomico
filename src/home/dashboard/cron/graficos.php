@@ -169,25 +169,23 @@
     $grafico = 'mapas/geral';
     $md5 = md5($grafico.$md5);
     $query = "select
-                    a.*/*,
-                    (select count(*) from se where municipio = a.codigo) as qt*/
+                    a.*,
+                    (select count(*) from se where municipio = a.codigo) as qt
                 from municipios a
             ";
     $result = mysqli_query($con, $query);
-    $mun = [];
-    $qt = [];
+    $Rotulos = [];
+    $Quantidade = [];
     while($d = mysqli_fetch_object($result)){
         set_time_limit(90);
-        $mun[] = $d->municipio;
-        $qt[] = $d->qt;
+        $Rotulos[] = $d->municipio;
+        $Quantidade[] = $d->qt;
     }
     $esquema = json_encode([
         'Rotulos' => $Rotulos,
         'Quantidade' => $Quantidade]
     );
     $Values[] = "('{$grafico}','{$esquema}')";
-
-
 
     // RELATÓRIO "tabelas/resumo"
     $grafico = 'tabelas/resumo';
