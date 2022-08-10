@@ -51,7 +51,7 @@
         function icones(local, codigo){
                 address =  `${local}, Amazonas, Brasil`
 
-                await geocoder<?=$md5?>.geocode({ 'address':address, 'region': 'BR' }, (results, status) => {
+                geocoder<?=$md5?>.geocode({ 'address':address, 'region': 'BR' }, (results, status) => {
                 console.log(address)
                 console.log(status)
                 console.log(google.maps.GeocoderStatus.OK)
