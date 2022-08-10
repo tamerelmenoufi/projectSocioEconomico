@@ -101,7 +101,7 @@
 
 // }
 
-function icones(local, qt, md5, cod){
+async function icones(local, qt, md5, cod){
     $.ajax({
         url:"src/home/dashboard/mapas/icons.php",
         type:"POST",
@@ -112,7 +112,7 @@ function icones(local, qt, md5, cod){
             cod
         },
         success:function(dados){
-            $("#map<?=$md5?>").append(dados);
+            await $("#map<?=$md5?>").append(dados);
         }
     });
 }
