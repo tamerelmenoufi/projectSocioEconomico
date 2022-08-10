@@ -176,18 +176,21 @@
     $result = mysqli_query($con, $query);
     $Rotulos = [];
     $Quantidade = [];
-    $Coordenadas = [];
+    $Lat = [];
+    $Lng = [];
     while($d = mysqli_fetch_object($result)){
         set_time_limit(90);
         $coord = explode(",", $d->coordenadas);
         $Rotulos[] = $d->municipio;
         $Quantidade[] = $d->qt;
-        $Coordenadas[] = [trim($coord[0]), trim($coord[1])];
+        $Lat[] = trim($coord[0]);
+        $Lng[] = trim($coord[1]);
     }
     $esquema = json_encode([
         'Rotulos' => $Rotulos,
         'Quantidade' => $Quantidade,
-        'Coordenadas' => $Coordenadas,
+        'Lat' => $Lat,
+        'Lng' => $Lng,
         ]
     );
     $Values[] = "('{$grafico}','{$esquema}')";
