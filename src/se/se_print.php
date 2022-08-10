@@ -484,7 +484,7 @@
                 </div>
 
 </div>
-<div class="col-6">
+<div class="col-6" style="margin-bottom:200px;">
 
                 <?php
                 /*
