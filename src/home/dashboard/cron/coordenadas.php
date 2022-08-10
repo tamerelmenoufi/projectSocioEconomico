@@ -42,6 +42,7 @@
 ></script>
     <script>
 
+$(function(){
 
         function icones(local, codigo){
                 address =  `${local}, Amazonas, Brasil`
@@ -84,15 +85,15 @@
 
         }
 
-        $(function(){
-            codigos = ['<?=implode("','",$codigos)?>'];
-            enderecos = ['<?=implode("','",$dados)?>'];
 
-            for(i=0;i<enderecos.length;i++){
-                console.log(enderecos[i], codigos[i])
-                icones(enderecos[i], codigos[i])
-            }
-        })
+        codigos = ['<?=implode("','",$codigos)?>'];
+        enderecos = ['<?=implode("','",$dados)?>'];
+
+        for(i=0;i<enderecos.length;i++){
+            console.log(enderecos[i], codigos[i])
+            icones(enderecos[i], codigos[i])
+        }
+})
 
     </script>
 
