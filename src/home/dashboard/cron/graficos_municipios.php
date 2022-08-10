@@ -171,5 +171,5 @@
         mysqli_query($con, $query);
 
         mysqli_query($con, "update municipios set acao = '1' where codigo = '{$d_geral->codigo}'");
-
+        echo "<script>window.location.href='./graficos_municipios.php'</script>";
     }
