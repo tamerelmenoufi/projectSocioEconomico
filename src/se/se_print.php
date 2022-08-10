@@ -189,7 +189,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaOpcPrint([
-                        'rotulo' => 'Tipos de Moradia:',
+                        'rotulo' => 'Tipo de Moradia:',
                         'campo' => 'tipo_moradia',
                         'vetor' => [
                             'Madeira',
@@ -404,6 +404,9 @@
                     <label for="opiniao_saude_descricao">Desreva suas Opiniões Falhas na Saúde</label>
                 </div>
 
+                <?php
+                /*
+                ?>
                 <div class="form-floating mb-3">
                     <?=montaOpcPrint([
                         'rotulo' => 'Na Educação?',
@@ -435,6 +438,9 @@
                     <div textarea name="opiniao_cidadania_descricao" id="opiniao_cidadania_descricao" class="form-control form-control-sm" placeholder="Outras Opiniões falhas na Cidadania" ><?=$d->opiniao_cidadania_descricao?></div>
                     <label for="opiniao_cidadania_descricao">Desreva suas Opiniões falhas na Cidadania</label>
                 </div>
+                <?php
+                //*/
+                ?>
 
                 <div class="form-floating mb-3">
                     <?=montaOpcPrint([
@@ -472,7 +478,9 @@
                     <div textarea name="opiniao_assistencia_social_descricao" id="opiniao_assistencia_social_descricao" class="form-control form-control-sm" placeholder="Outras Opiniões falhas na Assistência Social" ><?=$d->opiniao_assistencia_social_descricao?></div>
                     <label for="opiniao_assistencia_social_descricao">Desreva suas Opiniões falhas na Assistência Social</label>
                 </div>
-
+                <?php
+                /*
+                ?>
                 <div class="form-floating mb-3">
                     <?=montaOpcPrint([
                         'rotulo' => 'Nos Direitos Humanos?',
@@ -484,6 +492,9 @@
                         'dados' => $d->opiniao_direitos_humanos
                     ])?>
                 </div>
+                <?php
+                //*/
+                ?>
                 <div class="form-floating mb-3">
                     <div textarea name="opiniao_direitos_humanos_descricao" id="opiniao_direitos_humanos_descricao" class="form-control form-control-sm" placeholder="Outras Opiniões falhas na Direitos Humanos" ><?=$d->opiniao_direitos_humanos_descricao?></div>
                     <label for="opiniao_direitos_humanos_descricao">Desreva suas Opiniões falhas na Direitos Humanos</label>
@@ -494,7 +505,7 @@
                         'rotulo' => 'Na Segurança?',
                         'campo' => 'opiniao_seguranca',
                         'vetor' => [
-                            'Atendimento de Chamado para Policiamento',
+                            'Policiamento Ostensivo',
                         ],
                         'dados' => $d->opiniao_seguranca
                     ])?>

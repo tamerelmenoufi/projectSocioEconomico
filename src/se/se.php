@@ -263,7 +263,7 @@
 
                 <div class="form-floating mb-3">
                     <?=montaCheckbox([
-                        'rotulo' => 'Tipos de Moradia:',
+                        'rotulo' => 'Tipo de Moradia:',
                         'campo' => 'tipo_moradia',
                         'vetor' => [
                             'Madeira',
@@ -520,6 +520,10 @@
                         <label for="opiniao_saude_descricao">Desreva suas Opiniões Falhas na Saúde</label>
                     </div>
                 </div>
+
+                <?php
+                    /*
+                ?>
                 <div class="form-floating mb-3">
                     <?=montaRadio([
                         'rotulo' => 'Na Educação?',
@@ -564,6 +568,10 @@
                         <label for="opiniao_cidadania_descricao">Desreva suas Opiniões falhas na Cidadania</label>
                     </div>
                 </div>
+                <?php
+                    //*/
+                ?>
+
 
                 <div class="form-floating mb-3">
                     <?=montaCheckbox([
@@ -621,6 +629,10 @@
                         <label for="opiniao_assistencia_social_descricao">Desreva suas Opiniões falhas na Assistência Social</label>
                     </div>
                 </div>
+
+                <?php
+                /*
+                ?>
                 <div class="form-floating mb-3">
                     <?=montaRadio([
                         'rotulo' => 'Nos Direitos Humanos?',
@@ -643,18 +655,21 @@
                         <label for="opiniao_direitos_humanos_descricao">Desreva suas Opiniões falhas na Direitos Humanos</label>
                     </div>
                 </div>
+                <?php
+                //*/
+                ?>
                 <div class="form-floating mb-3">
                     <?=montaCheckbox([
                         'rotulo' => 'Na Segurança?',
                         'campo' => 'opiniao_seguranca',
                         'vetor' => [
                             'Não Necessita',
-                            'Atendimento de Chamado para Policiamento',
+                            'Policiamento Ostensivo',
                         ],
                         'dados' => $d->opiniao_seguranca,
                         'exibir' => [
                             'Não Necessita'=>false,
-                            'Atendimento de Chamado para Policiamento'=>true,
+                            'Policiamento Ostensivo'=>true,
                          ],
                          'campo_destino'=>'opiniao_seguranca_descricao'
                     ])?>

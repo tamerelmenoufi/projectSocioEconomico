@@ -104,9 +104,9 @@ $(function(){
                     // sleep(5000);
                     icones(enderecos[i], codigos[i])
                 }
-                // setTimeout(() => {
-                //     window.location.href='./coordenadas_comunidades.php';
-                // }, 2000);
+                setTimeout(() => {
+                    window.location.href='./coordenadas_comunidades.php';
+                }, 2000);
         }, 5000);
 })
 
