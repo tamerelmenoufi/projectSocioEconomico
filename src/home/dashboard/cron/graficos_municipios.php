@@ -2,7 +2,7 @@
 
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
-    $query_geral = "select * from municipios";
+    $query_geral = "select * from municipios where acao = '0' limit 1";
     $result_geral = mysqli_query($con, $query_geral);
     while($d_geral = mysqli_fetch_object($result_geral)){
 
@@ -169,5 +169,7 @@
 
         echo $query = "REPLACE INTO dashboard (grafico, esquema) VALUES ".implode(', ',$Values);
         mysqli_query($con, $query);
+
+        mysqli_query("update municipios set acao = '1' where codigo = '{$d_geral->codigo}'");
 
     }
