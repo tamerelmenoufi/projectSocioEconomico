@@ -112,7 +112,7 @@ async function icones(local, qt, md5, cod){
             cod
         },
         success:function(dados){
-            await $("#map<?=$md5?>").append(dados);
+            await () => { $("#map<?=$md5?>").append(dados); }
         }
     });
 }
