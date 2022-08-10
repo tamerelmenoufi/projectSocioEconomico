@@ -71,7 +71,6 @@
                     (select count(*) from se where percentual > 0 and percentual < 100) as iniciadas,
                     (select count(*) from se where percentual = 0 ) as pendentes,
                     (select count(*) from se where percentual = 100) as concluidas
-                from se limit 1
     ";
     $result = mysqli_query($con, $query);
     $Rotulos = [];
@@ -94,10 +93,9 @@
     $md5 = md5($grafico.$md5);
     $query = "
                 select
-                    (select count(*) from se where percentual > 0 and percentual < 100) as iniciadas,
-                    (select count(*) from se where percentual = 0 ) as pendentes,
-                    (select count(*) from se where percentual = 100) as concluidas
-                from se where local = 'rural' group by local
+                    (select count(*) from se where percentual > 0 and percentual < 100 and local = 'rural') as iniciadas,
+                    (select count(*) from se where percentual = 0 and local = 'rural') as pendentes,
+                    (select count(*) from se where percentual = 100 and local = 'rural') as concluidas
     ";
     $result = mysqli_query($con, $query);
     $Rotulos = [];
@@ -121,10 +119,9 @@
     $md5 = md5($grafico.$md5);
     $query = "
                 select
-                    (select count(*) from se where percentual > 0 and percentual < 100) as iniciadas,
-                    (select count(*) from se where percentual = 0 ) as pendentes,
-                    (select count(*) from se where percentual = 100) as concluidas
-                from se where local = 'urbano' group by local
+                    (select count(*) from se where percentual > 0 and percentual < 100 and local = 'urbano') as iniciadas,
+                    (select count(*) from se where percentual = 0 and local = 'urbano') as pendentes,
+                    (select count(*) from se where percentual = 100 and local = 'urbano') as concluidas
     ";
     $result = mysqli_query($con, $query);
     $Rotulos = [];
