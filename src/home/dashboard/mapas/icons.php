@@ -3,11 +3,12 @@
     address =  `<?=$_POST['local']?>, Amazonas, Brasil`
     geocoder<?=$_POST['md5'].$_POST['cod']?> = new google.maps.Geocoder();
     geocoder<?=$_POST['md5'].$_POST['cod']?>.geocode({ 'address':address, 'region': 'BR' }, (results, status) => {
-        console.log(address)
-        console.log(status)
-        console.log(google.maps.GeocoderStatus.OK)
 
-        if (status == google.maps.GeocoderStatus.OK) {
+        // console.log(address)
+        // console.log(status)
+        // console.log(google.maps.GeocoderStatus.OK)
+
+        // if (status == google.maps.GeocoderStatus.OK) {
             // if (results[0] && !coordenadas<?=$_POST['md5'].$_POST['cod']?>) {
 
                 var latitude<?=$_POST['md5'].$_POST['cod']?> = results[0].geometry.location.lat();
@@ -31,10 +32,10 @@
 
 
             // }
-        }else{
-            // console.log('Não encontrado:', local)
-            // console.log('Quantidade:', qt)
-        }
-    });
+    //     }else{
+    //         // console.log('Não encontrado:', local)
+    //         // console.log('Quantidade:', qt)
+    //     }
+    // });
 
 </script>
