@@ -76,7 +76,7 @@ $(function(){
                         // map<?=$md5?>.setZoom(18);
 
                         $.ajax({
-                            url:"coordenadas.php",
+                            url:"coordenadas_municipios.php",
                             type:"POST",
                             data:{
                                 lat:latitude<?=$md5?>,
