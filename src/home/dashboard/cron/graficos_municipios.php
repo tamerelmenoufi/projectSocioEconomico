@@ -11,7 +11,7 @@
         $Values = [];
 
         // RELATÓRIO "graficos/pesquisa"
-        $grafico = 'graficos/pesquisa/'.$d_geral->codido;
+        $grafico = 'graficos/pesquisa/'.$d_geral->codigo;
         $md5 = md5($grafico.$md5);
         $query = "
                     select
