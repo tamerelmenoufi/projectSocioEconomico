@@ -62,60 +62,60 @@
     //     alert(`Lat ${latLng.lat()} & Lng ${latLng.lng()}`)
     // });
 
-//     function icones(local, qt){
-//         address =  `${local}, Amazonas, Brasil`
+    async function icones(local, qt){
+        address =  `${local}, Amazonas, Brasil`
 
-//     geocoder<?=$md5?>.geocode({ 'address':address, 'region': 'BR' }, (results, status) => {
-//         console.log(address)
-//         console.log(status)
-//         console.log(google.maps.GeocoderStatus.OK)
+        await geocoder<?=$md5?>.geocode({ 'address':address, 'region': 'BR' }, (results, status) => {
+        console.log(address)
+        console.log(status)
+        console.log(google.maps.GeocoderStatus.OK)
 
-//         if (status == google.maps.GeocoderStatus.OK) {
-//             // if (results[0] && !coordenadas<?=$md5?>) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            // if (results[0] && !coordenadas<?=$md5?>) {
 
-//                 var latitude<?=$md5?> = results[0].geometry.location.lat();
-//                 var longitude<?=$md5?> = results[0].geometry.location.lng();
-//                 // console.log('Coordenadas:', local)
-//                 // console.log('Lat:'+latitude<?=$md5?>)
-//                 // console.log('Lng:'+longitude<?=$md5?>)
+                var latitude<?=$md5?> = results[0].geometry.location.lat();
+                var longitude<?=$md5?> = results[0].geometry.location.lng();
+                // console.log('Coordenadas:', local)
+                // console.log('Lat:'+latitude<?=$md5?>)
+                // console.log('Lng:'+longitude<?=$md5?>)
 
-//                 // var location<?=$md5?> = new google.maps.LatLng(latitude<?=$md5?>, longitude<?=$md5?>);
-//                 // marker<?=$md5?>.setPosition(location<?=$md5?>);
-//                 // map<?=$md5?>.setCenter(location<?=$md5?>);
-//                 // map<?=$md5?>.setZoom(18);
+                // var location<?=$md5?> = new google.maps.LatLng(latitude<?=$md5?>, longitude<?=$md5?>);
+                // marker<?=$md5?>.setPosition(location<?=$md5?>);
+                // map<?=$md5?>.setCenter(location<?=$md5?>);
+                // map<?=$md5?>.setZoom(18);
 
-//                 marker<?=$md5?> = new google.maps.Marker({
-//                     position: { lat: latitude<?=$md5?>, lng: longitude<?=$md5?> },
-//                     map:map<?=$md5?>,
-//                     title: qt + " Beneficiários em "+local,
-//                     draggable:false,
-//                 });
+                marker<?=$md5?> = new google.maps.Marker({
+                    position: { lat: latitude<?=$md5?>, lng: longitude<?=$md5?> },
+                    map:map<?=$md5?>,
+                    title: qt + " Beneficiários em "+local,
+                    draggable:false,
+                });
 
 
 
-//             // }
-//         }else{
-//             // console.log('Não encontrado:', local)
-//             // console.log('Quantidade:', qt)
-//         }
-//     });
-
-// }
-
-function icones(local, qt, md5){
-    $.ajax({
-        url:"src/home/dashboard/mapas/icons.php",
-        type:"POST",
-        data:{
-            local,
-            qt,
-            md5
-        },
-        success:function(dados){
-            $("#map<?=$md5?>").append(dados);
+            // }
+        }else{
+            // console.log('Não encontrado:', local)
+            // console.log('Quantidade:', qt)
         }
     });
+
 }
+
+// function icones(local, qt, md5){
+//     $.ajax({
+//         url:"src/home/dashboard/mapas/icons.php",
+//         type:"POST",
+//         data:{
+//             local,
+//             qt,
+//             md5
+//         },
+//         success:function(dados){
+//             $("#map<?=$md5?>").append(dados);
+//         }
+//     });
+// }
 
 
 <?php
