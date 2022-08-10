@@ -171,11 +171,12 @@
     $query = "select
                     a.*,
                     (select count(*) from se where municipio = a.codigo) as qt
-                from municipios a where a.coordendas != '' order by a.codigo desc
+                from municipios a where a.coordenadas != '' order by a.codigo desc
             ";
     $result = mysqli_query($con, $query);
     $Rotulos = [];
     $Quantidade = [];
+    $Coordenadas = [];
     while($d = mysqli_fetch_object($result)){
         set_time_limit(90);
         $coord = explode(",", $d->coordenadas);
