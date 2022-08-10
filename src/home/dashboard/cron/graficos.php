@@ -64,7 +64,7 @@
 
 
     // RELATÓRIO "graficos/pesquisa"
-    $grafico = 'graficos/municipios';
+    $grafico = 'graficos/pesquisa';
     $md5 = md5($grafico.$md5);
     $query = "
                 select
