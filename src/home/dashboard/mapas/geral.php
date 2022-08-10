@@ -146,13 +146,29 @@ function sleep(milliSeconds) {
 var enderecos = [<?=$R?>];
 var qt = [<?=$Q?>];
 
-for(i=0;i<enderecos.length;i++){
+for(i=0;i<10;i++){
     console.log(enderecos[i])
     icones(enderecos[i], qt[i], '<?=$md5?>', i)
-    if(i%10 === 0){
-        sleep(2200)
-    }
-    // icones(enderecos[i], qt[i])
+}
+sleep(1000)
+for(i=10;i<20;i++){
+    console.log(enderecos[i])
+    icones(enderecos[i], qt[i], '<?=$md5?>', i)
+}
+sleep(1000)
+for(i=20;i<30;i++){
+    console.log(enderecos[i])
+    icones(enderecos[i], qt[i], '<?=$md5?>', i)
+}
+sleep(1000)
+for(i=30;i<40;i++){
+    console.log(enderecos[i])
+    icones(enderecos[i], qt[i], '<?=$md5?>', i)
+}
+sleep(1000)
+for(i=40;i<50;i++){
+    console.log(enderecos[i])
+    icones(enderecos[i], qt[i], '<?=$md5?>', i)
 }
 
 </script>
