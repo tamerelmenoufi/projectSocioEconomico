@@ -105,22 +105,23 @@ async function icones(local, qt, md5, cod){
 
     await function Tempo(){
         setTimeout(() => {
-            $.ajax({
-                url:"src/home/dashboard/mapas/icons.php",
-                type:"POST",
-                data:{
-                    local,
-                    qt,
-                    md5,
-                    cod
-                },
-                success:function(dados){
-                    $("#map<?=$md5?>").append(dados);
-                }
-            });
+
         }, 500);
     }
 
+    $.ajax({
+        url:"src/home/dashboard/mapas/icons.php",
+        type:"POST",
+        data:{
+            local,
+            qt,
+            md5,
+            cod
+        },
+        success:function(dados){
+            $("#map<?=$md5?>").append(dados);
+        }
+    });
 }
 
 
