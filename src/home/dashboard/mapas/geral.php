@@ -63,7 +63,7 @@
     // });
 
     async function icones(local, qt){
-        address =  `${local}, Amazonas, Brasil`
+        address =  `${local}-AM, Brasil`
 
         await geocoder<?=$md5?>.geocode({ 'address':address, 'region': 'BR' }, (results, status) => {
         console.log(address)
