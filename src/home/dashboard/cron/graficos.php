@@ -209,8 +209,8 @@
 
     $esquema = json_encode([
         'Rotulos' => $Rotulos,
-        'Quantidade' => $Quantidade]
-    );
+        'Quantidade' => $Quantidade
+    ]);
     $Values[] = "('{$grafico}','{$esquema}')";
 
 
