@@ -248,7 +248,8 @@
                     <div textarea name="curos_profissionais_descricao" id="curos_profissionais_descricao" class="form-control form-control-sm" placeholder="Cursos Técnico/Profissionalizante" ><?=$d->curos_profissionais_descricao?></div>
                     <label for="curos_profissionais_descricao">Descreve os Cursos Técnico/Profissionalizante</label>
                 </div>
-
+</div>
+<div class="col-6">
                 <div class="form-floating mb-3">
                     <?=montaOpcPrint([
                         'rotulo' => 'Qual sua Renda Mensal?',
@@ -264,8 +265,7 @@
                         'dados' => $d->renda_mensal
                     ])?>
                 </div>
-</div>
-<div class="col-6">
+
                 <div class="form-floating mb-3">
                     <?=montaOpcPrint([
                         'rotulo' => 'Você possui algum Benefício Social?',
