@@ -7,7 +7,6 @@
     $Quantidade = [];
     $d = mysqli_fetch_object($result);
     $esquema = json_decode($d->esquema);
-    print_r($esquema);
     $Rotulos = $esquema->Rotulos;
     $Quantidade = $esquema->Quantidade;
 
