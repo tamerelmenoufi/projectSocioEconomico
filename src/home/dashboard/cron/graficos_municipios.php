@@ -5,6 +5,9 @@
     $query_geral = "select * from municipios";
     $result_geral = mysqli_query($con, $query_geral);
     while($d_eral = mysqli_fetch_object($result_geral)){
+
+        set_time_limit(100);
+
         $Values = [];
 
         // RELATÓRIO "graficos/pesquisa"
@@ -59,13 +62,13 @@
 
 
         // RELATÓRIO "graficos/urbana"
-        $grafico = 'graficos/urbana';
+        $grafico = 'graficos/urbana/'.$d_geral->codigo;
         $md5 = md5($grafico.$md5);
         $query = "
                     select
-                        (select count(*) from se where percentual > 0 and percentual < 100 and local = 'urbano') as iniciadas,
-                        (select count(*) from se where percentual = 0 and local = 'urbano') as pendentes,
-                        (select count(*) from se where percentual = 100 and local = 'urbano') as concluidas
+                        (select count(*) from se where municipio = '{$d_geral->codigo}' and percentual > 0 and percentual < 100 and local = 'urbano') as iniciadas,
+                        (select count(*) from se where municipio = '{$d_geral->codigo}' and percentual = 0 and local = 'urbano') as pendentes,
+                        (select count(*) from se where municipio = '{$d_geral->codigo}' and percentual = 100 and local = 'urbano') as concluidas
         ";
         $result = mysqli_query($con, $query);
         $Rotulos = [];
@@ -84,13 +87,13 @@
 
 
         // RELATÓRIO "graficos/zona_geral"
-        $grafico = 'graficos/zona_geral';
+        $grafico = 'graficos/zona_geral/'.$d_geral->codigo;
         $md5 = md5($grafico.$md5);
         $query = "
             select
                 *,
                 count(*) as quantidade
-            from se group by local order by quantidade desc
+            from se where municipio = '{$d_geral->codigo}' group by local order by quantidade desc
         ";
         $result = mysqli_query($con, $query);
         $Rotulos = [];
@@ -110,12 +113,12 @@
 
 
         // RELATÓRIO "mapas/geral"
-        $grafico = 'mapas/geral';
+        $grafico = 'mapas/geral/'.$d_geral->codigo;
         $md5 = md5($grafico.$md5);
         $query = "select
                         a.*,
-                        (select count(*) from se where municipio = a.codigo) as qt
-                    from municipios a where a.coordenadas != '' order by a.codigo desc
+                        (select count(*) from se where bairro_comunidade = a.codigo) as qt
+                    from bairros_comunidades a where a.coordenadas != '' order by a.codigo desc
                 ";
         $result = mysqli_query($con, $query);
         $Rotulos = [];
@@ -139,14 +142,16 @@
         );
         $Values[] = "('{$grafico}','{$esquema}')";
 
+
+
         // RELATÓRIO "tabelas/resumo"
-        $grafico = 'tabelas/resumo';
+        $grafico = 'tabelas/resumo/'.$d_geral->codigo;
         $md5 = md5($grafico.$md5);
         $query = "select
-            (select count(*) from se) as total,
-            (select count(*) from se where percentual > 0 and percentual < 100) as iniciadas,
-            (select count(*) from se where percentual = 0) as pendentes,
-            (select count(*) from se where percentual = 100) as concluidas
+            (select count(*) from se where municipio = '{$d_geral->codigo}') as total,
+            (select count(*) from se where municipio = '{$d_geral->codigo}' and percentual > 0 and percentual < 100) as iniciadas,
+            (select count(*) from se where municipio = '{$d_geral->codigo}' and percentual = 0) as pendentes,
+            (select count(*) from se where municipio = '{$d_geral->codigo}' and percentual = 100) as concluidas
         ";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
