@@ -215,4 +215,5 @@
 
 
 
-    echo $query = "INSERT INTO dashboard (grafico, esquema) VALUES ".implode(', ',$Values);
+    echo $query = "REPLACE INTO dashboard (grafico, esquema) VALUES ".implode(', ',$Values);
+    mysqli_query($con, $query);
