@@ -25,17 +25,12 @@
     }
 </style>
 <div class="row" style="margin:0; padding:0;">
-    <!-- <div class="col-md-3">
-        <div class="painel" style="background-color:blue;">
-            <h5>Total de Beneficiários</h5>
-            <h3><?=$d->total?></h3>
-        </div>
-    </div> -->
+
     <?php
     for($i=0;$i<count($Rotulos);$i++){
     ?>
     <div class="col-md-3">
-        <div class="painel" style="background-color:orange;">
+        <div class="painel" style="background-color:blue;">
             <h5><?=$Rotulos[$i]?></h5>
             <h3><?=$Quantidade[$i]?></h3>
         </div>
@@ -44,18 +39,4 @@
     }
     ?>
 
-
-    <!-- <div class="col-md-3">
-        <div class="painel" style="background-color:grey;">
-            <h5>Pesquisas Pendentes</h5>
-            <h3><?=$d->pendentes?></h3>
-        </div>
-    </div>
-
-    <div class="col-md-3">
-        <div class="painel" style="background-color:green;">
-            <h5>Pesquisas Concluídas</h5>
-            <h3><?=$d->concluidas?></h3>
-        </div>
-    </div> -->
 </div>
