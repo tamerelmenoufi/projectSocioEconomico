@@ -10,19 +10,15 @@
 
 <?php
 
-    $query = "
-        select
-              *,
-              count(*) as quantidade
-        from se group by local order by quantidade desc
-    ";
+    $query = "SELECT * FROM dashboard where grafico = 'graficos/zona_geral'";
     $result = mysqli_query($con, $query);
     $Rotulos = [];
     $Quantidade = [];
-    while($d = mysqli_fetch_object($result)){
-      $Rotulos[] = $d->local;
-      $Quantidade[] = $d->quantidade;
-    }
+    $d = mysqli_fetch_object($result);
+    $esquema = json_decode($d->esquema);
+    // print_r($esquema);
+    $Rotulos = $esquema->Rotulos;
+    $Quantidade = $esquema->Quantidade;
     $R = (($Rotulos)?"'".implode("','",$Rotulos)."'":0);
     $Q = (($Quantidade)?implode(",",$Quantidade):0);
 

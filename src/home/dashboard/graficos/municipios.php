@@ -10,26 +10,17 @@
 
 <?php
 
-    $query = "
-        SELECT
-            a.*,
-            count(*) as quantidade,
-            b.municipio as municipio
-        FROM se a
-        left join municipios b on a.municipio = b.codigo
-        where a.municipio != 66
-        group by a.municipio
-        order by quantidade desc
-    ";
-    $result = mysqli_query($con, $query);
-    $Rotulos = [];
-    $Quantidade = [];
-    while($d = mysqli_fetch_object($result)){
-      $Rotulos[] = ($d->municipio);
-      $Quantidade[] = $d->quantidade;
-    }
-    $R = (($Rotulos)?"'".implode("','",$Rotulos)."'":0);
-    $Q = (($Quantidade)?implode(",",$Quantidade):0);
+$query = "SELECT * FROM dashboard where grafico = 'graficos/municipios'";
+$result = mysqli_query($con, $query);
+$Rotulos = [];
+$Quantidade = [];
+$d = mysqli_fetch_object($result);
+$esquema = json_decode($d->esquema);
+// print_r($esquema);
+$Rotulos = $esquema->Rotulos;
+$Quantidade = $esquema->Quantidade;
+$R = (($Rotulos)?"'".implode("','",$Rotulos)."'":0);
+$Q = (($Quantidade)?implode(",",$Quantidade):0);
 
 ?>
 

@@ -10,20 +10,15 @@
 
 <?php
 
-    $query = "
-                select
-                    (select count(*) from se where percentual > 0 and percentual < 100) as iniciadas,
-                    (select count(*) from se where percentual = 0 ) as pendentes,
-                    (select count(*) from se where percentual = 100) as concluidas
-                from se where local = 'rural' group by local
-    ";
+    $query = "SELECT * FROM dashboard where grafico = 'graficos/rural'";
     $result = mysqli_query($con, $query);
     $Rotulos = [];
     $Quantidade = [];
-    while($d = mysqli_fetch_object($result)){
-      $Rotulos = ['Pendentes','Iniciadas','Concluídas'];
-      $Quantidade = [$d->pendentes, $d->iniciadas,$d->concluidas];
-    }
+    $d = mysqli_fetch_object($result);
+    $esquema = json_decode($d->esquema);
+    // print_r($esquema);
+    $Rotulos = $esquema->Rotulos;
+    $Quantidade = $esquema->Quantidade;
     $R = (($Rotulos)?"'".implode("','",$Rotulos)."'":0);
     $Q = (($Quantidade)?implode(",",$Quantidade):0);
 
