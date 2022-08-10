@@ -39,7 +39,6 @@
     }
 
 
-    include("../../../../lib/footer.php");
 
     if(!$dados) exit();
 
