@@ -22,7 +22,6 @@
 
     coordenadas<?=$md5?> = '<?="{$coordenadas}"?>';
     endereco<?=$md5?> = "<?=$endereco?>";
-    geocoder<?=$md5?> = new google.maps.Geocoder();
     map<?=$md5?> = new google.maps.Map(document.getElementById("map<?=$md5?>"), {
         zoomControl: true,
         mapTypeControl: true, //

@@ -1,7 +1,7 @@
 <script>
 
     address =  `<?=$_POST['local']?>, Amazonas, Brasil`
-
+    <?=$_POST['md5'].$_POST['cod']?> = new google.maps.Geocoder();
     geocoder<?=$_POST['md5'].$_POST['cod']?>.geocode({ 'address':address, 'region': 'BR' }, (results, status) => {
         console.log(address)
         console.log(status)
