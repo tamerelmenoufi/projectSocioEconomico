@@ -36,6 +36,6 @@
     //         // console.log('Não encontrado:', local)
     //         // console.log('Quantidade:', qt)
     //     }
-    // });
+    });
 
 </script>
