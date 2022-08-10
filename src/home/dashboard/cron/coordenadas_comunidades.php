@@ -100,7 +100,7 @@ $(function(){
 
         for(i=0;i<enderecos.length;i++){
             console.log(enderecos[i], codigos[i])
-            sleep(5000);
+            // sleep(5000);
             icones(enderecos[i], codigos[i])
         }
 })
