@@ -46,6 +46,13 @@
 
 $(function(){
 
+        function sleep(milliSeconds) {
+            var startTime = new Date().getTime();
+            while (new Date().getTime() < startTime + milliSeconds);
+        }
+
+
+
         function icones(local, codigo){
                 address =  `${local}, Amazonas, Brasil`
                 geocoder<?=$md5?> = new google.maps.Geocoder();
@@ -93,6 +100,7 @@ $(function(){
 
         for(i=0;i<enderecos.length;i++){
             console.log(enderecos[i], codigos[i])
+            sleep(5000);
             icones(enderecos[i], codigos[i])
         }
 })
