@@ -170,6 +170,6 @@
         echo $query = "REPLACE INTO dashboard (grafico, esquema) VALUES ".implode(', ',$Values);
         mysqli_query($con, $query);
 
-        mysqli_query("update municipios set acao = '1' where codigo = '{$d_geral->codigo}'");
+        mysqli_query($con, "update municipios set acao = '1' where codigo = '{$d_geral->codigo}'");
 
     }
