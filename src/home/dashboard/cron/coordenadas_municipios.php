@@ -95,14 +95,16 @@ $(function(){
         }
 
 
-        codigos = ['<?=implode("','",$codigos)?>'];
-        enderecos = ['<?=implode("','",$dados)?>'];
+        setTimeout(() => {
+                codigos = ['<?=implode("','",$codigos)?>'];
+                enderecos = ['<?=implode("','",$dados)?>'];
 
-        for(i=0;i<enderecos.length;i++){
-            console.log(enderecos[i], codigos[i])
-            sleep(5000);
-            icones(enderecos[i], codigos[i])
-        }
+                for(i=0;i<enderecos.length;i++){
+                    console.log(enderecos[i], codigos[i])
+                    // sleep(5000);
+                    icones(enderecos[i], codigos[i])
+                }
+        }, 5000);
 })
 
     </script>
