@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
-    $query = "SELECT * FROM dashboard where grafico = 'tabelas/resumo'";
+    $query = "SELECT * FROM dashboard where grafico = 'tabelas/resumo/{$_SESSION['filtro_relatorio_municipio']}'";
     $result = mysqli_query($con, $query);
     $Rotulos = [];
     $Quantidade = [];
