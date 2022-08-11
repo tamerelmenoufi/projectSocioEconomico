@@ -10,6 +10,13 @@
     $Rotulos = $esquema->Rotulos;
     $Quantidade = $esquema->Quantidade;
 
+    // iniciados pendentes concluidos nao_encontrados
+    $opc = [
+        'Iniciadas' => 'iniciados',
+        'Pendentes' => 'pendentes',
+        'Concluídas' => 'concluidos',
+        'Não Encontrado' => 'nao_encontrados',
+    ];
 ?>
 <style>
     .painel{
@@ -30,7 +37,7 @@
     for($i=0;$i<count($Rotulos);$i++){
     ?>
     <div class="col-md-2">
-        <div class="painel" style="background-color:blue;">
+        <div opcPop="<?=$opc[$Rotulos[$i]]?>" class="painel" style="background-color:blue;">
             <h5><?=$Rotulos[$i]?></h5>
             <h3><?=$Quantidade[$i]?></h3>
         </div>
@@ -40,3 +47,16 @@
     ?>
 <div class="col-md-1"></div>
 </div>
+<script>
+    $(function(){
+        $("div[opcPop]").click(function(){
+            opc = $(this).attr("opcPop");
+            console.log(opc)
+            $.dialog({
+                content:"url:src/home/dashboard/tabelas/relatorios/lista_cadastros.php?opc="+opc,
+                title:false,
+                columnClass:'col-md-8'
+            });
+        });
+    })
+</script>
