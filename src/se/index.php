@@ -289,8 +289,8 @@
 
         });
 
-        $("button[SeEf]").click(function(){
-        // $(document).on('click',"button[SeEf]",function(){
+        // $("button[SeEf]").click(function(){
+        $(document).off('click').on('click', 'button[SeEf]', function(){
 
             cod = $(this).attr("SeEf");
 
@@ -308,8 +308,8 @@
 
         });
 
-        $("button[BuscaFiltro]").click(function(){
-
+        // $("button[BuscaFiltro]").click(function(){
+        $(document).off('click').on('click', 'button[BuscaFiltro]', function(){
             Carregando();
             $.ajax({
                 url:"src/se/filtro.php",

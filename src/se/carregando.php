@@ -42,7 +42,7 @@
                             href="#offcanvasDireita"
                             role="button"
                             aria-controls="offcanvasDireita"
-                            pesquisaSe<?=$md5?>="<?=$d->codigo?>"
+                            pesquisaSe="<?=$d->codigo?>"
                         >
                             <i class="fa-solid fa-pen-to-square"></i>
                         </button>
@@ -53,7 +53,7 @@
                             href="#offcanvasDireita"
                             role="button"
                             aria-controls="offcanvasDireita"
-                            SeEf<?=$md5?>="<?=$d->codigo?>"
+                            SeEf="<?=$d->codigo?>"
                         >
                             <i class="fa-solid fa-users"></i>
                         </button>
@@ -80,38 +80,38 @@
 
 $(function(){
 
-    $("button[SeEf<?=$md5?>]").click(function(){
-        // $(document).on('click',"button[SeEf]",function(){
+//     $("button[SeEf<?=$md5?>]").click(function(){
+//         // $(document).on('click',"button[SeEf]",function(){
 
-            cod = $(this).attr("SeEf<?=$md5?>");
+//             cod = $(this).attr("SeEf<?=$md5?>");
 
-            Carregando();
-            $.ajax({
-                url:"src/se/ef.php",
-                type:"POST",
-                data:{
-                    cod,
-                },
-                success:function(dados){
-                    $(".LateralDireita").html(dados);
-                }
-            })
+//             Carregando();
+//             $.ajax({
+//                 url:"src/se/ef.php",
+//                 type:"POST",
+//                 data:{
+//                     cod,
+//                 },
+//                 success:function(dados){
+//                     $(".LateralDireita").html(dados);
+//                 }
+//             })
 
-        });
+//         });
 
-        $("button[BuscaFiltro<?=$md5?>]").click(function(){
+//         $("button[BuscaFiltro<?=$md5?>]").click(function(){
 
-            Carregando();
-            $.ajax({
-                url:"src/se/filtro.php",
-                type:"POST",
-                success:function(dados){
-                    $(".LateralDireita").html(dados);
-                }
-            })
+//             Carregando();
+//             $.ajax({
+//                 url:"src/se/filtro.php",
+//                 type:"POST",
+//                 success:function(dados){
+//                     $(".LateralDireita").html(dados);
+//                 }
+//             })
 
-        });
+//         });
 
-})
+// })
 
 </script>
