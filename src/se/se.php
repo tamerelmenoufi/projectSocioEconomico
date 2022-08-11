@@ -108,7 +108,7 @@
             </div>
 
 
-            <div beneficiario_encontrado_campos style="display:<?=(($d->beneficiario_encontrado == 'Sim')?'block':'block')?>">
+            <div class="oculto" beneficiario_encontrado_campos >
                 <div class="col">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>">
@@ -795,7 +795,6 @@
 
                 $(".oculto").remove();
 
-
                 codigo = $('#codigo').val();
                 campos = $(this).serializeArray();
 
@@ -823,9 +822,6 @@
                         coordenadas = `${latitude},${longitude}`;
                         campos.push({name: 'coordenadas', value: coordenadas})
                         console.log(campos)
-
-
-
 
                         $.ajax({
                             url:"src/se/se.php",
