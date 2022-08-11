@@ -91,7 +91,7 @@
 
 
             <div class="form-floating mb-3">
-                <?=montaCheckbox([
+                <?=montaRadio([
                     'rotulo' => 'Beneficiário encontrado?',
                     'campo' => 'beneficiario_encontrado',
                     'vetor' => [
