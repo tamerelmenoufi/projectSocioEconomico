@@ -128,15 +128,15 @@ while($d = mysqli_fetch_object($result)){
             $.ajax({
                 url:"src/se/ef_form.php",
                 success:function(dados){
-                    $("#EstruturaFamiliar").html(dados);
-                },
-                error:function(erro){
                     $("button[EstruturaFamiliarList]").removeClass("active");
                     $("button[EstruturaFamiliarList]").attr("aria-selected","false");
 
                     $("button[EstruturaFamiliarForm]").addClass("active");
                     $("button[EstruturaFamiliarForm]").attr("aria-selected","true");
 
+                    $("#EstruturaFamiliar").html(dados);
+                },
+                error:function(erro){
                     Carregando('none');
                 }
             });
