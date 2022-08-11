@@ -8,8 +8,6 @@
         $data = $_POST;
         $attr = [];
 
-        $x = print_r($data, true);
-
         unset($data['codigo']);
         unset($data['acao']);
         unset($data['data_nascimento']);
@@ -56,7 +54,7 @@
             'status' => true,
             'codigo' => $cod,
             'mensagem' => "Pesquisa registrada com sucesso!",
-            'query' => $x,
+            'query' => $query,
         ];
 
         echo json_encode($retorno);
@@ -782,7 +780,7 @@
                         $(`#bairro_comunidade`).val();
 
                 address =  `${local}, Amazonas, Brasil`
-                console.log(address)
+                // console.log(address)
                 geocoder = new google.maps.Geocoder();
                 geocoder.geocode({ 'address':address, 'region': 'BR' }, (results, status) => {
 
@@ -791,7 +789,7 @@
                         var longitude = results[0].geometry.location.lng();
                         coordenadas = `${latitude},${longitude}`;
 
-                        console.log(coordenadas)
+                        // console.log(coordenadas)
                     }
                 });
                 ////COORDENADAS
@@ -804,7 +802,7 @@
                 // sleep(1000);
 
                 campos.push({name: 'coordenadas', value: coordenadas})
-                console.log(campos)
+                // console.log(campos)
 
 
                 $.ajax({
@@ -814,7 +812,7 @@
                     data: campos,
                     success:function(dados){
                         $.alert('Dados atualizados com sucesso!');
-                        console.log(dados.query)
+                        // console.log(dados.query)
                         Carregando('none');
                     },
                     error:function(erro){
