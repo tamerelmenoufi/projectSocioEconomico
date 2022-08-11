@@ -799,7 +799,7 @@
                 }
 
                 sleep(3000);
-                console.log('VAI!!!')
+                console.log(campos)
 
 
                 $.ajax({
