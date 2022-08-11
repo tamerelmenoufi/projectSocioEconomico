@@ -8,6 +8,8 @@
         $data = $_POST;
         $attr = [];
 
+        $x = print_r($data, true);
+
         unset($data['codigo']);
         unset($data['acao']);
         unset($data['data_nascimento']);
@@ -54,7 +56,7 @@
             'status' => true,
             'codigo' => $cod,
             'mensagem' => "Pesquisa registrada com sucesso!",
-            'query' => $query,
+            'query' => $x,
         ];
 
         echo json_encode($retorno);
