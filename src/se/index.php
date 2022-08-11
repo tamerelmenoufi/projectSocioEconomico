@@ -271,8 +271,8 @@
         });
 
 
-        // $("button[pesquisaSe]").click(function(){
-        $(document).on('click',"button[pesquisaSe]",function(){
+        $("button[pesquisaSe]").click(function(){
+        // $(document).on('click',"button[pesquisaSe]",function(){
 
             cod = $(this).attr("pesquisaSe");
             Carregando();
@@ -289,8 +289,8 @@
 
         });
 
-        // $("button[SeEf]").click(function(){
-        $(document).on('click',"button[SeEf]",function(){
+        $("button[SeEf]").click(function(){
+        // $(document).on('click',"button[SeEf]",function(){
 
 
             cod = $(this).attr("SeEf");
