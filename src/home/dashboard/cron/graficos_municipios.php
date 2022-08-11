@@ -29,7 +29,8 @@
         }
         $esquema = json_encode([
             'Rotulos' => $Rotulos,
-            'Quantidade' => $Quantidade]
+            'Quantidade' => $Quantidade],
+            JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
         );
         $Values[] = "('{$grafico}','{$esquema}')";
 
@@ -54,7 +55,9 @@
         }
         $esquema = json_encode([
             'Rotulos' => $Rotulos,
-            'Quantidade' => $Quantidade]
+            'Quantidade' => $Quantidade],
+            JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+
         );
         $Values[] = "('{$grafico}','{$esquema}')";
 
@@ -80,7 +83,8 @@
         }
         $esquema = json_encode([
             'Rotulos' => $Rotulos,
-            'Quantidade' => $Quantidade]
+            'Quantidade' => $Quantidade],
+            JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
         );
         $Values[] = "('{$grafico}','{$esquema}')";
 
@@ -105,7 +109,8 @@
         }
         $esquema = json_encode([
             'Rotulos' => $Rotulos,
-            'Quantidade' => $Quantidade]
+            'Quantidade' => $Quantidade],
+            JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
         );
         $Values[] = "('{$grafico}','{$esquema}')";
 
@@ -142,7 +147,8 @@
             'Quantidade' => $Quantidade,
             'Lat' => $Lat,
             'Lng' => $Lng,
-            ]
+            ],
+            JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
         );
         $Values[] = "('{$grafico}','{$esquema}')";
 
@@ -166,7 +172,9 @@
         $esquema = json_encode([
             'Rotulos' => $Rotulos,
             'Quantidade' => $Quantidade
-        ]);
+            ],
+            JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+        );
         $Values[] = "('{$grafico}','{$esquema}')";
 
 
