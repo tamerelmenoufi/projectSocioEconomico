@@ -13,7 +13,7 @@
 <div class="row">
     <div class="col">
         <div style="display:flex; justify-content:end">
-            <button class="btn btn-primary btn-sm">Novo</button>
+            <button NovoCadastro class="btn btn-primary btn-sm">Novo</button>
         </div>
     </div>
 </div>
@@ -120,11 +120,21 @@ while($d = mysqli_fetch_object($result)){
                     }
                 }
             })
-
-
-
         })
 
+
+        $("button[NovoCadastro]").click(function(){
+            Carregando();
+            $.ajax({
+                url:"src/se/ef_form.php",
+                success:function(dados){
+                    $("#EstruturaFamiliar").html(dados);
+                },
+                error:function(erro){
+                    Carregando('none');
+                }
+            });
+        });
 
     })
 </script>
