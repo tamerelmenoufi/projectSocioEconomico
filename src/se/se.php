@@ -772,7 +772,7 @@
 
 
                 codigo = $('#codigo').val();
-                campos = obj.serializeArray();
+                campos = $(this).serializeArray();
 
                 if (codigo) {
                     campos.push({name: 'codigo', value: codigo})
@@ -782,7 +782,6 @@
 
                 Carregando();
 
-                obj = $(this);
                 ////COORDENADAS
                 local = $(`#endereco`).val() + ',' +
                         $(`#bairro_comunidade`).children(`option[value="${$(`#bairro_comunidade`).val()}"]`).text() + ', ' +
