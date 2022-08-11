@@ -185,7 +185,7 @@
 
 <script>
     $(function(){
-        Carregando('none');
+        // Carregando('none');
 
         $.ajax({
             url:"src/home/dashboard/filtro_especifico.php",
