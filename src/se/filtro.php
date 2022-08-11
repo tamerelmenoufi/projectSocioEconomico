@@ -226,7 +226,7 @@
             tipo = $("#tipo").val();
             bairro_comunidade = $("#bairro_comunidade").val();
 
-
+            Carregando();
             $.ajax({
                 url:"src/se/filtro.php",
                 type:"POST",
@@ -253,7 +253,7 @@
         });
 
         $("button[LimparFiltro]").click(function(){
-
+            Carregando();
             $.confirm({
                 content:"Deseja realmente limpar o filtro?",
                 title:false,
