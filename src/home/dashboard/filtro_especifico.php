@@ -13,7 +13,7 @@
             <div class="col">
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaCheckbox([
                         'rotulo' => 'Genero?',
                         'campo' => 'genero',
                         'vetor' => [
@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaCheckbox([
                         'rotulo' => 'Qual o seu Estado Civil?',
                         'campo' => 'estado_civil',
                         'vetor' => [
@@ -82,7 +82,7 @@
 
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaCheckbox([
                         'rotulo' => 'Você reside em Imóvel:',
                         'campo' => 'tipo_imovel',
                         'vetor' => [
@@ -118,7 +118,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaCheckbox([
                         'rotulo' => 'Quantos Cômodos possui sua residência?',
                         'campo' => 'quantidade_comodos',
                         'vetor' => [
@@ -135,7 +135,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaCheckbox([
                         'rotulo' => 'Qual o seu Grau de escolaridade?',
                         'campo' => 'grau_escolaridade',
                         'vetor' => [
@@ -152,7 +152,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaCheckbox([
                         'rotulo' => 'Você possui algum Curso Técnico/Profissionalizante?',
                         'campo' => 'curos_profissionais',
                         'vetor' => [
@@ -169,7 +169,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaCheckbox([
                         'rotulo' => 'Qual sua Renda Mensal?',
                         'campo' => 'renda_mensal',
                         'vetor' => [
@@ -187,7 +187,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaCheckbox([
                         'rotulo' => 'Você possui algum Benefício Social?',
                         'campo' => 'beneficio_social',
                         'vetor' => [
@@ -204,7 +204,7 @@
                 </div>
 
                 <!-- <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaCheckbox([
                         'rotulo' => 'Qual Serviço de Saúde você utiliza?',
                         'campo' => 'servico_saude',
                         'vetor' => [
@@ -220,7 +220,7 @@
 
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaCheckbox([
                         'rotulo' => 'Já tomou a vacina contra o Covid-19? Quantas doses já tomou?',
                         'campo' => 'vacina_covid',
                         'vetor' => [
@@ -265,7 +265,7 @@
 
 
                     <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaCheckbox([
                         'rotulo' => 'Como você avalia o Beneficio?',
                         'campo' => 'avaliacao_beneficios',
                         'vetor' => [
@@ -285,7 +285,7 @@
 
 
                 <div class="form-floating mb-3">
-                    <?=montaRadio([
+                    <?=montaCheckbox([
                         'rotulo' => 'O beneficio tem atendido suas Necessidades?',
                         'campo' => 'atende_necessidades',
                         'vetor' => [
@@ -411,16 +411,11 @@
                     ])?>
                 </div>
 
-                <div class="form-floating mb-3">
-                    <textarea name="opiniao_outros" id="opiniao_outros" class="form-control" placeholder="Outras Opiniões / Detalhes" ><?=$d->opiniao_outros?></textarea>
-                    <label for="opiniao_outros">Desreva suas Opiniões / Detalhes</label>
-                </div>
-
                 <div class="card border-warning">
                     <h5 class="card-header">Avaliação do Técnico</h5>
                     <div class="card-body">
                         <div class="form-floating mb-3">
-                            <?=montaRadio([
+                            <?=montaCheckbox([
                                 'rotulo' => 'Como fui Recebido?',
                                 'campo' => 'recepcao_entrevistado',
                                 'vetor' => [
