@@ -828,7 +828,7 @@
                     },
                     error:function(erro){
 
-                        // $.alert('Ocorreu um erro!' + erro.toString());
+                        $.alert('Ocorreu um erro!' + erro.toString());
                         //dados de teste
                     }
                 });
