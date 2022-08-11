@@ -54,6 +54,7 @@
     $(function(){
         $("div[opcPop]").click(function(){
             opc = $(this).attr("opcPop");
+            console.log(opc)
             $.dialog({
                 content:"url:src/home/dashboard/tabelas/relatorios/lista_cadastro.php?opc="+opc,
                 title:false,
