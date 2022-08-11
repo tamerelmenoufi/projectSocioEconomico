@@ -6,6 +6,8 @@
     $result = mysqli_query($con, $query);
     $d1 = mysqli_fetch_object($result);
 
+
+    print_r($_SESSION['filtro_especifico']);
 ?>
 
 <style>
