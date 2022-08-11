@@ -786,7 +786,7 @@
                         var latitude = results[0].geometry.location.lat();
                         var longitude = results[0].geometry.location.lng();
                         coordenadas = `${latitude},${longitude}`;
-
+                        campos.push({name: 'coordenadas', value: coordenadas})
                     }else{
                         Carregando('none');
                     }
@@ -810,7 +810,7 @@
 
                 // sleep(1000);
 
-                campos.push({name: 'coordenadas', value: coordenadas})
+
                 // console.log(campos)
 
 
