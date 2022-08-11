@@ -26,26 +26,28 @@
 
     if(!$where) exit();
 ?>
-<table class="table table-hover">
+<div class="col">
+    <table class="table table-hover">
 
-<thead>
-    <tr>
-        <th>Nome</th>
-        <th>CPF</th>
-    </tr>
-</thead>
-<tbody>
-<?php
-    $query = "select * from se where 1 {$where} limit 100";
-    $result = mysqli_query($con, $query);
-    while($d = mysqli_fetch_object($result)){
-?>
-    <tr>
-        <td><?=$d->nome?></td>
-        <td><?=$d->cpf?></td>
-    </tr>
-<?php
-    }
-?>
-</tbody>
-</table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        echo $query = "select * from se where 1 {$where} limit 100";
+        $result = mysqli_query($con, $query);
+        while($d = mysqli_fetch_object($result)){
+    ?>
+        <tr>
+            <td><?=$d->nome?></td>
+            <td><?=$d->cpf?></td>
+        </tr>
+    <?php
+        }
+    ?>
+    </tbody>
+    </table>
+</div>
