@@ -775,9 +775,7 @@
                 ////COORDENADAS
                 local = $(`#endereco`).val() + ',' +
                         $(`#bairro_comunidade`).children(`option[value="${$(`#bairro_comunidade`).val()}"]`).text() + ', ' +
-                        $(`#municipio`).children(`option[value="${$(`#municipio`).val()}"]`).html() + ', ' +
-
-                        ;
+                        $(`#municipio`).children(`option[value="${$(`#municipio`).val()}"]`).html();
 
                 address =  `${local}, Amazonas, Brasil`
                 console.log(address)
