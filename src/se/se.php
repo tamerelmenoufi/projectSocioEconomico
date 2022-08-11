@@ -17,7 +17,7 @@
         foreach ($data as $name => $value) {
 
             if(is_array($value)) {
-                $value = json_encode($value);
+                $value = json_encode($value,JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
             }
             $qt = (($value)?($qt+1):$qt);
             $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
