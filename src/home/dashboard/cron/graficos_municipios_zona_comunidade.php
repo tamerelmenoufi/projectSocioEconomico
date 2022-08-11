@@ -11,7 +11,7 @@
         $Values = [];
 
         // RELATÓRIO "graficos/pesquisa"
-        $grafico = 'graficos/pesquisa/'.$d_geral->municipio.'/'.$d_geral->tipo.'/'.$d_geral->bairro_comunidade;
+        $grafico = 'graficos/pesquisa/'.$d_geral->municipio.'/'.$d_geral->local.'/'.$d_geral->bairro_comunidade;
         $md5 = md5($grafico.$md5);
         $query = "
                     select
@@ -36,7 +36,7 @@
 
 
         // RELATÓRIO "graficos/rural"
-        $grafico = 'graficos/rural/'.$d_geral->municipio.'/'.$d_geral->tipo.'/'.$d_geral->bairro_comunidade;
+        $grafico = 'graficos/rural/'.$d_geral->municipio.'/'.$d_geral->local.'/'.$d_geral->bairro_comunidade;
         $md5 = md5($grafico.$md5);
         $query = "
                     select
@@ -62,7 +62,7 @@
 
 
         // RELATÓRIO "graficos/urbana"
-        $grafico = 'graficos/urbana/'.$d_geral->municipio.'/'.$d_geral->tipo.'/'.$d_geral->bairro_comunidade;
+        $grafico = 'graficos/urbana/'.$d_geral->municipio.'/'.$d_geral->local.'/'.$d_geral->bairro_comunidade;
         $md5 = md5($grafico.$md5);
         $query = "
                     select
@@ -87,7 +87,7 @@
 
 
         // RELATÓRIO "graficos/zona_geral"
-        $grafico = 'graficos/zona_geral/'.$d_geral->municipio.'/'.$d_geral->tipo.'/'.$d_geral->bairro_comunidade;
+        $grafico = 'graficos/zona_geral/'.$d_geral->municipio.'/'.$d_geral->local.'/'.$d_geral->bairro_comunidade;
         $md5 = md5($grafico.$md5);
         $query = "
             select
@@ -113,7 +113,7 @@
 
 
         // RELATÓRIO "mapas/geral"
-        $grafico = 'mapas/geral/'.$d_geral->municipio.'/'.$d_geral->tipo.'/'.$d_geral->bairro_comunidade;
+        $grafico = 'mapas/geral/'.$d_geral->municipio.'/'.$d_geral->local.'/'.$d_geral->bairro_comunidade;
         $md5 = md5($grafico.$md5);
 
 
@@ -149,7 +149,7 @@
 
 
         // RELATÓRIO "tabelas/resumo"
-        $grafico = 'tabelas/resumo/'.$d_geral->municipio.'/'.$d_geral->tipo.'/'.$d_geral->bairro_comunidade;
+        $grafico = 'tabelas/resumo/'.$d_geral->municipio.'/'.$d_geral->local.'/'.$d_geral->bairro_comunidade;
         $md5 = md5($grafico.$md5);
         $query = "select
             (select count(*) from se where municipio = '{$d_geral->municipio}' and local = '{$d_geral->local}' and bairro_comunidade = '{$d_geral->bairro_comunidade}') as total,
