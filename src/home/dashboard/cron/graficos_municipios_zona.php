@@ -15,9 +15,9 @@
         $md5 = md5($grafico.$md5);
         $query = "
                     select
-                        (select count(*) from se where municipio = '{$d_geral->codigo}' and tipo = '{$_SESSION['filtro_relatorio_tipo']}' and percentual > 0 and percentual < 100) as iniciadas,
-                        (select count(*) from se where municipio = '{$d_geral->codigo}' and tipo = '{$_SESSION['filtro_relatorio_tipo']}' and percentual = 0 ) as pendentes,
-                        (select count(*) from se where municipio = '{$d_geral->codigo}' and tipo = '{$_SESSION['filtro_relatorio_tipo']}' and percentual = 100) as concluidas
+                        (select count(*) from se where municipio = '{$d_geral->codigo}' and local = '{$_SESSION['filtro_relatorio_tipo']}' and percentual > 0 and percentual < 100) as iniciadas,
+                        (select count(*) from se where municipio = '{$d_geral->codigo}' and local = '{$_SESSION['filtro_relatorio_tipo']}' and percentual = 0 ) as pendentes,
+                        (select count(*) from se where municipio = '{$d_geral->codigo}' and local = '{$_SESSION['filtro_relatorio_tipo']}' and percentual = 100) as concluidas
         ";
         $result = mysqli_query($con, $query);
         $Rotulos = [];
@@ -122,7 +122,7 @@
                         concat(b.descricao,' - ',b.tipo) as descricao,
                         b.coordenadas from se a
                     left join bairros_comunidades b on a.bairro_comunidade = b.codigo
-                    where b.coordenadas != '' and a.municipio='{$d_geral->codigo}' and a.tipo = '{$_SESSION['filtro_relatorio_tipo']}'
+                    where b.coordenadas != '' and a.municipio='{$d_geral->codigo}' and a.local = '{$_SESSION['filtro_relatorio_tipo']}'
                     group by a.municipio, a.bairro_comunidade";
         $result = mysqli_query($con, $query);
         $Rotulos = [];
@@ -152,10 +152,10 @@
         $grafico = 'tabelas/resumo/'.$d_geral->codigo.'/'.$_SESSION['filtro_relatorio_tipo'];
         $md5 = md5($grafico.$md5);
         $query = "select
-            (select count(*) from se where municipio = '{$d_geral->codigo}' and tipo = '{$_SESSION['filtro_relatorio_tipo']}') as total,
-            (select count(*) from se where municipio = '{$d_geral->codigo}' and percentual > 0 and percentual < 100 and tipo = '{$_SESSION['filtro_relatorio_tipo']}') as iniciadas,
-            (select count(*) from se where municipio = '{$d_geral->codigo}' and percentual = 0 and tipo = '{$_SESSION['filtro_relatorio_tipo']}') as pendentes,
-            (select count(*) from se where municipio = '{$d_geral->codigo}' and percentual = 100 and tipo = '{$_SESSION['filtro_relatorio_tipo']}') as concluidas
+            (select count(*) from se where municipio = '{$d_geral->codigo}' and local = '{$_SESSION['filtro_relatorio_tipo']}') as total,
+            (select count(*) from se where municipio = '{$d_geral->codigo}' and percentual > 0 and percentual < 100 and local = '{$_SESSION['filtro_relatorio_tipo']}') as iniciadas,
+            (select count(*) from se where municipio = '{$d_geral->codigo}' and percentual = 0 and local = '{$_SESSION['filtro_relatorio_tipo']}') as pendentes,
+            (select count(*) from se where municipio = '{$d_geral->codigo}' and percentual = 100 and local = '{$_SESSION['filtro_relatorio_tipo']}') as concluidas
         ";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
