@@ -788,7 +788,7 @@
                         var longitude = results[0].geometry.location.lng();
                         coordenadas = `${latitude},${longitude}`;
                         campos.push({name: 'coordenadas', value: coordenadas})
-                        colsole.log(campos)
+                        console.log(campos)
                     }else{
                         Carregando('none');
                     }
