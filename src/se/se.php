@@ -769,6 +769,7 @@
                 $(".oculto").remove();
                 Carregando();
 
+                obj = $(this);
                 ////COORDENADAS
                 local = $(`#municipio`).children(`option[value="${$(`#municipio`).val()}"]`).text() + ', ' +
                         $(`#bairro_comunidade`).children(`option[value="${$(`#bairro_comunidade`).val()}"]`).text() + ', ' +
@@ -786,7 +787,7 @@
 
 
                         var codigo = $('#codigo').val();
-                        var campos = $(this).serializeArray();
+                        var campos = obj.serializeArray();
 
                         if (codigo) {
                             campos.push({name: 'codigo', value: codigo})
