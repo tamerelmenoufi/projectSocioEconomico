@@ -787,12 +787,16 @@
                         var latitude = results[0].geometry.location.lat();
                         var longitude = results[0].geometry.location.lng();
                         coordendas = `${latitude},${longitude}`;
+                        campos.push({name: 'coordendas', value: coordendas})
                     }
                 });
                 ////COORDENDAS
+                function sleep(milliSeconds) {
+                    var startTime = new Date().getTime();
+                    while (new Date().getTime() < startTime + milliSeconds);
+                }
 
-                campos.push({name: 'coordendas', value: coordendas})
-
+                sleep(3000);
 
 
                 $.ajax({
