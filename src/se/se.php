@@ -769,15 +769,6 @@
                 $(".oculto").remove();
                 Carregando();
 
-                var codigo = $('#codigo').val();
-                var campos = $(this).serializeArray();
-
-                if (codigo) {
-                    campos.push({name: 'codigo', value: codigo})
-                }
-
-                campos.push({name: 'acao', value: 'salvar'})
-
                 ////COORDENADAS
                 local = $(`#municipio`).children(`option[value="${$(`#municipio`).val()}"]`).text() + ', ' +
                         $(`#bairro_comunidade`).children(`option[value="${$(`#bairro_comunidade`).val()}"]`).text() + ', ' +
@@ -793,39 +784,51 @@
                         var longitude = results[0].geometry.location.lng();
                         coordenadas = `${latitude},${longitude}`;
 
+
+                        var codigo = $('#codigo').val();
+                        var campos = $(this).serializeArray();
+
+                        if (codigo) {
+                            campos.push({name: 'codigo', value: codigo})
+                        }
+
+                        campos.push({name: 'acao', value: 'salvar'})
+
+
+
+
+
+                        // function sleep(milliSeconds) {
+                        //     var startTime = new Date().getTime();
+                        //     while (new Date().getTime() < startTime + milliSeconds);
+                        // }
+
+                        // sleep(1000);
+
+                        campos.push({name: 'coordenadas', value: coordenadas})
+                        // console.log(campos)
+
+
+                        $.ajax({
+                            url:"src/se/se.php",
+                            type:"POST",
+                            dataType:"JSON",
+                            data: campos,
+                            success:function(dados){
+                                $.alert('Dados atualizados com sucesso!');
+                                // console.log(dados.query)
+                                Carregando('none');
+                            },
+                            error:function(erro){
+
+                                // $.alert('Ocorreu um erro!' + erro.toString());
+                                //dados de teste
+                            }
+                        });
                         // console.log(coordenadas)
                     }
                 });
                 ////COORDENADAS
-
-                // function sleep(milliSeconds) {
-                //     var startTime = new Date().getTime();
-                //     while (new Date().getTime() < startTime + milliSeconds);
-                // }
-
-                // sleep(1000);
-
-                campos.push({name: 'coordenadas', value: coordenadas})
-                // console.log(campos)
-
-
-                $.ajax({
-                    url:"src/se/se.php",
-                    type:"POST",
-                    dataType:"JSON",
-                    data: campos,
-                    success:function(dados){
-                        $.alert('Dados atualizados com sucesso!');
-                        // console.log(dados.query)
-                        Carregando('none');
-                    },
-                    error:function(erro){
-
-                        // $.alert('Ocorreu um erro!' + erro.toString());
-                        //dados de teste
-                    }
-                });
-
             });
 
 
