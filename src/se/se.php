@@ -51,8 +51,8 @@
             $cod = mysqli_insert_id($con);
         }
 
-        mysqli_query("update municipios set acao = '0' where codigo = '{$data['municipio']}'");
-        mysqli_query("update bairros_comunidades set acao = '0' where codigo = '{$data['bairro_comunidade']}'");
+        mysqli_query($con, "update municipios set acao = '0' where codigo = '{$data['municipio']}'");
+        mysqli_query($con, "update bairros_comunidades set acao = '0' where codigo = '{$data['bairro_comunidade']}'");
 
         $retorno = [
             'status' => true,
