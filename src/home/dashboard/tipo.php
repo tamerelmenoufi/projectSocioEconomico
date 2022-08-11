@@ -92,7 +92,7 @@
 
 
     <!-- Pesquisa de satisfação Gráficos -->
-    <div class="row" style="margin-top:20px; margin-bottom:20px;">
+    <!-- <div class="row" style="margin-top:20px; margin-bottom:20px;">
       <div class="col-md-12">
         <div class="card">
           <h5 class="card-header">Usuários por município</h5>
@@ -101,10 +101,10 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Pesquisa de satisfação Gráficos -->
-    <div class="row" style="margin-top:20px; margin-bottom:20px;">
+    <!-- <div class="row" style="margin-top:20px; margin-bottom:20px;">
       <div class="col-md-12">
         <div class="card">
           <h5 class="card-header">Usuários na capital Manaus</h5>
@@ -113,7 +113,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
 
