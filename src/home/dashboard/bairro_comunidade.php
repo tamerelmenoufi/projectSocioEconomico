@@ -19,7 +19,7 @@
   <div class="m-3">
     <div class="row" style="margin-top:20px; margin-bottom:20px;">
       <div class="col-md-10">
-        <h4>Relatórios e estatísticas <?=$d1->descricao?> / <?=$d1->município?></h4>
+        <h4>Relatórios e estatísticas <?=$d1->municipio?>/<?=$d1->descricao?></h4>
       </div>
       <div class="col-md-2">
         <button
