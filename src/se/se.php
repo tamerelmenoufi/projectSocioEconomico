@@ -28,6 +28,7 @@
             $attr[] = "data = NOW()";
             $attr[] = "monitor_social = '{$_SESSION['ProjectSeLogin']->codigo}'";
             $attr[] = "coordenador = '{$_SESSION['ProjectSeLogin']->coordenador}'";
+            $attr[] = "acao = '0'";
 
             if($pct == 100){
                 $attr[] = "pesquisa_realizada = 'Sim'";
@@ -49,6 +50,9 @@
             mysqli_query($con, $query);
             $cod = mysqli_insert_id($con);
         }
+
+        mysqli_query("update municipios set acao = '0' where codigo = '{$data['municipio']}'");
+        mysqli_query("update bairros_comunidades set acao = '0' where codigo = '{$data['bairro_comunidade']}'");
 
         $retorno = [
             'status' => true,
