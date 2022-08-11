@@ -228,7 +228,7 @@
             filtro(municipio, tipo);
         });
 
-        $("button[GerarFiltro]").click(function(e){
+        $('#form-<?=$md5?>').submit(function (e) {
 
 
             e.preventDefault();
