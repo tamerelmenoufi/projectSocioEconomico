@@ -31,6 +31,7 @@
         justify-content:center;
         align-items:center;
         color:#fff;
+        cursor: pointer;
     }
 </style>
 <div class="row" style="margin:0; padding:0;">
