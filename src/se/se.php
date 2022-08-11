@@ -770,6 +770,16 @@
 
                 $(".oculto").remove();
 
+
+                codigo = $('#codigo').val();
+                campos = obj.serializeArray();
+
+                if (codigo) {
+                    campos.push({name: 'codigo', value: codigo})
+                }
+
+                campos.push({name: 'acao', value: 'salvar'})
+
                 Carregando();
 
                 obj = $(this);
@@ -789,21 +799,12 @@
                         coordenadas = `${latitude},${longitude}`;
                         campos.push({name: 'coordenadas', value: coordenadas})
                         console.log(campos)
-                    }else{
-                        Carregando('none');
                     }
                 });
                 ////COORDENADAS
 
 
-                var codigo = $('#codigo').val();
-                var campos = obj.serializeArray();
 
-                if (codigo) {
-                    campos.push({name: 'codigo', value: codigo})
-                }
-
-                campos.push({name: 'acao', value: 'salvar'})
 
                 // function sleep(milliSeconds) {
                 //     var startTime = new Date().getTime();
