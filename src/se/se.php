@@ -781,7 +781,7 @@
                 console.log(address)
                 geocoder = new google.maps.Geocoder();
                 geocoder.geocode({ 'address':address, 'region': 'BR' }, (results, status) => {
-                    console.log(status)
+                    console.log(google.maps.GeocoderStatus.OK)
                     if (status == google.maps.GeocoderStatus.OK) {
                         var latitude = results[0].geometry.location.lat();
                         var longitude = results[0].geometry.location.lng();
