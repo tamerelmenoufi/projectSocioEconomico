@@ -228,7 +228,7 @@
             filtro(municipio, tipo);
         });
 
-        $("button[GerarFiltro]").click(function(){
+        $("button[GerarFiltro]").click(function(e){
 
 
             e.preventDefault();
