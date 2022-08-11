@@ -33,7 +33,7 @@
         }
         if($filtro_preparo2){
             $_SESSION['filtro_especifico'] = implode(" and ",$filtro_preparo2);
-            $_SESSION['filtro_especifico_descricao'] = "A busca específica determina a listagem dos cadastros que sejam iguais a : ".implode(", ",$filtro_preparo_descricao2);
+            $_SESSION['filtro_especifico_descricao'] = "A busca específica determina a listagem dos cadastros que Contem: ".implode(", ",$filtro_preparo_descricao2);
 
         }
 
