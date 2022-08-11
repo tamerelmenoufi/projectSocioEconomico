@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
     // exit();
 
-    $query = "select a.*, b.municipio from bairros_cimunidades a
+    echo $query = "select a.*, b.municipio from bairros_cimunidades a
                   left join municipios b on a.municipio = b.codigo
                   where b.codigo = '{$_SESSION['filtro_relatorio_bairro_comunidade']}'";
     $result = mysqli_query($con, $query);
