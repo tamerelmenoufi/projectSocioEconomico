@@ -776,7 +776,7 @@
                         $(`#bairro_comunidade`).val();
 
                 address =  `${local}, Amazonas, Brasil`
-                // console.log(address)
+                console.log(address)
                 geocoder = new google.maps.Geocoder();
                 geocoder.geocode({ 'address':address, 'region': 'BR' }, (results, status) => {
 
@@ -827,6 +827,8 @@
                             }
                         });
                         // console.log(coordenadas)
+                    }else{
+                        Carregando('none');
                     }
                 });
                 ////COORDENADAS
