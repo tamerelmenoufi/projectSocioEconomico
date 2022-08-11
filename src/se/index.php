@@ -289,11 +289,11 @@
 
         });
 
-        $("button[SeEf]").click(function(){
-        // $(document).on('click',"button[SeEf]",function(){
-
+        // $("button[SeEf]").click(function(){
+        $(document).on('click',"button[SeEf]",function(){
 
             cod = $(this).attr("SeEf");
+            colsole.log(cod)
             Carregando();
             $.ajax({
                 url:"src/se/ef.php",
