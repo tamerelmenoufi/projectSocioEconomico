@@ -763,7 +763,7 @@
                 e.preventDefault();
 
                 $(".oculto").remove();
-
+                Carregando();
 
                 var codigo = $('#codigo').val();
                 var campos = $(this).serializeArray();
@@ -774,7 +774,26 @@
 
                 campos.push({name: 'acao', value: 'salvar'})
 
-                Carregando();
+                ////COORDENDAS
+                local = $(`#municipio`).children(`option[value="${$(`#municipio`).val()}"]`).text() + ', ' +
+                        $(`#bairro_comunidade`).children(`option[value="${$(`#bairro_comunidade`).val()}"]`).text() + ', ' +
+                        $(`#bairro_comunidade`).val();
+
+                address =  `${local}, Amazonas, Brasil`
+                geocoder = new google.maps.Geocoder();
+                geocoder.geocode({ 'address':address, 'region': 'BR' }, (results, status) => {
+
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        var latitude = results[0].geometry.location.lat();
+                        var longitude = results[0].geometry.location.lng();
+                        coordendas = `${latitude},${longitude}`;
+                    }
+                });
+                ////COORDENDAS
+
+                campos.push({name: 'coordendas', value: coordendas})
+
+
 
                 $.ajax({
                     url:"src/se/se.php",
@@ -846,6 +865,23 @@
                 }
 
             })
+
+
+
+
+            function Coordendas(local){
+                address =  `${local}, Amazonas, Brasil`
+                geocoder = new google.maps.Geocoder();
+                geocoder.geocode({ 'address':address, 'region': 'BR' }, (results, status) => {
+
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        var latitude = results[0].geometry.location.lat();
+                        var longitude = results[0].geometry.location.lng();
+                    }
+                });
+            }
+
+
 
         })
     </script>
