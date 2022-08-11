@@ -37,7 +37,7 @@
     </thead>
     <tbody>
     <?php
-        echo $query = "select * from se where 1 {$where} limit 100";
+        $query = "select * from se where 1 {$where} limit 100";
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
     ?>
