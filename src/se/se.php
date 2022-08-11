@@ -798,6 +798,29 @@
                         coordenadas = `${latitude},${longitude}`;
                         campos.push({name: 'coordenadas', value: coordenadas})
                         console.log(campos)
+
+
+
+
+                        $.ajax({
+                            url:"src/se/se.php",
+                            type:"POST",
+                            dataType:"JSON",
+                            data: campos,
+                            success:function(dados){
+                                $.alert('Dados atualizados com sucesso!');
+                                // console.log(dados.query)
+                                Carregando('none');
+                            },
+                            error:function(erro){
+
+                                $.alert('Ocorreu um erro!' + erro.toString());
+                                //dados de teste
+                            }
+                        });
+
+
+
                     }
                 });
                 ////COORDENADAS
@@ -816,22 +839,7 @@
                 // console.log(campos)
 
 
-                $.ajax({
-                    url:"src/se/se.php",
-                    type:"POST",
-                    dataType:"JSON",
-                    data: campos,
-                    success:function(dados){
-                        $.alert('Dados atualizados com sucesso!');
-                        // console.log(dados.query)
-                        Carregando('none');
-                    },
-                    error:function(erro){
 
-                        $.alert('Ocorreu um erro!' + erro.toString());
-                        //dados de teste
-                    }
-                });
                 // console.log(coordenadas)
 
             });
