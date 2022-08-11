@@ -174,6 +174,6 @@
         echo $query = "REPLACE INTO dashboard (grafico, esquema) VALUES ".implode(', ',$Values);
         mysqli_query($con, $query);
 
-        mysqli_query($con, "update bairros_comunidades set acao = '1' where municipio = '{$d_geral->municipio}' and tipo = '{$d_geral->tipo}' and bairro_comunidade = '{$d_geral->bairro_comunidade}'");
+        mysqli_query($con, "update se set acao = '1' where municipio = '{$d_geral->municipio}' and local = '{$d_geral->local}' and bairro_comunidade = '{$d_geral->bairro_comunidade}'");
         // echo "<script>window.location.href='./graficos_municipios_zona.php'</script>";
     }
