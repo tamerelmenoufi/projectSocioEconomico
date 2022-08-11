@@ -4,7 +4,7 @@
 
     $query = "select a.*, b.municipio from bairros_comunidades a
                   left join municipios b on a.municipio = b.codigo
-                  where b.codigo = '{$_SESSION['filtro_relatorio_bairro_comunidade']}'";
+                  where a.codigo = '{$_SESSION['filtro_relatorio_bairro_comunidade']}'";
     $result = mysqli_query($con, $query);
     $d1 = mysqli_fetch_object($result);
 
