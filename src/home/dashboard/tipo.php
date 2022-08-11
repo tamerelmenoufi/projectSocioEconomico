@@ -1,6 +1,11 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
     // exit();
+
+    $query = "select * from municipios where codigo = '{$_SESSION['filtro_relatorio_municipio']}'";
+    $result = mysqli_query($con, $query);
+    $d1 = mysqli_fetch_object($result);
+
 ?>
 
 <style>
@@ -12,7 +17,7 @@
   <div class="m-3">
     <div class="row" style="margin-top:20px; margin-bottom:20px;">
       <div class="col-md-10">
-        <h4>Relatórios e estatísticas (Tipo)</h4>
+        <h4>Relatórios e estatísticas <?=$d1->municipio?> (<?=$_SESSION['filtro_relatorio_tipo']?>)</h4>
       </div>
       <div class="col-md-2">
         <button

@@ -1,6 +1,13 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
     // exit();
+
+    $query = "select a.*, b.municipio from bairros_cimunidades a
+                  left join municipios b on a.municipio = b.codigo
+                  where b.codigo = '{$_SESSION['filtro_relatorio_bairro_comunidade']}'";
+    $result = mysqli_query($con, $query);
+    $d1 = mysqli_fetch_object($result);
+
 ?>
 
 <style>
@@ -12,7 +19,7 @@
   <div class="m-3">
     <div class="row" style="margin-top:20px; margin-bottom:20px;">
       <div class="col-md-10">
-        <h4>Relatórios e estatísticas (Bairro / Comunidade)</h4>
+        <h4>Relatórios e estatísticas <?=$d1->descricao?> / <?=$d1->município?></h4>
       </div>
       <div class="col-md-2">
         <button
