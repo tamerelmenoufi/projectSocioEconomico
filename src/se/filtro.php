@@ -253,12 +253,13 @@
         });
 
         $("button[LimparFiltro]").click(function(){
-            Carregando();
+
             $.confirm({
                 content:"Deseja realmente limpar o filtro?",
                 title:false,
                 buttons:{
                     'SIM':function(){
+                        Carregando();
                         $.ajax({
                             url:"src/se/filtro.php",
                             type:"POST",
