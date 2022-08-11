@@ -162,13 +162,13 @@
             (select count(*) from se where municipio = '{$d_geral->municipio}' and percentual > 0 and percentual < 100 and local = '{$d_geral->tipo}') as iniciadas,
             (select count(*) from se where municipio = '{$d_geral->municipio}' and percentual = 0 and local = '{$d_geral->tipo}') as pendentes,
             (select count(*) from se where municipio = '{$d_geral->municipio}' and percentual = 100 and local = '{$d_geral->tipo}') as concluidas,
-            (select count(*) from se where municipio = '{$d_geral->municipio}' and beneficiario_encotrado = 'Não' and local = '{$d_geral->tipo}') as nao_encontrado
+            (select count(*) from se where municipio = '{$d_geral->municipio}' and beneficiario_encontrado = 'Não' and local = '{$d_geral->tipo}') as nao_encontrado
         ";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 
-        $Rotulos = ['Total','Iniciadas','Pendentes','Concluídas'];
-        $Quantidade = [$d->total, $d->iniciadas, $d->pendentes, $d->concluidas];
+        $Rotulos = ['Total','Iniciadas','Pendentes','Concluídas','Não Encontrado'];
+        $Quantidade = [$d->total, $d->iniciadas, $d->pendentes, $d->concluidas, $d->nao_encontrado];
 
         $esquema = json_encode([
             'Rotulos' => $Rotulos,
