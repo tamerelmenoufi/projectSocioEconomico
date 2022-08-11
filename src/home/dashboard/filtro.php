@@ -173,9 +173,26 @@
     </div>
 </form>
 
+
+
+
+<div class="card p-3 mb-3">
+    <h5>Filtro Específico</h5>
+    <div especifico></div>
+</div>
+
+
+
 <script>
     $(function(){
         Carregando('none');
+
+        $.ajax({
+            url:"src/home/dashboard/filtro_especifico.php",
+            success:function(dados){
+                $("div[especifico]").html(dados);
+            }
+        });
 
         // $("#cpf").mask("999.999.999-99");
         // $("#telefone").mask("(99) 99999-9999");
