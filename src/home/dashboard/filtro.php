@@ -26,7 +26,10 @@
             }
             $filtro_preparo2[] = "(".implode(" or ",$filtro_preparo).")";
         }
-        $_SESSION['filtro_especifico'] = "(".implode(" and ",$filtro_preparo2).")";
+        if($filtro_preparo2){
+            $_SESSION['filtro_especifico'] = implode(" and ",$filtro_preparo2);
+        }
+
 
 
         exit();
