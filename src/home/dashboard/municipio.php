@@ -22,8 +22,6 @@
 
         <h4>Relatórios e estatísticas de <?=$d1->municipio?></h4>
 
-        <p><?=$_SESSION['filtro_especifico_descricao']?></p>
-
       </div>
       <div class="col-md-2">
         <button
