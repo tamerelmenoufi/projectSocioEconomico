@@ -798,7 +798,7 @@
                     while (new Date().getTime() < startTime + milliSeconds);
                 }
 
-                sleep(3000);
+                sleep(1000);
                 console.log(campos)
 
 
@@ -809,6 +809,7 @@
                     data: campos,
                     success:function(dados){
                         $.alert('Dados atualizados com sucesso!');
+                        console.log(dados.query)
                         Carregando('none');
                     },
                     error:function(erro){
