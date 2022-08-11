@@ -29,7 +29,7 @@
                 $filtro_preparo_descricao[] = "Iguais a <i>{$valores[$i]}</i>";
             }
             $filtro_preparo2[] = "(".implode(" or ",$filtro_preparo).")";
-            $filtro_preparo2[] = "(".implode(" Ou ",$filtro_preparo).")";
+            $filtro_preparo_descricao2[] = "(".implode(" Ou ",$filtro_preparo_descricao).")";
         }
         if($filtro_preparo2){
             $_SESSION['filtro_especifico'] = implode(" and ",$filtro_preparo2);
