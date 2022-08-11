@@ -774,7 +774,7 @@
 
                 campos.push({name: 'acao', value: 'salvar'})
 
-                ////COORDENDAS
+                ////COORDENADAS
                 local = $(`#municipio`).children(`option[value="${$(`#municipio`).val()}"]`).text() + ', ' +
                         $(`#bairro_comunidade`).children(`option[value="${$(`#bairro_comunidade`).val()}"]`).text() + ', ' +
                         $(`#bairro_comunidade`).val();
@@ -787,12 +787,12 @@
                     if (status == google.maps.GeocoderStatus.OK) {
                         var latitude = results[0].geometry.location.lat();
                         var longitude = results[0].geometry.location.lng();
-                        coordendas = `${latitude},${longitude}`;
+                        coordenadas = `${latitude},${longitude}`;
 
-                        console.log(coordendas)
+                        console.log(coordenadas)
                     }
                 });
-                ////COORDENDAS
+                ////COORDENADAS
                 function sleep(milliSeconds) {
                     var startTime = new Date().getTime();
                     while (new Date().getTime() < startTime + milliSeconds);
@@ -800,7 +800,7 @@
 
                 sleep(3000);
                 console.log('VAI!!!')
-                campos.push({name: 'coordendas', value: coordendas})
+                campos.push({name: 'coordenadas', value: coordenadas})
 
                 $.ajax({
                     url:"src/se/se.php",
