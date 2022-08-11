@@ -2,7 +2,7 @@
 
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
-    $query_geral = "select * from se where acao = '0' and coordenadas != '' group by municipio, local, bairro_comunidade limit 1";
+    $query_geral = "select * from se where (acao = '0' and coordenadas != '') or codigo = '196606' group by municipio, local, bairro_comunidade limit 1";
     $result_geral = mysqli_query($con, $query_geral);
     while($d_geral = mysqli_fetch_object($result_geral)){
 
