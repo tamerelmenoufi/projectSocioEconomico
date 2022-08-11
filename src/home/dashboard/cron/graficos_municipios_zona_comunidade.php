@@ -15,9 +15,9 @@
         $md5 = md5($grafico.$md5);
         $query = "
                     select
-                        (select count(*) from se where municipio = '{$d_geral->municipio}' and local = '{$d_geral->tipo}' and bairro_comunidade = '{$d_geral->bairro_comunidade}' and percentual > 0 and percentual < 100) as iniciadas,
-                        (select count(*) from se where municipio = '{$d_geral->municipio}' and local = '{$d_geral->tipo}' and bairro_comunidade = '{$d_geral->bairro_comunidade}' and percentual = 0 ) as pendentes,
-                        (select count(*) from se where municipio = '{$d_geral->municipio}' and local = '{$d_geral->tipo}' and bairro_comunidade = '{$d_geral->bairro_comunidade}' and percentual = 100) as concluidas
+                        (select count(*) from se where municipio = '{$d_geral->municipio}' and local = '{$d_geral->local}' and bairro_comunidade = '{$d_geral->bairro_comunidade}' and percentual > 0 and percentual < 100) as iniciadas,
+                        (select count(*) from se where municipio = '{$d_geral->municipio}' and local = '{$d_geral->local}' and bairro_comunidade = '{$d_geral->bairro_comunidade}' and percentual = 0 ) as pendentes,
+                        (select count(*) from se where municipio = '{$d_geral->municipio}' and local = '{$d_geral->local}' and bairro_comunidade = '{$d_geral->bairro_comunidade}' and percentual = 100) as concluidas
         ";
         $result = mysqli_query($con, $query);
         $Rotulos = [];
@@ -122,7 +122,7 @@
                         concat(b.descricao,' - ',b.tipo) as descricao,
                         b.coordenadas from se a
                     left join bairros_comunidades b on a.bairro_comunidade = b.codigo
-                    where b.coordenadas != '' and a.municipio='{$d_geral->municipio}' and a.local = '{$d_geral->tipo}' and a.bairro_comunidade = '{$d_geral->bairro_comunidade}'
+                    where b.coordenadas != '' and a.municipio='{$d_geral->municipio}' and a.local = '{$d_geral->local}' and a.bairro_comunidade = '{$d_geral->bairro_comunidade}'
                     group by a.municipio, a.bairro_comunidade";
         $result = mysqli_query($con, $query);
         $Rotulos = [];
@@ -152,10 +152,10 @@
         $grafico = 'tabelas/resumo/'.$d_geral->municipio.'/'.$d_geral->tipo.'/'.$d_geral->bairro_comunidade;
         $md5 = md5($grafico.$md5);
         $query = "select
-            (select count(*) from se where municipio = '{$d_geral->municipio}' and local = '{$d_geral->tipo}' and bairro_comunidade = '{$d_geral->bairro_comunidade}') as total,
-            (select count(*) from se where municipio = '{$d_geral->municipio}' and percentual > 0 and percentual < 100 and local = '{$d_geral->tipo}' and bairro_comunidade = '{$d_geral->bairro_comunidade}') as iniciadas,
-            (select count(*) from se where municipio = '{$d_geral->municipio}' and percentual = 0 and local = '{$d_geral->tipo}' and bairro_comunidade = '{$d_geral->bairro_comunidade}') as pendentes,
-            (select count(*) from se where municipio = '{$d_geral->municipio}' and percentual = 100 and local = '{$d_geral->tipo}' and bairro_comunidade = '{$d_geral->bairro_comunidade}') as concluidas
+            (select count(*) from se where municipio = '{$d_geral->municipio}' and local = '{$d_geral->local}' and bairro_comunidade = '{$d_geral->bairro_comunidade}') as total,
+            (select count(*) from se where municipio = '{$d_geral->municipio}' and percentual > 0 and percentual < 100 and local = '{$d_geral->local}' and bairro_comunidade = '{$d_geral->bairro_comunidade}') as iniciadas,
+            (select count(*) from se where municipio = '{$d_geral->municipio}' and percentual = 0 and local = '{$d_geral->local}' and bairro_comunidade = '{$d_geral->bairro_comunidade}') as pendentes,
+            (select count(*) from se where municipio = '{$d_geral->municipio}' and percentual = 100 and local = '{$d_geral->local}' and bairro_comunidade = '{$d_geral->bairro_comunidade}') as concluidas
         ";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
