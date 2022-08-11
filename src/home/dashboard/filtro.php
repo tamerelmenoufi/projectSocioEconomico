@@ -26,10 +26,10 @@
             $filtro_preparo_descricao = [];
             for($i=0;$i<count($valores);$i++){
                 $filtro_preparo[] = "{$campo} = '{$valores[$i]}'";
-                $filtro_preparo_descricao[] = "Iguais a <i>{$valores[$i]}</i>";
+                $filtro_preparo_descricao[] = "<i>{$valores[$i]}</i>";
             }
             $filtro_preparo2[] = "(".implode(" or ",$filtro_preparo).")";
-            $filtro_preparo_descricao2[] = implode(" ou ",$filtro_preparo_descricao);
+            $filtro_preparo_descricao2[] = "iguais a ".implode(" ou ",$filtro_preparo_descricao);
         }
         if($filtro_preparo2){
             $_SESSION['filtro_especifico'] = implode(" and ",$filtro_preparo2);
