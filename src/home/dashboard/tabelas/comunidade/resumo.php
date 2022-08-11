@@ -15,7 +15,7 @@
     .painel{
         display:flex;
         flex-direction:column;
-        width:80%;
+        width:98%;
         height:90px;
         border-radius:9px;
         text-align:center;
