@@ -131,6 +131,12 @@ while($d = mysqli_fetch_object($result)){
                     $("#EstruturaFamiliar").html(dados);
                 },
                 error:function(erro){
+                    $("button[EstruturaFamiliarList]").removeClass("active");
+                    $("button[EstruturaFamiliarList]").attr("aria-selected","false");
+
+                    $("button[EstruturaFamiliarForm]").addClass("active");
+                    $("button[EstruturaFamiliarForm]").attr("aria-selected","true");
+
                     Carregando('none');
                 }
             });

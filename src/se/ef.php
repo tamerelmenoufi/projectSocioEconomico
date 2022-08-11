@@ -30,6 +30,7 @@
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
     <button
+            EstruturaFamiliarList
             class="nav-link active"
             id="lista-tab"
             data-bs-toggle="tab"
@@ -43,6 +44,7 @@
   </li>
   <li class="nav-item" role="presentation">
     <button
+            EstruturaFamiliarForm
             class="nav-link"
             id="form-tab"
             data-bs-toggle="tab"
