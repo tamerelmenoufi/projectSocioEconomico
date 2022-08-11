@@ -12,6 +12,10 @@
         $_SESSION['filtro_relatorio_tipo'] = $_POST['tipo'];
         $_SESSION['filtro_relatorio_bairro_comunidade'] = $_POST['bairro_comunidade'];
 
+        $_SESSION['filtro_especifico'] = $_POST['especifico'];
+
+
+
         exit();
     }
 
@@ -233,9 +237,9 @@
 
             e.preventDefault();
 
-            campos = $(this).serializeArray();
+            especifico = $(this).serializeArray();
 
-            console.log(campos);
+            console.log(especifico);
             // nome = $("#nome").val();
             // cpf = $("#cpf").val();
             // rg = $("#rg").val();
@@ -255,6 +259,7 @@
                     // rg,
                     // telefone,
                     // email,
+                    especifico,
                     municipio,
                     tipo,
                     bairro_comunidade,
