@@ -790,17 +790,20 @@
                         var latitude = results[0].geometry.location.lat();
                         var longitude = results[0].geometry.location.lng();
                         coordenadas = `${latitude},${longitude}`;
-                        campos.push({name: 'coordenadas', value: coordenadas})
+
                         console.log(coordenadas)
                     }
                 });
                 ////COORDENADAS
-                function sleep(milliSeconds) {
-                    var startTime = new Date().getTime();
-                    while (new Date().getTime() < startTime + milliSeconds);
-                }
 
-                sleep(1000);
+                // function sleep(milliSeconds) {
+                //     var startTime = new Date().getTime();
+                //     while (new Date().getTime() < startTime + milliSeconds);
+                // }
+
+                // sleep(1000);
+
+                campos.push({name: 'coordenadas', value: coordenadas})
                 console.log(campos)
 
 
