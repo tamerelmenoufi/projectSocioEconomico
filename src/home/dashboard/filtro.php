@@ -29,11 +29,11 @@
                 $filtro_preparo_descricao[] = "<i>{$valores[$i]}</i>";
             }
             $filtro_preparo2[] = "(".implode(" or ",$filtro_preparo).")";
-            $filtro_preparo_descricao2[] = "iguais a ".implode(" ou ",$filtro_preparo_descricao);
+            $filtro_preparo_descricao2[] = implode(" ou ",$filtro_preparo_descricao);
         }
         if($filtro_preparo2){
             $_SESSION['filtro_especifico'] = implode(" and ",$filtro_preparo2);
-            $_SESSION['filtro_especifico_descricao'] = "A busca específica determina a listagem dos cadastros que sejam: ".implode(", ",$filtro_preparo_descricao2);
+            $_SESSION['filtro_especifico_descricao'] = "A busca específica determina a listagem dos cadastros que sejam: iguais a ".implode(", ",$filtro_preparo_descricao2);
 
         }
 
