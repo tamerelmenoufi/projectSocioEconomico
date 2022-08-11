@@ -14,11 +14,11 @@
 
     switch($_GET['opc']){
         case 'iniciados':{
-            $where = "and percentual > '0'";
+            $where = "and percentual > 0 and percentual < 100";
             break;
         }
         case 'pendentes':{
-            $where = "and percentual > '0' and percentual < 100";
+            $where = "and percentual = 0 ";
             break;
         }
         case 'concluidos':{
@@ -48,7 +48,7 @@
     </thead>
     <tbody>
     <?php
-        echo $query = "select * from se where 1 {$where} {$fLocal} limit 100";
+        $query = "select * from se where 1 {$where} {$fLocal} limit 100";
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
     ?>
