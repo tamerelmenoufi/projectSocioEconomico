@@ -133,7 +133,7 @@
 
     const Graficos = (r) => {
         $.ajax({
-          url:`src/home/dashboard/graficos/${r.local}.php`,
+          url:`src/home/dashboard/graficos/comunidade/${r.local}.php`,
           type:"POST",
           data:{
             rotulo:r.rotulo,
@@ -158,7 +158,7 @@
 
     const Tabelas = (r) => {
         $.ajax({
-          url:`src/home/dashboard/tabelas/${r.local}.php`,
+          url:`src/home/dashboard/tabelas/comunidade/${r.local}.php`,
           type:"POST",
           data:{
             rotulo:r.rotulo,
@@ -181,7 +181,7 @@
 
 
     $.ajax({
-      url:`src/home/dashboard/mapas/geral.php`,
+      url:`src/home/dashboard/mapas/comunidade/geral.php`,
       type:"POST",
       success:function(dados){
         $(`div[mapa="geral"]`).html(dados);
