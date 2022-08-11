@@ -108,7 +108,7 @@
             </div>
 
 
-            <div beneficiario_encontrado_campos style="display:<?=(($d->beneficiario_encontrado == 'Sim')?'block':'none')?>">
+            <div beneficiario_encontrado_campos style="display:<?=(($d->beneficiario_encontrado == 'Sim')?'block':'block')?>">
                 <div class="col">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>">
