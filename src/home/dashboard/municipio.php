@@ -131,12 +131,17 @@
 </div>
 
 
-
+<div id="relatorio_especifico"></div>
 
 <script>
   $(function(){
     Carregando('none');
-
+    $.ajax({
+          url:"src/home/dashboard/relatorio_especifico/index.php",
+          success:function(dados){
+              $("#relatorio_especifico").html(dados);
+          }
+      })
     const Graficos = (r) => {
         $.ajax({
           url:`src/home/dashboard/graficos/municipio/${r.local}.php`,
