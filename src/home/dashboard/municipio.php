@@ -19,11 +19,11 @@
   <div class="m-3">
     <div class="row" style="margin-top:20px; margin-bottom:20px;">
       <div class="col-md-10">
-ESPECIFICO:
-      <?php
-      print_r($_SESSION['filtro_especifico']);
-      ?>
+
         <h4>Relatórios e estatísticas de <?=$d1->municipio?></h4>
+
+        <p><?=$_SESSION['filtro_especifico_descricao']?></p>
+
       </div>
       <div class="col-md-2">
         <button

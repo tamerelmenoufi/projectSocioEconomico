@@ -12,6 +12,7 @@
         $_SESSION['filtro_relatorio_tipo'] = $_POST['tipo'];
         $_SESSION['filtro_relatorio_bairro_comunidade'] = $_POST['bairro_comunidade'];
         $_SESSION['filtro_especifico'] = [];
+        $_SESSION['filtro_especifico_descricao'] = [];
         $filtro_especifico = [];
         for($i=0;$i<count($_POST['especifico']);$i++){
             $campo = str_replace('[]', false, trim($_POST['especifico'][$i]['name']));
@@ -19,15 +20,21 @@
             $filtro_especifico[$campo][] = $valor;
         }
         $filtro_preparo2 = [];
+        $filtro_preparo_descricao2 = [];
         foreach($filtro_especifico as $campo => $valores){
             $filtro_preparo = [];
+            $filtro_preparo_descricao = [];
             for($i=0;$i<count($valores);$i++){
                 $filtro_preparo[] = "{$campo} = '{$valores[$i]}'";
+                $filtro_preparo_descricao[] = "Iguais a <i>{$valores[$i]}</i>";
             }
             $filtro_preparo2[] = "(".implode(" or ",$filtro_preparo).")";
+            $filtro_preparo2[] = "(".implode(" Ou ",$filtro_preparo).")";
         }
         if($filtro_preparo2){
             $_SESSION['filtro_especifico'] = implode(" and ",$filtro_preparo2);
+            $_SESSION['filtro_especifico_descricao'] = implode(" E ",$filtro_preparo_descricao2);
+
         }
 
 
