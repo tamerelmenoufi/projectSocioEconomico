@@ -90,27 +90,23 @@
         <div class="row" style="margin-bottom:50px;">
 
 
-            <div class="card border-warning">
-                <h5 class="card-header">Beneficiário encontrado?</h5>
-                <div class="card-body">
-                    <div class="form-floating mb-3">
-                        <?=montaRadio([
-                            'rotulo' => 'Como fui Recebido?',
-                            'campo' => 'beneficiario_encontrado',
-                            'vetor' => [
-                                'Sim',
-                                'Não',
-                            ],
-                            'dados' => $d->beneficiario_encontrado,
-                            'exibir' => [
-                                'Sim' => true,
-                                'Não' => false,
-                            ],
-                            'campo_destino' => 'beneficiario_encontrado_campos'
-                        ])?>
-                    </div>
-                </div>
+            <div class="form-floating mb-3">
+                <?=montaRadio([
+                    'rotulo' => 'Beneficiário encontrado?',
+                    'campo' => 'beneficiario_encontrado',
+                    'vetor' => [
+                        'Sim',
+                        'Não',
+                    ],
+                    'dados' => $d->beneficiario_encontrado,
+                    'exibir' => [
+                        'Sim' => true,
+                        'Não' => false,
+                    ],
+                    'campo_destino' => 'beneficiario_encontrado_campos'
+                ])?>
             </div>
+
 
             <div beneficiario_encontrado style="<?=(($d->beneficiario_encontrado == 'Sim')?'block':'none')?>">
                 <div class="col">
