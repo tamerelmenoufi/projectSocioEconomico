@@ -226,7 +226,7 @@
             tipo = $("#tipo").val();
             bairro_comunidade = $("#bairro_comunidade").val();
 
-
+            Carregando();
             $.ajax({
                 url:"src/home/dashboard/filtro.php",
                 type:"POST",
@@ -259,6 +259,7 @@
                 title:false,
                 buttons:{
                     'SIM':function(){
+                        Carregando();
                         $.ajax({
                             url:"src/home/dashboard/filtro.php",
                             type:"POST",
