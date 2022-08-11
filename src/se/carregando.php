@@ -80,6 +80,25 @@
 
 $(function(){
 
+    $("button[pesquisaSe<?=$md5?>]").click(function(){
+        // $(document).on('click',"button[pesquisaSe]",function(){
+
+            cod = $(this).attr("pesquisaSe<?=$md5?>");
+            Carregando();
+            $.ajax({
+                url:"src/se/se.php",
+                type:"POST",
+                data:{
+                    cod,
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            })
+
+        });
+
+
     $("button[SeEf<?=$md5?>]").click(function(){
         // $(document).on('click',"button[SeEf]",function(){
 
@@ -99,18 +118,7 @@ $(function(){
 
         });
 
-        $("button[BuscaFiltro<?=$md5?>]").click(function(){
 
-            Carregando();
-            $.ajax({
-                url:"src/se/filtro.php",
-                type:"POST",
-                success:function(dados){
-                    $(".LateralDireita").html(dados);
-                }
-            })
-
-        });
 
 })
 
