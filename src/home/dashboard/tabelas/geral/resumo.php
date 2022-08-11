@@ -25,11 +25,11 @@
     }
 </style>
 <div class="row" style="margin:0; padding:0;">
-
+<div class="col-md-1"></div>
     <?php
     for($i=0;$i<count($Rotulos);$i++){
     ?>
-    <div class="col-md-3">
+    <div class="col-md-2">
         <div class="painel" style="background-color:blue;">
             <h5><?=$Rotulos[$i]?></h5>
             <h3><?=$Quantidade[$i]?></h3>
@@ -38,5 +38,5 @@
     <?php
     }
     ?>
-
+<div class="col-md-1"></div>
 </div>

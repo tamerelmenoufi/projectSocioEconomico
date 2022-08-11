@@ -163,7 +163,8 @@
             (select count(*) from se where municipio = '{$d_geral->municipio}' and local = '{$d_geral->local}' and bairro_comunidade = '{$d_geral->bairro_comunidade}') as total,
             (select count(*) from se where municipio = '{$d_geral->municipio}' and percentual > 0 and percentual < 100 and local = '{$d_geral->local}' and bairro_comunidade = '{$d_geral->bairro_comunidade}') as iniciadas,
             (select count(*) from se where municipio = '{$d_geral->municipio}' and percentual = 0 and local = '{$d_geral->local}' and bairro_comunidade = '{$d_geral->bairro_comunidade}') as pendentes,
-            (select count(*) from se where municipio = '{$d_geral->municipio}' and percentual = 100 and local = '{$d_geral->local}' and bairro_comunidade = '{$d_geral->bairro_comunidade}') as concluidas
+            (select count(*) from se where municipio = '{$d_geral->municipio}' and percentual = 100 and local = '{$d_geral->local}' and bairro_comunidade = '{$d_geral->bairro_comunidade}') as concluidas,
+            (select count(*) from se where municipio = '{$d_geral->municipio}' and beneficiario_encotrado = 'Não' and local = '{$d_geral->local}' and bairro_comunidade = '{$d_geral->bairro_comunidade}') as nao_encontrado
         ";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);

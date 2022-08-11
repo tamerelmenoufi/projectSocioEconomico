@@ -161,7 +161,8 @@
             (select count(*) from se where municipio = '{$d_geral->codigo}') as total,
             (select count(*) from se where municipio = '{$d_geral->codigo}' and percentual > 0 and percentual < 100) as iniciadas,
             (select count(*) from se where municipio = '{$d_geral->codigo}' and percentual = 0) as pendentes,
-            (select count(*) from se where municipio = '{$d_geral->codigo}' and percentual = 100) as concluidas
+            (select count(*) from se where municipio = '{$d_geral->codigo}' and percentual = 100) as concluidas,
+            (select count(*) from se where municipio = '{$d_geral->codigo}' and beneficiario_encotrado = 'Não') as nao_encontrado
         ";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
