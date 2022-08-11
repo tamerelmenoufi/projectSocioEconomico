@@ -175,5 +175,5 @@
         mysqli_query($con, $query);
 
         mysqli_query($con, "update se set acao = '1' where municipio = '{$d_geral->municipio}' and local = '{$d_geral->local}' and bairro_comunidade = '{$d_geral->bairro_comunidade}'");
-        // echo "<script>window.location.href='./graficos_municipios_zona.php'</script>";
+        echo "<script>window.location.href='./graficos_municipios_zona_comunidade.php'</script>";
     }
