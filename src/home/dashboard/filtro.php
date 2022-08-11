@@ -76,7 +76,7 @@
                 <h5>Geral</h5>
 
                 <div class="form-floating mb-3">
-                    <select name="municipio" id="municipio" class="form-control" placeholder="Município">
+                    <select id="municipio" class="form-control" placeholder="Município">
                         <option value="">::Selecione o Município::</option>
                         <?php
                             $q = "select * from municipios order by municipio";
@@ -92,7 +92,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <select name="tipo" id="tipo" class="form-control" placeholder="Zona">
+                    <select id="tipo" class="form-control" placeholder="Zona">
                         <option value="">::Selecione a Zona::</option>
                         <option value="Urbano" <?=(($_SESSION['filtro_relatorio_tipo'] == 'Urbano')?'selected':false)?>>Urbano</option>
                         <option value="Rural" <?=(($_SESSION['filtro_relatorio_tipo'] == 'Rural')?'selected':false)?>>Rural</option>
@@ -101,7 +101,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <select name="bairro_comunidade" id="bairro_comunidade" class="form-control" placeholder="Bairro">
+                    <select id="bairro_comunidade" class="form-control" placeholder="Bairro">
                         <option value="">::Selecione a Localização::</option>
                         <?php
                             $q = "select * from bairros_comunidades where municipio = '{$_SESSION['filtro_relatorio_municipio']}' ".(($_SESSION['filtro_relatorio_tipo'])?" and tipo = '{$_SESSION['filtro_relatorio_tipo']}'":false)." order by descricao";
