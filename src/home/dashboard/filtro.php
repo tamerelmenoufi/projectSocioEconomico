@@ -11,14 +11,22 @@
         $_SESSION['filtro_relatorio_municipio'] = $_POST['municipio'];
         $_SESSION['filtro_relatorio_tipo'] = $_POST['tipo'];
         $_SESSION['filtro_relatorio_bairro_comunidade'] = $_POST['bairro_comunidade'];
-
         $_SESSION['filtro_especifico'] = [];
+        $filtro_especifico = [];
         for($i=0;$i<count($_POST['especifico']);$i++){
             $campo = str_replace('[]', false, trim($_POST['especifico'][$i]['name']));
             $valor = trim($_POST['especifico'][$i]['value']);
-            $_SESSION['filtro_especifico'][$campo][] = $valor;
+            $filtro_especifico[$campo][] = $valor;
         }
-
+        $filtro_preparo2 = [];
+        foreach($filtro_especifico as $campo => $valores){
+            $filtro_preparo = [];
+            for($i=0;$i<count($valores);$i++){
+                $filtro_preparo[] = "{$campo} = '{$valores[$i]}'";
+            }
+            $filtro_preparo2[] = "(".implode(" or ",$filtro_preparo).")";
+        }
+        $_SESSION['filtro_especifico'] = "(".implode(" and ",$filtro_preparo2).")";
 
 
         exit();
