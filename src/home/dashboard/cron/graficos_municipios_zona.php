@@ -2,7 +2,7 @@
 
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
-    $query_geral = "select * tipo from bairros_comunidades where acao = '0' group by municipio, tipo limit 1";
+    $query_geral = "select * from bairros_comunidades where acao = '0' group by municipio, tipo limit 1";
     $result_geral = mysqli_query($con, $query_geral);
     while($d_geral = mysqli_fetch_object($result_geral)){
 
