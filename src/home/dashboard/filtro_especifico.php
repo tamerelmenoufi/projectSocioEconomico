@@ -8,7 +8,6 @@
 </style>
 
 
-    <form id="form-<?= $md5 ?>">
         <div class="row" style="margin-bottom:50px;">
             <div class="col">
 
@@ -449,7 +448,7 @@
             </div>
         </div>
 
-    </form>
+
 
 <script>
     $(function(){

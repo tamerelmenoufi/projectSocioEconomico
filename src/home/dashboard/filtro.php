@@ -149,7 +149,7 @@
         <div class="col">
             <div class="Botao<?=$md5?>">
                 <button
-                    type="button"
+                    type="submit"
                     GerarFiltro
                     class="btn btn-success btn-ms"
 
@@ -171,16 +171,12 @@
             </div>
         </div>
     </div>
+
+    <div class="card p-3 mb-3">
+        <h5>Filtro Específico</h5>
+        <div especifico></div>
+    </div>
 </form>
-
-
-
-
-<div class="card p-3 mb-3">
-    <h5>Filtro Específico</h5>
-    <div especifico></div>
-</div>
-
 
 
 <script>
@@ -234,6 +230,12 @@
 
         $("button[GerarFiltro]").click(function(){
 
+
+            e.preventDefault();
+
+            campos = $(this).serializeArray();
+
+            console.log(campos);
             // nome = $("#nome").val();
             // cpf = $("#cpf").val();
             // rg = $("#rg").val();
