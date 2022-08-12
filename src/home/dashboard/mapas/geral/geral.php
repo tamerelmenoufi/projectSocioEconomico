@@ -52,7 +52,7 @@ async function icones(local, qt, lat, lng){
         title: qt + " Beneficiários em "+local,
         draggable:false,
     });
-    marker<?=$md5?>.addListener("click", (local) -> {
+    marker<?=$md5?>.addListener("click", (local) => {
         alert(local)
     });
 
