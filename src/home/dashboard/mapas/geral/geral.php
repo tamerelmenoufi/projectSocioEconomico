@@ -32,6 +32,9 @@
         fullscreenControl: true,
         center: { lat: -3.986913, lng: -63.931869 },
         zoom: 5,
+        click:function(){
+            alert('Acionar o pop com informações detalhadas')
+        }
     });
 
     // marker<?=$md5?> = new google.maps.Marker({
