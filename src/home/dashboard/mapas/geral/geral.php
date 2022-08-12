@@ -32,9 +32,6 @@
         fullscreenControl: true,
         center: { lat: -3.986913, lng: -63.931869 },
         zoom: 5,
-        click:function(){
-            alert('Acionar o pop com informações detalhadas')
-        }
     });
 
     // marker<?=$md5?> = new google.maps.Marker({
@@ -54,6 +51,9 @@ async function icones(local, qt, lat, lng){
         icon:"img/pino.png",
         title: qt + " Beneficiários em "+local,
         draggable:false,
+        click:function(){
+            alert('Acionar o pop com informações detalhadas')
+        }
     });
 
 }
