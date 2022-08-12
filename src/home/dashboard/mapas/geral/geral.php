@@ -51,10 +51,11 @@ async function icones(local, qt, lat, lng){
         icon:"img/pino.png",
         title: qt + " Beneficiários em "+local,
         draggable:false,
-        click:function(){
-            alert('Acionar o pop com informações detalhadas')
-        }
     });
+    marker<?=$md5?>.addListener("click", (local) -> {
+        alert(local)
+    });
+
 
 }
 
