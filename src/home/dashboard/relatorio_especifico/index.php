@@ -4,6 +4,10 @@
 
     if(!$_SESSION['filtro_especifico']) exit();
 
+
+    echo $query = "select * from se where {$_SESSION['filtro_especifico']}";
+
+
 ?>
 
 <h5>Relatório Específico</h5>
