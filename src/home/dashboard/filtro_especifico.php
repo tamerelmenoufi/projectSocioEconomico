@@ -19,7 +19,7 @@
                             'Masculino',
                             'Feminino',
                         ],
-                        'dados' => $d->genero,
+                        'dados' => $_SESSION['fe']['genero'],
                         'exibir' => false,
                         'campo_destino' => false
                     ])?>
@@ -36,7 +36,7 @@
                             'Viúvo',
                             'Outros',
                         ],
-                        'dados' => $d->estado_civil,
+                        'dados' => $_SESSION['fe']['estado_civil'],
                         'exibir' => false,
                         'campo_destino' => false
                     ])?>
@@ -54,7 +54,7 @@
                             'Youtube',
                             'Linkedin'
                         ],
-                        'dados' => $d->redes_sociais,
+                        'dados' => $_SESSION['fe']['redes_sociais'],
                         'exibir' => false,
                         'campo_destino' => false
                     ])?>
@@ -73,7 +73,7 @@
                             'Fluvial',
                             'Outros'
                         ],
-                        'dados' => $d->meio_transporte,
+                        'dados' => $_SESSION['fe']['meio_transporte'],
                         'exibir' => false,
                         'campo_destino' => false
                     ])?>
@@ -92,7 +92,7 @@
                             'Alugado',
                             'Outros',
                         ],
-                        'dados' => $d->tipo_imovel,
+                        'dados' => $_SESSION['fe']['tipo_imovel'],
                         'exibir' => false,
                         'campo_destino' => false
                     ])?>
@@ -110,7 +110,7 @@
                             'Apartamento',
                             'Outros',
                         ],
-                        'dados' => $d->tipo_moradia,
+                        'dados' => $_SESSION['fe']['tipo_moradia'],
                         'exibir' => false,
                         'campo_destino' => false
                     ])?>
@@ -127,7 +127,7 @@
                             '4 Cômodos',
                             'Mais de 4 Cômodos',
                         ],
-                        'dados' => $d->quantidade_comodos,
+                        'dados' => $_SESSION['fe']['quantidade_comodos'],
                         'exibir' => false,
                         'campo_destino' => false
                     ])?>
@@ -144,7 +144,7 @@
                             'Ensino Técnico/Profissionalizante',
                             'Ensino Superior Completo',
                         ],
-                        'dados' => $d->grau_escolaridade,
+                        'dados' => $_SESSION['fe']['grau_escolaridade'],
                         'exibir' => false,
                         'campo_destino' => false
                     ])?>
@@ -158,7 +158,7 @@
                             'Sim',
                             'Não',
                         ],
-                        'dados' => $d->curos_profissionais,
+                        'dados' => $_SESSION['fe']['curos_profissionais'],
                         'exibir' => [
                             'Sim'=>true,
                             'Não'=>false,
@@ -179,7 +179,7 @@
                             '4 salários mínimos',
                             'Acima de 4 Salários mínimos'
                         ],
-                        'dados' => $d->renda_mensal,
+                        'dados' => $_SESSION['fe']['renda_mensal'],
                         'exibir' => false,
                         'campo_destino' => false
                     ])?>
@@ -193,7 +193,7 @@
                             'Sim',
                             'Não',
                         ],
-                        'dados' => $d->beneficio_social,
+                        'dados' => $_SESSION['fe']['beneficio_social'],
                         'exibir'=>[
                             'Sim'=>true,
                             'Não'=>false,
@@ -211,7 +211,7 @@
                             'Associações/PlanodeSaúde',
                             'Outros',
                         ],
-                        'dados' => $d->servico_saude,
+                        'dados' => $_SESSION['fe']['servico_saude'],
                         'exibir' => false,
                         'campo_destino' => false
                     ])?>
@@ -229,7 +229,7 @@
                             '3a Dose',
                             '4a Dose',
                         ],
-                        'dados' => $d->vacina_covid,
+                        'dados' => $_SESSION['fe']['vacina_covid'],
                         'exibir' => false,
                         'campo_destino' => false
                     ])?>
@@ -250,7 +250,7 @@
                             'CTPS', // - Carteira de Trabalho e Previdencia Social
                             'TE', //- Título Eleitoral
                         ],
-                        'dados' => $d->necessita_documentos,
+                        'dados' => $_SESSION['fe']['necessita_documentos'],
                         'exibir' => false,
                         'campo_destino' => false
                     ])?>
@@ -272,7 +272,7 @@
                             'Bom',
                             'Ótimo',
                         ],
-                        'dados' => $d->avaliacao_beneficios,
+                        'dados' => $_SESSION['fe']['avaliacao_beneficios'],
                         'exibir' => [
                             'Ruim'=>true,
                             'Bom'=>true,
@@ -291,7 +291,7 @@
                            'Sim',
                             'Não',
                         ],
-                        'dados' => $d->atende_necessidades,
+                        'dados' => $_SESSION['fe']['atende_necessidades'],
                         'exibir' => [
                            'Sim'=>true,
                             'Não'=>true,
@@ -318,7 +318,7 @@
                             'Realização de Exames',
                             'Realização de Procedimentos Médicos e/ou Cirurgia',
                         ],
-                        'dados' => $d->opiniao_saude,
+                        'dados' => $_SESSION['fe']['opiniao_saude'],
                         'exibir' => [
                             'Não Necessita'=>false,
                             'Acesso a Medicamentos'=>true,
@@ -341,7 +341,7 @@
                             'Abastecimento de Água',
                             'Abastecimento de Energia',
                         ],
-                        'dados' => $d->opiniao_infraestrutura,
+                        'dados' => $_SESSION['fe']['opiniao_infraestrutura'],
                         'exibir' => [
                             'Não Necessita'=>false,
                             'Má Iluminação'=>true,
@@ -364,7 +364,7 @@
                             'Auxílios Governamentais',
                             'Assistência Psicológica',
                         ],
-                        'dados' => $d->opiniao_assistencia_social,
+                        'dados' => $_SESSION['fe']['opiniao_assistencia_social'],
                         'exibir' => [
                             'Não Necessita'=>false,
                             'Alimentação Básica'=>true,
@@ -383,7 +383,7 @@
                             'Não Necessita',
                             'Policiamento Ostensivo',
                         ],
-                        'dados' => $d->opiniao_seguranca,
+                        'dados' => $_SESSION['fe']['opiniao_seguranca'],
                         'exibir' => [
                             'Não Necessita'=>false,
                             'Policiamento Ostensivo'=>true,
@@ -400,7 +400,7 @@
                             'Não Necessita',
                             'Areas para pratica de atividades esportivas',
                         ],
-                        'dados' => $d->opiniao_esporte_lazer,
+                        'dados' => $_SESSION['fe']['opiniao_esporte_lazer'],
                         'exibir' => [
                             'Não Necessita'=>false,
                             'Areas para pratica de atividades esportivas'=>true,
@@ -422,7 +422,7 @@
                                     'Bom',
                                     'Ótimo',
                                 ],
-                                'dados' => $d->recepcao_entrevistado,
+                                'dados' => $_SESSION['fe']['recepcao_entrevistado'],
                                 'exibir' => false,
                                 'campo_destino' => false
                             ])?>

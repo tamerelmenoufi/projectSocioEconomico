@@ -19,6 +19,8 @@
             $valor = trim($_POST['especifico'][$i]['value']);
             $filtro_especifico[$campo][] = $valor;
         }
+        $_SESSION['fe']  = $filtro_especifico;
+
         $filtro_preparo2 = [];
         $filtro_preparo_descricao2 = [];
         foreach($filtro_especifico as $campo => $valores){
