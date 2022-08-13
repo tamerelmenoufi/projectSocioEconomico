@@ -83,7 +83,7 @@
         $campo = $v['campo'];
         $vetor = $v['vetor'];
         $rotulo = $v['rotulo'];
-        $dados = explode($v['dados']);
+        $dados = ($v['dados']);
         $exibir = $v['exibir'];
         $destino = $v['campo_destino'];
         // $lista[] = print_r($dados, true);
