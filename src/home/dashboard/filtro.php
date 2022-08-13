@@ -25,7 +25,7 @@
             $filtro_preparo = [];
             $filtro_preparo_descricao = [];
             for($i=0;$i<count($valores);$i++){
-                $filtro_preparo[] = "{$campo} = '{$valores[$i]}'";
+                $filtro_preparo[] = "{$campo} LIKE '%{$valores[$i]}%'";
                 $filtro_preparo_descricao[] = "<i>{$valores[$i]}</i>";
             }
             $filtro_preparo2[] = "(".implode(" or ",$filtro_preparo).")";
