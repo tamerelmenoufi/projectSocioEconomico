@@ -79,6 +79,37 @@
 
 
 
+    function montaCheckboxFiltro($v){
+        $campo = $v['campo'];
+        $vetor = $v['vetor'];
+        $rotulo = $v['rotulo'];
+        $dados = explode($v['dados']);
+        $exibir = $v['exibir'];
+        $destino = $v['campo_destino'];
+        // $lista[] = print_r($dados, true);
+        $lista[] = '<div class="mb-3"><label for="'.$campo.'"><b>'.$rotulo.'</b></label></div>';
+        for($i=0;$i<count($vetor);$i++){
+            $lista[] = '  <div class="mb-3 form-check">
+            <input
+                    type="checkbox"
+                    name="'.$campo.'[]"
+                    value="'.$vetor[$i].'"
+                    class="form-check-input"
+                    id="'.$campo.$i.'"
+                    '.((@in_array($vetor[$i],$dados))?'checked':false).'
+                    '.(($exibir[$vetor[$i]])?' exibir="'.$destino.'" ':' ocultar="'.$destino.'"').'
+            >
+            <label class="form-check-label" for="'.$campo.$i.'">'.$vetor[$i].'</label>
+            </div>';
+        }
+
+        if($lista){
+            return implode(" ",$lista);
+        }
+    }
+
+
+
     function montaOpcPrint($v){
         $campo = $v['campo'];
         $vetor = $v['vetor'];
