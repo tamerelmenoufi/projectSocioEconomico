@@ -10,6 +10,7 @@
 ?>
 
 <h5>Relatório Específico</h5>
+<p><?=$_SESSION['filtro_especifico_descricao']?></p>
 <table class="table table-hover">
     <thead>
         <tr>
