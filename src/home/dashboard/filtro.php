@@ -31,7 +31,7 @@
                 $filtro_preparo_descricao[] = "<i>{$valores[$i]}</i>";
             }
             $filtro_preparo2[] = " (".implode(" or ",$filtro_preparo).")";
-            $filtro_preparo_descricao2[] = $campo . " " . implode(" ou ",$filtro_preparo_descricao);
+            $filtro_preparo_descricao2[] = "<b>". $campo . "</b> " . implode(" ou ",$filtro_preparo_descricao);
         }
         if($filtro_preparo2){
             $_SESSION['filtro_especifico'] = implode(" or ",$filtro_preparo2);
