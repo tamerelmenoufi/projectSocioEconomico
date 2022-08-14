@@ -17,8 +17,8 @@
 
     while($d = mysqli_fetch_object($result)){
         set_time_limit(90);
-        $Rotulos = ['Pendentes','Iniciadas','Concluídas','Não Encontrado'];
-        $Quantidade = [$d->pendentes, $d->iniciadas,$d->concluidas,$d->nao_encontrados];
+        $Rotulos = ['Total','Pendentes','Iniciadas','Concluídas','Não Encontrado'];
+        $Quantidade = [$d->total, $d->pendentes, $d->iniciadas,$d->concluidas,$d->nao_encontrados];
     }
 
 ?>
