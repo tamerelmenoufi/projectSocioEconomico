@@ -11,7 +11,7 @@
 
 <?php
 
-    $query = "SELECT a.*, count(*) qt FROM se where group by tipo";
+    $query = "SELECT a.*, count(*) qt FROM se group by tipo";
     $result = mysqli_query($con, $query);
     $Rotulos = [];
     $Quantidade = [];
