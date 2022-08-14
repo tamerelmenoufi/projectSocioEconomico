@@ -5,7 +5,7 @@
     $Rotulo = [
         'genero' => 'gênero',
         'estado_civil'  => 'Estado Civil',
-        'redes_sociais'  => 'Possui as redes sociais',
+        'redes_sociais'  => 'Redes sociais',
         'meio_transporte'  => 'Utiliza como meio de transporte',
         'tipo_imovel'  => 'habita em imóvel',
         'tipo_moradia'  => 'tipo de moradia',
