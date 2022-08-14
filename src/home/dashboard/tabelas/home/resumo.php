@@ -21,6 +21,15 @@
         $Quantidade = [$d->total, $d->pendentes, $d->iniciadas,$d->concluidas,$d->nao_encontrado];
     }
 
+
+    // iniciados pendentes concluidos nao_encontrados
+    $opc = [
+        'Iniciadas' => 'iniciados',
+        'Pendentes' => 'pendentes',
+        'Concluídas' => 'concluidos',
+        'Não Encontrado' => 'nao_encontrados',
+    ];
+
 ?>
 <style>
     .painel{
