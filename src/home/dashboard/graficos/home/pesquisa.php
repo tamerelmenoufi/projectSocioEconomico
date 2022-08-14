@@ -11,12 +11,12 @@
 
 <?php
 
-    $query = "SELECT a.*, count(*) qt FROM se group by tipo";
+    $query = "SELECT a.*, count(*) qt FROM se group by local";
     $result = mysqli_query($con, $query);
     $Rotulos = [];
     $Quantidade = [];
     while($d = mysqli_fetch_object($result)){
-    $Rotulos[] = $d->tipo;
+    $Rotulos[] = $d->local;
     $Quantidade[] = $d->qt;
     }
     $R = (($Rotulos)?"'".implode("','",$Rotulos)."'":0);
