@@ -72,8 +72,8 @@ function sleep(milliSeconds) {
     $Lng = [];
 
     while($d = mysqli_fetch_object($result)){
-        $Rotulos[] = $esquema->municipio;
-        $Quantidade[] = $esquema->qt;
+        $Rotulos[] = $d->municipio;
+        $Quantidade[] = $d->qt;
         $coordenadas = explode(",", $d->coordenadas);
         $Lat[] = $coordenadas[0];
         $Lng[] = $coordenadas[1];
