@@ -1,6 +1,32 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
+
+    $Rotulo = [
+        'genero' => 'gênero',
+        'estado_civil'  => 'Estado Civil',
+        'redes_sociais'  => 'Possui as redes sociais',
+        'meio_transporte'  => 'Utiliza como meio de transporte',
+        'tipo_imovel'  => 'habita em imóvel',
+        'tipo_moradia'  => 'tipo de moradia',
+        'quantidade_comodos'  => 'residencia com',
+        'grau_escolaridade'  => 'com grau de escolaridade',
+        'curos_profissionais'  => 'e que possua cursos profissioais?',
+        'renda_mensal'  => 'renda mensal de ',
+        'beneficio_social'  => 'que possua beneficíos sociais',
+        'vacina_covid'  => 'que tenha tomado a vaciana contra covid',
+        'necessita_documentos'  => 'necessita de documentos',
+        'avaliacao_beneficios'  => 'avalia os benefícios',
+        'atende_necessidades'  => 'benefícios atendem necessidades?',
+        'opiniao_saude'  => 'opinão na saúde?',
+        'opiniao_infraestrutura'  => 'Opinião na infraestrutura?',
+        'opiniao_assistencia_social' => 'Opinião na assistência social?',
+        'opiniao_seguranca'  => 'Opinião na segurança?',
+        'opiniao_esporte_lazer'  => 'Opinião no esporte e lazer?',
+        'recepcao_entrevistado'  => 'recepção do entrvistado',
+    ];
+
+
     if($_POST['acao'] == 'gerar_filtro'){
 
         // $_SESSION['filtro_relatorio_nome'] = $_POST['nome'];
@@ -31,7 +57,7 @@
                 $filtro_preparo_descricao[] = "<i>{$valores[$i]}</i>";
             }
             $filtro_preparo2[] = " (".implode(" or ",$filtro_preparo).")";
-            $filtro_preparo_descricao2[] = "<b>". $campo . "</b> " . implode(" ou ",$filtro_preparo_descricao);
+            $filtro_preparo_descricao2[] = "<b>". $Rotulo[$campo] . "</b> " . implode(" ou ",$filtro_preparo_descricao);
         }
         if($filtro_preparo2){
             $_SESSION['filtro_especifico'] = implode(" or ",$filtro_preparo2);
