@@ -11,7 +11,7 @@
 
 <?php
 
-    $query = "SELECT a.*, count(*) qt FROM se group by local";
+    $query = "SELECT a.*, count(*) qt FROM se a group by local";
     $result = mysqli_query($con, $query);
     $Rotulos = [];
     $Quantidade = [];
