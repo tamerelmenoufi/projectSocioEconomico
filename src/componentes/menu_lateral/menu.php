@@ -50,10 +50,10 @@
       </div>
     </div>
 
-    <div class="row mb-1" syule="opacity:0">
+    <div class="row mb-1" style="opacity:0">
       <div class="col">
-        <a href="./src/dashboard/index.php" target="formDashboard" class="text-decoration-none">
-          <i class="fa-solid fa-list-ol"></i> Novo Dashboard
+        <a url="src/dashboard/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
+          <i class="fa-solid fa-clipboard-list"></i> Novo Dashboard
         </a>
       </div>
     </div>
