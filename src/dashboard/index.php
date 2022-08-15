@@ -15,12 +15,13 @@
         $_SESSION['bairro']['nome'][$d->cod_bairro] = $d->descricao;
     }
 
+    echo "Geral: ".sum_array($_SESSION['municipios']['quantidade'])."<br>";
 
-    foreach($_SESSION['bairro']['nome'] as $indice => $valor){
+    // foreach($_SESSION['bairro']['nome'] as $indice => $valor){
 
-        echo $indice.' em '.$valor."<br>";
+    //     echo $indice.' em '.$valor."<br>";
 
-    }
+    // }
 
 ?>
 
