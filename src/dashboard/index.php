@@ -10,7 +10,7 @@
         return $sum;
     }
 
-    $query = "SELECT a.codigo as cod_municipio, a.bairro_comunidade as cod_bairro, m.municipio, b.descricao, local, b.zona_urbana, count(*) quantidade FROM se a
+    $query = "SELECT a.municipio as cod_municipio, a.bairro_comunidade as cod_bairro, m.municipio, b.descricao, local, b.zona_urbana, count(*) quantidade FROM se a
     left join municipios m on a.municipio = m.codigo
     left join bairros_comunidades b on a.bairro_comunidade = b.codigo
     group by a.municipio, a.bairro_comunidade, a.local, b.zona_urbana";
