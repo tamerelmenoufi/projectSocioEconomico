@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
 
-    function array_multisum(array $arr): float {
+    function array_multisum($arr){
         $sum = array_sum($arr);
         foreach($arr as $child) {
             $sum += is_array($child) ? array_multisum($child) : 0;
