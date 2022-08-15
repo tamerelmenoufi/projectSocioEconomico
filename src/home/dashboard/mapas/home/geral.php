@@ -64,20 +64,20 @@ function sleep(milliSeconds) {
 
 <?php
 
-    $query = "SELECT a.*, (select count(*) from se where municipio = a.codigo) as qt FROM municipios a";
+    $query = "SELECT * FROM dashboard where grafico = 'mapas/geral/{$_SESSION['filtro_relatorio_municipio']}/{$_SESSION['filtro_relatorio_tipo']}'";
     $result = mysqli_query($con, $query);
     $Rotulos = [];
     $Quantidade = [];
     $Lat = [];
     $Lng = [];
 
-    while($d = mysqli_fetch_object($result)){
-        $Rotulos[] = $d->municipio;
-        $Quantidade[] = $d->qt;
-        $coordenadas = explode(",", $d->coordenadas);
-        $Lat[] = $coordenadas[0];
-        $Lng[] = $coordenadas[1];
-    }
+    $d = mysqli_fetch_object($result);
+    $esquema = json_decode($d->esquema);
+
+    $Rotulos = $esquema->Rotulos;
+    $Quantidade = $esquema->Quantidade;
+    $Lat = $esquema->Lat;
+    $Lng = $esquema->Lng;
     $R = (($Rotulos)?"'".implode("','",$Rotulos)."'":0);
     $Q = (($Quantidade)?implode(",",$Quantidade):0);
     $Lat = (($Lat)?implode(",",$Lat):0);

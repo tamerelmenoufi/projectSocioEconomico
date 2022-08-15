@@ -11,7 +11,7 @@
 
 <?php
 
-    $query = "SELECT * FROM dashboard where grafico = 'graficos/rural/{$_SESSION['filtro_relatorio_municipio']}/{$_SESSION['filtro_relatorio_tipo']}'";
+    $query = "SELECT * FROM dashboard where grafico = 'graficos/rural'";
     $result = mysqli_query($con, $query);
     $Rotulos = [];
     $Quantidade = [];

@@ -11,14 +11,15 @@
 
 <?php
 
-    $query = "SELECT a.*, count(*) qt FROM se a group by local";
+    $query = "SELECT * FROM dashboard where grafico = 'graficos/pesquisa/{$_SESSION['filtro_relatorio_municipio']}/{$_SESSION['filtro_relatorio_tipo']}'";
     $result = mysqli_query($con, $query);
     $Rotulos = [];
     $Quantidade = [];
-    while($d = mysqli_fetch_object($result)){
-    $Rotulos[] = $d->local;
-    $Quantidade[] = $d->qt;
-    }
+    $d = mysqli_fetch_object($result);
+    $esquema = json_decode($d->esquema);
+    // print_r($esquema);
+    $Rotulos = $esquema->Rotulos;
+    $Quantidade = $esquema->Quantidade;
     $R = (($Rotulos)?"'".implode("','",$Rotulos)."'":0);
     $Q = (($Quantidade)?implode(",",$Quantidade):0);
 

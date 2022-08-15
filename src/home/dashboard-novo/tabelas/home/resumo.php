@@ -2,13 +2,24 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
     $query = "SELECT * FROM dashboard where grafico = 'tabelas/resumo/{$_SESSION['filtro_relatorio_municipio']}/{$_SESSION['filtro_relatorio_tipo']}'";
+
+    $query = "select
+        (select count(*) from se) as total,
+        (select count(*) from se where percentual > 0 and percentual < 100) as iniciadas,
+        (select count(*) from se where percentual = 0) as pendentes,
+        (select count(*) from se where percentual = 100) as concluidas,
+        (select count(*) from se where beneficiario_encontrado = 'Não') as nao_encontrado
+    ";
+
     $result = mysqli_query($con, $query);
     $Rotulos = [];
     $Quantidade = [];
-    $d = mysqli_fetch_object($result);
-    $esquema = json_decode($d->esquema);
-    $Rotulos = $esquema->Rotulos;
-    $Quantidade = $esquema->Quantidade;
+
+    while($d = mysqli_fetch_object($result)){
+        set_time_limit(90);
+        $Rotulos = ['Total','Pendentes','Iniciadas','Concluídas','Não Encontrado'];
+        $Quantidade = [$d->total, $d->pendentes, $d->iniciadas,$d->concluidas,$d->nao_encontrado];
+    }
 
 
     // iniciados pendentes concluidos nao_encontrados

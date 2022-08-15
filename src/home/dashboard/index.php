@@ -2,7 +2,18 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
 
-  $url = 'src/home/dashboard/home.php';
+
+
+    if($_SESSION['filtro_relatorio_bairro_comunidade']){
+        $url = 'src/home/dashboard/bairro_comunidade.php';
+    }elseif($_SESSION['filtro_relatorio_tipo']){
+        $url = 'src/home/dashboard/tipo.php';
+    }elseif($_SESSION['filtro_relatorio_municipio']){
+        $url = 'src/home/dashboard/municipio.php';
+    }else{
+        $url = 'src/home/dashboard/geral.php';
+    }
+
 
 ?>
 
