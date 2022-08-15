@@ -12,7 +12,7 @@
 
         $_SESSION['municipios']['quantidade'][$d->cod_municipio][$d->cod_bairro][$d->local][$d->zona_urbana] = $d->quantidade;
         $_SESSION['municipios']['nome'][$d->cod_municipio] = $d->municipio;
-        $_SESSION['bairro']['nome'][$d->cod_bairro] = $d->bairro;
+        $_SESSION['bairro']['nome'][$d->cod_bairro] = $d->descricao;
     }
 
 
