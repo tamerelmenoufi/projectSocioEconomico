@@ -2,6 +2,14 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
 
+    function array_multisum(array $arr): float {
+        $sum = array_sum($arr);
+        foreach($arr as $child) {
+            $sum += is_array($child) ? array_multisum($child) : 0;
+        }
+        return $sum;
+    }
+
     $query = "SELECT a.codigo as cod_municipio, a.bairro_comunidade as cod_bairro, m.municipio, b.descricao, local, b.zona_urbana, count(*) quantidade FROM se a
     left join municipios m on a.municipio = m.codigo
     left join bairros_comunidades b on a.bairro_comunidade = b.codigo
