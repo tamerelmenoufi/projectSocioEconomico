@@ -18,12 +18,14 @@
     $result = mysqli_query($con,$query);
     while($d = mysqli_fetch_object($result)){
 
-        $_SESSION['municipios']['quantidade'][$d->cod_municipio][$d->cod_bairro][$d->local][$d->zona_urbana] = $d->quantidade;
+        $_SESSION['municipios']['quantidade'][$d->cod_municipio][$d->local][$d->zona_urbana][$d->cod_bairro] = $d->quantidade;
         $_SESSION['municipios']['nome'][$d->cod_municipio] = $d->municipio;
         $_SESSION['bairro']['nome'][$d->cod_bairro] = $d->descricao;
     }
 
     echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].array_multisum($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']])."<br>";
+    echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].'Urbano '.array_multisum($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']]['urbano'])."<br>";
+    echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].'Rural '.array_multisum($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']]['rural'])."<br>";
 
     // foreach($_SESSION['bairro']['nome'] as $indice => $valor){
 
