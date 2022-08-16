@@ -23,7 +23,7 @@
         $_SESSION['bairro']['nome'][$d->cod_bairro] = $d->descricao;
     }
 
-    echo "Geral: ".array_multisum($_SESSION['municipios']['quantidade']['66'])."<br>";
+    echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].array_multisum($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']])."<br>";
 
     // foreach($_SESSION['bairro']['nome'] as $indice => $valor){
 
