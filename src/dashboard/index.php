@@ -3,23 +3,11 @@
 
 
     function array_multisum($arr){
-        $sump = array_sum($arr);
-        $sumi = array_sum($arr);
-        $sumc = array_sum($arr);
-        $key = key($arr);
-        echo 'Chave de ' .$key."<br>";
+        $sum = array_sum($arr);
         foreach($arr as $child) {
-            if($key == 'p') $sump += is_array($child) ? array_multisum($child) : 0;
-            else if($key == 'i') $sumi += is_array($child) ? array_multisum($child) : 0;
-            else if($key == 'c') $sumc += is_array($child) ? array_multisum($child) : 0;
-            // $sum += is_array($child) ? array_multisum($child) : 0;
-            is_array($child) ? array_multisum($child) : 0;
+            $sum += is_array($child) ? array_multisum($child) : 0;
         }
-        return [
-            $sump,
-            $sumi,
-            $sumc,
-        ]; //$sum;
+        return $sum;
     }
 
     $query = "SELECT
@@ -49,15 +37,9 @@
     }
 
     if($_SESSION['filtro_relatorio_municipio'] == 66){
-        list($p, $i, $c) = array_multisum($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']]);
-        echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].' Pendente: '.$p."<br>";
-        echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].' Iniciado: '.$i."<br>";
-        echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].'Concluído: '.$c."<br>";
+        echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].': '.array_multisum($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']])."<br>";
         foreach($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']]['Urbano'] as $indice => $valores){
-            list($p, $i, $c) = array_multisum($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']]['Urbano'][$indice]);
-            echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].'Urbano - '.$indice.'Pendente: '.$p."<br>";
-            echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].'Urbano - '.$indice.'Iniciado: '.$i."<br>";
-            echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].'Urbano - '.$indice.'Concluído: '.$c."<br>";
+            echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].'Urbano - '.$indice.': '.array_multisum($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']]['Urbano'][$indice])."<br>";
         }
     }else{
         echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].': '.array_multisum($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']])."<br>";
