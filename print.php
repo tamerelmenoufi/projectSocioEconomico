@@ -63,7 +63,7 @@
         $(function(){
 
             $.ajax({
-                url:"<?=$url?>",
+                url:"<?=$url?>?=p=1",
                 success:function(dados){
                     $(".CorpoApp").html(dados);
                 }

@@ -14,7 +14,16 @@
       <div class="col-md-10">
         <h4>Relatórios e estatísticas</h4>
       </div>
-      <div class="col-md-2">
+      <?php
+      if(!$_GET['p']){
+      ?>
+      <div class="col-md-4">
+        <a
+          class="btn btn-warning"
+          href="./print.php?u=<?=base64_encode("src/home/dashboard/geral.php")?>"
+          target='relatorio'
+        >Print</a>
+
         <button
           filtrar
           class="btn btn-primary"
@@ -24,6 +33,9 @@
           aria-controls="offcanvasDireita"
         >Filtrar</button>
       </div>
+      <?php
+      }
+      ?>
     </div>
 
   <!-- Pesquisa de satisfação Gráficos -->
