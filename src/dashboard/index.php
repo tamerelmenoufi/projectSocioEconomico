@@ -11,6 +11,15 @@
         return $sum;
     }
 
+    function array_indices($arr){
+        $ind = [];
+        foreach($arr as $child => $val) {
+            $ind[] = $child;
+            if(is_array($val)) array_indices($val);
+        }
+        return $ind;
+    }
+
     $query = "SELECT
                     a.municipio as cod_municipio,
                     a.bairro_comunidade as cod_bairro,
@@ -38,11 +47,13 @@
     }
 
     if($_SESSION['filtro_relatorio_municipio'] == 66){
+        print_r(array_indices($_SESSION['municipios']))."<hr>";
         echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].': '.array_multisum($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']])."<br>";
         foreach($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']]['Urbano'] as $indice => $valores){
             echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].'Urbano - '.$indice.': '.array_multisum($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']]['Urbano'][$indice])."<br>";
         }
     }else{
+        print_r(array_indices($_SESSION['municipios']))."<hr>";
         echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].': '.array_multisum($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']])."<br>";
         echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].'Urbano: '.array_multisum($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']]['Urbano'])."<br>";
         echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].'Rural: '.array_multisum($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']]['Rural'])."<br>";
