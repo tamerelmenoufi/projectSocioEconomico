@@ -32,10 +32,13 @@
 
             if($pct == 100){
                 $attr[] = "pesquisa_realizada = 'Sim'";
+                $attr[] = "situacao = 'c'";
             }elseif($pct > 0){
                 $attr[] = "pesquisa_realizada = 'Pendente'";
+                $attr[] = "situacao = 'i'";
             }else{
                 $attr[] = "pesquisa_realizada = ''";
+                $attr[] = "situacao = 'p'";
             }
 
 
