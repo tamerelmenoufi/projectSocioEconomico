@@ -12,7 +12,7 @@
     }
 
     function array_indices($arr){
-        $ind = [];
+        // $ind = [];
         foreach($arr as $child => $val) {
             $ind[] = $child;
             if(is_array($val)) array_indices($val);
