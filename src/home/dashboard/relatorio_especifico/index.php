@@ -4,7 +4,19 @@
 
     if(!$_SESSION['filtro_especifico']) exit();
 
-    $query = "select * from se where {$_SESSION['filtro_especifico']} limit 100";
+    $fLocal = [];
+    if($_SESSION['filtro_relatorio_municipio']) { $fLocal[] = " municipio = '{$_SESSION['filtro_relatorio_municipio']}'"; }
+    if($_SESSION['filtro_relatorio_tipo']) { $fLocal[] = " local = '{$_SESSION['filtro_relatorio_tipo']}'"; }
+    if($_SESSION['filtro_relatorio_bairro_comunidade']) { $fLocal[] = " bairro_comunidade = '{$_SESSION['filtro_relatorio_bairro_comunidade']}'"; }
+
+    if($fLocal){
+        $fLocal = " and ".implode(" and ", $fLocal);
+    }else{
+        $fLocal = false;
+    }
+
+
+    $query = "select * from se where {$_SESSION['filtro_especifico']} {$fLocal} limit 100";
     $result = mysqli_query($con, $query);
 
 ?>
