@@ -6,12 +6,13 @@
         $sump = array_sum($arr);
         $sumi = array_sum($arr);
         $sumc = array_sum($arr);
-        // echo 'Chave de ' .key($arr).' = '. $sum."<br>";
+        $key = key($arr);
+        echo 'Chave de ' .$key."<br>";
         foreach($arr as $child) {
-            if(key($arr) == 'p') $sump += is_array($child) ? array_multisum($child) : 0;
-            else if(key($arr) == 'i') $sumi += is_array($child) ? array_multisum($child) : 0;
-            else if(key($arr) == 'c') $sumc += is_array($child) ? array_multisum($child) : 0;
-            else $sum = is_array($child) ? array_multisum($child) : 0;
+            if($key == 'p') $sump += is_array($child) ? array_multisum($child) : 0;
+            else if($key == 'i') $sumi += is_array($child) ? array_multisum($child) : 0;
+            else if($key == 'c') $sumc += is_array($child) ? array_multisum($child) : 0;
+            else $sum += is_array($child) ? array_multisum($child) : 0;
             // $sum += is_array($child) ? array_multisum($child) : 0;
         }
         return [
