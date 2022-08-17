@@ -27,7 +27,7 @@
           class="btn btn-warning"
           href="./print.php?u=<?=base64_encode("src/home/dashboard/tipo.php")?>"
           target='relatorio'
-        >Print</a>
+        >Imprimir</a>
         <button
           filtrar
           class="btn btn-primary"

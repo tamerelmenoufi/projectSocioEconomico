@@ -29,7 +29,7 @@
           class="btn btn-warning"
           href="./print.php?u=<?=base64_encode("src/home/dashboard/bairro_comunidade.php")?>"
           target='relatorio'
-        >Print</a>
+        >Imprimir</a>
 
         <button
           filtrar
@@ -39,7 +39,6 @@
           role="button"
           aria-controls="offcanvasDireita"
         >Filtrar</button>
-
       </div>
       <?php
       }
