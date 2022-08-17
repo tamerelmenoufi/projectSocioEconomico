@@ -16,7 +16,7 @@
     }
 
 
-    $query = "select * from se where {$_SESSION['filtro_especifico']} {$fLocal} limit 100";
+    echo $query = "select * from se where {$_SESSION['filtro_especifico']} {$fLocal} limit 100";
     $result = mysqli_query($con, $query);
 
 ?>
