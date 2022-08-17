@@ -53,10 +53,8 @@
         $u = 0;
         $r = 0;
         foreach($_SESSION['municipios']['quantidade'] as $indice => $valores){
-            $u += array_multisum($_SESSION['municipios']['quantidade'][$indice]['Urbano'])."<br>";
-        }
-        foreach($_SESSION['municipios']['quantidade'] as $indice => $valores){
-            $r += array_multisum($_SESSION['municipios']['quantidade'][$indice]['Rural'])."<br>";
+            $u += array_multisum($_SESSION['municipios']['quantidade'][$indice]['Urbano']);
+            $r += array_multisum($_SESSION['municipios']['quantidade'][$indice]['Rural']);
         }
         echo "Geral Urbano: ".$u."<br>";
         echo "Geral Rural: ".$r."<br>";
