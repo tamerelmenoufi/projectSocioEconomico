@@ -53,8 +53,9 @@
         $u = 0;
         $r = 0;
         foreach($_SESSION['municipios']['quantidade'] as $indice => $valores){
-            if($indice){
+
                 $u += array_multisum($_SESSION['municipios']['quantidade'][$indice]['Urbano']);
+            if($indice != 66){
                 $r += array_multisum($_SESSION['municipios']['quantidade'][$indice]['Rural']);
             }
         }
