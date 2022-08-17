@@ -17,11 +17,7 @@
                     b.descricao,
                     a.local,
                     a.zona_urbana,
-                    count(*) quantidade,
-                    (select count(*) from se  where zona_urbana = a.zona_urbana and percentual > 0 and percentual < 100) as iniciadas,
-                    (select count(*) from se  where zona_urbana = a.zona_urbana and percentual = 0) as pendentes,
-                    (select count(*) from se  where zona_urbana = a.zona_urbana and percentual = 100) as concluidas
-
+                    count(*) quantidade
                 FROM se a
                     left join municipios m on a.municipio = m.codigo
                     left join bairros_comunidades b on a.bairro_comunidade = b.codigo
@@ -29,7 +25,7 @@
                         a.municipio,
                         a.bairro_comunidade,
                         a.local,
-                        b.zona_urbana";
+                        a.zona_urbana";
 
     $result = mysqli_query($con,$query);
     while($d = mysqli_fetch_object($result)){
