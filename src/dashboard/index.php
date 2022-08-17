@@ -31,7 +31,7 @@
 
     $result = mysqli_query($con,$query);
     while($d = mysqli_fetch_object($result)){
-        $_SESSION['municipios'][$st[$i]]['quantidade'][$d->cod_municipio][$d->local][$d->zona_urbana][$d->cod_bairro][$d->situacao] = $d->quantidade;
+        $_SESSION['municipios']['quantidade'][$d->cod_municipio][$d->local][$d->zona_urbana][$d->cod_bairro][$d->situacao] = $d->quantidade;
         $_SESSION['municipios']['nome'][$d->cod_municipio] = $d->municipio;
         $_SESSION['bairro']['nome'][$d->cod_bairro] = $d->descricao;
     }
