@@ -142,7 +142,7 @@
                     </div>
 
                     <div class="form-floating mb-3">
-                        <select name="municipio" id="municipio" class="form-control" >
+                        <select readonly name="municipio" id="municipio" class="form-control" >
                             <option value="">::Selecione o Município</option>
                             <?php
                                 $q = "select * from municipios order by municipio asc";
@@ -160,14 +160,14 @@
 
 
                     <div class="form-floating mb-3">
-                        <select name="bairro_comunidade" id="bairro_comunidade" class="form-control" >
+                        <select readonly name="bairro_comunidade" id="bairro_comunidade" class="form-control" >
                             <option value="">::Selecione o Bairro/Comunidade</option>
                             <?php
                                 $q = "select * from bairros_comunidades where municipio='{$d->municipio}' order by descricao asc";
                                 $r = mysqli_query($con, $q);
                                 while($s = mysqli_fetch_object($r)){
                             ?>
-                            <option value="<?=$s->codigo?>" <?=(($d->bairro_comunidade == $s->codigo)?'selected':false)?>><?=$s->descricao?></option>
+                            <option value="<?=$s->codigo?>" <?=(($d->bairro_comunidade == $s->codigo)?'selected':false)?>><?=$s->descricao.(($s->zona_urbana)?" ({$s->zona_urbana})":false)?></option>
                             <?php
                                 }
                             ?>
@@ -176,7 +176,7 @@
                     </div>
 
                     <div class="form-floating mb-3">
-                        <select name="local" id="local" class="form-control" >
+                        <select readonly name="local" id="local" class="form-control" >
                             <option value="">::Selecione a Zona</option>
                             <option value="Urbano" <?=(($d->local == 'Urbano')?'selected':false)?>>Urbano</option>
                             <option value="Rural" <?=(($d->local == 'Rural')?'selected':false)?>>Rural</option>
