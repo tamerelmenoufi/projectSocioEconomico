@@ -13,8 +13,8 @@
 
     function array_indices($arr){
         // $ind = [];
+        $ind[] = $child;
         foreach($arr as $child => $val) {
-            $ind[] = $child;
             if(is_array($val)) array_indices($val);
         }
         return $ind;
