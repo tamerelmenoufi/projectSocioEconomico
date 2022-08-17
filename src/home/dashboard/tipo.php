@@ -22,7 +22,7 @@
       <?php
       if(!$_GET['p']){
       ?>
-      <div class="col-md-4">
+      <div class="col-md-8">
         <a
           class="btn btn-warning"
           href="./print.php?u=<?=base64_encode("src/home/dashboard/tipo.php")?>"

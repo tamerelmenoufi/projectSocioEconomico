@@ -11,7 +11,7 @@
 <div class="col">
   <div class="m-3">
     <div class="row" style="margin-top:20px; margin-bottom:20px;">
-      <div class="col-md-10">
+      <div class="col-md-8">
         <h4>Relatórios e estatísticas</h4>
       </div>
       <?php
