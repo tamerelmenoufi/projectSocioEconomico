@@ -24,10 +24,10 @@
                     left join bairros_comunidades b on a.bairro_comunidade = b.codigo
                 group by
                         a.municipio,
-                        a.situacao,
                         a.bairro_comunidade,
+                        a.local,
                         a.zona_urbana,
-                        a.local";
+                        a.situacao";
 
     $result = mysqli_query($con,$query);
     while($d = mysqli_fetch_object($result)){
