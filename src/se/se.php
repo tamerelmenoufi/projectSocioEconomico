@@ -167,7 +167,7 @@
                                 $r = mysqli_query($con, $q);
                                 while($s = mysqli_fetch_object($r)){
                             ?>
-                            <option value="<?=$s->codigo?>" <?=(($d->bairro_comunidade == $s->codigo)?'selected':false)?>><?=$s->descricao.' '.(($s->zona_urbana)?:false)?></option>
+                            <option value="<?=$s->codigo?>" <?=(($d->bairro_comunidade == $s->codigo)?'selected':false)?>><?=$s->descricao?></option>
                             <?php
                                 }
                             ?>
