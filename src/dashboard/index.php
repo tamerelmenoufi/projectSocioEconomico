@@ -12,9 +12,9 @@
     }
 
     function array_indices($arr){
-        // $ind = [];
+        $ind = '';
         foreach($arr as $child => $val) {
-            $ind[] = $child;
+            $ind += ' -> '.$child;
             if(is_array($val)) array_indices($val);
         }
         return $ind;
@@ -47,7 +47,7 @@
     }
 
     if($_SESSION['filtro_relatorio_municipio'] == 66){
-        print_r(array_indices($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']]))."<hr>";
+        echo (array_indices($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']]))."<hr>";
         echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].': '.array_multisum($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']])."<br>";
         foreach($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']]['Urbano'] as $indice => $valores){
             echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].'Urbano - '.$indice.': '.array_multisum($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']]['Urbano'][$indice])."<br>";
