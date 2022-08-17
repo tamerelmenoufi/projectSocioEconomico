@@ -13,6 +13,7 @@
             else if($key == 'i') $sumi += is_array($child) ? array_multisum($child) : 0;
             else if($key == 'c') $sumc += is_array($child) ? array_multisum($child) : 0;
             // $sum += is_array($child) ? array_multisum($child) : 0;
+            is_array($child) ? array_multisum($child) : 0;
         }
         return [
             $sump,
