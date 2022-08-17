@@ -1,7 +1,6 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
-
     if($_GET['u']){
         $url = base64_decode($_GET['u']);
     }else{
