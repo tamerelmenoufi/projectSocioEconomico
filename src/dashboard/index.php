@@ -11,7 +11,7 @@
             if(key($arr) == 'p') $sump += is_array($child) ? array_multisum($child) : 0;
             else if(key($arr) == 'i') $sumi += is_array($child) ? array_multisum($child) : 0;
             else if(key($arr) == 'c') $sumc += is_array($child) ? array_multisum($child) : 0;
-            else is_array($child) ? array_multisum($child) : 0;
+            else $sum = is_array($child) ? array_multisum($child) : 0;
             // $sum += is_array($child) ? array_multisum($child) : 0;
         }
         return [
