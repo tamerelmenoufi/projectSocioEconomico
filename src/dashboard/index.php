@@ -4,7 +4,7 @@
 
     function array_multisum($arr){
         $sum = array_sum($arr);
-        echo 'Chave de ' . $num."<br>";
+        echo 'Chave de ' . $sum."<br>";
         foreach($arr as $child) {
             $sum += is_array($child) ? array_multisum($child) : 0;
         }
