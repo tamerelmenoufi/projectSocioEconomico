@@ -3,7 +3,9 @@
 
 
     function array_multisum($arr){
-        $sum = array_sum($arr);
+        $sump = array_sum($arr);
+        $sumi = array_sum($arr);
+        $sumc = array_sum($arr);
         // echo 'Chave de ' .key($arr).' = '. $sum."<br>";
         foreach($arr as $child) {
             if(key($arr) == 'p') $sump += is_array($child) ? array_multisum($child) : 0;
