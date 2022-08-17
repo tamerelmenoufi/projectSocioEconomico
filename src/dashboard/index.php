@@ -25,7 +25,8 @@
                         a.municipio,
                         a.bairro_comunidade,
                         a.local,
-                        a.zona_urbana";
+                        a.zona_urbana,
+                        a.situacao";
 
     $result = mysqli_query($con,$query);
     while($d = mysqli_fetch_object($result)){
