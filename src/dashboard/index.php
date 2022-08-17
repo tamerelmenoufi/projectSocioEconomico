@@ -15,9 +15,9 @@
             // $sum += is_array($child) ? array_multisum($child) : 0;
         }
         return [
-            'p' => $sump,
-            'i' => $sumi,
-            'c' => $sumc,
+            $sump,
+            $sumi,
+            $sumc,
         ]; //$sum;
     }
 
