@@ -113,9 +113,9 @@ echo "Geral Urbano na capital Não Encontrados: ".$nuc."<br><hr>";
 
 foreach($iuz as $ind => $val){
     echo "<h5>{$ind}</h5>";
-    echo "Iniciados: ".$iuc."<br>";
-    echo "Pendentes: ".$puc."<br>";
-    echo "Concluídos: ".$cuc."<br>";
-    echo "Encontrados: ".$nuc."<br><hr>";
+    echo "Iniciados: ".$iuz[$ind]."<br>";
+    echo "Pendentes: ".$iuz[$ind]."<br>";
+    echo "Concluídos: ".$iuz[$ind]."<br>";
+    echo "Encontrados: ".$iuz[$ind]."<br><hr>";
 }
 
