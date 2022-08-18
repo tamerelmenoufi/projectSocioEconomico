@@ -8,7 +8,13 @@
     echo "Total: ".array_multisum($_SESSION['municipios']['quantidade'])."<br>";
 
 
-    // $_SESSION['municipios']['quantidade'][$d->cod_municipio][$d->local][$d->zona_urbana][$d->cod_bairro][$d->situacao] = $d->quantidade;
+    // $_SESSION['municipios']
+    //          ['quantidade']
+    //          [$d->cod_municipio]
+    //          [$d->local]
+    //          [$d->zona_urbana]
+    //          [$d->cod_bairro]
+    //          [$d->situacao]
 
     //VERIFICAR AS QUANTIDADE POR SITUAÇÃO
     $i = 0; //Inicidos
@@ -20,6 +26,8 @@
             foreach($valores1 as $indice2 => $valores2){ //Lista as zonas urbanas
                 foreach($valores2 as $indice3 => $valores3){ //Lista os Bairros
                     //Obter as quantidades por situacao
+                    echo "[$indice][$indice1][$indice2][$indice3]";
+                    exit();
                     $i += @array_multisum($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['i']);
                     $p += @array_multisum($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['p']);
                     $c += @array_multisum($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['c']);
