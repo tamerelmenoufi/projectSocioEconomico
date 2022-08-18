@@ -5,7 +5,7 @@
 <h3>Relatório Geral</h3>
 <?php
 
-    echo "Total: ".array_multisum($_SESSION['municipios']['quantidade'])."<br><hr>";
+    echo "Total: ".@array_multisum($_SESSION['municipios']['quantidade'])."<br><hr>";
 
 
     // $_SESSION['municipios']
@@ -85,10 +85,8 @@
     $u = 0;
     $r = 0;
     foreach($_SESSION['municipios']['quantidade'] as $indice => $valores){
-            $u += array_multisum($_SESSION['municipios']['quantidade'][$indice]['Urbano']);
-        if($indice != 66){
-            $r += array_multisum($_SESSION['municipios']['quantidade'][$indice]['Rural']);
-        }
+        $u += @array_multisum($_SESSION['municipios']['quantidade'][$indice]['Urbano']);
+        $r += @array_multisum($_SESSION['municipios']['quantidade'][$indice]['Rural']);
     }
     echo "Geral Urbano: ".$u."<br>";
     echo "Geral Rural: ".$r."<br><hr>";
@@ -96,8 +94,8 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////CONDIÇÔES PARA A CAPITAL - CODIGO 66 ////////////////////////
 
-$total_capital_urbano = array_multisum($_SESSION['municipios']['quantidade'][66]['Urbano']);
-$total_capital_rural = array_multisum($_SESSION['municipios']['quantidade'][66]['Rural']);
+$total_capital_urbano = @array_multisum($_SESSION['municipios']['quantidade'][66]['Urbano']);
+$total_capital_rural = @array_multisum($_SESSION['municipios']['quantidade'][66]['Rural']);
 
 echo "Total Urbano na Capital:".$total_capital_urbano."<br>";
 echo "Total Rural na Capital:".$total_capital_rural."<br><hr>";
