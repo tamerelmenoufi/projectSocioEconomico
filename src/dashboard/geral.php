@@ -20,10 +20,10 @@
             foreach($valores1 as $indice2 => $valores2){ //Lista as zonas urbanas
                 foreach($valores2 as $indice3 => $valores3){ //Lista os Bairros
                     //Obter as quantidades por situacao
-                    $i += array_multisum($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['i']);
-                    $p += array_multisum($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['p']);
-                    $c += array_multisum($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['c']);
-                    $n += array_multisum($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['n']);
+                    $i += @array_multisum($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['i']);
+                    $p += @array_multisum($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['p']);
+                    $c += @array_multisum($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['c']);
+                    $n += @array_multisum($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['n']);
                 }
             }
         }
