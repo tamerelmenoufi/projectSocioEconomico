@@ -38,6 +38,12 @@
                     $pu += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['p']);
                     $cu += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['c']);
                     $nu += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['n']);
+
+                    $iuz[$indice2] += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['i']);
+                    $puz[$indice2] += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['p']);
+                    $cuz[$indice2] += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['c']);
+                    $nuz[$indice2] += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['n']);
+
                     }
 
                     if($indice1 == 'Rural'){
@@ -104,4 +110,12 @@ echo "Geral Urbano na capital Iniciados: ".$iuc."<br>";
 echo "Geral Urbano na capital Pendentes: ".$puc."<br>";
 echo "Geral Urbano na capital Concluídos: ".$cuc."<br>";
 echo "Geral Urbano na capital Não Encontrados: ".$nuc."<br><hr>";
+
+foreach($iuz as $ind => $val){
+    echo "<h5>{$ind}</h5>";
+    echo "Iniciados: ".$iuc."<br>";
+    echo "Pendentes: ".$puc."<br>";
+    echo "Concluídos: ".$cuc."<br>";
+    echo "Encontrados: ".$nuc."<br><hr>";
+}
 
