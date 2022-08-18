@@ -30,10 +30,10 @@
                         echo "[$indice][$indice1][$indice2][$indice3]<br>";
                     }
 
-                    $i += @array_multisum($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['i']);
-                    $p += @array_multisum($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['p']);
-                    $c += @array_multisum($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['c']);
-                    $n += @array_multisum($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['n']);
+                    $i += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['i']);
+                    $p += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['p']);
+                    $c += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['c']);
+                    $n += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['n']);
                 }
             }
         }
