@@ -1,7 +1,7 @@
 <?php
 
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
-
+    $url = false;
 
     function array_multisum($arr){
         $sum = array_sum($arr);
@@ -49,7 +49,7 @@
         echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].'Urbano: '.array_multisum($_SESSION['municipios']['quantidade']['Urbano']['0'][$_SESSION['filtro_relatorio_municipio']])."<br>";
         echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].'Rural: '.array_multisum($_SESSION['municipios']['quantidade']['Rural']['0'][$_SESSION['filtro_relatorio_municipio']])."<br>";
     }else{
-        include("geral.php");
+        $url = 'src/dashboard/geral.php';
     }
 
     // foreach($_SESSION['bairro']['nome'] as $indice => $valor){
@@ -59,10 +59,21 @@
     // }
 
 ?>
-
+<div ResultadoDashboard></div>
 <script>
     $(function(){
         Carregando('none')
-
+        <?php
+        if($url){
+        ?>
+        $.ajax({
+            url:"<?=$url?>",
+            success:function(dados){
+                $("div[ResultadoDashboard]").html(dados);
+            }
+        });
+        <?php
+        }
+        ?>
     })
 </script>

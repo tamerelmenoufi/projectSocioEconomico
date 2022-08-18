@@ -1,3 +1,7 @@
+<?php
+
+    include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
+?>
 <h3>Relatório Geral</h3>
 <?php
 
