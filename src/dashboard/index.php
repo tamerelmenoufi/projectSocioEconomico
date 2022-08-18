@@ -49,18 +49,7 @@
         echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].'Urbano: '.array_multisum($_SESSION['municipios']['quantidade']['Urbano']['0'][$_SESSION['filtro_relatorio_municipio']])."<br>";
         echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].'Rural: '.array_multisum($_SESSION['municipios']['quantidade']['Rural']['0'][$_SESSION['filtro_relatorio_municipio']])."<br>";
     }else{
-        echo "Geral: ".array_multisum($_SESSION['municipios']['quantidade'])."<br>";
-        $u = 0;
-        $r = 0;
-        foreach($_SESSION['municipios']['quantidade'] as $indice => $valores){
-
-                $u += array_multisum($_SESSION['municipios']['quantidade'][$indice]['Urbano']);
-            if($indice != 66){
-                $r += array_multisum($_SESSION['municipios']['quantidade'][$indice]['Rural']);
-            }
-        }
-        echo "Geral Urbano: ".$u."<br>";
-        echo "Geral Rural: ".$r."<br>";
+        include("geral.php");
     }
 
     // foreach($_SESSION['bairro']['nome'] as $indice => $valor){
