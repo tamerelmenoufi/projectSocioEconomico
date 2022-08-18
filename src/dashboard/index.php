@@ -3,15 +3,6 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
     $url = false;
 
-    function array_multisum($arr){
-        $sum = array_sum($arr);
-        foreach($arr as $child) {
-            $sum += is_array($child) ? array_multisum($child) : 0;
-        }
-        return $sum;
-    }
-
-
     $query = "SELECT
                     a.municipio as cod_municipio,
                     a.bairro_comunidade as cod_bairro,

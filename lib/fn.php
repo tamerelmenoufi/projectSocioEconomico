@@ -126,3 +126,12 @@
             return implode(" ",$lista);
         }
     }
+
+
+    function array_multisum($arr){
+        $sum = array_sum($arr);
+        foreach($arr as $child) {
+            $sum += is_array($child) ? array_multisum($child) : 0;
+        }
+        return $sum;
+    }
