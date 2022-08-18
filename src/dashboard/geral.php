@@ -5,7 +5,7 @@
 <h3>Relatório Geral</h3>
 <?php
 
-    echo "Total: ".array_multisum($_SESSION['municipios']['quantidade'])."<br>";
+    echo "Total: ".array_multisum($_SESSION['municipios']['quantidade'])."<br><hr>";
 
 
     // $_SESSION['municipios']
@@ -17,44 +17,65 @@
     //          [$d->situacao]
 
     //VERIFICAR AS QUANTIDADE POR SITUAÇÃO
-    $i = 0; //Inicidos
-    $p = 0; //Pendentes
-    $c = 0; //Concluídos
-    $n = 0; //Não Encontrados
+    $i = 0; $iu = 0; $ir = 0; //Inicidos
+    $p = 0; $pu = 0; $pr = 0; //Pendentes
+    $c = 0; $cu = 0; $cr = 0; //Concluídos
+    $n = 0; $nu = 0; $nr = 0; //Não Encontrados
+
     foreach($_SESSION['municipios']['quantidade'] as $indice => $valores){ //Lista os municipios
         foreach($valores as $indice1 => $valores1){ //Lista as zonas
             foreach($valores1 as $indice2 => $valores2){ //Lista as zonas urbanas
                 foreach($valores2 as $indice3 => $valores3){ //Lista os Bairros
                     //Obter as quantidades por situacao
-                    if($indice3 == 16397 and $indice == 66){
-                        echo "[$indice][$indice1][$indice2][$indice3]<br>";
-                    }
-
                     $i += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['i']);
                     $p += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['p']);
                     $c += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['c']);
                     $n += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['n']);
+
+                    if($indice1 == 'Urbano'){
+                    //Obter as quantidades por situacao por zona Urbana
+                    $iu += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['i']);
+                    $pu += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['p']);
+                    $cu += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['c']);
+                    $nu += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['n']);
+                    }
+
+                    if($indice1 == 'Rural'){
+                    //Obter as quantidades por situacao por zona Rural
+                    $ir += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['i']);
+                    $pr += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['p']);
+                    $cr += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['c']);
+                    $nr += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['n']);
+                    }
                 }
             }
         }
     }
 
-    echo 'Concluido Tamer:'.$_SESSION['municipios']['quantidade']['66']['Urbano']['0']['16397']['c']."<br>"; //array_multisum($_SESSION['municipios']['quantidade']['66']['Urbano']['0']['16397']['c'])."<br>";
-
     echo "Geral Iniciados: ".$i."<br>";
     echo "Geral Pendentes: ".$p."<br>";
     echo "Geral Concluídos: ".$c."<br>";
-    echo "Geral Não Encontrados: ".$n."<br>";
+    echo "Geral Não Encontrados: ".$n."<br><hr>";
+
+    echo "Geral Urbano Iniciados: ".$iu."<br>";
+    echo "Geral Urbano Pendentes: ".$pu."<br>";
+    echo "Geral Urbano Concluídos: ".$cu."<br>";
+    echo "Geral Urbano Não Encontrados: ".$nu."<br><hr>";
+
+    echo "Geral Rural Iniciados: ".$ir."<br>";
+    echo "Geral Rural Pendentes: ".$pr."<br>";
+    echo "Geral Rural Concluídos: ".$cr."<br>";
+    echo "Geral Rural Não Encontrados: ".$nr."<br><hr>";
 
     // VERIFICANDO AS QUANTIDADE URBANOS E RURAIS
     $u = 0;
     $r = 0;
     foreach($_SESSION['municipios']['quantidade'] as $indice => $valores){
-
             $u += array_multisum($_SESSION['municipios']['quantidade'][$indice]['Urbano']);
         if($indice != 66){
             $r += array_multisum($_SESSION['municipios']['quantidade'][$indice]['Rural']);
         }
     }
     echo "Geral Urbano: ".$u."<br>";
-    echo "Geral Rural: ".$r."<br>";
+    echo "Geral Rural: ".$r."<br><hr>";
+
