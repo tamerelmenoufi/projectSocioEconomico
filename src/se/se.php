@@ -36,6 +36,9 @@
             }elseif($pct > 0){
                 $attr[] = "pesquisa_realizada = 'Pendente'";
                 $attr[] = "situacao = 'i'";
+            }elseif($_POST['beneficiario_encontrado'] == 'Não'){
+                $attr[] = "pesquisa_realizada = ''";
+                $attr[] = "situacao = 'n'";
             }else{
                 $attr[] = "pesquisa_realizada = ''";
                 $attr[] = "situacao = 'p'";
