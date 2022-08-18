@@ -17,10 +17,10 @@
     //          [$d->situacao]
 
     //VERIFICAR AS QUANTIDADE POR SITUAÇÃO
-    $i = 0; $iu = 0; $ir = 0; //Inicidos
-    $p = 0; $pu = 0; $pr = 0; //Pendentes
-    $c = 0; $cu = 0; $cr = 0; //Concluídos
-    $n = 0; $nu = 0; $nr = 0; //Não Encontrados
+    $i = 0; $iu = 0; $iuc = 0; $ir = 0; //Inicidos
+    $p = 0; $pu = 0; $puc = 0; $pr = 0; //Pendentes
+    $c = 0; $cu = 0; $cuc = 0; $cr = 0; //Concluídos
+    $n = 0; $nu = 0; $nuc = 0; $nr = 0; //Não Encontrados
 
     foreach($_SESSION['municipios']['quantidade'] as $indice => $valores){ //Lista os municipios
         foreach($valores as $indice1 => $valores1){ //Lista as zonas
@@ -47,6 +47,20 @@
                     $cr += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['c']);
                     $nr += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['n']);
                     }
+
+                    ///////////CONDIÇÔES PARA A CAPITAL - CODIGO 66 ////////////////////////
+                    if($indice == 66){
+
+                        $iuc += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['i']);
+                        $puc += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['p']);
+                        $cuc += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['c']);
+                        $nuc += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['n']);
+
+                    }
+
+
+
+
                 }
             }
         }
@@ -78,4 +92,18 @@
     }
     echo "Geral Urbano: ".$u."<br>";
     echo "Geral Rural: ".$r."<br><hr>";
+
+//////////////////////////////////////////////////////////////////////////////////////////
+///////////CONDIÇÔES PARA A CAPITAL - CODIGO 66 ////////////////////////
+
+$total_capital_urbano = array_multisum($_SESSION['municipios']['quantidade'][66]['Urbano']);
+$total_capital_rural = array_multisum($_SESSION['municipios']['quantidade'][66]['Rural']);
+
+echo "Total Urbano na Capital:".$total_capital_urbano."<br>";
+echo "Total Rural na Capital:".$total_capital_rural."<br><hr>";
+
+echo "Geral Urbano na capital Iniciados: ".$iuc."<br>";
+echo "Geral Urbano na capital Pendentes: ".$puc."<br>";
+echo "Geral Urbano na capital Concluídos: ".$cuc."<br>";
+echo "Geral Urbano na capital Não Encontrados: ".$nuc."<br><hr>";
 
