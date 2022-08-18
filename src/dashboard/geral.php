@@ -35,7 +35,7 @@
         }
     }
 
-    echo 'Concluido Tamer:'.array_multisum($_SESSION['municipios']['quantidade'][66]['Urbano']['0']['16397']['c'])."<br>";
+    echo 'Concluido Tamer:'.array_multisum($_SESSION['municipios']['quantidade']['66']['Urbano']['0']['16397']['c'])."<br>";
 
     echo "Geral Iniciados: ".$i."<br>";
     echo "Geral Pendentes: ".$p."<br>";
