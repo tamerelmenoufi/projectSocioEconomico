@@ -52,6 +52,13 @@
                     rotulos: [<?=$R?>]
                 }]
             }
+        },
+        options:{
+            plugins: {
+                legend: {
+                    display: false,
+                }
+            }
         }
     );
 
