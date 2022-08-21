@@ -104,7 +104,7 @@
 <?php
 
     $Rotulos = ['Pesquisas Iniciadas','Pesquisas Pendentes','Pesquisas Concluídas','Beneficiários Não Enontrados'];
-    $Quantidade = [$iu, $pu, $cu, $nu];
+    $Quantidade = [$ir, $pr, $cr, $nr];
     $R = (($Rotulos)?"'".implode("','",$Rotulos)."'":0);
     $Q = (($Quantidade)?implode(",",$Quantidade):0);
 
