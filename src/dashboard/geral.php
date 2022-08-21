@@ -134,7 +134,7 @@ foreach($iuz as $ind => $val){
         margin-left:10px;
     }
     .cartao p{
-        font-size:30px;
+        font-size:25px;
         font-weight:bold;
         text-align:center;
         padding:10px;
