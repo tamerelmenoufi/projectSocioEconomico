@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
-    // echo "Total: ".@array_multisum($_SESSION['municipios']['quantidade'])."<br><hr>";
+    $total = @array_multisum($_SESSION['municipios']['quantidade'])."<br><hr>";
 
 
     // $_SESSION['municipios']
@@ -156,35 +156,35 @@ foreach($iuz as $ind => $val){
         <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Toatl Geral</span>
-                <p>78546</p>
+                <p><?=$total?></p>
             </div>
         </div>
 
         <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Pesquisas Iniciadas</span>
-                <p>78546</p>
+                <p><?=$i?></p>
             </div>
         </div>
 
         <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Pesquisas Pendentes</span>
-                <p>78546</p>
+                <p><?=$p?></p>
             </div>
         </div>
 
         <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Pesquisas Concluídas</span>
-                <p>78546</p>
+                <p><?=$c?></p>
             </div>
         </div>
 
         <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Beneficiários não encontrados</span>
-                <p>78546</p>
+                <p><?=$n?></p>
             </div>
         </div>
 
