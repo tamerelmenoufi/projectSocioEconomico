@@ -119,20 +119,26 @@ foreach($iuz as $ind => $val){
 }
 ?>
 <style>
+    .AreaDashboard{
+        position:relative;
+        width:100%;
+    }
     .cartao{
         position:relative;
         width:95%;
         height:95%;
-        background-color:'#ccc'
+        background-color:#ccc;
     }
 </style>
-<div class="col">
-    <div class="col-md-1"></div>
-    <div class="col-md-2">
-        <div class="cartao">
-            <span>Título do bloco</span>
-            <p>78546</p>
+<div class="AreaDashboard">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+            <div class="cartao">
+                <span>Título do bloco</span>
+                <p>78546</p>
+            </div>
         </div>
+        <div class="col-md-1"></div>
     </div>
-    <div class="col-md-1"></div>
 </div>
