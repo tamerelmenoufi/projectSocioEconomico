@@ -6,7 +6,7 @@
 
 <canvas id="Tipos<?= $md5 ?>" width="400" height="400" style="margin:10px;"></canvas>
 
-<ol class="list-group list-group-numbered" style="margin-top:15px;">
+<ol class="list-group list-group-numbered" style="margin-top:15px; width:100%;">
   <li class="list-group-item d-flex justify-content-between align-items-start">
     <div class="ms-2 me-auto">
       Cras justo odio
