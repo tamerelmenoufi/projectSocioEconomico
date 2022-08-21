@@ -150,35 +150,35 @@ foreach($iuz as $ind => $val){
         <div class="col-md-1"></div>
 
 
-        <div class="col-md-2">
+        <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Toatl Geral</span>
                 <p>78546</p>
             </div>
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Pesquisas Iniciadas</span>
                 <p>78546</p>
             </div>
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Pesquisas Pendentes</span>
                 <p>78546</p>
             </div>
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Pesquisas Concluídas</span>
                 <p>78546</p>
             </div>
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Beneficiários não encontrados</span>
                 <p>78546</p>
