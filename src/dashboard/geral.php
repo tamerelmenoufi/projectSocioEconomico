@@ -139,7 +139,7 @@ foreach($iuz as $ind => $val){
         text-align:center;
         padding:10px;
     }
-    .card{
+    .card-body{
         padding:0;
     }
 </style>
