@@ -1,6 +1,17 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
     $md5 = md5($_POST['rotulo'].$md5);
+
+    // VERIFICANDO AS QUANTIDADE URBANOS E RURAIS
+    $u = 0;
+    $r = 0;
+    foreach($_SESSION['municipios']['quantidade'] as $indice => $valores){
+        $u += @array_multisum($_SESSION['municipios']['quantidade'][$indice]['Urbano']);
+        $r += @array_multisum($_SESSION['municipios']['quantidade'][$indice]['Rural']);
+    }
+    // echo "Geral Urbano: ".$u."<br>";
+    // echo "Geral Rural: ".$r."<br><hr>";
+
 ?>
 
 
@@ -19,16 +30,6 @@
 
 
 <?php
-
-    // VERIFICANDO AS QUANTIDADE URBANOS E RURAIS
-    $u = 0;
-    $r = 0;
-    foreach($_SESSION['municipios']['quantidade'] as $indice => $valores){
-        $u += @array_multisum($_SESSION['municipios']['quantidade'][$indice]['Urbano']);
-        $r += @array_multisum($_SESSION['municipios']['quantidade'][$indice]['Rural']);
-    }
-    // echo "Geral Urbano: ".$u."<br>";
-    // echo "Geral Rural: ".$r."<br><hr>";
 
     $Rotulos = ['Urbano','Rural'];
     $Quantidade = [$u, $r];
