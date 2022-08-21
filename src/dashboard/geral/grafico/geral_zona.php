@@ -6,20 +6,17 @@
 
 <canvas id="Tipos<?= $md5 ?>" width="400" height="400" style="margin:10px;"></canvas>
 
-<ul class="list-group" style="margin-top:15px; width:100%;">
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2">
-      Total Zona Urbana
-    </div>
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Total Zona Urbana
     <span class="badge bg-primary rounded-pill"><?=$u?></span>
   </li>
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2">
-      Total Zona Rural
-    </div>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Total Zona Rural
     <span class="badge bg-primary rounded-pill"><?=$r?></span>
   </li>
 </ul>
+
 
 <?php
 
