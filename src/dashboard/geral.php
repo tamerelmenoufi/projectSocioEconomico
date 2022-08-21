@@ -199,7 +199,7 @@ foreach($iuz as $ind => $val){
             <div mapa="geral" style="width:100%;"></div>
         </div>
         <div class="col-md-1"></div>
-    </div
+    </div>
 
 
     <div class="row">
