@@ -141,7 +141,7 @@ foreach($iuz as $ind => $val){
     }
 </style>
 <div class="AreaDashboard">
-    <div class="row mb-3">
+    <div class="row mb-3 mt-3">
         <div class="col-md-1"></div>
         <div class="col-md-10"><h3>Relatório Geral</h3></div>
         <div class="col-md-1"></div>
