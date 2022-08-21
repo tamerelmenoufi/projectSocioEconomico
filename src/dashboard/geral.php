@@ -253,13 +253,12 @@ foreach($iuz as $ind => $val){
     $(function(){
 
         $("div[grafico]").each(function(){
-            obj = $(this);
             opc = $(this).attr("grafico");
             url = `src/dashboard/geral/grafico/${opc}.php`;
             $.ajax({
                 url,
                 success:function(dados){
-                    obj.html(dados);
+                    $(`div[grafico="${opc}"]`).html(dados);
                 }
             })
         })
