@@ -214,7 +214,7 @@ foreach($iuz as $ind => $val){
                     <div class="card">
                         <h6 class="card-header">Por Zona Urbana</h6>
                         <div class="card-body">
-                            <div grafico="resumo" style="width:100%;"></div>
+                            <div grafico="zona_urbana" style="width:100%;"></div>
                         </div>
                     </div>
                 </div>
