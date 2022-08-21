@@ -148,7 +148,7 @@ foreach($iuz as $ind => $val){
     }
     .cartao div[download]{
         position:absolute;
-        right:30px;
+        right:35px;
         bottom:5px;
         width:auto;
         cursor:pointer;
