@@ -6,7 +6,7 @@
 
 <canvas id="Tipos<?= $md5 ?>" width="400" height="400" style="margin:10px;"></canvas>
 
-<ol class="list-group" style="margin-top:15px; width:100%;">
+<ul class="list-group" style="margin-top:15px; width:100%;">
   <li class="list-group-item d-flex justify-content-between align-items-start">
     <div class="ms-2">
       Total Zona Urbana
@@ -19,7 +19,7 @@
     </div>
     <span class="badge bg-primary rounded-pill"><?=$r?></span>
   </li>
-</ol>
+</ul>
 
 <?php
 
