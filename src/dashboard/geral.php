@@ -127,7 +127,7 @@ foreach($iuz as $ind => $val){
         background-color:'#ccc'
     }
 </style>
-<div class="row">
+<div class="col">
     <div class="col-md-1"></div>
     <div class="col-md-2">
         <div class="cartao">
