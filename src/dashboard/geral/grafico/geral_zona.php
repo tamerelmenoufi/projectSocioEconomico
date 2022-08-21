@@ -17,7 +17,7 @@
 
 <canvas id="Tipos<?= $md5 ?>" width="400" height="400" style="margin:10px;"></canvas>
 
-<ul class="list-group">
+<ul class="list-group" style="font-size:10px;">
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Total Zona Urbana
     <span class="badge bg-primary rounded-pill"><?=$u?></span>
