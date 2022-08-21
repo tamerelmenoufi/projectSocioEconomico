@@ -112,6 +112,13 @@
                     borderWidth: 1,
                     rotulos: [<?=$R?>]
                 }]
+            },
+            options:{
+                plugins: {
+                    legend: {
+                        display: false,
+                    }
+                }
             }
         }
     );
