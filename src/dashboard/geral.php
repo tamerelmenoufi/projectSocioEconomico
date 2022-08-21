@@ -134,12 +134,18 @@ foreach($iuz as $ind => $val){
 <div class="AreaDashboard">
     <div class="row">
         <div class="col-md-1"></div>
+        <?php
+        for($i=0;$i<5;$i++){
+        ?>
         <div class="col-md-2">
             <div class="cartao">
                 <span>Título do bloco</span>
                 <p>78546</p>
             </div>
         </div>
+        <?php
+        }
+        ?>
         <div class="col-md-1"></div>
     </div>
 </div>
