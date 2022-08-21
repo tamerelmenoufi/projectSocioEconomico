@@ -139,6 +139,13 @@ foreach($iuz as $ind => $val){
         text-align:center;
         padding:10px;
     }
+    .cartao div[editar]{
+        position:absolute;
+        right:10px;
+        bottom:10px;
+        width:auto;
+        cursor:pointer;
+    }
     .card-body{
         padding:0;
     }
@@ -157,6 +164,9 @@ foreach($iuz as $ind => $val){
             <div class="cartao">
                 <span>Toatl Geral</span>
                 <p><?=$total?></p>
+                <div editar>
+                    <i class="fa fa-user"></i>
+                </div>
             </div>
         </div>
 
