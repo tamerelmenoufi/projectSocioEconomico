@@ -45,7 +45,7 @@
     $Q = (($Quantidade)?implode(",",$Quantidade):0);
 
 ?>
-
+<script>
     const TiposCtx<?=$md5?> = document.getElementById('Tipos<?=$md5?>');
 
     const Tipos<?=$md5?> = new Chart(TiposCtx<?=$md5?>,
