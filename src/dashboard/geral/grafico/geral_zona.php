@@ -26,7 +26,6 @@
   </li>
 </ol>
 
-
 <?php
 
     // VERIFICANDO AS QUANTIDADE URBANOS E RURAIS

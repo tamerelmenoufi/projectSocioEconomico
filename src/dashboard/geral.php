@@ -202,7 +202,7 @@ foreach($iuz as $ind => $val){
         <div class="col-md-10">
             <div class="row">
                 <div class="col-md-3 mb-3">
-                    <div class="card">
+                    <div class="card h-100">
                         <h6 class="card-header">Geral por Zona</h6>
                         <div class="card-body">
                             <div grafico="geral_zona" style="width:100%;"></div>
@@ -211,7 +211,7 @@ foreach($iuz as $ind => $val){
                 </div>
 
                 <div class="col-md-3 mb-3">
-                    <div class="card">
+                    <div class="card h-100">
                         <h6 class="card-header">Por Zona Urbana</h6>
                         <div class="card-body">
                             <div grafico="zona_urbana" style="width:100%;"></div>
@@ -220,7 +220,7 @@ foreach($iuz as $ind => $val){
                 </div>
 
                 <div class="col-md-3 mb-3">
-                    <div class="card">
+                    <div class="card h-100">
                         <h6 class="card-header">Por Zona Rural</h6>
                         <div class="card-body">
                             <div grafico="resumo" style="width:100%;"></div>
@@ -229,7 +229,7 @@ foreach($iuz as $ind => $val){
                 </div>
 
                 <div class="col-md-3 mb-3">
-                    <div class="card">
+                    <div class="card h-100">
                         <h6 class="card-header">Evolução Geral da Pesquisa</h6>
                         <div class="card-body">
                             <div grafico="resumo" style="width:100%;"></div>
