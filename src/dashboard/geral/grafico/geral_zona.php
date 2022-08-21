@@ -51,12 +51,12 @@
                     borderWidth: 1,
                     rotulos: [<?=$R?>]
                 }]
-            }
-        },
-        options:{
-            plugins: {
-                legend: {
-                    display: false,
+            },
+            options:{
+                plugins: {
+                    legend: {
+                        display: false,
+                    }
                 }
             }
         }
