@@ -128,9 +128,10 @@ foreach($iuz as $ind => $val){
         position:relative;
         width:95%;
         height:95%;
+        padding:10px;
         background-color:#459adb;
         border-radius:10px;
-        color:#a1a1a1;
+        color:#fff;
     }
     .cartao span{
         font-size:10px;
@@ -138,6 +139,7 @@ foreach($iuz as $ind => $val){
     .cartao p{
         font-size:20px;
         font-weight:bold;
+        text-align:center;
     }
 </style>
 <div class="AreaDashboard">
