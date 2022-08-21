@@ -232,7 +232,7 @@ foreach($iuz as $ind => $val){
                     <div class="card h-100">
                         <h6 class="card-header">Evolução Geral da Pesquisa</h6>
                         <div class="card-body">
-                            <div grafico="resumo" style="width:100%;"></div>
+                            <div grafico="geral_pesquisa" style="width:100%;"></div>
                         </div>
                     </div>
                 </div>
