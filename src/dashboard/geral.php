@@ -146,18 +146,45 @@ foreach($iuz as $ind => $val){
 <div class="AreaDashboard">
     <div class="row">
         <div class="col-md-1"></div>
-        <?php
-        for($i=0;$i<5;$i++){
-        ?>
+
+
         <div class="col-md-2">
             <div class="cartao">
-                <span>Título do bloco</span>
+                <span>Toatl Geral</span>
                 <p>78546</p>
             </div>
         </div>
-        <?php
-        }
-        ?>
+
+        <div class="col-md-2">
+            <div class="cartao">
+                <span>Pesquisas Iniciadas</span>
+                <p>78546</p>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="cartao">
+                <span>Pesquisas Pendentes</span>
+                <p>78546</p>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="cartao">
+                <span>Pesquisas Concluídas</span>
+                <p>78546</p>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="cartao">
+                <span>Beneficiários não encontrados</span>
+                <p>78546</p>
+            </div>
+        </div>
+
+
+
         <div class="col-md-1"></div>
     </div>
 </div>
