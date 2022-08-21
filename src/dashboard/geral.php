@@ -1,8 +1,5 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
-?>
-<h3>Relatório Geral</h3>
-<?php
 
     // echo "Total: ".@array_multisum($_SESSION['municipios']['quantidade'])."<br><hr>";
 
@@ -144,6 +141,7 @@ foreach($iuz as $ind => $val){
     }
 </style>
 <div class="AreaDashboard">
+    <h3>Relatório Geral</h3>
     <div class="row">
         <div class="col-md-1"></div>
 
