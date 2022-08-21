@@ -128,7 +128,6 @@ foreach($iuz as $ind => $val){
         position:relative;
         width:95%;
         height:95%;
-        padding:10px;
         background-color:#459adb;
         border-radius:10px;
         color:#fff;
@@ -140,6 +139,7 @@ foreach($iuz as $ind => $val){
         font-size:20px;
         font-weight:bold;
         text-align:center;
+        padding:10px;
     }
 </style>
 <div class="AreaDashboard">
