@@ -120,8 +120,9 @@ foreach($iuz as $ind => $val){
 ?>
 <style>
     .AreaDashboard{
-        position:relative;
-        width:100%;
+        position:absolute;
+        left:20px;
+        right:20px;
     }
     .cartao{
         position:relative;
