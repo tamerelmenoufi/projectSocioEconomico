@@ -1,11 +1,10 @@
 <?php
-
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 ?>
 <h3>Relatório Geral</h3>
 <?php
 
-    echo "Total: ".@array_multisum($_SESSION['municipios']['quantidade'])."<br><hr>";
+    // echo "Total: ".@array_multisum($_SESSION['municipios']['quantidade'])."<br><hr>";
 
 
     // $_SESSION['municipios']
@@ -72,20 +71,20 @@
         }
     }
 
-    echo "Geral Iniciados: ".$i."<br>";
-    echo "Geral Pendentes: ".$p."<br>";
-    echo "Geral Concluídos: ".$c."<br>";
-    echo "Geral Não Encontrados: ".$n."<br><hr>";
+    // echo "Geral Iniciados: ".$i."<br>";
+    // echo "Geral Pendentes: ".$p."<br>";
+    // echo "Geral Concluídos: ".$c."<br>";
+    // echo "Geral Não Encontrados: ".$n."<br><hr>";
 
-    echo "Geral Urbano Iniciados: ".$iu."<br>";
-    echo "Geral Urbano Pendentes: ".$pu."<br>";
-    echo "Geral Urbano Concluídos: ".$cu."<br>";
-    echo "Geral Urbano Não Encontrados: ".$nu."<br><hr>";
+    // echo "Geral Urbano Iniciados: ".$iu."<br>";
+    // echo "Geral Urbano Pendentes: ".$pu."<br>";
+    // echo "Geral Urbano Concluídos: ".$cu."<br>";
+    // echo "Geral Urbano Não Encontrados: ".$nu."<br><hr>";
 
-    echo "Geral Rural Iniciados: ".$ir."<br>";
-    echo "Geral Rural Pendentes: ".$pr."<br>";
-    echo "Geral Rural Concluídos: ".$cr."<br>";
-    echo "Geral Rural Não Encontrados: ".$nr."<br><hr>";
+    // echo "Geral Rural Iniciados: ".$ir."<br>";
+    // echo "Geral Rural Pendentes: ".$pr."<br>";
+    // echo "Geral Rural Concluídos: ".$cr."<br>";
+    // echo "Geral Rural Não Encontrados: ".$nr."<br><hr>";
 
     // VERIFICANDO AS QUANTIDADE URBANOS E RURAIS
     $u = 0;
@@ -94,8 +93,8 @@
         $u += @array_multisum($_SESSION['municipios']['quantidade'][$indice]['Urbano']);
         $r += @array_multisum($_SESSION['municipios']['quantidade'][$indice]['Rural']);
     }
-    echo "Geral Urbano: ".$u."<br>";
-    echo "Geral Rural: ".$r."<br><hr>";
+    // echo "Geral Urbano: ".$u."<br>";
+    // echo "Geral Rural: ".$r."<br><hr>";
 
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////CONDIÇÔES PARA A CAPITAL - CODIGO 66 ////////////////////////
@@ -103,20 +102,20 @@
 $total_capital_urbano = @array_multisum($_SESSION['municipios']['quantidade'][66]['Urbano']);
 $total_capital_rural = @array_multisum($_SESSION['municipios']['quantidade'][66]['Rural']);
 
-echo "Total Urbano na Capital:".$total_capital_urbano."<br>";
-echo "Total Rural na Capital:".$total_capital_rural."<br><hr>";
+// echo "Total Urbano na Capital:".$total_capital_urbano."<br>";
+// echo "Total Rural na Capital:".$total_capital_rural."<br><hr>";
 
-echo "Geral Urbano na capital Iniciados: ".$iuc."<br>";
-echo "Geral Urbano na capital Pendentes: ".$puc."<br>";
-echo "Geral Urbano na capital Concluídos: ".$cuc."<br>";
-echo "Geral Urbano na capital Não Encontrados: ".$nuc."<br><hr>";
+// echo "Geral Urbano na capital Iniciados: ".$iuc."<br>";
+// echo "Geral Urbano na capital Pendentes: ".$puc."<br>";
+// echo "Geral Urbano na capital Concluídos: ".$cuc."<br>";
+// echo "Geral Urbano na capital Não Encontrados: ".$nuc."<br><hr>";
 
 foreach($iuz as $ind => $val){
-    echo "<h5>{$ind}</h5>";
-    echo "Iniciados: ".$iuz[$ind]."<br>";
-    echo "Pendentes: ".$puz[$ind]."<br>";
-    echo "Concluídos: ".$cuz[$ind]."<br>";
-    echo "Não Encontrados: ".$nuz[$ind]."<br><hr>";
+    // echo "<h5>{$ind}</h5>";
+    // echo "Iniciados: ".$iuz[$ind]."<br>";
+    // echo "Pendentes: ".$puz[$ind]."<br>";
+    // echo "Concluídos: ".$cuz[$ind]."<br>";
+    // echo "Não Encontrados: ".$nuz[$ind]."<br><hr>";
 }
 ?>
 <style>
