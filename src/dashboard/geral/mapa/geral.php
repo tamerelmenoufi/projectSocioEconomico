@@ -12,6 +12,7 @@
     width:100%;
     opacity:1;
     z-index:0;
+    margin-bottom:10px;
 }
 
 </style>
