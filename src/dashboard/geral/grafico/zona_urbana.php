@@ -1,15 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
     $md5 = md5($_POST['rotulo'].$md5);
-?>
 
-
-<canvas id="Tipos<?= $md5 ?>" width="400" height="400"></canvas>
-
-<script>
-
-
-<?php
 
     //VERIFICAR AS QUANTIDADE POR SITUAÇÃO
     $i = 0; $iu = 0; $iuc = 0; $ir = 0; //Inicidos
@@ -82,7 +74,46 @@
     // echo "Geral Rural Concluídos: ".$cr."<br>";
     // echo "Geral Rural Não Encontrados: ".$nr."<br><hr>";
 
-    $Rotulos = ['I','P','C','N'];
+?>
+
+
+<canvas id="Tipos<?= $md5 ?>" width="400" height="400" style="margin:10px;"></canvas>
+
+<ol class="list-group list-group-numbered" style="margin-top:15px; width:100%;">
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2">
+        Pesquisas Iniciadas
+    </div>
+    <span class="badge bg-primary rounded-pill"><?=$iu?></span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2">
+        Pesquisas Pendentes
+    </div>
+    <span class="badge bg-primary rounded-pill"><?=$pu?></span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2">
+        Pesquisas Concluídas
+    </div>
+    <span class="badge bg-primary rounded-pill"><?=$cu?></span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2">
+        Beneficiários Não Enontrados
+    </div>
+    <span class="badge bg-primary rounded-pill"><?=$nu?></span>
+  </li>
+</ol>
+
+
+
+<script>
+
+
+<?php
+
+    $Rotulos = ['Pesquisas Iniciadas','Pesquisas Pendentes','Pesquisas Concluídas','Beneficiários Não Enontrados'];
     $Quantidade = [$iu, $pu, $cu, $nu];
     $R = (($Rotulos)?"'".implode("','",$Rotulos)."'":0);
     $Q = (($Quantidade)?implode(",",$Quantidade):0);
