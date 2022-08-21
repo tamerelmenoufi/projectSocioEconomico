@@ -142,7 +142,7 @@ foreach($iuz as $ind => $val){
     .cartao div[editar]{
         position:absolute;
         right:10px;
-        bottom:10px;
+        bottom:5px;
         width:auto;
         cursor:pointer;
     }
