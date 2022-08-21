@@ -139,6 +139,9 @@ foreach($iuz as $ind => $val){
         text-align:center;
         padding:10px;
     }
+    .card{
+        padding:0;
+    }
 </style>
 <div class="AreaDashboard">
     <div class="row mb-3 mt-3">
@@ -189,9 +192,6 @@ foreach($iuz as $ind => $val){
 
         <div class="col-md-1"></div>
     </div>
-
-
-
 
 
 
