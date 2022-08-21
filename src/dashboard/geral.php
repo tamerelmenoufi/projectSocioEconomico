@@ -205,7 +205,7 @@ foreach($iuz as $ind => $val){
                     <div class="card">
                         <h6 class="card-header">Geral por Zona</h6>
                         <div class="card-body">
-                            <div grafico="resumo" style="width:100%;"></div>
+                            <div grafico="geral_zona" style="width:100%;"></div>
                         </div>
                     </div>
                 </div>
@@ -247,3 +247,22 @@ foreach($iuz as $ind => $val){
 
 
 </div>
+
+
+<script>
+    $(function(){
+
+        $("div[grafico]").each(function(){
+            obj = $(this);
+            opc = $(this).attr("grafico");
+            url = `src/dashboard/geral/grafico/${opc}.php`;
+            $.ajax({
+                url,
+                success:function(dados){
+                    obj.html(dados);
+                }
+            })
+        })
+
+    })
+</script>
