@@ -126,8 +126,8 @@ foreach($iuz as $ind => $val){
     }
     .cartao{
         position:relative;
-        width:95%;
-        height:95%;
+        width:99%;
+        height:100%;
         background-color:#459adb;
         border-radius:10px;
         color:#fff;
