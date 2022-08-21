@@ -6,24 +6,18 @@
 
 <canvas id="Tipos<?= $md5 ?>" width="400" height="400" style="margin:10px;"></canvas>
 
-<ol class="list-group list-group-numbered" style="margin-top:15px; width:100%;">
+<ol class="list-group" style="margin-top:15px; width:100%;">
   <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2 me-auto">
-      Cras justo odio
+    <div class="ms-2">
+      Total Zona Urbana
     </div>
-    <span class="badge bg-primary rounded-pill">14</span>
+    <span class="badge bg-primary rounded-pill"><?=$u?></span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2 me-auto">
-      Cras justo odio
+    <div class="ms-2">
+      Total Zona Rural
     </div>
-    <span class="badge bg-primary rounded-pill">14</span>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2 me-auto">
-      Cras justo odio
-    </div>
-    <span class="badge bg-primary rounded-pill">14</span>
+    <span class="badge bg-primary rounded-pill"><?=$r?></span>
   </li>
 </ol>
 
