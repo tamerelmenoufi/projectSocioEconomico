@@ -255,6 +255,10 @@ foreach($iuz as $ind => $val){
         const AbrirGrafico = (opc, url)=>{
             $.ajax({
                 url,
+                type:"POST",
+                data:{
+                    rotulo:opc,
+                },
                 success:function(dados){
                     $(`div[grafico="${opc}"]`).html(dados);
                 }
