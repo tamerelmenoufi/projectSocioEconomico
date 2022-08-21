@@ -79,34 +79,24 @@
 
 <canvas id="Tipos<?= $md5 ?>" width="400" height="400" style="margin:10px;"></canvas>
 
-<ol class="list-group list-group-numbered" style="margin-top:15px; width:100%;">
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2">
-        Pesquisas Iniciadas
-    </div>
+<ul class="list-group" style="font-size:10px;">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Pesquisas Iniciadas
     <span class="badge bg-primary rounded-pill"><?=$iu?></span>
   </li>
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2">
-        Pesquisas Pendentes
-    </div>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Pesquisas Pendente
     <span class="badge bg-primary rounded-pill"><?=$pu?></span>
   </li>
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2">
-        Pesquisas Concluídas
-    </div>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Pesquisas Concluída
     <span class="badge bg-primary rounded-pill"><?=$cu?></span>
   </li>
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2">
-        Beneficiários Não Enontrados
-    </div>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Beneficiários Não Enontrados
     <span class="badge bg-primary rounded-pill"><?=$nu?></span>
   </li>
-</ol>
-
-
+</ul>
 
 <script>
 
