@@ -193,8 +193,13 @@ foreach($iuz as $ind => $val){
         <div class="col-md-1"></div>
     </div>
 
-
-
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div mapa="geral" style="width:100%;"></div>
+        </div>
+        <div class="col-md-1"></div>
+    </div
 
 
     <div class="row">
@@ -252,6 +257,26 @@ foreach($iuz as $ind => $val){
 <script>
     $(function(){
 
+        const AbrirMapa = (opc, url)=>{
+            $.ajax({
+                url,
+                type:"POST",
+                data:{
+                    rotulo:opc,
+                },
+                success:function(dados){
+                    $(`div[mapa="${opc}"]`).html(dados);
+                }
+            })
+        }
+
+        $("div[mapa]").each(function(){
+            opc = $(this).attr("mapa");
+            url = `src/dashboard/geral/mapa/${opc}.php`;
+            AbrirMapa(opc, url);
+        })
+
+
         const AbrirGrafico = (opc, url)=>{
             $.ajax({
                 url,
@@ -270,6 +295,7 @@ foreach($iuz as $ind => $val){
             url = `src/dashboard/geral/grafico/${opc}.php`;
             AbrirGrafico(opc, url);
         })
+
 
     })
 </script>
