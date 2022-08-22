@@ -56,6 +56,7 @@
         position:absolute;
         left:20px;
         right:20px;
+        z-index:10;
     }
 </style>
 <div class="AreaDashboardTop">
