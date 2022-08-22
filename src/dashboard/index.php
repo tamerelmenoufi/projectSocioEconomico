@@ -112,7 +112,22 @@
 
     $(document).off('click').on('click', 'i[acao]', function(){
         opc = $(this).attr('acao');
-        $.alert('Relatório sem resultados de pesquisa!');
+        filtro = $(this).attr('filtro');
+        $.ajax({
+            url:"src/dashboard/tabelas/geral.php",
+            type:'POST',
+            data:{
+                filtro
+            },
+            success:function(dados){
+                $.dialog({
+                    content:dados,
+                    title:`Relatório ${opc}`,
+                })
+            }
+        });
+
+        // $.alert('Relatório sem resultados de pesquisa!');
     })
 
 
