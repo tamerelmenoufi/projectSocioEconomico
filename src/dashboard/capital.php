@@ -308,7 +308,7 @@ foreach($iuz as $ind => $val){
 
         $("div[mapa]").each(function(){
             opc = $(this).attr("mapa");
-            url = `src/dashboard/geral/mapa/${opc}.php`;
+            url = `src/dashboard/capital/mapa/${opc}.php`;
             AbrirMapa(opc, url);
         })
 
@@ -328,7 +328,7 @@ foreach($iuz as $ind => $val){
 
         $("div[grafico]").each(function(){
             opc = $(this).attr("grafico");
-            url = `src/dashboard/geral/grafico/${opc}.php`;
+            url = `src/dashboard/capital/grafico/${opc}.php`;
             AbrirGrafico(opc, url);
         })
 
