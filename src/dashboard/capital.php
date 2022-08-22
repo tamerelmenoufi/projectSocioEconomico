@@ -226,7 +226,7 @@ foreach($iuz as $ind => $val){
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
-            <div mapa="geral" style="width:100%;"></div>
+            <div mapa="capital" style="width:100%;"></div>
         </div>
         <div class="col-md-1"></div>
     </div>
