@@ -292,25 +292,6 @@ foreach($iuz as $ind => $val){
             $(this).children(".cartao div").css('opacity',0)
         })
 
-        const AbrirMapa = (opc, url)=>{
-            $.ajax({
-                url,
-                type:"POST",
-                data:{
-                    rotulo:opc,
-                },
-                success:function(dados){
-                    $(`div[mapa="${opc}"]`).html(dados);
-                }
-            })
-        }
-
-        $("div[mapa]").each(function(){
-            opc = $(this).attr("mapa");
-            url = `src/dashboard/capital/mapa/${opc}.php`;
-            AbrirMapa(opc, url);
-        })
-
 
         const AbrirGrafico = (opc, url)=>{
             $.ajax({
@@ -328,7 +309,7 @@ foreach($iuz as $ind => $val){
 
         $("div[grafico]").each(function(){
             opc = $(this).attr("grafico");
-            url = `src/dashboard/capital/grafico/${opc}.php`;
+            url = `src/dashboard/municipio/grafico/${opc}.php`;
             AbrirGrafico(opc, url);
         })
 
