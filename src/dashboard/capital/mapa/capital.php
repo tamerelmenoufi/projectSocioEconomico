@@ -8,7 +8,7 @@
 
 #map<?=$md5?> {
     position:relative;
-    height: 100%;
+    height: 400px;
     width:100%;
     opacity:1;
     z-index:0;
