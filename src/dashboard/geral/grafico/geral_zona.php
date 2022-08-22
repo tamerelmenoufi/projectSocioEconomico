@@ -20,16 +20,16 @@
 <ul class="list-group" style="font-size:10px;">
   <li class="list-group-item d-flex justify-content-between align-items-center">
     <span>
-        <i acao='editar' class="fa-solid fa-up-right-from-square icone"></i>
-        <i acao='download' class="fa-solid fa-file-arrow-down icone"></i>
+        <i acao='editar' filtro='Urbano' class="fa-solid fa-up-right-from-square icone"></i>
+        <i acao='download' filtro='Urbano' class="fa-solid fa-file-arrow-down icone"></i>
         Total Zona Urbana
     </span>
     <span class="badge bg-primary rounded-pill"><?=$u?></span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     <span>
-        <i acao='editar' class="fa-solid fa-up-right-from-square icone"></i>
-        <i acao='download' class="fa-solid fa-file-arrow-down icone"></i>
+        <i acao='editar' filtro='Rural' class="fa-solid fa-up-right-from-square icone"></i>
+        <i acao='download' filtro='Rural' class="fa-solid fa-file-arrow-down icone"></i>
         Total Zona Rural
     </span>
     <span class="badge bg-primary rounded-pill"><?=$r?></span>
