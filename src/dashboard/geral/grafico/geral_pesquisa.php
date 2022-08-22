@@ -77,7 +77,7 @@
 ?>
 <style>
     .icone{
-        margin-right:10px;
+        margin-right:5px;
         cursor:pointer;
     }
 </style>
