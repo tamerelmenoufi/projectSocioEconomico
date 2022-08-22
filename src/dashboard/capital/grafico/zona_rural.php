@@ -9,45 +9,45 @@
     $c = 0; $cu = 0; $cuc = 0; $cr = 0; //Concluídos
     $n = 0; $nu = 0; $nuc = 0; $nr = 0; //Não Encontrados
 
-    foreach($_SESSION['municipios']['quantidade'] as $indice => $valores){ //Lista os municipios
-        foreach($valores as $indice1 => $valores1){ //Lista as zonas
+    // foreach($_SESSION['municipios']['quantidade'] as $indice => $valores){ //Lista os municipios
+        foreach($_SESSION['municipios']['quantidade']['66'] as $indice1 => $valores1){ //Lista as zonas
             foreach($valores1 as $indice2 => $valores2){ //Lista as zonas urbanas
                 foreach($valores2 as $indice3 => $valores3){ //Lista os Bairros
                     //Obter as quantidades por situacao
-                    $i += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['i']);
-                    $p += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['p']);
-                    $c += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['c']);
-                    $n += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['n']);
+                    $i += ($_SESSION['municipios']['quantidade']['66'][$indice1][$indice2][$indice3]['i']);
+                    $p += ($_SESSION['municipios']['quantidade']['66'][$indice1][$indice2][$indice3]['p']);
+                    $c += ($_SESSION['municipios']['quantidade']['66'][$indice1][$indice2][$indice3]['c']);
+                    $n += ($_SESSION['municipios']['quantidade']['66'][$indice1][$indice2][$indice3]['n']);
 
                     if($indice1 == 'Urbano'){
                     //Obter as quantidades por situacao por zona Urbana
-                    $iu += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['i']);
-                    $pu += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['p']);
-                    $cu += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['c']);
-                    $nu += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['n']);
+                    $iu += ($_SESSION['municipios']['quantidade']['66'][$indice1][$indice2][$indice3]['i']);
+                    $pu += ($_SESSION['municipios']['quantidade']['66'][$indice1][$indice2][$indice3]['p']);
+                    $cu += ($_SESSION['municipios']['quantidade']['66'][$indice1][$indice2][$indice3]['c']);
+                    $nu += ($_SESSION['municipios']['quantidade']['66'][$indice1][$indice2][$indice3]['n']);
 
-                    $iuz[$indice2] += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['i']);
-                    $puz[$indice2] += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['p']);
-                    $cuz[$indice2] += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['c']);
-                    $nuz[$indice2] += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['n']);
+                    $iuz[$indice2] += ($_SESSION['municipios']['quantidade']['66'][$indice1][$indice2][$indice3]['i']);
+                    $puz[$indice2] += ($_SESSION['municipios']['quantidade']['66'][$indice1][$indice2][$indice3]['p']);
+                    $cuz[$indice2] += ($_SESSION['municipios']['quantidade']['66'][$indice1][$indice2][$indice3]['c']);
+                    $nuz[$indice2] += ($_SESSION['municipios']['quantidade']['66'][$indice1][$indice2][$indice3]['n']);
 
                     }
 
                     if($indice1 == 'Rural'){
                     //Obter as quantidades por situacao por zona Rural
-                    $ir += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['i']);
-                    $pr += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['p']);
-                    $cr += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['c']);
-                    $nr += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['n']);
+                    $ir += ($_SESSION['municipios']['quantidade']['66'][$indice1][$indice2][$indice3]['i']);
+                    $pr += ($_SESSION['municipios']['quantidade']['66'][$indice1][$indice2][$indice3]['p']);
+                    $cr += ($_SESSION['municipios']['quantidade']['66'][$indice1][$indice2][$indice3]['c']);
+                    $nr += ($_SESSION['municipios']['quantidade']['66'][$indice1][$indice2][$indice3]['n']);
                     }
 
                     ///////////CONDIÇÔES PARA A CAPITAL - CODIGO 66 ////////////////////////
                     if($indice == 66){
 
-                        $iuc += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['i']);
-                        $puc += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['p']);
-                        $cuc += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['c']);
-                        $nuc += ($_SESSION['municipios']['quantidade'][$indice][$indice1][$indice2][$indice3]['n']);
+                        $iuc += ($_SESSION['municipios']['quantidade']['66'][$indice1][$indice2][$indice3]['i']);
+                        $puc += ($_SESSION['municipios']['quantidade']['66'][$indice1][$indice2][$indice3]['p']);
+                        $cuc += ($_SESSION['municipios']['quantidade']['66'][$indice1][$indice2][$indice3]['c']);
+                        $nuc += ($_SESSION['municipios']['quantidade']['66'][$indice1][$indice2][$indice3]['n']);
 
                     }
 
@@ -57,7 +57,7 @@
                 }
             }
         }
-    }
+    // }
 
     // echo "Geral Iniciados: ".$i."<br>";
     // echo "Geral Pendentes: ".$p."<br>";
