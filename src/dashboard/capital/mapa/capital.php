@@ -30,7 +30,7 @@
         streetViewControl: true,//
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         fullscreenControl: true,
-        center: { lat: -3.142549, lng: -60.0141404 },
+        center: { lat: -3.027249, lng: -59.9739243 },
         zoom: 10,
     });
 
