@@ -112,7 +112,7 @@
 
     $(document).off('click').on('click', 'i[acao]', function(){
         opc = $(this).attr('acao');
-        $.alert('Relatório sem resultados da pesquisa!');
+        $.alert('Relatório sem resultados de pesquisa!');
     })
 
 
