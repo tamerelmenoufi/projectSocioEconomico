@@ -110,5 +110,17 @@
         })
     });
 
+
+    $(document).off('click').on('click', 'editar' function(){
+        opc = $(this).attr('editar');
+        $.alert(opc);
+    })
+
+    $(document).off('click').on('click', 'download' function(){
+        opc = $(this).attr('download');
+        $.alert(opc);
+    })
+
+
     })
 </script>
