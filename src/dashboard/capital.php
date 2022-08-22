@@ -278,6 +278,40 @@ foreach($iuz as $ind => $val){
 
 
 
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100">
+                        <h6 class="card-header">Geral por Zona Urbana</h6>
+                        <div class="card-body">
+                            <div grafico="geral_zona_urbana" style="width:100%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <?php
+                foreach($iuz as $ind => $val){
+                ?>
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100">
+                        <h6 class="card-header"><?=$ind?></h6>
+                        <div class="card-body">
+                            <div grafico="zonas_urbanas" cod="<?=$ind?>" style="width:100%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+                }
+                ?>
+
+
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
 
 
 
@@ -313,12 +347,13 @@ foreach($iuz as $ind => $val){
         })
 
 
-        const AbrirGrafico = (opc, url)=>{
+        const AbrirGrafico = (opc, url, cod)=>{
             $.ajax({
                 url,
                 type:"POST",
                 data:{
                     rotulo:opc,
+                    cod,
                 },
                 success:function(dados){
                     $(`div[grafico="${opc}"]`).html(dados);
@@ -327,9 +362,13 @@ foreach($iuz as $ind => $val){
         }
 
         $("div[grafico]").each(function(){
+            cod = false;
             opc = $(this).attr("grafico");
             url = `src/dashboard/capital/grafico/${opc}.php`;
-            AbrirGrafico(opc, url);
+            if(opc == 'zonas_urbanas'){
+                cod = $(this).attr("cod");
+            }
+            AbrirGrafico(opc, url, cod);
         })
 
 
