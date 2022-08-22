@@ -122,7 +122,7 @@
             success:function(dados){
                 $.dialog({
                     content:dados,
-                    title:`Relatório ${opc}`,
+                    title:`Relatório ${filtro}`,
                 })
             }
         });
