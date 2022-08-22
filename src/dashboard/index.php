@@ -40,6 +40,7 @@
         // echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].': '.array_multisum($_SESSION['municipios']['quantidade'][$_SESSION['filtro_relatorio_municipio']])."<br>";
         // echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].'Urbano: '.array_multisum($_SESSION['municipios']['quantidade']['Urbano']['0'][$_SESSION['filtro_relatorio_municipio']])."<br>";
         // echo "Geral: de ".$_SESSION['filtro_relatorio_municipio'].'Rural: '.array_multisum($_SESSION['municipios']['quantidade']['Rural']['0'][$_SESSION['filtro_relatorio_municipio']])."<br>";
+        $url = 'src/dashboard/municipio.php';
     }else{
         $url = 'src/dashboard/geral.php';
     }
