@@ -151,23 +151,6 @@ foreach($iuz as $ind => $val){
         cursor: pointer;
         margin-left:10px;
     }
-
-    .cartao div[editar]{
-        position:absolute;
-        right:10px;
-        bottom:5px;
-        width:auto;
-        cursor:pointer;
-        opacity:0;
-    }
-    .cartao div[download]{
-        position:absolute;
-        right:35px;
-        bottom:5px;
-        width:auto;
-        cursor:pointer;
-        opacity:0;
-    }
     .card-body{
         padding:0;
     }
@@ -190,9 +173,6 @@ foreach($iuz as $ind => $val){
                     <i editar class="fa-solid fa-up-right-from-square"></i>
                     <i download class="fa-solid fa-file-arrow-down"></i>
                 </div>
-                <!-- <div download>
-                    <i class="fa-solid fa-file-arrow-down"></i>
-                </div> -->
             </div>
         </div>
 
@@ -200,6 +180,10 @@ foreach($iuz as $ind => $val){
             <div class="cartao">
                 <span>Pesquisas Iniciadas</span>
                 <p><?=$i?></p>
+                <div>
+                    <i editar class="fa-solid fa-up-right-from-square"></i>
+                    <i download class="fa-solid fa-file-arrow-down"></i>
+                </div>
             </div>
         </div>
 
@@ -207,6 +191,10 @@ foreach($iuz as $ind => $val){
             <div class="cartao">
                 <span>Pesquisas Pendentes</span>
                 <p><?=$p?></p>
+                <div>
+                    <i editar class="fa-solid fa-up-right-from-square"></i>
+                    <i download class="fa-solid fa-file-arrow-down"></i>
+                </div>
             </div>
         </div>
 
@@ -214,6 +202,10 @@ foreach($iuz as $ind => $val){
             <div class="cartao">
                 <span>Pesquisas Concluídas</span>
                 <p><?=$c?></p>
+                <div>
+                    <i editar class="fa-solid fa-up-right-from-square"></i>
+                    <i download class="fa-solid fa-file-arrow-down"></i>
+                </div>
             </div>
         </div>
 
@@ -221,6 +213,10 @@ foreach($iuz as $ind => $val){
             <div class="cartao">
                 <span>Beneficiários não encontrados</span>
                 <p><?=$n?></p>
+                <div>
+                    <i editar class="fa-solid fa-up-right-from-square"></i>
+                    <i download class="fa-solid fa-file-arrow-down"></i>
+                </div>
             </div>
         </div>
 
