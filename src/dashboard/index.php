@@ -53,7 +53,7 @@
 ?>
 <style>
     .AreaDashboardTop{
-        position:relative;
+        position:absolute;
         left:20px;
         right:20px;
     }
