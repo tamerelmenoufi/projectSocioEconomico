@@ -53,7 +53,7 @@
 ?>
 <style>
     .AreaDashboardTop{
-        position:absolute;
+        position:relative;
         left:20px;
         right:20px;
     }
@@ -81,7 +81,7 @@
     </div>
 </div>
 
-<div ResultadoDashboard></div>
+<div ResultadoDashboard style="position:relative"></div>
 <script>
     $(function(){
         Carregando('none')
