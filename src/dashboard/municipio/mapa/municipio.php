@@ -2,6 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
     $endereco = 'centro';
+    $mun = $_SESSION['filtro_relatorio_municipio'];
 ?>
 
 <style>
@@ -12,7 +13,6 @@
     width:100%;
     opacity:1;
     z-index:0;
-    margin-bottom:20px;
 }
 
 </style>
@@ -53,10 +53,6 @@ async function icones(local, qt, lat, lng){
         title: qt + " Beneficiários em "+local,
         draggable:false,
     });
-    marker<?=$md5?>.addListener("click", (local) => {
-        alert(local)
-    });
-
 
 }
 
@@ -69,7 +65,7 @@ function sleep(milliSeconds) {
 
 <?php
 
-    $query = "SELECT * FROM dashboard where grafico = 'mapas/geral'";
+    $query = "SELECT * FROM dashboard where grafico = 'mapas/geral/$mun'";
     $result = mysqli_query($con, $query);
     $Rotulos = [];
     $Quantidade = [];

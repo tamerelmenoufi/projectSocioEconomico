@@ -228,7 +228,7 @@ foreach($iuz as $ind => $val){
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
-            <div mapa="capital" style="width:100%;"></div>
+            <div mapa="munuicipio" style="width:100%;"></div>
         </div>
         <div class="col-md-1"></div>
     </div>
@@ -290,6 +290,25 @@ foreach($iuz as $ind => $val){
             $(this).children(".cartao div").css('opacity',1)
         }).mouseout(function(){
             $(this).children(".cartao div").css('opacity',0)
+        })
+
+        const AbrirMapa = (opc, url)=>{
+            $.ajax({
+                url,
+                type:"POST",
+                data:{
+                    rotulo:opc,
+                },
+                success:function(dados){
+                    $(`div[mapa="${opc}"]`).html(dados);
+                }
+            })
+        }
+
+        $("div[mapa]").each(function(){
+            opc = $(this).attr("mapa");
+            url = `src/dashboard/municipio/mapa/${opc}.php`;
+            AbrirMapa(opc, url);
         })
 
 
