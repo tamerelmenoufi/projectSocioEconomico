@@ -356,7 +356,7 @@ foreach($iuz as $ind => $val){
                     cod,
                 },
                 success:function(dados){
-                    $(`div[grafico="${opc}"]`).html(dados);
+                    $(`div[cod="${cod}"]`).html(dados);
                 }
             })
         }
