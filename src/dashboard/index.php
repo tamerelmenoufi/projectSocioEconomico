@@ -110,13 +110,8 @@
         })
     });
 
-    $(document).off('click').on('click', 'i[download]', function(){
-        opc = $(this).attr('download');
-        $.alert(opc);
-    })
-
-    $(document).off('click').on('click', 'i[editar]', function(){
-        opc = $(this).attr('editar');
+    $(document).off('click').on('click', 'i[acao]', function(){
+        opc = $(this).attr('acao');
         $.alert(opc);
     })
 
