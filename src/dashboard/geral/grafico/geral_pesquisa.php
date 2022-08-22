@@ -94,15 +94,27 @@
     <span class="badge bg-primary rounded-pill"><?=$i?></span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    Pesquisas Pendente
+    <span>
+        <i class="fa-solid fa-up-right-from-square icone"></i>
+        <i class="fa-solid fa-file-arrow-down icone"></i>
+        Pesquisas Pendente
+    </span>
     <span class="badge bg-primary rounded-pill"><?=$p?></span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    Pesquisas Concluída
+    <span>
+        <i class="fa-solid fa-up-right-from-square icone"></i>
+        <i class="fa-solid fa-file-arrow-down icone"></i>
+        Pesquisas Concluída
+    </span>
     <span class="badge bg-primary rounded-pill"><?=$c?></span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    Beneficiários Não Enontrados
+    <span>
+        <i class="fa-solid fa-up-right-from-square icone"></i>
+        <i class="fa-solid fa-file-arrow-down icone"></i>
+        Beneficiários Não Enontrados
+    </span>
     <span class="badge bg-primary rounded-pill"><?=$n?></span>
   </li>
 </ul>
