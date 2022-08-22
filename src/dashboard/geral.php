@@ -146,6 +146,7 @@ foreach($iuz as $ind => $val){
         bottom:5px;
         width:auto;
         cursor:pointer;
+        opacity:0;
     }
     .cartao div[download]{
         position:absolute;
@@ -153,6 +154,7 @@ foreach($iuz as $ind => $val){
         bottom:5px;
         width:auto;
         cursor:pointer;
+        opacity:0;
     }
     .card-body{
         padding:0;
@@ -161,7 +163,7 @@ foreach($iuz as $ind => $val){
 <div class="AreaDashboard">
     <div class="row mb-3 mt-3">
         <div class="col-md-1"></div>
-        <div class="col-md-10"><h3 style="color:#a1a1a1">Relatório Geral</h3></div>
+        <div class="col-md-10"><h3 style="color:#a1a1a1">Relatório Geral</h3><span warn></span></div>
         <div class="col-md-1"></div>
     </div>
     <div class="row">
@@ -275,6 +277,12 @@ foreach($iuz as $ind => $val){
 
 <script>
     $(function(){
+
+        $(".cartao").mouseover(function(){
+            $("span[warn]").html('Mouse Over')
+        }).mouseout(function(){
+            $("span[warn]").html('Mouse Out')
+        })
 
         const AbrirMapa = (opc, url)=>{
             $.ajax({
