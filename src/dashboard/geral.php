@@ -140,6 +140,18 @@ foreach($iuz as $ind => $val){
         padding-top:0px;
         padding-bottom:15px;
     }
+    .cartao div{
+        position:absolute;
+        right:10px;
+        bottom:5px;
+        width:auto;
+        opacity:0;
+    }
+    .cartao div i{
+        cursor: pointer;
+        margin-left:10px;
+    }
+
     .cartao div[editar]{
         position:absolute;
         right:10px;
@@ -163,7 +175,7 @@ foreach($iuz as $ind => $val){
 <div class="AreaDashboard">
     <div class="row mb-3 mt-3">
         <div class="col-md-1"></div>
-        <div class="col-md-10"><h3 style="color:#a1a1a1">Relatório Geral</h3><span warn></span></div>
+        <div class="col-md-10"><h3 style="color:#a1a1a1">Relatório Geral</h3></div>
         <div class="col-md-1"></div>
     </div>
     <div class="row">
@@ -174,12 +186,13 @@ foreach($iuz as $ind => $val){
             <div class="cartao">
                 <span>Toatl Geral</span>
                 <p><?=$total?></p>
-                <div editar>
-                    <i class="fa-solid fa-up-right-from-square"></i>
+                <div>
+                    <i editar class="fa-solid fa-up-right-from-square"></i>
+                    <i download class="fa-solid fa-file-arrow-down"></i>
                 </div>
-                <div download>
+                <!-- <div download>
                     <i class="fa-solid fa-file-arrow-down"></i>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -279,9 +292,9 @@ foreach($iuz as $ind => $val){
     $(function(){
 
         $(".cartao").mouseover(function(){
-            $("span[warn]").html('Mouse Over')
+            // $("span[warn]").html('Mouse Over')
         }).mouseout(function(){
-            $("span[warn]").html('Mouse Out')
+            // $("span[warn]").html('Mouse Out')
         })
 
         const AbrirMapa = (opc, url)=>{
