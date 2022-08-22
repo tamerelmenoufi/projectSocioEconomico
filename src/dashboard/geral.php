@@ -292,9 +292,9 @@ foreach($iuz as $ind => $val){
     $(function(){
 
         $(".cartao").mouseover(function(){
-            // $("span[warn]").html('Mouse Over')
+            $(".cartao div").css('opacity',1)
         }).mouseout(function(){
-            // $("span[warn]").html('Mouse Out')
+            $(".cartao div").css('opacity',0)
         })
 
         const AbrirMapa = (opc, url)=>{
