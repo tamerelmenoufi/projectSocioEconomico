@@ -105,14 +105,14 @@
         $.ajax({
             url:"src/dashboard/filtro.php",
             success:function(dados){
-                $(".LateralDireita").html(dados);
+                $.alert('Relatório sem resultados da pesquisa!');
             }
         })
     });
 
     $(document).off('click').on('click', 'i[acao]', function(){
         opc = $(this).attr('acao');
-        $.alert(opc);
+        $.alert('Relatório sem resultados da pesquisa!');
     })
 
 
