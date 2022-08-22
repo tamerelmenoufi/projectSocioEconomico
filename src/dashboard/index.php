@@ -51,25 +51,35 @@
     // }
 
 ?>
-    <div class="col-md-1"></div>
-    <div class="col-md-10" style="text-align:right">
-        <a
-          class="btn btn-warning"
-          href="./print.php?u=<?=base64_encode("src/home/dashboard/geral.php")?>"
-          target='relatorio'
-        >Imprimir</a>
+<style>
+    .AreaDashboardTop{
+        position:absolute;
+        left:20px;
+        right:20px;
+    }
+</style>
+<div class="AreaDashboardTop">
+    <div class="row mb-3 mt-3">
+        <div class="col-md-1"></div>
+        <div class="col-md-10" style="text-align:right">
+            <a
+            class="btn btn-warning"
+            href="./print.php?u=<?=base64_encode("src/home/dashboard/geral.php")?>"
+            target='relatorio'
+            >Imprimir</a>
 
-        <button
-          filtrar
-          class="btn btn-primary"
-          data-bs-toggle="offcanvas"
-          href="#offcanvasDireita"
-          role="button"
-          aria-controls="offcanvasDireita"
-        >Filtrar</button>
+            <button
+            filtrar
+            class="btn btn-primary"
+            data-bs-toggle="offcanvas"
+            href="#offcanvasDireita"
+            role="button"
+            aria-controls="offcanvasDireita"
+            >Filtrar</button>
+        </div>
+        <div class="col-md-1"></div>
     </div>
-    <div class="col-md-1"></div>
-
+</div>
 
 <div ResultadoDashboard></div>
 <script>
