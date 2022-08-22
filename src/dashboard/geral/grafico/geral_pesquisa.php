@@ -81,6 +81,8 @@
 
 <ul class="list-group" style="font-size:10px;">
   <li class="list-group-item d-flex justify-content-between align-items-center">
+    <i editar class="fa-solid fa-up-right-from-square"></i>
+    <i download class="fa-solid fa-file-arrow-down"></i>
     Pesquisas Iniciadas
     <span class="badge bg-primary rounded-pill"><?=$i?></span>
   </li>
