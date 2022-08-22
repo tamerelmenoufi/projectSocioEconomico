@@ -312,7 +312,7 @@ foreach($iuz as $ind => $val){
             url = `src/dashboard/municipio/grafico/${opc}.php`;
             AbrirGrafico(opc, url);
         })
-
+        //
 
     })
 </script>
