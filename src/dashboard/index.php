@@ -51,15 +51,8 @@
     // }
 
 ?>
-
-<div class="row" style="margin-top:20px; margin-bottom:20px;">
-      <div class="col-md-8">
-        <h4>Relatórios e estatísticas</h4>
-      </div>
-      <?php
-      if(!$_GET['p']){
-      ?>
-      <div class="col-md-4">
+    <div class="col-md-1"></div>
+    <div class="col-md-10" style="text-align:right">
         <a
           class="btn btn-warning"
           href="./print.php?u=<?=base64_encode("src/home/dashboard/geral.php")?>"
@@ -74,11 +67,9 @@
           role="button"
           aria-controls="offcanvasDireita"
         >Filtrar</button>
-      </div>
-      <?php
-      }
-      ?>
-</div>
+    </div>
+    <div class="col-md-1"></div>
+
 
 <div ResultadoDashboard></div>
 <script>
