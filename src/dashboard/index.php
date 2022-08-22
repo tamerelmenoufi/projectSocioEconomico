@@ -111,12 +111,12 @@
     });
 
 
-    $(document).off('click').on('click', 'editar', function(){
+    $(document).off('click').on('click', 'i[editar]', function(){
         opc = $(this).attr('editar');
         $.alert(opc);
     })
 
-    $(document).off('click').on('click', 'download', function(){
+    $(document).off('click').on('click', 'i[download]', function(){
         opc = $(this).attr('download');
         $.alert(opc);
     })
