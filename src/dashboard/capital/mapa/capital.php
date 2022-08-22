@@ -31,7 +31,7 @@
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         fullscreenControl: true,
         center: { lat: -3.142549, lng: -60.0141404 },
-        zoom: 12,
+        zoom: 13,
     });
 
     // marker<?=$md5?> = new google.maps.Marker({
