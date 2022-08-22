@@ -3,8 +3,8 @@
 
     $endereco = 'centro';
     $mun = $_SESSION['filtro_relatorio_municipio'];
+    $mun_nome = $_SESSION['municipios']['nome'][$mun];
 
-    echo $query = "SELECT * FROM dashboard where grafico = 'mapas/geral/$mun'";
 ?>
 
 <style>
@@ -67,7 +67,7 @@ function sleep(milliSeconds) {
 
 <?php
 
-    $query = "SELECT * FROM dashboard where grafico = 'mapas/geral/$mun'";
+    $query = "SELECT * FROM dashboard where grafico = 'mapas/geral'";
     $result = mysqli_query($con, $query);
     $Rotulos = [];
     $Quantidade = [];
@@ -77,10 +77,12 @@ function sleep(milliSeconds) {
     $d = mysqli_fetch_object($result);
     $esquema = json_decode($d->esquema);
 
-    $Rotulos = $esquema->Rotulos;
-    $Quantidade = $esquema->Quantidade;
-    $Lat = $esquema->Lat;
-    $Lng = $esquema->Lng;
+    $key = array_search($mun_nome, $esquema->Rotulos);
+
+    $Rotulos = [$esquema->Rotulos[$key]];
+    $Quantidade = [$esquema->Quantidade[$key]];
+    $Lat = [$esquema->Lat[$key]];
+    $Lng = [$esquema->Lng[$key]];
     $R = (($Rotulos)?"'".implode("','",$Rotulos)."'":0);
     $Q = (($Quantidade)?implode(",",$Quantidade):0);
     $Lat = (($Lat)?implode(",",$Lat):0);
