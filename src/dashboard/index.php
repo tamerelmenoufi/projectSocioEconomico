@@ -66,7 +66,7 @@
         <div class="col-md-10" style="text-align:right">
             <a
             class="btn btn-warning"
-            href="./print.php?u=<?=base64_encode("src/home/dashboard/geral.php")?>"
+            href="./print.php?u=<?=base64_encode("src/dashboard/geral.php")?>"
             target='relatorio'
             >Imprimir</a>
 
@@ -99,5 +99,16 @@
         <?php
         }
         ?>
+
+    $("button[filtrar]").click(function(){
+        Carregando();
+        $.ajax({
+            url:"src/dashboard/filtro.php",
+            success:function(dados){
+                $(".LateralDireita").html(dados);
+            }
+        })
+    });
+
     })
 </script>
