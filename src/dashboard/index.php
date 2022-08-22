@@ -105,7 +105,7 @@
         $.ajax({
             url:"src/dashboard/filtro.php",
             success:function(dados){
-                $.alert('Relatório sem resultados da pesquisa!');
+                $(".LateralDireita").html(dados);
             }
         })
     });
