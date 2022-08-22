@@ -51,6 +51,35 @@
     // }
 
 ?>
+
+<div class="row" style="margin-top:20px; margin-bottom:20px;">
+      <div class="col-md-8">
+        <h4>Relatórios e estatísticas</h4>
+      </div>
+      <?php
+      if(!$_GET['p']){
+      ?>
+      <div class="col-md-4">
+        <a
+          class="btn btn-warning"
+          href="./print.php?u=<?=base64_encode("src/home/dashboard/geral.php")?>"
+          target='relatorio'
+        >Imprimir</a>
+
+        <button
+          filtrar
+          class="btn btn-primary"
+          data-bs-toggle="offcanvas"
+          href="#offcanvasDireita"
+          role="button"
+          aria-controls="offcanvasDireita"
+        >Filtrar</button>
+      </div>
+      <?php
+      }
+      ?>
+</div>
+
 <div ResultadoDashboard></div>
 <script>
     $(function(){
