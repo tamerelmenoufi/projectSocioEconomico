@@ -81,19 +81,35 @@
 
 <ul class="list-group" style="font-size:10px;">
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    Pesquisas Iniciadas
+    <span>
+        <i class="fa-solid fa-up-right-from-square icone"></i>
+        <i class="fa-solid fa-file-arrow-down icone"></i>
+        Pesquisas Iniciadas
+    </span>
     <span class="badge bg-primary rounded-pill"><?=$ir?></span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    Pesquisas Pendente
+    <span>
+        <i class="fa-solid fa-up-right-from-square icone"></i>
+        <i class="fa-solid fa-file-arrow-down icone"></i>
+        Pesquisas Pendente
+    </span>
     <span class="badge bg-primary rounded-pill"><?=$pr?></span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    Pesquisas Concluída
+    <span>
+        <i class="fa-solid fa-up-right-from-square icone"></i>
+        <i class="fa-solid fa-file-arrow-down icone"></i>
+        Pesquisas Concluída
+    </span>
     <span class="badge bg-primary rounded-pill"><?=$cr?></span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    Beneficiários Não Enontrados
+    <span>
+        <i class="fa-solid fa-up-right-from-square icone"></i>
+        <i class="fa-solid fa-file-arrow-down icone"></i>
+        Beneficiários Não Enontrados
+    </span>
     <span class="badge bg-primary rounded-pill"><?=$nr?></span>
   </li>
 </ul>

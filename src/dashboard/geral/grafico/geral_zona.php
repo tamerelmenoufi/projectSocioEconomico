@@ -19,11 +19,19 @@
 
 <ul class="list-group" style="font-size:10px;">
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    Total Zona Urbana
+    <span>
+        <i class="fa-solid fa-up-right-from-square icone"></i>
+        <i class="fa-solid fa-file-arrow-down icone"></i>
+        Total Zona Urbana
+    </span>
     <span class="badge bg-primary rounded-pill"><?=$u?></span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    Total Zona Rural
+    <span>
+        <i class="fa-solid fa-up-right-from-square icone"></i>
+        <i class="fa-solid fa-file-arrow-down icone"></i>
+        Total Zona Rural
+    </span>
     <span class="badge bg-primary rounded-pill"><?=$r?></span>
   </li>
 </ul>
