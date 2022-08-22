@@ -120,14 +120,14 @@
                 filtro
             },
             success:function(dados){
-                $.dialog({
-                    content:dados,
-                    title:`Relatório ${filtro}`,
-                })
+                // $.dialog({
+                //     content:dados,
+                //     title:`Relatório ${filtro}`,
+                // })
             }
         });
 
-        // $.alert('Relatório sem resultados de pesquisa!');
+        $.alert('Relatório sem resultados de pesquisa!');
     })
 
 
