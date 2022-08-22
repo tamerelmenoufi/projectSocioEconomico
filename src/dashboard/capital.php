@@ -19,7 +19,7 @@
     $n = 0; $nu = 0; $nuc = 0; $nr = 0; //Não Encontrados
 
     // foreach($_SESSION['municipios']['quantidade'] as $indice => $valores){ //Lista os municipios
-        foreach($valores as $indice1 => $valores1){ //Lista as zonas
+        foreach($_SESSION['municipios']['quantidade']['66'] as $indice1 => $valores1){ //Lista as zonas
             foreach($valores1 as $indice2 => $valores2){ //Lista as zonas urbanas
                 foreach($valores2 as $indice3 => $valores3){ //Lista os Bairros
                     //Obter as quantidades por situacao
