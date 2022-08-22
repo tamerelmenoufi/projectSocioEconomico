@@ -75,15 +75,20 @@
     // echo "Geral Rural Não Encontrados: ".$nr."<br><hr>";
 
 ?>
-
+<style>
+    .icone{
+        margin-right:10px;
+        cursor:pointer;
+    }
+</style>
 
 <canvas id="Tipos<?= $md5 ?>" width="400" height="400" style="margin:10px;"></canvas>
 
 <ul class="list-group" style="font-size:10px;">
   <li class="list-group-item d-flex justify-content-between align-items-center">
     <span>
-        <i class="fa-solid fa-up-right-from-square"></i>
-        <i class="fa-solid fa-file-arrow-down"></i>
+        <i class="fa-solid fa-up-right-from-square icone"></i>
+        <i class="fa-solid fa-file-arrow-down icone"></i>
         Pesquisas Iniciadas
     </span>
     <span class="badge bg-primary rounded-pill"><?=$i?></span>
