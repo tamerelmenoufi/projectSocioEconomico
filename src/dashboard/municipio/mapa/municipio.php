@@ -3,6 +3,8 @@
 
     $endereco = 'centro';
     $mun = $_SESSION['filtro_relatorio_municipio'];
+
+    echo $query = "SELECT * FROM dashboard where grafico = 'mapas/geral/$mun'";
 ?>
 
 <style>
