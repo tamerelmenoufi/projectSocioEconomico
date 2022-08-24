@@ -84,32 +84,32 @@
 <ul class="list-group" style="font-size:10px;">
   <li class="list-group-item d-flex justify-content-between align-items-center">
     <span>
-        <i acao='editar' filtro='i,zona_urbana' class="fa-solid fa-up-right-from-square icone"></i>
-        <i acao='download' filtro='i,zona_urbana' class="fa-solid fa-file-arrow-down icone"></i>
+        <i acao='editar' filtro='i,<?=$cod?>' class="fa-solid fa-up-right-from-square icone"></i>
+        <i acao='download' filtro='i,<?=$cod?>' class="fa-solid fa-file-arrow-down icone"></i>
         Pesquisas Iniciadas
     </span>
     <span class="badge bg-primary rounded-pill"><?=$iuz[$cod]?></span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     <span>
-        <i acao='editar' filtro='p,zona_urbana' class="fa-solid fa-up-right-from-square icone"></i>
-        <i acao='download' filtro='p,zona_urbana' class="fa-solid fa-file-arrow-down icone"></i>
+        <i acao='editar' filtro='p,<?=$cod?>' class="fa-solid fa-up-right-from-square icone"></i>
+        <i acao='download' filtro='p,<?=$cod?>' class="fa-solid fa-file-arrow-down icone"></i>
         Pesquisas Pendente
     </span>
     <span class="badge bg-primary rounded-pill"><?=$puz[$cod]?></span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     <span>
-        <i acao='editar' filtro='c,zona_urbana' class="fa-solid fa-up-right-from-square icone"></i>
-        <i acao='download' filtro='c,zona_urbana' class="fa-solid fa-file-arrow-down icone"></i>
+        <i acao='editar' filtro='c,<?=$cod?>' class="fa-solid fa-up-right-from-square icone"></i>
+        <i acao='download' filtro='c,<?=$cod?>' class="fa-solid fa-file-arrow-down icone"></i>
         Pesquisas Concluída
     </span>
     <span class="badge bg-primary rounded-pill"><?=$cuz[$cod]?></span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     <span>
-        <i acao='editar' filtro='n,zona_urbana' class="fa-solid fa-up-right-from-square icone"></i>
-        <i acao='download' filtro='n,zona_urbana' class="fa-solid fa-file-arrow-down icone"></i>
+        <i acao='editar' filtro='n,<?=$cod?>' class="fa-solid fa-up-right-from-square icone"></i>
+        <i acao='download' filtro='n,<?=$cod?>' class="fa-solid fa-file-arrow-down icone"></i>
         Beneficiários Não Enontrados
     </span>
     <span class="badge bg-primary rounded-pill"><?=$nuz[$cod]?></span>
