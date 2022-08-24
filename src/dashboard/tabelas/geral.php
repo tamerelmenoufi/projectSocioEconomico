@@ -33,19 +33,19 @@
 
     switch($_POST['filtro']){
         case 'i':{
-            $where = "and percentual > 0 and percentual < 100";
+            $where = " percentual > 0 and percentual < 100";
             break;
         }
         case 'p':{
-            $where = "and percentual = 0 ";
+            $where = " percentual = 0 ";
             break;
         }
         case 'c':{
-            $where = "and percentual = '100'";
+            $where = " percentual = '100'";
             break;
         }
         case 'n':{
-            $where = "and beneficiario_encontrado = 'Não'";
+            $where = " beneficiario_encontrado = 'Não'";
             break;
         }
         default:{
