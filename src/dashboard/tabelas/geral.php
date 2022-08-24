@@ -14,20 +14,20 @@
         $fLocal = false;
     }
 
-    switch($_GET['opc']){
-        case 'iniciados':{
+    switch($_GET['filtro']){
+        case 'i':{
             $where = "and percentual > 0 and percentual < 100";
             break;
         }
-        case 'pendentes':{
+        case 'p':{
             $where = "and percentual = 0 ";
             break;
         }
-        case 'concluidos':{
+        case 'c':{
             $where = "and percentual = '100'";
             break;
         }
-        case 'nao_encontrados':{
+        case 'n':{
             $where = "and beneficiario_encontrado = 'Não'";
             break;
         }
@@ -49,7 +49,7 @@
     </thead>
     <tbody>
     <?php
-        $query = "select * from se where 1 {$where} {$fLocal} limit 100";
+        echo $query = "select * from se where 1 {$where} {$fLocal} limit 100";
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
     ?>
