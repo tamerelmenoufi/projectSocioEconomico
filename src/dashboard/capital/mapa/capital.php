@@ -10,6 +10,7 @@
     position:relative;
     height: 400px;
     width:100%;
+    margin-bottom:20px;
     opacity:1;
     z-index:0;
 }
