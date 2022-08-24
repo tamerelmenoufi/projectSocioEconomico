@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
     // iniciados pendentes concluidos nao_encontrados
-    echo $_POST['filtro'] . ' & '.$_POST['opc'];
+    // echo $_POST['filtro'] . ' & '.$_POST['opc'];
 
     $fLocal = [];
     if($_SESSION['filtro_relatorio_municipio']) { $fLocal[] = " municipio = '{$_SESSION['filtro_relatorio_municipio']}'"; }
@@ -50,7 +50,7 @@
     </thead>
     <tbody>
     <?php
-        echo $query = "select * from se where 1 {$where} {$fLocal} limit 100";
+        $query = "select * from se where 1 {$where} {$fLocal} limit 100";
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
     ?>

@@ -124,6 +124,7 @@
                 $.dialog({
                     content:dados,
                     title:`Relatório ${filtro}`,
+                    columnClass:'col-md-offset-2 col-md-8'
                 })
             }
         });
