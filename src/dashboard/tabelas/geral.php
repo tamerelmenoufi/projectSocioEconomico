@@ -14,7 +14,7 @@
         $fLocal = false;
     }
 
-    switch($_GET['filtro']){
+    switch($_POST['filtro']){
         case 'i':{
             $where = "and percentual > 0 and percentual < 100";
             break;
