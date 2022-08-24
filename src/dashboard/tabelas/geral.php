@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
     // iniciados pendentes concluidos nao_encontrados
-    echo $_POST['filtro'];
+    echo $_POST['filtro'] . ' & '.$_POST['opc'];
 
     $fLocal = [];
     if($_SESSION['filtro_relatorio_municipio']) { $fLocal[] = " municipio = '{$_SESSION['filtro_relatorio_municipio']}'"; }
