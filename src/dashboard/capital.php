@@ -181,8 +181,8 @@ foreach($iuz as $ind => $val){
                 <span>Pesquisas Iniciadas</span>
                 <p><?=$i?></p>
                 <div>
-                    <i acao='editar' filtro='' class="fa-solid fa-up-right-from-square"></i>
-                    <i acao='download' filtro='' class="fa-solid fa-file-arrow-down"></i>
+                    <i acao='editar' filtro='i' class="fa-solid fa-up-right-from-square"></i>
+                    <i acao='download' filtro='i' class="fa-solid fa-file-arrow-down"></i>
                 </div>
             </div>
         </div>
@@ -192,8 +192,8 @@ foreach($iuz as $ind => $val){
                 <span>Pesquisas Pendentes</span>
                 <p><?=$p?></p>
                 <div>
-                    <i acao='editar' filtro='' class="fa-solid fa-up-right-from-square"></i>
-                    <i acao='download' filtro='' class="fa-solid fa-file-arrow-down"></i>
+                    <i acao='editar' filtro='p' class="fa-solid fa-up-right-from-square"></i>
+                    <i acao='download' filtro='p' class="fa-solid fa-file-arrow-down"></i>
                 </div>
             </div>
         </div>
@@ -203,8 +203,8 @@ foreach($iuz as $ind => $val){
                 <span>Pesquisas Concluídas</span>
                 <p><?=$c?></p>
                 <div>
-                    <i acao='editar' filtro='' class="fa-solid fa-up-right-from-square"></i>
-                    <i acao='download' filtro='' class="fa-solid fa-file-arrow-down"></i>
+                    <i acao='editar' filtro='c' class="fa-solid fa-up-right-from-square"></i>
+                    <i acao='download' filtro='c' class="fa-solid fa-file-arrow-down"></i>
                 </div>
             </div>
         </div>
@@ -214,8 +214,8 @@ foreach($iuz as $ind => $val){
                 <span>Beneficiários não encontrados</span>
                 <p><?=$n?></p>
                 <div>
-                    <i acao='editar' filtro='' class="fa-solid fa-up-right-from-square"></i>
-                    <i acao='download' filtro='' class="fa-solid fa-file-arrow-down"></i>
+                    <i acao='editar' filtro='n' class="fa-solid fa-up-right-from-square"></i>
+                    <i acao='download' filtro='n' class="fa-solid fa-file-arrow-down"></i>
                 </div>
             </div>
         </div>
