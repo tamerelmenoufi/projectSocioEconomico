@@ -117,7 +117,8 @@
             url:"src/dashboard/tabelas/geral.php",
             type:'POST',
             data:{
-                filtro
+                filtro,
+                opc,
             },
             success:function(dados){
                 $.dialog({
