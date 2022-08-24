@@ -33,6 +33,7 @@
         }
         default:{
             $where = false;
+            break;
         }
 
     }
