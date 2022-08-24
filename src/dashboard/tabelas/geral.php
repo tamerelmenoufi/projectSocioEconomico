@@ -7,7 +7,7 @@
         'i' => 'Iniciados',
         'p' => 'Pendentes',
         'c' => 'Concluídos',
-        'n' => 'Não Iniciados',
+        'n' => 'Não Encontrados',
     ];
 
     $titulo = [];
