@@ -49,13 +49,13 @@
             break;
         }
         default:{
-            $where = false;
+            $where = 1;
             break;
         }
 
     }
 
-    if(!$where) exit();
+    // if(!$where) exit();
 ?>
 <div class="col">
     <p>
@@ -70,7 +70,7 @@
     </thead>
     <tbody>
     <?php
-        $query = "select * from se where 1 {$where} {$fLocal} limit 100";
+        $query = "select * from se where {$where} {$fLocal} limit 100";
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
     ?>
