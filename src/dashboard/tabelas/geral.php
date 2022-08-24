@@ -3,13 +3,20 @@
     // iniciados pendentes concluidos nao_encontrados
     // echo $_POST['filtro'] . ' & '.$_POST['opc'];
 
+    $filtro = [
+        'i' => 'Iniciados',
+        'p' => 'Pendentes',
+        'c' => 'Concluídos',
+        'n' => 'Não Iniciados',
+    ];
+
     $titulo = [];
 
     if($_SESSION['municipios']['nome'][$_SESSION['filtro_relatorio_municipio']] ){ $titulo[] = $_SESSION['municipios']['nome'][$_SESSION['filtro_relatorio_municipio']]; }
     if($_SESSION['bairro']['nome'][$_SESSION['filtro_relatorio_bairro_comunidade']] ){ $titulo[] = $_SESSION['bairro']['nome'][$_SESSION['filtro_relatorio_bairro_comunidade']]; }
     if($_SESSION['filtro_relatorio_tipo']) { $titulo[] = $_SESSION['filtro_relatorio_tipo']; }
 
-    if($titulo) $titulo = implode(" - ",$titulo);
+    if($titulo) $titulo = implode(" - ",$titulo).(($_POST['filtro'])?" ({$filtro[$_POST['filtro']]})":false);
 
     $fLocal = [];
     if($_SESSION['filtro_relatorio_municipio']) { $fLocal[] = " municipio = '{$_SESSION['filtro_relatorio_municipio']}'"; }
@@ -21,6 +28,8 @@
     }else{
         $fLocal = false;
     }
+
+
 
     switch($_POST['filtro']){
         case 'i':{
