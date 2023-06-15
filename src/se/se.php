@@ -783,33 +783,30 @@
                     </div>
 
                     <div class="card border-warning">
-
-
-
-                        <div class="form-floating mb-3">
-                            <input type="text" name="data" id="data" class="form-control" placeholder="Data da Pesquisa" value="<?=dataBr($d->data)?>">
-                            <label for="data">Data da Pesquisa*</label>
-                        </div>
-
-                        <div class="form-floating mb-3">
-                            <select name="monitor_social" id="monitor_social" class="form-control" >
-                                <option value="">::Selecione o Profissional</option>
-                                <?php
-                                    $q = "select * from usuarios where situacao = '1' and perfil = 'usr' order by nome asc";
-                                    $r = mysqli_query($con, $q);
-                                    while($s = mysqli_fetch_object($r)){
-                                ?>
-                                <option value="<?=$s->codigo?>" <?=(($d->monitor_social == $s->codigo)?'selected':false)?>><?=$s->nome?></option>
-                                <?php
-                                    }
-                                ?>
-                            </select>
-                            <label for="monitor_social">Município</label>
-                        </div>
-
-
                         <h5 class="card-header">Avaliação do Técnico</h5>
                         <div class="card-body">
+
+                            <div class="form-floating mb-3">
+                                <input type="text" name="data" id="data" class="form-control" placeholder="Data da Pesquisa" value="<?=dataBr($d->data)?>">
+                                <label for="data">Data da Pesquisa*</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <select name="monitor_social" id="monitor_social" class="form-control" >
+                                    <option value="">::Selecione o Profissional</option>
+                                    <?php
+                                        $q = "select * from usuarios where situacao = '1' and perfil = 'usr' order by nome asc";
+                                        $r = mysqli_query($con, $q);
+                                        while($s = mysqli_fetch_object($r)){
+                                    ?>
+                                    <option value="<?=$s->codigo?>" <?=(($d->monitor_social == $s->codigo)?'selected':false)?>><?=$s->nome?></option>
+                                    <?php
+                                        }
+                                    ?>
+                                </select>
+                                <label for="monitor_social">Município</label>
+                            </div>
+
                             <div class="form-floating mb-3">
                                 <?=montaRadio([
                                     'rotulo' => 'Como fui Recebido?',
