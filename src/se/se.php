@@ -25,8 +25,8 @@
             $pct = (100*$qt/$tot);
             $attr[] = "percentual = '" . $pct . "'";
             $attr[] = "data_nascimento = '" . dataMysql($_POST['data_nascimento']) . "'";
-            $attr[] = "data = NOW()";
-            $attr[] = "monitor_social = '{$_SESSION['ProjectSeLogin']->codigo}'";
+            // $attr[] = "data = NOW()";
+            // $attr[] = "monitor_social = '{$_SESSION['ProjectSeLogin']->codigo}'";
             $attr[] = "coordenador = '{$_SESSION['ProjectSeLogin']->coordenador}'";
             $attr[] = "acao = '0'";
 
@@ -332,6 +332,7 @@
                             'rotulo' => 'Qual o seu Grau de escolaridade?',
                             'campo' => 'grau_escolaridade',
                             'vetor' => [
+                                'Não Alfabetizado',
                                 'Ensino Fundamental I Completo',
                                 'Ensino Fundamental II Completo',
                                 'Ensino Médio Completo',
@@ -372,6 +373,7 @@
                             'campo' => 'renda_mensal',
                             'vetor' => [
                                 'Nenhuma',
+                                'abaixo de um salário mínimo',
                                 '1 salário mínimo',
                                 '2 salários mínimos',
                                 '3 salários mínimos',
@@ -379,6 +381,25 @@
                                 'Acima de 4 Salários mínimos'
                             ],
                             'dados' => $d->renda_mensal,
+                            'exibir' => false,
+                            'campo_destino' => false
+                        ])?>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <?=montaRadio([
+                            'rotulo' => 'Renda Familiar Mensal?',
+                            'campo' => 'renda_familiar',
+                            'vetor' => [
+                                'Nenhuma',
+                                'abaixo de um salário mínimo',
+                                '1 salário mínimo',
+                                '2 salários mínimos',
+                                '3 salários mínimos',
+                                '4 salários mínimos',
+                                'Acima de 4 Salários mínimos'
+                            ],
+                            'dados' => $d->renda_familiar,
                             'exibir' => false,
                             'campo_destino' => false
                         ])?>
@@ -408,7 +429,7 @@
                     </div>
 
 
-                    <!-- <div class="form-floating mb-3">
+                    <div class="form-floating mb-3">
                         <?=montaRadio([
                             'rotulo' => 'Qual Serviço de Saúde você utiliza?',
                             'campo' => 'servico_saude',
@@ -421,7 +442,22 @@
                             'exibir' => false,
                             'campo_destino' => false
                         ])?>
-                    </div> -->
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <?=montaRadio([
+                            'rotulo' => 'Condições de sua saúde?',
+                            'campo' => 'condicoes_saude',
+                            'vetor' => [
+                                'Doenças Crônicas',
+                                'Tratamentos Médicos',
+                                'Outros',
+                            ],
+                            'dados' => $d->condicoes_saude,
+                            'exibir' => false,
+                            'campo_destino' => false
+                        ])?>
+                    </div>
 
 
                     <div class="form-floating mb-3">
@@ -533,6 +569,7 @@
                                 'Marcação de Consultas',
                                 'Realização de Exames',
                                 'Realização de Procedimentos Médicos e/ou Cirurgia',
+                                'Outros',
                             ],
                             'dados' => $d->opiniao_saude,
                             'exibir' => [
@@ -553,7 +590,7 @@
                     </div>
 
                     <?php
-                        /*
+                        //*
                     ?>
                     <div class="form-floating mb-3">
                         <?=montaRadio([
@@ -615,6 +652,7 @@
                                 'Falta de Saneamento básico e/ou Melhoria',
                                 'Abastecimento de Água',
                                 'Abastecimento de Energia',
+                                'Outros',
                             ],
                             'dados' => $d->opiniao_infraestrutura,
                             'exibir' => [
@@ -643,6 +681,7 @@
                                 'Alimentação Básica',
                                 'Auxílios Governamentais',
                                 'Assistência Psicológica',
+                                'Outros',
                             ],
                             'dados' => $d->opiniao_assistencia_social,
                             'exibir' => [
@@ -662,7 +701,7 @@
                     </div>
 
                     <?php
-                    /*
+                    //*
                     ?>
                     <div class="form-floating mb-3">
                         <?=montaRadio([
@@ -696,6 +735,7 @@
                             'vetor' => [
                                 'Não Necessita',
                                 'Policiamento Ostensivo',
+                                'Outros',
                             ],
                             'dados' => $d->opiniao_seguranca,
                             'exibir' => [
@@ -718,6 +758,7 @@
                             'vetor' => [
                                 'Não Necessita',
                                 'Areas para pratica de atividades esportivas',
+                                'Outros',
                             ],
                             'dados' => $d->opiniao_esporte_lazer,
                             'exibir' => [
@@ -736,10 +777,35 @@
                     </div>
                     <div class="form-floating mb-3">
                         <textarea name="opiniao_outros" id="opiniao_outros" class="form-control" placeholder="Outras Opiniões / Detalhes" ><?=$d->opiniao_outros?></textarea>
-                        <label for="opiniao_outros">Desreva suas Opiniões / Detalhes</label>
+                        <label for="opiniao_outros">Outras Opiniões / Detalhes (na estrutura do governo)</label>
                     </div>
 
                     <div class="card border-warning">
+
+
+
+                        <div class="form-floating mb-3">
+                            <input type="date" name="data" id="data" class="form-control" placeholder="Data da Pesquisa" value="<?=$d->data?>">
+                            <label for="data">Data da Pesquisa*</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <select name="monitor_social" id="monitor_social" class="form-control" >
+                                <option value="">::Selecione o Profissional</option>
+                                <?php
+                                    $q = "select * from usuarios where situacao = '1' and perfil = 'usr' order by nome asc";
+                                    $r = mysqli_query($con, $q);
+                                    while($s = mysqli_fetch_object($r)){
+                                ?>
+                                <option value="<?=$s->codigo?>" <?=(($d->monitor_social == $s->codigo)?'selected':false)?>><?=$s->nome?></option>
+                                <?php
+                                    }
+                                ?>
+                            </select>
+                            <label for="monitor_social">Município</label>
+                        </div>
+
+
                         <h5 class="card-header">Avaliação do Técnico</h5>
                         <div class="card-body">
                             <div class="form-floating mb-3">
