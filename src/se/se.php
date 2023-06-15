@@ -11,6 +11,7 @@
         unset($data['codigo']);
         unset($data['acao']);
         unset($data['data_nascimento']);
+        unset($data['data']);
 
         $tot = count($data);
         $qt = 0;
@@ -25,6 +26,7 @@
             $pct = (100*$qt/$tot);
             $attr[] = "percentual = '" . $pct . "'";
             $attr[] = "data_nascimento = '" . dataMysql($_POST['data_nascimento']) . "'";
+            $attr[] = "data = '" . dataMysql($_POST['data']) . "'";
             // $attr[] = "data = NOW()";
             // $attr[] = "monitor_social = '{$_SESSION['ProjectSeLogin']->codigo}'";
             $attr[] = "coordenador = '{$_SESSION['ProjectSeLogin']->coordenador}'";
@@ -785,7 +787,7 @@
 
 
                         <div class="form-floating mb-3">
-                            <input type="date" name="data" id="data" class="form-control" placeholder="Data da Pesquisa" value="<?=$d->data?>">
+                            <input type="text" name="data" id="data" class="form-control" placeholder="Data da Pesquisa" value="<?=dataBr($d->data)?>">
                             <label for="data">Data da Pesquisa*</label>
                         </div>
 
