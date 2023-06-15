@@ -804,7 +804,7 @@
                                         }
                                     ?>
                                 </select>
-                                <label for="monitor_social">Município</label>
+                                <label for="monitor_social">Profissionais</label>
                             </div>
 
                             <div class="form-floating mb-3">
