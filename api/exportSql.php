@@ -9,8 +9,9 @@
 
 
     foreach($Comando as $ind => $val){
-        echo $ind."<br>";
+        echo $ind."CREATE TABLE {$ind} (";
         foreach($val as $i => $v){
-            echo "---".$v."<br>";
+            echo $v." TEXT, ";
         }
+        echo "codigo INTEGER PRIMARY KEY AUTOINCREMENT);<br>";
     }
