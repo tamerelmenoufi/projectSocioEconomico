@@ -17,6 +17,7 @@
         }
         $cmd .= "codigo INTEGER PRIMARY KEY AUTOINCREMENT);";
 
+        $Cmd[] = ['comando' => "DROP TABLE {$ind}"];
         $Cmd[] = ['comando' => $cmd];
 
         $query = "select * from {$ind} limit 20";
