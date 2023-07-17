@@ -7,11 +7,15 @@
         $Comando[$d->TABLE_NAME][] = $d->COLUMN_NAME;
     }
 
-
+    $Cmd = [];
     foreach($Comando as $ind => $val){
-        echo $ind."CREATE TABLE {$ind} (";
+        $cmd = $ind."CREATE TABLE IF NOT EXISTS {$ind} (";
         foreach($val as $i => $v){
-            echo $v." TEXT, ";
+            $cmd .= $v." TEXT, ";
         }
-        echo "codigo INTEGER PRIMARY KEY AUTOINCREMENT);<br>";
+        $cmd .= "codigo INTEGER PRIMARY KEY AUTOINCREMENT);";
+
+        $Cmd[] = $cmd;
     }
+
+    echo json_encode($Cmd);
