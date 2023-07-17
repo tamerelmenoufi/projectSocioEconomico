@@ -15,7 +15,7 @@
         }
         $cmd .= "codigo INTEGER PRIMARY KEY AUTOINCREMENT);";
 
-        $Cmd[] = $cmd;
+        $Cmd[] = ['comando' => $cmd];
     }
 
     echo json_encode($Cmd);
