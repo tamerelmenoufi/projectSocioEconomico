@@ -10,12 +10,25 @@
     $Cmd = [];
     foreach($Comando as $ind => $val){
         $cmd = "CREATE TABLE IF NOT EXISTS {$ind} (";
+        $campos = [];
         foreach($val as $i => $v){
             $cmd .= $v." TEXT, ";
+            $campos[] = $v;
         }
         $cmd .= "codigo INTEGER PRIMARY KEY AUTOINCREMENT);";
 
         $Cmd[] = ['comando' => $cmd];
+
+
+
+        $query = "select * from {$v} limit 20";
+        $result = mysqli_query($conApi, $query);
+        while($d = mysqli_fetch_object($result)){
+            $Cmd[] = ['comando' => "INSERT INTO (".implode(", ", $campos).") $v ('".implode('", "',$d)."')"];
+        }
+
     }
+
+
 
     echo json_encode($Cmd);
