@@ -23,8 +23,8 @@
 
         echo $query = "select * from {$ind} limit 20";
         $result = mysqli_query($con, $query);
-        while($d = mysqli_fetch_array($result)){
-            $Cmd[] = ['comando' => "INSERT INTO $ind (".implode(", ", $campos).") VALUES ('".implode('", "',$d)."')"];
+        while($d = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+            $Cmd[] = ['comando' => "INSERT INTO $ind (".implode(", ", $campos).") VALUES ('".implode("', '",$d)."')"];
         }
 
     }
@@ -32,3 +32,4 @@
 
 
     echo json_encode($Cmd);
+
