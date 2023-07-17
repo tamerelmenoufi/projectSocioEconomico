@@ -21,10 +21,10 @@
 
 
 
-        echo $query = "select * from {$ind} limit 20";
+        $query = "select * from {$ind} limit 20";
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
-            $Cmd[] = ['comando' => "INSERT INTO $ind (".implode(", ", $campos).") VALUES ('".implode('", "',$d)."')"];
+            echo $Cmd[] = ['comando' => "INSERT INTO $ind (".implode(", ", $campos).") VALUES ('".implode('", "',$d)."')"];
         }
 
     }
