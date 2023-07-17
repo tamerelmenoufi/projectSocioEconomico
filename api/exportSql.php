@@ -10,4 +10,7 @@
 
     foreach($Comando as $ind => $val){
         echo $ind."<br>";
+        foreach($val as $i => $v){
+            echo "---".$v."<br>";
+        }
     }
