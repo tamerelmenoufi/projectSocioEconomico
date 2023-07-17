@@ -9,7 +9,7 @@
 
     $Cmd = [];
     foreach($Comando as $ind => $val){
-        $cmd = $ind."CREATE TABLE IF NOT EXISTS {$ind} (";
+        $cmd = "CREATE TABLE IF NOT EXISTS {$ind} (";
         foreach($val as $i => $v){
             $cmd .= $v." TEXT, ";
         }
