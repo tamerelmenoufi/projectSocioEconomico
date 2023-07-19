@@ -13,7 +13,7 @@
         $cmd = "CREATE TABLE IF NOT EXISTS {$ind} (";
         $campos = [];
         foreach($val as $i => $v){
-            $cmd .= $v.(($tipo[$ind][$v] == 'bigint')?'BIGINT':'TEXT').", ";
+            $cmd .= $v.(($tipo[$ind][$v] == 'bigint')?' BIGINT':' TEXT').", ";
             $campos[] = $v;
         }
         $cmd .= "codigo INTEGER PRIMARY KEY AUTOINCREMENT);";
