@@ -5,6 +5,7 @@
     $result = mysqli_query($conApi, $query);
     while($d = mysqli_fetch_object($result)){
         $Comando[$d->TABLE_NAME][] = $d->COLUMN_NAME;
+        $Comando[$d->TABLE_NAME][$d->COLUMN_NAME] = $d->DATA_TYPE;
     }
 
     $Cmd = [];
@@ -12,7 +13,7 @@
         $cmd = "CREATE TABLE IF NOT EXISTS {$ind} (";
         $campos = [];
         foreach($val as $i => $v){
-            $cmd .= $v." TEXT, ";
+            $cmd .= $v.(($Comando[$ind][$v] == 'bigint')?'BIGINT':'TEXT').", ";
             $campos[] = $v;
         }
         $cmd .= "codigo INTEGER PRIMARY KEY AUTOINCREMENT);";
