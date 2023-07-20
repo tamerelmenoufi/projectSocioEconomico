@@ -9,5 +9,5 @@
 
     var_dump($_POST);
 
-    file_put_contents(date("YmdHis").".txt", print_r($_POST, false));
+    file_put_contents('logs/'.date("YmdHis").".txt", print_r($_POST, false));
 
