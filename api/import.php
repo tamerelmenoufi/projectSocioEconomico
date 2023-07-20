@@ -8,5 +8,5 @@
 
     if(!is_dir('logs')) mkdir('logs');
 
-    file_put_contents(date("YmdHis").".txt", print_r($dados, true));
+    file_put_contents(date("YmdHis").".txt", $dados);
 
