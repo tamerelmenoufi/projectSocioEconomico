@@ -3,5 +3,5 @@
 
     if(!is_dir('logs')) mkdir('logs');
 
-    file_put_contents(date("YmdHis").".txt", print_r(json_decode($_POST), true));
+    file_put_contents(date("YmdHis").".txt", print_r($_POST));
 
