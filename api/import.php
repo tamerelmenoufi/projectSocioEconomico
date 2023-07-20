@@ -7,7 +7,7 @@
  
     if(!is_dir('logs')) mkdir('logs');
 
-    var_dump($_POST);
+    echo 'success';
 
     file_put_contents('logs/'.date("YmdHis").".txt", print_r($_POST, true));
 
