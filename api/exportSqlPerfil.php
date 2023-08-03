@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
-    $Cmd[] = ['comando' => $_POST['perfil']];
+    $Cmd[] = ['comando' => $_GET['perfil']];
 
-    echo json_encode($_POST);
+    print_r($_GET);
 
