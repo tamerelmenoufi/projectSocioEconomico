@@ -25,7 +25,7 @@
             }
             
         }
-        $Cmd[] = ['comando' => "REPLACE INTO se (codigo, ".implode(", ", $campos).") VALUES (".implode(", ",$D).")"];
+        $Cmd[] = ['comando' => "INSERT INTO se (codigo, ".implode(", ", $campos).") VALUES (".implode(", ",$D).")"];
     } 
 
 
