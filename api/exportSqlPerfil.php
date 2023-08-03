@@ -3,5 +3,5 @@
 
     $Cmd[] = ['comando' => $_GET['perfil']];
 
-    echo json_encode($Cmd);
+    echo json_encode($_GET);
 
