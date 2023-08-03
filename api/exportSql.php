@@ -29,7 +29,11 @@
             $query = "select * from {$ind} limit 1000";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                $Cmd[] = ['comando' => "REPLACE INTO $ind (codigo, ".implode(", ", $campos).") VALUES ('".implode("', '",$d)."')"];
+                $D = [];
+                foreach($d as $i => $v){
+                    $D[] = str_replace("'", "`", $v);
+                }
+                $Cmd[] = ['comando' => "REPLACE INTO $ind (codigo, ".implode(", ", $campos).") VALUES ('".implode("', '",$D)."')"];
             }            
         }
 
