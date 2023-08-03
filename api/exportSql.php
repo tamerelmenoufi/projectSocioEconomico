@@ -22,14 +22,14 @@
         }
         $cmd .= "codigo INTEGER PRIMARY KEY AUTOINCREMENT);";
 
-        $Cmd[] = ['comando' => "DROP TABLE {$ind}"];
+        // $Cmd[] = ['comando' => "DROP TABLE {$ind}"];
         $Cmd[] = ['comando' => $cmd];
 
         if(in_array($ind, $dataTable)){
             $query = "select * from {$ind} limit 1000";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                $Cmd[] = ['comando' => "INSERT INTO $ind (codigo, ".implode(", ", $campos).") VALUES ('".implode("', '",$d)."')"];
+                $Cmd[] = ['comando' => "REPLACE INTO $ind (codigo, ".implode(", ", $campos).") VALUES ('".implode("', '",$d)."')"];
             }            
         }
 
