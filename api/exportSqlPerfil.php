@@ -25,7 +25,7 @@
             }
             
         }
-        $Cmd[] = ['comando' => "REPLACE INTO $ind (codigo, ".implode(", ", $campos).") VALUES (".implode(", ",$D).")"];
+        $Cmd[] = ['comando' => "REPLACE INTO se (codigo, ".implode(", ", $campos).") VALUES (".implode(", ",$D).")"];
     } 
 
 
