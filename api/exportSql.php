@@ -34,7 +34,6 @@
                     if(strtolower($tipo[$ind][$v]) == 'bigint' or $v == 'codigo'){
                         $D[] = str_replace("'", "`", $v);
                     }else{
-                        // $D[] = str_replace("'", "`", $v);
                         $D[] = "'".str_replace("'", "`", $v)."'";
                     }
                 }
@@ -44,4 +43,6 @@
 
     }
 
+
+    echo "<h1>FILE</h1>";
     echo json_encode($Cmd);
