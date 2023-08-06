@@ -31,9 +31,13 @@
             while($d = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                 $D = [];
                 foreach($d as $i => $v){
-                    $D[] = str_replace("'", "`", $v);
+                    if(strtolower($tipo[$ind][$v]) === 'bigint'){
+                        $D[] = str_replace("'", "`", $v);
+                    }else{
+                        $D[] = "'".str_replace("'", "`", $v)."'";
+                    }
                 }
-                $Cmd[] = ['comando' => "REPLACE INTO $ind (codigo, ".implode(", ", $campos).") VALUES ('".implode("', '",$D)."')"];
+                $Cmd[] = ['comando' => "INSERT INTO $ind (codigo, ".implode(", ", $campos).") VALUES (".implode(", ",$D).")"];
             }            
         }
 
