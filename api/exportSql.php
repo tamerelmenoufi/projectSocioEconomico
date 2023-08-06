@@ -22,7 +22,7 @@
         }
         $cmd .= "codigo INTEGER PRIMARY KEY AUTOINCREMENT);";
 
-        $Cmd[] = ['comando' => "DROP TABLE {$ind}"];
+        // $Cmd[] = ['comando' => "DROP TABLE {$ind}"];
         $Cmd[] = ['comando' => $cmd];
 
         if(in_array($ind, $dataTable)){
