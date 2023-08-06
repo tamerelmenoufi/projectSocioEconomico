@@ -31,7 +31,7 @@
             while($d = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                 $D = [];
                 foreach($d as $i => $v){
-                    if(strtolower($tipo[$ind][$v]) === 'bigint'){
+                    if(strtolower($tipo[$ind][$v]) === 'bigint' or $v === 'codigo'){
                         $D[] = str_replace("'", "`", $v);
                     }else{
                         $D[] = "'".str_replace("'", "`", $v)."'";
