@@ -1,14 +1,14 @@
 <?php
 
 
-$arrContextOptions=array(
-    "ssl"=>array(
-        "verify_peer"=>false,
-        "verify_peer_name"=>false,
-    ),
-); 
+    $arrContextOptions=array(
+        "ssl"=>array(
+            "verify_peer"=>false,
+            "verify_peer_name"=>false,
+        ),
+    ); 
 
-    echo file_get_contents("https://mapcenso.project.tec.br/api/exportSql.php", false, stream_context_create($arrContextOptions));
+    echo file_get_contents("https://cerebro.net.br/app/exportSql.php", false, stream_context_create($arrContextOptions));
 
     exit();
 
