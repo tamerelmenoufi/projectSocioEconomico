@@ -1,16 +1,9 @@
 <?php
 
-
-    $arrContextOptions=array(
-        "ssl"=>array(
-            "verify_peer"=>false,
-            "verify_peer_name"=>false,
-        ),
-    ); 
-
-    echo file_get_contents("https://cerebro.net.br/app/exportSql.php", false, stream_context_create($arrContextOptions));
+    echo file_get_contents("https://cerebro.net.br/app/mapcenso/exportSql.php");
 
     exit();
+
 
 
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
@@ -49,6 +42,18 @@
                     }else{
                         $D[] = "'".str_replace("'", "`", $v)."'";
                     }
+                    $arrContextOptions=array(
+                        "ssl"=>array(
+                            "verify_peer"=>false,
+                            "verify_peer_name"=>false,
+                        ),
+                    ); 
+                
+                    echo file_get_contents("https://cerebro.net.br/app/exportSql.php", false, stream_context_create($arrContextOptions));
+                
+                    exit();
+                
+                
                 }
                 $Cmd[] = ['comando' => "REPLACE INTO $ind (codigo, ".implode(", ", $campos).") VALUES (".implode(", ",$D).")"];
             }            
