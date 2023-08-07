@@ -37,7 +37,7 @@
                         $D[] = "'".str_replace("'", "`", $v)."'";
                     }
                 }
-                $Cmd[] = ['comando' => "INSERT INTO $ind (codigo, ".implode(", ", $campos).") VALUES (".implode(", ",$D).")"];
+                $Cmd[] = ['comando' => "REPLACE INTO $ind (codigo, ".implode(", ", $campos).") VALUES (".implode(", ",$D).")"];
             }            
         }
 
