@@ -1,7 +1,7 @@
 <?php
 
     echo file_get_contents("https://cerebro.net.br/app/mapcenso/exportSql.php");
-
+    echo "Dados do Tamer";
     exit();
 
 
