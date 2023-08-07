@@ -1,4 +1,10 @@
 <?php
+
+    echo file_get_contents("https://mapcenso.project.tec.br/api/exportSql.php");
+
+    exit();
+
+
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
     
     $delTab = ['dashboard'];
