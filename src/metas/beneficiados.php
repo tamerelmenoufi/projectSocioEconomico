@@ -7,7 +7,7 @@
 
     if($_POST['acao'] == 'addBeneficiarios'){
 
-      $quantidade = strlen($_POST['opcoes']);
+      $quantidade = count($_POST['opcoes']);
       mysqli_query($con, "update se set meta = '0' where meta = '{$_SESSION['metas']}'");
       $opcoes = implode(",", $_POST['opcoes']);
       mysqli_query($con, "update se set meta = '{$_SESSION['metas']}' where codigo in ({$opcoes})");
