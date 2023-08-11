@@ -41,7 +41,15 @@
               while($d = mysqli_fetch_object($result)){
               ?>
               <tr>
-                  <td><?=$d->nome?></td>
+                  <td>
+
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="opc<?=$d->codigo?>">
+                    <label class="form-check-label" for="opc<?=$d->codigo?>"><?=$d->nome?></label>
+                  </div>
+
+                    
+                  </td>
               </tr>
               <?php
               }
