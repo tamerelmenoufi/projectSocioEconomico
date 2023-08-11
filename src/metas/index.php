@@ -150,7 +150,7 @@
                 url:"src/metas/beneficiados.php",
                 type:"POST",
                 data:{
-                  cod
+                  beneficiados
                 },
                 success:function(dados){
                     $(".LateralDireita").html(dados);
