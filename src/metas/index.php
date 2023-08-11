@@ -170,6 +170,7 @@
         })
 
         $(".voltar").click(function(){
+          Carregando();
             $.ajax({
                 url:"src/usuarios/index.php",
                 type:"POST",
