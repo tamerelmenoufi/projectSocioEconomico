@@ -6,6 +6,7 @@
     if($_POST['delete']){
       $query = "delete from metas where codigo = '{$_POST['delete']}'";
       mysqli_query($con, $query);
+      mysqli_query($con, "update se set meta = '0' where meta = '{$_POST['delete']}'");
     }
 
     if($_POST['situacao']){
@@ -203,6 +204,33 @@
             })
 
         });
+
+
+        $("button[delete]").click(function(){
+            deletar = $(this).attr("delete");
+            $.confirm({
+                content:"Deseja realmente excluir o cadastro ?",
+                title:false,
+                buttons:{
+                    'SIM':function(){
+                        $.ajax({
+                            url:"src/metas/index.php",
+                            type:"POST",
+                            data:{
+                                delete:deletar
+                            },
+                            success:function(dados){
+                                $("#paginaHome").html(dados);
+                            }
+                        })
+                    },
+                    'NÃO':function(){
+
+                    }
+                }
+            });
+
+        })
 
     })
 </script>
