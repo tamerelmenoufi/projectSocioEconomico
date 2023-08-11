@@ -124,12 +124,12 @@
             $("#telefone").mask("(99) 99999-9999");
 
 
-            var filtro = (bairro_comunidade, tipo) => {
+            var filtro = (bairro_comunidade, zona) => {
                 if(!municipio){
                     $("#bairro_comunidade").html('<option value="">::Selecione a Localização::</option>');
                     return false;
                 }
-                if(!tipo){
+                if(!zona){
                     $("#bairro_comunidade").html('<option value="">::Selecione a Localização::</option>');
                     return false;
                 }
@@ -138,7 +138,7 @@
                     type:"POST",
                     data:{
                         municipio,
-                        tipo,
+                        zona,
                         acao:'bairro_comunidade'
                     },
                     success:function(dados){
@@ -147,16 +147,16 @@
                 });
             }
 
-            $("#tipo").change(function(){
+            $("#zona").change(function(){
                 municipio = $("#municipio").val();
-                tipo = $(this).val();
-                filtro(municipio, tipo);
+                zona = $(this).val();
+                filtro(municipio, zona);
             });
 
             $("#municipio").change(function(){
-                tipo = $("#zona").val();
+                zona = $("#zona").val();
                 municipio = $(this).val();
-                filtro(municipio, tipo);
+                filtro(municipio, zona);
             });
 
             $('#form-<?=$md5?>').submit(function (e) {
