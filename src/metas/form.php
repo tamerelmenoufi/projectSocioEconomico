@@ -102,67 +102,6 @@
                 </div>
 
 
-
-
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>">
-                    <label for="nome">Nome*</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>">
-                    <label for="cpf">CPF*</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" name="telefone" id="telefone" class="form-control" placeholder="telefone" value="<?=$d->telefone?>">
-                    <label for="telefone">Telefone*</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$d->email?>">
-                    <label for="email">E-mail</label>
-                </div>
-                <?php
-                if($d->codigo != 1 or $_SESSION['ProjectSeLogin']->perfil == 'adm'){
-                ?>
-                <div class="form-floating mb-3">
-                    <select name="perfil" class="form-control" id="perfil">
-                        <option value="usr" <?=(($d->perfil == 'usr')?'selected':false)?>>Usuário</option>
-                        <option value="adm" <?=(($d->perfil == 'adm')?'selected':false)?>>Administrador</option>
-                        <option value="crd" <?=(($d->perfil == 'crd')?'selected':false)?>>Coordenador</option>
-                    </select>
-                    <label for="email">Perfil</label>
-                </div>
-
-                <div class="form-floating mb-3">
-                    <input type="text" name="login" id="login" class="form-control" placeholder="Login" value="<?=$d->login?>">
-                    <label for="login">Login</label>
-                </div>
-                <?php
-                }
-                ?>
-                <div class="form-floating mb-3">
-                    <input type="text" name="senha" id="senha" class="form-control" placeholder="E-mail" value="">
-                    <label for="senha">Senha</label>
-                </div>
-                <?php
-                if($d->codigo != 1 or $_SESSION['ProjectSeLogin']->perfil == 'adm' ){
-                ?>
-
-                <div class="form-floating mb-3">
-                    <select name="coordenador" id="coordenador" class="form-control" placeholder="Coordenador">
-                        <option value="">::Selecione o Coordenador::</option>
-                        <?php
-                            $q = "select * from usuarios where perfil in ('adm', 'crd') and situacao = '1' order by nome";
-                            $r = mysqli_query($con, $q);
-                            while($s = mysqli_fetch_object($r)){
-                        ?>
-                        <option value="<?=$s->codigo?>" <?=(($d->coordenador == $s->codigo)?'selected':false)?>><?=$s->nome?></option>
-                        <?php
-                            }
-                        ?>
-                    </select>
-                    <label for="coordenador">Coordenador</label>
-                </div>
-
                 <div class="form-floating mb-3">
                     <select name="situacao" class="form-control" id="situacao">
                         <option value="1" <?=(($d->situacao == '1')?'selected':false)?>>Liberado</option>
@@ -170,9 +109,7 @@
                     </select>
                     <label for="email">Situação</label>
                 </div>
-                <?php
-                }
-                ?>
+
             </div>
         </div>
 
