@@ -31,12 +31,9 @@
             <?=$m->bairro_nome?>
           </div>
         </div>
-
+        <h5>Dados do Beneficiados</h5>
         <div style="position:absolute; top:300px; bottom:35px; left:0; right:0; border:solid 1px red; overflow-y: scroll;">
           <table class="table table-hover">
-              <tr>
-                  <td>Dados do Beneficiados</td>
-              </tr>
               <?php
               $query = "select * from se where municipio = '{$m->municipio}' and bairro_comunidade = '{$m->bairro_comunidade}' and local = '{$m->zona}'";
               $result = mysqli_query($con, $query);
