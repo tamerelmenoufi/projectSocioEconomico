@@ -33,7 +33,7 @@
         </div>
         
         <div style="position:absolute; top:300px; bottom:35px; left:0; right:0; border:solid 1px red; overflow-y: scroll;">
-          <h6>Dados do Beneficiados</h6>
+          <h6 style="position:absolute; top:0; left:0; right:0; width:100%; background-color:#fff; padding:5px;">Dados do Beneficiados</h6>
           <table class="table table-hover">
               <?php
               $query = "select * from se where municipio = '{$m->municipio}' and bairro_comunidade = '{$m->bairro_comunidade}' and local = '{$m->zona}'";
