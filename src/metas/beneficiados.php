@@ -9,7 +9,7 @@
 
       $quantidade = count($_POST['opcoes']);
       mysqli_query($con, "update se set meta = '0' where meta = '{$_SESSION['meta']}'");
-      $opcoes = implode(",", $_POST['opcoes']);
+      $opcoes = @implode(",", $_POST['opcoes']);
       mysqli_query($con, "update se set meta = '{$_SESSION['meta']}' where codigo in ({$opcoes})");
 
       mysqli_query($con, "update metas set quantidade = '{$quantidade}' WHERE codigo = '{$_SESSION['meta']}'");
