@@ -69,6 +69,7 @@
 <script>
 
   $(function(){
+    Carregando('none');
     $("button[salvarMeta]").click(function(){
       opcoes = [];
       $(".opcoes").each(function(){
@@ -76,6 +77,26 @@
           opcoes.push($(this).val())
         }
       });
+      if(opcoes){
+        Carregando();
+        $.ajax({
+          url:"src/metas/beneficiados.php",
+          type:"POST",
+          data:{
+            opcoes
+          },
+          success:function(dados){
+            $(".LateralDireita").html(dados);
+            $.ajax({
+              url:"src/metas/index.php",
+              success:function(dados){
+                $(".paginaHome").html(dados);
+                
+              }
+            })
+          }
+        })
+      }
       console.log(opcoes);
     });
   })
