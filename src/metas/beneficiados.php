@@ -32,7 +32,7 @@
           </div>
         </div>
 
-        <div style="position:absolute; bottom:35px; left:0; right:0; border:solid:1px red; overflow:auto;">
+        <div style="position:absolute; top:auto; bottom:35px; left:0; right:0; border:solid:1px red; overflow-y: scroll;">
         <table class="table table-hover">
             <tr>
                 <td>Dados do Beneficiados</td>
