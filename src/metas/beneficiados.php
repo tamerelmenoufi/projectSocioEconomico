@@ -24,10 +24,10 @@
         <div class="card">
           <h5 class="card-header">Lista de Usuários</h5>
           <div class="card-body">
-            <?=str_pad($d->codigo, 6, "0", STR_PAD_LEFT)?><br>
-            <?=$d->nome?><br>
-            <?=$d->municipio_nome?><br>
-            <?=$d->bairro_nome?>
+            <?=str_pad($m->codigo, 6, "0", STR_PAD_LEFT)?><br>
+            <?=$m->nome?><br>
+            <?=$m->municipio_nome?><br>
+            <?=$m->bairro_nome?>
 
             <table class="table">
                 <tr>
