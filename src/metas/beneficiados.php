@@ -7,7 +7,7 @@
 
     if($_POST['acao'] == 'addBeneficiarios'){
 
-      echo '<br><br><br><br><br><br><br><br>Opções:'.$_POST['opcoes'];
+      echo 'Opções:'.$_POST['opcoes'];
 
 
     }
