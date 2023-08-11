@@ -89,28 +89,25 @@
           opcoes.push($(this).val())
         }
       });
-      // if(opcoes){
-        Carregando();
-        $.ajax({
-          url:"src/metas/beneficiados.php",
-          type:"POST",
-          data:{
-            opcoes,
-            acao:"addBeneficiarios"
-          },
-          success:function(dados){
-            $(".LateralDireita").html(dados);
-            $.ajax({
-              url:"src/metas/index.php",
-              success:function(dados){
-                $("#paginaHome").html(dados);
-                
-              }
-            })
-          }
-        })
-      // }
-      console.log(opcoes);
+      Carregando();
+      $.ajax({
+        url:"src/metas/beneficiados.php",
+        type:"POST",
+        data:{
+          opcoes,
+          acao:"addBeneficiarios"
+        },
+        success:function(dados){
+          $(".LateralDireita").html(dados);
+          $.ajax({
+            url:"src/metas/index.php",
+            success:function(dados){
+              $("#paginaHome").html(dados);
+              
+            }
+          })
+        }
+      })
     });
   })
 
