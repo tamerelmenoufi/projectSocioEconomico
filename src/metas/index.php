@@ -151,6 +151,7 @@
 
         $("button[beneficiados]").click(function(){
             meta = $(this).attr("beneficiados");
+            $.ajax({
                 url:"src/metas/beneficiados.php",
                 type:"POST",
                 data:{
