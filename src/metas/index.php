@@ -14,7 +14,8 @@
       exit();
     }
 
-    $u = mysqli_fetch_object(mysqli_query($con, "select * from ususarios where codigo = '{$_SESSION['metas']}'"));
+    $q = "select * from usuarios where codigo = '{$_SESSION['metas']}'";
+    $u = mysqli_fetch_object(mysqli_query($con, $q));
 ?>
 
 <div class="col">
