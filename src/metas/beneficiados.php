@@ -7,7 +7,7 @@
 
     if($_POST['addBeneficiarios']){
 
-      echo $_POST['opcoes'];
+      echo '<br><br><br><br><br><br><br><br>Opções:'.$_POST['opcoes'];
 
 
     }
