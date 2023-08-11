@@ -131,12 +131,12 @@
         })
 
         $("button[metas]").click(function(){
-            metas = $(this).attr("metas");
+            usuario = $(this).attr("metas");
             $.ajax({
                 url:"src/metas/index.php",
                 type:"POST",
                 data:{
-                  metas
+                  usuario
                 },
                 success:function(dados){
                     $("#paginaHome").html(dados);

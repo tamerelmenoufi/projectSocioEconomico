@@ -2,17 +2,17 @@
 
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
-    if($_POST['beneficiados']) $_SESSION['metas'] = $_POST['beneficiados'];
+    if($_POST['meta']) $_SESSION['meta'] = $_POST['meta'];
 
 
     if($_POST['acao'] == 'addBeneficiarios'){
 
       $quantidade = count($_POST['opcoes']);
-      mysqli_query($con, "update se set meta = '0' where meta = '{$_SESSION['metas']}'");
+      mysqli_query($con, "update se set meta = '0' where meta = '{$_SESSION['meta']}'");
       $opcoes = implode(",", $_POST['opcoes']);
-      mysqli_query($con, "update se set meta = '{$_SESSION['metas']}' where codigo in ({$opcoes})");
+      mysqli_query($con, "update se set meta = '{$_SESSION['meta']}' where codigo in ({$opcoes})");
 
-      mysqli_query($con, "update metas set quantidade = '{$quantidade}' WHERE codigo = '{$_SESSION['metas']}'");
+      mysqli_query($con, "update metas set quantidade = '{$quantidade}' WHERE codigo = '{$_SESSION['meta']}'");
 
     }
 
@@ -24,7 +24,7 @@
                     left join usuarios b on a.usuario = b.codigo 
                     left join municipios c on a.municipio = c.codigo 
                     left join bairros_comunidades d on a.bairro_comunidade = d.codigo 
-            where a.codigo = '{$_SESSION['metas']}'";
+            where a.codigo = '{$_SESSION['meta']}'";
     $result = mysqli_query($con, $query);
     $m = mysqli_fetch_object($result);
 ?>
@@ -89,7 +89,7 @@
           opcoes.push($(this).val())
         }
       });
-      if(opcoes){
+      // if(opcoes){
         Carregando();
         $.ajax({
           url:"src/metas/beneficiados.php",
@@ -109,7 +109,7 @@
             })
           }
         })
-      }
+      // }
       console.log(opcoes);
     });
   })

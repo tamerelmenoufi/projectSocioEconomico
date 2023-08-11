@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
-    if($_POST['metas']) $_SESSION['metas'] = $_POST['metas'];
+    if($_POST['usuario']) $_SESSION['usuario'] = $_POST['usuario'];
 
     if($_POST['delete']){
       $query = "delete from metas where codigo = '{$_POST['delete']}'";
@@ -14,7 +14,7 @@
       exit();
     }
 
-    $q = "select * from usuarios where codigo = '{$_SESSION['metas']}'";
+    $q = "select * from usuarios where codigo = '{$_SESSION['usuario']}'";
     $u = mysqli_fetch_object(mysqli_query($con, $q));
 ?>
 
@@ -57,7 +57,7 @@
                               from metas a 
                                    left join municipios b on a.municipio = b.codigo 
                                    left join bairros_comunidades c on a.bairro_comunidade = c.codigo 
-                              where usuario = '{$_SESSION['metas']}'
+                              where usuario = '{$_SESSION['usuario']}'
                               order by a.codigo desc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
@@ -136,12 +136,12 @@
         })
 
         $("button[edit]").click(function(){
-            cod = $(this).attr("edit");
+            meta = $(this).attr("edit");
             $.ajax({
                 url:"src/metas/form.php",
                 type:"POST",
                 data:{
-                  cod
+                  meta
                 },
                 success:function(dados){
                     $(".LateralDireita").html(dados);
@@ -150,12 +150,11 @@
         })
 
         $("button[beneficiados]").click(function(){
-            beneficiados = $(this).attr("beneficiados");
-            $.ajax({
+            meta =situacao{
                 url:"src/metas/beneficiados.php",
                 type:"POST",
                 data:{
-                  beneficiados
+                  meta
                 },
                 success:function(dados){
                     $(".LateralDireita").html(dados);
@@ -164,12 +163,12 @@
         })
 
         $("button[metas]").click(function(){
-            metas = $(this).attr("metas");
+            meta = $(this).attr("metas");
             $.ajax({
                 url:"src/metas/index.php",
                 type:"POST",
                 data:{
-                  metas
+                  meta
                 },
                 success:function(dados){
                     $(".paginaHome").html(dados);

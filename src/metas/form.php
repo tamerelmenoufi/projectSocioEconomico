@@ -14,7 +14,7 @@
         foreach ($data as $name => $value) {
             $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
         }
-        $attr[] = "usuario = '" . $_SESSION['metas'] . "'";
+        $attr[] = "usuario = '" . $_SESSION['usuario'] . "'";
 
 
         $attr = implode(', ', $attr);
@@ -40,7 +40,7 @@
     }
 
 
-    $query = "select * from metas where codigo = '{$_POST['cod']}'";
+    $query = "select * from metas where codigo = '{$_POST['meta']}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 ?>
@@ -110,7 +110,7 @@
             <div class="col">
                 <div style="display:flex; justify-content:end">
                     <button type="submit" class="btn btn-success btn-ms">Salvar</button>
-                    <input type="hidden" id="codigo" value="<?=$_POST['cod']?>" />
+                    <input type="hidden" id="codigo" value="<?=$_POST['meta']?>" />
                 </div>
             </div>
         </div>
