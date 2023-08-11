@@ -51,14 +51,14 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select * from metas order by codigo desc";
+                  $query = "select a.*, b.municipio as municipio_nome, c.descricao as bairro_comunidade_nome from metas a left join municipios on a.municipio = b.codigo left join bairros_comunidades c on a.bairro_comunidade = c.codigo order by a.codigo desc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
                 <tr>
                   <td><?=str_pad($d->codigo, 6, "0", STR_PAD_LEFT)?></td>
-                  <td><?=$d->municipio?></td>
-                  <td><?=$d->bairro?></td>
+                  <td><?=$d->municipio_nome?></td>
+                  <td><?=$d->bairro_comunidade_nome?></td>
                   <td><?=$d->zona?></td>
                   <td>
 
