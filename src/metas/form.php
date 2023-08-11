@@ -14,18 +14,16 @@
         foreach ($data as $name => $value) {
             $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
         }
-        if($_POST['senha']){
-            $attr[] = "senha = '" . md5($_POST['senha']) . "'";
-        }
+
 
         $attr = implode(', ', $attr);
 
         if($_POST['codigo']){
-            $query = "update usuarios set {$attr} where codigo = '{$_POST['codigo']}'";
+            $query = "update metas set {$attr} where codigo = '{$_POST['codigo']}'";
             mysqli_query($con, $query);
             $cod = $_POST['codigo'];
         }else{
-            $query = "insert into usuarios set data_cadastro = NOW(), {$attr}";
+            $query = "insert into metas set {$attr}";
             mysqli_query($con, $query);
             $cod = mysqli_insert_id($con);
         }
@@ -41,7 +39,7 @@
     }
 
 
-    $query = "select * from usuarios where codigo = '{$_POST['cod']}'";
+    $query = "select * from metas where codigo = '{$_POST['cod']}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 ?>
@@ -57,6 +55,55 @@
     <form id="form-<?= $md5 ?>">
         <div class="row">
             <div class="col">
+
+
+
+
+                <div class="form-floating mb-3">
+                        <select name="municipio" id="municipio" class="form-control" placeholder="Município">
+                            <option value="">::Selecione o Município::</option>
+                            <?php
+                                $q = "select * from municipios order by municipio";
+                                $r = mysqli_query($con, $q);
+                                while($s = mysqli_fetch_object($r)){
+                            ?>
+                            <option value="<?=$s->codigo?>" <?=(($d->municipio == $s->codigo)?'selected':false)?>><?=$s->municipio?></option>
+                            <?php
+                                }
+                            ?>
+                        </select>
+                        <label for="email">Município</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <select name="tipo" id="tipo" class="form-control" placeholder="Zona">
+                            <option value="">::Selecione a Zona::</option>
+                            <option value="Urbano" <?=(($d->zona == 'Urbano')?'selected':false)?>>Urbano</option>
+                            <option value="Rural" <?=(($d->zona == 'Rural')?'selected':false)?>>Rural</option>
+                        </select>
+                        <label for="tipo">Zona</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <select name="bairro_comunidade" id="bairro_comunidade" class="form-control" placeholder="Bairro">
+                            <option value="">::Selecione a Localização::</option>
+                            <?php
+                                $q = "select * from bairros_comunidades where municipio = '{$d->municipio}' ".(($d->zona)?" and tipo = '{$d->zona}'":false)." order by descricao";
+                                $r = mysqli_query($con, $q);
+                                while($s = mysqli_fetch_object($r)){
+                            ?>
+                            <option value="<?=$s->codigo?>" <?=(($d->bairro_comunidade == $s->codigo)?'selected':false)?>><?=$s->descricao?> (<?=$s->zona?>)</option>
+                            <?php
+                                }
+                            ?>
+                        </select>
+                        <label for="bairro_comunidade">Bairro/Comunidade</label>
+                    </div>
+                </div>
+
+
+
+
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>">
                     <label for="nome">Nome*</label>
@@ -145,6 +192,42 @@
 
             $("#cpf").mask("999.999.999-99");
             $("#telefone").mask("(99) 99999-9999");
+
+
+            var filtro = (bairro_comunidade, tipo) => {
+                if(!municipio){
+                    $("#bairro_comunidade").html('<option value="">::Selecione a Localização::</option>');
+                    return false;
+                }
+                if(!tipo){
+                    $("#bairro_comunidade").html('<option value="">::Selecione a Localização::</option>');
+                    return false;
+                }
+                $.ajax({
+                    url:"src/metas/filtro.php",
+                    type:"POST",
+                    data:{
+                        municipio,
+                        tipo,
+                        acao:'bairro_comunidade'
+                    },
+                    success:function(dados){
+                        $("#bairro_comunidade").html(dados);
+                    }
+                });
+            }
+
+            $("#tipo").change(function(){
+                municipio = $("#municipio").val();
+                tipo = $(this).val();
+                filtro(municipio, tipo);
+            });
+
+            $("#municipio").change(function(){
+                tipo = $("#tipo").val();
+                municipio = $(this).val();
+                filtro(municipio, tipo);
+            });
 
             $('#form-<?=$md5?>').submit(function (e) {
 
