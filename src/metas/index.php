@@ -94,11 +94,16 @@
                         href="#offcanvasDireita"
                         role="button"
                         aria-controls="offcanvasDireita"
+                        <?=(($d->quantidade)?'disabled':false)?>
                       >
                         Editar
                       </button>
 
-                      <button class="btn btn-danger" delete="<?=$d->codigo?>">
+                      <button 
+                        class="btn btn-danger" 
+                        delete="<?=$d->codigo?>" 
+                        <?=(($d->quantidade)?'disabled':false)?> 
+                      >
                         Excluir
                       </button>
 

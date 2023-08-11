@@ -44,7 +44,7 @@
                   <td>
 
                   <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="opc<?=$d->codigo?>">
+                    <input type="checkbox" class="form-check-input opcoes" value="<?=$d->codigo?>" id="opc<?=$d->codigo?>">
                     <label class="form-check-label" for="opc<?=$d->codigo?>">
                       <?=$d->nome?><br>
                       <small style="color:#a1a1a1"><?=$d->endereco.(($d->cep)?"- {$d->cep}":false)?></small>
@@ -60,8 +60,19 @@
           </table>
         </div>
         
-        <bottom style="position:absolute; bottom:10px; right:30px;" class="btn btn-success">Salvar</bottom>
+        <button salvarMeta style="position:absolute; bottom:10px; right:30px;" class="btn btn-success">Salvar</button>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+
+  $(function(){
+    $("button[salvarMeta]").click(function(){
+      opcoes = $(".opcoes").val();
+      console.log(opcoes);
+    });
+  })
+
+</script>
