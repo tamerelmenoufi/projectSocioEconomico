@@ -154,7 +154,7 @@
             });
 
             $("#municipio").change(function(){
-                tipo = $("#tipo").val();
+                tipo = $("#zona").val();
                 municipio = $(this).val();
                 filtro(municipio, tipo);
             });
