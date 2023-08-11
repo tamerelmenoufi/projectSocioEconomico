@@ -113,7 +113,7 @@
                   }
                 ?>
               </tbody>
-            </table>edit
+            </table>
           </div>
         </div>
       </div>
