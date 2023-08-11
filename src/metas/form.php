@@ -182,7 +182,7 @@
                 Carregando();
 
                 $.ajax({
-                    url:"src/usuarios/form.php",
+                    url:"src/metas/form.php",
                     type:"POST",
                     typeData:"JSON",
                     mimeType: 'multipart/form-data',
@@ -190,7 +190,7 @@
                     success:function(dados){
                         // if(dados.status){
                             $.ajax({
-                                url:"src/usuarios/index.php",
+                                url:"src/metas/index.php",
                                 type:"POST",
                                 success:function(dados){
                                     $("#paginaHome").html(dados);
