@@ -5,7 +5,7 @@
     if($_POST['beneficiados']) $_SESSION['metas'] = $_POST['beneficiados'];
 
 
-    if($_POST['addBeneficiarios']){
+    if($_POST['acao'] == 'addBeneficiarios'){
 
       echo '<br><br><br><br><br><br><br><br>Opções:'.$_POST['opcoes'];
 
