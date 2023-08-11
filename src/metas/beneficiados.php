@@ -45,7 +45,10 @@
 
                   <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="opc<?=$d->codigo?>">
-                    <label class="form-check-label" for="opc<?=$d->codigo?>"><?=$d->nome?></label>
+                    <label class="form-check-label" for="opc<?=$d->codigo?>">
+                      <?=$d->nome?>
+                      <small style="color:#a1a1a1"><?=$d->endereco.(($d->cep)?"- {$d->cep}":false)?></small>
+                    </label>
                   </div>
 
                     
