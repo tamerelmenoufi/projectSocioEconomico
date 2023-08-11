@@ -72,7 +72,9 @@
     $("button[salvarMeta]").click(function(){
       opcoes = [];
       $(".opcoes").each(function(){
-        opcoes.push($(this).val())
+        if($(this).prop("checked") == true){
+          opcoes.push($(this).val())
+        }
       });
       console.log(opcoes);
     });
