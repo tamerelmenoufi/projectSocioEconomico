@@ -30,7 +30,7 @@
 
         $retorno = [
             'status' => true,
-            'codigo' => $cod
+            'codigo' => $query
         ];
 
         echo json_encode($retorno);
@@ -180,6 +180,7 @@
                     mimeType: 'multipart/form-data',
                     data: campos,
                     success:function(dados){
+                        console.log(dados.status)
                         // if(dados.status){
                             $.ajax({
                                 url:"src/metas/index.php",
