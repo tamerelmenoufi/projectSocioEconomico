@@ -24,17 +24,27 @@
         <div class="card">
           <h5 class="card-header">Lista de Usuários</h5>
           <div class="card-body">
-            <?=$d->codigo?><br>
+            <?=str_pad($d->codigo, 6, "0", STR_PAD_LEFT)?><br>
             <?=$d->nome?><br>
             <?=$d->municipio_nome?><br>
             <?=$d->bairro_nome?>
 
             <table class="table">
                 <tr>
-                    <td></td>
+                    <td>Dados do Beneficiados</td>
                 </tr>
+                <?php
+                $query = "select * from se where municipio = '{$m->municipio}' and bairro_comunidade = '{$m->bairro_comunidade}' and local = '{$m->zona}'";
+                $result = mysqli_query($con, $query);
+                while($d = mysqli_fetch_object($result)){
+                ?>
+                <tr>
+                    <td><?=$d->nome?></td>
+                </tr>
+                <?php
+                }
+                ?>
             </table>
-
 
           </div>
         </div>

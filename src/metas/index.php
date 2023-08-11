@@ -74,26 +74,34 @@
                   </div>
 
                   </td>
-                  <td>
-                    <button
-                      class="btn btn-primary"
-                      edit="<?=$d->codigo?>"
-                      data-bs-toggle="offcanvas"
-                      href="#offcanvasDireita"
-                      role="button"
-                      aria-controls="offcanvasDireita"
-                    >
-                      Editar
-                    </button>
-                    <?php
-                    if($d->codigo != 1){
-                    ?>
-                    <button class="btn btn-danger" delete="<?=$d->codigo?>">
-                      Excluir
-                    </button>
-                    <?php
-                    }
-                    ?>
+                    <td>
+
+                      <button
+                        class="btn btn-primary"
+                        beneficiados="<?=$d->codigo?>"
+                        data-bs-toggle="offcanvas"
+                        href="#offcanvasDireita"
+                        role="button"
+                        aria-controls="offcanvasDireita"
+                      >
+                        Beneficiados
+                      </button>
+
+                      <button
+                        class="btn btn-primary"
+                        edit="<?=$d->codigo?>"
+                        data-bs-toggle="offcanvas"
+                        href="#offcanvasDireita"
+                        role="button"
+                        aria-controls="offcanvasDireita"
+                      >
+                        Editar
+                      </button>
+
+                      <button class="btn btn-danger" delete="<?=$d->codigo?>">
+                        Excluir
+                      </button>
+
                   </td>
                 </tr>
                 <?php
@@ -126,6 +134,20 @@
             cod = $(this).attr("edit");
             $.ajax({
                 url:"src/metas/form.php",
+                type:"POST",
+                data:{
+                  cod
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            })
+        })
+
+        $("button[beneficiados]").click(function(){
+            beneficiados = $(this).attr("beneficiados");
+            $.ajax({
+                url:"src/metas/beneficiados.php",
                 type:"POST",
                 data:{
                   cod
