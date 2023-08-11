@@ -70,16 +70,6 @@
                   <td>
                     <button
                       class="btn btn-primary"
-                      beneficiados="<?=$d->codigo?>"
-                      data-bs-toggle="offcanvas"
-                      href="#offcanvasDireita"
-                      role="button"
-                      aria-controls="offcanvasDireita"
-                    >
-                      Beneficiados
-                    </button>
-                    <button
-                      class="btn btn-primary"
                       edit="<?=$d->codigo?>"
                       data-bs-toggle="offcanvas"
                       href="#offcanvasDireita"
@@ -118,7 +108,7 @@
         Carregando('none');
         $("button[novoCadastro]").click(function(){
             $.ajax({
-                url:"src/usuarios/form.php",
+                url:"src/metas/form.php",
                 success:function(dados){
                     $(".LateralDireita").html(dados);
                 }
@@ -128,7 +118,7 @@
         $("button[edit]").click(function(){
             cod = $(this).attr("edit");
             $.ajax({
-                url:"src/usuarios/form.php",
+                url:"src/metas/form.php",
                 type:"POST",
                 data:{
                   cod
@@ -153,23 +143,6 @@
             })
         })
 
-        $("button[beneficiados]").click(function(){
-          beneficiados = $(this).attr("beneficiados");
-
-          $.ajax({
-              url:"src/metas/beneficiados.php",
-              type:"POST",
-              data:{
-                  beneficiados
-              },
-              success:function(dados){
-                  $("#paginaHome").html(dados);
-              }
-          })
-
-
-        })
-
 
         $(".situacao").change(function(){
 
@@ -184,7 +157,7 @@
 
 
             $.ajax({
-                url:"src/usuarios/index.php",
+                url:"src/metas/index.php",
                 type:"POST",
                 data:{
                     situacao,
