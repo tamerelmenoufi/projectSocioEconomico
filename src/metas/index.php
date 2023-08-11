@@ -1,16 +1,20 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
+    if($_POST['metas']) $_SESSION['metas'] = $_POST['metas'];
+
     if($_POST['delete']){
-      $query = "delete from usuarios where codigo = '{$_POST['delete']}'";
+      $query = "delete from metas where codigo = '{$_POST['delete']}'";
       mysqli_query($con, $query);
     }
 
     if($_POST['situacao']){
-      $query = "update usuarios set situacao = '{$_POST['opc']}' where codigo = '{$_POST['situacao']}'";
+      $query = "update metas set situacao = '{$_POST['opc']}' where codigo = '{$_POST['situacao']}'";
       mysqli_query($con, $query);
       exit();
     }
+
+    $u = mysqli_fetch_object(mysqli_query($con, "select * from ususarios where codigo = '{$_SESSION['metas']}'"));
 ?>
 
 <div class="col">
@@ -19,7 +23,7 @@
     <div class="row">
       <div class="col">
         <div class="card">
-          <h5 class="card-header">Lista de Usuários</h5>
+          <h5 class="card-header">Lista de Metas (<?=$u->nome?>)</h5>
           <div class="card-body">
             <div style="display:flex; justify-content:end">
                 <button
@@ -36,25 +40,25 @@
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
-                  <th scope="col">Nome</th>
-                  <th scope="col">CPF</th>
-                  <th scope="col">Telefone</th>
-                  <th scope="col">E-mail</th>
+                  <th scope="col">Código</th>
+                  <th scope="col">Município</th>
+                  <th scope="col">Bairro/Comunidade</th>
+                  <th scope="col">Zona</th>
                   <th scope="col">Situação</th>
                   <th scope="col">Ações</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-                  $query = "select * from usuarios order by nome asc";
+                  $query = "select * from metas order by codigo desc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
                 <tr>
-                  <td><?=$d->nome?></td>
-                  <td><?=$d->cpf?></td>
-                  <td><?=$d->telefone?></td>
-                  <td><?=$d->email?></td>
+                  <td><?=str_pad($d->codigo, 6, "0", STR_PAD_LEFT)?></td>
+                  <td><?=$d->municipio?></td>
+                  <td><?=$d->bairro?></td>
+                  <td><?=$d->zona?></td>
                   <td>
 
                   <div class="form-check form-switch">
@@ -65,9 +69,13 @@
                   <td>
                     <button
                       class="btn btn-primary"
-                      metas="<?=$d->codigo?>"
+                      beneficiados="<?=$d->codigo?>"
+                      data-bs-toggle="offcanvas"
+                      href="#offcanvasDireita"
+                      role="button"
+                      aria-controls="offcanvasDireita"
                     >
-                      Metas
+                      Beneficiados
                     </button>
                     <button
                       class="btn btn-primary"
@@ -144,29 +152,20 @@
             })
         })
 
-        $("button[delete]").click(function(){
-            deletar = $(this).attr("delete");
-            $.confirm({
-                content:"Deseja realmente excluir o cadastro ?",
-                title:false,
-                buttons:{
-                    'SIM':function(){
-                        $.ajax({
-                            url:"src/usuarios/index.php",
-                            type:"POST",
-                            data:{
-                                delete:deletar
-                            },
-                            success:function(dados){
-                                $("#paginaHome").html(dados);
-                            }
-                        })
-                    },
-                    'NÃO':function(){
+        $("button[beneficiados]").click(function(){
+          beneficiados = $(this).attr("beneficiados");
 
-                    }
-                }
-            });
+          $.ajax({
+              url:"src/metas/beneficiados.php",
+              type:"POST",
+              data:{
+                  beneficiados
+              },
+              success:function(dados){
+                  $("#paginaHome").html(dados);
+              }
+          })
+
 
         })
 
