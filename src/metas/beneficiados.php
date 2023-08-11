@@ -21,6 +21,7 @@
   <div class="m-3">
     <div class="row">
       <div class="col">
+
         <div class="card">
           <h5 class="card-header">Lista de Usuários</h5>
           <div class="card-body">
@@ -28,26 +29,28 @@
             <?=$m->nome?><br>
             <?=$m->municipio_nome?><br>
             <?=$m->bairro_nome?>
-
-            <table class="table">
-                <tr>
-                    <td>Dados do Beneficiados</td>
-                </tr>
-                <?php
-                $query = "select * from se where municipio = '{$m->municipio}' and bairro_comunidade = '{$m->bairro_comunidade}' and local = '{$m->zona}'";
-                $result = mysqli_query($con, $query);
-                while($d = mysqli_fetch_object($result)){
-                ?>
-                <tr>
-                    <td><?=$d->nome?></td>
-                </tr>
-                <?php
-                }
-                ?>
-            </table>
-
           </div>
         </div>
+
+
+        <table class="table table-hover">
+            <tr>
+                <td>Dados do Beneficiados</td>
+            </tr>
+            <?php
+            $query = "select * from se where municipio = '{$m->municipio}' and bairro_comunidade = '{$m->bairro_comunidade}' and local = '{$m->zona}'";
+            $result = mysqli_query($con, $query);
+            while($d = mysqli_fetch_object($result)){
+            ?>
+            <tr>
+                <td><?=$d->nome?></td>
+            </tr>
+            <?php
+            }
+            ?>
+        </table>
+
+
       </div>
     </div>
   </div>
