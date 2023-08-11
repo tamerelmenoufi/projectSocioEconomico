@@ -70,7 +70,10 @@
 
   $(function(){
     $("button[salvarMeta]").click(function(){
-      opcoes = $(".opcoes").val();
+      opcoes = [];
+      $(".opcoes").each(function(){
+        opcoes.push($(this).val())
+      });
       console.log(opcoes);
     });
   })
