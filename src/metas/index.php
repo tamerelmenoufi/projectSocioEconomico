@@ -25,7 +25,12 @@
     <div class="row">
       <div class="col">
         <div class="card">
-          <h5 class="card-header">Lista de Metas (<?=$u->nome?>)</h5>
+          <h5 class="card-header">
+            <div class="d-flex justify-content-between">
+              <span>Lista de Metas (<?=$u->nome?>)</span>
+              <button class="btn btn-secondary btn-sm voltar">Voltar</button>
+            </div>
+          </h5>
           <div class="card-body">
             <div style="display:flex; justify-content:end">
                 <button
@@ -164,16 +169,12 @@
             })
         })
 
-        $("button[metas]").click(function(){
-            meta = $(this).attr("metas");
+        $("button[voltar]").click(function(){
             $.ajax({
-                url:"src/metas/index.php",
+                url:"src/usuarios/index.php",
                 type:"POST",
-                data:{
-                  meta
-                },
                 success:function(dados){
-                    $(".paginaHome").html(dados);
+                    $("#paginaHome").html(dados);
                 }
             })
         })
