@@ -51,7 +51,14 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select a.*, b.municipio as municipio_nome, c.descricao as bairro_comunidade_nome from metas a left join municipios on a.municipio = b.codigo left join bairros_comunidades c on a.bairro_comunidade = c.codigo order by a.codigo desc";
+                  $query = "select a.*, 
+                                   b.municipio as municipio_nome, 
+                                   c.descricao as bairro_comunidade_nome 
+                              from metas a 
+                                   left join municipios b on a.municipio = b.codigo 
+                                   left join bairros_comunidades c on a.bairro_comunidade = c.codigo 
+                              where usuario = '{$_SESSION['metas']}'
+                              order by a.codigo desc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
