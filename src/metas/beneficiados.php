@@ -32,7 +32,7 @@
           </div>
         </div>
         
-        <h6 style="position:absolute; top:280px; left:0; right:0; width:100%; background-color:#fff; padding:5px;">Dados do Beneficiados</h6>
+        <h6 style="position:absolute; top:270px; left:0; right:0; width:100%; background-color:#fff; padding:5px;">Dados do Beneficiados</h6>
         <div style="position:absolute; top:300px; bottom:35px; left:0; right:0; border:solid 1px red; overflow-y: scroll;">
           <table class="table table-hover">
               <?php
