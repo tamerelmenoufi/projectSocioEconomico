@@ -55,62 +55,58 @@
     <form id="form-<?= $md5 ?>">
         <div class="row">
             <div class="col">
-
-
-
-
                 <div class="form-floating mb-3">
-                        <select name="municipio" id="municipio" class="form-control" placeholder="Município">
-                            <option value="">::Selecione o Município::</option>
-                            <?php
-                                $q = "select * from municipios order by municipio";
-                                $r = mysqli_query($con, $q);
-                                while($s = mysqli_fetch_object($r)){
-                            ?>
-                            <option value="<?=$s->codigo?>" <?=(($d->municipio == $s->codigo)?'selected':false)?>><?=$s->municipio?></option>
-                            <?php
-                                }
-                            ?>
-                        </select>
-                        <label for="email">Município</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <select name="tipo" id="tipo" class="form-control" placeholder="Zona">
-                            <option value="">::Selecione a Zona::</option>
-                            <option value="Urbano" <?=(($d->zona == 'Urbano')?'selected':false)?>>Urbano</option>
-                            <option value="Rural" <?=(($d->zona == 'Rural')?'selected':false)?>>Rural</option>
-                        </select>
-                        <label for="tipo">Zona</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <select name="bairro_comunidade" id="bairro_comunidade" class="form-control" placeholder="Bairro">
-                            <option value="">::Selecione a Localização::</option>
-                            <?php
-                                $q = "select * from bairros_comunidades where municipio = '{$d->municipio}' ".(($d->zona)?" and tipo = '{$d->zona}'":false)." order by descricao";
-                                $r = mysqli_query($con, $q);
-                                while($s = mysqli_fetch_object($r)){
-                            ?>
-                            <option value="<?=$s->codigo?>" <?=(($d->bairro_comunidade == $s->codigo)?'selected':false)?>><?=$s->descricao?> (<?=$s->zona?>)</option>
-                            <?php
-                                }
-                            ?>
-                        </select>
-                        <label for="bairro_comunidade">Bairro/Comunidade</label>
-                    </div>
+                    <select name="municipio" id="municipio" class="form-control" placeholder="Município">
+                        <option value="">::Selecione o Município::</option>
+                        <?php
+                            $q = "select * from municipios order by municipio";
+                            $r = mysqli_query($con, $q);
+                            while($s = mysqli_fetch_object($r)){
+                        ?>
+                        <option value="<?=$s->codigo?>" <?=(($d->municipio == $s->codigo)?'selected':false)?>><?=$s->municipio?></option>
+                        <?php
+                            }
+                        ?>
+                    </select>
+                    <label for="email">Município</label>
                 </div>
 
+                <div class="form-floating mb-3">
+                    <select name="tipo" id="tipo" class="form-control" placeholder="Zona">
+                        <option value="">::Selecione a Zona::</option>
+                        <option value="Urbano" <?=(($d->zona == 'Urbano')?'selected':false)?>>Urbano</option>
+                        <option value="Rural" <?=(($d->zona == 'Rural')?'selected':false)?>>Rural</option>
+                    </select>
+                    <label for="tipo">Zona</label>
+                </div>
 
                 <div class="form-floating mb-3">
-                    <select name="situacao" class="form-control" id="situacao">
-                        <option value="1" <?=(($d->situacao == '1')?'selected':false)?>>Liberado</option>
-                        <option value="0" <?=(($d->situacao == '0')?'selected':false)?>>Bloqueado</option>
+                    <select name="bairro_comunidade" id="bairro_comunidade" class="form-control" placeholder="Bairro">
+                        <option value="">::Selecione a Localização::</option>
+                        <?php
+                            $q = "select * from bairros_comunidades where municipio = '{$d->municipio}' ".(($d->zona)?" and tipo = '{$d->zona}'":false)." order by descricao";
+                            $r = mysqli_query($con, $q);
+                            while($s = mysqli_fetch_object($r)){
+                        ?>
+                        <option value="<?=$s->codigo?>" <?=(($d->bairro_comunidade == $s->codigo)?'selected':false)?>><?=$s->descricao?> (<?=$s->zona?>)</option>
+                        <?php
+                            }
+                        ?>
                     </select>
-                    <label for="email">Situação</label>
+                    <label for="bairro_comunidade">Bairro/Comunidade</label>
                 </div>
 
             </div>
+
+
+            <div class="form-floating mb-3">
+                <select name="situacao" class="form-control" id="situacao">
+                    <option value="1" <?=(($d->situacao == '1')?'selected':false)?>>Liberado</option>
+                    <option value="0" <?=(($d->situacao == '0')?'selected':false)?>>Bloqueado</option>
+                </select>
+                <label for="email">Situação</label>
+            </div>
+
         </div>
 
         <div class="row">
