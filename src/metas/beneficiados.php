@@ -4,6 +4,14 @@
 
     if($_POST['beneficiados']) $_SESSION['metas'] = $_POST['beneficiados'];
 
+
+    if($_POST['addBeneficiarios']){
+
+      echo $_POST['opcoes'];
+
+
+    }
+
     $query = "select a.*,
                      b.nome,
                      c.municipio as municipio_nome,
@@ -83,7 +91,8 @@
           url:"src/metas/beneficiados.php",
           type:"POST",
           data:{
-            opcoes
+            opcoes,
+            acao:"addBeneficiarios"
           },
           success:function(dados){
             $(".LateralDireita").html(dados);
