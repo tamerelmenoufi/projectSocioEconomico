@@ -103,7 +103,7 @@
             $.ajax({
               url:"src/metas/index.php",
               success:function(dados){
-                $(".paginaHome").html(dados);
+                $("#paginaHome").html(dados);
                 
               }
             })
