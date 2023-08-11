@@ -56,7 +56,7 @@
                   <td>
 
                   <div class="mb-3 form-check">
-                    <input type="checkbox" <?=(($d->meta == $_SESSION['metas'])?'checked':false)?> class="form-check-input opcoes" value="<?=$d->codigo?>" id="opc<?=$d->codigo?>">
+                    <input type="checkbox" <?=(($d->meta == $_SESSION['meta'])?'checked':false)?> class="form-check-input opcoes" value="<?=$d->codigo?>" id="opc<?=$d->codigo?>">
                     <label class="form-check-label" for="opc<?=$d->codigo?>">
                       <?=$d->nome?><br>
                       <small style="color:#a1a1a1"><?=$d->endereco.(($d->cep)?"- {$d->cep}":false)?></small>
