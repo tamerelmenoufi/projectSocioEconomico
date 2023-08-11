@@ -14,6 +14,7 @@
         foreach ($data as $name => $value) {
             $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
         }
+        $attr[] = "usuario = '" . $_SESSION['metas'] . "'";
 
 
         $attr = implode(', ', $attr);
@@ -180,7 +181,7 @@
                     mimeType: 'multipart/form-data',
                     data: campos,
                     success:function(dados){
-                        console.log(dados)
+                        console.log(dados.status)
                         // if(dados.status){
                             $.ajax({
                                 url:"src/metas/index.php",
