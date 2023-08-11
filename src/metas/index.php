@@ -169,7 +169,7 @@
             })
         })
 
-        $("button[voltar]").click(function(){
+        $(".voltar").click(function(){
             $.ajax({
                 url:"src/usuarios/index.php",
                 type:"POST",
