@@ -33,22 +33,23 @@
         </div>
 
         <div style="position:absolute; top:auto; bottom:35px; left:0; right:0; border:solid:1px red; overflow-y: scroll;">
-        <table class="table table-hover">
-            <tr>
-                <td>Dados do Beneficiados</td>
-            </tr>
-            <?php
-            $query = "select * from se where municipio = '{$m->municipio}' and bairro_comunidade = '{$m->bairro_comunidade}' and local = '{$m->zona}'";
-            $result = mysqli_query($con, $query);
-            while($d = mysqli_fetch_object($result)){
-            ?>
-            <tr>
-                <td><?=$d->nome?></td>
-            </tr>
-            <?php
-            }
-            ?>
-        </table>
+          <table class="table table-hover">
+              <tr>
+                  <td>Dados do Beneficiados</td>
+              </tr>
+              <?php
+              $query = "select * from se where municipio = '{$m->municipio}' and bairro_comunidade = '{$m->bairro_comunidade}' and local = '{$m->zona}'";
+              $result = mysqli_query($con, $query);
+              while($d = mysqli_fetch_object($result)){
+              ?>
+              <tr>
+                  <td><?=$d->nome?></td>
+              </tr>
+              <?php
+              }
+              ?>
+          </table>
+        </div>
 
 
       </div>
