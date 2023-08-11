@@ -176,7 +176,7 @@
                 $.ajax({
                     url:"src/metas/form.php",
                     type:"POST",
-                    typeData:"JSON",
+                    dataType:"JSON",
                     mimeType: 'multipart/form-data',
                     data: campos,
                     success:function(dados){
