@@ -72,12 +72,12 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <select name="tipo" id="tipo" class="form-control" placeholder="Zona">
+                    <select name="zona" id="zona" class="form-control" placeholder="Zona">
                         <option value="">::Selecione a Zona::</option>
                         <option value="Urbano" <?=(($d->zona == 'Urbano')?'selected':false)?>>Urbano</option>
                         <option value="Rural" <?=(($d->zona == 'Rural')?'selected':false)?>>Rural</option>
                     </select>
-                    <label for="tipo">Zona</label>
+                    <label for="zona">Zona</label>
                 </div>
 
                 <div class="form-floating mb-3">
