@@ -150,7 +150,7 @@
         })
 
         $("button[beneficiados]").click(function(){
-            meta =situacao{
+            meta = $(this).attr("beneficiados");
                 url:"src/metas/beneficiados.php",
                 type:"POST",
                 data:{
