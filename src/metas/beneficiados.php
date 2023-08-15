@@ -91,7 +91,7 @@
     $('#pesquisa').keyup(function(e) {
       var termo = $('#pesquisa').val().toUpperCase();
       $('.filtroDados').each(function() { 
-          if($(this).text().toUpperCase().indexOf(termo) === -1) {
+          if($(this).html().toUpperCase().indexOf(termo) === -1) {
               $(this).hide();
           } else {
               $(this).show();
