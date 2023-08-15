@@ -44,8 +44,11 @@
           </div>
         </div>
         
-        <h6 style="position:absolute; top:270px; left:0; right:0; width:100%; background-color:#fff; padding:5px;">Dados do Beneficiados</h6>
-        <input type="text" class="form-control ph-3" id="pesquisa" placerolder="Digite sua busca aqui" />
+        <h6 style="position:absolute; top:270px; left:0; right:0; width:100%; background-color:#fff; padding:5px;">
+          Dados do Beneficiados<br>
+          <input type="text" class="form-control ph-3" id="pesquisa" placerolder="Digite sua busca aqui" />
+        </h6>
+        
         <div style="position:absolute; top:300px; bottom:60px; left:0; right:0; overflow-y: scroll;">
           <table class="table table-hover">
               <?php
