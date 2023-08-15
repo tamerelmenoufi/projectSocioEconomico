@@ -56,12 +56,12 @@
               $result = mysqli_query($con, $query);
               while($d = mysqli_fetch_object($result)){
               ?>
-              <tr class="filtroDados">
+              <tr>
                   <td>
 
                   <div class="mb-3 form-check">
                     <input type="checkbox" <?=(($d->meta == $_SESSION['meta'])?'checked':false)?> class="form-check-input opcoes" value="<?=$d->codigo?>" id="opc<?=$d->codigo?>">
-                    <label class="form-check-label" for="opc<?=$d->codigo?>">
+                    <label class="form-check-label filtroDados" for="opc<?=$d->codigo?>">
                       <?=$d->nome?><br>
                       <small style="color:#a1a1a1"><?=$d->endereco.(($d->cep)?"- {$d->cep}":false)?></small>
                     </label>
@@ -91,10 +91,10 @@
     $('#pesquisa').keyup(function(e) {
       var termo = $('#pesquisa').val().toUpperCase();
       $('.filtroDados').each(function() { 
-          if($(this).html().toUpperCase().indexOf(termo) === -1) {
-              $(this).hide();
+          if($(this).text().toUpperCase().indexOf(termo) === -1) {
+              $(this).parent("div").parent("td").parent("tr").hide();
           } else {
-              $(this).show();
+            $(this).parent("div").parent("td").parent("tr").show();
           }
       });
     });
