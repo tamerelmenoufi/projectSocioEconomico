@@ -133,6 +133,7 @@
     $(function(){
         Carregando('none');
         $("button[novoCadastro]").click(function(){
+          $(".LateralDireita").html('');
             $.ajax({
                 url:"src/metas/form.php",
                 success:function(dados){
@@ -143,6 +144,7 @@
 
         $("button[edit]").click(function(){
             meta = $(this).attr("edit");
+            $(".LateralDireita").html('');
             $.ajax({
                 url:"src/metas/form.php",
                 type:"POST",
@@ -157,6 +159,7 @@
 
         $("button[beneficiados]").click(function(){
             meta = $(this).attr("beneficiados");
+            $(".LateralDireita").html('');
             $.ajax({
                 url:"src/metas/beneficiados.php",
                 type:"POST",
