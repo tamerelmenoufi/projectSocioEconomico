@@ -45,6 +45,7 @@
         </div>
         
         <h6 style="position:absolute; top:270px; left:0; right:0; width:100%; background-color:#fff; padding:5px;">Dados do Beneficiados</h6>
+        <input type="text" class="form-control ph-3" id="pesquisa" placerolder="Digite sua busca aqui" />
         <div style="position:absolute; top:300px; bottom:60px; left:0; right:0; overflow-y: scroll;">
           <table class="table table-hover">
               <?php
@@ -57,7 +58,7 @@
 
                   <div class="mb-3 form-check">
                     <input type="checkbox" <?=(($d->meta == $_SESSION['meta'])?'checked':false)?> class="form-check-input opcoes" value="<?=$d->codigo?>" id="opc<?=$d->codigo?>">
-                    <label class="form-check-label" for="opc<?=$d->codigo?>">
+                    <label class="form-check-label filtroDados" for="opc<?=$d->codigo?>">
                       <?=$d->nome?><br>
                       <small style="color:#a1a1a1"><?=$d->endereco.(($d->cep)?"- {$d->cep}":false)?></small>
                     </label>
@@ -82,6 +83,20 @@
 
   $(function(){
     Carregando('none');
+
+
+    $('#pesquisa').keyup(function(e) {
+      var termo = $('#pesquisa').val().toUpperCase();
+      $('.filtroDados').each(function() { 
+          if($(this).text().toUpperCase().indexOf(termo) === -1) {
+              $(this).hide();
+          } else {
+              $(this).show();
+          }
+      });
+    });
+
+
     $("button[salvarMeta]").click(function(){
       opcoes = [];
       $(".opcoes").each(function(){
