@@ -63,7 +63,7 @@
                     <input type="checkbox" <?=(($d->meta == $_SESSION['meta'])?'checked':false)?> class="form-check-input opcoes" value="<?=$d->codigo?>" id="opc<?=$d->codigo?>">
                     <label class="form-check-label filtroDados" for="opc<?=$d->codigo?>">
                       <?=$d->nome?><br>
-                      <small style="color:#a1a1a1"><?=$d->endereco.(($d->cep)?"- {$d->cep}":false)?></small>
+                      <small style="color:#a1a1a1"><?=str_replace("  ", " ",trim($d->endereco)).(($d->cep)?"- ".trim($d->cep):false)?></small>
                     </label>
                   </div>
 
