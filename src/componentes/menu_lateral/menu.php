@@ -17,7 +17,7 @@
       </div>
     </div>
     <?php
-    if($_SESSION['ProjectSeLogin']->perfil != 'usu'){
+    if($_SESSION['ProjectSeLogin']->perfil != 'usr'){
     ?>
     <div class="row mb-1">
       <div class="col">
