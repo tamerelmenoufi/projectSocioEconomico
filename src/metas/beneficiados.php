@@ -30,7 +30,6 @@
 ?>
 
 <div class="col">
-  <div class="m-3">
     <div class="row">
       <div class="col">
 
@@ -79,7 +78,6 @@
         <button salvarMeta style="position:absolute; bottom:10px; right:30px;" class="btn btn-success">Salvar</button>
       </div>
     </div>
-  </div>
 </div>
 
 <script>
