@@ -36,7 +36,7 @@
         z-index:0;
     }
 </style>
-<h4 class="Titulo<?=$md5?>">Lista de Beneficiários</h4>
+<h4 class="Titulo<?=$md5?>">Lista dos Beneficiados</h4>
 <div class="col">
     <div class="row">
       <div class="col">
