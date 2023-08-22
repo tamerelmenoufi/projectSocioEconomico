@@ -59,7 +59,8 @@
                 <?php
                   $query = "select a.*, 
                                    b.municipio as municipio_nome, 
-                                   c.descricao as bairro_comunidade_nome 
+                                   c.descricao as bairro_comunidade_nome,
+                                   (select count(*) from se where meta = a.codigo) as beneficiados
                               from metas a 
                                    left join municipios b on a.municipio = b.codigo 
                                    left join bairros_comunidades c on a.bairro_comunidade = c.codigo 
@@ -90,7 +91,7 @@
                         role="button"
                         aria-controls="offcanvasDireita"
                       >
-                        Beneficiados
+                        <?=$d->beneficiados?> Beneficiados
                       </button>
 
                       <button
