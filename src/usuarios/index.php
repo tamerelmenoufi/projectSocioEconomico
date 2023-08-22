@@ -46,7 +46,7 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select * from usuarios order by nome asc";
+                  $query = "select a.*, (select count(*) from metas where usuario = a.codigo) as metas from usuarios a order by a.nome asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
@@ -67,7 +67,7 @@
                       class="btn btn-primary"
                       metas="<?=$d->codigo?>"
                     >
-                      Metas
+                      <?=$d->metas?> Metas
                     </button>
                     <button
                       class="btn btn-primary"
