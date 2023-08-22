@@ -91,7 +91,7 @@
                         role="button"
                         aria-controls="offcanvasDireita"
                       >
-                        <?=$d->beneficiados?> Beneficiados
+                        <?=$d->beneficiados?> Beneficiado(s)
                       </button>
 
                       <button

@@ -67,7 +67,7 @@
                       class="btn btn-primary"
                       metas="<?=$d->codigo?>"
                     >
-                      <?=$d->metas?> Metas
+                      <?=$d->metas?> Meta(s)
                     </button>
                     <button
                       class="btn btn-primary"
