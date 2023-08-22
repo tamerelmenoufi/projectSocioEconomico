@@ -52,7 +52,7 @@
         <div style="position:absolute; top:350px; bottom:60px; left:0; right:0; overflow-y: scroll;">
           <table class="table table-hover">
               <?php
-              $query = "select * from se where municipio = '{$m->municipio}' and bairro_comunidade = '{$m->bairro_comunidade}' and local = '{$m->zona}' and (meta = '{$m->codigo}' or meta = '0') order by endereco asc";
+              $query = "select * from se where municipio = '{$m->municipio}' and bairro_comunidade = '{$m->bairro_comunidade}' and local = '{$m->zona}' and (meta = '{$m->codigo}' or meta = '0') order by meta desc, endereco asc";
               $result = mysqli_query($con, $query);
               while($d = mysqli_fetch_object($result)){
               ?>
