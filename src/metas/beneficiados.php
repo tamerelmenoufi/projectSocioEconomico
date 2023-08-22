@@ -28,13 +28,21 @@
     $result = mysqli_query($con, $query);
     $m = mysqli_fetch_object($result);
 ?>
-
+<style>
+    .Titulo<?=$md5?>{
+        position:absolute;
+        left:60px;
+        top:8px;
+        z-index:0;
+    }
+</style>
+<h4 class="Titulo<?=$md5?>">Lista de Beneficiários</h4>
 <div class="col">
     <div class="row">
       <div class="col">
 
         <div class="card">
-          <h5 class="card-header">Lista de Usuários</h5>
+          <h5 class="card-header">Dados do Usuário</h5>
           <div class="card-body">
             <?=str_pad($m->codigo, 6, "0", STR_PAD_LEFT)?><br>
             <?=$m->nome?><br>
