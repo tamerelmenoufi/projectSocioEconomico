@@ -44,7 +44,7 @@
           </div>
         </div>
         
-        <h6 style="position:absolute; top:270px; left:0; right:0; width:100%; background-color:#fff; padding:5px;">
+        <h6 style="position:absolute; top:270px; left:0; right:0; width:100%; background-color:#fff; padding:20px;">
           Dados do Beneficiados<br>
           <input type="text" class="form-control ph-3" id="pesquisa" placeholder="Filtre aqui sua busca" />
         </h6>
