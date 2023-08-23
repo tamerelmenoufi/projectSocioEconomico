@@ -12,6 +12,7 @@
         if($i == 0){
             $cols = explode(";", $linhas[$i]);
             $Campos = [];
+            $Campos[] = "`codigo` BIGINT AUTOINCREMENT PRIMARY KEY";
             foreach($cols as $j => $dado){
                 $Campos[] = "`campo1{$j}` VARCHAR(255) NOT NULL";
             }   
@@ -21,6 +22,7 @@
 
         }else{
             $Dado = [];
+            $Dado[] = "'{$i}'";
             $cols = explode(";", $linhas[$i]);
             foreach($cols as $j => $dado){
                 set_time_limit(90);
