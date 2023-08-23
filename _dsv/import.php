@@ -46,6 +46,7 @@
         //     echo "</td>";
         // }
         // echo "</tr>";
+        exit();
         if($i == ($I + $p)) {
             echo "<script>window.location.href='./import.php?i={$i}'</script>";
             exit();
