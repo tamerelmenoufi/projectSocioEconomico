@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
     $con = AppConnect('se');
 
-    $del = [' ',1,2,3,4,5,6,7,8,9,0, '-','.','_','/','\\'];
+    $del = [' ', '-','.','/','\\'];
 
     $dados = file_get_contents("banco.csv");
 
@@ -19,7 +19,7 @@
             $Campos = [];
             $Campos[] = "`codigo` BIGINT AUTO_INCREMENT PRIMARY KEY";
             foreach($cols as $j => $dado){
-                $Campos[] = "`c{$j}".str_replace($del,false,$dado)."` VARCHAR(255) NOT NULL";
+                $Campos[] = "`c{$j}".str_replace($del,'_',$dado)."` VARCHAR(255) NOT NULL";
             }   
             echo $comando = "CREATE TABLE IF NOT EXISTS `se`.`tratar` ( ".implode(", ", $Campos)." )";
             mysqli_query($con, $comando);   
