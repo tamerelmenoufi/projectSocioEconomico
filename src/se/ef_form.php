@@ -106,6 +106,7 @@
                         'rotulo' => 'Qua a renda mensal?',
                         'campo' => 'ef_renda_mensal',
                         'vetor' => [
+                            'Não sei Informar',
                             'Nenhuma',
                             '1 salário mínimo',
                             '2 salários mínimos',
@@ -121,6 +122,7 @@
                         'rotulo' => 'Precisa de tratamento de saúde?',
                         'campo' => 'ef_tratamento_saude',
                         'vetor' => [
+                            'Não sei Informar',
                             'Não',
                             'Sim',
                         ],
@@ -137,6 +139,7 @@
                         'rotulo' => 'Possui alguma doença crônica?',
                         'campo' => 'ef_doencas_cronicas	',
                         'vetor' => [
+                            'Não sei Informar',
                             'Não',
                             'Sim',
                         ],
@@ -153,6 +156,7 @@
                         'rotulo' => 'É portador de alguma deficiência?',
                         'campo' => 'ef_portador_deficiencia',
                         'vetor' => [
+                            'Não sei Informar',
                             'Não',
                             'Sim',
                         ],
@@ -171,6 +175,7 @@
                         'rotulo' => 'Informe o custo mensal, se possui gastos fixos com saúde?',
                         'campo' => 'ef_gastos_saude',
                         'vetor' => [
+                            'Não sei Informar',
                             'Não Possuo',
                             'Até R$ 100,00',
                             'Acima R$ 100,00 até R$ 200,00',
@@ -187,6 +192,7 @@
                         'rotulo' => 'Necessita de Documentos',
                         'campo' => 'ef_necessita_documentos',
                         'vetor' => [
+                            'Não sei Informar',
                             'Não',
                             'RCN', // - Registro Civil de Nascimento
                             'RCC', // -

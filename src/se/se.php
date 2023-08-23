@@ -244,6 +244,7 @@
                             'rotulo' => 'Quais Redes Sociais você possui?',
                             'campo' => 'redes_sociais',
                             'vetor' => [
+                                'Não Possui',
                                 'FaceBook',
                                 'Twitter',
                                 'Instagram',
@@ -335,6 +336,7 @@
                             'campo' => 'grau_escolaridade',
                             'vetor' => [
                                 'Não Alfabetizado',
+                                'Alfabetizado',
                                 'Ensino Fundamental I Completo',
                                 'Ensino Fundamental II Completo',
                                 'Ensino Médio Completo',
@@ -821,13 +823,17 @@
                                     'campo_destino' => false
                                 ])?>
                             </div>
+                            
                         </div>
                     </div>
 
                 </div>
             </div>
 
-
+            <div class="form-floating mb-3">
+                <textarea name="observacoes" id="observacoes" class="form-control" placeholder="Observações" ><?=$d->observacoes?></textarea>
+                <label for="observacoes">Observações</label>
+            </div>
 
         </div>
 
