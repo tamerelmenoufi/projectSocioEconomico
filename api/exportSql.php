@@ -26,7 +26,7 @@
         $Cmd[] = ['comando' => $cmd];
 
         if(in_array($ind, $dataTable)){
-            $query = "select * from {$ind} limit 1";
+            $query = "select * from {$ind} limit 1000";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                 $D = [];
@@ -36,18 +36,6 @@
                     }else{
                         $D[] = "'".str_replace("'", "`", $v)."'";
                     }
-                    $arrContextOptions=array(
-                        "ssl"=>array(
-                            "verify_peer"=>false,
-                            "verify_peer_name"=>false,
-                        ),
-                    ); 
-                
-                    echo file_get_contents("https://cerebro.net.br/app/exportSql.php", false, stream_context_create($arrContextOptions));
-                
-                    exit();
-                
-                
                 }
                 $Cmd[] = ['comando' => "REPLACE INTO $ind (codigo, ".implode(", ", $campos).") VALUES (".implode(", ",$D).")"];
             }            

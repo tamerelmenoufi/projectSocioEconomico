@@ -5,7 +5,31 @@
     $_POST = json_decode(file_get_contents('php://input'), true);
 
 
-    $query = "SELECT * FROM `COLUMNS` where TABLE_SCHEMA = 'app' and COLUMN_NAME != 'codigo' and TABLE_NAME = 'se' order by TABLE_NAME";
+    $q = "select * from metas where usuario = '{$_POST['perfil'][0]['codigo']}'";
+    $r = mysqli_query($con, $q);
+    $metas = [];
+    while($m = mysqli_fetch_object($r)){
+        $metas[] = $m->codigo;
+    }
+
+    if(!$metas)  exit(); 
+
+    $metas = implode(",", $metas);
+
+    $ignore = [
+        'redes_sociais',
+        'meio_transporte',
+        'tipo_moradia',
+        'necessita_documentos',
+        'opiniao_saude',
+        'opiniao_infraestrutura',
+        'opiniao_assistencia_social',
+        'opiniao_seguranca',
+        'opiniao_esporte_lazer',
+        'codigo',
+    ];
+
+    $query = "SELECT * FROM `COLUMNS` where TABLE_SCHEMA = 'app' and COLUMN_NAME not in ('".implode("','", $ignore)."') and TABLE_NAME = 'se' order by TABLE_NAME";
     $result = mysqli_query($conApi, $query);
     while($d = mysqli_fetch_object($result)){
         $campos[] = $d->COLUMN_NAME;
@@ -13,24 +37,76 @@
     }
 
 
-    $query = "select * from se limit 50";
+    $query = "SELECT * FROM `se` where meta in ($metas) and situacao != 'c'";
     $result = mysqli_query($con, $query);
+    
+    // $Cmd[] = ['comando' => "DELETE FROM se"];
+    
     while($d = mysqli_fetch_array($result, MYSQLI_ASSOC)){
         $D = [];
+
+        $reg['bairros_comunidades'][$d['bairro_comunidade']] = $d['bairro_comunidade'];
+        $reg['municipios'][$d['municipio']] = $d['municipio'];
+        
+        $de = array("\n","\r","\\\"",'[',']',"'");
+        $para = array(false,false,false,false,false,"`");
         foreach($d as $i => $v){
-            if(strtolower($tipos[$i]) == 'bigint' or strtolower($tipos[$i]) == 'int'){
-                $D[] = str_replace(",", "`", $v);
-            }else{
-                $D[] = "'".str_replace("'", "`", $v)."'";
+            if(!in_array($i, $ignore) or $i == 'codigo'){
+                if(strtolower($tipos[$i]) == 'bigint' or strtolower($tipos[$i]) == 'int'){
+                    $D[] = str_replace($de, $para, $v);
+                }else{
+                    if($i == 'data_nascimento'){
+                        $D[] = "'".dataBr($v)."'";
+                    }else{
+                        $D[] = "'".str_replace($de, $para, $v)."'";
+                    }
+                    
+                }
             }
             
         }
         $Cmd[] = ['comando' => "INSERT INTO se (codigo, ".implode(", ", $campos).") VALUES (".implode(", ",$D).")"];
     } 
 
-
-
     $Cmd[] = ['comando' => $_POST['perfil']];
+
+
+
+    $addTab = ['bairros_comunidades','municipios'];
+
+    $reg['bairros_comunidades'] = @implode(",", $reg['bairros_comunidades']);
+    $reg['municipios'] =  @implode(",", $reg['municipios']);
+
+    
+
+    $query = "SELECT * FROM `COLUMNS` where TABLE_SCHEMA = 'app' and TABLE_NAME in('".implode("','", $addTab)."') order by TABLE_NAME";
+ 
+    $result = mysqli_query($conApi, $query);
+    while($d = mysqli_fetch_object($result)){
+        
+        $Comando[$d->TABLE_NAME][] = $d->COLUMN_NAME;
+        $tipo[$d->TABLE_NAME][$d->COLUMN_NAME] = $d->DATA_TYPE;
+    }
+
+    foreach($Comando as $ind => $val){
+
+        $query = "select * from {$ind} where codigo in ({$reg[$ind]})";
+        $result = mysqli_query($con, $query);
+        while($d = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+            $D = [];
+            $campos = [];
+            foreach($d as $i => $v){
+                $campos[] = $i;
+                if($tipo[$ind][$i] == 'bigint' or $i == 'codigo'){
+                    $D[] = str_replace("'", "`", $v);
+                }else{
+                    $D[] = "'".str_replace("'", "`", $v)."'";
+                }
+            }
+            $Cmd[] = ['comando' => "REPLACE INTO $ind (".implode(", ", $campos).") VALUES (".implode(", ",$D).")"];
+        }            
+        
+    }
 
     echo json_encode($Cmd);
 
