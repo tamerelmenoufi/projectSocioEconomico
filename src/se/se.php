@@ -829,12 +829,12 @@
 
                 </div>
             </div>
+        </div>
 
-            <div class="form-floating mb-3">
-                <textarea name="observacoes" id="observacoes" class="form-control" placeholder="Observações" ><?=$d->observacoes?></textarea>
-                <label for="observacoes">Observações</label>
-            </div>
 
+        <div obs class="form-floating mb-3">
+            <textarea name="observacoes" id="observacoes" class="form-control" placeholder="Observações" ><?=$d->observacoes?></textarea>
+            <label for="observacoes">Observações</label>
         </div>
 
         <div style="position:absolute; bottom:0;left:0; right:20px; height:50px; padding-right:10px; background-color:#fff;">
