@@ -385,13 +385,13 @@
                                 'Sim'=>true,
                                 'Não'=>false,
                             ],
-                            'campo_destino' => 'interese_curso_descricao',
+                            'campo_destino' => 'intereese_curso_descricao',
                         ])?>
                     </div>
-                    <div class="oculto" interese_curso_descricao>
+                    <div class="oculto" intereese_curso_descricao>
                         <div class="form-floating mb-3">
-                            <textarea name="interese_curso_descricao" id="interese_curso_descricao" class="form-control" placeholder="Cursos Técnico/Profissionalizante" ><?=$d->interese_curso_descricao?></textarea>
-                            <label for="interese_curso_descricao">Descreve os Cursos de seu interesse</label>
+                            <textarea name="intereese_curso_descricao" id="intereese_curso_descricao" class="form-control" placeholder="Descreve os Cursos de seu interesse" ><?=$d->intereese_curso_descricao?></textarea>
+                            <label for="intereese_curso_descricao">Descreve os Cursos de seu interesse</label>
                         </div>
                     </div>
 
