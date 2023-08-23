@@ -19,7 +19,7 @@
             $Campos = [];
             $Campos[] = "`codigo` BIGINT AUTO_INCREMENT PRIMARY KEY";
             foreach($cols as $j => $dado){
-                $Campos[] = "`c{$j}".str_replace($del,'_',$dado)."` VARCHAR(255) NOT NULL";
+                $Campos[] = "`c".str_replace($del,'_',$dado)."` VARCHAR(255) NOT NULL";
             }   
             echo $comando = "CREATE TABLE IF NOT EXISTS `se`.`tratar` ( ".implode(", ", $Campos)." )";
             mysqli_query($con, $comando);   
