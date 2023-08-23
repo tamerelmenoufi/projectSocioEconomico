@@ -934,7 +934,7 @@
                             data: campos,
                             success:function(dados){
                                 $.alert('Dados atualizados com sucesso!');
-                                // console.log(dados.query)
+                                console.log(dados.query)
                                 Carregando('none');
                             },
                             error:function(erro){
