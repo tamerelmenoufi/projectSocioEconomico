@@ -991,6 +991,10 @@
                     // $(`div[${$(this).attr('ocultar')}]`).css("display","none");
                     if($(this).attr('ocultar')){
                         $(`div[${$(this).attr('ocultar')}]`).addClass("oculto");
+                        $(`div['obs']`).removeClass("oculto");
+                    }else{
+                        $(`div[${$(this).attr('ocultar')}]`).removeClass("oculto");
+                        $(`div['obs']`).addClass("oculto");
                     }
                 }
 
