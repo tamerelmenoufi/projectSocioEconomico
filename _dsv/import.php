@@ -12,7 +12,7 @@
         if($i == 0){
             $cols = explode(";", $linhas[$i]);
             $Campos = [];
-            $Campos[] = "`codigo` BIGINT AUTOINCREMENT PRIMARY KEY";
+            $Campos[] = "`codigo` BIGINT AUTO_INCREMENT PRIMARY KEY";
             foreach($cols as $j => $dado){
                 $Campos[] = "`campo1{$j}` VARCHAR(255) NOT NULL";
             }   
