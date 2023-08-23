@@ -41,7 +41,7 @@
         //     echo "</td>";
         // }
         // echo "</tr>";
-        if($i = 5) exit();
+        if($i == 5) exit();
     }
 
     
