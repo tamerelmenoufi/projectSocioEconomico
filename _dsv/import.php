@@ -1,6 +1,6 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
-    AppConnect('se');
+    $con = AppConnect('se');
 
     $dados = file_get_contents("banco.csv");
 
