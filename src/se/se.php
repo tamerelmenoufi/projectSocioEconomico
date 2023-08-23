@@ -832,7 +832,7 @@
         </div>
 
 
-        <div obs class="form-floating mb-3" style="margin-bottom:50px;">
+        <div obs class="form-floating mb-3" style="margin-bottom:90px;">
             <textarea name="observacoes" id="observacoes" class="form-control" placeholder="Observações" ><?=$d->observacoes?></textarea>
             <label for="observacoes">Observações</label>
         </div>
