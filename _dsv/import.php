@@ -15,7 +15,7 @@
             foreach($cols as $j => $dado){
                 $Campos[] = "`campo1{$j}` VARCHAR(255) NOT NULL";
             }   
-            echo $camando = "CREATE TABLE IF NOT EXISTS `se`.`tratar` ( ".implode(", ", $Campos)." )";
+            echo $comando = "CREATE TABLE IF NOT EXISTS `se`.`tratar` ( ".implode(", ", $Campos)." )";
             mysqli_query($con, $comando);   
             echo "<hr>";    
 
@@ -26,7 +26,7 @@
                 set_time_limit(90);
                 $Dado[] = "'{$dado}'";
             } 
-            echo $camando = "INSERT INTO `se`.`tratar` ( ".implode(", ", $Dado)." )";
+            echo $comando = "INSERT INTO `se`.`tratar` ( ".implode(", ", $Dado)." )";
             mysqli_query($con, $comando);
             echo "<hr>";    
 
