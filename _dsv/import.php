@@ -6,8 +6,11 @@
 
     $linhas = explode("\n", $dados);
 
+    $I = (($_GET['i'])?:0);
+    $p = 50;
+
     // echo "<table border='1'>";
-    foreach($linhas as $i => $col){
+    for($i = $I; $i < count($linhas); $i++){
 
         if($i == 0){
             $cols = explode(";", $linhas[$i]);
@@ -43,7 +46,9 @@
         //     echo "</td>";
         // }
         // echo "</tr>";
-        if($i == 5) exit();
+        if($i == ($I + $p)) {
+            echo "<script>window.location.href='./import.php?i={$i}'</script>";
+        }
     }
 
     
