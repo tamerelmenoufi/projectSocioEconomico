@@ -26,7 +26,7 @@
                 set_time_limit(90);
                 $Dado[] = "'{$dado}'";
             } 
-            echo $comando = "INSERT INTO `se`.`tratar` ( ".implode(", ", $Dado)." )";
+            echo $comando = "INSERT INTO `se`.`tratar` VALUES ( ".implode(", ", $Dado)." )";
             mysqli_query($con, $comando);
             echo "<hr>";    
 
