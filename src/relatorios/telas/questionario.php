@@ -64,33 +64,36 @@
 ?>
         <li class="list-group-item">
             <div class="row">
-                <div class="col"><?=($d['legenda'][$ind])?></div>
-                <div class="col">
+                <div class="col-5"><?=($d['legenda'][$ind])?></div>
+                <div class="col-5">
                     <div class="progress">
                         <div class="progress-bar" style="width:<?=$p?>%" role="progressbar" aria-valuenow="<?=$p?>" aria-valuemin="0" aria-valuemax="100"><?=$p?>%</div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="row">
-                        <div class="col-2">     
-                            <div class="p-1 rounded-2 bg-info text-dark w-100 d-flex justify-content-between">
-                                <i class="fa-solid fa-arrow-up-1-9"></i><span><?=$val?></span>
-                            </div>                    
-                        </div>
-                        <div class="col-2">
-                            <button class="btn btn-warning btn-sm">
-                                <i 
-                                    class="fa fa-edit" 
-                                    campo="<?=$d['campo']?>"
-                                    valor="<?=$ind?>" 
-                                    json="<?=$d['tipo']?>"
-                                    rotulo_titulo="<?=$d['rotulo']?>"
-                                    rotulo_campo="<?=$d['legenda'][$ind]?>"
-                                ></i>
-                            </button>
-                        </div>
-                    </div>
+                <div class="col-2">
+                        <button 
+                            class="btn btn-info btn-sm w-100 d-flex justify-content-between"
+                            campo="<?=$d['campo']?>"
+                            valor="<?=$ind?>" 
+                            json="<?=$d['tipo']?>"
+                            rotulo_titulo="<?=$d['rotulo']?>"
+                            rotulo_campo="<?=$d['legenda'][$ind]?>"                            
+                        >
+                            <i class="fa-solid fa-arrow-up-1-9"></i><span><?=$val?></span>
+                        </button>                    
                 </div>
+                    <!-- <div class="col-2">
+                        <button class="btn btn-warning btn-sm">
+                            <i 
+                                class="fa fa-edit" 
+                                campo="<?=$d['campo']?>"
+                                valor="<?=$ind?>" 
+                                json="<?=$d['tipo']?>"
+                                rotulo_titulo="<?=$d['rotulo']?>"
+                                rotulo_campo="<?=$d['legenda'][$ind]?>"
+                            ></i>
+                        </button>
+                    </div> -->
             </div>
         </li>
 <?php
@@ -294,7 +297,7 @@
 
 <script>
     $(function(){
-        $("i[campo]").click(function(){
+        $("button[campo]").click(function(){
             campo = $(this).attr("campo")
             valor = $(this).attr("valor")
             json = $(this).attr("json")
