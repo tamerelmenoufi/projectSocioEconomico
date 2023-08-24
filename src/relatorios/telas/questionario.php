@@ -35,12 +35,14 @@
 
             if($d['tipo'] == 'json'){
                 $J = json_decode($s->campo);
-                foreach($J as $i => $v){
-                    
-                    $d['legenda'][trim($v)] = ((trim($v))?:'Não Informado');
+                if($J){
+                    foreach($J as $i => $v){
+                        
+                        $d['legenda'][trim($v)] = ((trim($v))?:'Não Informado');
 
-                    $D[$v] = ($D[$v] + 1);
-                    $t = ($t + 1);
+                        $D[$v] = ($D[$v] + 1);
+                        $t = ($t + 1);
+                    }
                 }
             }else{
 
