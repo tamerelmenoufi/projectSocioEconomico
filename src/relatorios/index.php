@@ -74,7 +74,8 @@
                     <input type="date" class="form-control" id="data_final" />
                 </div>
                 <div class="col-md-2">
-                    <button class="btn btn-primary w-100">Filtrar</button>
+                    <button class="btn btn-primary">Filtrar</button>
+                    <button class="btn btn-danger">Limpar</button>
                 </div>
             </div>
         </div>
