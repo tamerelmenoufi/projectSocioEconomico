@@ -1,6 +1,13 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
+    if($_POST['acao'] == 'limpar'){
+        $_SESSION['relatorio']['usuario'] = false;
+        $_SESSION['relatorio']['meta'] = false;
+        $_SESSION['relatorio']['data_inicial'] = false;
+        $_SESSION['relatorio']['data_final'] = false;
+    }
+
     if($_POST['acao'] == 'filtro'){
         $_SESSION['relatorio']['usuario'] = $_POST['usuario'];
         $_SESSION['relatorio']['meta'] = $_POST['meta'];
@@ -125,6 +132,20 @@
                         data_inicial,
                         data_final,
                         acao:'filtro'
+                    },
+                    success:function(dados){
+                        $("#paginaHome").html(dados);
+                    }
+                });
+            })
+
+            $("#limpar").click(function(){
+                Carregando();
+                $.ajax({
+                    url:"src/relatorios/index.php",
+                    type:"POST",
+                    data:{
+                        acao:'limpar'
                     },
                     success:function(dados){
                         $("#paginaHome").html(dados);
