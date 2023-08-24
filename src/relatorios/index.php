@@ -1,7 +1,44 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 ?>
-
+<style>
+       .AreaDashboard{
+        position:absolute;
+        left:20px;
+        right:20px;
+    }
+    .cartao{
+        position:relative;
+        width:99%;
+        height:100%;
+        background-color:#459adb;
+        border-radius:10px;
+        color:#fff;
+    }
+    .cartao span{
+        font-size:10px;
+        margin-left:10px;
+    }
+    .cartao p{
+        font-size:25px;
+        font-weight:bold;
+        text-align:center;
+        padding-top:0px;
+        padding-bottom:15px;
+    }
+    .cartao div{
+        position:absolute;
+        right:10px;
+        bottom:5px;
+        width:auto;
+        opacity:0;
+    }
+    .cartao div i{
+        cursor: pointer;
+        margin-left:10px;
+    }
+</style>
+<div class="AreaDashboard">
     <div class="row mb-3 mt-3">
         <div class="col-md-1"></div>
         <div class="col-md-10"><h3 style="color:#a1a1a1">Relatório Geral</h3></div>
@@ -68,7 +105,7 @@
 
         <div class="col-md-1"></div>
     </div>
-
+</div>
 
     <script>
         $(function(){
