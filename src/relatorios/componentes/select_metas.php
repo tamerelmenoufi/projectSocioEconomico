@@ -7,7 +7,7 @@ $q = "select a.*, b.municipio as municipio_nome, c.descricao as bairro_nome from
 $r = mysqli_query($con, $q);
 while($d = mysqli_fetch_object($r)){
 ?>
-<option value="<?=$d->codigo?>" <?=(($_SESSION['relatorio']['meta'] == $d->codigo)?'selected':false)?>><?="{$d->municipio_nome} - {$d->bairro_nome}"?></option>
+<option value="<?=$d->codigo?>"><?="{$d->municipio_nome} - {$d->bairro_nome}"?></option>
 <?php
 }
 ?>
