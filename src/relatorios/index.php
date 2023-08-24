@@ -90,10 +90,10 @@
                     </select>
                 </div>
                 <div class="col-md-2">
-                    <input type="date" class="form-control" id="data_inicial" />
+                    <input type="date" class="form-control" id="data_inicial" max="<?=date("Y-m-d")?>" />
                 </div>
                 <div class="col-md-2">
-                    <input type="date" class="form-control" id="data_final" />
+                    <input type="date" class="form-control" id="data_final" max="<?=date("Y-m-d")?>" />
                 </div>
                 <div class="col-md-2">
                     <button id="filtrar" class="btn btn-primary">Filtrar</button>
