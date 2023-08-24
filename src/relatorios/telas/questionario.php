@@ -20,11 +20,11 @@
     
         $filtro = $f_usuario . $f_meta . $f_data;
 
-        if($_SESSION['relatorio']['join']){
-            $join = $_SESSION['relatorio']['join'];
+        if($d['join']){
+            $join = $d['join'];
         }
-        if($_SESSION['relatorio']['item']){
-            $item = ", {$_SESSION['relatorio']['item']} as item";
+        if($d['item']){
+            $item = ", {$d['item']} as item";
         }
     
         echo $query = "select a.{$d['campo']} as campo {$item} from se a {$join} where a.monitor_social > 0 and a.meta > 0 {$filtro}";
