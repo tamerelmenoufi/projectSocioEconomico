@@ -79,7 +79,14 @@
                         </div>
                         <div class="col-2">
                             <button class="btn btn-warning btn-sm">
-                                <i class="fa fa-edit" campo="<?=$d['campo']?>" valor="<?=$ind?>" json="<?=$d['tipo']?>"></i>
+                                <i 
+                                    class="fa fa-edit" 
+                                    campo="<?=$d['campo']?>"
+                                    valor="<?=$ind?>" 
+                                    json="<?=$d['tipo']?>"
+                                    rotulo_titulo="<?=$d['rotulo']?>"
+                                    rotulo_campo="<?=$d['legenda'][$ind]?>"
+                                ></i>
                             </button>
                         </div>
                     </div>
@@ -291,6 +298,8 @@
             campo = $(this).attr("campo")
             valor = $(this).attr("valor")
             json = $(this).attr("json")
+            rotulo_titulo = $(this).attr("rotulo_titulo")
+            rotulo_campo = $(this).attr("rotulo_campo")
             $.ajax({
                 url:"src/relatorios/telas/lista_beneficiados.php",
                 type:"POST",
@@ -301,7 +310,7 @@
                 },
                 success:function(dados){
                     $.dialog({
-                        title:'Lista de Beneficiados',
+                        title:`${rotulo_titulo} - ${rotulo_campo}`,
                         content:dados,
                         columnClass:'col-md-12'
                     });
