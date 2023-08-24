@@ -79,21 +79,9 @@
                             rotulo_titulo="<?=$d['rotulo']?>"
                             rotulo_campo="<?=$d['legenda'][$ind]?>"                            
                         >
-                            <i class="fa-solid fa-arrow-up-1-9"></i><span><?=$val?></span>
+                            <i class="fa-solid fa-arrow-up-1-9"></i><span><?=$val?> <i class="fa-solid fa-up-right-from-square"></i></span>
                         </button>                    
                 </div>
-                    <!-- <div class="col-2">
-                        <button class="btn btn-warning btn-sm">
-                            <i 
-                                class="fa fa-edit" 
-                                campo="<?=$d['campo']?>"
-                                valor="<?=$ind?>" 
-                                json="<?=$d['tipo']?>"
-                                rotulo_titulo="<?=$d['rotulo']?>"
-                                rotulo_campo="<?=$d['legenda'][$ind]?>"
-                            ></i>
-                        </button>
-                    </div> -->
             </div>
         </li>
 <?php
