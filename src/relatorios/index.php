@@ -74,8 +74,8 @@
 
     <script>
         $(function(){
-            Carregando('none')
-            
+            // Carregando('none')
+
             $.ajax({
                 url:"src/relatorios/telas/geral.php",
                 success:function(dados){
