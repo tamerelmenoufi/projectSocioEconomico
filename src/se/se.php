@@ -500,6 +500,7 @@
                                 '2a Dose',
                                 '3a Dose',
                                 '4a Dose',
+                                'Mais de 4 Doses',
                             ],
                             'dados' => $d->vacina_covid,
                             'exibir' => false,
