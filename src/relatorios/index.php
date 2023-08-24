@@ -1,7 +1,28 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
+    if($_POST['acao'] == 'filtro'){
+        $_SESSION['relatorio']['usuario'] = $_POST['usuario'];
+        $_SESSION['relatorio']['meta'] = $_POST['meta'];
+        $_SESSION['relatorio']['data_inicial'] = $_POST['data_inicial'];
+        $_SESSION['relatorio']['data_final'] = $_POST['data_final'];
+    }
 
+    $filtro = $f_usuario = $f_meta = $f_data = false;
+    if($_SESSION['relatorio']['usuario']){
+        $f_usuario = " and monitor_social in( {$_SESSION['relatorio']['usuario']} ) ";
+    }
+    if($_SESSION['relatorio']['meta']){
+        $f_meta = " and meta in( {$_SESSION['relatorio']['meta']} ) ";
+    }
+    if($_SESSION['relatorio']['data_inicial']){
+        $f_data = " and (data between '{$_SESSION['relatorio']['data_inicial']} 00:00:00' and '".(($_SESSION['relatorio']['data_final'])?:$_SESSION['relatorio']['data_inicial'])." 23:59:59')";
+    }
+
+    $filtro = $f_usuario . $f_meta . $f_data;
+
+
+    echo $query = "select count(*) from se where monitor_social > 0 and meta > 0 {$filtro} group by situacao";
 
 
 ?>
