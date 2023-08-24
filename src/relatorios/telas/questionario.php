@@ -39,7 +39,7 @@
         }
 ?>
 
-<div class="card">
+<div class="card mb-3">
   <h5 class="card-header"><?=$d['rotulo']?></h5>
   <div class="card-body">
     <ul class="list-group">
