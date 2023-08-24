@@ -27,7 +27,7 @@
             $item = ", {$d['item']} as item";
         }
     
-        echo $query = "select a.{$d['campo']} as campo {$item} from se a {$join} where a.monitor_social > 0 and a.meta > 0 {$filtro}";
+        $query = "select a.{$d['campo']} as campo {$item} from se a {$join} where a.monitor_social > 0 and a.meta > 0 {$filtro}";
         $result = mysqli_query($con, $query);
         $t = 0;
         while($s = mysqli_fetch_object($result)){
@@ -113,33 +113,17 @@
             'item' => "b.municipio"
         ]);
 
+        questoes([
+            'rotulo' => 'Bairros / Comunidades',
+            'campo' => 'bairro_comunidade',
+            'join' => "left join bairros_comunidades b on a.bairro_comunidade = b.codigo ",
+            'item' => "b.descricao"
+        ]);
     ?>
 
 
     <!-- 
         
-
-
-    <div class="oculto" beneficiario_encontrado_campos >
-        <div class="col">
-            
-
-            <div class="form-floating mb-3">
-                <select disabled name="municipio" id="municipio" class="form-control" >
-                    <option value="">::Selecione o Município</option>
-                    <?php
-                        $q = "select * from municipios order by municipio asc";
-                        $r = mysqli_query($con, $q);
-                        while($s = mysqli_fetch_object($r)){
-                    ?>
-                    <option value="<?=$s->codigo?>" <?=(($d->municipio == $s->codigo)?'selected':false)?>><?=$s->municipio?></option>
-                    <?php
-                        }
-                    ?>
-                </select>
-                <label for="email">Município</label>
-            </div>
-
 
 
             <div class="form-floating mb-3">
