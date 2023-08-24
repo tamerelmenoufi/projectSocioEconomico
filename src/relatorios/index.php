@@ -74,7 +74,7 @@
                     <select id="filtro_usuario" class="form-select">
                         <option value="">::Todos os usuários::</option>
                         <?php
-                        $q = "select * from usuarios where situacao = '1' and deletado != '1' order by nome";
+                        $q = "select b.* from se a left join usuarios b on a.monitor_social = b.codigo where a.monitor_social > 0 and b.situacao = '1' and b.deletado != '1' order by b.nome";
                         $r = mysqli_query($con, $q);
                         while($d = mysqli_fetch_object($r)){
                         ?>
