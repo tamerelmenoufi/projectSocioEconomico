@@ -97,26 +97,25 @@
                 'p' => 'Pendente',
                 '' => 'Não Informada',
             ]
-        ])
+        ]);
+
+        questoes([
+            'rotulo' => 'Situação da Pesquisa.',
+            'campo' => 'situacao',
+            'legenda' => [
+                'i' => 'Iniciada',
+                'c' => 'Concluida',
+                'n' => 'Não encontrado',
+                'p' => 'Pendente',
+                '' => 'Não Informada',
+            ]
+        ]);
+
     ?>
 
 
-    <!-- <div class="form-floating mb-3">
-        <?=montaRadio([
-            'rotulo' => 'Beneficiário encontrado?',
-            'campo' => 'beneficiario_encontrado',
-            'vetor' => [
-                'Sim',
-                'Não',
-            ],
-            'dados' => $d->beneficiario_encontrado,
-            'exibir' => [
-                'Sim' => true,
-                'Não' => false,
-            ],
-            'campo_destino' => 'beneficiario_encontrado_campos'
-        ])?>
-    </div>
+    <!-- 
+        
 
 
     <div class="oculto" beneficiario_encontrado_campos >
