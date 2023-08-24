@@ -17,13 +17,7 @@
       </div>
     </div>
 
-    <div class="row mb-1">
-      <div class="col">
-        <a url="src/relatorios/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close" style="opacity:0">
-          <i class="fa-solid fa-clipboard-list"></i> Relatórios
-        </a>
-      </div>
-    </div>
+
 
     <?php
     if($_SESSION['ProjectSeLogin']->perfil != 'usr'){
@@ -67,6 +61,14 @@
       <div class="col">
         <a url="src/dashboard/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-clipboard-list"></i> Novo Dashboard
+        </a>
+      </div>
+    </div>
+
+    <div class="row mb-1">
+      <div class="col">
+        <a url="src/relatorios/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close" style="opacity:0">
+          <i class="fa-solid fa-clipboard-list"></i> Relatórios
         </a>
       </div>
     </div>
