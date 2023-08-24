@@ -56,12 +56,18 @@
                     </div>
                 </div>
                 <div class="col">
-                    <button class="btn btn-primary btn-sm">
-                        <i class="fa-solid fa-arrow-up-1-9"></i> <?=$val?>
-                    </button>
-                    <button class="btn btn-warning btn-sm">
-                        <i class="fa fa-edit" campo="<?=$d['campo']?>" valor="<?=$ind?>"></i>
-                    </button>
+                    <div class="row">
+                        <div class="col-2">
+                            <button class="btn btn-primary btn-sm">
+                                <i class="fa-solid fa-arrow-up-1-9"></i> <?=$val?>
+                            </button>                            
+                        </div>
+                        <div class="col-2">
+                            <button class="btn btn-warning btn-sm">
+                                <i class="fa fa-edit" campo="<?=$d['campo']?>" valor="<?=$ind?>"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </li>
