@@ -15,7 +15,19 @@
     $filtro = $f_usuario . $f_meta . $f_data;
 
 
-    $query = "select count(*) from se where monitor_social > 0 and meta > 0 {$filtro} group by situacao";
+    $query = "select count(*) as qt, situacao from se where monitor_social > 0 and meta > 0 {$filtro} group by situacao";
+    $result = mysqli_query($con, $query);
+    while($d = mysqli_fetch_object($result)){
+        $D[$d->situacao] = $d->qt;
+        $D['g'] = $D['g'] + $d->qt;
+    }
+    $R = [
+        '' => 'Não Definifo',
+        'i' => 'Iniciado',
+        'p' => 'Pendente',
+        'c' => 'Concluído',
+        'n' => 'Não encontrado',
+    ]
 ?>
 
 <style>
@@ -52,18 +64,14 @@
 </style>
 
     <div class="row mb-3 mt-3">
-        <div class="col-md-1"></div>
-        <div class="col-md-10"><h3 style="color:#a1a1a1">Relatório Quantitativo</h3></div>
-        <div class="col-md-1"></div>
+        <div class="col-md-12"><h3 style="color:#a1a1a1">Relatório Quantitativo</h3></div>
     </div>
     <div class="row">
-        <div class="col-md-1"></div>
-
 
         <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Toatl Geral</span>
-                <p><?=$total?></p>
+                <p><?=$D['g']?></p>
                 <div>
                     <i acao='editar' filtro='' class="fa-solid fa-up-right-from-square"></i>
                     <i acao='download' filtro='' class="fa-solid fa-file-arrow-down"></i>
@@ -74,7 +82,7 @@
         <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Pesquisas Iniciadas</span>
-                <p><?=$i?></p>
+                <p><?=$D['i']?></p>
                 <div>
                     <i acao='editar' filtro='i' class="fa-solid fa-up-right-from-square"></i>
                     <i acao='download' filtro='i' class="fa-solid fa-file-arrow-down"></i>
@@ -85,7 +93,7 @@
         <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Pesquisas Pendentes</span>
-                <p><?=$p?></p>
+                <p><?=$D['p']?></p>
                 <div>
                     <i acao='editar' filtro='p' class="fa-solid fa-up-right-from-square"></i>
                     <i acao='download' filtro='p' class="fa-solid fa-file-arrow-down"></i>
@@ -96,7 +104,7 @@
         <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Pesquisas Concluídas</span>
-                <p><?=$c?></p>
+                <p><?=$D['c']?></p>
                 <div>
                     <i acao='editar' filtro='c' class="fa-solid fa-up-right-from-square"></i>
                     <i acao='download' filtro='c' class="fa-solid fa-file-arrow-down"></i>
@@ -107,15 +115,23 @@
         <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Beneficiários não encontrados</span>
-                <p><?=$n?></p>
+                <p><?=$D['n']?></p>
                 <div>
                     <i acao='editar' filtro='n' class="fa-solid fa-up-right-from-square"></i>
                     <i acao='download' filtro='n' class="fa-solid fa-file-arrow-down"></i>
                 </div>
             </div>
         </div>
-
-        <div class="col-md-1"></div>
+        <div class="col-md-2 mb-3">
+            <div class="cartao">
+                <span>Não identificado</span>
+                <p><?=$D['']?></p>
+                <div>
+                    <i acao='editar' filtro='n' class="fa-solid fa-up-right-from-square"></i>
+                    <i acao='download' filtro='n' class="fa-solid fa-file-arrow-down"></i>
+                </div>
+            </div>
+        </div>
     </div>
 
 <script>
