@@ -49,7 +49,7 @@
 ?>
         <li class="list-group-item">
             <div class="row">
-                <div class="col"><?=$ind?></div>
+                <div class="col"><?=(($ind)?:'Não Informado')?></div>
                 <div class="col">
                     <div class="progress">
                         <div class="progress-bar" style="width:<?=$p?>%" role="progressbar" aria-valuenow="<?=$p?>" aria-valuemin="0" aria-valuemax="100"><?=$p?>%</div>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="col">
                     <button class="btn btn-warning btn-sm">
-                        <i class="fa fa-edit" campo="<?=$d['campo']?>" valor="<?=(($ind)?:'Não Informado')?>"></i>
+                        <i class="fa fa-edit" campo="<?=$d['campo']?>" valor="<?=$ind?>"></i>
                     </button>
                 </div>
             </div>
