@@ -120,28 +120,17 @@
             'join' => "left join bairros_comunidades b on a.bairro_comunidade = b.codigo ",
             'item' => "b.descricao"
         ]);
+
+        questoes([
+            'rotulo' => 'Zonas',
+            'campo' => 'local',
+        ]);
     ?>
 
 
     <!-- 
         
 
-
-            <div class="form-floating mb-3">
-                <select disabled name="bairro_comunidade" id="bairro_comunidade" class="form-control" >
-                    <option value="">::Selecione o Bairro/Comunidade</option>
-                    <?php
-                        $q = "select * from bairros_comunidades where municipio='{$d->municipio}' order by descricao asc";
-                        $r = mysqli_query($con, $q);
-                        while($s = mysqli_fetch_object($r)){
-                    ?>
-                    <option value="<?=$s->codigo?>" <?=(($d->bairro_comunidade == $s->codigo)?'selected':false)?>><?=$s->descricao.(($s->zona_urbana)?" ({$s->zona_urbana})":false)?></option>
-                    <?php
-                        }
-                    ?>
-                </select>
-                <label for="email">Bairro / Comunidade</label>
-            </div>
 
             <div class="form-floating mb-3">
                 <select disabled name="local" id="local" class="form-control" >
