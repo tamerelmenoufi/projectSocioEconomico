@@ -51,6 +51,7 @@
   <div class="card-body">
     <ul class="list-group">
 <?php
+    arsort($D);
     foreach($D as $ind => $val){
         $p = number_format($val*100/$t, 0,false,false);
 ?>
