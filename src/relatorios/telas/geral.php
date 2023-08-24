@@ -124,7 +124,7 @@
         </div>
         <div class="col-md-2 mb-3">
             <div class="cartao">
-                <span>Não identificado</span>
+                <span>Situação não identificada</span>
                 <p><?=($D['']*1)?></p>
                 <div>
                     <i acao='editar' filtro='n' class="fa-solid fa-up-right-from-square"></i>
