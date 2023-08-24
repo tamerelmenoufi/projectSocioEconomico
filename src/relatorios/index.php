@@ -49,12 +49,12 @@
         <div class="col-md-10">
             <div class="row">
                 <div class="col-md-4">
-                    <select name="" id="" class="form-control">
+                    <select name="" id="" class="form-select">
                         <option value="">Usuário</option>
                     </select>
                 </div>
                 <div class="col-md-4">
-                    <select name="" id="" class="form-control">
+                    <select name="" id="" class="form-selectl">
                         <option value="">Meta</option>
                     </select>
                 </div>
