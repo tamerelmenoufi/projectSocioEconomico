@@ -6,23 +6,23 @@
 ?>
 
 <div class="card">
-  <h5 class="card-header"><?=$d['pergunta']?></h5>
+  <h5 class="card-header"><?=$d['rotulo']?></h5>
   <div class="card-body">
     <ul class="list-group">
 <?php
-    foreach($d['opcoes'] as $ind => $val){
+    foreach($d['vetor'] as $ind => $val){
 ?>
         <li class="list-group-item">
             <div class="row">
-                <div class="col"><?=$val?></div>
+                <div class="col"><?=$val[0]?></div>
                 <div class="col">
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="<?=$val[1]?>" aria-valuemin="0" aria-valuemax="100"><?=$val[1]?></div>
                     </div>
                 </div>
                 <div class="col">
                     <button class="btn btn-warning btn-sm">
-                        <i class="fa fa-edit"></i>
+                        <i class="fa fa-edit" campo="<?=$d['rotulo']?>" valor="<?=$val[0]?>"></i>
                     </button>
                 </div>
             </div>
@@ -44,11 +44,12 @@
 
     <?php
         questoes([
-            'pergunta' => 'Beneficiário encontrado?',
-            'opcoes' => [
-                'Sim',
-                'Não',                
-            ]
+            'rotulo' => 'Beneficiário encontrado?',
+            'campo' => 'beneficiario_encontrado',
+            'vetor' => [
+                ['Sim', 90],
+                ['Não', 10],                
+            ],
         ])
     ?>
 
