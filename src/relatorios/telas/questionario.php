@@ -21,7 +21,7 @@
         $filtro = $f_usuario . $f_meta . $f_data;
     
     
-        echo $query = "select {$d['campo']} as campo from se where monitor_social > 0 and meta > 0 {$filtro}";
+        $query = "select {$d['campo']} as campo from se where monitor_social > 0 and meta > 0 {$filtro}";
         $result = mysqli_query($con, $query);
         $t = 0;
         while($s = mysqli_fetch_object($result)){
