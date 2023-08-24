@@ -49,7 +49,7 @@
 ?>
         <li class="list-group-item">
             <div class="row">
-                <div class="col"><?=(($ind)?:'Não Informado')?></div>
+                <div class="col"><?=($d['legenda'][$ind])?></div>
                 <div class="col">
                     <div class="progress">
                         <div class="progress-bar" style="width:<?=$p?>%" role="progressbar" aria-valuenow="<?=$p?>" aria-valuemin="0" aria-valuemax="100"><?=$p?>%</div>
@@ -81,6 +81,13 @@
         questoes([
             'rotulo' => 'Situação da Pesquisa.',
             'campo' => 'situacao',
+            'legenda' => [
+                'i' => 'Iniciada',
+                'c' => 'Concluida',
+                'n' => 'Não encontrado',
+                'p' => 'Pendente',
+                '' => 'Não Informada',
+            ]
         ])
     ?>
 
