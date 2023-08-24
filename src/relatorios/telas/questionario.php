@@ -3,6 +3,36 @@
 
 
     function questoes($d){
+
+        global $_SESSION;
+
+        $filtro = $f_usuario = $f_meta = $f_data = false;
+        if($_SESSION['relatorio']['usuario']){
+            $f_usuario = " and monitor_social in( {$_SESSION['relatorio']['usuario']} ) ";
+        }
+        if($_SESSION['relatorio']['meta']){
+            $f_meta = " and meta in( {$_SESSION['relatorio']['meta']} ) ";
+        }
+        if($_SESSION['relatorio']['data_inicial']){
+            $f_data = " and (data between '{$_SESSION['relatorio']['data_inicial']} 00:00:00' and '".(($_SESSION['relatorio']['data_final'])?:$_SESSION['relatorio']['data_inicial'])." 23:59:59')";
+        }
+    
+        $filtro = $f_usuario . $f_meta . $f_data;
+    
+    
+        $query = "select {$d['campo']} as campo from se where monitor_social > 0 and meta > 0 {$filtro}";
+        $result = mysqli_query($con, $query);
+        while($s = mysqli_fetch_object($result)){
+            if($d['tipo'] == 'json'){
+                $J = json_decode($s->campo);
+                foreach($J as $i => $v){
+                    $D[$i] = ($D[$i] + 1);
+                }
+            }else{
+                $D[$s->campo] = ($D[$s->campo] + 1);
+            }
+            
+        }
 ?>
 
 <div class="card">
@@ -10,19 +40,19 @@
   <div class="card-body">
     <ul class="list-group">
 <?php
-    foreach($d['vetor'] as $ind => $val){
+    foreach($D as $ind => $val){
 ?>
         <li class="list-group-item">
             <div class="row">
-                <div class="col"><?=$val[0]?></div>
+                <div class="col"><?=$ind?></div>
                 <div class="col">
                     <div class="progress">
-                        <div class="progress-bar" style="width:<?=$val[1]?>%" role="progressbar" aria-valuenow="<?=$val[1]?>" aria-valuemin="0" aria-valuemax="100"><?=$val[1]?>%</div>
+                        <div class="progress-bar" style="width:<?=$val?>%" role="progressbar" aria-valuenow="<?=$val?>" aria-valuemin="0" aria-valuemax="100"><?=$val?>%</div>
                     </div>
                 </div>
                 <div class="col">
                     <button class="btn btn-warning btn-sm">
-                        <i class="fa fa-edit" campo="<?=$d['rotulo']?>" valor="<?=$val[0]?>"></i>
+                        <i class="fa fa-edit" campo="<?=$d['campo']?>" valor="<?=$ind?>"></i>
                     </button>
                 </div>
             </div>
