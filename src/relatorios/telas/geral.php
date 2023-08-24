@@ -138,9 +138,9 @@
     $(function(){
 
         $(".cartao").mouseover(function(){
-            $(this).children(".cartao div").css('opacity',1)
+            // $(this).children(".cartao div").css('opacity',1)
         }).mouseout(function(){
-            $(this).children(".cartao div").css('opacity',0)
+            // $(this).children(".cartao div").css('opacity',0)
         })
 
     })
