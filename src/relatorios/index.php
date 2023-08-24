@@ -191,9 +191,10 @@
                     url:"src/relatorios/componentes/select_metas.php",
                     type:"POST",
                     data:{
-                        usuario,
+                        usuario
                     },
                     success:function(dados){
+                        alert('dados')
                         $("#filtro_meta").html(dados);
                     }
                 })
