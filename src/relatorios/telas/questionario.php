@@ -58,7 +58,7 @@
                 <div class="col">
                     <div class="row">
                         <div class="col-2">     
-                            <div class="p-3 mb-2 bg-info text-dark d-flex justify-content-between">
+                            <div class="bg-info text-dark w-100 d-flex justify-content-between">
                                 <i class="fa-solid fa-arrow-up-1-9"></i><span><?=$val?></span>
                             </div>                    
                         </div>
