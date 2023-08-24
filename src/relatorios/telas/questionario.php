@@ -79,12 +79,8 @@
 
     <?php
         questoes([
-            'rotulo' => 'Beneficiário encontrado?',
-            'campo' => 'beneficiario_encontrado',
-            'vetor' => [
-                ['Sim', 90],
-                ['Não', 10],                
-            ],
+            'rotulo' => 'Situação da Pesquisa.',
+            'campo' => 'situacao',
         ])
     ?>
 
