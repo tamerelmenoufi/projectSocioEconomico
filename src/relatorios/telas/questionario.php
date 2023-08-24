@@ -163,6 +163,7 @@
         questoes([
             'rotulo' => 'Tipo de Moradia',
             'campo' => 'tipo_moradia',
+            'tipo' => 'json'
         ]);
 
         questoes([
@@ -220,6 +221,7 @@
         questoes([
             'rotulo' => 'Necessita de Documentos',
             'campo' => 'necessita_documentos',
+            'tipo' => 'json',
         ]);
         questoes([
             'rotulo' => 'Como você avalia o Beneficio',
@@ -232,6 +234,7 @@
         questoes([
             'rotulo' => 'Opinião na Saúde',
             'campo' => 'opiniao_saude',
+            'tipo' => 'json',
         ]);
         questoes([
             'rotulo' => 'Opinião na Educação',
@@ -246,11 +249,13 @@
         questoes([
             'rotulo' => 'Opinião na Infraestrutura',
             'campo' => 'opiniao_infraestrutura',
+            'tipo' => 'json',
         ]);
 
         questoes([
             'rotulo' => 'Opinião na Assistência Social',
             'campo' => 'opiniao_assistencia_social',
+            'tipo' => 'json',
         ]);
 
         questoes([
