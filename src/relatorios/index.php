@@ -3,6 +3,7 @@
 
 
 
+
 ?>
 <style>
        .AreaDashboard{
@@ -63,7 +64,7 @@
                     </select>
                 </div>
                 <div class="col-md-3">
-                    <select id="filtro_metas" class="form-select">
+                    <select id="filtro_meta" class="form-select">
                         <option value="">::Todos as metas::</option>
                     </select>
                 </div>
@@ -74,8 +75,8 @@
                     <input type="date" class="form-control" id="data_final" />
                 </div>
                 <div class="col-md-2">
-                    <button class="btn btn-primary">Filtrar</button>
-                    <button class="btn btn-danger">Limpar</button>
+                    <button id="filtrar" class="btn btn-primary">Filtrar</button>
+                    <button id="limpar" class="btn btn-danger">Limpar</button>
                 </div>
             </div>
         </div>
@@ -160,6 +161,49 @@
                 $(this).children(".cartao div").css('opacity',1)
             }).mouseout(function(){
                 $(this).children(".cartao div").css('opacity',0)
+            })
+
+
+            $("#filtro_usuario").change(function(){
+                usuario = $(this).val();
+                $.ajax({
+                    url:"src/relatorios/componentes/select_metas.php",
+                    type:"POST",
+                    data:{
+                        usuario,
+                    },
+                    success:function(dados){
+                        $("#filtro_meta").html(dados);
+                    }
+                })
+            })
+
+            $("#data_inicial").change(function(){
+                obj = $("#data_final");
+                obj.val($(this).val());
+                obj.attr('min', $(this).val());
+            })
+
+            $("#filtrar").click(function(){
+                usuario = $("#filtro_usuario").val();
+                meta = $("#filtro_meta").val();
+                data_inicial = $("#data_inicial").val();
+                data_final = $("#data_final").val();
+
+                $.ajax({
+                    url:"src/relatorios/index.php",
+                    type:"POST",
+                    data:{
+                        usuario,
+                        meta,
+                        data_inicial,
+                        data_final,
+                        acao:'filtro'
+                    },
+                    success:function(dados){
+                        $("#paginaHome").html(dados);
+                    }
+                });
             })
         })
     </script>
