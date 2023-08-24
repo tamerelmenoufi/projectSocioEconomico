@@ -74,7 +74,7 @@
 
     <script>
         $(function(){
-            // Carregando('none')
+            Carregando()
 
             $.ajax({
                 url:"src/relatorios/telas/geral.php",
@@ -115,7 +115,7 @@
                 meta = $("#filtro_meta").val();
                 data_inicial = $("#data_inicial").val();
                 data_final = $("#data_final").val();
-
+                Carregando();
                 $.ajax({
                     url:"src/relatorios/index.php",
                     type:"POST",
