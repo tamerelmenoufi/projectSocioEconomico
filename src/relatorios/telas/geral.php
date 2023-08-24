@@ -73,8 +73,8 @@
                 <span>Toatl Geral</span>
                 <p><?=($D['g']*1)?></p>
                 <div>
-                    <i acao='editar' filtro='' class="fa-solid fa-up-right-from-square"></i>
-                    <i acao='download' filtro='' class="fa-solid fa-file-arrow-down"></i>
+                    <i acao='editarXXX' filtro='' class="fa-solid fa-up-right-from-square"></i>
+                    <i acao='downloadXXX' filtro='' class="fa-solid fa-file-arrow-down"></i>
                 </div>
             </div>
         </div>
@@ -84,8 +84,8 @@
                 <span>Pesquisas Iniciadas</span>
                 <p><?=($D['i']*1)?></p>
                 <div>
-                    <i acao='editar' filtro='i' class="fa-solid fa-up-right-from-square"></i>
-                    <i acao='download' filtro='i' class="fa-solid fa-file-arrow-down"></i>
+                    <i acao='editarXXX' filtro='i' class="fa-solid fa-up-right-from-square"></i>
+                    <i acao='downloadXXX' filtro='i' class="fa-solid fa-file-arrow-down"></i>
                 </div>
             </div>
         </div>
@@ -95,8 +95,8 @@
                 <span>Pesquisas Pendentes</span>
                 <p><?=($D['p']*1)?></p>
                 <div>
-                    <i acao='editar' filtro='p' class="fa-solid fa-up-right-from-square"></i>
-                    <i acao='download' filtro='p' class="fa-solid fa-file-arrow-down"></i>
+                    <i acao='editarXXX' filtro='p' class="fa-solid fa-up-right-from-square"></i>
+                    <i acao='downloadXXX' filtro='p' class="fa-solid fa-file-arrow-down"></i>
                 </div>
             </div>
         </div>
@@ -106,8 +106,8 @@
                 <span>Pesquisas Concluídas</span>
                 <p><?=($D['c']*1)?></p>
                 <div>
-                    <i acao='editar' filtro='c' class="fa-solid fa-up-right-from-square"></i>
-                    <i acao='download' filtro='c' class="fa-solid fa-file-arrow-down"></i>
+                    <i acao='editarXXXX' filtro='c' class="fa-solid fa-up-right-from-square"></i>
+                    <i acao='downloadXXX' filtro='c' class="fa-solid fa-file-arrow-down"></i>
                 </div>
             </div>
         </div>
@@ -117,8 +117,8 @@
                 <span>Beneficiários não encontrados</span>
                 <p><?=($D['n']*1)?></p>
                 <div>
-                    <i acao='editar' filtro='n' class="fa-solid fa-up-right-from-square"></i>
-                    <i acao='download' filtro='n' class="fa-solid fa-file-arrow-down"></i>
+                    <i acao='editarXXX' filtro='n' class="fa-solid fa-up-right-from-square"></i>
+                    <i acao='downloadXXX' filtro='n' class="fa-solid fa-file-arrow-down"></i>
                 </div>
             </div>
         </div>
@@ -126,10 +126,10 @@
             <div class="cartao">
                 <span>Situação não identificada</span>
                 <p><?=($D['']*1)?></p>
-                <!-- <div>
+                <div>
                     <i acao='editarXXX' filtro='n' class="fa-solid fa-up-right-from-square"></i>
                     <i acao='downloadXXX' filtro='n' class="fa-solid fa-file-arrow-down"></i>
-                </div> -->
+                </div>
             </div>
         </div>
     </div>
