@@ -24,7 +24,7 @@
     <div class="row g-0 p-3">
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3 mb-2">
                     <select id="filtro_usuario" class="form-select">
                         <option value="">::Todos os usuários::</option>
                         <?php
@@ -38,7 +38,7 @@
                         ?>
                     </select>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 mb-2">
                     <select id="filtro_meta" class="form-select">
                         <option value="">::Todos as metas::</option>
                         <?php
@@ -52,13 +52,13 @@
                         ?>
                     </select>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 mb-2">
                     <input type="date" class="form-control" id="data_inicial" max="<?=date("Y-m-d")?>" value="<?=$_SESSION['relatorio']['data_inicial']?>" />
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 mb-2">
                     <input type="date" class="form-control" id="data_final" max="<?=date("Y-m-d")?>" value="<?=$_SESSION['relatorio']['data_final']?>" />
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 mb-2">
                     <button id="filtrar" class="btn btn-primary">Filtrar</button>
                     <button id="limpar" class="btn btn-danger">Limpar</button>
                 </div>
