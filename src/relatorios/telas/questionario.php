@@ -149,497 +149,131 @@
         //     'tipo' => 'json' 
         // ]);
 
+        // questoes([
+        //     'rotulo' => 'Meio de Trasporte',
+        //     'campo' => 'meio_transporte',
+        //     'tipo' => 'json' 
+        // ]);
+
         questoes([
-            'rotulo' => 'Meio de Trasporte',
-            'campo' => 'meio_transporte',
-            'tipo' => 'json' 
+            'rotulo' => 'Tipo de Imóvel',
+            'campo' => 'tipo_imovel',
+        ]);
+
+        questoes([
+            'rotulo' => 'Tipo de Moradia',
+            'campo' => 'tipo_moradia',
+        ]);
+
+        questoes([
+            'rotulo' => 'Quantidade de Cômodos na Moradia',
+            'campo' => 'quantidade_comodos',
+        ]);
+
+        questoes([
+            'rotulo' => 'Grau de escolaridade',
+            'campo' => 'grau_escolaridade',
+        ]);
+
+        questoes([
+            'rotulo' => 'Cursos Profissionalizantes',
+            'campo' => 'curos_profissionais',
+        ]);
+
+        questoes([
+            'rotulo' => 'Interesse por novos Cursos',
+            'campo' => 'intereese_curso',
+        ]);
+
+        questoes([
+            'rotulo' => 'Renda Mensal',
+            'campo' => 'renda_mensal',
         ]);
 
 
+        questoes([
+            'rotulo' => 'Renda Familiar',
+            'campo' => 'renda_familiar',
+        ]);
+
+        questoes([
+            'rotulo' => 'Beneficio Social',
+            'campo' => 'beneficio_social',
+        ]);
+
+        questoes([
+            'rotulo' => 'Serviço de Saúde',
+            'campo' => 'servico_saude',
+        ]);
+
+        questoes([
+            'rotulo' => 'Condições de Saúde',
+            'campo' => 'condicoes_saude',
+        ]);
 
 
-        
+        questoes([
+            'rotulo' => 'Vacina contra o Covid-19',
+            'campo' => 'vacina_covid',
+        ]);
+
+        questoes([
+            'rotulo' => 'Necessita de Documentos',
+            'campo' => 'necessita_documentos',
+        ]);
+        questoes([
+            'rotulo' => 'Como você avalia o Beneficio',
+            'campo' => 'avaliacao_beneficios',
+        ]);
+        questoes([
+            'rotulo' => 'O beneficio atendido as Necessidades',
+            'campo' => 'atende_necessidades',
+        ]);
+        questoes([
+            'rotulo' => 'Opinião na Saúde',
+            'campo' => 'opiniao_saude',
+        ]);
+        questoes([
+            'rotulo' => 'Opinião na Educação',
+            'campo' => 'opiniao_educacao',
+        ]);
+
+        questoes([
+            'rotulo' => 'Opinião na Cidadania',
+            'campo' => 'opiniao_cidadania',
+        ]);
+
+        questoes([
+            'rotulo' => 'Opinião na Infraestrutura',
+            'campo' => 'opiniao_infraestrutura',
+        ]);
+
+        questoes([
+            'rotulo' => 'Opinião na Assistência Social',
+            'campo' => 'opiniao_assistencia_social',
+        ]);
+
+        questoes([
+            'rotulo' => 'Opinião nos Direitos Humanos',
+            'campo' => 'opiniao_direitos_humanos',
+        ]);
+
+        questoes([
+            'rotulo' => 'Opinião na Segurança',
+            'campo' => 'opiniao_seguranca',
+        ]);
+
+        questoes([
+            'rotulo' => 'Opinião no Esporte e Lazer',
+            'campo' => 'opiniao_esporte_lazer',
+        ]);
+
+        questoes([
+            'rotulo' => 'Recepção pelo Beneficiado',
+            'campo' => 'recepcao_entrevistado',
+        ]);
+
+                
     ?>
 
-
-    <!-- 
-            
-
-            <div class="form-floating mb-3">
-                <?=montaCheckbox([
-                    'rotulo' => 'Qual é o principal meio de transporte utilizado?',
-                    'campo' => 'meio_transporte',
-                    'vetor' => [
-                        'A Pé',
-                        'Bicicleta',
-                        'Moto',
-                        'Ônibus',
-                        'Carro próprio',
-                        'Fluvial',
-                        'Outros'
-                    ],
-                    'dados' => $d->meio_transporte,
-                    'exibir' => false,
-                    'campo_destino' => false
-                ])?>
-            </div>
-
-
-            <div class="form-floating mb-3">
-                <?=montaRadio([
-                    'rotulo' => 'Você reside em Imóvel:',
-                    'campo' => 'tipo_imovel',
-                    'vetor' => [
-                        'Própria',
-                        'Emprestado/Cedido',
-                        'Financiado',
-                        'Invasão',
-                        'Alugado',
-                        'Outros',
-                    ],
-                    'dados' => $d->tipo_imovel,
-                    'exibir' => false,
-                    'campo_destino' => false
-                ])?>
-            </div>
-
-            <div class="form-floating mb-3">
-                <?=montaCheckbox([
-                    'rotulo' => 'Tipo de Moradia:',
-                    'campo' => 'tipo_moradia',
-                    'vetor' => [
-                        'Madeira',
-                        'Alvenaria',
-                        'Palafita',
-                        'Flutuante',
-                        'Apartamento',
-                        'Outros',
-                    ],
-                    'dados' => $d->tipo_moradia,
-                    'exibir' => false,
-                    'campo_destino' => false
-                ])?>
-            </div>
-
-            <div class="form-floating mb-3">
-                <?=montaRadio([
-                    'rotulo' => 'Quantos Cômodos possui sua residência?',
-                    'campo' => 'quantidade_comodos',
-                    'vetor' => [
-                        '1 Cômodo',
-                        '2 Cômodos',
-                        '3 Cômodos',
-                        '4 Cômodos',
-                        'Mais de 4 Cômodos',
-                    ],
-                    'dados' => $d->quantidade_comodos,
-                    'exibir' => false,
-                    'campo_destino' => false
-                ])?>
-            </div>
-
-            <div class="form-floating mb-3">
-                <?=montaRadio([
-                    'rotulo' => 'Qual o seu Grau de escolaridade?',
-                    'campo' => 'grau_escolaridade',
-                    'vetor' => [
-                        'Não Alfabetizado',
-                        'Alfabetizado',
-                        'Ensino Fundamental I Completo',
-                        'Ensino Fundamental II Completo',
-                        'Ensino Médio Completo',
-                        'Ensino Técnico/Profissionalizante',
-                        'Ensino Superior Completo',
-                    ],
-                    'dados' => $d->grau_escolaridade,
-                    'exibir' => false,
-                    'campo_destino' => false
-                ])?>
-            </div>
-
-            <div class="form-floating mb-3">
-                <?=montaRadio([
-                    'rotulo' => 'Você possui algum Curso Técnico/Profissionalizante?',
-                    'campo' => 'curos_profissionais',
-                    'vetor' => [
-                        'Sim',
-                        'Não',
-                    ],
-                    'dados' => $d->curos_profissionais,
-                    'exibir' => [
-                        'Sim'=>true,
-                        'Não'=>false,
-                    ],
-                    'campo_destino' => 'curos_profissionais_descricao',
-                ])?>
-            </div>
-
-            <div class="form-floating mb-3">
-                <?=montaRadio([
-                    'rotulo' => 'Tem interesse em fazer algum curso?',
-                    'campo' => 'intereese_curso',
-                    'vetor' => [
-                        'Sim',
-                        'Não',
-                    ],
-                    'dados' => $d->intereese_curso,
-                    'exibir' => [
-                        'Sim'=>true,
-                        'Não'=>false,
-                    ],
-                    'campo_destino' => 'interesse_curso_descricao',
-                ])?>
-            </div>
-            
-            <div class="form-floating mb-3">
-                <?=montaRadio([
-                    'rotulo' => 'Qual sua Renda Mensal?',
-                    'campo' => 'renda_mensal',
-                    'vetor' => [
-                        'Nenhuma',
-                        'abaixo de um salário mínimo',
-                        '1 salário mínimo',
-                        '2 salários mínimos',
-                        '3 salários mínimos',
-                        '4 salários mínimos',
-                        'Acima de 4 Salários mínimos'
-                    ],
-                    'dados' => $d->renda_mensal,
-                    'exibir' => false,
-                    'campo_destino' => false
-                ])?>
-            </div>
-
-            <div class="form-floating mb-3">
-                <?=montaRadio([
-                    'rotulo' => 'Renda Familiar Mensal?',
-                    'campo' => 'renda_familiar',
-                    'vetor' => [
-                        'Nenhuma',
-                        'abaixo de um salário mínimo',
-                        '1 salário mínimo',
-                        '2 salários mínimos',
-                        '3 salários mínimos',
-                        '4 salários mínimos',
-                        'Acima de 4 Salários mínimos'
-                    ],
-                    'dados' => $d->renda_familiar,
-                    'exibir' => false,
-                    'campo_destino' => false
-                ])?>
-            </div>
-
-            <div class="form-floating mb-3">
-                <?=montaRadio([
-                    'rotulo' => 'Você possui algum Benefício Social?',
-                    'campo' => 'beneficio_social',
-                    'vetor' => [
-                        'Sim',
-                        'Não',
-                    ],
-                    'dados' => $d->beneficio_social,
-                    'exibir'=>[
-                        'Sim'=>true,
-                        'Não'=>false,
-                    ],
-                    'campo_destino'=>'beneficio_social_descricao',
-                ])?>
-            </div>
-
-            <div class="form-floating mb-3">
-                <?=montaRadio([
-                    'rotulo' => 'Qual Serviço de Saúde você utiliza?',
-                    'campo' => 'servico_saude',
-                    'vetor' => [
-                        'SUS',
-                        'Associações/PlanodeSaúde',
-                        'Outros',
-                    ],
-                    'dados' => $d->servico_saude,
-                    'exibir' => false,
-                    'campo_destino' => false
-                ])?>
-            </div>
-
-            <div class="form-floating mb-3">
-                <?=montaRadio([
-                    'rotulo' => 'Condições de sua saúde?',
-                    'campo' => 'condicoes_saude',
-                    'vetor' => [
-                        'Doenças Crônicas',
-                        'Tratamentos Médicos',
-                        'Outros',
-                    ],
-                    'dados' => $d->condicoes_saude,
-                    'exibir' => false,
-                    'campo_destino' => false
-                ])?>
-            </div>
-
-
-            <div class="form-floating mb-3">
-                <?=montaRadio([
-                    'rotulo' => 'Já tomou a vacina contra o Covid-19? Quantas doses já tomou?',
-                    'campo' => 'vacina_covid',
-                    'vetor' => [
-                        'Não',
-                        '1a Dose',
-                        '2a Dose',
-                        '3a Dose',
-                        '4a Dose',
-                        'Mais de 4 Doses',
-                    ],
-                    'dados' => $d->vacina_covid,
-                    'exibir' => false,
-                    'campo_destino' => false
-                ])?>
-            </div>
-
-
-
-            <div class="form-floating mb-3">
-                <?=montaCheckbox([
-                    'rotulo' => 'Necessita de Documentos',
-                    'campo' => 'necessita_documentos',
-                    'vetor' => [
-                        'Não',
-                        'RCN', // - Registro Civil de Nascimento
-                        'RCC', // -
-                        'RG', // - Registro Geral
-                        'CPF', //- Cadastro de Pessoa Física
-                        'CTPS', // - Carteira de Trabalho e Previdencia Social
-                        'TE', //- Título Eleitoral
-                    ],
-                    'dados' => $d->necessita_documentos,
-                    'exibir' => false,
-                    'campo_destino' => false
-                ])?>
-            </div>
-
-
-                <div class="form-floating mb-3">
-                <?=montaRadio([
-                    'rotulo' => 'Como você avalia o Beneficio?',
-                    'campo' => 'avaliacao_beneficios',
-                    'vetor' => [
-                    'Ruim',
-                        'Bom',
-                        'Ótimo',
-                    ],
-                    'dados' => $d->avaliacao_beneficios,
-                    'exibir' => [
-                        'Ruim'=>true,
-                        'Bom'=>true,
-                        'Ótimo'=>true,
-                    ],
-                    'campo_destino'=>'avaliacao_beneficios_descricao'
-                ])?>
-            </div>
-
-
-            <div class="form-floating mb-3">
-                <?=montaRadio([
-                    'rotulo' => 'O beneficio tem atendido suas Necessidades?',
-                    'campo' => 'atende_necessidades',
-                    'vetor' => [
-                        'Sim',
-                        'Não',
-                    ],
-                    'dados' => $d->atende_necessidades,
-                    'exibir' => [
-                    'Sim'=>true,
-                        'Não'=>true,
-                    ],
-                    'campo_destino'=>'atende_necessidades_descricao'
-                ])?>
-
-            </div>
-
-            <div class="form-floating mb-3">
-                <p><b>Na sua opinião dentro da estrutura do governo, em qual área abaixo descrita, necessita de melhorias para desenvolvimento na qualidade de vida da sua família e/ou da sua comunidade:</b></p>
-            </div>
-            <div class="form-floating mb-3">
-                <?=montaCheckbox([
-                    'rotulo' => 'Na Saúde?',
-                    'campo' => 'opiniao_saude',
-                    'vetor' => [
-                        'Não Necessita',
-                        'Acesso a Medicamentos',
-                        'Marcação de Consultas',
-                        'Realização de Exames',
-                        'Realização de Procedimentos Médicos e/ou Cirurgia',
-                        'Outros',
-                    ],
-                    'dados' => $d->opiniao_saude,
-                    'exibir' => [
-                        'Não Necessita'=>false,
-                        'Acesso a Medicamentos'=>true,
-                        'Marcação de Consultas'=>true,
-                        'Realização de Exames'=>true,
-                        'Realização de Procedimentos Médicos e/ou Cirurgia'=>true,
-                    ],
-                    'campo_destino'=>'opiniao_saude_descricao'
-                ])?>
-            </div>
-
-            <?php
-                //*
-            ?>
-            <div class="form-floating mb-3">
-                <?=montaRadio([
-                    'rotulo' => 'Na Educação?',
-                    'campo' => 'opiniao_educacao',
-                    'vetor' => [
-                        'Não Necessita',
-                        'Sim Necessita'
-                    ],
-                    'dados' => $d->opiniao_educacao,
-                    'exibir' => [
-                        'Não Necessita'=>false,
-                        'Sim Necessita'=>true
-                    ],
-                    'campo_destino'=>'opiniao_educacao_descricao'
-                ])?>
-            </div>
-
-
-            <div class="form-floating mb-3">
-                <?=montaRadio([
-                    'rotulo' => 'Na Cidadania?',
-                    'campo' => 'opiniao_cidadania',
-                    'vetor' => [
-                        'Não Nacessita',
-                        'Sim Necessita'
-                    ],
-                    'dados' => $d->opiniao_cidadania,
-                    'exibir' => [
-                        'Não Nacessita'=>false,
-                        'Sim Necessita'=>true
-                    ],
-                    'campo_destino'=>'opiniao_cidadania_descricao'
-                ])?>
-            </div>
-
-
-
-            <div class="form-floating mb-3">
-                <?=montaCheckbox([
-                    'rotulo' => 'Na Infraestrutura?',
-                    'campo' => 'opiniao_infraestrutura',
-                    'vetor' => [
-                        'Não Necessita',
-                        'Má Iluminação',
-                        'Ausência de Asfalto e/ou Precariedade',
-                        'Falta de Saneamento básico e/ou Melhoria',
-                        'Abastecimento de Água',
-                        'Abastecimento de Energia',
-                        'Outros',
-                    ],
-                    'dados' => $d->opiniao_infraestrutura,
-                    'exibir' => [
-                        'Não Necessita'=>false,
-                        'Má Iluminação'=>true,
-                        'Ausência de Asfalto e/ou Precariedade'=>true,
-                        'Falta de Saneamento básico e/ou Melhoria'=>true,
-                        'Abastecimento de Água'=>true,
-                        'Abastecimento de Energia'=>true,
-                    ],
-                    'campo_destino'=>'opiniao_infraestrutura_descricao'
-                ])?>
-            </div>
-
-            <div class="form-floating mb-3">
-                <?=montaCheckbox([
-                    'rotulo' => 'Na Assistência Social?',
-                    'campo' => 'opiniao_assistencia_social',
-                    'vetor' => [
-                        'Não Necessita',
-                        'Alimentação Básica',
-                        'Auxílios Governamentais',
-                        'Assistência Psicológica',
-                        'Outros',
-                    ],
-                    'dados' => $d->opiniao_assistencia_social,
-                    'exibir' => [
-                        'Não Necessita'=>false,
-                        'Alimentação Básica'=>true,
-                        'Auxílios Governamentais'=>true,
-                        'Assistência Psicológica'=>true,
-                    ],
-                    'campo_destino'=>'opiniao_assistencia_social_descricao'
-                ])?>
-            </div>
-
-            <div class="form-floating mb-3">
-                <?=montaRadio([
-                    'rotulo' => 'Nos Direitos Humanos?',
-                    'campo' => 'opiniao_direitos_humanos',
-                    'vetor' => [
-                        'Não Necessita',
-                        'Sim Necessita'
-                    ],
-                    'dados' => $d->opiniao_direitos_humanos,
-                    'exibir' => [
-                        'Não Necessita'=>false,
-                        'Sim Necessita'=>true
-                    ],
-                    'campo_destino'=>'opiniao_direitos_humanos_descricao'
-                ])?>
-            </div>
-
-
-            <div class="form-floating mb-3">
-                <?=montaCheckbox([
-                    'rotulo' => 'Na Segurança?',
-                    'campo' => 'opiniao_seguranca',
-                    'vetor' => [
-                        'Não Necessita',
-                        'Policiamento Ostensivo',
-                        'Outros',
-                    ],
-                    'dados' => $d->opiniao_seguranca,
-                    'exibir' => [
-                        'Não Necessita'=>false,
-                        'Policiamento Ostensivo'=>true,
-                    ],
-                    'campo_destino'=>'opiniao_seguranca_descricao'
-                ])?>
-            </div>
-  
-            <div class="form-floating mb-3">
-                <?=montaCheckbox([
-                    'rotulo' => 'No Esporte e Lazer?',
-                    'campo' => 'opiniao_esporte_lazer',
-                    'vetor' => [
-                        'Não Necessita',
-                        'Areas para pratica de atividades esportivas',
-                        'Outros',
-                    ],
-                    'dados' => $d->opiniao_esporte_lazer,
-                    'exibir' => [
-                        'Não Necessita'=>false,
-                        'Areas para pratica de atividades esportivas'=>true,
-                    ],
-                    'campo_destino'=>'opiniao_esporte_lazer_descricao'
-
-                ])?>
-            </div>
-
-            <div class="form-floating mb-3">
-                <?=montaRadio([
-                    'rotulo' => 'Como fui Recebido?',
-                    'campo' => 'recepcao_entrevistado',
-                    'vetor' => [
-                        'Ruim',
-                        'Bom',
-                        'Ótimo',
-                    ],
-                    'dados' => $d->recepcao_entrevistado,
-                    'exibir' => false,
-                    'campo_destino' => false
-                ])?>
-            </div>
-
-        </div>
-    </div> -->
 </div>
