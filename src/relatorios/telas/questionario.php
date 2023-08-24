@@ -23,14 +23,17 @@
     
         echo $query = "select {$d['campo']} as campo from se where monitor_social > 0 and meta > 0 {$filtro}";
         $result = mysqli_query($con, $query);
+        $t = 0;
         while($s = mysqli_fetch_object($result)){
             if($d['tipo'] == 'json'){
                 $J = json_decode($s->campo);
                 foreach($J as $i => $v){
                     $D[$i] = ($D[$i] + 1);
+                    $t = ($t + 1);
                 }
             }else{
                 $D[$s->campo] = ($D[$s->campo] + 1);
+                $t = ($t + 1);
             }
             
         }
@@ -42,18 +45,19 @@
     <ul class="list-group">
 <?php
     foreach($D as $ind => $val){
+        $p = number_format($val*100/$t, 0,false,false);
 ?>
         <li class="list-group-item">
             <div class="row">
                 <div class="col"><?=$ind?></div>
                 <div class="col">
                     <div class="progress">
-                        <div class="progress-bar" style="width:<?=$val?>%" role="progressbar" aria-valuenow="<?=$val?>" aria-valuemin="0" aria-valuemax="100"><?=$val?>%</div>
+                        <div class="progress-bar" style="width:<?=$p?>%" role="progressbar" aria-valuenow="<?=$p?>" aria-valuemin="0" aria-valuemax="100"><?=$p?>%</div>
                     </div>
                 </div>
                 <div class="col">
                     <button class="btn btn-warning btn-sm">
-                        <i class="fa fa-edit" campo="<?=$d['campo']?>" valor="<?=$ind?>"></i>
+                        <i class="fa fa-edit" campo="<?=$d['campo']?>" valor="<?=(($ind)?:'Não Informado')?>"></i>
                     </button>
                 </div>
             </div>
