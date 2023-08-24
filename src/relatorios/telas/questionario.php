@@ -102,46 +102,46 @@
 
 
     <?php
-        questoes([
-            'rotulo' => 'Situação da Pesquisa.',
-            'campo' => 'situacao',
-            'legenda' => [
-                'i' => 'Iniciada',
-                'c' => 'Concluida',
-                'n' => 'Não encontrado',
-                'p' => 'Pendente',
-                '' => 'Não Informada',
-            ]
-        ]);
+        // questoes([
+        //     'rotulo' => 'Situação da Pesquisa.',
+        //     'campo' => 'situacao',
+        //     'legenda' => [
+        //         'i' => 'Iniciada',
+        //         'c' => 'Concluida',
+        //         'n' => 'Não encontrado',
+        //         'p' => 'Pendente',
+        //         '' => 'Não Informada',
+        //     ]
+        // ]);
 
-        questoes([
-            'rotulo' => 'Municípios',
-            'campo' => 'municipio',
-            'join' => "left join municipios b on a.municipio = b.codigo ",
-            'item' => "b.municipio"
-        ]);
+        // questoes([
+        //     'rotulo' => 'Municípios',
+        //     'campo' => 'municipio',
+        //     'join' => "left join municipios b on a.municipio = b.codigo ",
+        //     'item' => "b.municipio"
+        // ]);
 
-        questoes([
-            'rotulo' => 'Bairros / Comunidades',
-            'campo' => 'bairro_comunidade',
-            'join' => "left join bairros_comunidades b on a.bairro_comunidade = b.codigo ",
-            'item' => "b.descricao"
-        ]);
+        // questoes([
+        //     'rotulo' => 'Bairros / Comunidades',
+        //     'campo' => 'bairro_comunidade',
+        //     'join' => "left join bairros_comunidades b on a.bairro_comunidade = b.codigo ",
+        //     'item' => "b.descricao"
+        // ]);
 
-        questoes([
-            'rotulo' => 'Zonas',
-            'campo' => 'local',
-        ]);
+        // questoes([
+        //     'rotulo' => 'Zonas',
+        //     'campo' => 'local',
+        // ]);
 
-        questoes([
-            'rotulo' => 'Genéro',
-            'campo' => 'genero',
-        ]);
+        // questoes([
+        //     'rotulo' => 'Genéro',
+        //     'campo' => 'genero',
+        // ]);
 
-        questoes([
-            'rotulo' => 'Estado Civil',
-            'campo' => 'estado_civil',
-        ]);
+        // questoes([
+        //     'rotulo' => 'Estado Civil',
+        //     'campo' => 'estado_civil',
+        // ]);
 
         questoes([
             'rotulo' => 'Redes Sociais',
