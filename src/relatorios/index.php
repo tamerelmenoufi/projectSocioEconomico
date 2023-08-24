@@ -49,7 +49,20 @@
         <div class="col-md-10">
             <div class="row">
                 <div class="col-md-4">
-
+                    <select name="" id="">
+                        <option value="">Usuário</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <select name="" id="">
+                        <option value="">Meta</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" />
+                </div>
+                <div class="col-md-2">
+                    <input type="text" />
                 </div>
             </div>
         </div>
