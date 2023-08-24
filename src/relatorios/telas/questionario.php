@@ -5,6 +5,7 @@
     function questoes($d){
 
         global $_SESSION;
+        global $con;
 
         $filtro = $f_usuario = $f_meta = $f_data = false;
         if($_SESSION['relatorio']['usuario']){
