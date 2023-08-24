@@ -79,7 +79,7 @@
                         </div>
                         <div class="col-2">
                             <button class="btn btn-warning btn-sm">
-                                <i class="fa fa-edit" campo="<?=$d['campo']?>" valor="<?=$ind?>"></i>
+                                <i class="fa fa-edit" campo="<?=$d['campo']?>" valor="<?=$ind?>" json="<?=$d['tipo']?>"></i>
                             </button>
                         </div>
                     </div>
