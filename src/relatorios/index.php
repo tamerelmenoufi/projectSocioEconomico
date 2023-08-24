@@ -1,5 +1,8 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
+
+
+
 ?>
 <style>
        .AreaDashboard{
@@ -38,10 +41,26 @@
         margin-left:10px;
     }
 </style>
+
+
+
+    <div class="row mb-3 mt-3">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-4">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+
 <div class="AreaDashboard">
     <div class="row mb-3 mt-3">
         <div class="col-md-1"></div>
-        <div class="col-md-10"><h3 style="color:#a1a1a1">Relatório Geral</h3></div>
+        <div class="col-md-10"><h3 style="color:#a1a1a1">Relatório Quantitativo</h3></div>
         <div class="col-md-1"></div>
     </div>
     <div class="row">
@@ -110,5 +129,11 @@
     <script>
         $(function(){
             Carregando('none')
+
+            $(".cartao").mouseover(function(){
+                $(this).children(".cartao div").css('opacity',1)
+            }).mouseout(function(){
+                $(this).children(".cartao div").css('opacity',0)
+            })
         })
     </script>
