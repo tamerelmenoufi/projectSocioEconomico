@@ -284,3 +284,27 @@
     ?>
 
 </div>
+
+<script>
+    $(function(){
+        $("i[campo]").click(function(){
+            campo = $(this).attr("campo")
+            valor = $(this).attr("valor")
+            $.ajax({
+                url:"src/relatorios/telas/lista_beneficiados.php",
+                type:"POST",
+                data:{
+                    campo,
+                    valor
+                },
+                success:function(dados){
+                    $.dialog({
+                        title:'Lista de Beneficiados',
+                        content:dados,
+                        columnClass:'col-md-12'
+                    });
+                }
+            })
+        });
+    })
+</script>
