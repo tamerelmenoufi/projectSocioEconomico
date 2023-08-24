@@ -69,15 +69,24 @@
 
 <div class="AreaDashboard">
     <div geral></div>
+    <div questionario></div>
 </div>
 
     <script>
         $(function(){
             Carregando('none')
+            
             $.ajax({
                 url:"src/relatorios/telas/geral.php",
                 success:function(dados){
                     $("div[geral]").html(dados);
+                }
+            })
+            
+            $.ajax({
+                url:"src/relatorios/telas/questionario.php",
+                success:function(dados){
+                    $("div[questionario]").html(dados);
                 }
             })
 
