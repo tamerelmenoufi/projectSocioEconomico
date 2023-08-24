@@ -87,6 +87,15 @@
                 <div class="col-md-3">
                     <select id="filtro_meta" class="form-select">
                         <option value="">::Todos as metas::</option>
+                        <?php
+                        $q = "select a.*, b.municipio as municipio_nome, c.descricao as bairro_nome from metas a left join municipios b on a.municipio = b.codigo left join bairros_comunidades c on a.bairro_comunidade = c.codigo where a.usuario = '{$_SESSION['relatorio']['usuario']}' order by municipio_nome, bairro_nome";
+                        $r = mysqli_query($con, $q);
+                        while($d = mysqli_fetch_object($r)){
+                        ?>
+                        <option value="<?=$d->codigo?>" <?=(($_SESSION['relatorio']['meta'] == $d->codigo)?'selected':false)?>><?="{$d->municipio_nome} - {$d->bairro_nome}"?></option>
+                        <?php
+                        }
+                        ?>
                     </select>
                 </div>
                 <div class="col-md-2">
@@ -183,23 +192,6 @@
             }).mouseout(function(){
                 $(this).children(".cartao div").css('opacity',0)
             })
-
-            <?php
-            if($_SESSION['relatorio']['usuario']){
-            ?>
-            $.ajax({
-                url:"src/relatorios/componentes/select_metas.php",
-                type:"POST",
-                data:{
-                    usuario:'<?=$_SESSION['relatorio']['usuario']?>'
-                },
-                success:function(dados){
-                    $("#filtro_meta").html(dados);
-                }
-            })
-            <?php
-            }
-            ?>
 
 
             $("#filtro_usuario").change(function(){
