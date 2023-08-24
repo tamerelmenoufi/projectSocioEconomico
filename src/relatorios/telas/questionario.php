@@ -31,15 +31,21 @@
         $result = mysqli_query($con, $query);
         $t = 0;
         while($s = mysqli_fetch_object($result)){
-            if($item) {$d['legenda'][$s->campo] = $s->item;}
-            else if(!$d['legenda'][$s->campo]) { $d['legenda'][trim($s->campo)] = ((trim($s->campo))?:'Não Informado'); }
+
             if($d['tipo'] == 'json'){
                 $J = json_decode($s->campo);
                 foreach($J as $i => $v){
-                    $D[$i] = ($D[$i] + 1);
+                    
+                    $d['legenda'][trim($v)] = ((trim($v))?:'Não Informado');
+
+                    $D[$v] = ($D[$v] + 1);
                     $t = ($t + 1);
                 }
             }else{
+
+                if($item) {$d['legenda'][$s->campo] = $s->item;}
+                else if(!$d['legenda'][$s->campo]) { $d['legenda'][trim($s->campo)] = ((trim($s->campo))?:'Não Informado'); }
+
                 $D[$s->campo] = ($D[$s->campo] + 1);
                 $t = ($t + 1);
             }
@@ -131,42 +137,27 @@
             'rotulo' => 'Genéro',
             'campo' => 'genero',
         ]);
+
+        questoes([
+            'rotulo' => 'Estado Civil',
+            'campo' => 'estado_civil',
+        ]);
+
+        questoes([
+            'rotulo' => 'Redes Sociais',
+            'campo' => 'redes_sociais',
+            'tipo' => 'json' 
+        ]);
+
+
+
+
+        
     ?>
 
 
     <!-- 
             
-            <div class="form-floating mb-3">
-                <?=montaRadio([
-                    'rotulo' => 'Genero?',
-                    'campo' => 'genero',
-                    'vetor' => [
-                        'Masculino',
-                        'Feminino',
-                    ],
-                    'dados' => $d->genero,
-                    'exibir' => false,
-                    'campo_destino' => false
-                ])?>
-            </div>
-
-            <div class="form-floating mb-3">
-                <?=montaRadio([
-                    'rotulo' => 'Qual o seu Estado Civil?',
-                    'campo' => 'estado_civil',
-                    'vetor' => [
-                        'Solteiro',
-                        'Casado',
-                        'Divorciado',
-                        'Viúvo',
-                        'Outros',
-                    ],
-                    'dados' => $d->estado_civil,
-                    'exibir' => false,
-                    'campo_destino' => false
-                ])?>
-            </div>
-
 
             <div class="form-floating mb-3">
                 <?=montaCheckbox([
