@@ -127,8 +127,8 @@
                 <span>Situação não identificada</span>
                 <p><?=($D['']*1)?></p>
                 <div>
-                    <i acao='editar' filtro='n' class="fa-solid fa-up-right-from-square"></i>
-                    <i acao='download' filtro='n' class="fa-solid fa-file-arrow-down"></i>
+                    <i acao='editarXXX' filtro='n' class="fa-solid fa-up-right-from-square"></i>
+                    <i acao='downloadXXX' filtro='n' class="fa-solid fa-file-arrow-down"></i>
                 </div>
             </div>
         </div>
