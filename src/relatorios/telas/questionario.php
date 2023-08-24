@@ -17,7 +17,7 @@
                 <div class="col"><?=$val[0]?></div>
                 <div class="col">
                     <div class="progress">
-                        <div class="progress-bar" style="width:<?=$val[1]?>%" role="progressbar" aria-valuenow="<?=$val[1]?>" aria-valuemin="0" aria-valuemax="100"><?=$val[1]?></div>
+                        <div class="progress-bar" style="width:<?=$val[1]?>%" role="progressbar" aria-valuenow="<?=$val[1]?>" aria-valuemin="0" aria-valuemax="100"><?=$val[1]?>%</div>
                     </div>
                 </div>
                 <div class="col">
