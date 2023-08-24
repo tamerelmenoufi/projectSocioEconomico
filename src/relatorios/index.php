@@ -194,7 +194,6 @@
                         usuario
                     },
                     success:function(dados){
-                        alert('dados')
                         $("#filtro_meta").html(dados);
                     }
                 })
