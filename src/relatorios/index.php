@@ -78,7 +78,7 @@
                         $r = mysqli_query($con, $q);
                         while($d = mysqli_fetch_object($r)){
                         ?>
-                        <option value="<?=$d->codigo?>"><?=$d->nome?></option>
+                        <option value="<?=$d->codigo?>"><?=$d->nome?> (<?=$d->qt?>)</option>
                         <?php
                         }
                         ?>
