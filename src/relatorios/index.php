@@ -78,7 +78,7 @@
                         $r = mysqli_query($con, $q);
                         while($d = mysqli_fetch_object($r)){
                         ?>
-                        <option value="<?=$d->codigo?>"><?=$d->nome?> (<?=$d->qt?>)</option>
+                        <option value="<?=$d->codigo?>" <?=(($_SESSION['relatorio']['usuario'] == $d->codigo)?'selected':false)?>><?=$d->nome?> (<?=$d->qt?>)</option>
                         <?php
                         }
                         ?>
@@ -183,6 +183,23 @@
             }).mouseout(function(){
                 $(this).children(".cartao div").css('opacity',0)
             })
+
+            <?php
+            if($_SESSION['relatorio']['usuario']){
+            ?>
+            $.ajax({
+                url:"src/relatorios/componentes/select_metas.php",
+                type:"POST",
+                data:{
+                    usuario:'<?=$_SESSION['relatorio']['usuario']?>'
+                },
+                success:function(dados){
+                    $("#filtro_meta").html(dados);
+                }
+            })
+            <?php
+            }
+            ?>
 
 
             $("#filtro_usuario").change(function(){
