@@ -54,7 +54,7 @@
                     </select>
                 </div>
                 <div class="col-md-4">
-                    <select name="" id="" class="form-selectl">
+                    <select name="" id="" class="form-select">
                         <option value="">Meta</option>
                     </select>
                 </div>
