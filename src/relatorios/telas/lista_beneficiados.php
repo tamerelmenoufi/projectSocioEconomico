@@ -11,7 +11,9 @@
     if($_SESSION['relatorio']['data_inicial']){
         $f_data = " and (a.data between '{$_SESSION['relatorio']['data_inicial']} 00:00:00' and '".(($_SESSION['relatorio']['data_final'])?:$_SESSION['relatorio']['data_inicial'])." 23:59:59')";
     }
-    if($_POST['campo']){
+    if($_POST['campo'] and $_POST['json']){
+        $f_campo = " and {$_POST['campo']} like '%\"{$_POST['valor']}\"%' ";
+    }else if($_POST['campo']){
         $f_campo = " and {$_POST['campo']} = '{$_POST['valor']}' ";
     }
 
