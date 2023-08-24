@@ -79,7 +79,7 @@
             $.ajax({
                 url:"src/relatorios/telas/geral.php",
                 success:function(dados){
-                    $("div['geral']").html(dados);
+                    $("div[geral]").html(dados);
                 }
             })
 
