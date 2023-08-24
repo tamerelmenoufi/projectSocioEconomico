@@ -126,22 +126,15 @@
             'rotulo' => 'Zonas',
             'campo' => 'local',
         ]);
+
+        questoes([
+            'rotulo' => 'Genéro',
+            'campo' => 'genero',
+        ]);
     ?>
 
 
     <!-- 
-        
-
-
-            <div class="form-floating mb-3">
-                <select disabled name="local" id="local" class="form-control" >
-                    <option value="">::Selecione a Zona</option>
-                    <option value="Urbano" <?=(($d->local == 'Urbano')?'selected':false)?>>Urbano</option>
-                    <option value="Rural" <?=(($d->local == 'Rural')?'selected':false)?>>Rural</option>
-                </select>
-                <label for="email">Zona</label>
-            </div>
-
             
             <div class="form-floating mb-3">
                 <?=montaRadio([
