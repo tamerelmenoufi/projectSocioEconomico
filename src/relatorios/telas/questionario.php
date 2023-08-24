@@ -21,7 +21,7 @@
         $filtro = $f_usuario . $f_meta . $f_data;
     
     
-        $query = "select {$d['campo']} as campo from se where monitor_social > 0 and meta > 0 {$filtro}";
+        echo $query = "select {$d['campo']} as campo from se where monitor_social > 0 and meta > 0 {$filtro}";
         $result = mysqli_query($con, $query);
         while($s = mysqli_fetch_object($result)){
             if($d['tipo'] == 'json'){
