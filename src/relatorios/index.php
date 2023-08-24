@@ -48,21 +48,33 @@
         <div class="col-md-1"></div>
         <div class="col-md-10">
             <div class="row">
-                <div class="col-md-4">
-                    <select name="" id="" class="form-select">
-                        <option value="">Usuário</option>
+                <div class="col-md-3">
+                    <select id="filtro_usuario" class="form-select">
+                        <option value="">::Todos os usuários::</option>
+                        <?php
+                        $q = "select * from usuarios where situacao = '1' and deletado != '1' order by nome";
+                        $r = mysqli_query($con, $q);
+                        while($d = mysqli_fetch_object($r)){
+                        ?>
+                        <option value="<?=$d->codigo?>"><?=$d->nome?></option>
+                        <?php
+                        }
+                        ?>
                     </select>
                 </div>
-                <div class="col-md-4">
-                    <select name="" id="" class="form-select">
-                        <option value="">Meta</option>
+                <div class="col-md-3">
+                    <select id="filtro_metas" class="form-select">
+                        <option value="">::Todos as metas::</option>
                     </select>
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" />
+                    <input type="date" class="form-control" id="data_inicial" />
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" />
+                    <input type="date" class="form-control" id="data_final" />
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-primary w-100">Filtrar</button>
                 </div>
             </div>
         </div>
