@@ -9,19 +9,25 @@
 
         $filtro = $f_usuario = $f_meta = $f_data = false;
         if($_SESSION['relatorio']['usuario']){
-            $f_usuario = " and monitor_social in( {$_SESSION['relatorio']['usuario']} ) ";
+            $f_usuario = " and a.monitor_social in( {$_SESSION['relatorio']['usuario']} ) ";
         }
         if($_SESSION['relatorio']['meta']){
-            $f_meta = " and meta in( {$_SESSION['relatorio']['meta']} ) ";
+            $f_meta = " and a.meta in( {$_SESSION['relatorio']['meta']} ) ";
         }
         if($_SESSION['relatorio']['data_inicial']){
-            $f_data = " and (data between '{$_SESSION['relatorio']['data_inicial']} 00:00:00' and '".(($_SESSION['relatorio']['data_final'])?:$_SESSION['relatorio']['data_inicial'])." 23:59:59')";
+            $f_data = " and (a.data between '{$_SESSION['relatorio']['data_inicial']} 00:00:00' and '".(($_SESSION['relatorio']['data_final'])?:$_SESSION['relatorio']['data_inicial'])." 23:59:59')";
         }
     
         $filtro = $f_usuario . $f_meta . $f_data;
+
+        if($_SESSION['relatorio']['join']){
+            $join = $_SESSION['relatorio']['join'];
+        }
+        if($_SESSION['relatorio']['item']){
+            $item = ", {$_SESSION['relatorio']['item']} as item";
+        }
     
-    
-        $query = "select {$d['campo']} as campo from se where monitor_social > 0 and meta > 0 {$filtro}";
+        $query = "select a.{$d['campo']} as campo {$item} from se a {$join} where a.monitor_social > 0 and a.meta > 0 {$filtro}";
         $result = mysqli_query($con, $query);
         $t = 0;
         while($s = mysqli_fetch_object($result)){
@@ -102,13 +108,8 @@
         questoes([
             'rotulo' => 'Municípios',
             'campo' => 'municipio',
-            'legenda' => [
-                'i' => 'Iniciada',
-                'c' => 'Concluida',
-                'n' => 'Não encontrado',
-                'p' => 'Pendente',
-                '' => 'Não Informada',
-            ]
+            'join' => "left join municipios b on a.municipio = b.codigo ",
+            'item' => "b.municipio"
         ]);
 
     ?>
