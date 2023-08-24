@@ -290,12 +290,14 @@
         $("i[campo]").click(function(){
             campo = $(this).attr("campo")
             valor = $(this).attr("valor")
+            json = $(this).attr("json")
             $.ajax({
                 url:"src/relatorios/telas/lista_beneficiados.php",
                 type:"POST",
                 data:{
                     campo,
-                    valor
+                    valor,
+                    json
                 },
                 success:function(dados){
                     $.dialog({
