@@ -71,7 +71,7 @@
         <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Toatl Geral</span>
-                <p><?=$D['g']?></p>
+                <p><?=($D['g']*1)?></p>
                 <div>
                     <i acao='editar' filtro='' class="fa-solid fa-up-right-from-square"></i>
                     <i acao='download' filtro='' class="fa-solid fa-file-arrow-down"></i>
@@ -82,7 +82,7 @@
         <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Pesquisas Iniciadas</span>
-                <p><?=$D['i']?></p>
+                <p><?=($D['i']*1)?></p>
                 <div>
                     <i acao='editar' filtro='i' class="fa-solid fa-up-right-from-square"></i>
                     <i acao='download' filtro='i' class="fa-solid fa-file-arrow-down"></i>
@@ -93,7 +93,7 @@
         <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Pesquisas Pendentes</span>
-                <p><?=$D['p']?></p>
+                <p><?=($D['p']*1)?></p>
                 <div>
                     <i acao='editar' filtro='p' class="fa-solid fa-up-right-from-square"></i>
                     <i acao='download' filtro='p' class="fa-solid fa-file-arrow-down"></i>
@@ -104,7 +104,7 @@
         <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Pesquisas Concluídas</span>
-                <p><?=$D['c']?></p>
+                <p><?=($D['c']*1)?></p>
                 <div>
                     <i acao='editar' filtro='c' class="fa-solid fa-up-right-from-square"></i>
                     <i acao='download' filtro='c' class="fa-solid fa-file-arrow-down"></i>
@@ -115,7 +115,7 @@
         <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Beneficiários não encontrados</span>
-                <p><?=$D['n']?></p>
+                <p><?=($D['n']*1)?></p>
                 <div>
                     <i acao='editar' filtro='n' class="fa-solid fa-up-right-from-square"></i>
                     <i acao='download' filtro='n' class="fa-solid fa-file-arrow-down"></i>
@@ -125,7 +125,7 @@
         <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Não identificado</span>
-                <p><?=$D['']?></p>
+                <p><?=($D['']*1)?></p>
                 <div>
                     <i acao='editar' filtro='n' class="fa-solid fa-up-right-from-square"></i>
                     <i acao='download' filtro='n' class="fa-solid fa-file-arrow-down"></i>
