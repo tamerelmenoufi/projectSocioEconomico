@@ -266,11 +266,13 @@
         questoes([
             'rotulo' => 'Opinião na Segurança',
             'campo' => 'opiniao_seguranca',
+            'tipo' => 'json',
         ]);
 
         questoes([
             'rotulo' => 'Opinião no Esporte e Lazer',
             'campo' => 'opiniao_esporte_lazer',
+            'tipo' => 'json',
         ]);
 
         questoes([
