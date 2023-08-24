@@ -68,3 +68,10 @@
 
         <div class="col-md-1"></div>
     </div>
+
+
+    <script>
+        $(function(){
+            Carregando('none')
+        })
+    </script>
