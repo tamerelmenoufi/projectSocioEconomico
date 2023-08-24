@@ -58,7 +58,7 @@
                 <div class="col">
                     <div class="row">
                         <div class="col-2">
-                            <button class="btn btn-primary btn-sm">
+                            <button class="btn btn-primary btn-sm w-100">
                                 <i class="fa-solid fa-arrow-up-1-9"></i> <?=$val?>
                             </button>                            
                         </div>
