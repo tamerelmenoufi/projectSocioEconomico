@@ -22,8 +22,7 @@
 
 
     <div class="row mb-3 mt-3">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
+        <div class="col-md-12">
             <div class="row">
                 <div class="col-md-3">
                     <select id="filtro_usuario" class="form-select">
@@ -65,7 +64,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-1"></div>
     </div>
 
 
