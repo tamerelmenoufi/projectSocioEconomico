@@ -143,9 +143,15 @@
         //     'campo' => 'estado_civil',
         // ]);
 
+        // questoes([
+        //     'rotulo' => 'Redes Sociais',
+        //     'campo' => 'redes_sociais',
+        //     'tipo' => 'json' 
+        // ]);
+
         questoes([
-            'rotulo' => 'Redes Sociais',
-            'campo' => 'redes_sociais',
+            'rotulo' => 'Meio de Trasporte',
+            'campo' => 'meio_transporte',
             'tipo' => 'json' 
         ]);
 
@@ -158,24 +164,6 @@
 
     <!-- 
             
-
-            <div class="form-floating mb-3">
-                <?=montaCheckbox([
-                    'rotulo' => 'Quais Redes Sociais você possui?',
-                    'campo' => 'redes_sociais',
-                    'vetor' => [
-                        'Não Possui',
-                        'FaceBook',
-                        'Twitter',
-                        'Instagram',
-                        'Youtube',
-                        'Linkedin'
-                    ],
-                    'dados' => $d->redes_sociais,
-                    'exibir' => false,
-                    'campo_destino' => false
-                ])?>
-            </div>
 
             <div class="form-floating mb-3">
                 <?=montaCheckbox([
