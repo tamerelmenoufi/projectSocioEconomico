@@ -32,7 +32,7 @@
         $t = 0;
         while($s = mysqli_fetch_object($result)){
             if($item) {$d['legenda'][$s->campo] = $s->item;}
-            else if(!$d['legenda']) { $d['legenda'][$s->campo] = $s->campo; }
+            else if(!$d['legenda'][$s->campo]) { $d['legenda'][trim($s->campo)] = trim($s->campo); }
             if($d['tipo'] == 'json'){
                 $J = json_decode($s->campo);
                 foreach($J as $i => $v){
