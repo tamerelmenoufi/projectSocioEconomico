@@ -31,6 +31,6 @@
 
 <script>
     $(function(){
-        Carregando('nome');
+        Carregando('none');
     })
 </script>

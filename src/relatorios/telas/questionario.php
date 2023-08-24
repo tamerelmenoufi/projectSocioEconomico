@@ -309,7 +309,6 @@
                         content:dados,
                         columnClass:'col-md-12'
                     });
-                    Carregando('nome');
                 }
             })
         });
