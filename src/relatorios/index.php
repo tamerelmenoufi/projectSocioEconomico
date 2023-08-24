@@ -10,7 +10,7 @@
     .cartao{
         position:relative;
         width:99%;
-        height:100%;
+        min-height:120px;
         background-color:#459adb;
         border-radius:10px;
         color:#fff;
