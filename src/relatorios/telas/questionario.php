@@ -285,12 +285,14 @@
 
 <script>
     $(function(){
+        Carregando('none');
         $("button[campo]").click(function(){
             campo = $(this).attr("campo")
             valor = $(this).attr("valor")
             json = $(this).attr("json")
             rotulo_titulo = $(this).attr("rotulo_titulo")
             rotulo_campo = $(this).attr("rotulo_campo")
+            Carregando();
             $.ajax({
                 url:"src/relatorios/telas/lista_beneficiados.php",
                 type:"POST",

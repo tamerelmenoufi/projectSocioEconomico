@@ -26,3 +26,11 @@
     while($s = mysqli_fetch_object($result)){
         echo $s->nome."<br>";
     }
+
+?>
+
+<script>
+    $(function(){
+        Carregando('nome');
+    })
+</script>
