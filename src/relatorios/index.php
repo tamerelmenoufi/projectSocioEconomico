@@ -42,7 +42,7 @@
                     <select id="filtro_meta" class="form-select">
                         <option value="">::Todos as metas::</option>
                         <?php
-                        $q = "select a.*, b.municipio as municipio_nome, c.descricao as bairro_nome from metas a left join municipios b on a.municipio = b.codigo left join bairros_comunidades c on a.bairro_comunidade = c.codigo where a.usuario = '{$_SESSION['relatorio']['usuario']}' order by municipio_nome, bairro_nome";
+                        $q = "select a.*, b.municipio as municipio_nome, c.descricao as bairro_nome from metas a left join municipios b on a.municipio = b.codigo left join bairros_comunidades c on a.bairro_comunidade = c.codigo where a.usuario = '{$_SESSION['relatorio']['usuario']}' and a.usuario > 0 order by municipio_nome, bairro_nome";
                         $r = mysqli_query($con, $q);
                         while($d = mysqli_fetch_object($r)){
                         ?>
