@@ -31,6 +31,7 @@
         $result = mysqli_query($con, $query);
         $t = 0;
         while($s = mysqli_fetch_object($result)){
+            if($item) $d['legenda'][$d->campo] = $d->item;
             if($d['tipo'] == 'json'){
                 $J = json_decode($s->campo);
                 foreach($J as $i => $v){
