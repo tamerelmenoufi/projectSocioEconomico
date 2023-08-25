@@ -71,8 +71,6 @@
       </div>
     </div> -->
 
-
-
     <!-- <div class="row mb-1">
       <div class="col">
         <a href="./print.php?u=<?=base64_encode("src/se/se_print.php")?>" target="formSocioEconimico" class="text-decoration-none">
