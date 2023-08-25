@@ -97,13 +97,10 @@
     $("a[url]").click(function(){
       Carregando();
       url = $(this).attr("url");
-      $.ajax({    <div class="row mb-1">
-      <div class="col">
-        <a url="src/relatorios/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close" style="opacity:0">
-          <i class="fa-solid fa-clipboard-list"></i> Relatórios
-        </a>
-      </div>
-    </div>
+      $.ajax({
+        url,
+        success:function(dados){
+          $("#pageHome").html(dados);
         }
       });
     });
