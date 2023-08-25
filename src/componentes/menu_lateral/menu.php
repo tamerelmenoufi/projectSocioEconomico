@@ -100,7 +100,7 @@
       $.ajax({
         url,
         success:function(dados){
-          $("#pageHome").html(dados);
+          $("#paginaHome").html(dados);
         }
       });
     });
