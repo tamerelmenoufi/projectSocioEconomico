@@ -19,7 +19,7 @@
 
     <div class="row mb-1">
       <div class="col">
-        <a url="src/relatorios/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close" style="opacity:0">
+        <a url="src/relatorios/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-clipboard-list"></i> Relatórios
         </a>
       </div>
