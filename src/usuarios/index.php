@@ -157,7 +157,7 @@
           }
         });
 
-        $("button[filtrar]").click(function(){
+        $("button[limpar]").click(function(){
           $.ajax({
               url:"src/usuarios/index.php",
               type:"POST",
