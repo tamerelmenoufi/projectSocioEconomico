@@ -131,7 +131,7 @@
         $("a[opcao_busca]").click(function(){
           opc = $(this).attr("opcao_busca");
           $("button[rotulo_busca]").text(opc);
-
+          $("input[texto_busca]").val('')
           if(opc == 'Nome'){
             $("input[texto_busca]").unmask();
           }else if(opc == 'CPF'){
