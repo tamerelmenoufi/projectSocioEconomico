@@ -870,10 +870,6 @@
                     type="submit"
                     SalvarFoto
                     class="btn btn-success btn-ms"
-                    data-bs-toggle="offcanvas"
-                    href="#offcanvasDireita"
-                    role="button"
-                    aria-controls="offcanvasDireita"
                 >Salvar</button>
                 <input type="hidden" id="codigo" value="<?=$_POST['cod']?>" />
             </div>
@@ -940,6 +936,9 @@
                             data: campos,
                             success:function(dados){
                                 $.alert('Dados atualizados com sucesso!');
+                                let myOffCanvas = document.getElementById('offcanvasDireita');
+                                let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+                                openedCanvas.hide();
                                 console.log(dados.query)
                                 Carregando('none');
                             },
