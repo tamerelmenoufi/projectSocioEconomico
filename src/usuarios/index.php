@@ -21,7 +21,8 @@
         <div class="card">
           <h5 class="card-header">Lista de Usuários</h5>
           <div class="card-body">
-            <div style="display:flex; justify-content:end">
+            <div style="display:flex; justify-content:between">
+                <span>Busca</span>
                 <button
                     novoCadastro
                     class="btn btn-success"
