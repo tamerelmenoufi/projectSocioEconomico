@@ -22,7 +22,17 @@
           <h5 class="card-header">Lista de Usuários</h5>
           <div class="card-body">
             <div class="d-flex justify-content-between">
-                <span>Busca</span>
+                <div class="input-group mb-3">
+                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" rotulo_busca aria-expanded="false">Nome</button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" opcao_busca="Nome">Nome</a></li>
+                    <li><a class="dropdown-item" href="#" opcao_busca="CPF">CPF</a></li>
+                  </ul>
+                  <input type="text" texto_busca class="form-control" aria-label="Digite a informação para a busca">
+                  <button filtrar class="btn btn-outline-secondary" type="button">Buscar</button>
+                </div>
+
+
                 <button
                     novoCadastro
                     class="btn btn-success"
@@ -116,6 +126,33 @@
                 }
             })
         })
+
+        // opcao, rotulo, texto
+        $("a[opcao_rotulo]").click(function(){
+          opc = $(this).attr("opcao_busca");
+          $("button[rotulo_busca]").text(opc);
+
+          if(opc == 'Nome'){
+            $("input[texto_busca]").unmask();
+          }else if(opc == 'CPF'){
+            $("input[texto_busca]").mask("999.999.999-99");
+          }
+        });
+
+        $("button[filtrar]").click(function(){
+          opc = $("button[rotulo_busca]").text();
+          busca = $("input[texto_busca]").val();
+          campo = false;
+          if(opc == 'Nome'){
+            campo = 'nome';
+          }else if(opc == 'CPF'){
+            campo = 'cpf';
+          }
+          if(campo && valor){
+            console.log(`campo:${campo} && Valor: ${valor}`);
+          }
+
+        });
 
         $("button[edit]").click(function(){
             cod = $(this).attr("edit");
