@@ -39,13 +39,14 @@
             <div class="d-flex justify-content-between">
                 <div class="input-group mb-3">
                   <label class="input-group-text" for="inputGroupFile01">Buscar por </label>
-                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" rotulo_busca aria-expanded="false">Nome</button>
+                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" rotulo_busca aria-expanded="false"><?=((!$_SESSION['usuarioBuscaCampo'] or $_SESSION['usuarioBuscaCampo'] == 'nome')?'Nome':'CPF')?></button>
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#" opcao_busca="Nome">Nome</a></li>
                     <li><a class="dropdown-item" href="#" opcao_busca="CPF">CPF</a></li>
                   </ul>
-                  <input type="text" texto_busca class="form-control" aria-label="Digite a informação para a busca">
+                  <input type="text" texto_busca class="form-control" value="<?=$_SESSION['usuarioBusca']?>" aria-label="Digite a informação para a busca">
                   <button filtrar class="btn btn-outline-secondary" type="button">Buscar</button>
+                  <button limpar class="btn btn-outline-danger" type="button">limpar</button>
                 </div>
 
 
@@ -155,6 +156,19 @@
             $("input[texto_busca]").mask("999.999.999-99");
           }
         });
+
+        $("button[filtrar]").click(function(){
+          $.ajax({
+              url:"src/usuarios/index.php",
+              type:"POST",
+              data:{
+                acao:"limpar"
+              },
+              success:function(dados){
+                $("#paginaHome").html(dados);
+              }
+            });
+        })
 
         $("button[filtrar]").click(function(){
           opc = $("button[rotulo_busca]").text();
