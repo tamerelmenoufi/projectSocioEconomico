@@ -879,7 +879,12 @@
 
     <script>
         $(function(){
-            src/se/index.php
+
+            Carregando('none');
+
+            $("#cpf").mask('999.999.999-99');
+            $("#telefone").mask('(99) 99999-9999');
+            $("#cep").mask('99999-999');
             $("#data_nascimento").mask('99/99/9999');
             $("#data").mask('99/99/9999');
 
@@ -1017,7 +1022,8 @@
                 })
 
             })
-            src/se/index.php
+
+            $("input[ocultar]").click(function(){
 
                 if($(this).attr("type") == 'checkbox' && $(this).prop("checked") == true){
                     $(this).parent("div").parent("div").children("div").children("input[exibir]").each(function(){
