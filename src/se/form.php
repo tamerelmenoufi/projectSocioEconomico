@@ -115,6 +115,11 @@
 
                 campos.push({name: 'acao', value: 'salvar'})
 
+                if(!validarCPF($("#cpf").val())){
+                    $.alert('Confira o CPF, o informado é inválido!');
+                    return;
+                }
+
                 Carregando();
 
                 $.ajax({
