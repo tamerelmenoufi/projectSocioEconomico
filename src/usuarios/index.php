@@ -24,7 +24,7 @@
 
     $where = false;
     if($_SESSION['usuarioBuscaCampo'] and $_SESSION['usuarioBusca']){
-      $where = " and {$_SESSION['usuarioBuscaCampo']} like '%{$_SESSION['usuarioBusca']}%'";
+      $where = " and a.{$_SESSION['usuarioBuscaCampo']} like '%{$_SESSION['usuarioBusca']}%'";
     }
 ?>
 
@@ -74,7 +74,7 @@
               </thead>
               <tbody>
                 <?php
-                  echo $query = "select a.*, (select count(*) from metas where usuario = a.codigo) as metas from usuarios a where a.deletado != '1' {$where} order by a.nome asc";
+                  $query = "select a.*, (select count(*) from metas where usuario = a.codigo) as metas from usuarios a where a.deletado != '1' {$where} order by a.nome asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
