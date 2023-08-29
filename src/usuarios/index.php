@@ -2,7 +2,8 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
     if($_POST['delete']){
-      $query = "delete from usuarios where codigo = '{$_POST['delete']}'";
+      // $query = "delete from usuarios where codigo = '{$_POST['delete']}'";
+      $query = "update usuarios set deletado = '1' where codigo = '{$_POST['delete']}'";
       mysqli_query($con, $query);
     }
 
@@ -10,6 +11,20 @@
       $query = "update usuarios set situacao = '{$_POST['opc']}' where codigo = '{$_POST['situacao']}'";
       mysqli_query($con, $query);
       exit();
+    }
+
+    if($_POST['acao'] == 'filtro'){
+      $_SESSION['usuarioBuscaCampo'] = $_POST['campo'];
+      $_SESSION['usuarioBusca'] = $_POST['busca'];
+    }
+    if($_POST['acao'] == 'limpar'){
+      $_SESSION['usuarioBuscaCampo'] = false;
+      $_SESSION['usuarioBusca'] = false;      
+    }
+
+    $where = false;
+    if($_SESSION['usuarioBuscaCampo'] and $_SESSION['usuarioBusca']){
+      $where = " and {$_SESSION['usuarioBuscaCampo']} like '%{$_SESSION['usuarioBusca']}%'";
     }
 ?>
 
@@ -59,7 +74,7 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select a.*, (select count(*) from metas where usuario = a.codigo) as metas from usuarios a order by a.nome asc";
+                  echo $query = "select a.*, (select count(*) from metas where usuario = a.codigo) as metas from usuarios a where a.delete != '1' {$where} order by a.nome asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
@@ -152,6 +167,20 @@
           }
           if(campo && busca){
             console.log(`campo:${campo} && Busca: ${busca}`);
+            $.ajax({
+              url:"src/usuarios/index.php",
+              type:"POST",
+              data:{
+                campo,
+                busca,
+                acao:"filtro"
+              },
+              success:function(dados){
+                $("#paginaHome").html(dados);
+              }
+            });
+          }else{
+            $.alert('Favor preencher o campo da busca!')
           }
 
         });
