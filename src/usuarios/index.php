@@ -23,6 +23,7 @@
           <div class="card-body">
             <div class="d-flex justify-content-between">
                 <div class="input-group mb-3">
+                  <label class="input-group-text" for="inputGroupFile01">Buscar por </label>
                   <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" rotulo_busca aria-expanded="false">Nome</button>
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#" opcao_busca="Nome">Nome</a></li>
