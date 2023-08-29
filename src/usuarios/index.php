@@ -128,7 +128,7 @@
         })
 
         // opcao, rotulo, texto
-        $("a[opcao_rotulo]").click(function(){
+        $("a[opcao_busca]").click(function(){
           opc = $(this).attr("opcao_busca");
           $("button[rotulo_busca]").text(opc);
 
