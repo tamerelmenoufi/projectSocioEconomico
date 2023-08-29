@@ -879,12 +879,7 @@
 
     <script>
         $(function(){
-
-            Carregando('none');
-
-            $("#cpf").mask('999.999.999-99');
-            $("#telefone").mask('(99) 99999-9999');
-            $("#cep").mask('99999-999');
+            src/se/index.php
             $("#data_nascimento").mask('99/99/9999');
             $("#data").mask('99/99/9999');
 
@@ -941,6 +936,19 @@
                                 openedCanvas.hide();
                                 console.log(dados.query)
                                 Carregando('none');
+
+                                $.ajax({
+                                    url:"src/se/index.php",
+                                    success:function(dados){
+                                        $("#paginaHome").html(dados);
+                                    },
+                                    error:function(erro){
+                                        $.alert('Ocorreu um erro!' + erro.toString());
+                                        //dados de teste
+                                    }
+                                });
+
+
                             },
                             error:function(erro){
 
@@ -1009,8 +1017,7 @@
                 })
 
             })
-
-            $("input[ocultar]").click(function(){
+            src/se/index.php
 
                 if($(this).attr("type") == 'checkbox' && $(this).prop("checked") == true){
                     $(this).parent("div").parent("div").children("div").children("input[exibir]").each(function(){
