@@ -148,8 +148,8 @@
           }else if(opc == 'CPF'){
             campo = 'cpf';
           }
-          if(campo && valor){
-            console.log(`campo:${campo} && Valor: ${valor}`);
+          if(campo && busca){
+            console.log(`campo:${campo} && Busca: ${busca}`);
           }
 
         });
