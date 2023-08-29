@@ -158,6 +158,7 @@
         });
 
         $("button[limpar]").click(function(){
+          Carregando()
           $.ajax({
               url:"src/usuarios/index.php",
               type:"POST",
@@ -180,7 +181,8 @@
             campo = 'cpf';
           }
           if(campo && busca){
-            console.log(`campo:${campo} && Busca: ${busca}`);
+            // console.log(`campo:${campo} && Busca: ${busca}`);
+            Carregando()
             $.ajax({
               url:"src/usuarios/index.php",
               type:"POST",
