@@ -16,9 +16,9 @@
         }
         $attr[] = "usuario = '" . $_SESSION['usuario'] . "'";
 
-        if(!$_POST['codigo']){
-            $attr[] = "data = NOW()";
-        }
+        // if(!$_POST['codigo']){
+        //     $attr[] = "data = NOW()";
+        // }
 
 
         $attr = implode(', ', $attr);
