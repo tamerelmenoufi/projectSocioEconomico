@@ -37,7 +37,7 @@
     }
 
 
-    $query = "SELECT * FROM `se` where meta in ($metas) and situacao not in ('c', 'f')";
+    $query = "SELECT * FROM `se` where meta in ($metas) and situacao not in ('c', 'f', 'n')";
     $result = mysqli_query($con, $query);
     
     // $Cmd[] = ['comando' => "DELETE FROM se"];
