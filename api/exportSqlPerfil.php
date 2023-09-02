@@ -72,10 +72,11 @@
 
 
 
-    $addTab = ['bairros_comunidades','municipios'];
+    $addTab = ['bairros_comunidades','municipios', 'metas'];
 
     $reg['bairros_comunidades'] = @implode(",", $reg['bairros_comunidades']);
     $reg['municipios'] =  @implode(",", $reg['municipios']);
+    $reg['metas'] =  $metas;
 
     
 
@@ -108,5 +109,8 @@
         
     }
 
+    if(metas){
+        $Cmd[] = ['comando' => "DELETE FROM se WHERE meta not in ($metas)"];
+    }
     echo json_encode($Cmd);
 
