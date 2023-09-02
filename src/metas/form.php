@@ -100,6 +100,12 @@
                     </select>
                     <label for="bairro_comunidade">Bairro/Comunidade</label>
                 </div>
+
+                <div class="form-floating mb-3">
+                    <input type="date" name="data" id="data" class="form-control" placeholder="Data Inicial da Meta" value="<?=$d->data?>">
+                    <label for="data">Data Inicial da Meta</label>
+                </div>
+
                 <div class="form-floating mb-3">
                     <select name="situacao" class="form-control" id="situacao">
                         <option value="1" <?=(($d->situacao == '1')?'selected':false)?>>Liberado</option>
