@@ -15,7 +15,7 @@
     $filtro = $f_usuario . $f_meta . $f_data;
 
 
-    echo $query = "select count(*) as qt, situacao from se where monitor_social > 0 and meta > 0 {$filtro} group by situacao";
+    $query = "select count(*) as qt, situacao from se where monitor_social > 0 and meta > 0 {$filtro} group by situacao";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
         $D[$d->situacao] = $d->qt;

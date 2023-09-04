@@ -42,13 +42,15 @@
                                         count(*) as qt 
                                         
                                     from se a 
-                                    right join usuarios b on a.monitor_social = b.codigo 
+                                    left join usuarios b on a.monitor_social = b.codigo 
+                                    
                                     where 
+                                            a.monitor_social > 0 and 
                                             b.situacao = '1' and 
                                             b.deletado != '1' 
                                             ".(($_SESSION['ProjectSeLogin']->perfil == 'usr')?" and b.codigo = '{$_SESSION['ProjectSeLogin']->codigo}'":false)." 
                                             ".(($_SESSION['ProjectSeLogin']->perfil == 'crd')?" and b.coordenador = '{$_SESSION['ProjectSeLogin']->codigo}'":false)." 
-                                            ".((!$_SESSION['ProjectSeLogin']->perfil == 'crd' and !$_SESSION['ProjectSeLogin']->perfil == 'usr')?" and a.monitor_social > 0  ":false)." 
+
                                     group by b.codigo order by b.nome";
 
                         $r = mysqli_query($con, $q);
