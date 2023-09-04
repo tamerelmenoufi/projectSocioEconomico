@@ -13,11 +13,14 @@
         }
         if($_SESSION['relatorio']['meta']){
             $f_meta = " and a.meta in( {$_SESSION['relatorio']['meta']} ) ";
+        }else if($_SESSION['ProjectSeLogin']->perfil == 'crd'){
+            $f_meta = " and a.meta in( select * from metas where usuario in(select * from usuarios where coordenador = '{$_SESSION['ProjectSeLogin']->codigo}') ) ";
         }
+
         if($_SESSION['relatorio']['data_inicial']){
             $f_data = " and (a.data between '{$_SESSION['relatorio']['data_inicial']} 00:00:00' and '".(($_SESSION['relatorio']['data_final'])?:$_SESSION['relatorio']['data_inicial'])." 23:59:59')";
         }
-    
+
         $filtro = $f_usuario . $f_meta . $f_data;
 
         if($d['join']){
@@ -27,7 +30,7 @@
             $item = ", {$d['item']} as item";
         }
     
-        $query = "select a.{$d['campo']} as campo {$item} from se a {$join} where a.monitor_social > 0 and a.meta > 0 {$filtro}";
+        $query = "select a.{$d['campo']} as campo {$item} from se a {$join} where a.monitor_social > 0 and a.meta > 0 {$filtro} ";
         $result = mysqli_query($con, $query);
         $t = 0;
         if(mysqli_num_rows($result)){
