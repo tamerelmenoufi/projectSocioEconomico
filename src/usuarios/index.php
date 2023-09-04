@@ -168,8 +168,6 @@
           opc = $(this).attr("opcao_busca");
           $("button[rotulo_busca]").text(opc);
           $("input[texto_busca]").val('')
-          $("input[texto_busca]").css('display','block')
-          $("select[busca_perfil]").css('display','none')
           if(opc == 'Nome'){
             $("input[texto_busca]").unmask();
             $("input[texto_busca]").css('display','block')
@@ -208,6 +206,7 @@
             campo = 'cpf';
           }else if(opc == 'Perfil'){
             campo = 'perfil';
+            busca = $("select[busca_perfil]").val();
           }
           if(campo && busca){
             // console.log(`campo:${campo} && Busca: ${busca}`);
