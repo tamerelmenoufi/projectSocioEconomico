@@ -74,7 +74,7 @@
                     <label for="email">E-mail</label>
                 </div>
                 <?php
-                if($d->codigo != 1 or $_SESSION['ProjectSeLogin']->perfil == 'adm'){
+                if($d->codigo != 1 and $_SESSION['ProjectSeLogin']->perfil == 'adm'){
                 ?>
                 <div class="form-floating mb-3">
                     <select name="perfil" class="form-control" id="perfil">
@@ -97,7 +97,7 @@
                     <label for="senha">Senha</label>
                 </div>
                 <?php
-                if($d->codigo != 1 or $_SESSION['ProjectSeLogin']->perfil == 'adm' ){
+                if($d->codigo != 1 and $_SESSION['ProjectSeLogin']->perfil == 'adm' ){
                 ?>
 
                 <div class="form-floating mb-3">
@@ -134,6 +134,14 @@
                 <div style="display:flex; justify-content:end">
                     <button type="submit" class="btn btn-success btn-ms">Salvar</button>
                     <input type="hidden" id="codigo" value="<?=$_POST['cod']?>" />
+                    <?php
+                    if($_SESSION['ProjectSeLogin']->perfil == 'crd'){
+                    ?>
+                    <input type="hidden" id="coordenador" name="coordenador" value="<?=$_SESSION['ProjectSeLogin']->codigo?>" />
+                    <input type="hidden" id="perfil" name="perfil" value="usr" />
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>
