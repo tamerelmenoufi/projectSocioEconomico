@@ -104,7 +104,7 @@
                     <select name="coordenador" id="coordenador" class="form-control" placeholder="Coordenador">
                         <option value="">::Selecione o Coordenador::</option>
                         <?php
-                            $q = "select * from usuarios where perfil in ('adm', 'crd') and situacao = '1' order by nome";
+                            $q = "select * from usuarios where perfil in ('crd') and situacao = '1' order by nome";
                             $r = mysqli_query($con, $q);
                             while($s = mysqli_fetch_object($r)){
                         ?>
