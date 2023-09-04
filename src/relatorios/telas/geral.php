@@ -7,6 +7,8 @@
     }
     if($_SESSION['relatorio']['meta']){
         $f_meta = " and meta in( {$_SESSION['relatorio']['meta']} ) ";
+    }else if($_SESSION['ProjectSeLogin']->perfil == 'crd'){
+        $f_meta = " and a.meta in( select codigo from metas where usuario in(select codigo from usuarios where coordenador = '{$_SESSION['ProjectSeLogin']->codigo}') ) ";
     }
     if($_SESSION['relatorio']['data_inicial']){
         $f_data = " and (data between '{$_SESSION['relatorio']['data_inicial']} 00:00:00' and '".(($_SESSION['relatorio']['data_final'])?:$_SESSION['relatorio']['data_inicial'])." 23:59:59')";
