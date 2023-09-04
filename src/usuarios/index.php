@@ -49,12 +49,18 @@
             <div class="d-flex justify-content-between">
                 <div class="input-group mb-3">
                   <label class="input-group-text" for="inputGroupFile01">Buscar por </label>
-                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" rotulo_busca aria-expanded="false"><?=((!$_SESSION['usuarioBuscaCampo'] or $_SESSION['usuarioBuscaCampo'] == 'nome')?'Nome':'CPF')?></button>
+                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" rotulo_busca aria-expanded="false"><?=((!$_SESSION['usuarioBuscaCampo'] or $_SESSION['usuarioBuscaCampo'] == 'nome')?'Nome':(($_SESSION['usuarioBuscaCampo'] == 'Perfil')?'Perfil':'CPF'))?></button>
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#" opcao_busca="Nome">Nome</a></li>
                     <li><a class="dropdown-item" href="#" opcao_busca="CPF">CPF</a></li>
+                    <li><a class="dropdown-item" href="#" opcao_busca="Situação">Situação</a></li>
                   </ul>
-                  <input type="text" texto_busca class="form-control" value="<?=$_SESSION['usuarioBusca']?>" aria-label="Digite a informação para a busca">
+                  <input type="text" texto_busca style="display:<?=(($_SESSION['usuarioBuscaCampo'] == 'Perfil')?'none':'block')?>" class="form-control" value="<?=$_SESSION['usuarioBusca']?>" aria-label="Digite a informação para a busca">
+                  <select busca_perfil style="display:<?=(($_SESSION['usuarioBuscaCampo'] != 'Perfil')?'none':'block')?>">
+                    <option value="adm">Administrador</option>
+                    <option value="crd">Coordenador</option>
+                    <option value="usr">Usuário</option>
+                  </select>
                   <button filtrar class="btn btn-outline-secondary" type="button">Buscar</button>
                   <button limpar class="btn btn-outline-danger" type="button">limpar</button>
                 </div>
@@ -162,10 +168,19 @@
           opc = $(this).attr("opcao_busca");
           $("button[rotulo_busca]").text(opc);
           $("input[texto_busca]").val('')
+          $("input[texto_busca]").css('display','block')
+          $("select[busca_perfil]").css('display','none')
           if(opc == 'Nome'){
             $("input[texto_busca]").unmask();
+            $("input[texto_busca]").css('display','block')
+            $("select[busca_perfil]").css('display','none')
           }else if(opc == 'CPF'){
             $("input[texto_busca]").mask("999.999.999-99");
+            $("input[texto_busca]").css('display','block')
+            $("select[busca_perfil]").css('display','none')
+          }else if(opc == 'Perfil'){
+            $("input[texto_busca]").css('display','none')
+            $("select[busca_perfil]").css('display','block')
           }
         });
 
@@ -191,6 +206,8 @@
             campo = 'nome';
           }else if(opc == 'CPF'){
             campo = 'cpf';
+          }else if(opc == 'Perfil'){
+            campo = 'perfil';
           }
           if(campo && busca){
             // console.log(`campo:${campo} && Busca: ${busca}`);
