@@ -8,7 +8,9 @@
   </div>
   <div class="offcanvas-body">
     <h5>Project Map Censo - AADESAM</h5>
-
+    <?php
+    if($_SESSION['ProjectSeLogin']->perfil == 'adm' or $_SESSION['ProjectSeLogin']->perfil == 'crd'){
+    ?>
     <div class="row mb-1">
       <div class="col">
         <a url="src/dashboard/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -16,7 +18,9 @@
         </a>
       </div>
     </div>
-
+    <?php
+    }
+    ?>
     <div class="row mb-1">
       <div class="col">
         <a url="src/relatorios/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -24,7 +28,6 @@
         </a>
       </div>
     </div>
-
     <?php
     if($_SESSION['ProjectSeLogin']->perfil != 'usr'){
     ?>
@@ -35,9 +38,7 @@
         </a>
       </div>
     </div>
-    <?php
-    }
-    ?>
+
     <div class="row mb-1">
       <div class="col">
         <a url="src/se/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -45,8 +46,9 @@
         </a>
       </div>
     </div>
-
-
+    <?php
+    }
+    ?>
     <div class="row mb-1">
       <div class="col">
         <a href="./docs/form-se.pdf" target="formSocioEconimico" class="text-decoration-none">
