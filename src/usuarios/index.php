@@ -55,8 +55,8 @@
                     <li><a class="dropdown-item" href="#" opcao_busca="CPF">CPF</a></li>
                     <li><a class="dropdown-item" href="#" opcao_busca="Perfil">Perfil</a></li>
                   </ul>
-                  <input type="text" texto_busca style="display:<?=(($_SESSION['usuarioBuscaCampo'] == 'Perfil')?'none':'block')?>" class="form-control" value="<?=$_SESSION['usuarioBusca']?>" aria-label="Digite a informação para a busca">
-                  <select busca_perfil class="form-control" style="display:<?=(($_SESSION['usuarioBuscaCampo'] != 'Perfil')?'none':'block')?>">
+                  <input type="text" texto_busca style="display:<?=(($_SESSION['usuarioBuscaCampo'] == 'perfil')?'none':'block')?>" class="form-control" value="<?=$_SESSION['usuarioBusca']?>" aria-label="Digite a informação para a busca">
+                  <select busca_perfil class="form-control" style="display:<?=(($_SESSION['usuarioBuscaCampo'] != 'perfil')?'none':'block')?>">
                     <option value="adm" <?=(($_SESSION['usuarioBusca'] == 'adm')?'selected':false)?>>Administrador</option>
                     <option value="crd" <?=(($_SESSION['usuarioBusca'] == 'crd')?'selected':false)?>>Coordenador</option>
                     <option value="usr" <?=(($_SESSION['usuarioBusca'] == 'usr')?'selected':false)?>>Usuário</option>
