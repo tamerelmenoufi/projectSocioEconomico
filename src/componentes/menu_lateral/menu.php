@@ -40,7 +40,7 @@
     </div>
     <?php
     }
-    if($_SESSION['ProjectSeLogin']->perfil != 'adm'){
+    if($_SESSION['ProjectSeLogin']->perfil == 'adm'){
     ?>
     <div class="row mb-1">
       <div class="col">
