@@ -15,7 +15,9 @@
         $_SESSION['relatorio']['data_final'] = $_POST['data_final'];
     }
 
-
+    if($_SESSION['ProjectSeLogin']->perfil == 'usr'){
+        $_SESSION['relatorio']['usuario'] = $_SESSION['ProjectSeLogin']->codigo;
+    }
 
 ?>
 <style>
@@ -33,9 +35,9 @@
             <div class="row">
                 <div class="col-md-3 mb-2">
                     <select id="filtro_usuario" class="form-select">
-                        <option value="">::Todos os usuários::</option>
+                        <option value="" <?=(($_SESSION['ProjectSeLogin']->perfil == 'usr')?'disabled':false)?>>::Todos os usuários::</option>
                         <?php
-                        $q = "select b.*, count(*) as qt from se a left join usuarios b on a.monitor_social = b.codigo where a.monitor_social > 0 and b.situacao = '1' and b.deletado != '1' group by b.codigo order by b.nome";
+                        $q = "select b.*, count(*) as qt from se a left join usuarios b on a.monitor_social = b.codigo where a.monitor_social > 0 and b.situacao = '1' and b.deletado != '1' ".(($_SESSION['ProjectSeLogin']->perfil == 'usr')?" and b.codigo = '{$_SESSION['ProjectSeLogin']->codigo}'")." group by b.codigo order by b.nome";
                         $r = mysqli_query($con, $q);
                         while($d = mysqli_fetch_object($r)){
                         ?>
