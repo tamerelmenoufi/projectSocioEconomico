@@ -60,7 +60,7 @@
 ?>
 
 <div class="card mb-3">
-  <h5 class="card-header"><?=$d['rotulo']?> <?=$_SESSION['ProjectSeLogin']->perfil?></h5>
+  <h5 class="card-header"><?=$d['rotulo']?></h5>
   <div class="card-body">
     <ul class="list-group">
 <?php
