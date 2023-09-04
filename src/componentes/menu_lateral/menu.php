@@ -38,7 +38,10 @@
         </a>
       </div>
     </div>
-
+    <?php
+    }
+    if($_SESSION['ProjectSeLogin']->perfil != 'adm'){
+    ?>
     <div class="row mb-1">
       <div class="col">
         <a url="src/se/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
