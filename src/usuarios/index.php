@@ -127,7 +127,7 @@
                       Editar
                     </button>
                     <?php
-                    if($d->codigo != 1){
+                    if($d->codigo != 1 and $_SESSION['ProjectSeLogin']->codigo != $d->codigo){
                     ?>
                     <button class="btn btn-danger" delete="<?=$d->codigo?>">
                       Excluir
