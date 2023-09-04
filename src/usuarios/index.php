@@ -92,7 +92,7 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select a.*, (select count(*) from metas where usuario = a.codigo) as metas from usuarios a where a.deletado != '1' ".(($_SESSION['ProjectSeLogin']->perfil == 'crd')?" and a.coordenador = '{$_SESSION['ProjectSeLogin']->codigo}' ":false).(($_SESSION['ProjectSeLogin']->perfil == 'adm')?" and a.perfil != 'adm' ":false)." {$where} order by a.nome asc";
+                  $query = "select a.*, (select count(*) from metas where usuario = a.codigo) as metas from usuarios a where a.deletado != '1' ".(($_SESSION['ProjectSeLogin']->perfil == 'crd')?" and a.coordenador = '{$_SESSION['ProjectSeLogin']->codigo}' ":false).(($_SESSION['ProjectSeLogin']->perfil == 'adm')?" and (a.perfil != 'adm' or a.codigo = '{$_SESSION['ProjectSeLogin']->codigo}') ":false)." {$where} order by a.nome asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
