@@ -45,12 +45,12 @@
                                     left join usuarios b on a.monitor_social = b.codigo 
                                     
                                     where 
-                                            a.monitor_social > 0 and 
                                             b.situacao = '1' and 
-                                            b.deletado != '1' 
-                                            ".(($_SESSION['ProjectSeLogin']->perfil == 'usr')?" and b.codigo = '{$_SESSION['ProjectSeLogin']->codigo}'":false)." 
-                                            ".(($_SESSION['ProjectSeLogin']->perfil == 'crd')?" and b.coordenador = '{$_SESSION['ProjectSeLogin']->codigo}'":false)." 
-
+                                            b.deletado != '1' and 
+                                            (a.monitor_social > 0  
+                                            ".(($_SESSION['ProjectSeLogin']->perfil == 'usr')?" or b.codigo = '{$_SESSION['ProjectSeLogin']->codigo}'":false)." 
+                                            ".(($_SESSION['ProjectSeLogin']->perfil == 'crd')?" or b.coordenador = '{$_SESSION['ProjectSeLogin']->codigo}'":false)." 
+                                            )
                                     group by b.codigo order by b.nome";
 
                         $r = mysqli_query($con, $q);
