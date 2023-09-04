@@ -56,7 +56,7 @@
                     <li><a class="dropdown-item" href="#" opcao_busca="Perfil">Perfil</a></li>
                   </ul>
                   <input type="text" texto_busca style="display:<?=(($_SESSION['usuarioBuscaCampo'] == 'Perfil')?'none':'block')?>" class="form-control" value="<?=$_SESSION['usuarioBusca']?>" aria-label="Digite a informação para a busca">
-                  <select busca_perfil style="display:<?=(($_SESSION['usuarioBuscaCampo'] != 'Perfil')?'none':'block')?>">
+                  <select busca_perfil class="form-control" style="display:<?=(($_SESSION['usuarioBuscaCampo'] != 'Perfil')?'none':'block')?>">
                     <option value="adm">Administrador</option>
                     <option value="crd">Coordenador</option>
                     <option value="usr">Usuário</option>
