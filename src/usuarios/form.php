@@ -74,7 +74,7 @@
                     <label for="email">E-mail</label>
                 </div>
                 <?php
-                if($d->codigo != 1 and $_SESSION['ProjectSeLogin']->perfil == 'adm'){
+                if($d->codigo != 1 and $_SESSION['ProjectSeLogin']->perfil == 'adm' and $_SESSION['ProjectSeLogin']->codigo != $d->codigo){
                 ?>
                 <div class="form-floating mb-3">
                     <select name="perfil" class="form-control" id="perfil">
