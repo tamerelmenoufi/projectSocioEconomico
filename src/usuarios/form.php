@@ -84,7 +84,10 @@
                     </select>
                     <label for="email">Perfil</label>
                 </div>
-
+                <?php
+                }
+                if($d->codigo != 1 or $_SESSION['ProjectSeLogin']->perfil == 'adm'){
+                ?>
                 <div class="form-floating mb-3">
                     <input type="text" name="login" id="login" class="form-control" placeholder="Login" value="<?=$d->login?>">
                     <label for="login">Login</label>
