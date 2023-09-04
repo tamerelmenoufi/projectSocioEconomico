@@ -10,7 +10,7 @@
       $quantidade = count($_POST['opcoes']);
       mysqli_query($con, "update se set meta = '0' where meta = '{$_SESSION['meta']}'");
       $opcoes = @implode(",", $_POST['opcoes']);
-      mysqli_query($con, "update se set meta = '{$_SESSION['meta']}' where codigo in ({$opcoes})");
+      mysqli_query($con, "update se set meta = '{$_SESSION['meta']}', monitor_social = '{$_POST['usuario']}' where codigo in ({$opcoes})");
 
       mysqli_query($con, "update metas set quantidade = '{$quantidade}' WHERE codigo = '{$_SESSION['meta']}'");
 
@@ -83,7 +83,7 @@
           </table>
         </div>
         
-        <button salvarMeta style="position:absolute; bottom:10px; right:30px;" class="btn btn-success">Salvar</button>
+        <button salvarMeta usuario="<?=$m->usuario?>" style="position:absolute; bottom:10px; right:30px;" class="btn btn-success">Salvar</button>
       </div>
     </div>
 </div>
@@ -108,6 +108,7 @@
 
 
     $("button[salvarMeta]").click(function(){
+      usuario = $(this).attr("usuario")
       opcoes = [];
       $(".opcoes").each(function(){
         if($(this).prop("checked") == true){
@@ -120,6 +121,7 @@
         type:"POST",
         data:{
           opcoes,
+          usuario,
           acao:"addBeneficiarios"
         },
         success:function(dados){
