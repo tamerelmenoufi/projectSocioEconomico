@@ -27,7 +27,16 @@
     $result = mysqli_query($con, $query);
     $t = 0;
     while($s = mysqli_fetch_object($result)){
-        echo $s->nome."<br>";
+        echo $s->nome.'                      <button
+        class="btn btn-primary"
+        beneficiados=""
+        data-bs-toggle="offcanvas"
+        href="#offcanvasDireita"
+        role="button"
+        aria-controls="offcanvasDireita"
+      >
+        teste
+      </button>'."<br>";
     }
 
 ?>
