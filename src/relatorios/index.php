@@ -37,13 +37,12 @@
                     <select id="filtro_usuario" class="form-select">
                         <option value="" <?=(($_SESSION['ProjectSeLogin']->perfil == 'usr')?'disabled':false)?>>::Todos os usuários::</option>
                         <?php
-                        echo $q = "select 
+                        $q = "select 
                                         b.*, 
                                         count(*) as qt 
                                         
                                     from se a 
-                                    left join usuarios b on a.monitor_social = b.codigo 
-                                    
+                                    right join usuarios b on a.monitor_social = b.codigo 
                                     where 
                                             b.situacao = '1' and 
                                             b.deletado != '1' 
