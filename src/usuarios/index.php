@@ -53,7 +53,7 @@
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#" opcao_busca="Nome">Nome</a></li>
                     <li><a class="dropdown-item" href="#" opcao_busca="CPF">CPF</a></li>
-                    <li><a class="dropdown-item" href="#" opcao_busca="Situação">Situação</a></li>
+                    <li><a class="dropdown-item" href="#" opcao_busca="Perfil">Perfil</a></li>
                   </ul>
                   <input type="text" texto_busca style="display:<?=(($_SESSION['usuarioBuscaCampo'] == 'Perfil')?'none':'block')?>" class="form-control" value="<?=$_SESSION['usuarioBusca']?>" aria-label="Digite a informação para a busca">
                   <select busca_perfil style="display:<?=(($_SESSION['usuarioBuscaCampo'] != 'Perfil')?'none':'block')?>">
