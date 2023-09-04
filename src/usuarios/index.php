@@ -1,6 +1,16 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
+
+    function Pefil($p){
+      $Perfil = [
+        'adm' => 'Administrador',
+        'crd' => 'Coordenador',
+        'usr' => 'Usuário',
+      ];
+      return $Perfil[$p];
+    }
+
     if($_POST['delete']){
       // $query = "delete from usuarios where codigo = '{$_POST['delete']}'";
       $query = "update usuarios set deletado = '1' where codigo = '{$_POST['delete']}'";
@@ -69,6 +79,7 @@
                   <th scope="col">CPF</th>
                   <th scope="col">Telefone</th>
                   <th scope="col">E-mail</th>
+                  <th scope="col">Perfil</th>
                   <th scope="col">Situação</th>
                   <th scope="col">Ações</th>
                 </tr>
@@ -84,6 +95,7 @@
                   <td><?=$d->cpf?></td>
                   <td><?=$d->telefone?></td>
                   <td><?=$d->email?></td>
+                  <td><?=Pefil($d->perfil)?></td>
                   <td>
 
                   <div class="form-check form-switch">
