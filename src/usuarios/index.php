@@ -49,7 +49,7 @@
             <div class="d-flex justify-content-between">
                 <div class="input-group mb-3">
                   <label class="input-group-text" for="inputGroupFile01">Buscar por </label>
-                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" rotulo_busca aria-expanded="false"><?=((!$_SESSION['usuarioBuscaCampo'] or $_SESSION['usuarioBuscaCampo'] == 'nome')?'Nome':(($_SESSION['usuarioBuscaCampo'] == 'Perfil')?'Perfil':'CPF'))?></button>
+                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" rotulo_busca aria-expanded="false"><?=((!$_SESSION['usuarioBuscaCampo'] or $_SESSION['usuarioBuscaCampo'] == 'nome')?'Nome':(($_SESSION['usuarioBuscaCampo'] == 'perfil')?'Perfil':'CPF'))?></button>
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#" opcao_busca="Nome">Nome</a></li>
                     <li><a class="dropdown-item" href="#" opcao_busca="CPF">CPF</a></li>
@@ -57,9 +57,9 @@
                   </ul>
                   <input type="text" texto_busca style="display:<?=(($_SESSION['usuarioBuscaCampo'] == 'Perfil')?'none':'block')?>" class="form-control" value="<?=$_SESSION['usuarioBusca']?>" aria-label="Digite a informação para a busca">
                   <select busca_perfil class="form-control" style="display:<?=(($_SESSION['usuarioBuscaCampo'] != 'Perfil')?'none':'block')?>">
-                    <option value="adm">Administrador</option>
-                    <option value="crd">Coordenador</option>
-                    <option value="usr">Usuário</option>
+                    <option value="adm" <?=(($_SESSION['usuarioBusca'] == 'adm')?'selected':false)?>>Administrador</option>
+                    <option value="crd" <?=(($_SESSION['usuarioBusca'] == 'crd')?'selected':false)?>>Coordenador</option>
+                    <option value="usr" <?=(($_SESSION['usuarioBusca'] == 'usr')?'selected':false)?>>Usuário</option>
                   </select>
                   <button filtrar class="btn btn-outline-secondary" type="button">Buscar</button>
                   <button limpar class="btn btn-outline-danger" type="button">limpar</button>
@@ -168,6 +168,7 @@
           opc = $(this).attr("opcao_busca");
           $("button[rotulo_busca]").text(opc);
           $("input[texto_busca]").val('')
+          $("select[busca_perfil]").val('')
           if(opc == 'Nome'){
             $("input[texto_busca]").unmask();
             $("input[texto_busca]").css('display','block')
