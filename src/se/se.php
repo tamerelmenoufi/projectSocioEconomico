@@ -18,6 +18,7 @@
         $tot = count($data);
         $qt = 0;
         $remov = ['[""]', 'null', '0', '0.00', ' ', 0, null];
+        $log = false;
         foreach ($data as $name => $value) {
 
             // if(is_array($value)) {
@@ -25,8 +26,11 @@
             // }
             // $qt = (($value)?($qt+1):$qt);
             $qt = ((trim(str_replace($remov, false,$value)))?($qt+1):$qt);
+            $log .= "((trim(str_replace($remov, false,$value)))?($qt+1):$qt)";
             $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
         }
+
+
             $pct = (100*$qt/$tot);
             $attr[] = "percentual = '" . $pct . "'";
             $attr[] = "data_nascimento = '" . dataMysql($_POST['data_nascimento']) . "'";
@@ -70,7 +74,7 @@
             'status' => true,
             'codigo' => $cod,
             'mensagem' => "Pesquisa registrada com sucesso!",
-            'query' => $query,
+            'query' => $log,
         ];
 
         echo json_encode($retorno);
