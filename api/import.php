@@ -49,6 +49,8 @@
             if($i == 'beneficiario_encontrado'){
                 if($data['situacao'] == 'n'){
                     $data['beneficiario_encontrado'] = 'Não';
+                }else if($data['situacao'] != 'i'){
+                    $data['beneficiario_encontrado'] = 'Sim';
                 }else{
                     $campos[] = "{$i} = '{$v}'";
                 }
