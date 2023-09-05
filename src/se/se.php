@@ -950,7 +950,7 @@
                                 Carregando('none');
 
                                 $.ajax({
-                                    url:"<?=(($_POST['origem'])?"src/relatorios/lista_beneficiados.php":"src/se/index.php")?>",
+                                    url:"<?=(($_POST['origem'])?"src/relatorios/telas/lista_beneficiados.php":"src/se/index.php")?>",
                                     success:function(dados){
                                         <?php
                                         if(!$_POST['origem']){
