@@ -31,7 +31,7 @@
         z-index:0;
     }
 </style>
-<h4 class="Titulo<?=$md5?>"><?=$_POST['titulo']?></h4>
+<h5 class="Titulo<?=$md5?>"><?=$_POST['titulo']?></h5>
 <?php
 
     $query = "select a.* from se a where a.monitor_social > 0 and a.meta > 0 {$filtro}";
