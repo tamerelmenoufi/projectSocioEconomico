@@ -69,7 +69,7 @@
             if(is_array($value)) {
                 $value = json_encode($value,JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
             }
-            $qt = (($value)?($qt+1):$qt);
+            $qt = ((trim($value))?($qt+1):$qt);
         }
             $pct = (100*$qt/$tot);
             $campos[] = "percentual = '{$pct}'";
