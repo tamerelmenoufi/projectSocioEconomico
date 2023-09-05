@@ -66,10 +66,10 @@
         $qt = 0;
         foreach ($data as $name => $value) {
 
-            if(is_array($value)) {
-                $value = json_encode($value,JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-            }
-            $qt = ((trim($value))?($qt+1):$qt);
+            // if(is_array($value)) {
+            //     $value = json_encode($value,JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+            // }
+            $qt = ((trim($value) and != '[""]')?($qt+1):$qt);
         }
             $pct = (100*$qt/$tot);
             $campos[] = "percentual = '{$pct}'";
