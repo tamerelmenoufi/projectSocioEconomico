@@ -872,7 +872,8 @@
                 <button
                     type="button"
                     voltar
-                    class="btn btn-danger btn-ms mh-2"
+                    class="btn btn-danger btn-ms"
+                    style="margin-right:10px;"
                 >Voltar</button>
                 <?php
                 }
