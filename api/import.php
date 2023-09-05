@@ -62,9 +62,9 @@
 
         ////////////////////////////////PERCENTUAL/////////////////////////////////////
 
-        $tot = count($campos);
+        $tot = count($data);
         $qt = 0;
-        foreach ($campos as $name => $value) {
+        foreach ($data as $name => $value) {
 
             if(is_array($value)) {
                 $value = json_encode($value,JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
