@@ -48,7 +48,7 @@
 ?>
     <li class="list-group-item d-flex justify-content-between align-items-center">
         <span><?=$s->nome?></span>
-        <button class="btn btn-warning btn-sm">
+        <button cod="<?=$s->codigo?>" class="btn btn-warning btn-sm">
             <i class="fa fa-edit"></i>
         </button>
     </li>
@@ -60,5 +60,24 @@
 <script>
     $(function(){
         Carregando('none');
+
+        $("button[cod]").click(function(){
+
+            cod = $(this).attr("cod");
+            Carregando();
+            $.ajax({
+                url:"src/se/se.php",
+                type:"POST",
+                data:{
+                    cod,
+                    origem:'1'
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            })
+
+        })
+
     })
 </script>
