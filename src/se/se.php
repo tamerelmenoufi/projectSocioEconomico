@@ -74,7 +74,7 @@
             'status' => true,
             'codigo' => $cod,
             'mensagem' => "Pesquisa registrada com sucesso!",
-            'query' => $tot,
+            'query' => $query,
         ];
 
         echo json_encode($retorno);
