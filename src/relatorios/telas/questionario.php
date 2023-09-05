@@ -83,7 +83,11 @@
                             valor="<?=$ind?>" 
                             json="<?=$d['tipo']?>"
                             rotulo_titulo="<?=$d['rotulo']?>"
-                            rotulo_campo="<?=$d['legenda'][$ind]?>"                            
+                            rotulo_campo="<?=$d['legenda'][$ind]?>"
+                            data-bs-toggle="offcanvas"
+                            href="#offcanvasDireita"
+                            role="button"
+                            aria-controls="offcanvasDireita"                          
                         >
                             <i class="fa-solid fa-arrow-up-1-9"></i><span><?=$val?> <i class="fa-solid fa-up-right-from-square"></i></span>
                         </button>                    
@@ -309,11 +313,12 @@
                     json
                 },
                 success:function(dados){
-                    $.dialog({
-                        title:`${rotulo_titulo} - ${rotulo_campo}`,
-                        content:dados,
-                        columnClass:'col-md-12'
-                    });
+                    $(".LateralDireita").html(dados);
+                    // $.dialog({
+                    //     title:`${rotulo_titulo} - ${rotulo_campo}`,
+                    //     content:dados,
+                    //     columnClass:'col-md-12'
+                    // });
                 }
             })
         });
