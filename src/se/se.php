@@ -947,7 +947,6 @@
                                 <?php
                                 }
                                 ?>
-                                Carregando('none');
 
                                 $.ajax({
                                     url:"<?=(($_POST['origem'])?"src/relatorios/telas/lista_beneficiados.php":"src/se/index.php")?>",
