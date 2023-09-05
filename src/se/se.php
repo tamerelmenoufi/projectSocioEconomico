@@ -16,7 +16,7 @@
 
         $tot = count($data);
         $qt = 0;
-        $remov = ['[""]', 'null', '0', '0.00', ' '];
+        $remov = ['[""]', 'null', '0', '0.00', ' ', 0, null];
         foreach ($data as $name => $value) {
 
             // if(is_array($value)) {
