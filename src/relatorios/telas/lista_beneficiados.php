@@ -4,6 +4,7 @@
     if($_POST['campo']) $_SESSION['s_campo'] = $_POST['campo'];
     if($_POST['valor']) $_SESSION['s_valor'] = $_POST['valor'];
     if($_POST['json']) $_SESSION['s_json'] = $_POST['json'];
+    if($_POST['campo'] and !$_POST['json']) $_SESSION['s_json'] = false;
     if($_POST['titulo']) $_SESSION['s_titulo'] = $_POST['titulo'];
 
 
