@@ -13,6 +13,7 @@
         unset($data['data_nascimento']);
         unset($data['data']);
         unset($data['monitor_social']);
+        unset($data['percentual']);
 
         $tot = count($data);
         $qt = 0;
