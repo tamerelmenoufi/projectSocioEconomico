@@ -8,7 +8,6 @@
 
     }
 
-
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST))
     $_POST = json_decode(file_get_contents('php://input'), true);
  
@@ -28,6 +27,7 @@
         unset($data['zona_urbana']);
         unset($data['coordenadas']);
         unset($data['codigo']);
+        unset($data['percentual']);
         $data['data_nascimento'] = dataMysql($data['data_nascimento']);
 
 
@@ -59,6 +59,23 @@
             }
             
         }
+
+        ////////////////////////////////PERCENTUAL/////////////////////////////////////
+
+        $tot = count($campos);
+        $qt = 0;
+        foreach ($campos as $name => $value) {
+
+            if(is_array($value)) {
+                $value = json_encode($value,JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+            }
+            $qt = (($value)?($qt+1):$qt);
+        }
+            $pct = (100*$qt/$tot);
+            $campos[] = "percentual = '{$pct}'";
+
+        //////////////////////////////////////////////////////////////////////////////
+
 
         $comando = "UPDATE se set ".implode(", ", $campos)." where codigo = '{$codigo}'";
 
