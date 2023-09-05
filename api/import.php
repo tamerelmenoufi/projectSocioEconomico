@@ -64,12 +64,13 @@
 
         $tot = count($data);
         $qt = 0;
+        $remov = ['[""]', 'null', '0', '0.00', ' '];
         foreach ($data as $name => $value) {
 
             // if(is_array($value)) {
             //     $value = json_encode($value,JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
             // }
-            $qt = ((trim($value) and $value != '[""]' and $value != 'null' and $value != '0')?($qt+1):$qt);
+            $qt = ((trim(str_replace($remov, false,$value)))?($qt+1):$qt);
         }
             $pct = (100*$qt/$tot);
             $campos[] = "percentual = '{$pct}'";
