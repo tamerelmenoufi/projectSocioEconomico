@@ -46,7 +46,16 @@
 
         $campos = [];
         foreach($data as $i => $v){
-            $campos[] = "{$i} = '{$v}'";
+            if($i == 'beneficiario_encontrado'){
+                if($data['situacao'] == 'n'){
+                    $data['beneficiario_encontrado'] = 'Não';
+                }else{
+                    $campos[] = "{$i} = '{$v}'";
+                }
+            }else{
+                $campos[] = "{$i} = '{$v}'";
+            }
+            
         }
 
         $comando = "UPDATE se set ".implode(", ", $campos)." where codigo = '{$codigo}'";
