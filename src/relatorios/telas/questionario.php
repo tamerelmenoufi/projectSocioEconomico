@@ -303,6 +303,7 @@
             json = $(this).attr("json")
             rotulo_titulo = $(this).attr("rotulo_titulo")
             rotulo_campo = $(this).attr("rotulo_campo")
+            $(".LateralDireita").html('');
             Carregando();
             $.ajax({
                 url:"src/relatorios/telas/lista_beneficiados.php",
