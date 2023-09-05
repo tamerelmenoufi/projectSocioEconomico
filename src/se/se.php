@@ -867,7 +867,7 @@
         <div style="position:absolute; bottom:0;left:0; right:20px; height:50px; padding-right:10px; background-color:#fff;">
             <div style="display:flex; justify-content:end">
                 <?php
-                if(!$_POST['origem']){
+                if($_POST['origem']){
                 ?>
                 <button
                     type="button"
