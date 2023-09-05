@@ -906,7 +906,7 @@
                 campos.push({name: 'acao', value: 'salvar'})
 
                 if(!validarCPF($("#cpf").val())){
-                    $.alert('Confira o CPF, o informado é inválido!');
+                    $.alert('Confira o CPF, o informado é válido!');
                     return;
                 }
 
@@ -936,16 +936,33 @@
                             data: campos,
                             success:function(dados){
                                 $.alert('Dados atualizados com sucesso!');
+
+                                <?php
+                                if(!$_POST['origem']){
+                                ?>
                                 let myOffCanvas = document.getElementById('offcanvasDireita');
                                 let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
                                 openedCanvas.hide();
                                 console.log(dados.query)
+                                <?php
+                                }
+                                ?>
                                 Carregando('none');
 
                                 $.ajax({
-                                    url:"src/se/index.php",
+                                    url:"<?=(($_POST['origem'])?"":"src/relatorios/lista_beneficiados.php")?>",
                                     success:function(dados){
+                                        <?php
+                                        if(!$_POST['origem']){
+                                        ?>
                                         $("#paginaHome").html(dados);
+                                        <?php
+                                        }else{
+                                        ?>
+                                        $(".LateralDireita").html(dados);
+                                        <?php
+                                        }
+                                        ?>
                                     },
                                     error:function(erro){
                                         $.alert('Ocorreu um erro!' + erro.toString());

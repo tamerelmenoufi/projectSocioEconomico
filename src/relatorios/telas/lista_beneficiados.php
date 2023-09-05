@@ -1,6 +1,12 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
+    if($_POST['campo']) $_SESSION['s_campo'] = $_POST['campo'];
+    if($_POST['valor']) $_SESSION['s_valor'] = $_POST['valor'];
+    if($_POST['json']) $_SESSION['s_json'] = $_POST['json'];
+    if($_POST['titulo']) $_SESSION['s_titulo'] = $_POST['titulo'];
+
+
     $filtro = $f_usuario = $f_meta = $f_data = $f_campo = false;
     if($_SESSION['relatorio']['usuario']){
         $f_usuario = " and a.monitor_social in( {$_SESSION['relatorio']['usuario']} ) ";
@@ -14,10 +20,10 @@
     if($_SESSION['relatorio']['data_inicial']){
         $f_data = " and (a.data between '{$_SESSION['relatorio']['data_inicial']} 00:00:00' and '".(($_SESSION['relatorio']['data_final'])?:$_SESSION['relatorio']['data_inicial'])." 23:59:59')";
     }
-    if($_POST['campo'] and $_POST['json']){
-        $f_campo = " and {$_POST['campo']} like '%\"{$_POST['valor']}\"%' ";
-    }else if($_POST['campo']){
-        $f_campo = " and {$_POST['campo']} = '{$_POST['valor']}' ";
+    if($_SESSION['s_campo'] and $_SESSION['s_json']){
+        $f_campo = " and {$_SESSION['s_campo']} like '%\"{$_SESSION['s_valor']}\"%' ";
+    }else if($_SESSION['s_campo']){
+        $f_campo = " and {$_SESSION['s_campo']} = '{$_SESSION['s_valor']}' ";
     }
 
     $filtro = $f_usuario . $f_meta . $f_data . $f_campo;
@@ -31,27 +37,26 @@
         z-index:0;
     }
 </style>
-<h5 class="Titulo<?=$md5?>"><?=$_POST['titulo']?></h5>
+<h5 class="Titulo<?=$md5?>"><?=$_SESSION['s_titulo']?></h5>
+<ul class="list-group">
 <?php
 
     $query = "select a.* from se a where a.monitor_social > 0 and a.meta > 0 {$filtro}";
     $result = mysqli_query($con, $query);
     $t = 0;
     while($s = mysqli_fetch_object($result)){
-        echo $s->nome.'<!-- <button
-        class="btn btn-primary"
-        beneficiados=""
-        data-bs-toggle="offcanvas"
-        href="#offcanvasDireita"
-        role="button"
-        aria-controls="offcanvasDireita"
-      >
-        teste
-      </button> -->'."<br>";
+?>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span><?=$s->nome?></span>
+        <button class="btn btn-warning btn-sm">
+            <i class="fa fa-edit"></i>
+        </button>
+    </li>
+<?php
     }
 
 ?>
-
+</ul>
 <script>
     $(function(){
         Carregando('none');
