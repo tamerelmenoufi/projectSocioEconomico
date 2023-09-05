@@ -866,6 +866,17 @@
         </div>
         <div style="position:absolute; bottom:0;left:0; right:20px; height:50px; padding-right:10px; background-color:#fff;">
             <div style="display:flex; justify-content:end">
+                <?php
+                if(!$_POST['origem']){
+                ?>
+                <button
+                    type="button"
+                    voltar
+                    class="btn btn-danger btn-ms mh-2"
+                >Voltar</button>
+                <?php
+                }
+                ?>
                 <button
                     type="submit"
                     SalvarFoto
@@ -978,8 +989,6 @@
                             }
                         });
 
-
-
                     }
                 });
                 ////COORDENADAS
@@ -1056,6 +1065,25 @@
 
             })
 
+
+
+            <?php
+                if($_POST['origem']){
+            ?>
+            $("button[voltar]").click(function(){
+                $.ajax({
+                    url:"src/relatorios/telas/lista_beneficiados.php",
+                    success:function(dados){
+                        $(".LateralDireita").html(dados);
+                    },
+                    error:function(erro){
+                        $.alert('Ocorreu um erro!' + erro.toString());
+                    }
+                });
+            })
+            <?php
+                }
+            ?>
 
         })
     </script>
