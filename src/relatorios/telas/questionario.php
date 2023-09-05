@@ -311,7 +311,8 @@
                 data:{
                     campo,
                     valor,
-                    json
+                    json,
+                    titulo:`${rotulo_titulo} - ${rotulo_campo}`
                 },
                 success:function(dados){
                     $(".LateralDireita").html(dados);

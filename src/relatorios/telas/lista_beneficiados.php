@@ -21,7 +21,18 @@
     }
 
     $filtro = $f_usuario . $f_meta . $f_data . $f_campo;
+?>
 
+<style>
+    .Titulo<?=$md5?>{
+        position:absolute;
+        left:60px;
+        top:8px;
+        z-index:0;
+    }
+</style>
+<h4 class="Titulo<?=$md5?>"><?=$_POST['titulo']?></h4>
+<?php
 
     $query = "select a.* from se a where a.monitor_social > 0 and a.meta > 0 {$filtro}";
     $result = mysqli_query($con, $query);
