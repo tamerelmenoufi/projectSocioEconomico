@@ -12,15 +12,18 @@
         unset($data['acao']);
         unset($data['data_nascimento']);
         unset($data['data']);
+        unset($data['monitor_social']);
 
         $tot = count($data);
         $qt = 0;
+        $remov = ['[""]', 'null', '0', '0.00', ' '];
         foreach ($data as $name => $value) {
 
-            if(is_array($value)) {
-                $value = json_encode($value,JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-            }
-            $qt = (($value)?($qt+1):$qt);
+            // if(is_array($value)) {
+            //     $value = json_encode($value,JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+            // }
+            // $qt = (($value)?($qt+1):$qt);
+            $qt = ((trim(str_replace($remov, false,$value)))?($qt+1):$qt);
             $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
         }
             $pct = (100*$qt/$tot);
