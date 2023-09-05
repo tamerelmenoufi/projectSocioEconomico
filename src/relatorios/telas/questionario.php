@@ -112,7 +112,7 @@
 
     <?php
         questoes([
-            'rotulo' => 'Situação da Pesquisa.',
+            'rotulo' => 'Situação da Pesquisa',
             'campo' => 'situacao',
             'legenda' => [
                 'i' => 'Iniciada',
