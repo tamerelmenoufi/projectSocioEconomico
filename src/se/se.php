@@ -1072,6 +1072,7 @@
                 if($_POST['origem']){
             ?>
             $("button[voltar]").click(function(){
+                Carregando()
                 $.ajax({
                     url:"src/relatorios/telas/lista_beneficiados.php",
                     success:function(dados){
