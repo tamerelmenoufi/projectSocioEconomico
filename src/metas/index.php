@@ -51,6 +51,7 @@
                   <th scope="col">Município</th>
                   <th scope="col">Bairro/Comunidade</th>
                   <th scope="col">Zona</th>
+                  <th scope="col">Data</th>
                   <th scope="col">Situação</th>
                   <th scope="col">Ações</th>
                 </tr>
@@ -74,6 +75,7 @@
                   <td><?=$d->municipio_nome?></td>
                   <td><?=$d->bairro_comunidade_nome?></td>
                   <td><?=$d->zona?></td>
+                  <td><?=dataBr($d->data)?></td>
                   <td>
 
                   <div class="form-check form-switch">
