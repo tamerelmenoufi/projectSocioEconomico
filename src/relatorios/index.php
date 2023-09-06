@@ -37,7 +37,7 @@
                     <select id="filtro_usuario" class="form-select">
                         <option value="" <?=(($_SESSION['ProjectSeLogin']->perfil == 'usr')?'disabled':false)?>>::Todos os usuários::</option>
                         <?php
-                        echo $q = "select 
+                        $q = "select 
                                 b.*, 
                                 count(*) as qt 
                                 
