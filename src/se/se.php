@@ -14,8 +14,9 @@
         unset($data['data']);
         unset($data['monitor_social']);
         unset($data['percentual']);
+        unset($data['tot']);
 
-        $tot = 0;
+        $tot = $_POST['tot'];
         $qt = 0;
         $remov = ['[""]', 'null', '0', '0.00', ' ', 0, null];
         $log = false;
@@ -922,6 +923,11 @@
                     campos.push({name: 'codigo', value: codigo})
                 }
 
+                input = $('#form-<?=$md5?> input').length;
+                select = $('#form-<?=$md5?> select').length;
+
+
+                campos.push({name: 'tot', value: (input*1+select*1)})
                 campos.push({name: 'acao', value: 'salvar'})
 
                 if(!validarCPF($("#cpf").val())){
