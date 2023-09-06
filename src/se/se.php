@@ -15,11 +15,12 @@
         unset($data['monitor_social']);
         unset($data['percentual']);
 
-        $tot = count($data);
+        $tot = 0;
         $qt = 0;
         $remov = ['[""]', 'null', '0', '0.00', ' ', 0, null];
         $log = false;
         foreach ($data as $name => $value) {
+            $tot++;
             if(is_array($value)) {
                 $value = json_encode($value,JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
             }
