@@ -100,12 +100,14 @@
 
             let r = (100 - pct)
 
+            const cor
+
             if(pct >= 70){
-                const cor = 'rgb(9, 112, 4, 0.2)'
-            }elseif(pct >= 40){
-                const cor = 'rgb(255, 132, 0, 0.2)'
-            }elseif(pct >= 0){
-                const cor = 'rgb(255, 0, 0, 0.2)'
+                cor = 'rgb(9, 112, 4, 0.2)'
+            }else if(pct >= 40){
+                cor = 'rgb(255, 132, 0, 0.2)'
+            }else if(pct >= 0){
+                cor = 'rgb(255, 0, 0, 0.2)'
             }
 
             const TiposCtx<?=$md5?> = document.getElementById(local);
