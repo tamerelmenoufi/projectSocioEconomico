@@ -38,7 +38,7 @@
         top:8px;
         z-index:0;
     }
-    .geafico{
+    .grafico{
         margin-right:20px;
         width:30px;
         height:30px;
@@ -61,7 +61,7 @@
     <li class="list-group-item d-flex justify-content-between align-items-center">
         <span><?=$s->nome?></span>
         <div class="d-flex justify-content-between align-items-center">
-            <canvas class="geafico" id="Tipos<?= $s->codigo ?>" pct="<?=number_format($s->percentual,0)?>"></canvas>
+            <canvas class="grafico" id="Tipos<?= $s->codigo ?>" pct="<?=number_format($s->percentual,0)?>"></canvas>
             <span class="percentual"><?=number_format($s->percentual,0)?></span>
             <button cod="<?=$s->codigo?>" class="btn btn-warning btn-sm">
                 <i class="fa fa-edit"></i>
