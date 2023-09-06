@@ -48,7 +48,7 @@
                                     a.monitor_social > 0 and
                                     a.meta > 0 and
                                     ".
-                                    (($_SESSION['relatorio']['usuario'] == $d->codigo)?" a.monitor_social = '{$_SESSION['relatorio']['usuario']}' and ":false)
+                                    (($_SESSION['relatorio']['usuario'])?" a.monitor_social = '{$_SESSION['relatorio']['usuario']}' and ":false)
                                     ."
                                     b.situacao = '1' and 
                                     b.deletado != '1' 
