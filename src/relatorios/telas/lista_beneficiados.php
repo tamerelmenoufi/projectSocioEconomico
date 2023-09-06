@@ -128,7 +128,7 @@
                             display: false,
                             text: 'Preenchimento'
                         },
-                        tooltips:{
+                        tooltip:{
                             enabled: false
                         },
                     }
