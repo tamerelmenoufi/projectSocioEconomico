@@ -120,12 +120,18 @@
                 },
                 options:{
                     responsive: false,
+
                     plugins: {
-                        legend: false,
+                        legend:{
+                            display: false,
+                        },
                         title: {
                             display: false,
                             text: 'Preenchimento'
-                        }
+                        }.
+                        tooltips:{
+                            display: false,
+                        },
                     }
                 }
             }
