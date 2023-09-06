@@ -91,18 +91,20 @@
             {
                 type: 'pie',
                 data: {
-                    labels: ['Preenchimento'],
+                    labels: false,
                     datasets: [{
-                        label: ['Preenchimento'],
-                        data: [38],
+                        label: false,
+                        data: [38, 62],
                         backgroundColor: [
                             'rgb(75, 192, 192, 0.2)',
+                            'rgb(238, 238, 238, 0.2)',
                         ],
                         borderColor: [
                             'rgb(75, 192, 192, 1)',
+                            'rgb(238, 238, 238, 0.2)',
                         ],
                         borderWidth: 1,
-                        rotulos: ['Preenchimento']
+                        rotulos: false
                     }]
                 },
                 options:{
