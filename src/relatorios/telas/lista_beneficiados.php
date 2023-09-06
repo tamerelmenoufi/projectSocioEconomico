@@ -101,7 +101,7 @@
             let r = (100 - pct)
 
             const TiposCtx<?=$md5?> = document.getElementById(local);
-            const vr = 'rgb(144, 144, 144, 0.2)'
+            const vr = 'rgb(255, 0, 0, 0.2)'
             const vd = 'rgb(144, 144, 144, 0.2)'
             const lj = 'rgb(144, 144, 144, 0.2)'
             const Tipos<?=$md5?> = new Chart(TiposCtx<?=$md5?>,
