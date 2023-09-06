@@ -98,6 +98,8 @@
 
         const Graficos = (pct, local)=>{
 
+            let r = (100 - pct)
+
             const TiposCtx<?=$md5?> = document.getElementById(local);
             const vr = 'rgb(144, 144, 144, 0.2)'
             const vd = 'rgb(144, 144, 144, 0.2)'
@@ -109,7 +111,7 @@
                         labels: ['Preenchido', 'Não preendhido'],
                         datasets: [{
                             label: ['Preenchido', 'Não preendhido'],
-                            data: [38, 62],
+                            data: [pct, r],
                             backgroundColor: [
                                 vr,
                                 'rgb(144, 144, 144, 0.2)',
