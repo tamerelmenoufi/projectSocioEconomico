@@ -43,6 +43,10 @@
         width:30px;
         height:30px;
     }
+    .percentual{
+        margin-right:20px;
+        font-size:12px;
+    }
 
 </style>
 <h5 class="Titulo<?=$md5?>"><?=$_SESSION['s_titulo']?></h5>
@@ -58,6 +62,7 @@
         <span><?=$s->nome?></span>
         <div class="d-flex justify-content-between align-items-center">
             <canvas class="geafico" id="Tipos<?= $md5 ?>"></canvas>
+            <span class="percentual">38%</span>
             <button cod="<?=$s->codigo?>" class="btn btn-warning btn-sm">
                 <i class="fa fa-edit"></i>
             </button>
