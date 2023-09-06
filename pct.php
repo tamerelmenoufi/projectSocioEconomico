@@ -20,5 +20,6 @@
 
             $pct = (100*$qt/$tot);
             echo $update = "update se set percentual = '" . $pct . "' where codigo = '{$d->codigo}'";
+            mysqli_query($con, $update);
             echo "<hr>";
     }
