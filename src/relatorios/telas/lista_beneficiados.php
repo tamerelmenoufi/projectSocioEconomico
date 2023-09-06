@@ -38,6 +38,10 @@
         top:8px;
         z-index:0;
     }
+    .geafico{
+        width:50px;
+        height:50px;
+    }
 </style>
 <h5 class="Titulo<?=$md5?>"><?=$_SESSION['s_titulo']?></h5>
 <ul class="list-group">
@@ -50,8 +54,8 @@
 ?>
     <li class="list-group-item d-flex justify-content-between align-items-center">
         <span><?=$s->nome?></span>
-        <div>
-            <canvas id="Tipos<?= $md5 ?>"></canvas>
+        <div class="d-flex justify-content-between align-items-center">
+            <canvas class="geafico" id="Tipos<?= $md5 ?>"></canvas>
             <button cod="<?=$s->codigo?>" class="btn btn-warning btn-sm">
                 <i class="fa fa-edit"></i>
             </button>
