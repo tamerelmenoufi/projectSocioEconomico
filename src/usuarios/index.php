@@ -86,6 +86,7 @@
                   <th scope="col">Telefone</th>
                   <th scope="col">E-mail</th>
                   <th scope="col">Perfil</th>
+                  <th scope="col">Data</th>
                   <th scope="col">Situação</th>
                   <th scope="col">Ações</th>
                 </tr>
@@ -102,6 +103,7 @@
                   <td><?=$d->telefone?></td>
                   <td><?=$d->email?></td>
                   <td><?=Pefil($d->perfil)?></td>
+                  <td><?=dataBr($d->data)?></td>
                   <td>
 
                   <div class="form-check form-switch">
