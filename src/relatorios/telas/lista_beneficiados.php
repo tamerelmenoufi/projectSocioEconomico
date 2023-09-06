@@ -97,11 +97,11 @@
                         data: [38, 62],
                         backgroundColor: [
                             'rgb(75, 192, 192, 0.2)',
-                            'rgb(204, 204, 204, 0.2)',
+                            'rgb(144, 144, 144, 0.2)',
                         ],
                         borderColor: [
                             'rgb(75, 192, 192, 1)',
-                            'rgb(204, 204, 204, 0.2)',
+                            'rgb(144, 144, 144, 0.2)',
                         ],
                         borderWidth: 1,
                         rotulos: false
