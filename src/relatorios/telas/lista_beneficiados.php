@@ -91,9 +91,9 @@
             {
                 type: 'pie',
                 data: {
-                    labels: false,
+                    labels: ['Preenchido', 'Não preendhido'],
                     datasets: [{
-                        label: false,
+                        label: ['Preenchido', 'Não preendhido'],
                         data: [38, 62],
                         backgroundColor: [
                             'rgb(75, 192, 192, 0.2)',
