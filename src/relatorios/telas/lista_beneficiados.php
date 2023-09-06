@@ -39,8 +39,8 @@
         z-index:0;
     }
     .geafico{
-        width:50px;
-        height:50px;
+        width:40px;
+        height:40px;
     }
 </style>
 <h5 class="Titulo<?=$md5?>"><?=$_SESSION['s_titulo']?></h5>
