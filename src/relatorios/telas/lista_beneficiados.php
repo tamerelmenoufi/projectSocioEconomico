@@ -39,7 +39,7 @@
         z-index:0;
     }
     .geafico{
-        margin-left:20px;
+        margin-right:20px;
     }
     .geafico canvas{
         width:30px;
