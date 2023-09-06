@@ -100,10 +100,16 @@
 
             let r = (100 - pct)
 
+            if(pct >= 70){
+                const cor = 'rgb(9, 112, 4, 0.2)'
+            }else if(pct >= 40){
+                const cor = 'rgb(255, 132, 0, 0.2)'
+            }else if(pct >= 0){
+                const cor = 'rgb(255, 0, 0, 0.2)'
+            }
+
             const TiposCtx<?=$md5?> = document.getElementById(local);
-            const vr = 'rgb(255, 0, 0, 0.2)'
-            const vd = 'rgb(144, 144, 144, 0.2)'
-            const lj = 'rgb(144, 144, 144, 0.2)'
+            
             const Tipos<?=$md5?> = new Chart(TiposCtx<?=$md5?>,
                 {
                     type: 'pie',
@@ -113,11 +119,11 @@
                             label: ['Preenchido', 'Não preendhido'],
                             data: [pct, r],
                             backgroundColor: [
-                                vr,
+                                cor,
                                 'rgb(144, 144, 144, 0.2)',
                             ],
                             borderColor: [
-                                vr,
+                                cor,
                                 'rgb(144, 144, 144, 0.2)',
                             ],
                             borderWidth: 1,
