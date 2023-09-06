@@ -120,7 +120,6 @@
                 },
                 options:{
                     responsive: false,
-
                     plugins: {
                         legend:{
                             display: false,
@@ -130,7 +129,7 @@
                             text: 'Preenchimento'
                         },
                         tooltips:{
-                            display: false,
+                            enabled: false
                         },
                     }
                 }
