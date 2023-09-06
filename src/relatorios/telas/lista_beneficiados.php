@@ -141,7 +141,11 @@
             );
         }
 
-
+        $(".grafico").each(function(){
+            local = $(this).attr("id")
+            pct = $(this).attr("pct")
+            Graficos(pct, local)
+        })
 
 
     })
