@@ -45,7 +45,10 @@
                                     left join usuarios b on a.monitor_social = b.codigo 
                                     
                                     where 
-                                            a.monitor_social > 0 and 
+                                            a.monitor_social > 0 and
+                                            ".
+                                            (($_SESSION['relatorio']['usuario'] == $d->codigo)?" a.monitor_social = '{$_SESSION['relatorio']['usuario']}' and ":false)
+                                            ."
                                             b.situacao = '1' and 
                                             b.deletado != '1' 
                                             ".(($_SESSION['ProjectSeLogin']->perfil == 'usr')?" and b.codigo = '{$_SESSION['ProjectSeLogin']->codigo}'":false)." 
