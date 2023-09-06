@@ -922,11 +922,14 @@
                     campos.push({name: 'codigo', value: codigo})
                 }
 
-                input = $('#form-<?=$md5?> input').length;
-                select = $('#form-<?=$md5?> select').length;
+                inp = $('#form-<?=$md5?> input').length;
+                sel = $('#form-<?=$md5?> select').length;
+
+                console.log("Input = "+ inp)
+                console.log("Select = "+ sel)
 
 
-                campos.push({name: 'tot', value: (input*1+select*1)})
+                campos.push({name: 'tot', value: (inp*1+sel*1)})
                 campos.push({name: 'acao', value: 'salvar'})
 
                 if(!validarCPF($("#cpf").val())){
