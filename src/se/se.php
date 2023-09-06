@@ -16,7 +16,7 @@
         unset($data['percentual']);
         unset($data['tot']);
 
-        $tot = $_POST['tot'];
+        $tot = ($_POST['tot'] - 6);
         $qt = 0;
         $remov = ['[""]', 'null', '0', '0.00', ' ', 0, null];
         $log = false;
