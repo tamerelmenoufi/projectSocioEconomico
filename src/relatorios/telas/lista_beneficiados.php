@@ -50,9 +50,12 @@
 ?>
     <li class="list-group-item d-flex justify-content-between align-items-center">
         <span><?=$s->nome?></span>
-        <button cod="<?=$s->codigo?>" class="btn btn-warning btn-sm">
-            <i class="fa fa-edit"></i>
-        </button>
+        <div>
+            <canvas id="Tipos<?= $md5 ?>"></canvas>
+            <button cod="<?=$s->codigo?>" class="btn btn-warning btn-sm">
+                <i class="fa fa-edit"></i>
+            </button>
+        </div>
     </li>
 <?php
     }
@@ -80,6 +83,43 @@
             })
 
         })
+
+
+
+        const TiposCtx<?=$md5?> = document.getElementById('Tipos<?=$md5?>');
+        const Tipos<?=$md5?> = new Chart(TiposCtx<?=$md5?>,
+            {
+                type: 'pie',
+                data: {
+                    labels: ['Preenchimento'],
+                    datasets: [{
+                        label: ['Preenchimento'],
+                        data: [38],
+                        backgroundColor: [
+                            'rgb(75, 192, 192, 0.2)',
+                        ],
+                        borderColor: [
+                            'rgb(75, 192, 192, 1)',
+                        ],
+                        borderWidth: 1,
+                        rotulos: ['Preenchimento']
+                    }]
+                },
+                options:{
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Preenchimento'
+                        }
+                    }
+                }
+            }
+        );
+
 
     })
 </script>
