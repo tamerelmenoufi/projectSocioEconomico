@@ -55,8 +55,8 @@
 ?>
     <li class="list-group-item d-flex justify-content-between align-items-center">
         <span><?=$s->nome?></span>
-        <div class="d-flex justify-content-between align-items-center">
-            <canvas class="geafico" id="Tipos<?= $md5 ?>"></canvas>
+        <div class="geafico d-flex justify-content-between align-items-center">
+            <canvas class="" id="Tipos<?= $md5 ?>"></canvas>
             <button cod="<?=$s->codigo?>" class="btn btn-warning btn-sm">
                 <i class="fa fa-edit"></i>
             </button>
