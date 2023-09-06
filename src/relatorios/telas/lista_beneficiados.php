@@ -61,8 +61,8 @@
     <li class="list-group-item d-flex justify-content-between align-items-center">
         <span><?=$s->nome?></span>
         <div class="d-flex justify-content-between align-items-center">
-            <canvas class="geafico" id="Tipos<?= $md5 ?>"></canvas>
-            <span class="percentual">38%</span>
+            <canvas class="geafico" id="Tipos<?= $s->codigo ?>" pct="<?=number_format($s->percentual,0)?>"></canvas>
+            <span class="percentual"><?=number_format($s->percentual,0)?></span>
             <button cod="<?=$s->codigo?>" class="btn btn-warning btn-sm">
                 <i class="fa fa-edit"></i>
             </button>
@@ -96,45 +96,52 @@
         })
 
 
+        const Graficos = (pct, local)=>{
 
-        const TiposCtx<?=$md5?> = document.getElementById('Tipos<?=$md5?>');
-        const Tipos<?=$md5?> = new Chart(TiposCtx<?=$md5?>,
-            {
-                type: 'pie',
-                data: {
-                    labels: ['Preenchido', 'Não preendhido'],
-                    datasets: [{
-                        label: ['Preenchido', 'Não preendhido'],
-                        data: [38, 62],
-                        backgroundColor: [
-                            'rgb(75, 192, 192, 0.2)',
-                            'rgb(144, 144, 144, 0.2)',
-                        ],
-                        borderColor: [
-                            'rgb(75, 192, 192, 1)',
-                            'rgb(144, 144, 144, 0.2)',
-                        ],
-                        borderWidth: 1,
-                        rotulos: false
-                    }]
-                },
-                options:{
-                    responsive: false,
-                    plugins: {
-                        legend:{
-                            display: false,
-                        },
-                        title: {
-                            display: false,
-                            text: 'Preenchimento'
-                        },
-                        tooltip:{
-                            enabled: false
-                        },
+            const TiposCtx<?=$md5?> = document.getElementById(local);
+            const vr = 'rgb(144, 144, 144, 0.2)'
+            const vd = 'rgb(144, 144, 144, 0.2)'
+            const lj = 'rgb(144, 144, 144, 0.2)'
+            const Tipos<?=$md5?> = new Chart(TiposCtx<?=$md5?>,
+                {
+                    type: 'pie',
+                    data: {
+                        labels: ['Preenchido', 'Não preendhido'],
+                        datasets: [{
+                            label: ['Preenchido', 'Não preendhido'],
+                            data: [38, 62],
+                            backgroundColor: [
+                                vr,
+                                'rgb(144, 144, 144, 0.2)',
+                            ],
+                            borderColor: [
+                                vr,
+                                'rgb(144, 144, 144, 0.2)',
+                            ],
+                            borderWidth: 1,
+                            rotulos: false
+                        }]
+                    },
+                    options:{
+                        responsive: false,
+                        plugins: {
+                            legend:{
+                                display: false,
+                            },
+                            title: {
+                                display: false,
+                                text: 'Preenchimento'
+                            },
+                            tooltip:{
+                                enabled: false
+                            },
+                        }
                     }
                 }
-            }
-        );
+            );
+        }
+
+
 
 
     })
