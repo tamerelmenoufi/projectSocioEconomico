@@ -128,7 +128,7 @@
                         title: {
                             display: false,
                             text: 'Preenchimento'
-                        }.
+                        },
                         tooltips:{
                             display: false,
                         },
