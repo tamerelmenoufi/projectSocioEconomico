@@ -57,3 +57,35 @@
 </nav>
 
 
+<script>
+  $(function(){
+
+      setInterval(() => {
+        $("div[conexao]").remove();
+        $.ajax({
+          url:'lib/sessoes.php',
+          success:function(dados){
+              // console.log(dados);
+              $("body").attr("session", dados);
+              $.ajax({
+                  url:'lib/sessoes.php',
+                  type:"POST",
+                  data:{
+                      dados
+                  },
+                  success:function(dados){
+                      // console.log(dados);
+                      $("body").attr("session", dados);
+                  },
+                  error:function(){
+                    $("body").append("<div conexao style='position:fixed; bottom:5px; right:20px; width:200px; height:40px; padding:20px; color:#fff; background:#f0f0f0';>Erro de conexão!</div>");
+                  }
+              });
+          },
+          error:function(){
+            $("body").append("<div conexao style='position:fixed; bottom:5px; right:20px; width:200px; height:40px; padding:20px; color:#fff; background:#f0f0f0';>Erro de conexão!</div>");
+          }
+        });
+      }, 60000);
+  })
+</script>
