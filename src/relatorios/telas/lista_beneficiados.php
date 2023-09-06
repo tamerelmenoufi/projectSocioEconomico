@@ -100,8 +100,6 @@
 
             let r = (100 - pct)
 
-            const cor
-
             if(pct >= 70){
                 cor = 'rgb(9, 112, 4, 0.2)'
             }else if(pct >= 40){
