@@ -5,7 +5,7 @@
     $_POST = json_decode(file_get_contents('php://input'), true);
 
 
-    $q = "select * from metas where usuario = '{$_POST['perfil'][0]['codigo']}'";
+    $q = "select * from metas where data >= DATE_ADD(NOW(), INTERVAL -7 DAY) and usuario = '{$_POST['perfil'][0]['codigo']}' and deletado != '1'";
     $r = mysqli_query($con, $q);
     $metas = [];
     while($m = mysqli_fetch_object($r)){
@@ -40,7 +40,7 @@
     $query = "SELECT * FROM `se` where meta in ($metas) and situacao not in ('c', 'f', 'n')";
     $result = mysqli_query($con, $query);
     
-    // $Cmd[] = ['comando' => "DELETE FROM se"];
+    $Cmd[] = ['comando' => "DELETE FROM se"];
     
     while($d = mysqli_fetch_array($result, MYSQLI_ASSOC)){
         $D = [];

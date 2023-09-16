@@ -4,9 +4,10 @@
     if($_POST['usuario']) $_SESSION['usuario'] = $_POST['usuario'];
 
     if($_POST['delete']){
-      $query = "delete from metas where codigo = '{$_POST['delete']}'";
+      // $query = "delete from metas where codigo = '{$_POST['delete']}'";
+      $query = "update metas set deletado = '1' where codigo = '{$_POST['delete']}'";
       mysqli_query($con, $query);
-      mysqli_query($con, "update se set meta = '0' where meta = '{$_POST['delete']}'");
+      mysqli_query($con, "update se set meta = '0', monitor_social = '0' where meta = '{$_POST['delete']}' and situacao not in('c', 'f', 'n')");
     }
 
     if($_POST['situacao']){
