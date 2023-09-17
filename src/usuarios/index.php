@@ -93,12 +93,12 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select a.*, (select count(*) from metas where usuario = a.codigo) as metas from usuarios a where a.deletado != '1' ".(($_SESSION['ProjectSeLogin']->perfil == 'crd')?" and a.coordenador = '{$_SESSION['ProjectSeLogin']->codigo}' ":false).(($_SESSION['ProjectSeLogin']->perfil == 'adm')?" and (a.perfil != 'adm' or a.codigo = '{$_SESSION['ProjectSeLogin']->codigo}') ":false)." {$where} order by a.nome asc";
+                  $query = "select a.*, b.nome as coordenador_nome (select count(*) from metas where usuario = a.codigo) as metas from usuarios a left join usuarios b on a.coordenador = b.codigo where a.deletado != '1' ".(($_SESSION['ProjectSeLogin']->perfil == 'crd')?" and a.coordenador = '{$_SESSION['ProjectSeLogin']->codigo}' ":false).(($_SESSION['ProjectSeLogin']->perfil == 'adm')?" and (a.perfil != 'adm' or a.codigo = '{$_SESSION['ProjectSeLogin']->codigo}') ":false)." {$where} order by a.nome asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
                 <tr>
-                  <td><?=$d->nome?></td>
+                  <td><?=$d->nome?><br><span><?=$d->coordenador_nome?></span></td>
                   <td><?=$d->cpf?></td>
                   <td><?=$d->telefone?></td>
                   <td><?=$d->email?></td>
