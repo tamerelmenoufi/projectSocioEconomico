@@ -37,6 +37,10 @@
     if($_SESSION['usuarioBuscaCampo'] and $_SESSION['usuarioBusca']){
       $where = " and a.{$_SESSION['usuarioBuscaCampo']} like '%{$_SESSION['usuarioBusca']}%'";
     }
+
+    if($_SESSION['ProjectSeLogin']->perfil == 'sup')[
+      $where .= " and a.perfil = 'usr' ";
+    ]
 ?>
 
 <div class="col">
