@@ -56,7 +56,9 @@
                 ?>
                 <tr>
                   <td><?=$d->nome?></td>
-                  <td><?=$d->cor?></td>
+                  <td>
+                    <i class="fa-solid fa-square" style="color:<?=$d->cor?>"></i>
+                  </td>
                   <td>
 
                   <div class="form-check form-switch">
