@@ -86,7 +86,7 @@
                     <?php
                         $queryp = "select * from pacs where situacao = '1' and deletado != '1'";
                         $resultp = mysqli_query($con, $queryp);
-                        while($p = mysqli_fetch_object($result)){
+                        while($p = mysqli_fetch_object($resultp)){
                     ?>
                     <option value="<?=$p->codigo?>" <?=(($_SESSION['usuarioBusca'] == $p->codigo)?'selected':false)?>><?=$p->nome?></option>
                     <?php
