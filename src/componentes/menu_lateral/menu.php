@@ -38,6 +38,15 @@
         </a>
       </div>
     </div>
+
+    <div class="row mb-1">
+      <div class="col">
+        <a url="src/pacs/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
+          <i class="fa-solid fa-clipboard-list"></i> PACs
+        </a>
+      </div>
+    </div>
+
     <?php
     }
     if($_SESSION['ProjectSeLogin']->perfil == 'adm'){
