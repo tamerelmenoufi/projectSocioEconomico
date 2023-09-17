@@ -42,7 +42,13 @@
       $where .= " and a.perfil = 'usr' ";
     }
 ?>
-
+<style>
+  .btn-perfil{
+    padding:5px;
+    border-radius:8px;
+    background-color:#a1a1a1;
+  }
+</style>
 <div class="col">
   <div class="m-3">
 
@@ -92,6 +98,7 @@
                   <th scope="col">Telefone</th>
                   <th scope="col">E-mail</th>
                   <th scope="col">Perfil</th>
+                  <th scope="col">PAC</th>
                   <th scope="col">Situação</th>
                   <th scope="col">Ações</th>
                 </tr>
@@ -107,7 +114,22 @@
                   <td><?=$d->cpf?></td>
                   <td><?=$d->telefone?></td>
                   <td><?=$d->email?></td>
-                  <td><?=Pefil($d->perfil)?></td>
+                  <td>
+                    <?php
+                    if($d->perfil == 'crd'){
+                    ?>
+                    <span class="btn-perfil" style="color:<?=$d->cor?>">
+                      <?=Pefil($d->perfil)?>
+                    </span>
+                    <?php
+                    }else{
+                    ?>
+                    <?=Pefil($d->perfil)?>
+                    <?php
+                    }
+                    ?>
+                  </td>
+                  <td><?=$d->pac?></td>
                   <td>
 
                   <div class="form-check form-switch">
