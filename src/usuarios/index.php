@@ -111,12 +111,18 @@
 
                   </td>
                   <td>
+                    <?php
+                    if($_SESSION['ProjectSeLogin']->perfil == 'adm' or $_SESSION['ProjectSeLogin']->perfil == 'sup'){
+                    ?>
                     <button
                       class="btn btn-primary"
                       metas="<?=$d->codigo?>"
                     >
                       <?=$d->metas?> Meta(s)
                     </button>
+                    <?php
+                    }
+                    ?>
                     <button
                       class="btn btn-primary"
                       edit="<?=$d->codigo?>"
