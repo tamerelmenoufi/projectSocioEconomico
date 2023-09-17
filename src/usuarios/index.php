@@ -51,6 +51,7 @@
   .btn-perfil{
     padding:5px;
     border-radius:8px;
+    color:#fff;
     background-color:#a1a1a1;
     cursor: pointer;
   }
@@ -134,7 +135,7 @@
                     <?php
                     if($d->perfil == 'crd'){
                     ?>
-                    <span class="btn-perfil" usu="<?=$d->codigo?>" style="color:<?=$d->cor?>">
+                    <span class="btn-perfil" usu="<?=$d->codigo?>" style="background-color:<?=$d->cor?>">
                       <?=Pefil($d->perfil)?>
                     </span>
                     <?php
