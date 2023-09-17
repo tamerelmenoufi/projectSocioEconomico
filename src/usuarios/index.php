@@ -47,6 +47,7 @@
     padding:5px;
     border-radius:8px;
     background-color:#a1a1a1;
+    cursor: pointer;
   }
 </style>
 <div class="col">
