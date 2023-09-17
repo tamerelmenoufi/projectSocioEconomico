@@ -98,7 +98,7 @@
                   while($d = mysqli_fetch_object($result)){
                 ?>
                 <tr>
-                  <td><?=$d->nome?><br><span><?=$d->coordenador_nome?></span></td>
+                  <td><?=$d->nome?><br><span><?=(($d->coordenador_nome)?:'Não Informado')?></span></td>
                   <td><?=$d->cpf?></td>
                   <td><?=$d->telefone?></td>
                   <td><?=$d->email?></td>
