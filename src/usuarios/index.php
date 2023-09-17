@@ -5,8 +5,9 @@
     function Pefil($p){
       $Perfil = [
         'adm' => 'Administrador',
+        'sup' => 'Supervisor',
         'crd' => 'Coordenador',
-        'usr' => 'Usuário',
+        'usr' => 'Agente',
       ];
       return $Perfil[$p];
     }
