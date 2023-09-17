@@ -116,6 +116,7 @@
                                   a.*,
                                   b.nome as coordenador_nome,
                                   c.cor,
+                                  c.nome as pac_nome,
                                   (select count(*) from metas where usuario = a.codigo) as metas 
                                   
                             from usuarios a 
@@ -146,7 +147,7 @@
                     }
                     ?>
                   </td>
-                  <td><?=$d->pac?></td>
+                  <td><?=$d->pac_nome?></td>
                   <td>
 
                   <div class="form-check form-switch">
