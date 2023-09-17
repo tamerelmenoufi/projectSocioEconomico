@@ -198,6 +198,21 @@
             })
         })
 
+
+        $(".btn-perfil").click(function(){
+            $.ajax({
+                url:"src/usuarios/pacs.php",
+                success:function(dados){
+                    $.alert({
+                      content:dados,
+                      title:"Lista de PACs"
+                    })
+                }
+            })
+        })
+
+
+
         // opcao, rotulo, texto
         $("a[opcao_busca]").click(function(){
           opc = $(this).attr("opcao_busca");
