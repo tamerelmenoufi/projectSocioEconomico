@@ -46,18 +46,18 @@
 
         $campos = [];
         foreach($data as $i => $v){
-            if($i == 'beneficiario_encontrado'){
-                if($data['situacao'] == 'n'){
-                    $data['beneficiario_encontrado'] = 'Não';
-                }else if($data['situacao'] != 'i'){
-                    $data['beneficiario_encontrado'] = 'Sim';
-                }else{
-                    $campos[] = "{$i} = '{$v}'";
-                }
-            }else{
-                $campos[] = "{$i} = '{$v}'";
-            }
-            
+            // if($i == 'beneficiario_encontrado'){
+            //     if($data['situacao'] == 'n'){
+            //         $data['beneficiario_encontrado'] = 'Não';
+            //     }else if($data['situacao'] != 'i'){
+            //         $data['beneficiario_encontrado'] = 'Sim';
+            //     }else{
+            //         $campos[] = "{$i} = '{$v}'";
+            //     }
+            // }else{
+            //     $campos[] = "{$i} = '{$v}'";
+            // }
+            $campos[] = "{$i} = '{$v}'";
         }
 
         ////////////////////////////////PERCENTUAL/////////////////////////////////////
