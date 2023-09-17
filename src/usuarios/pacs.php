@@ -7,7 +7,7 @@
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 ?>
-  <button pac="<?=$d->codigo?>" type="button" class="list-group-item list-group-item-action"><i class="fa-solid fa-square" style="color:<?=$d->cor?>"></i> <?=$d->nome?></button>
+  <button pac="<?=$d->codigo?>" pac_nome="<?=$d->nome?>" type="button" class="list-group-item list-group-item-action"><i class="fa-solid fa-square" style="color:<?=$d->cor?>"></i> <?=$d->nome?></button>
 <?php
     }
 ?>
@@ -18,6 +18,7 @@
     $(function(){
         $("button[pac]").click(function(){
             pac = $(this).attr("pac")
+            pac_nome = $(this).attr("pac_nome")
             if(pac){
                 $.confirm({
                     content:`Deseja realmente incluir o PAC ${pac_nome}?`,
