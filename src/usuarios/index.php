@@ -63,8 +63,9 @@
                   <input type="text" texto_busca style="display:<?=(($_SESSION['usuarioBuscaCampo'] == 'perfil')?'none':'block')?>" class="form-control" value="<?=$_SESSION['usuarioBusca']?>" aria-label="Digite a informação para a busca">
                   <select busca_perfil class="form-control" style="display:<?=(($_SESSION['usuarioBuscaCampo'] != 'perfil')?'none':'block')?>">
                     <option value="adm" <?=(($_SESSION['usuarioBusca'] == 'adm')?'selected':false)?>>Administrador</option>
+                    <option value="sup" <?=(($_SESSION['usuarioBusca'] == 'sup')?'selected':false)?>>Supervisor</option>
                     <option value="crd" <?=(($_SESSION['usuarioBusca'] == 'crd')?'selected':false)?>>Coordenador</option>
-                    <option value="usr" <?=(($_SESSION['usuarioBusca'] == 'usr')?'selected':false)?>>Usuário</option>
+                    <option value="usr" <?=(($_SESSION['usuarioBusca'] == 'usr')?'selected':false)?>>Agente</option>
                   </select>
                   <button filtrar class="btn btn-outline-secondary" type="button">Buscar</button>
                   <button limpar class="btn btn-outline-danger" type="button">limpar</button>
