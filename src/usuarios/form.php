@@ -115,7 +115,7 @@
                         ?>
                         <option value="<?=$s->codigo?>" <?=(($d->coordenador == $s->codigo)?'selected':false)?>>
                             <i class="fa-solid fa-square"></i>
-                            <?=$s->nome?>
+                            SSSS <?=$s->nome?>
                         </option>
                         <?php
                             }
