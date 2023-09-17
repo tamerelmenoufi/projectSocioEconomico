@@ -50,7 +50,7 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select a.* from pacs a where a.deletado != '1' and a.situacao = '1' order by a.nome asc";
+                  $query = "select a.* from pacs a where a.deletado != '1' order by a.nome asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
