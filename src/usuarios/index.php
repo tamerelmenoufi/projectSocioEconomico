@@ -203,9 +203,14 @@
             $.ajax({
                 url:"src/usuarios/pacs.php",
                 success:function(dados){
-                    $.alert({
+                    JanelaPACs = $.dialog({
                       content:dados,
-                      title:"Lista de PACs"
+                      title:"Lista de PACs",
+                      buttons:{
+                        'Cancelar':function(){
+                          
+                        }
+                      }
                     })
                 }
             })
