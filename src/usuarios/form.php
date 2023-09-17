@@ -114,8 +114,7 @@
                             while($s = mysqli_fetch_object($r)){
                         ?>
                         <option value="<?=$s->codigo?>" <?=(($d->coordenador == $s->codigo)?'selected':false)?>>
-                            <i class="fa-solid fa-square"></i>
-                            SSSS <?=$s->nome?>
+                            <?=$s->nome?>
                         </option>
                         <?php
                             }
