@@ -67,14 +67,14 @@
             <div class="d-flex justify-content-between">
                 <div class="input-group mb-3">
                   <label class="input-group-text" for="inputGroupFile01">Buscar por </label>
-                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" rotulo_busca aria-expanded="false"><?=((!$_SESSION['usuarioBuscaCampo'] or $_SESSION['usuarioBuscaCampo'] == 'nome')?'Nome':(($_SESSION['usuarioBuscaCampo'] == 'perfil')?'Perfil':'CPF'))?></button>
+                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" rotulo_busca aria-expanded="false"><?=((!$_SESSION['usuarioBuscaCampo'] or $_SESSION['usuarioBuscaCampo'] == 'nome')?'Nome':(($_SESSION['usuarioBuscaCampo'] == 'perfil')?'Perfil':($_SESSION['usuarioBuscaCampo'] == 'PAC')?'PAC':'CPF')))?></button>
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#" opcao_busca="Nome">Nome</a></li>
                     <li><a class="dropdown-item" href="#" opcao_busca="CPF">CPF</a></li>
                     <li><a class="dropdown-item" href="#" opcao_busca="Perfil">Perfil</a></li>
                     <li><a class="dropdown-item" href="#" opcao_busca="PAC">PAC</a></li>
                   </ul>
-                  <input type="text" texto_busca style="display:<?=(($_SESSION['usuarioBuscaCampo'] == 'perfil')?'none':'block')?>" class="form-control" value="<?=$_SESSION['usuarioBusca']?>" aria-label="Digite a informação para a busca">
+                  <input type="text" texto_busca style="display:<?=(($_SESSION['usuarioBuscaCampo'] == 'perfil' or $_SESSION['usuarioBuscaCampo'] == 'PAC')?'none':'block')?>" class="form-control" value="<?=$_SESSION['usuarioBusca']?>" aria-label="Digite a informação para a busca">
                   <select busca_perfil class="form-control" style="display:<?=(($_SESSION['usuarioBuscaCampo'] != 'perfil')?'none':'block')?>">
                     <option value="adm" <?=(($_SESSION['usuarioBusca'] == 'adm')?'selected':false)?>>Administrador</option>
                     <option value="sup" <?=(($_SESSION['usuarioBusca'] == 'sup')?'selected':false)?>>Supervisor</option>
