@@ -24,6 +24,11 @@
       exit();
     }
 
+    if($_POST['acao'] == 'pac'){
+      $query = "update usuarios set pac = '{$_POST['pac']}' where codigo = '{$_POST['usu']}'";
+      mysqli_query($con, $query);
+    }
+
     if($_POST['acao'] == 'filtro'){
       $_SESSION['usuarioBuscaCampo'] = $_POST['campo'];
       $_SESSION['usuarioBusca'] = $_POST['busca'];
@@ -119,7 +124,7 @@
                     <?php
                     if($d->perfil == 'crd'){
                     ?>
-                    <span class="btn-perfil" style="color:<?=$d->cor?>">
+                    <span class="btn-perfil" usu="<?=$d->codigo?>" style="color:<?=$d->cor?>">
                       <?=Pefil($d->perfil)?>
                     </span>
                     <?php
@@ -200,8 +205,13 @@
 
 
         $(".btn-perfil").click(function(){
+            usu = $(this).attr("usu")
             $.ajax({
                 url:"src/usuarios/pacs.php",
+                type:"POST",
+                data:{
+                  usu
+                },
                 success:function(dados){
                     JanelaPACs = $.alert({
                       content:dados,
