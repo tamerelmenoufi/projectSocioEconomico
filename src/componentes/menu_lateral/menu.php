@@ -29,7 +29,7 @@
       </div>
     </div>
     <?php
-    if($_SESSION['ProjectSeLogin']->perfil != 'usr'){
+    if($_SESSION['ProjectSeLogin']->perfil == 'adm' or $_SESSION['ProjectSeLogin']->perfil == 'sup' ){
     ?>
     <div class="row mb-1">
       <div class="col">
