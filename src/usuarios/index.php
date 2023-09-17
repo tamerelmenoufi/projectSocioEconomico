@@ -165,7 +165,7 @@
                     }
                     ?>
                   </td>
-                  <td><?=$d->pac_nome?></td>
+                  <td><span style="color:<?=$d->cor?>"><?=$d->pac_nome?></span></td>
                   <td>
 
                   <div class="form-check form-switch">
