@@ -310,6 +310,9 @@
           }else if(opc == 'Perfil'){
             campo = 'perfil';
             busca = $("select[busca_perfil]").val();
+          }else if(opc == 'PAC'){
+            campo = 'pac';
+            busca = $("select[busca_pac]").val();
           }
           if(campo && busca){
             // console.log(`campo:${campo} && Busca: ${busca}`);
