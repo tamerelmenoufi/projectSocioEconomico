@@ -72,6 +72,7 @@
                     <li><a class="dropdown-item" href="#" opcao_busca="Nome">Nome</a></li>
                     <li><a class="dropdown-item" href="#" opcao_busca="CPF">CPF</a></li>
                     <li><a class="dropdown-item" href="#" opcao_busca="Perfil">Perfil</a></li>
+                    <li><a class="dropdown-item" href="#" opcao_busca="PAC">PAC</a></li>
                   </ul>
                   <input type="text" texto_busca style="display:<?=(($_SESSION['usuarioBuscaCampo'] == 'perfil')?'none':'block')?>" class="form-control" value="<?=$_SESSION['usuarioBusca']?>" aria-label="Digite a informação para a busca">
                   <select busca_perfil class="form-control" style="display:<?=(($_SESSION['usuarioBuscaCampo'] != 'perfil')?'none':'block')?>">
@@ -80,6 +81,19 @@
                     <option value="crd" <?=(($_SESSION['usuarioBusca'] == 'crd')?'selected':false)?>>Coordenador</option>
                     <option value="usr" <?=(($_SESSION['usuarioBusca'] == 'usr')?'selected':false)?>>Agente</option>
                   </select>
+
+                  <select busca_pac class="form-control" style="display:<?=(($_SESSION['usuarioBuscaCampo'] != 'pac')?'none':'block')?>">
+                    <?php
+                        $queryp = "select * from pacs where situacao = '1' and deletado != '1'";
+                        $resultp = mysqli_query($con, $queryp);
+                        while($p = mysqli_fetch_object($result)){
+                    ?>
+                    <option value="<?=$p->codigo?>" <?=(($_SESSION['usuarioBusca'] == $p->codigo)?'selected':false)?>><?=$p->nome?></option>
+                    <?php
+                        }
+                    ?>
+                  </select>
+                  
                   <button filtrar class="btn btn-outline-secondary" type="button">Buscar</button>
                   <button limpar class="btn btn-outline-danger" type="button">limpar</button>
                 </div>
@@ -250,13 +264,23 @@
             $("input[texto_busca]").unmask();
             $("input[texto_busca]").css('display','block')
             $("select[busca_perfil]").css('display','none')
+            $("select[busca_pac]").css('display','none')
+
           }else if(opc == 'CPF'){
             $("input[texto_busca]").mask("999.999.999-99");
             $("input[texto_busca]").css('display','block')
             $("select[busca_perfil]").css('display','none')
+            $("select[busca_pac]").css('display','none')
+
           }else if(opc == 'Perfil'){
             $("input[texto_busca]").css('display','none')
             $("select[busca_perfil]").css('display','block')
+            $("select[busca_pac]").css('display','none')
+
+          }else if(opc == 'PAC'){
+            $("input[texto_busca]").css('display','none')
+            $("select[busca_perfil]").css('display','none')
+            $("select[busca_pac]").css('display','block')
           }
         });
 
