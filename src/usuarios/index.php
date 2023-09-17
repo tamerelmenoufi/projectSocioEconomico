@@ -260,6 +260,7 @@
           $("button[rotulo_busca]").text(opc);
           $("input[texto_busca]").val('')
           $("select[busca_perfil]").val('')
+          $("select[busca_pac]").val('')
           if(opc == 'Nome'){
             $("input[texto_busca]").unmask();
             $("input[texto_busca]").css('display','block')
