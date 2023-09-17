@@ -63,9 +63,15 @@
         <div class="d-flex justify-content-between align-items-center">
             <span class="percentual"><?=number_format($s->percentual,0)?>%</span>
             <canvas class="grafico" id="Tipos<?= $s->codigo ?>" pct="<?=number_format($s->percentual,0)?>"></canvas>
+            <?php
+            if($_SESSION['ProjectSeLogin']->perfil != 'sup'){
+            ?>
             <button cod="<?=$s->codigo?>" class="btn btn-warning btn-sm">
                 <i class="fa fa-edit"></i>
             </button>
+            <?php
+            }
+            ?>
         </div>
     </li>
 <?php
