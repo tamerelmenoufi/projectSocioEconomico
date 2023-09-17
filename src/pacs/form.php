@@ -22,7 +22,7 @@
             mysqli_query($con, $query);
             $cod = $_POST['codigo'];
         }else{
-            $query = "insert into pacs set data_cadastro = NOW(), {$attr}";
+            $query = "insert into pacs set {$attr}";
             mysqli_query($con, $query);
             $cod = mysqli_insert_id($con);
         }
