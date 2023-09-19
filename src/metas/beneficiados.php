@@ -11,9 +11,7 @@
       mysqli_query($con, "update se set meta = '0', monitor_social = '0' where meta = '{$_SESSION['meta']}' and situacao not in('c', 'f', 'n')");
       $opcoes = @implode(",", $_POST['opcoes']);
       mysqli_query($con, "update se set meta = '{$_SESSION['meta']}', monitor_social = '{$_POST['usuario']}' where codigo in ({$opcoes})");
-
-      mysqli_query($con, "update metas set quantidade = '{$quantidade}', grupos = concat(grupos,' | ','{$opcoes}') WHERE codigo = '{$_SESSION['meta']}'");
-
+      mysqli_query($con, "update metas set quantidade = '{$quantidade}', grupos = concat(grupos,'|','{$opcoes}') WHERE codigo = '{$_SESSION['meta']}'");
     }
 
     $query = "select a.*,
