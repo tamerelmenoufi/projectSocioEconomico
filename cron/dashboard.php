@@ -72,13 +72,12 @@
             }
 
             arsort($D);
-            $questionario = $dashboard['questionario'];
-            $questionario[]['rotulo'] = $d['rotulo'];
+            $dashboard['questionario'][]['rotulo'] = $d['rotulo'];
             foreach($D as $ind => $val){
                 $p = number_format($val*100/$t, 0,false,false);
-                $questionario[][$ind]['legenda'] = $d['legenda'][$ind];
-                $questionario[][$ind]['percentual'] = $p;
-                $questionario[][$ind]['quantidade'] = $val;
+                $dashboard['questionario'][][$ind]['legenda'] = $d['legenda'][$ind];
+                $dashboard['questionario'][][$ind]['percentual'] = $p;
+                $dashboard['questionario'][][$ind]['quantidade'] = $val;
 
             }
         }
