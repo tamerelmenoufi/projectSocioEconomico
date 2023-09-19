@@ -135,7 +135,7 @@
                                   b.nome as coordenador_nome,
                                   c.cor,
                                   c.nome as pac_nome,
-                                  (select count(*) from metas where usuario = a.codigo) as metas 
+                                  (select count(*) from metas where usuario = a.codigo and deletado != '1') as metas 
                                   
                             from usuarios a 
                                   left join usuarios b on a.coordenador = b.codigo 
