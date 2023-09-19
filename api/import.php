@@ -28,6 +28,7 @@
         unset($data['coordenadas']);
         unset($data['codigo']);
         unset($data['percentual']);
+        unset($data['acao_relatorio']);
         $data['data_nascimento'] = dataMysql($data['data_nascimento']);
 
 
@@ -74,6 +75,7 @@
         }
             $pct = (100*$qt/$tot);
             $campos[] = "percentual = '{$pct}'";
+            $campos[] = "acao_relatorio = '0'";
 
         //////////////////////////////////////////////////////////////////////////////
 
