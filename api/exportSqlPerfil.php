@@ -5,7 +5,7 @@
     $_POST = json_decode(file_get_contents('php://input'), true);
 
 
-    $q = "select * from metas where data >= DATE_ADD(NOW(), INTERVAL -7 DAY) and data <= NOW() and usuario = '{$_POST['perfil'][0]['codigo']}' and deletado != '1'";
+    $q = "select * from metas where data >= DATE_ADD(NOW(), INTERVAL -7 DAY) and data <= NOW() and usuario = '{$_POST['perfil'][0]['codigo']}' and situacao = '1' and deletado != '1'";
     $r = mysqli_query($con, $q);
     $metas = [];
     while($m = mysqli_fetch_object($r)){
