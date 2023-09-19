@@ -296,6 +296,7 @@
     echo "</pre>";
 
     foreach($VetorTeste as $campo => $valor){
+        set_time_limit(90);
         $cmp = [];
         foreach($valor as $c => $v){
             $cmp[] = "{$c} = '{$v}'";
