@@ -303,12 +303,12 @@
 
     if($update) mysqli_query($con, "UPDATE se SET acao_relatorio = '1' WHERE codigo in (".implode(",",$update).")");
 
-
+    set_time_limit(90);
     $query = "DELETE FROM `relatorios` where se in (select codigo from se where meta = 0 and monitor_social = 0)";
     $result = mysqli_query($con, $query);
 
-    $query = "select * from metas where DATE_ADD(data, INTERVAL 8 DAY) <= NOW()";
-
-    
+    set_time_limit(90);
+    $query = "UPDATE se SET meta = '0', monitor_social = '0' where meta in (select codigo from metas where DATE_ADD(data, INTERVAL 8 DAY) <= NOW()) and situacao in ('','i','p')";
+    $result = mysqli_query($con, $query);   
 
 ?>
