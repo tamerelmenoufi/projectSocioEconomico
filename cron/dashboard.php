@@ -46,6 +46,7 @@
         $query = "select a.{$d['campo']} as campo {$item} from se a {$join} where a.monitor_social > 0 and a.meta > 0 {$filtro} ";
         $result = mysqli_query($con, $query);
         $t = 0;
+        $i=0;
         if(mysqli_num_rows($result)){
             while($s = mysqli_fetch_object($result)){
 
@@ -72,14 +73,15 @@
             }
 
             arsort($D);
-            $dashboard['questionario'][]['rotulo'] = $d['rotulo'];
+            $dashboard['questionario'][$i]['rotulo'] = $d['rotulo'];
             foreach($D as $ind => $val){
                 $p = number_format($val*100/$t, 0,false,false);
-                $dashboard['questionario'][][$ind]['legenda'] = $d['legenda'][$ind];
-                $dashboard['questionario'][][$ind]['percentual'] = $p;
-                $dashboard['questionario'][][$ind]['quantidade'] = $val;
+                $dashboard['questionario'][$i][$ind]['legenda'] = $d['legenda'][$ind];
+                $dashboard['questionario'][$i][$ind]['percentual'] = $p;
+                $dashboard['questionario'][$i][$ind]['quantidade'] = $val;
 
             }
+            $i++;
         }
     }
 
