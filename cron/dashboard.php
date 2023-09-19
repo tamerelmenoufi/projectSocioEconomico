@@ -47,7 +47,7 @@
             $item = ", {$d['item']} as item";
         }
     
-        $query = "select a.{$d['campo']} as campo {$item}, a.data, a.monitor_social, a.meta from se a {$join} where a.monitor_social > 0 and a.meta > 0 {$filtro} ";
+        $query = "select a.codigo, a.{$d['campo']} as campo {$item}, a.data, a.monitor_social, a.meta from se a {$join} where a.monitor_social > 0 and a.meta > 0 {$filtro} ";
         $result = mysqli_query($con, $query);
         $t = 0;
         if(mysqli_num_rows($result)){
@@ -63,7 +63,8 @@
                                 'legenda' => ((trim($v))?:'Não Informado'),
                                 'data' => $s->data,
                                 'monitor_social' => $s->monitor_social,
-                                'meta' => $s->meta
+                                'meta' => $s->meta,
+                                'se' => $s->codigo
                             ];
                             
                             $d['legenda'][trim($v)] = ((trim($v))?:'Não Informado');
@@ -83,7 +84,8 @@
                         'legenda' => $d['legenda'][trim($s->campo)],
                         'data' => $s->data,
                         'monitor_social' => $s->monitor_social,
-                        'meta' => $s->meta
+                        'meta' => $s->meta,
+                        'se' => $s->codigo
                     ];
 
                     $D[$s->campo] = ($D[$s->campo] + 1);
