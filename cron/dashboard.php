@@ -88,17 +88,19 @@
                 
             }
 
-            arsort($D);
-            $dashboard['questionario'][$k]['rotulo'] = $d['rotulo'];
-            // echo "<h5>{$d['rotulo']}</h5>";
-            $w = 0;
-            foreach($D as $ind => $val){
-                $p = number_format($val*100/$t, 0,false,false);
-                // echo "<p>{$d['legenda'][$ind]} | {$p} | {$val}</p>";
-                $dashboard['questionario'][$k]['dados'][$w]['legenda'] = $d['legenda'][$ind];
-                $dashboard['questionario'][$k]['dados'][$w]['percentual'] = $p;
-                $dashboard['questionario'][$k]['dados'][$w]['quantidade'] = $val;
-                $w++;
+            if($D){
+                arsort($D);
+                $dashboard['questionario'][$k]['rotulo'] = $d['rotulo'];
+                // echo "<h5>{$d['rotulo']}</h5>";
+                $w = 0;
+                foreach($D as $ind => $val){
+                    $p = number_format($val*100/$t, 0,false,false);
+                    // echo "<p>{$d['legenda'][$ind]} | {$p} | {$val}</p>";
+                    $dashboard['questionario'][$k]['dados'][$w]['legenda'] = $d['legenda'][$ind];
+                    $dashboard['questionario'][$k]['dados'][$w]['percentual'] = $p;
+                    $dashboard['questionario'][$k]['dados'][$w]['quantidade'] = $val;
+                    $w++;
+                }
             }
             $k++;
         }
