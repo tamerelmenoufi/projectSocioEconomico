@@ -295,4 +295,12 @@
     print_r($VetorTeste);
     echo "</pre>";
 
+    foreach($VetorTeste as $campo => $valor){
+        $cmp = [];
+        foreach($valor as $c => $v){
+            $cmp[] = "{$c} = '{$v}'";
+        }
+        mysqli_query($con, "REPLACE INTO relatorios SET ".implode(", ",$cmp));
+    }
+
 ?>
