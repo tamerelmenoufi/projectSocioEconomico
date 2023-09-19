@@ -113,4 +113,3 @@
         $Cmd[] = ['comando' => "DELETE FROM se WHERE meta not in ($metas)"];
     }
     echo json_encode($Cmd);
-
