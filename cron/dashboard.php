@@ -2,16 +2,6 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
 
-    $dashboard = [];
-    //dados do quadro geral 
-    $query = "select count(*) as qt, situacao from se where monitor_social > 0 and meta > 0 and acao_relatorio != '1' {$filtro} group by situacao";
-    $result = mysqli_query($con, $query);
-    while($d = mysqli_fetch_object($result)){
-        $dashboard['geral']['g'] = $dashboard['geral']['g'] + $d->qt;
-        $dashboard['geral'][$d->situacao] = $d->qt;
-    }
-
-
     //Questionários
 
     $k = 0;
@@ -47,7 +37,7 @@
             $item = ", {$d['item']} as item";
         }
     
-        $query = "select a.codigo, a.{$d['campo']} as campo {$item}, a.data, a.monitor_social, a.meta from se a {$join} where a.monitor_social > 0 and a.meta > 0 {$filtro} ";
+        $query = "select a.codigo, a.{$d['campo']} as campo {$item}, a.data, a.monitor_social, a.meta from se a {$join} where a.monitor_social > 0 and a.meta > 0 and acao_relatorio != '1' {$filtro} ";
         $result = mysqli_query($con, $query);
         $t = 0;
         if(mysqli_num_rows($result)){
