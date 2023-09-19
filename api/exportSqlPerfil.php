@@ -26,8 +26,7 @@
         'opiniao_assistencia_social',
         'opiniao_seguranca',
         'opiniao_esporte_lazer',
-        'codigo',
-        'mensagens'
+        'codigo'
     ];
 
     $query = "SELECT * FROM `COLUMNS` where TABLE_SCHEMA = 'app' and COLUMN_NAME not in ('".implode("','", $ignore)."') and TABLE_NAME = 'se' order by TABLE_NAME";
@@ -73,7 +72,7 @@
 
 
 
-    $addTab = ['bairros_comunidades','municipios', 'metas'];
+    $addTab = ['bairros_comunidades','municipios', 'metas','mensagens'];
 
     $reg['bairros_comunidades'] = @implode(",", $reg['bairros_comunidades']);
     $reg['municipios'] =  @implode(",", $reg['municipios']);
