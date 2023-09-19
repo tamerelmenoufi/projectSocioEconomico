@@ -76,11 +76,13 @@
 
             arsort($D);
             $dashboard['questionario'][$i]['rotulo'] = $d['rotulo'];
+            echo "<h5>{$d['rotulo']}</h5>";
             foreach($D as $ind => $val){
                 $p = number_format($val*100/$t, 0,false,false);
-                $dashboard['questionario'][$i][$ind]['legenda'] = $d['legenda'][$ind];
-                $dashboard['questionario'][$i][$ind]['percentual'] = $p;
-                $dashboard['questionario'][$i][$ind]['quantidade'] = $val;
+                echo "<p>{$d['legenda'][$ind]} | {$p} | {$val}</p>";
+                // $dashboard['questionario'][$i][$ind]['legenda'] = $d['legenda'][$ind];
+                // $dashboard['questionario'][$i][$ind]['percentual'] = $p;
+                // $dashboard['questionario'][$i][$ind]['quantidade'] = $val;
 
             }
             $i++;
