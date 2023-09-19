@@ -53,6 +53,8 @@
         if(mysqli_num_rows($result)){
             while($s = mysqli_fetch_object($result)){
 
+                set_time_limit(90);
+
                 if($d['tipo'] == 'json'){
                     $J = json_decode($s->campo);
                     if($J){
