@@ -61,7 +61,7 @@
         <div class="row">
             <div class="col">
                 <div class="form-floating mb-3">
-                    <select require name="municipio" id="municipio" class="form-control" placeholder="Município">
+                    <select required name="municipio" id="municipio" class="form-control" placeholder="Município">
                         <option value="">::Selecione o Município::</option>
                         <?php
                             $q = "select * from municipios order by municipio";
@@ -77,7 +77,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <select require name="zona" id="zona" class="form-control" placeholder="Zona">
+                    <select required name="zona" id="zona" class="form-control" placeholder="Zona">
                         <option value="">::Selecione a Zona::</option>
                         <option value="Urbano" <?=(($d->zona == 'Urbano')?'selected':false)?>>Urbano</option>
                         <option value="Rural" <?=(($d->zona == 'Rural')?'selected':false)?>>Rural</option>
@@ -86,7 +86,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <select require name="bairro_comunidade" id="bairro_comunidade" class="form-control" placeholder="Bairro">
+                    <select required name="bairro_comunidade" id="bairro_comunidade" class="form-control" placeholder="Bairro">
                         <option value="">::Selecione a Localização::</option>
                         <?php
                             $q = "select * from bairros_comunidades where municipio = '{$d->municipio}' ".(($d->zona)?" and tipo = '{$d->zona}'":false)." order by descricao";
@@ -102,12 +102,12 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <input require type="date" name="data" id="data" class="form-control" placeholder="Data Inicial da Meta" value="<?=$d->data?>">
+                    <input required type="date" name="data" id="data" class="form-control" placeholder="Data Inicial da Meta" value="<?=$d->data?>">
                     <label for="data">Data Inicial da Meta</label>
                 </div>
 
                 <div class="form-floating mb-3">
-                    <select require name="situacao" class="form-control" id="situacao">
+                    <select required name="situacao" class="form-control" id="situacao">
                         <option value="1" <?=(($d->situacao == '1')?'selected':false)?>>Liberado</option>
                         <option value="0" <?=(($d->situacao == '0')?'selected':false)?>>Bloqueado</option>
                     </select>
