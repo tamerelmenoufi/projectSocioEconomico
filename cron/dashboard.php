@@ -64,7 +64,8 @@
                                 'data' => $s->data,
                                 'monitor_social' => $s->monitor_social,
                                 'meta' => $s->meta,
-                                'se' => $s->codigo
+                                'se' => $s->codigo,
+                                'chave' => md5($d['campo'].((trim($v))?:'Não Informado').$s->codigo)
                             ];
                             
                             $d['legenda'][trim($v)] = ((trim($v))?:'Não Informado');
@@ -85,7 +86,8 @@
                         'data' => $s->data,
                         'monitor_social' => $s->monitor_social,
                         'meta' => $s->meta,
-                        'se' => $s->codigo
+                        'se' => $s->codigo,
+                        'chave' => md5($d['campo'].$d['legenda'][trim($s->campo)].$s->codigo)
                     ];
 
                     $D[$s->campo] = ($D[$s->campo] + 1);
