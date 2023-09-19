@@ -61,9 +61,9 @@
                             $VetorTeste[] = [
                                 'campo' => $d['campo'],
                                 'legenda' => ((trim($v))?:'Não Informado'),
-                                'data' => $d['data'],
-                                'monitor_social' => $d['monitor_social'],
-                                'meta' => $d['meta']
+                                'data' => $s->data,
+                                'monitor_social' => $s->monitor_social,
+                                'meta' => $s->meta
                             ];
                             
                             $d['legenda'][trim($v)] = ((trim($v))?:'Não Informado');
@@ -81,9 +81,9 @@
                     $VetorTeste[] = [
                         'campo' => $d['campo'],
                         'legenda' => $d['legenda'][trim($s->campo)],
-                        'data' => $d['data'],
-                        'monitor_social' => $d['monitor_social'],
-                        'meta' => $d['meta']
+                        'data' => $s->data,
+                        'monitor_social' => $s->monitor_social,
+                        'meta' => $s->meta
                     ];
 
                     $D[$s->campo] = ($D[$s->campo] + 1);
