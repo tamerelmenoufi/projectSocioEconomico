@@ -66,7 +66,7 @@
                               from metas a 
                                    left join municipios b on a.municipio = b.codigo 
                                    left join bairros_comunidades c on a.bairro_comunidade = c.codigo 
-                              where usuario = '{$_SESSION['usuario']}'
+                              where usuario = '{$_SESSION['usuario']}' and a.deletado != '1'
                               order by a.codigo desc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){

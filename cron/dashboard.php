@@ -309,6 +309,11 @@
 
     set_time_limit(90);
     $query = "UPDATE se SET meta = '0', monitor_social = '0' where meta in (select codigo from metas where DATE_ADD(data, INTERVAL 8 DAY) <= NOW()) and situacao in ('','i','p')";
-    $result = mysqli_query($con, $query);   
+    $result = mysqli_query($con, $query); 
+    
+    set_time_limit(90);
+    $query = "UPDATE metas set quantidade = '0', deletado = '1' where DATE_ADD(data, INTERVAL 8 DAY) <= NOW()";
+    $result = mysqli_query($con, $query); 
+       
 
 ?>
