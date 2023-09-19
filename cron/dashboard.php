@@ -46,7 +46,7 @@
             $item = ", {$d['item']} as item";
         }
     
-        $query = "select a.{$d['campo']} as campo {$item} from se a {$join} where a.monitor_social > 0 and a.meta > 0 {$filtro} ";
+        $query = "select a.{$d['campo']} as campo {$item}, a.data, a.monitor_social, a.meta from se a {$join} where a.monitor_social > 0 and a.meta > 0 {$filtro} ";
         $result = mysqli_query($con, $query);
         $t = 0;
         if(mysqli_num_rows($result)){
@@ -56,6 +56,14 @@
                     $J = json_decode($s->campo);
                     if($J){
                         foreach($J as $i => $v){
+
+                            $VetorTeste[] = [
+                                'campo' => $d['campo'],
+                                'legenda' => ((trim($v))?:'Não Informado'),
+                                'data' => $d['data'],
+                                'monitor_social' => $d['monitor_social'],
+                                'meta' => $d['meta']
+                            ];
                             
                             $d['legenda'][trim($v)] = ((trim($v))?:'Não Informado');
 
