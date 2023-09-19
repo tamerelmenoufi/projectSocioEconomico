@@ -27,6 +27,7 @@
         'opiniao_seguranca',
         'opiniao_esporte_lazer',
         'codigo',
+        'mensagens'
     ];
 
     $query = "SELECT * FROM `COLUMNS` where TABLE_SCHEMA = 'app' and COLUMN_NAME not in ('".implode("','", $ignore)."') and TABLE_NAME = 'se' order by TABLE_NAME";
