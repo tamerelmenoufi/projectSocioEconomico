@@ -288,7 +288,7 @@
     ]);
 
     echo "<pre>";
-    print_r($VetorTeste;);
+    print_r($VetorTeste);
     echo "</pre>";
 
 ?>
