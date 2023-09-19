@@ -287,14 +287,16 @@
     print_r($VetorTeste);
     echo "</pre>";
     $update = [];
-    foreach($VetorTeste as $campo => $valor){
-        set_time_limit(90);
-        $cmp = [];
-        foreach($valor as $c => $v){
-            $cmp[] = "{$c} = '{$v}'";
+    if($VetorTeste){
+        foreach($VetorTeste as $campo => $valor){
+            set_time_limit(90);
+            $cmp = [];
+            foreach($valor as $c => $v){
+                $cmp[] = "{$c} = '{$v}'";
+            }
+            mysqli_query($con, "REPLACE INTO relatorios SET ".implode(", ",$cmp));
+            $update[] = $valor['se'];
         }
-        mysqli_query($con, "REPLACE INTO relatorios SET ".implode(", ",$cmp));
-        $update[] = $valor['se'];
     }
 
     if($update) mysqli_query($con, "UPDATE se SET acao_relatorio = '1' WHERE codigo in (".implode(",",$update).")");
