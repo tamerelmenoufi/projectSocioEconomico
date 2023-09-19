@@ -822,10 +822,10 @@
                         <h5 class="card-header">Avaliação do Técnico</h5>
                         <div class="card-body">
 
-                            <div class="form-floating mb-3">
+                            <!-- <div class="form-floating mb-3">
                                 <input type="text" name="data" required id="data" class="form-control" placeholder="Data da Pesquisa" value="<?=dataBr($d->data)?>">
                                 <label for="data">Data da Pesquisa*</label>
-                            </div>
+                            </div> -->
 
                             <div class="form-floating mb-3">
                                 <select name="monitor_social" required id="monitor_social" class="form-control" >
@@ -905,7 +905,7 @@
             $("#telefone").mask('(99) 99999-9999');
             $("#cep").mask('99999-999');
             $("#data_nascimento").mask('99/99/9999');
-            $("#data").mask('99/99/9999');
+            // $("#data").mask('99/99/9999');
 
 
 
