@@ -90,8 +90,12 @@
     }
 
     foreach($Comando as $ind => $val){
-
-        $query = "select * from {$ind} where codigo in ({$reg[$ind]})";
+        if($reg[$ind]){
+            $query = "select * from {$ind} where codigo in ({$reg[$ind]})";
+        }else{
+            $query = "select * from {$ind} where 1";
+        }
+        
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_array($result, MYSQLI_ASSOC)){
             $D = [];
