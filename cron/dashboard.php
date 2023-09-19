@@ -306,7 +306,9 @@
 
     $query = "DELETE FROM `relatorios` where se in (select codigo from se where meta = 0 and monitor_social = 0)";
     $result = mysqli_query($con, $query);
-    
+
+    $query = "select * from metas where DATE_ADD(data, INTERVAL 8 DAY) <= NOW()";
+
     
 
 ?>
