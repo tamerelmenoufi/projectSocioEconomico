@@ -14,14 +14,14 @@
 
     //Questionários
 
-    $i = 0;
+    $k = 0;
 
     function questoes($d){
 
         global $_SESSION;
         global $con;
         global $dashboard;
-        global $i;
+        global $k;
 
         $filtro = $f_usuario = $f_meta = $f_data = false;
         if($_SESSION['relatorio']['usuario']){
@@ -75,17 +75,17 @@
             }
 
             arsort($D);
-            $dashboard['questionario'][$i]['rotulo'] = $d['rotulo'];
+            $dashboard['questionario'][$k]['rotulo'] = $d['rotulo'];
             // echo "<h5>{$d['rotulo']}</h5>";
             foreach($D as $ind => $val){
                 $p = number_format($val*100/$t, 0,false,false);
                 // echo "<p>{$d['legenda'][$ind]} | {$p} | {$val}</p>";
-                $dashboard['questionario'][$i]['legenda'] = $d['legenda'][$ind];
-                $dashboard['questionario'][$i]['percentual'] = $p;
-                $dashboard['questionario'][$i]['quantidade'] = $val;
+                $dashboard['questionario'][$k]['legenda'] = $d['legenda'][$ind];
+                $dashboard['questionario'][$k]['percentual'] = $p;
+                $dashboard['questionario'][$k]['quantidade'] = $val;
 
             }
-            $i++;
+            $k++;
         }
     }
 
