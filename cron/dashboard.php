@@ -304,11 +304,9 @@
     if($update) mysqli_query($con, "UPDATE se SET acao_relatorio = '1' WHERE codigo in (".implode(",",$update).")");
 
 
-    $query = "SELECT * FROM `relatorios` where se in (select codigo from se where meta = 0 and monitor_social = 0) limit 10";
+    $query = "DELETE FROM `relatorios` where se in (select codigo from se where meta = 0 and monitor_social = 0)";
     $result = mysqli_query($con, $query);
-    while($d = mysqli_fetch_object($result)){
-        echo "<p>{$d->chave} - $d->se</p>";
-    }
+    
     
 
 ?>
