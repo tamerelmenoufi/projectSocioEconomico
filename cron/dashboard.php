@@ -14,11 +14,14 @@
 
     //Questionários
 
+    $i = 0;
+
     function questoes($d){
 
         global $_SESSION;
         global $con;
         global $dashboard;
+        global $i;
 
         $filtro = $f_usuario = $f_meta = $f_data = false;
         if($_SESSION['relatorio']['usuario']){
@@ -46,7 +49,6 @@
         $query = "select a.{$d['campo']} as campo {$item} from se a {$join} where a.monitor_social > 0 and a.meta > 0 {$filtro} ";
         $result = mysqli_query($con, $query);
         $t = 0;
-        $i=0;
         if(mysqli_num_rows($result)){
             while($s = mysqli_fetch_object($result)){
 
