@@ -21,6 +21,7 @@
         global $_SESSION;
         global $con;
         global $dashboard;
+        global $VetorTeste;
         global $k;
 
         $filtro = $f_usuario = $f_meta = $f_data = false;
@@ -73,8 +74,17 @@
                     }
                 }else{
 
-                    if($item) {$d['legenda'][$s->campo] = $s->item;}
+                    if($item) {$d['legenda'][trim($s->campo)] = $s->item;}
                     else if(!$d['legenda'][$s->campo]) { $d['legenda'][trim($s->campo)] = ((trim($s->campo))?:'Não Informado'); }
+
+
+                    $VetorTeste[] = [
+                        'campo' => $d['campo'],
+                        'legenda' => $d['legenda'][trim($s->campo)],
+                        'data' => $d['data'],
+                        'monitor_social' => $d['monitor_social'],
+                        'meta' => $d['meta']
+                    ];
 
                     $D[$s->campo] = ($D[$s->campo] + 1);
                     $t = ($t + 1);
@@ -278,7 +288,7 @@
     ]);
 
     echo "<pre>";
-    print_r($dashboard);
+    print_r($VetorTeste;);
     echo "</pre>";
 
 ?>
