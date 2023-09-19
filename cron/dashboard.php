@@ -80,9 +80,9 @@
             foreach($D as $ind => $val){
                 $p = number_format($val*100/$t, 0,false,false);
                 // echo "<p>{$d['legenda'][$ind]} | {$p} | {$val}</p>";
-                $dashboard['questionario'][$k]['legenda'] = $d['legenda'][$ind];
-                $dashboard['questionario'][$k]['percentual'] = $p;
-                $dashboard['questionario'][$k]['quantidade'] = $val;
+                $dashboard['questionario'][$k][$ind]['legenda'] = $d['legenda'][$ind];
+                $dashboard['questionario'][$k][$ind]['percentual'] = $p;
+                $dashboard['questionario'][$k][$ind]['quantidade'] = $val;
 
             }
             $k++;
