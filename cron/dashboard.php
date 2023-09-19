@@ -307,7 +307,7 @@
     $query = "SELECT * FROM `relatorios` where se in (select codigo from se where meta > 0 and monitor_social > 0) limit 10";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
-        echo "<p>{$d->codigo} - $d->nome</p>";
+        echo "<p>{$d->chave} - $d->se</p>";
     }
     
 
