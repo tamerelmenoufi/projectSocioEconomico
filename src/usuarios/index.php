@@ -175,7 +175,7 @@
                   </td>
                   <td>
                     <?php
-                    if($_SESSION['ProjectSeLogin']->perfil == 'adm' or $_SESSION['ProjectSeLogin']->perfil == 'sup'){
+                    if(($_SESSION['ProjectSeLogin']->perfil == 'adm' or $_SESSION['ProjectSeLogin']->perfil == 'sup') and $d->perfil == 'usr'){
                     ?>
                     <button
                       class="btn btn-primary"
