@@ -37,6 +37,7 @@
             // $attr[] = "monitor_social = '{$_SESSION['ProjectSeLogin']->codigo}'";
             $attr[] = "coordenador = '{$_SESSION['ProjectSeLogin']->coordenador}'";
             $attr[] = "acao = '0'";
+            $attr[] = "acao_relatorio = '0'";
 
             if($pct == 100){
                 $attr[] = "pesquisa_realizada = 'Sim'";
