@@ -39,9 +39,9 @@
     }
 
 
-    echo $query = "SELECT * FROM `se` where meta in ($metas) and situacao not in ('c', 'f', 'n')";
+    $query = "SELECT * FROM `se` where meta in ($metas) and situacao not in ('c', 'f', 'n')";
     $result = mysqli_query($con, $query);
-    exit();
+
     // $Cmd[] = ['comando' => "DELETE FROM se"];
     
     while($d = mysqli_fetch_array($result, MYSQLI_ASSOC)){
@@ -94,7 +94,7 @@
 
         if($reg[$ind]){
             $query = "select * from {$ind} where codigo in ({$reg[$ind]})";
-        }else{
+        }else if($ind == 'mensagens'){
             $query = "select * from {$ind} where 1";
         }
         
