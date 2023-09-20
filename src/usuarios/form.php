@@ -88,7 +88,7 @@
                 </div>
                 <?php
                 }
-                if($d->codigo != 1 and ($_SESSION['ProjectSeLogin']->perfil == 'adm' or $_SESSION['ProjectSeLogin']->perfil == 'crd')){
+                if($d->codigo != 1 and ($_SESSION['ProjectSeLogin']->perfil != 'usr')){
                 ?>
                 <div class="form-floating mb-3">
                     <input type="text" name="login" id="login" class="form-control" placeholder="Login" value="<?=$d->login?>">
