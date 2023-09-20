@@ -51,6 +51,8 @@
                         foreach($J as $i => $v){
 
                             $VetorTeste[] = [
+                                'ordem' => ($K+1),
+                                'rotulo' => $d['rotulo'],
                                 'campo' => $d['campo'],
                                 'legenda' => ((trim($v))?:'Não Informado'),
                                 'data' => $s->data,
@@ -73,6 +75,7 @@
 
 
                     $VetorTeste[] = [
+                        'ordem' => ($K+1),
                         'rotulo' => $d['rotulo'],
                         'campo' => $d['campo'],
                         'legenda' => $d['legenda'][trim($s->campo)],
