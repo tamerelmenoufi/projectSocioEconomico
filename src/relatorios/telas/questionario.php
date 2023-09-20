@@ -121,7 +121,26 @@
 
     <?php
 
-        $query = "SELECT *, count(*) as qt, '991' as total FROM relatorios group by ordem, campo, legenda ORDER BY ordem ASC, qt desc";
+
+
+        $filtro = $f_usuario = $f_meta = $f_data = false;
+        if($_SESSION['relatorio']['usuario']){
+            $f_usuario = " and monitor_social in( {$_SESSION['relatorio']['usuario']} ) ";
+        }
+        if($_SESSION['relatorio']['meta']){
+            $f_meta = " and meta in( {$_SESSION['relatorio']['meta']} ) ";
+        }else if($_SESSION['ProjectSeLogin']->perfil == 'crd'){
+            $f_meta = " and meta in( select codigo from metas where usuario in(select codigo from usuarios where coordenador = '{$_SESSION['ProjectSeLogin']->codigo}') ) ";
+        }
+
+        if($_SESSION['relatorio']['data_inicial']){
+            $f_data = " and (data between '{$_SESSION['relatorio']['data_inicial']} 00:00:00' and '".(($_SESSION['relatorio']['data_final'])?:$_SESSION['relatorio']['data_inicial'])." 23:59:59')";
+        }
+
+        $filtro = $f_usuario . $f_meta . $f_data;
+
+
+        $query = "SELECT *, count(*) as qt, '991' as total FROM relatorios where 1 {$filtro} group by ordem, campo, legenda ORDER BY ordem ASC, qt desc";
         $result = mysqli_query($con, $query);
         $grupo = false;
         while($d = mysqli_fetch_object($result)){
