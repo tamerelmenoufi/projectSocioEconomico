@@ -130,7 +130,7 @@
               </thead>
               <tbody>
                 <?php
-                  echo $query = "select 
+                  $query = "select 
                                   a.*,
                                   b.nome as coordenador_nome,
                                   c.cor,
