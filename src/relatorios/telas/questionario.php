@@ -1,6 +1,18 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
+    $Json = [
+        'redes_sociais',
+        'meio_transporte',
+        'tipo_moradia',
+        'necessita_documentos',
+        'opiniao_saude',
+        'opiniao_infraestrutura',
+        'opiniao_assistencia_social',
+        'opiniao_seguranca',
+        'opiniao_esporte_lazer'
+    ];
+
 
     function questoes($d){
 
@@ -182,7 +194,7 @@
                             class="btn btn-info btn-sm w-100 d-flex justify-content-between"
                             campo="<?=$d->campo?>"
                             valor="<?=$d->valor?>" 
-                            json=""
+                            json="<?=in_array($d->campo,$Json)?>"
                             rotulo_titulo="<?=$d->rotulo?>"
                             rotulo_campo="<?=$d->legenda?>"
                             data-bs-toggle="offcanvas"
