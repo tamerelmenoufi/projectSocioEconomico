@@ -10,25 +10,25 @@
 
         global $_SESSION;
         global $con;
-        global $dashboard;
+        // global $dashboard;
         global $VetorTeste;
         global $k;
 
-        $filtro = $f_usuario = $f_meta = $f_data = false;
-        if($_SESSION['relatorio']['usuario']){
-            $f_usuario = " and a.monitor_social in( {$_SESSION['relatorio']['usuario']} ) ";
-        }
-        if($_SESSION['relatorio']['meta']){
-            $f_meta = " and a.meta in( {$_SESSION['relatorio']['meta']} ) ";
-        }else if($_SESSION['ProjectSeLogin']->perfil == 'crd'){
-            $f_meta = " and a.meta in( select codigo from metas where usuario in(select codigo from usuarios where coordenador = '{$_SESSION['ProjectSeLogin']->codigo}') ) ";
-        }
+        // $filtro = $f_usuario = $f_meta = $f_data = false;
+        // if($_SESSION['relatorio']['usuario']){
+        //     $f_usuario = " and a.monitor_social in( {$_SESSION['relatorio']['usuario']} ) ";
+        // }
+        // if($_SESSION['relatorio']['meta']){
+        //     $f_meta = " and a.meta in( {$_SESSION['relatorio']['meta']} ) ";
+        // }else if($_SESSION['ProjectSeLogin']->perfil == 'crd'){
+        //     $f_meta = " and a.meta in( select codigo from metas where usuario in(select codigo from usuarios where coordenador = '{$_SESSION['ProjectSeLogin']->codigo}') ) ";
+        // }
 
-        if($_SESSION['relatorio']['data_inicial']){
-            $f_data = " and (a.data between '{$_SESSION['relatorio']['data_inicial']} 00:00:00' and '".(($_SESSION['relatorio']['data_final'])?:$_SESSION['relatorio']['data_inicial'])." 23:59:59')";
-        }
+        // if($_SESSION['relatorio']['data_inicial']){
+        //     $f_data = " and (a.data between '{$_SESSION['relatorio']['data_inicial']} 00:00:00' and '".(($_SESSION['relatorio']['data_final'])?:$_SESSION['relatorio']['data_inicial'])." 23:59:59')";
+        // }
 
-        $filtro = $f_usuario . $f_meta . $f_data;
+        // $filtro = $f_usuario . $f_meta . $f_data;
 
         if($d['join']){
             $join = $d['join'];
@@ -37,7 +37,7 @@
             $item = ", {$d['item']} as item";
         }
     
-        $query = "select a.codigo, a.{$d['campo']} as campo {$item}, a.data, a.monitor_social, a.meta from se a {$join} where a.monitor_social > 0 and a.meta > 0 and acao_relatorio != '1' {$filtro} ";
+        $query = "select a.codigo, a.{$d['campo']} as campo {$item}, a.data, a.monitor_social, a.meta from se a {$join} where a.monitor_social > 0 and a.meta > 0 and acao_relatorio != '1' /*{$filtro}*/ ";
         $result = mysqli_query($con, $query);
         $t = 0;
         if(mysqli_num_rows($result)){
@@ -63,16 +63,16 @@
                                 'chave' => md5($d['campo'].((trim($v))?:'Não Informado').$s->codigo)
                             ];
                             
-                            $d['legenda'][trim($v)] = ((trim($v))?:'Não Informado');
+                            // $d['legenda'][trim($v)] = ((trim($v))?:'Não Informado');
 
-                            $D[$v] = ($D[$v] + 1);
-                            $t = ($t + 1);
+                            // $D[$v] = ($D[$v] + 1);
+                            // $t = ($t + 1);
                         }
                     }
                 }else{
 
-                    if($item) {$d['legenda'][trim($s->campo)] = $s->item;}
-                    else if(!$d['legenda'][$s->campo]) { $d['legenda'][trim($s->campo)] = ((trim($s->campo))?:'Não Informado'); }
+                    // if($item) {$d['legenda'][trim($s->campo)] = $s->item;}
+                    // else if(!$d['legenda'][$s->campo]) { $d['legenda'][trim($s->campo)] = ((trim($s->campo))?:'Não Informado'); }
 
 
                     $VetorTeste[] = [
@@ -88,26 +88,26 @@
                         'chave' => md5($d['campo'].$d['legenda'][trim($s->campo)].$s->codigo)
                     ];
 
-                    $D[$s->campo] = ($D[$s->campo] + 1);
-                    $t = ($t + 1);
+                    // $D[$s->campo] = ($D[$s->campo] + 1);
+                    // $t = ($t + 1);
                 }
                 
             }
 
-            if($D){
-                arsort($D);
-                $dashboard['questionario'][$k]['rotulo'] = $d['rotulo'];
-                // echo "<h5>{$d['rotulo']}</h5>";
-                $w = 0;
-                foreach($D as $ind => $val){
-                    $p = number_format($val*100/$t, 0,false,false);
-                    // echo "<p>{$d['legenda'][$ind]} | {$p} | {$val}</p>";
-                    $dashboard['questionario'][$k]['dados'][$w]['legenda'] = $d['legenda'][$ind];
-                    $dashboard['questionario'][$k]['dados'][$w]['percentual'] = $p;
-                    $dashboard['questionario'][$k]['dados'][$w]['quantidade'] = $val;
-                    $w++;
-                }
-            }
+            // if($D){
+            //     arsort($D);
+            //     $dashboard['questionario'][$k]['rotulo'] = $d['rotulo'];
+            //     // echo "<h5>{$d['rotulo']}</h5>";
+            //     $w = 0;
+            //     foreach($D as $ind => $val){
+            //         $p = number_format($val*100/$t, 0,false,false);
+            //         // echo "<p>{$d['legenda'][$ind]} | {$p} | {$val}</p>";
+            //         $dashboard['questionario'][$k]['dados'][$w]['legenda'] = $d['legenda'][$ind];
+            //         $dashboard['questionario'][$k]['dados'][$w]['percentual'] = $p;
+            //         $dashboard['questionario'][$k]['dados'][$w]['quantidade'] = $val;
+            //         $w++;
+            //     }
+            // }
             $k++;
         }
     }
