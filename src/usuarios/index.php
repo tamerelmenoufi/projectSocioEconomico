@@ -141,7 +141,7 @@
                                   left join usuarios b on a.coordenador = b.codigo 
                                   left join pacs c on (IF(a.perfil = 'crd', a.pac = c.codigo, b.pac = c.codigo)) 
                                   
-                            where a.deletado != '1' and ({$_SESSION['ProjectSeLogin']->codigo} = 1 or (".(($_SESSION['ProjectSeLogin']->perfil == 'crd')?" and a.coordenador = '{$_SESSION['ProjectSeLogin']->codigo}' ":false).(($_SESSION['ProjectSeLogin']->perfil == 'adm')?" and (a.perfil != 'adm' or a.codigo = '{$_SESSION['ProjectSeLogin']->codigo}') ":false)." {$where})) order by a.nome asc";
+                            where (a.deletado != '1' {$where} ".(($_SESSION['ProjectSeLogin']->perfil == 'crd')?" and a.coordenador = '{$_SESSION['ProjectSeLogin']->codigo}' ":false).(($_SESSION['ProjectSeLogin']->perfil == 'adm')?" and (a.perfil != 'adm' or a.codigo = '{$_SESSION['ProjectSeLogin']->codigo}') ":false).") or ({$_SESSION['ProjectSeLogin']->codigo} = 1 and a.deletado != '1') order by a.nome asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
