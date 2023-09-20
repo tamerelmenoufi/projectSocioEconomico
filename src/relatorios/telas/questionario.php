@@ -190,7 +190,7 @@
                             role="button"
                             aria-controls="offcanvasDireita"                          
                         >
-                            <i class="fa-solid fa-arrow-up-1-9"></i><span><?=$d->qt?> <i class="fa-solid fa-up-right-from-square"></i></span>
+                            <i class="fa-solid fa-arrow-up-1-9"></i><span><?=$d->qt?> - <?=$d->total?> <i class="fa-solid fa-up-right-from-square"></i></span>
                         </button>                    
                 </div>
             </div>
