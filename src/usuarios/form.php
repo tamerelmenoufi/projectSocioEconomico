@@ -164,9 +164,9 @@
             $("#perfil").change(function(){
                 opc = $(this).val();
                 if(opc == 'usr'){
-                    $("#coordenador option").attr("disabled", "disabled");
-                }else{
                     $("#coordenador option").removeAttr("disabled");
+                }else{
+                    $("#coordenador option").attr("disabled", "disabled");
                 }
             })
 
