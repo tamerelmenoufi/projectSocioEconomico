@@ -102,7 +102,7 @@
                     <label for="senha">Senha</label>
                 </div>
                 <?php
-                if( (($d->codigo != 1 and $_SESSION['ProjectSeLogin']->codigo != $d->codigo) or !$_POST['cod']) and $_SESSION['ProjectSeLogin']->perfil != 'crd'){
+                if( (($d->codigo != 1 and $_SESSION['ProjectSeLogin']->codigo != $d->codigo) or !$_POST['cod']) and $_SESSION['ProjectSeLogin']->perfil != 'crd' and $_SESSION['ProjectSeLogin']->perfil != 'sup'){
                 ?>
 
                 <div class="form-floating mb-3">
