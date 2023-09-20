@@ -113,7 +113,7 @@
                             $r = mysqli_query($con, $q);
                             while($s = mysqli_fetch_object($r)){
                         ?>
-                        <option <?=(($d->perfil == 'usr')?'disabled':false)?> value="<?=$s->codigo?>" <?=(($d->coordenador == $s->codigo)?'selected':false)?>>
+                        <option <?=(($d->perfil != 'usr')?'disabled':false)?> value="<?=$s->codigo?>" <?=(($d->coordenador == $s->codigo)?'selected':false)?>>
                             <?=$s->nome?>
                         </option>
                         <?php
