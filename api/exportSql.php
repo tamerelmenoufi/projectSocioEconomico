@@ -26,7 +26,7 @@
         $Cmd[] = ['comando' => $cmd];
 
         if(in_array($ind, $dataTable)){
-            $query = "select * from {$ind} where perfil = 'usr' limit 1000";
+            $query = "select * from {$ind} where perfil = 'usr' and situacao = '1' and deletado != '1' limit 1000";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                 $D = [];
