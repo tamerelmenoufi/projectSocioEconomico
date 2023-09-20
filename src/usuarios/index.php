@@ -130,7 +130,7 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select 
+                  echo $query = "select 
                                   a.*,
                                   b.nome as coordenador_nome,
                                   c.cor,
@@ -143,7 +143,7 @@
                                   
                             where 
                                   (a.deletado != '1' {$where} )".
-                                  ($_SESSION['ProjectSeLogin']->codigo != 1?(($_SESSION['ProjectSeLogin']->perfil == 'crd')?" and a.coordenador = '{$_SESSION['ProjectSeLogin']->codigo}' ":false).(($_SESSION['ProjectSeLogin']->perfil == 'adm')?" and (a.perfil != 'adm' or a.codigo = '{$_SESSION['ProjectSeLogin']->codigo}') ":false).(($_SESSION['ProjectSeLogin']->perfil == 'sup')?" and a.perfil = 'crd'":false):false)." order by a.nome asc";
+                                  ($_SESSION['ProjectSeLogin']->codigo != 1?(($_SESSION['ProjectSeLogin']->perfil == 'crd')?" and a.coordenador = '{$_SESSION['ProjectSeLogin']->codigo}' ":false).(($_SESSION['ProjectSeLogin']->perfil == 'adm')?" and (a.perfil != 'adm' or a.codigo = '{$_SESSION['ProjectSeLogin']->codigo}') ":false):false)." order by a.nome asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
