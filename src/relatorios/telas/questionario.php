@@ -153,10 +153,10 @@
                         <button 
                             class="btn btn-info btn-sm w-100 d-flex justify-content-between"
                             campo="<?=$d->campo?>"
-                            valor="<?=$ind?>" 
+                            valor="<?=$d->valor?>" 
                             json="<?=$d['tipo']?>"
-                            rotulo_titulo="<?=$d['rotulo']?>"
-                            rotulo_campo="<?=$d['legenda'][$ind]?>"
+                            rotulo_titulo="<?=$d->rotulo?>"
+                            rotulo_campo="<?=$d->legenda?>"
                             data-bs-toggle="offcanvas"
                             href="#offcanvasDireita"
                             role="button"
