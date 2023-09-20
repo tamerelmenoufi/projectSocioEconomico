@@ -108,6 +108,7 @@
                 url:"src/relatorios/telas/geral1.php",
                 success:function(dados){
                     $("div[geral]").html(dados);
+                    Carregando('none')
                 }
             })
             
