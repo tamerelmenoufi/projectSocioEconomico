@@ -36,7 +36,7 @@
       </div>
     </div>
     <?php
-    if($_SESSION['ProjectSeLogin']->perfil == 'adm' or $_SESSION['ProjectSeLogin']->perfil == 'sup' ){
+    if($_SESSION['ProjectSeLogin']->perfil == 'adm' or $_SESSION['ProjectSeLogin']->perfil == 'sup' or $_SESSION['ProjectSeLogin']->perfil == 'crd' ){
     ?>
     <div class="row mb-1">
       <div class="col">
