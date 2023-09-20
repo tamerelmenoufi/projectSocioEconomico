@@ -148,6 +148,13 @@
                     <input type="hidden" id="perfil" name="perfil" value="usr" />
                     <?php
                     }
+                    if($_SESSION['ProjectSeLogin']->perfil == 'sup'){
+                    ?>
+                    <input type="hidden" id="coordenador" name="coordenador" value="" />
+                    <input type="hidden" id="perfil" name="perfil" value="crd" />
+                    <?php
+                    }
+
                     ?>
                 </div>
             </div>
