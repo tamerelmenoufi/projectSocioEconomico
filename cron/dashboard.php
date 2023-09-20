@@ -51,7 +51,7 @@
                         foreach($J as $i => $v){
 
                             $VetorTeste[] = [
-                                'ordem' => ($K+1),
+                                'ordem' => $d['ordem'],
                                 'rotulo' => $d['rotulo'],
                                 'campo' => $d['campo'],
                                 'legenda' => ((trim($v))?:'Não Informado'),
@@ -75,7 +75,7 @@
 
 
                     $VetorTeste[] = [
-                        'ordem' => ($K+1),
+                        'ordem' => $d['ordem'],
                         'rotulo' => $d['rotulo'],
                         'campo' => $d['campo'],
                         'legenda' => $d['legenda'][trim($s->campo)],
@@ -110,8 +110,10 @@
         }
     }
 
+    $ordem = 0;
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Situação da Pesquisa',
         'campo' => 'situacao',
         'legenda' => [
@@ -124,6 +126,7 @@
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Municípios',
         'campo' => 'municipio',
         'join' => "left join municipios b on a.municipio = b.codigo ",
@@ -131,6 +134,7 @@
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Bairros / Comunidades',
         'campo' => 'bairro_comunidade',
         'join' => "left join bairros_comunidades b on a.bairro_comunidade = b.codigo ",
@@ -138,153 +142,182 @@
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Zonas',
         'campo' => 'local',
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Genéro',
         'campo' => 'genero',
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Estado Civil',
         'campo' => 'estado_civil',
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Redes Sociais',
         'campo' => 'redes_sociais',
         'tipo' => 'json' 
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Meio de Trasporte',
         'campo' => 'meio_transporte',
         'tipo' => 'json' 
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Tipo de Imóvel',
         'campo' => 'tipo_imovel',
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Tipo de Moradia',
         'campo' => 'tipo_moradia',
         'tipo' => 'json'
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Quantidade de Cômodos na Moradia',
         'campo' => 'quantidade_comodos',
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Grau de escolaridade',
         'campo' => 'grau_escolaridade',
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Cursos Profissionalizantes',
         'campo' => 'curos_profissionais',
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Interesse por novos Cursos',
         'campo' => 'intereese_curso',
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Renda Mensal',
         'campo' => 'renda_mensal',
     ]);
 
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Renda Familiar',
         'campo' => 'renda_familiar',
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Beneficio Social',
         'campo' => 'beneficio_social',
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Serviço de Saúde',
         'campo' => 'servico_saude',
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Condições de Saúde',
         'campo' => 'condicoes_saude',
     ]);
 
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Vacina contra o Covid-19',
         'campo' => 'vacina_covid',
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Necessita de Documentos',
         'campo' => 'necessita_documentos',
         'tipo' => 'json',
     ]);
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Como você avalia o Beneficio',
         'campo' => 'avaliacao_beneficios',
     ]);
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'O beneficio atendido as Necessidades',
         'campo' => 'atende_necessidades',
     ]);
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Opinião na Saúde',
         'campo' => 'opiniao_saude',
         'tipo' => 'json',
     ]);
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Opinião na Educação',
         'campo' => 'opiniao_educacao',
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Opinião na Cidadania',
         'campo' => 'opiniao_cidadania',
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Opinião na Infraestrutura',
         'campo' => 'opiniao_infraestrutura',
         'tipo' => 'json',
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Opinião na Assistência Social',
         'campo' => 'opiniao_assistencia_social',
         'tipo' => 'json',
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Opinião nos Direitos Humanos',
         'campo' => 'opiniao_direitos_humanos',
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Opinião na Segurança',
         'campo' => 'opiniao_seguranca',
         'tipo' => 'json',
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Opinião no Esporte e Lazer',
         'campo' => 'opiniao_esporte_lazer',
         'tipo' => 'json',
     ]);
 
     questoes([
+        'ordem' => $ordem++,
         'rotulo' => 'Recepção pelo Beneficiado',
         'campo' => 'recepcao_entrevistado',
     ]);
