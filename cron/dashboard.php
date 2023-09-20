@@ -110,7 +110,7 @@
         }
     }
 
-    $ordem = 0;
+    $ordem = 1;
 
     questoes([
         'ordem' => $ordem++,
