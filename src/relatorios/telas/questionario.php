@@ -140,7 +140,7 @@
         $filtro = $f_usuario . $f_meta . $f_data;
 
 
-        $query = "SELECT *, count(*) as qt, (select count(*) from relatorios where ordem = 1) as total FROM relatorios where 1 {$filtro} group by ordem, campo, legenda ORDER BY ordem ASC, qt desc";
+        $query = "SELECT *, count(*) as qt, (select count(*) from relatorios where  ordem = 1 {$filtro}) as total FROM relatorios where 1 {$filtro} group by ordem, campo, legenda ORDER BY ordem ASC, qt desc";
         $result = mysqli_query($con, $query);
         $grupo = false;
         while($d = mysqli_fetch_object($result)){
