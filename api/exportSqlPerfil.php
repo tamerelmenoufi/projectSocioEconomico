@@ -93,7 +93,7 @@
 
     foreach($Comando as $ind => $val){
 
-        echo $ind;
+        echo $ind."<br>";
 
         if($reg[$ind]){
             echo $query = "select * from {$ind} where codigo in ({$reg[$ind]})";
