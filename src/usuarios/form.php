@@ -163,6 +163,7 @@
 
             $("#perfil").change(function(){
                 opc = $(this).val();
+                $("#coordenador").val('')
                 if(opc == 'usr'){
                     $("#coordenador option").removeAttr("disabled");
                 }else{
