@@ -2,7 +2,7 @@
 
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
     
-    $delTab = ['dashboard'];
+    $delTab = ['dashboard', 'relatorios'];
     $dataTable = ['usuarios']; 
 
     $query = "SELECT * FROM `COLUMNS` where TABLE_SCHEMA = 'app' and COLUMN_NAME != 'codigo' and TABLE_NAME not in('".implode("','", $delTab)."') order by TABLE_NAME";
