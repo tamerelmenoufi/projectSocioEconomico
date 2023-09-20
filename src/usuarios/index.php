@@ -48,7 +48,7 @@
     }
 
     if($_SESSION['ProjectSeLogin']->perfil == 'sup'){
-      $where .= " and a.perfil = 'usr' ";
+      $where .= " and a.perfil = 'crd' ";
     }
 ?>
 <style>
