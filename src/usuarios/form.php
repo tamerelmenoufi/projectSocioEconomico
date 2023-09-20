@@ -113,7 +113,7 @@
                             $r = mysqli_query($con, $q);
                             while($s = mysqli_fetch_object($r)){
                         ?>
-                        <option value="<?=$s->codigo?>" <?=(($d->coordenador == $s->codigo)?'selected':false)?>>
+                        <option <?=(($d->perfil == 'usr')?'disabled':false)?> value="<?=$s->codigo?>" <?=(($d->coordenador == $s->codigo)?'selected':false)?>>
                             <?=$s->nome?>
                         </option>
                         <?php
@@ -160,6 +160,15 @@
 
             $("#cpf").mask("999.999.999-99");
             $("#telefone").mask("(99) 99999-9999");
+
+            $("#perfil").change(function(){
+                opc = $(this).val();
+                if(opc == 'usr'){
+                    $("#coordenador").children("option").attr("disabled", disabled);
+                }else{
+                    $("#coordenador").children("option").removeAttr("disabled");
+                }
+            })
 
             $('#form-<?=$md5?>').submit(function (e) {
 
