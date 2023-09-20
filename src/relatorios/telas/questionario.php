@@ -111,183 +111,243 @@
 
 
     <?php
-        questoes([
-            'rotulo' => 'Situação da Pesquisa',
-            'campo' => 'situacao',
-            'legenda' => [
-                'i' => 'Iniciada',
-                'c' => 'Concluida',
-                'n' => 'Não encontrado',
-                'p' => 'Pendente',
-                '' => 'Não Informada',
-            ]
-        ]);
 
-        questoes([
-            'rotulo' => 'Municípios',
-            'campo' => 'municipio',
-            'join' => "left join municipios b on a.municipio = b.codigo ",
-            'item' => "b.municipio"
-        ]);
+        $query = "SELECT *, count(*) as qt FROM relatorios group by ordem, campo, legenda ORDER BY ordem ASC, qt desc";
+        $result = mysqli_query($con, $query);
+        $grupo = false;
+        while($d = mysqli_fetch_object($result)){
 
-        questoes([
-            'rotulo' => 'Bairros / Comunidades',
-            'campo' => 'bairro_comunidade',
-            'join' => "left join bairros_comunidades b on a.bairro_comunidade = b.codigo ",
-            'item' => "b.descricao"
-        ]);
+            if($grupo != $d->rotulo){
 
-        questoes([
-            'rotulo' => 'Zonas',
-            'campo' => 'local',
-        ]);
+                if($grupo != false){
+?>
+    </ul>
+  </div>
+</div>
+<?php
+                }
 
-        questoes([
-            'rotulo' => 'Genéro',
-            'campo' => 'genero',
-        ]);
+?>
+<div class="card mb-3">
+  <h5 class="card-header"><?=$d['rotulo']?></h5>
+  <div class="card-body">
+    <ul class="list-group">
+<?php
 
-        questoes([
-            'rotulo' => 'Estado Civil',
-            'campo' => 'estado_civil',
-        ]);
+            }
 
-        questoes([
-            'rotulo' => 'Redes Sociais',
-            'campo' => 'redes_sociais',
-            'tipo' => 'json' 
-        ]);
+?>
 
-        questoes([
-            'rotulo' => 'Meio de Trasporte',
-            'campo' => 'meio_transporte',
-            'tipo' => 'json' 
-        ]);
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-5"><?=($d['legenda'][$ind])?></div>
+                <div class="col-5">
+                    <div class="progress">
+                        <div class="progress-bar" style="width:<?=$p?>%" role="progressbar" aria-valuenow="<?=$p?>" aria-valuemin="0" aria-valuemax="100"><?=$p?>%</div>
+                    </div>
+                </div>
+                <div class="col-2">
+                        <button 
+                            class="btn btn-info btn-sm w-100 d-flex justify-content-between"
+                            campo="<?=$d['campo']?>"
+                            valor="<?=$ind?>" 
+                            json="<?=$d['tipo']?>"
+                            rotulo_titulo="<?=$d['rotulo']?>"
+                            rotulo_campo="<?=$d['legenda'][$ind]?>"
+                            data-bs-toggle="offcanvas"
+                            href="#offcanvasDireita"
+                            role="button"
+                            aria-controls="offcanvasDireita"                          
+                        >
+                            <i class="fa-solid fa-arrow-up-1-9"></i><span><?=$val?> <i class="fa-solid fa-up-right-from-square"></i></span>
+                        </button>                    
+                </div>
+            </div>
+        </li>
 
-        questoes([
-            'rotulo' => 'Tipo de Imóvel',
-            'campo' => 'tipo_imovel',
-        ]);
-
-        questoes([
-            'rotulo' => 'Tipo de Moradia',
-            'campo' => 'tipo_moradia',
-            'tipo' => 'json'
-        ]);
-
-        questoes([
-            'rotulo' => 'Quantidade de Cômodos na Moradia',
-            'campo' => 'quantidade_comodos',
-        ]);
-
-        questoes([
-            'rotulo' => 'Grau de escolaridade',
-            'campo' => 'grau_escolaridade',
-        ]);
-
-        questoes([
-            'rotulo' => 'Cursos Profissionalizantes',
-            'campo' => 'curos_profissionais',
-        ]);
-
-        questoes([
-            'rotulo' => 'Interesse por novos Cursos',
-            'campo' => 'intereese_curso',
-        ]);
-
-        questoes([
-            'rotulo' => 'Renda Mensal',
-            'campo' => 'renda_mensal',
-        ]);
+<?php
+            $grupo = $d->rotulo;
+        }
 
 
-        questoes([
-            'rotulo' => 'Renda Familiar',
-            'campo' => 'renda_familiar',
-        ]);
 
-        questoes([
-            'rotulo' => 'Beneficio Social',
-            'campo' => 'beneficio_social',
-        ]);
+        // questoes([
+        //     'rotulo' => 'Situação da Pesquisa',
+        //     'campo' => 'situacao',
+        //     'legenda' => [
+        //         'i' => 'Iniciada',
+        //         'c' => 'Concluida',
+        //         'n' => 'Não encontrado',
+        //         'p' => 'Pendente',
+        //         '' => 'Não Informada',
+        //     ]
+        // ]);
 
-        questoes([
-            'rotulo' => 'Serviço de Saúde',
-            'campo' => 'servico_saude',
-        ]);
+        // questoes([
+        //     'rotulo' => 'Municípios',
+        //     'campo' => 'municipio',
+        //     'join' => "left join municipios b on a.municipio = b.codigo ",
+        //     'item' => "b.municipio"
+        // ]);
 
-        questoes([
-            'rotulo' => 'Condições de Saúde',
-            'campo' => 'condicoes_saude',
-        ]);
+        // questoes([
+        //     'rotulo' => 'Bairros / Comunidades',
+        //     'campo' => 'bairro_comunidade',
+        //     'join' => "left join bairros_comunidades b on a.bairro_comunidade = b.codigo ",
+        //     'item' => "b.descricao"
+        // ]);
+
+        // questoes([
+        //     'rotulo' => 'Zonas',
+        //     'campo' => 'local',
+        // ]);
+
+        // questoes([
+        //     'rotulo' => 'Genéro',
+        //     'campo' => 'genero',
+        // ]);
+
+        // questoes([
+        //     'rotulo' => 'Estado Civil',
+        //     'campo' => 'estado_civil',
+        // ]);
+
+        // questoes([
+        //     'rotulo' => 'Redes Sociais',
+        //     'campo' => 'redes_sociais',
+        //     'tipo' => 'json' 
+        // ]);
+
+        // questoes([
+        //     'rotulo' => 'Meio de Trasporte',
+        //     'campo' => 'meio_transporte',
+        //     'tipo' => 'json' 
+        // ]);
+
+        // questoes([
+        //     'rotulo' => 'Tipo de Imóvel',
+        //     'campo' => 'tipo_imovel',
+        // ]);
+
+        // questoes([
+        //     'rotulo' => 'Tipo de Moradia',
+        //     'campo' => 'tipo_moradia',
+        //     'tipo' => 'json'
+        // ]);
+
+        // questoes([
+        //     'rotulo' => 'Quantidade de Cômodos na Moradia',
+        //     'campo' => 'quantidade_comodos',
+        // ]);
+
+        // questoes([
+        //     'rotulo' => 'Grau de escolaridade',
+        //     'campo' => 'grau_escolaridade',
+        // ]);
+
+        // questoes([
+        //     'rotulo' => 'Cursos Profissionalizantes',
+        //     'campo' => 'curos_profissionais',
+        // ]);
+
+        // questoes([
+        //     'rotulo' => 'Interesse por novos Cursos',
+        //     'campo' => 'intereese_curso',
+        // ]);
+
+        // questoes([
+        //     'rotulo' => 'Renda Mensal',
+        //     'campo' => 'renda_mensal',
+        // ]);
 
 
-        questoes([
-            'rotulo' => 'Vacina contra o Covid-19',
-            'campo' => 'vacina_covid',
-        ]);
+        // questoes([
+        //     'rotulo' => 'Renda Familiar',
+        //     'campo' => 'renda_familiar',
+        // ]);
 
-        questoes([
-            'rotulo' => 'Necessita de Documentos',
-            'campo' => 'necessita_documentos',
-            'tipo' => 'json',
-        ]);
-        questoes([
-            'rotulo' => 'Como você avalia o Beneficio',
-            'campo' => 'avaliacao_beneficios',
-        ]);
-        questoes([
-            'rotulo' => 'O beneficio atendido as Necessidades',
-            'campo' => 'atende_necessidades',
-        ]);
-        questoes([
-            'rotulo' => 'Opinião na Saúde',
-            'campo' => 'opiniao_saude',
-            'tipo' => 'json',
-        ]);
-        questoes([
-            'rotulo' => 'Opinião na Educação',
-            'campo' => 'opiniao_educacao',
-        ]);
+        // questoes([
+        //     'rotulo' => 'Beneficio Social',
+        //     'campo' => 'beneficio_social',
+        // ]);
 
-        questoes([
-            'rotulo' => 'Opinião na Cidadania',
-            'campo' => 'opiniao_cidadania',
-        ]);
+        // questoes([
+        //     'rotulo' => 'Serviço de Saúde',
+        //     'campo' => 'servico_saude',
+        // ]);
 
-        questoes([
-            'rotulo' => 'Opinião na Infraestrutura',
-            'campo' => 'opiniao_infraestrutura',
-            'tipo' => 'json',
-        ]);
+        // questoes([
+        //     'rotulo' => 'Condições de Saúde',
+        //     'campo' => 'condicoes_saude',
+        // ]);
 
-        questoes([
-            'rotulo' => 'Opinião na Assistência Social',
-            'campo' => 'opiniao_assistencia_social',
-            'tipo' => 'json',
-        ]);
 
-        questoes([
-            'rotulo' => 'Opinião nos Direitos Humanos',
-            'campo' => 'opiniao_direitos_humanos',
-        ]);
+        // questoes([
+        //     'rotulo' => 'Vacina contra o Covid-19',
+        //     'campo' => 'vacina_covid',
+        // ]);
 
-        questoes([
-            'rotulo' => 'Opinião na Segurança',
-            'campo' => 'opiniao_seguranca',
-            'tipo' => 'json',
-        ]);
+        // questoes([
+        //     'rotulo' => 'Necessita de Documentos',
+        //     'campo' => 'necessita_documentos',
+        //     'tipo' => 'json',
+        // ]);
+        // questoes([
+        //     'rotulo' => 'Como você avalia o Beneficio',
+        //     'campo' => 'avaliacao_beneficios',
+        // ]);
+        // questoes([
+        //     'rotulo' => 'O beneficio atendido as Necessidades',
+        //     'campo' => 'atende_necessidades',
+        // ]);
+        // questoes([
+        //     'rotulo' => 'Opinião na Saúde',
+        //     'campo' => 'opiniao_saude',
+        //     'tipo' => 'json',
+        // ]);
+        // questoes([
+        //     'rotulo' => 'Opinião na Educação',
+        //     'campo' => 'opiniao_educacao',
+        // ]);
 
-        questoes([
-            'rotulo' => 'Opinião no Esporte e Lazer',
-            'campo' => 'opiniao_esporte_lazer',
-            'tipo' => 'json',
-        ]);
+        // questoes([
+        //     'rotulo' => 'Opinião na Cidadania',
+        //     'campo' => 'opiniao_cidadania',
+        // ]);
 
-        questoes([
-            'rotulo' => 'Recepção pelo Beneficiado',
-            'campo' => 'recepcao_entrevistado',
-        ]);
+        // questoes([
+        //     'rotulo' => 'Opinião na Infraestrutura',
+        //     'campo' => 'opiniao_infraestrutura',
+        //     'tipo' => 'json',
+        // ]);
+
+        // questoes([
+        //     'rotulo' => 'Opinião na Assistência Social',
+        //     'campo' => 'opiniao_assistencia_social',
+        //     'tipo' => 'json',
+        // ]);
+
+        // questoes([
+        //     'rotulo' => 'Opinião nos Direitos Humanos',
+        //     'campo' => 'opiniao_direitos_humanos',
+        // ]);
+
+        // questoes([
+        //     'rotulo' => 'Opinião na Segurança',
+        //     'campo' => 'opiniao_seguranca',
+        //     'tipo' => 'json',
+        // ]);
+
+        // questoes([
+        //     'rotulo' => 'Opinião no Esporte e Lazer',
+        //     'campo' => 'opiniao_esporte_lazer',
+        //     'tipo' => 'json',
+        // ]);
+
+        // questoes([
+        //     'rotulo' => 'Recepção pelo Beneficiado',
+        //     'campo' => 'recepcao_entrevistado',
+        // ]);
 
                 
     ?>
