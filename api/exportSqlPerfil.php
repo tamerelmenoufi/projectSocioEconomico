@@ -96,22 +96,25 @@
             $query = "select * from {$ind} where codigo in ({$reg[$ind]})";
         }else if($ind == 'mensagens'){
             $query = "select * from {$ind} where 1";
+        }else{
+            $query = false;
         }
-        
-        $result = mysqli_query($con, $query);
-        while($d = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-            $D = [];
-            $campos = [];
-            foreach($d as $i => $v){
-                $campos[] = $i;
-                if($tipo[$ind][$i] == 'bigint' or $i == 'codigo'){
-                    $D[] = str_replace("'", "`", $v);
-                }else{
-                    $D[] = "'".str_replace("'", "`", $v)."'";
+        if($query){
+            $result = mysqli_query($con, $query);
+            while($d = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                $D = [];
+                $campos = [];
+                foreach($d as $i => $v){
+                    $campos[] = $i;
+                    if($tipo[$ind][$i] == 'bigint' or $i == 'codigo'){
+                        $D[] = str_replace("'", "`", $v);
+                    }else{
+                        $D[] = "'".str_replace("'", "`", $v)."'";
+                    }
                 }
-            }
-            $Cmd[] = ['comando' => "REPLACE INTO $ind (".implode(", ", $campos).") VALUES (".implode(", ",$D).")"];
-        }            
+                $Cmd[] = ['comando' => "REPLACE INTO $ind (".implode(", ", $campos).") VALUES (".implode(", ",$D).")"];
+            }  
+        }          
         
     }
 
