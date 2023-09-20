@@ -112,7 +112,7 @@
 
     <?php
 
-        $query = "SELECT *, count(*) as qt FROM relatorios group by ordem, campo, legenda ORDER BY ordem ASC, qt desc";
+        $query = "SELECT *, count(*) as qt, '991' as total FROM relatorios group by ordem, campo, legenda ORDER BY ordem ASC, qt desc";
         $result = mysqli_query($con, $query);
         $grupo = false;
         while($d = mysqli_fetch_object($result)){
@@ -129,18 +129,21 @@
 
 ?>
 <div class="card mb-3">
-  <h5 class="card-header"><?=$d['rotulo']?></h5>
+  <h5 class="card-header"><?=$d->rotulo?></h5>
   <div class="card-body">
     <ul class="list-group">
 <?php
 
             }
 
+
+            $p = number_format($d->qt*100/$d->total, 0,false,false);
+
 ?>
 
         <li class="list-group-item">
             <div class="row">
-                <div class="col-5"><?=($d['legenda'][$ind])?></div>
+                <div class="col-5"><?=$d->legenda?></div>
                 <div class="col-5">
                     <div class="progress">
                         <div class="progress-bar" style="width:<?=$p?>%" role="progressbar" aria-valuenow="<?=$p?>" aria-valuemin="0" aria-valuemax="100"><?=$p?>%</div>
@@ -149,7 +152,7 @@
                 <div class="col-2">
                         <button 
                             class="btn btn-info btn-sm w-100 d-flex justify-content-between"
-                            campo="<?=$d['campo']?>"
+                            campo="<?=$d->campo?>"
                             valor="<?=$ind?>" 
                             json="<?=$d['tipo']?>"
                             rotulo_titulo="<?=$d['rotulo']?>"
