@@ -54,7 +54,7 @@
                                 'ordem' => $d['ordem'],
                                 'rotulo' => $d['rotulo'],
                                 'campo' => $d['campo'],
-                                // 'valor' => trim($v),
+                                'valor' => trim($v),
                                 'legenda' => ((trim($v))?:'Não Informado'),
                                 'data' => $s->data,
                                 'monitor_social' => $s->monitor_social,
@@ -79,7 +79,7 @@
                         'ordem' => $d['ordem'],
                         'rotulo' => $d['rotulo'],
                         'campo' => $d['campo'],
-                        // 'valor' => trim($s->campo),
+                        'valor' => trim($s->campo),
                         'legenda' => $d['legenda'][trim($s->campo)],
                         'data' => $s->data,
                         'monitor_social' => $s->monitor_social,
@@ -335,7 +335,9 @@
             foreach($valor as $c => $v){
                 $cmp[] = "{$c} = '{$v}'";
             }
-            mysqli_query($con, "REPLACE INTO relatorios SET ".implode(", ",$cmp));
+            echo $q = "REPLACE INTO relatorios SET ".implode(", ",$cmp);
+            echo "<hr>";
+            mysqli_query($con, $q);
             $update[] = $valor['se'];
         }
     }
