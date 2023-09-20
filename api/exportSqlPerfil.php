@@ -72,6 +72,8 @@
 
     $Cmd[] = ['comando' => $_POST['perfil']];
 
+    print_r($reg['bairros_comunidades']);
+
 
 
     $addTab = ['bairros_comunidades','municipios', 'metas','mensagens'];
