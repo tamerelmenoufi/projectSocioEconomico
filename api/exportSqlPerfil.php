@@ -39,9 +39,9 @@
     }
 
 
-    $query = "SELECT * FROM `se` where meta in ($metas) and situacao not in ('c', 'f', 'n')";
+    echo $query = "SELECT * FROM `se` where meta in ($metas) and situacao not in ('c', 'f', 'n')";
     $result = mysqli_query($con, $query);
-    
+    exit();
     // $Cmd[] = ['comando' => "DELETE FROM se"];
     
     while($d = mysqli_fetch_array($result, MYSQLI_ASSOC)){
@@ -72,9 +72,6 @@
 
     $Cmd[] = ['comando' => $_POST['perfil']];
 
-    print_r($reg['bairros_comunidades']);
-
-
 
     $addTab = ['bairros_comunidades','municipios', 'metas','mensagens'];
 
@@ -95,32 +92,30 @@
 
     foreach($Comando as $ind => $val){
 
-        echo $reg[$ind]."<br>";
-
         if($reg[$ind]){
-            echo $query = "select * from {$ind} where codigo in ({$reg[$ind]})";
+            $query = "select * from {$ind} where codigo in ({$reg[$ind]})";
         }else{
-            echo $query = "select * from {$ind} where 1";
+            $query = "select * from {$ind} where 1";
         }
         
-        // $result = mysqli_query($con, $query);
-        // while($d = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-        //     $D = [];
-        //     $campos = [];
-        //     foreach($d as $i => $v){
-        //         $campos[] = $i;
-        //         if($tipo[$ind][$i] == 'bigint' or $i == 'codigo'){
-        //             $D[] = str_replace("'", "`", $v);
-        //         }else{
-        //             $D[] = "'".str_replace("'", "`", $v)."'";
-        //         }
-        //     }
-        //     $Cmd[] = ['comando' => "REPLACE INTO $ind (".implode(", ", $campos).") VALUES (".implode(", ",$D).")"];
-        // }            
+        $result = mysqli_query($con, $query);
+        while($d = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+            $D = [];
+            $campos = [];
+            foreach($d as $i => $v){
+                $campos[] = $i;
+                if($tipo[$ind][$i] == 'bigint' or $i == 'codigo'){
+                    $D[] = str_replace("'", "`", $v);
+                }else{
+                    $D[] = "'".str_replace("'", "`", $v)."'";
+                }
+            }
+            $Cmd[] = ['comando' => "REPLACE INTO $ind (".implode(", ", $campos).") VALUES (".implode(", ",$D).")"];
+        }            
         
     }
 
     if($metas){
         $Cmd[] = ['comando' => "DELETE FROM se WHERE meta not in ($metas)"];
     }
-    // echo json_encode($Cmd);
+    echo json_encode($Cmd);
