@@ -73,6 +73,7 @@
 
 
                     $VetorTeste[] = [
+                        'rotulo' => $d['rotulo'],
                         'campo' => $d['campo'],
                         'legenda' => $d['legenda'][trim($s->campo)],
                         'data' => $s->data,
