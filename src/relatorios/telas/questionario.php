@@ -107,6 +107,15 @@
 
 
 ?>
+
+
+
+
+
+
+
+
+
 <div class="row" style="margin-bottom:20px;">
 
 
@@ -154,7 +163,7 @@
                             class="btn btn-info btn-sm w-100 d-flex justify-content-between"
                             campo="<?=$d->campo?>"
                             valor="<?=$d->valor?>" 
-                            json="<?=$d['tipo']?>"
+                            json=""
                             rotulo_titulo="<?=$d->rotulo?>"
                             rotulo_campo="<?=$d->legenda?>"
                             data-bs-toggle="offcanvas"
