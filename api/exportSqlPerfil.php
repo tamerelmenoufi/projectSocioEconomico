@@ -92,6 +92,9 @@
     }
 
     foreach($Comando as $ind => $val){
+
+        print_r($reg[$ind]);
+
         if($reg[$ind]){
             echo $query = "select * from {$ind} where codigo in ({$reg[$ind]})";
         }else{
