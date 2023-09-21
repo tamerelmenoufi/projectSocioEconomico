@@ -84,10 +84,10 @@
                             json="<?=$d['tipo']?>"
                             rotulo_titulo="<?=$d['rotulo']?>"
                             rotulo_campo="<?=$d['legenda'][$ind]?>"
-                            data-bs-toggle="offcanvas"
-                            href="#offcanvasDireita"
-                            role="button"
-                            aria-controls="offcanvasDireita"                          
+                            data-bs-toggleX="offcanvas"
+                            hrefX="#offcanvasDireita"
+                            roleX="button"
+                            aria-controlsX="offcanvasDireita"                          
                         >
                             <i class="fa-solid fa-arrow-up-1-9"></i><span><?=$val?> <i class="fa-solid fa-up-right-from-square"></i></span>
                         </button>                    
