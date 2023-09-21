@@ -65,7 +65,7 @@
 <div class="row" style="margin-bottom:20px;">
 
     <div class="row mb-3 mt-3">
-        <div class="col-md-12"><h3 style="color:#a1a1a1">Relatório Estatístico</h3></div>
+        <div class="col-md-12"><h3 style="color:#a1a1a1">Relatório Estatístico das Metas</h3></div>
     </div>
     <?php
         questoes([
