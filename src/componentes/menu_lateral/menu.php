@@ -79,7 +79,7 @@
     <div class="row mb-1">
       <div class="col">
         <a href="./docs/form-se.pdf" target="formSocioEconimico" class="text-decoration-none">
-          <i class="fa-regular fa-table-list"></i> Formulário Socioeconômico
+          <i class="fa-regular fa-file-lines"></i> Formulário Socioeconômico
         </a>
       </div>
     </div>
@@ -87,7 +87,7 @@
     <div class="row mb-1">
       <div class="col">
         <a href="./docs/form-ef.pdf" target="formEstruturaFamiliar" class="text-decoration-none">
-          <i class="fa-regular fa-table-list"></i> Formulário Estrutura Familiar
+          <i class="fa-regular fa-file-lines"></i> Formulário Estrutura Familiar
         </a>
       </div>
     </div>
