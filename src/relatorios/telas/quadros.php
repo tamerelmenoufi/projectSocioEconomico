@@ -44,19 +44,19 @@
                 if($J){
                     foreach($J as $i => $v){
                         
-                        $L[$v] = ((trim($v))?(($s->item)?:trim($v)):'Não Informado');
+                        $L[$v] = ((trim($v))?:'Não Informado');
 
                         $D[$v] = ($D[$v] + 1);
                         $t = ($t + 1);
                     }
                 }
-
+                
             }else{
 
                 
 
-                if($item) {$L[$s->campo] = $s->campo;}
-                else if(!$d->legenda->$cmp) { $L[$s->campo] = ((trim($s->campo))?(($s->item)?:trim($s->campo)):'Não Informado'); }
+                if($item) {$L[$s->campo] = $s->item;}
+                else if(!$d->legenda->$cmp) { $L[$s->campo] = ((trim($s->campo))?:'Não Informado'); }
 
                 $D[$s->campo] = ($D[$s->campo] + 1);
                 $t = ($t + 1);
