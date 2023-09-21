@@ -336,6 +336,7 @@
             rotulo_titulo = $(this).attr("rotulo_titulo")
             rotulo_campo = $(this).attr("rotulo_campo")
             $(".LateralDireita").html('');
+            $(".popUpBeneficiados").css("display","fixed");
             Carregando();
             $.ajax({
                 url:"src/relatorios/telas/lista_beneficiados.php",
@@ -349,7 +350,6 @@
                 success:function(dados){
 
                     $(".popUpBeneficiados").html(dados);
-                    $(".popUpBeneficiados").css("display","fixed");
                     
                     // $(".LateralDireita").html(dados);
                     
