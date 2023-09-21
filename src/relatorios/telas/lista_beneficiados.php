@@ -66,7 +66,14 @@
             <?php
             if($_SESSION['ProjectSeLogin']->perfil != 'sup'){
             ?>
-            <button cod="<?=$s->codigo?>" class="btn btn-warning btn-sm">
+            <button 
+                cod="<?=$s->codigo?>" 
+                class="btn btn-warning btn-sm"
+                data-bs-toggle="offcanvas"
+                href="#offcanvasDireita"
+                role="button"
+                aria-controls="offcanvasDireita"  
+            >
                 <i class="fa fa-edit"></i>
             </button>
             <?php
