@@ -38,7 +38,7 @@
     .cartao{
         position:relative;
         width:99%;
-        min-height:120px;
+        min-height:90px;
         background-color:#459adb;
         border-radius:10px;
         color:#fff;
@@ -67,6 +67,9 @@
     }
     .geral{
         background-color:#fc8b06;
+    }
+    .dados{
+        background-color:green;
     }
 </style>
 
@@ -235,8 +238,8 @@
                 while($d = mysqli_fetch_object($result)){
                 ?>
                 <div class="col-md-2 mb-3">
-                    <div class="cartao">
-                        <span><?=$d->situacao?></span>
+                    <div class="cartao dados">
+                        <span><?=rotulo($d->situacao)?></span>
                         <p><?=$d->qt?></p>
                     </div>
                 </div>
