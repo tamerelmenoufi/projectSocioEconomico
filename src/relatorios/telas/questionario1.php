@@ -280,6 +280,7 @@
         $("span[json]").click(function(){
             json = $(this).attr("json");
             obj = $(this);
+            Carregando();
             $.ajax({
                 url:"src/relatorios/telas/quadros.php",
                 type:"POST",
@@ -289,6 +290,7 @@
                 success:function(dados){
                     // $.dialog(dados)
                     obj.parent("li").html(dados);
+                    Carregando('none');
                 }
             })
         })
