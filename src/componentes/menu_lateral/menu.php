@@ -19,7 +19,7 @@
     <div class="row mb-1">
       <div class="col">
         <a url="src/dashboard/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-clipboard-list"></i> Dashboard
+          <i class="fa-solid fa-chart-pie"></i> Dashboard
         </a>
       </div>
     </div>
@@ -29,14 +29,14 @@
     <div class="row mb-1">
       <div class="col">
         <a url="src/relatorios/index1.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-clipboard-list"></i> Relatórios
+          <i class="fa-solid fa-chart-line"></i> Relatórios
         </a>
       </div>
     </div>
     <div class="row mb-1">
       <div class="col">
         <a url="src/relatorios/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-clipboard-list"></i> Relatórios (Novo)
+          <i class="fa-solid fa-chart-line"></i> Relatórios (Novo)
         </a>
       </div>
     </div>
@@ -46,7 +46,7 @@
     <div class="row mb-1">
       <div class="col">
         <a url="src/usuarios/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-clipboard-list"></i> Usuários do Sistema
+          <i class="fa-regular fa-user"></i> Usuários do Sistema
         </a>
       </div>
     </div>
@@ -57,7 +57,7 @@
     <div class="row mb-1">
       <div class="col">
         <a url="src/pacs/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-clipboard-list"></i> PACs
+          <i class="fa-regular fa-building"></i> PACs
         </a>
       </div>
     </div>
@@ -69,7 +69,7 @@
     <div class="row mb-1">
       <div class="col">
         <a url="src/se/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-clipboard-list"></i> Beneficiários
+          <i class="fa-solid fa-users-viewfinder"></i> Beneficiários
         </a>
       </div>
     </div>
@@ -79,7 +79,7 @@
     <div class="row mb-1">
       <div class="col">
         <a href="./docs/form-se.pdf" target="formSocioEconimico" class="text-decoration-none">
-          <i class="fa-solid fa-list-ol"></i> Formulário Socioeconômico
+          <i class="fa-regular fa-table-list"></i> Formulário Socioeconômico
         </a>
       </div>
     </div>
@@ -87,7 +87,7 @@
     <div class="row mb-1">
       <div class="col">
         <a href="./docs/form-ef.pdf" target="formEstruturaFamiliar" class="text-decoration-none">
-          <i class="fa-solid fa-list-ol"></i> Formulário Estrutura Familiar
+          <i class="fa-regular fa-table-list"></i> Formulário Estrutura Familiar
         </a>
       </div>
     </div>
