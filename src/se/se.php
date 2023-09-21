@@ -990,7 +990,7 @@
                                         <?php
                                         }else{
                                         ?>
-                                        $(".popUpBeneficiados").html(dados);
+                                        $(".popUpBeneficiados div").html(dados);
                                         <?php
                                         }
                                         ?>

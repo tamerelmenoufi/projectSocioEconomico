@@ -115,12 +115,36 @@
         bottom:0;
         display:none;
         background-color:#fff;
-        overflow-y:auto;
         z-index:10;
     }
+
+    .popUpBeneficiados h3{
+        position:absolute;
+        left:20px;
+        top:10px;
+    }
+    .popUpBeneficiados span{
+        position:absolute;
+        right:20px;
+        top:10px;
+    }
+    .popUpBeneficiados div{
+        position:absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        border:solid 1px red;
+        top:40px;
+        overflow-y:auto;
+    }
+    
 </style>
 
-<div class="popUpBeneficiados"></div>
+<div class="popUpBeneficiados">
+    <h3>Título da Janela</h3>
+    <span>X</span>
+    <div></div>
+</div>
 
 
 <div class="row" style="margin-bottom:20px;">
@@ -349,7 +373,7 @@
                 },
                 success:function(dados){
 
-                    $(".popUpBeneficiados").html(dados);
+                    $(".popUpBeneficiados div").html(dados);
                     $(".popUpBeneficiados").css("display","block");
                     
                     // $(".LateralDireita").html(dados);
