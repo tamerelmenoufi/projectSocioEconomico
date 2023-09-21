@@ -30,7 +30,7 @@
     while($s = mysqli_fetch_object($result)){
 ?>
     <li class="list-group-item d-flex justify-content-between align-items-center">
-        <span><?=$s->nome?> (<?=$s->cpf?>)<br><?=$s->coordenador?></span>
+        <span class="percentual"><?=$s->nome?> (<?=$s->cpf?>)<br><?=$s->coordenador?></span>
         <div class="d-flex justify-content-between align-items-center">
             <span class="percentual"><?=$s->telefone?></span>
             <span class="percentual"><?=dataBr($s->data)?></span>
