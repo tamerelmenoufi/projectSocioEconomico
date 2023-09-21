@@ -827,7 +827,7 @@
                                 <label for="data">Data da Pesquisa*</label>
                             </div> -->
 
-                            <div class="form-floating mb-3">
+                            <!-- <div class="form-floating mb-3">
                                 <select name="monitor_social" required id="monitor_social" class="form-control" >
                                     <option value="">::Selecione o Profissional</option>
                                     <?php
@@ -841,7 +841,7 @@
                                     ?>
                                 </select>
                                 <label for="monitor_social">Profissionais</label>
-                            </div>
+                            </div> -->
 
                             <div class="form-floating mb-3">
                                 <?=montaRadio([
@@ -864,7 +864,7 @@
                                     <option value="i" <?=(($d->situacao == 'i')?'selected':false)?>>Iniciada</option>
                                     <option value="p" <?=(($d->situacao == 'p')?'selected':false)?>>Pendente</option>
                                     <option value="c" <?=(($d->situacao == 'c')?'selected':false)?>>Concluida</option>
-                                    <option value="f" <?=(($d->situacao == 'f')?'selected':false)?>>Finalizada</option>
+                                    <!-- <option value="f" <?=(($d->situacao == 'f')?'selected':false)?>>Finalizada</option> -->
                                 </select>
                                 <label for="situacao">Situação</label>
                             </div>
