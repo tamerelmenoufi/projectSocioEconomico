@@ -180,10 +180,11 @@
     <?php
         $rotulo = [
             'g' => 'Geral em Metas',
-            'n' => 'Recém adicionadas em Metas',
-            'c' => 'Pesquisas Concluídas',
-            'p' => 'Pesquisas Pendentes',
-            'i' => 'Pesquisas Iniciadas',
+            'n' => 'Novos',
+            'c' => 'Concluídas',
+            'p' => 'Pendentes',
+            'i' => 'Iniciadas',
+            'f' => 'Finalizadas',
             '' => 'Situação não definida'
         ];
         arsort($D);
