@@ -296,40 +296,5 @@
             })
         })
 
-
-        $("button[campo]").click(function(){
-            campo = $(this).attr("campo")
-            valor = $(this).attr("valor")
-            json = $(this).attr("json")
-            rotulo_titulo = $(this).attr("rotulo_titulo")
-            rotulo_campo = $(this).attr("rotulo_campo")
-            $(".LateralDireita").html('');
-            
-            Carregando();
-            $.ajax({
-                url:"src/relatorios/telas/lista_beneficiados.php",
-                type:"POST",
-                data:{
-                    campo,
-                    valor,
-                    json,
-                    titulo:`${rotulo_titulo} - ${rotulo_campo}`
-                },
-                success:function(dados){
-
-                    $(".popUpBeneficiados div").html(dados);
-                    $(".popUpBeneficiados h3").html(`${rotulo_titulo} - ${rotulo_campo}`);
-                    $(".popUpBeneficiados").css("display","block");
-                    
-                    // $(".LateralDireita").html(dados);
-                    
-                    // $.dialog({
-                    //     title:`${rotulo_titulo} - ${rotulo_campo}`,
-                    //     content:dados,
-                    //     columnClass:'col-md-12'
-                    // });
-                }
-            })
-        });
     })
 </script>
