@@ -118,32 +118,32 @@
         z-index:10;
     }
 
-    .popUpBeneficiados h3{
+    .popUpBeneficiados h3.popTitle{
         position:absolute;
         left:20px;
         top:10px;
     }
-    .popUpBeneficiados span{
+    .popUpBeneficiados span.popClose{
         position:absolute;
         right:20px;
         top:10px;
     }
-    .popUpBeneficiados div{
+    .popUpBeneficiados div.popBody{
         position:absolute;
         left:0;
         right:0;
         bottom:0;
         border:solid 1px red;
-        top:40px;
+        top:50px;
         overflow-y:auto;
     }
     
 </style>
 
 <div class="popUpBeneficiados">
-    <h3>Título da Janela</h3>
-    <span>X</span>
-    <div></div>
+    <h3 class="popTitle">Título da Janela</h3>
+    <span class="popClose">X</span>
+    <div class="popBody"></div>
 </div>
 
 
