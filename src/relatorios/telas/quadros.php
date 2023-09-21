@@ -38,6 +38,7 @@
 
             if($d->tipo == 'json'){
                 $J = json_decode($s->campo);
+                var_dump($J);
                 if($J){
                     foreach($J as $i => $v){
                         
