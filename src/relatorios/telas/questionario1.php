@@ -321,10 +321,10 @@
     || navigator.userAgent.match(/BlackBerry/i)
     || navigator.userAgent.match(/Windows Phone/i)
     ){
-        $(".popUpBeneficiados").css("--bs-offcanvas-width","100%")
+        $(".popUpBeneficiados").css("width","100%")
     }
     else {
-        $(".popUpBeneficiados").css("--bs-offcanvas-width","600px")
+        $(".popUpBeneficiados").css("width","600px")
     }
 
     $(function(){
