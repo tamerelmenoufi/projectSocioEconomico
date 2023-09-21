@@ -91,7 +91,7 @@
                             valor="<?=$ind?>" 
                             json="<?=$d->tipo?>"
                             rotulo_titulo="<?=$d->rotulo?>"
-                            rotulo_campo="<?=$d->legenda->$ind?>"
+                            rotulo_campo="<?=(($L[$ind])?:$d->legenda->$ind)?>"
                             data-bs-toggleX="offcanvas"
                             hrefX="#offcanvasDireita"
                             roleX="button"
