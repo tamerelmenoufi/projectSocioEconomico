@@ -30,7 +30,7 @@
             $item = ", {$d->item} as item";
         }
     
-        echo $query = "select a.{$d->campo} as campo {$item} from se a {$join} where a.monitor_social > 0 and a.meta > 0 {$filtro} ";
+        $query = "select a.{$d->campo} as campo {$item} from se a {$join} where a.monitor_social > 0 and a.meta > 0 {$filtro} ";
         $result = mysqli_query($con, $query);
         $t = 0;
         if(mysqli_num_rows($result)){
@@ -42,8 +42,6 @@
                 $J = json_decode($s->campo);
                 if($J){
                     foreach($J as $i => $v){
-
-                        // echo $v."<hr>";
                         
                         $L[$v] = ((trim($v))?:'Não Informado');
 
@@ -115,12 +113,7 @@
         }
     }
 
-
-    $d = json_decode(base64_decode($_POST['json']));
-
-    var_dump($d);
-
-    
+    $d = json_decode(base64_decode($_POST['json']));    
     questoes($d);
 
 ?>
