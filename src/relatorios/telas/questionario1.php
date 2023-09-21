@@ -297,7 +297,7 @@
         })
 
 
-        $("button[campo]").off('click').on('click',function(){
+        $(document).off('click').on('click', "button[campo]",function(){
 
             campo = $(this).attr("campo")
             valor = $(this).attr("valor")
