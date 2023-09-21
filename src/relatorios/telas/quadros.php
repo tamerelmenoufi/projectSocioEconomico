@@ -36,12 +36,14 @@
         if(mysqli_num_rows($result)){
         while($s = mysqli_fetch_object($result)){
 
+            $cmp = $s->campo;
+
             if($d->tipo == 'json'){
                 $J = json_decode($s->campo);
                 if($J){
                     foreach($J as $i => $v){
                         
-                        $d->legenda->$i = ((trim($v))?:'Não Informado');
+                        $d->legenda->$cmp = ((trim($v))?:'Não Informado');
 
                         $D[$v] = ($D[$v] + 1);
                         $t = ($t + 1);
@@ -49,7 +51,7 @@
                 }
             }else{
 
-                $cmp = $s->campo;
+                
 
                 if($item) {$d->legenda->$cmp = $s->item;}
                 else if(!$d->legenda->$cmp) { $d->legenda->$cmp = ((trim($s->campo))?:'Não Informado'); }
