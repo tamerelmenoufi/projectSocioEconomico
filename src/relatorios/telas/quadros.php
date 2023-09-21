@@ -36,14 +36,16 @@
         if(mysqli_num_rows($result)){
         while($s = mysqli_fetch_object($result)){
 
-            $cmp = $d->campo;
+            $cmp = $s->campo;
 
             if($d->tipo == 'json'){
                 $J = json_decode($s->campo);
                 if($J){
                     foreach($J as $i => $v){
+
+                        echo $v."<hr>";
                         
-                        $d->legenda->$cmp = ((trim($v))?:'Não Informado');
+                        $d->legenda->$v = ((trim($v))?:'Não Informado');
 
                         $D[$v] = ($D[$v] + 1);
                         $t = ($t + 1);
