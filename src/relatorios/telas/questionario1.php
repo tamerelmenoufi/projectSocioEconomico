@@ -11,7 +11,7 @@
 ?>
 
     <li class="list-group-item d-flex justify-content-between align-items-center">
-        <?=$d['rotulo']?>
+        <div><i class="fa-solid fa-chart-line"></i><?=$d['rotulo']?></div>
         <span class="badge bg-primary rounded-pill">Open</span>
     </li>
 
