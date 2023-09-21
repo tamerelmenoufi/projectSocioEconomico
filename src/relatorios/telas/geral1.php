@@ -70,7 +70,7 @@
 </style>
 
     <div class="row mb-3 mt-3">
-        <div class="col-md-12"><h3 style="color:#a1a1a1">Relatório Quantitativo</h3></div>
+        <div class="col-md-12"><h3 style="color:#a1a1a1">Relatório Quantitativo Geral</h3></div>
     </div>
 
     <div class="row">
