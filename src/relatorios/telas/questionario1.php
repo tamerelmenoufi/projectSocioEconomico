@@ -10,12 +10,10 @@
         
 ?>
 
-<div class="card mb-3">
-  <h5 class="card-header"><?=$d['rotulo']?></h5>
-  <div class="card-body">
-        
-  </div>
-</div>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <?=$d['rotulo']?>
+        <span class="badge bg-primary rounded-pill">Open</span>
+    </li>
 
 <?php
     }
@@ -67,6 +65,7 @@
     <div class="row mb-3 mt-3">
         <div class="col-md-12"><h3 style="color:#a1a1a1">Relatório Estatístico das Metas</h3></div>
     </div>
+    <ul class="list-group">
     <?php
         questoes([
             'rotulo' => 'Situação da Pesquisa',
@@ -248,7 +247,7 @@
 
                 
     ?>
-
+    </ul>
 </div>
 
 <script>
