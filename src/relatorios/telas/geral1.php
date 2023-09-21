@@ -78,7 +78,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-1 mb-3">
+        <!-- <div class="col-md-1 mb-3">
             <div class="cartao geral">
                 <span>Toatl Geral</span>
                 <p><?=$total_geral?></p>
@@ -87,7 +87,7 @@
                     <i acao='downloadXXX' filtro='' class="fa-solid fa-file-arrow-down"></i>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="col-md-10">
             <div class="row">
 
@@ -157,7 +157,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-1 mb-3">
+        <div class="col-md-2 mb-3">
             <div class="cartao geral">
                 <span>Finalizados</span>
                 <p><?=($D['f']*1)?></p>
