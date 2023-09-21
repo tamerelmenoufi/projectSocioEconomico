@@ -24,7 +24,7 @@
 <ul class="list-group">
 <?php
 
-    $query = "select a.*,b.nome as coordenador from se_novos a left join usuarios b on a.monitor_social > b.codigo";
+    $query = "select a.*,b.nome as coordenador from se_novos a left join usuarios b on a.monitor_social = b.codigo";
     $result = mysqli_query($con, $query);
     $t = 0;
     while($s = mysqli_fetch_object($result)){
