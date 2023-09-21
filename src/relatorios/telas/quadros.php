@@ -73,7 +73,7 @@
 ?>
         <li class="list-group-item">
             <div class="row">
-                <div class="col-5"><?=($L[$ind])?></div>
+                <div class="col-5"><?=(($L[$ind])?:$d->legenda->$ind)?></div>
                 <div class="col-5">
                     <div class="progress">
                         <div class="progress-bar" style="width:<?=$p?>%" role="progressbar" aria-valuenow="<?=$p?>" aria-valuemin="0" aria-valuemax="100"><?=$p?>%</div>
