@@ -160,17 +160,25 @@
 
 
     <div class="card mb-3">
-    <h5 class="card-header">Relatório estatístico Geral</h5>
+    <h5 class="card-header">Relatório de atividades nas metas</h5>
     <div class="card-body">
         <ul class="list-group">
     <?php
+        $rotulo = [
+            'g' => '',
+            'Recém adicionadas em Metas' => '',
+            'Pesquisas Concluídas' => '',
+            'Pesquisas Pendentes' => '',
+            'Pesquisas Iniciadas' => '',
+            '' => 'Situação não definida'
+        ];
         arsort($D);
         foreach($D as $ind => $val){
             $p = number_format($val*100/$total_geral, 4,',',false);
     ?>
             <li class="list-group-item">
                 <div class="row">
-                    <div class="col-5"><?=($ind)?></div>
+                    <div class="col-5"><?=($rotulo[$ind])?></div>
                     <div class="col-7">
                         <div class="progress">
                             <div class="progress-bar" style="width:<?=$p?>%" role="progressbar" aria-valuenow="<?=$p?>" aria-valuemin="0" aria-valuemax="100"><?=$p?>%</div>
