@@ -74,7 +74,6 @@
                 },
                 success:function(dados){
                     $(".LateralDireita").html(dados);
-                    $.alert(dados)
                 }
             })
 
