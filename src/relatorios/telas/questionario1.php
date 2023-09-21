@@ -267,8 +267,8 @@
     else {
         $(".popUpBeneficiados").css("width","600px")
     }
-
-    $(".popClose").click(function(){
+    
+    $(document).off().on("click", ".popClose",function(){
         $(".popUpBeneficiados div").html('');
         $(".popUpBeneficiados h3").html('');
         $(".popUpBeneficiados").css("display","none");
@@ -277,7 +277,7 @@
     $(function(){
         Carregando('none');
 
-        $("span[json]").click(function(){
+        $(document).off().on("click", "span[json]",function(){
             json = $(this).attr("json");
             obj = $(this);
             Carregando();
