@@ -64,6 +64,9 @@
         cursor: pointer;
         margin-left:10px;
     }
+    .geral{
+        background-color:#fc8b06;
+    }
 </style>
 
     <div class="row mb-3 mt-3">
@@ -72,7 +75,7 @@
 
     <div class="row">
         <div class="col-md-2 mb-3">
-            <div class="cartao">
+            <div class="cartao geral">
                 <span>Toatl Geral</span>
                 <p><?=$total_geral?></p>
                 <div>
