@@ -50,7 +50,7 @@
             }else{
 
                 if($item) {$d->legenda[$s->campo] = $s->item;}
-                else if(!$d->legenda[$s->campo]) { $d->legenda[trim($s->campo)] = ((trim($s->campo))?:'Não Informado'); }
+                else if(!$d->legenda->$s->campo) { $d->legenda->$s->campo = ((trim($s->campo))?:'Não Informado'); }
 
                 $D[$s->campo] = ($D[$s->campo] + 1);
                 $t = ($t + 1);
