@@ -5,14 +5,12 @@
     function questoes($d){
 
         global $_SESSION;
-        global $con;
-
-        
+        global $con;  
 ?>
 
     <li class="list-group-item list-group-item-action list-group-item-light d-flex justify-content-between align-items-center">
         <div><i class="fa-solid fa-angle-right"></i> <?=$d['rotulo']?></div>
-        <span class="badge bg-primary rounded-pill"><i class="fa-solid fa-chart-line"></i> Visualizar</span>
+        <span class="badge bg-primary rounded-pill" json="<?=base64_encode(json_encode($d))?>"><i class="fa-solid fa-chart-line"></i> Visualizar</span>
     </li>
 
 <?php
@@ -49,6 +47,9 @@
         bottom:0;
         top:50px;
         overflow-y:auto;
+    }
+    span[json]{
+        cursor:pointer;
     }
     
 </style>
@@ -275,6 +276,22 @@
 
     $(function(){
         Carregando('none');
+
+        $("span[json]").click(function(){
+            json = $(this).attr("json");
+            $.ajax({
+                url:"src/relatorios/telas/quadros.php",
+                type:"POST",
+                data:{
+                    json
+                },
+                success:function(dados){
+                    $.dialog(dados)
+                }
+            })
+        })
+
+
         $("button[campo]").click(function(){
             campo = $(this).attr("campo")
             valor = $(this).attr("valor")

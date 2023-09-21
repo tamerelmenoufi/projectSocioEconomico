@@ -103,4 +103,8 @@
         }
     }
 
+
+    $d = json_decode(base64_decode($_POST['json']));
+    questoes($d);
+
 ?>
