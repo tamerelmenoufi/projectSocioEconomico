@@ -352,6 +352,12 @@
         $(".popUpBeneficiados").css("width","600px")
     }
 
+    $(".popClose").click(function(){
+        $(".popUpBeneficiados div").html('');
+        $(".popUpBeneficiados h3").html('');
+        $(".popUpBeneficiados").css("display","none");
+    })
+
     $(function(){
         Carregando('none');
         $("button[campo]").click(function(){
@@ -375,6 +381,7 @@
                 success:function(dados){
 
                     $(".popUpBeneficiados div").html(dados);
+                    $(".popUpBeneficiados h3").html(`${rotulo_titulo} - ${rotulo_campo}`);
                     $(".popUpBeneficiados").css("display","block");
                     
                     // $(".LateralDireita").html(dados);
