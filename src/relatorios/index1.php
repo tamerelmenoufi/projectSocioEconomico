@@ -112,12 +112,12 @@
                 }
             })
             
-            // $.ajax({
-            //     url:"src/relatorios/telas/questionario1.php",
-            //     success:function(dados){
-            //         $("div[questionario]").html(dados);
-            //     }
-            // })
+            $.ajax({
+                url:"src/relatorios/telas/questionario1.php",
+                success:function(dados){
+                    $("div[questionario]").html(dados);
+                }
+            })
 
             $("#filtro_usuario").change(function(){
                 usuario = $(this).val();
