@@ -85,7 +85,7 @@
 
                 <div class="col-md-2 mb-3">
                     <div class="cartao">
-                        <span>Toatl Geral</span>
+                        <span>Em Metas</span>
                         <p><?=($D['g']*1)?></p>
                         <div>
                             <i acao='editarXXX' filtro='' class="fa-solid fa-up-right-from-square"></i>
