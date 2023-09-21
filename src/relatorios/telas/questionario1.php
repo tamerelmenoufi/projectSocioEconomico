@@ -116,6 +116,7 @@
         display:none;
         background-color:#fff;
         z-index:10;
+        border-right:2px solid #ccc;
     }
 
     .popUpBeneficiados h3.popTitle{
@@ -126,14 +127,14 @@
     .popUpBeneficiados span.popClose{
         position:absolute;
         right:20px;
-        top:10px;
+        top:15px;
+        cursor:pointer;
     }
     .popUpBeneficiados div.popBody{
         position:absolute;
         left:0;
         right:0;
         bottom:0;
-        border:solid 1px red;
         top:50px;
         overflow-y:auto;
     }
