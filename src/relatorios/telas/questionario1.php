@@ -107,6 +107,23 @@
 
 
 ?>
+<style>
+    .popUpBeneficiados{
+        position:fixed;
+        left:0;
+        top:0;
+        bottom:0;
+        display:none;
+        background-color:#fff;
+        overflow-y:auto;
+    }
+</style>
+
+<div class="popUpBeneficiados">
+
+</div>
+
+
 <div class="row" style="margin-bottom:20px;">
 
 
@@ -295,6 +312,22 @@
 </div>
 
 <script>
+
+
+    if( navigator.userAgent.match(/Android/i)
+    || navigator.userAgent.match(/webOS/i)
+    || navigator.userAgent.match(/iPhone/i)
+    || navigator.userAgent.match(/iPad/i)
+    || navigator.userAgent.match(/iPod/i)
+    || navigator.userAgent.match(/BlackBerry/i)
+    || navigator.userAgent.match(/Windows Phone/i)
+    ){
+        $(".popUpBeneficiados").css("--bs-offcanvas-width","100%")
+    }
+    else {
+        $(".popUpBeneficiados").css("--bs-offcanvas-width","600px")
+    }
+
     $(function(){
         Carregando('none');
         $("button[campo]").click(function(){
@@ -315,7 +348,12 @@
                     titulo:`${rotulo_titulo} - ${rotulo_campo}`
                 },
                 success:function(dados){
-                    $(".LateralDireita").html(dados);
+
+                    $(".popUpBeneficiados").html(dados);
+                    $(".popUpBeneficiados").css("display","fixed");
+                    
+                    // $(".LateralDireita").html(dados);
+                    
                     // $.dialog({
                     //     title:`${rotulo_titulo} - ${rotulo_campo}`,
                     //     content:dados,
