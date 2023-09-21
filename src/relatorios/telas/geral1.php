@@ -166,7 +166,7 @@
     <?php
         arsort($D);
         foreach($D as $ind => $val){
-            $p = number_format($val*100/$total_geral, 0,false,false);
+            $p = number_format($val*100/$total_geral, 4,',',false);
     ?>
             <li class="list-group-item">
                 <div class="row">
