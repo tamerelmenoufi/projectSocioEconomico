@@ -17,11 +17,12 @@
     $filtro = $f_usuario . $f_meta . $f_data;
 
 
-    $query = "select count(*) as qt, situacao from se where monitor_social > 0 and meta > 0 {$filtro} group by situacao";
+    $query = "select count(*) as qt, situacao, (select count(*) from se) as total from se where monitor_social > 0 and meta > 0 {$filtro} group by situacao";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
         $D[$d->situacao] = $d->qt;
         $D['g'] = $D['g'] + $d->qt;
+        $total_geral = $d->total;
     }
     $R = [
         '' => 'Não Definifo',
@@ -73,7 +74,7 @@
         <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Toatl Geral</span>
-                <p><?=($D['g']*1)?></p>
+                <p><?=$total_geral?></p>
                 <div>
                     <i acao='editarXXX' filtro='' class="fa-solid fa-up-right-from-square"></i>
                     <i acao='downloadXXX' filtro='' class="fa-solid fa-file-arrow-down"></i>
