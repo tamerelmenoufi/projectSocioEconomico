@@ -1,6 +1,11 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 ?>
+<style>
+  a[url]{
+    cursor:pointer;
+  }
+</style>
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header">
     <img src="img/logo_h.png" style="height:60px;" alt="">
