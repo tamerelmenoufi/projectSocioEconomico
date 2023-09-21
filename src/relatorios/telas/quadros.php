@@ -53,8 +53,8 @@
 
                 
 
-                if($item) {$d->legenda->$cmp = $s->item;}
-                else if(!$d->legenda->$cmp) { $d->legenda->$cmp = ((trim($s->campo))?:'Não Informado'); }
+                if($item) {$L[$v] = $s->item;}
+                else if(!$d->legenda->$cmp) { $L[$v] = ((trim($s->campo))?:'Não Informado'); }
 
                 $D[$s->campo] = ($D[$s->campo] + 1);
                 $t = ($t + 1);
