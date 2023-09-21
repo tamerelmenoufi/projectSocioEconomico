@@ -68,8 +68,8 @@
     <div class="row mb-3 mt-3">
         <div class="col-md-12"><h3 style="color:#a1a1a1">Relatório Quantitativo</h3></div>
     </div>
-    <div class="row">
 
+    <div class="row">
         <div class="col-md-2 mb-3">
             <div class="cartao">
                 <span>Toatl Geral</span>
@@ -80,61 +80,91 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-10">
+            <div class="row">
 
-        <div class="col-md-2 mb-3">
-            <div class="cartao">
-                <span>Pesquisas Iniciadas</span>
-                <p><?=($D['i']*1)?></p>
-                <div>
-                    <i acao='editarXXX' filtro='i' class="fa-solid fa-up-right-from-square"></i>
-                    <i acao='downloadXXX' filtro='i' class="fa-solid fa-file-arrow-down"></i>
+                <div class="col-md-2 mb-3">
+                    <div class="cartao">
+                        <span>Toatl Geral</span>
+                        <p><?=($D['g']*1)?></p>
+                        <div>
+                            <i acao='editarXXX' filtro='' class="fa-solid fa-up-right-from-square"></i>
+                            <i acao='downloadXXX' filtro='' class="fa-solid fa-file-arrow-down"></i>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="col-md-2 mb-3">
-            <div class="cartao">
-                <span>Pesquisas Pendentes</span>
-                <p><?=($D['p']*1)?></p>
-                <div>
-                    <i acao='editarXXX' filtro='p' class="fa-solid fa-up-right-from-square"></i>
-                    <i acao='downloadXXX' filtro='p' class="fa-solid fa-file-arrow-down"></i>
+                <div class="col-md-2 mb-3">
+                    <div class="cartao">
+                        <span>Toatl Geral</span>
+                        <p><?=($D['g']*1)?></p>
+                        <div>
+                            <i acao='editarXXX' filtro='' class="fa-solid fa-up-right-from-square"></i>
+                            <i acao='downloadXXX' filtro='' class="fa-solid fa-file-arrow-down"></i>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="col-md-2 mb-3">
-            <div class="cartao">
-                <span>Pesquisas Concluídas</span>
-                <p><?=($D['c']*1)?></p>
-                <div>
-                    <i acao='editarXXXX' filtro='c' class="fa-solid fa-up-right-from-square"></i>
-                    <i acao='downloadXXX' filtro='c' class="fa-solid fa-file-arrow-down"></i>
+                <div class="col-md-2 mb-3">
+                    <div class="cartao">
+                        <span>Pesquisas Iniciadas</span>
+                        <p><?=($D['i']*1)?></p>
+                        <div>
+                            <i acao='editarXXX' filtro='i' class="fa-solid fa-up-right-from-square"></i>
+                            <i acao='downloadXXX' filtro='i' class="fa-solid fa-file-arrow-down"></i>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="col-md-2 mb-3">
-            <div class="cartao">
-                <span>Beneficiários não encontrados</span>
-                <p><?=($D['n']*1)?></p>
-                <div>
-                    <i acao='editarXXX' filtro='n' class="fa-solid fa-up-right-from-square"></i>
-                    <i acao='downloadXXX' filtro='n' class="fa-solid fa-file-arrow-down"></i>
+                <div class="col-md-2 mb-3">
+                    <div class="cartao">
+                        <span>Pesquisas Pendentes</span>
+                        <p><?=($D['p']*1)?></p>
+                        <div>
+                            <i acao='editarXXX' filtro='p' class="fa-solid fa-up-right-from-square"></i>
+                            <i acao='downloadXXX' filtro='p' class="fa-solid fa-file-arrow-down"></i>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-md-2 mb-3">
-            <div class="cartao">
-                <span>Situação não identificada</span>
-                <p><?=($D['']*1)?></p>
-                <div>
-                    <i acao='editarXXX' filtro='n' class="fa-solid fa-up-right-from-square"></i>
-                    <i acao='downloadXXX' filtro='n' class="fa-solid fa-file-arrow-down"></i>
+
+                <div class="col-md-2 mb-3">
+                    <div class="cartao">
+                        <span>Pesquisas Concluídas</span>
+                        <p><?=($D['c']*1)?></p>
+                        <div>
+                            <i acao='editarXXXX' filtro='c' class="fa-solid fa-up-right-from-square"></i>
+                            <i acao='downloadXXX' filtro='c' class="fa-solid fa-file-arrow-down"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 mb-3">
+                    <div class="cartao">
+                        <span>Beneficiários não encontrados</span>
+                        <p><?=($D['n']*1)?></p>
+                        <div>
+                            <i acao='editarXXX' filtro='n' class="fa-solid fa-up-right-from-square"></i>
+                            <i acao='downloadXXX' filtro='n' class="fa-solid fa-file-arrow-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <div class="cartao">
+                        <span>Situação não identificada</span>
+                        <p><?=($D['']*1)?></p>
+                        <div>
+                            <i acao='editarXXX' filtro='n' class="fa-solid fa-up-right-from-square"></i>
+                            <i acao='downloadXXX' filtro='n' class="fa-solid fa-file-arrow-down"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    
+
+    
 
 <script>
     $(function(){
