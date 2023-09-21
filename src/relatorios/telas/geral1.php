@@ -211,6 +211,36 @@
 
     
 
+    <div class="row mb-3 mt-3">
+        <div class="col-md-12"><h3 style="color:#a1a1a1">Relatório Completo</h3></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                <?php
+                $query = "select *, count(*) as qt from se group by situacao";
+                $result = mysqli_query($con, $query);
+                while($d = mysqli_fetch_object($result)){
+                ?>
+                <div class="col-md-2 mb-3">
+                    <div class="cartao">
+                        <span><?=$d->situacao?></span>
+                        <p><?=$d->qt?></p>
+                    </div>
+                </div>
+                <?php
+                }
+                ?>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+
 <script>
     $(function(){
 
