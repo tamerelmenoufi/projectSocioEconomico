@@ -250,7 +250,7 @@
                 ?>
             </div>
         </div>
-        <div class="col-md-10 mb-3">
+        <div class="col-md-2 mb-3">
             <div class="cartao dados">
                 <span>Geral</span>
                 <p><?=$total?></p>
