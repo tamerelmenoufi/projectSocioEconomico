@@ -38,7 +38,7 @@
         top:8px;
         z-index:0;
     }
-    .grafico{
+    .grafico<?=$md5?>{
         margin-right:20px;
         width:30px;
         height:30px;
@@ -62,7 +62,7 @@
         <span><?=$s->nome?></span>
         <div class="d-flex justify-content-between align-items-center">
             <span class="percentual"><?=number_format($s->percentual,0)?>%</span>
-            <canvas class="grafico" id="Tipos<?= $s->codigo ?>" pct="<?=number_format($s->percentual,0)?>"></canvas>
+            <canvas class="grafico<?=$md5?>" id="Tipos<?= $s->codigo ?>" pct="<?=number_format($s->percentual,0)?>"></canvas>
             <?php
             if($_SESSION['ProjectSeLogin']->perfil != 'sup'){
             ?>
@@ -109,7 +109,7 @@
         })
 
 
-        const Graficos = (pct, local)=>{
+        const Graficos<?=$md5?> = (pct, local)=>{
 
             let r = (100 - pct)
 
@@ -162,10 +162,10 @@
             );
         }
 
-        $(".grafico").each(function(){
+        $(".grafico<?=$md5?>").each(function(){
             local = $(this).attr("id")
             pct = $(this).attr("pct")
-            Graficos(pct, local)
+            Graficos<?=$md5?>(pct, local)
         })
 
 
