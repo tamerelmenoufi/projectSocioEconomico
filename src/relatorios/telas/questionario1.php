@@ -289,7 +289,7 @@
                 },
                 success:function(dados){
                     // $.dialog(dados)
-                    obj.parent("li").removeClass("list-group-item-action list-group-item-light d-flex justify-content-between align-items-center");
+                    obj.parent("li").attr("class","");
                     obj.parent("li").html(dados);
                     Carregando('none');
                 }
