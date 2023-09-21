@@ -36,9 +36,6 @@
         if(mysqli_num_rows($result)){
         while($s = mysqli_fetch_object($result)){
 
-            print_r($s);
-            echo "<hr>";
-
             if($d->tipo == 'json'){
                 $J = json_decode($s->campo);
                 if($J){
