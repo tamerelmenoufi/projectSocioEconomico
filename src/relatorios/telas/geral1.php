@@ -235,6 +235,7 @@
                 <?php
                 $query = "select *, count(*) as qt from se group by situacao";
                 $result = mysqli_query($con, $query);
+                $total = 0;
                 while($d = mysqli_fetch_object($result)){
                 ?>
                 <div class="col-md-2 mb-3">
@@ -244,8 +245,15 @@
                     </div>
                 </div>
                 <?php
+                $total = $total + $d->qt;
                 }
                 ?>
+                <div class="col-md-2 mb-3">
+                    <div class="cartao dados">
+                        <span>Geral</span>
+                        <p><?=$total?></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
