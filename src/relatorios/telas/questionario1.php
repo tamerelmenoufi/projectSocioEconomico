@@ -268,7 +268,7 @@
         $(".popUpBeneficiados").css("width","600px")
     }
     
-    $(document).off().on("click", ".popClose",function(){
+    $(document).off().on(".popClose","click", function(){
         $(".popUpBeneficiados div").html('');
         $(".popUpBeneficiados h3").html('');
         $(".popUpBeneficiados").css("display","none");
@@ -277,7 +277,7 @@
     $(function(){
         Carregando('none');
 
-        $(document).off().on("click", "span[json]",function(){
+        $(document).off().on("span[json]","click", function(){
             json = $(this).attr("json");
             obj = $(this);
             Carregando();
@@ -297,7 +297,7 @@
         })
 
 
-        $(document).off().on("click", "button[campo]", function(){
+        $(document).off().on("button[campo]", "click", function(){
             campo = $(this).attr("campo")
             valor = $(this).attr("valor")
             json = $(this).attr("json")
