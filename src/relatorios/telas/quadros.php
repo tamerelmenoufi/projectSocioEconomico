@@ -39,16 +39,18 @@
             $cmp = $s->campo;
 
             if($d->tipo == 'json'){
+
                 $J = json_decode($s->campo);
                 if($J){
                     foreach($J as $i => $v){
                         
-                        $L[$v] = ((trim($v))?:'Não Informado');
+                        $L[$v] = ((trim($v))?(($s->item)?:trim($v)):'Não Informado');
 
                         $D[$v] = ($D[$v] + 1);
                         $t = ($t + 1);
                     }
                 }
+
             }else{
 
                 
