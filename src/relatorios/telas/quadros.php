@@ -41,7 +41,7 @@
                 if($J){
                     foreach($J as $i => $v){
                         
-                        $d->legenda[trim($v)] = ((trim($v))?:'Não Informado');
+                        $d->legenda->$i = ((trim($v))?:'Não Informado');
 
                         $D[$v] = ($D[$v] + 1);
                         $t = ($t + 1);
