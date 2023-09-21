@@ -75,10 +75,10 @@
 
     $addTab = ['bairros_comunidades','municipios', 'metas','mensagens'];
 
-    $reg['bairros_comunidades'] = @implode(",", $reg['bairros_comunidades']);
-    $reg['municipios'] =  @implode(",", $reg['municipios']);
-    $reg['metas'] =  $metas;
-
+    $reg['bairros_comunidades'] = (($reg['bairros_comunidades'])?" and codigo in (". @implode(",", $reg['bairros_comunidades']).")":false);
+    $reg['municipios'] = (($reg['municipios'])?" and codigo in (". @implode(",", $reg['municipios']).")":false);
+    $reg['metas'] = (($metas)?" and codigo in (". $metas.")":false);
+    $reg['mensagens'] = " and situacao = '1' and deletado != '1' ";
     
 
     $query = "SELECT * FROM `COLUMNS` where TABLE_SCHEMA = 'app' and TABLE_NAME in('".implode("','", $addTab)."') order by TABLE_NAME";
@@ -93,9 +93,7 @@
     foreach($Comando as $ind => $val){
 
         if($reg[$ind]){
-            $query = "select * from {$ind} where codigo in ({$reg[$ind]})";
-        }else if($ind == 'mensagens'){
-            $query = "select * from {$ind} where 1";
+            $query = "select * from {$ind} where 1 {$reg[$ind]}";
         }else{
             $query = false;
         }
