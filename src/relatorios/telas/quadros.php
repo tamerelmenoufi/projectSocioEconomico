@@ -46,7 +46,7 @@
                         
                         $d->legenda->$i = ((trim($v))?:'Não Informado');
 
-                        $D[$i] = ($D[$i] + 1);
+                        $D[$v] = ($D[$v] + 1);
                         $t = ($t + 1);
                     }
                 }
@@ -80,6 +80,9 @@
                         <div class="progress-bar" style="width:<?=$p?>%" role="progressbar" aria-valuenow="<?=$p?>" aria-valuemin="0" aria-valuemax="100"><?=$p?>%</div>
                     </div>
                 </div>
+                <?php
+                /*
+                ?>
                 <div class="col-2">
                         <button 
                             class="btn btn-info btn-sm w-100 d-flex justify-content-between"
@@ -96,6 +99,9 @@
                             <i class="fa-solid fa-arrow-up-1-9"></i><span><?=$val?> <i class="fa-solid fa-up-right-from-square"></i></span>
                         </button>                    
                 </div>
+                <?php
+                    //*/
+                ?>
             </div>
         </li>
 <?php
