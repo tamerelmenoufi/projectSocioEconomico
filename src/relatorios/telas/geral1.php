@@ -74,8 +74,8 @@
 </style>
 
 <div class="d-flex justify-content-between align-items-center">
-    <span>Sugestão para Cadastro de novos Beneficiados</span>
-    <button lista_novos class="btn btn-warning btn-sm">Listar</button>
+    Sugestão para Cadastro de novos Beneficiados 
+    <button lista_novos class="btn btn-warning btn-sm">Visualizar Lista</button>
 </div>
     
     <div class="row mb-3 mt-3">
