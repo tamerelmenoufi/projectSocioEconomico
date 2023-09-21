@@ -81,7 +81,7 @@
                     </div>
                 </div>
                 <?php
-                /*
+                //*
                 ?>
                 <div class="col-2">
                         <button 
@@ -90,7 +90,7 @@
                             valor="<?=$ind?>" 
                             json="<?=$d->tipo?>"
                             rotulo_titulo="<?=$d->rotulo?>"
-                            rotulo_campo="<?=$d->legenda[$ind]?>"
+                            rotulo_campo="<?=$d->legenda->$ind?>"
                             data-bs-toggleX="offcanvas"
                             hrefX="#offcanvasDireita"
                             roleX="button"
