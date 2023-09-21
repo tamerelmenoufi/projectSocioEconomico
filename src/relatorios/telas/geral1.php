@@ -165,11 +165,11 @@
         <ul class="list-group">
     <?php
         $rotulo = [
-            'g' => '',
-            'Recém adicionadas em Metas' => '',
-            'Pesquisas Concluídas' => '',
-            'Pesquisas Pendentes' => '',
-            'Pesquisas Iniciadas' => '',
+            'g' => 'Geral em Metas',
+            'n' => 'Recém adicionadas em Metas',
+            'c' => 'Pesquisas Concluídas',
+            'p' => 'Pesquisas Pendentes',
+            'i' => 'Pesquisas Iniciadas',
             '' => 'Situação não definida'
         ];
         arsort($D);
