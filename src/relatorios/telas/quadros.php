@@ -106,7 +106,7 @@
 
     $d = json_decode(base64_decode($_POST['json']));
 
-    echo $d['rotulo'];
+    echo $d->rotulo;
     // questoes($d);
 
 ?>
