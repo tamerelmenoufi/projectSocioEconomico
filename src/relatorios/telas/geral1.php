@@ -157,6 +157,50 @@
 
     
 
+
+
+    <div class="card mb-3">
+    <h5 class="card-header">Relatório estatístico Geral</h5>
+    <div class="card-body">
+        <ul class="list-group">
+    <?php
+        arsort($D);
+        foreach($D as $ind => $val){
+            $p = number_format($val*100/$t, 0,false,false);
+    ?>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-5"><?=($ind)?></div>
+                    <div class="col-7">
+                        <div class="progress">
+                            <div class="progress-bar" style="width:<?=$p?>%" role="progressbar" aria-valuenow="<?=$p?>" aria-valuemin="0" aria-valuemax="100"><?=$p?>%</div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-2">
+                            <button 
+                                class="btn btn-info btn-sm w-100 d-flex justify-content-between"
+                                campo="<?=$d['campo']?>"
+                                valor="<?=$ind?>" 
+                                json="<?=$d['tipo']?>"
+                                rotulo_titulo="<?=$d['rotulo']?>"
+                                rotulo_campo="<?=$d['legenda'][$ind]?>"
+                                data-bs-toggleX="offcanvas"
+                                hrefX="#offcanvasDireita"
+                                roleX="button"
+                                aria-controlsX="offcanvasDireita"                          
+                            >
+                                <i class="fa-solid fa-arrow-up-1-9"></i><span><?=$val?> <i class="fa-solid fa-up-right-from-square"></i></span>
+                            </button>                    
+                    </div> -->
+                </div>
+            </li>
+    <?php
+        }
+    ?>
+        </ul>
+    </div>
+    </div>
+
     
 
 <script>
