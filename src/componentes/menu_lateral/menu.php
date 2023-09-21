@@ -29,14 +29,14 @@
     <div class="row mb-1">
       <div class="col">
         <a url="src/relatorios/index1.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Relatórios
+          <i class="fa-solid fa-chart-line col-1"></i> <span class="col-11">Relatórios</span>
         </a>
       </div>
     </div>
     <div class="row mb-1">
       <div class="col">
         <a url="src/relatorios/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Relatórios (Novo)
+          <i class="fa-solid fa-chart-line col-1"></i> <span class="col-11">Relatórios (Novo)</span>
         </a>
       </div>
     </div>
@@ -46,7 +46,7 @@
     <div class="row mb-1">
       <div class="col">
         <a url="src/usuarios/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-regular fa-user"></i> Usuários do Sistema
+          <i class="fa-regular fa-user col-1"></i> <span class="col-11">Usuários do Sistema</span>
         </a>
       </div>
     </div>
@@ -57,7 +57,7 @@
     <div class="row mb-1">
       <div class="col">
         <a url="src/pacs/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-regular fa-building"></i> PACs
+          <i class="fa-regular fa-building col-1"></i> <span class="col-11">PACs</span>
         </a>
       </div>
     </div>
@@ -69,7 +69,7 @@
     <div class="row mb-1">
       <div class="col">
         <a url="src/se/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-users-viewfinder"></i> Beneficiários
+          <i class="fa-solid fa-users-viewfinder col-1"></i> <span class="col-11">Beneficiários</span>
         </a>
       </div>
     </div>
@@ -79,7 +79,7 @@
     <div class="row mb-1">
       <div class="col">
         <a href="./docs/form-se.pdf" target="formSocioEconimico" class="text-decoration-none">
-          <i class="fa-regular fa-file-lines"></i> Formulário Socioeconômico
+          <i class="fa-regular fa-file-lines col-1"></i> <span class="col-11">Formulário Socioeconômico</span>
         </a>
       </div>
     </div>
@@ -87,7 +87,7 @@
     <div class="row mb-1">
       <div class="col">
         <a href="./docs/form-ef.pdf" target="formEstruturaFamiliar" class="text-decoration-none">
-          <i class="fa-regular fa-file-lines"></i> Formulário Estrutura Familiar
+          <i class="fa-regular fa-file-lines col-1"></i> <span class="col-11">Formulário Estrutura Familiar</span>
         </a>
       </div>
     </div>
