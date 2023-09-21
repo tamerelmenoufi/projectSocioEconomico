@@ -11,8 +11,8 @@
 ?>
 
     <li class="list-group-item d-flex justify-content-between align-items-center">
-        <div><i class="fa-solid fa-chart-line"></i> <b><?=$d['rotulo']?></b></div>
-        <span class="badge bg-primary rounded-pill"><i class="fa-solid fa-eye"></i> Visualizar</span>
+        <div><i class="fa-solid fa-angles-right"></i> <b><?=$d['rotulo']?></b></div>
+        <span class="badge bg-primary rounded-pill"><i class="fa-solid fa-chart-line"></i> Visualizar</span>
     </li>
 
 <?php
