@@ -297,7 +297,7 @@
         })
 
 
-        $(document).on("click", "button[campo]", function(){
+        $(document).off().on("click", "button[campo]", function(){
             campo = $(this).attr("campo")
             valor = $(this).attr("valor")
             json = $(this).attr("json")
