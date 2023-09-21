@@ -64,7 +64,7 @@
             
         }
 ?>
-<div class="card mb-3">
+<div class="card mb-3 w-100">
   <h5 class="card-header"><?=$d->rotulo?></h5>
   <div class="card-body">
     <ul class="list-group">
