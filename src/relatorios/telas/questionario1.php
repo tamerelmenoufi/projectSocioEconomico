@@ -120,9 +120,7 @@
     }
 </style>
 
-<div class="popUpBeneficiados">
-
-</div>
+<div class="popUpBeneficiados"></div>
 
 
 <div class="row" style="margin-bottom:20px;">
