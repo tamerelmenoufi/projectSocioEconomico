@@ -74,8 +74,8 @@
 </style>
 
 <div class="alert alert-dark" role="alert">
-    <div>Sugestão para Cadastro de novos Beneficiados 
-    <button lista_novos class="btn btn-warning btn-sm"><i class="fa fa-users"></i> Visualizar Lista</button></div>
+    Sugestão para Cadastro de novos Beneficiados 
+    <button lista_novos class="btn btn-warning btn-sm"><i class="fa fa-users"></i> Visualizar Lista</button>
 </div>
     
     <div class="row mb-3 mt-3">
