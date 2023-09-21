@@ -39,19 +39,19 @@
             $attr[] = "acao = '0'";
             $attr[] = "acao_relatorio = '0'";
 
-            if($pct == 100){
-                $attr[] = "pesquisa_realizada = 'Sim'";
-                $attr[] = "situacao = 'c'";
-            }elseif($pct > 0){
-                $attr[] = "pesquisa_realizada = 'Pendente'";
-                $attr[] = "situacao = 'i'";
-            }elseif($_POST['beneficiario_encontrado'] == 'Não'){
-                $attr[] = "pesquisa_realizada = ''";
-                $attr[] = "situacao = 'n'";
-            }else{
-                $attr[] = "pesquisa_realizada = ''";
-                $attr[] = "situacao = 'p'";
-            }
+            // if($pct == 100){
+            //     $attr[] = "pesquisa_realizada = 'Sim'";
+            //     $attr[] = "situacao = 'c'";
+            // }elseif($pct > 0){
+            //     $attr[] = "pesquisa_realizada = 'Pendente'";
+            //     $attr[] = "situacao = 'i'";
+            // }elseif($_POST['beneficiario_encontrado'] == 'Não'){
+            //     $attr[] = "pesquisa_realizada = ''";
+            //     $attr[] = "situacao = 'n'";
+            // }else{
+            //     $attr[] = "pesquisa_realizada = ''";
+            //     $attr[] = "situacao = 'p'";
+            // }
 
 
         $attr = implode(', ', $attr);
@@ -845,8 +845,8 @@
 
                             <div class="form-floating mb-3">
                                 <?=montaRadio([
-                                    'rotulo' => 'Como fui Recebido?',
-                                    'campo' => 'recepcao_entrevistado',
+                                    'rotulo' => 'Situação da Pesquisa',
+                                    'campo' => 'situacao',
                                     'vetor' => [
                                         'Ruim',
                                         'Bom',
@@ -857,7 +857,18 @@
                                     'campo_destino' => false
                                 ])?>
                             </div>
-                            
+
+                            <div class="form-floating mb-3">
+                                <select name="situacao" required id="situacao" class="form-control" >
+                                    <option value="n" <?=(($d->situacao == 'n')?'selected':false)?>>Nova</option>
+                                    <option value="i" <?=(($d->situacao == 'i')?'selected':false)?>>Iniciada</option>
+                                    <option value="p" <?=(($d->situacao == 'p')?'selected':false)?>>Pendente</option>
+                                    <option value="c" <?=(($d->situacao == 'c')?'selected':false)?>>Concluida</option>
+                                    <option value="f" <?=(($d->situacao == 'f')?'selected':false)?>>Finalizada</option>
+                                </select>
+                                <label for="situacao">Situação</label>
+                            </div>
+
                         </div>
                     </div>
 
