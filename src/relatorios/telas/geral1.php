@@ -238,7 +238,7 @@
                 $total = 0;
                 while($d = mysqli_fetch_object($result)){
                 ?>
-                <div class="col-md-1 mb-3">
+                <div class="col-md-2 mb-2">
                     <div class="cartao dados">
                         <span><?=$rotulo[$d->situacao]?></span>
                         <p><?=$d->qt?></p>
@@ -248,7 +248,7 @@
                 $total = $total + $d->qt;
                 }
                 ?>
-                <div class="col-md-1 mb-3">
+                <div class="col-md-2 mb-3">
                     <div class="cartao dados">
                         <span>Geral</span>
                         <p><?=$total?></p>
