@@ -90,7 +90,7 @@
     $(function(){
         Carregando('none');
 
-        $(document).off().on("button[cod]", "click", function(){
+        $("button[cod]").off('click').on('click',function(){
 
             cod = $(this).attr("cod");
             Carregando();
