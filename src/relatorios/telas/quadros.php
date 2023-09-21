@@ -38,7 +38,8 @@
 
             if($d->tipo == 'json'){
                 $J = json_decode($s->campo);
-                var_dump($J);
+                echo $s->campo;
+                echo "<hr>";
                 if($J){
                     foreach($J as $i => $v){
                         
