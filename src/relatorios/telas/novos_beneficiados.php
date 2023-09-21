@@ -24,7 +24,7 @@
 <ul class="list-group">
 <?php
 
-    $query = "select a.*,b.nome as coordenador from se_novos a left join usuarios b on a.monitor_social = b.codigo";
+    $query = "select a.*,b.nome as coordenador, (select codigo from se where a.cpf = cpf limit 1) as se from se_novos a left join usuarios b on a.monitor_social = b.codigo";
     $result = mysqli_query($con, $query);
     $t = 0;
     while($s = mysqli_fetch_object($result)){
@@ -38,8 +38,8 @@
             if($_SESSION['ProjectSeLogin']->perfil != 'sup'){
             ?>
             <button 
-                cod="<?=$s->codigo?>" 
-                class="btn btn-warning btn-sm"
+                cod="<?=$s->se?>" 
+                class="btn <?=(($s->se)?'btn-success':'btn-warning')?> btn-sm"
                 data-bs-toggle="offcanvas"
                 href="#offcanvasDireita"
                 role="button"
