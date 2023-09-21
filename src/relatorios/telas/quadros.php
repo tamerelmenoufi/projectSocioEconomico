@@ -111,6 +111,6 @@
     var_dump($d);
 
     
-    // questoes($d);
+    questoes($d);
 
 ?>
