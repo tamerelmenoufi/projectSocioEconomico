@@ -62,7 +62,7 @@
                     <label for="titulo">Título*</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <textarea required name="mensagem" id="mensagem" class="form-control" placeholder="Mensagem"><?=$d->mensagem?></textarea>
+                    <textarea required name="mensagem" id="mensagem" class="form-control" placeholder="Mensagem" style="height:150px;"><?=$d->mensagem?></textarea>
                     <label for="cor">Digite a seua mensagem*</label>
                 </div>
                 <div class="form-floating mb-3">
