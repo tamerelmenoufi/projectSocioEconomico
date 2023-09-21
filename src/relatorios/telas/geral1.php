@@ -73,6 +73,11 @@
     }
 </style>
 
+<div class="d-flex justify-content-between align-items-center">
+    <span>Sugestão para Cadastro de novos Beneficiados</span>
+    <button lista_novos class="btn btn-warning btn-sm">Listar</button>
+</div>
+    
     <div class="row mb-3 mt-3">
         <div class="col-md-12"><h3 style="color:#a1a1a1">Relatório Quantitativo das Metas</h3></div>
     </div>
@@ -271,6 +276,22 @@
             // $(this).children(".cartao div").css('opacity',1)
         }).mouseout(function(){
             // $(this).children(".cartao div").css('opacity',0)
+        })
+
+        $("button[lista_novos]").click(function(){
+            Carregando();
+            $.ajax({
+                url:"src/relatorios/telas/novos_beneficiados.php",
+                type:"POST",
+                success:function(dados){
+
+                    $(".popUpBeneficiados div").html(dados);
+                    $(".popUpBeneficiados h3").html(`Lista de Novos Beneficiados`);
+                    $(".popUpBeneficiados").css("display","block");
+                    Carregando('none');
+
+                }
+            })
         })
 
     })
