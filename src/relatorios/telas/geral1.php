@@ -239,7 +239,7 @@
                 ?>
                 <div class="col-md-2 mb-3">
                     <div class="cartao dados">
-                        <span><?=rotulo[$d->situacao]?></span>
+                        <span><?=$rotulo[$d->situacao]?></span>
                         <p><?=$d->qt?></p>
                     </div>
                 </div>
