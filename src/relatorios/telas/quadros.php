@@ -46,7 +46,7 @@
                         
                         $d->legenda->$i = ((trim($v))?:'Não Informado');
 
-                        $D[$v] = ($D[$v] + 1);
+                        $D[$i] = ($D[$i] + 1);
                         $t = ($t + 1);
                     }
                 }
