@@ -979,7 +979,7 @@
                                         <?php
                                         }else{
                                         ?>
-                                        $(".LateralDireita").html(dados);
+                                        $(".popUpBeneficiados").html(dados);
                                         <?php
                                         }
                                         ?>
@@ -1081,16 +1081,19 @@
                 if($_POST['origem']){
             ?>
             $("button[voltar]").click(function(){
-                Carregando()
-                $.ajax({
-                    url:"src/relatorios/telas/lista_beneficiados.php",
-                    success:function(dados){
-                        $(".LateralDireita").html(dados);
-                    },
-                    error:function(erro){
-                        $.alert('Ocorreu um erro!' + erro.toString());
-                    }
-                });
+                // Carregando()
+                // $.ajax({
+                //     url:"src/relatorios/telas/lista_beneficiados.php",
+                //     success:function(dados){
+                //         $(".LateralDireita").html(dados);
+                //     },
+                //     error:function(erro){
+                //         $.alert('Ocorreu um erro!' + erro.toString());
+                //     }
+                // });
+                let myOffCanvas = document.getElementById('offcanvasDireita');
+                let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+                openedCanvas.hide();
             })
             <?php
                 }
