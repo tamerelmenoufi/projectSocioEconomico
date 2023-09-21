@@ -230,7 +230,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="row">
                 <?php
                 $query = "select *, count(*) as qt from se group by situacao";
@@ -238,7 +238,7 @@
                 $total = 0;
                 while($d = mysqli_fetch_object($result)){
                 ?>
-                <div class="col-md-2 mb-3">
+                <div class="col-md-1 mb-3">
                     <div class="cartao dados">
                         <span><?=$rotulo[$d->situacao]?></span>
                         <p><?=$d->qt?></p>
@@ -248,7 +248,7 @@
                 $total = $total + $d->qt;
                 }
                 ?>
-                <div class="col-md-2 mb-3">
+                <div class="col-md-1 mb-3">
                     <div class="cartao dados">
                         <span>Geral</span>
                         <p><?=$total?></p>
