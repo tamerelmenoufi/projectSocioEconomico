@@ -23,25 +23,25 @@
 
         $filtro = $f_usuario . $f_meta . $f_data;
 
-        if($d['join']){
-            $join = $d['join'];
+        if($d->join){
+            $join = $d->join;
         }
-        if($d['item']){
-            $item = ", {$d['item']} as item";
+        if($d->item){
+            $item = ", {$d->item} as item";
         }
     
-        $query = "select a.{$d['campo']} as campo {$item} from se a {$join} where a.monitor_social > 0 and a.meta > 0 {$filtro} ";
+        $query = "select a.{$d->campo} as campo {$item} from se a {$join} where a.monitor_social > 0 and a.meta > 0 {$filtro} ";
         $result = mysqli_query($con, $query);
         $t = 0;
         if(mysqli_num_rows($result)){
         while($s = mysqli_fetch_object($result)){
 
-            if($d['tipo'] == 'json'){
+            if($d->tipo == 'json'){
                 $J = json_decode($s->campo);
                 if($J){
                     foreach($J as $i => $v){
                         
-                        $d['legenda'][trim($v)] = ((trim($v))?:'Não Informado');
+                        $d->legenda[trim($v)] = ((trim($v))?:'Não Informado');
 
                         $D[$v] = ($D[$v] + 1);
                         $t = ($t + 1);
@@ -49,8 +49,8 @@
                 }
             }else{
 
-                if($item) {$d['legenda'][$s->campo] = $s->item;}
-                else if(!$d['legenda'][$s->campo]) { $d['legenda'][trim($s->campo)] = ((trim($s->campo))?:'Não Informado'); }
+                if($item) {$d->legenda[$s->campo] = $s->item;}
+                else if(!$d->legenda[$s->campo]) { $d->legenda[trim($s->campo)] = ((trim($s->campo))?:'Não Informado'); }
 
                 $D[$s->campo] = ($D[$s->campo] + 1);
                 $t = ($t + 1);
@@ -59,7 +59,7 @@
         }
 ?>
 <div class="card mb-3">
-  <h5 class="card-header"><?=$d['rotulo']?></h5>
+  <h5 class="card-header"><?=$d->rotulo?></h5>
   <div class="card-body">
     <ul class="list-group">
 <?php
@@ -69,7 +69,7 @@
 ?>
         <li class="list-group-item">
             <div class="row">
-                <div class="col-5"><?=($d['legenda'][$ind])?></div>
+                <div class="col-5"><?=($d->legenda[$ind])?></div>
                 <div class="col-5">
                     <div class="progress">
                         <div class="progress-bar" style="width:<?=$p?>%" role="progressbar" aria-valuenow="<?=$p?>" aria-valuemin="0" aria-valuemax="100"><?=$p?>%</div>
@@ -78,11 +78,11 @@
                 <div class="col-2">
                         <button 
                             class="btn btn-info btn-sm w-100 d-flex justify-content-between"
-                            campo="<?=$d['campo']?>"
+                            campo="<?=$d->campo?>"
                             valor="<?=$ind?>" 
-                            json="<?=$d['tipo']?>"
-                            rotulo_titulo="<?=$d['rotulo']?>"
-                            rotulo_campo="<?=$d['legenda'][$ind]?>"
+                            json="<?=$d->tipo?>"
+                            rotulo_titulo="<?=$d->rotulo?>"
+                            rotulo_campo="<?=$d->legenda[$ind]?>"
                             data-bs-toggleX="offcanvas"
                             hrefX="#offcanvasDireita"
                             roleX="button"
@@ -106,7 +106,7 @@
 
     $d = json_decode(base64_decode($_POST['json']));
 
-    echo $d->rotulo;
-    // questoes($d);
+    // echo $d->rotulo;
+    questoes($d);
 
 ?>
