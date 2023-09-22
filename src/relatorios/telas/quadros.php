@@ -131,6 +131,10 @@
     $(function(){
         $("button[campo]").off('click').on('click',function(){
 
+            $(".popUpBeneficiados div").html('');
+            $(".popUpBeneficiados h3").html('');
+            $(".popUpBeneficiados").css("display","none");
+
             campo = $(this).attr("campo")
             valor = $(this).attr("valor")
             json = $(this).attr("json")
