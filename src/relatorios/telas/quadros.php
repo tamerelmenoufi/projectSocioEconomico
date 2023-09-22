@@ -68,9 +68,13 @@
             }else{
 
                 
-
-                if($item) {$L[$s->campo] = $s->item;}
-                else if(!$d->legenda->$cmp) { $L[$s->campo] = ((trim($s->campo))?:'Não Informado'); }
+                if($d->sem_metas and ($cmp == 'c' or $cmp == 'n')){
+                    if($item) {$L[$s->campo] = $s->item;}
+                    else if(!$d->legenda->$cmp) { $L[$s->campo] = ((trim($s->campo))?:'Não Informado'); }
+                }else{
+                    if($item) {$L[$s->campo] = $s->item;}
+                    else if(!$d->legenda->$cmp) { $L[$s->campo] = ((trim($s->campo))?:'Não Informado'); }                    
+                }
 
                 $D[$s->campo] = ($D[$s->campo] + 1);
                 $t = ($t + 1);
