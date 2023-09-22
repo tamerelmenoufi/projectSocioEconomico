@@ -975,18 +975,18 @@
                             success:function(dados){
                                 $.alert('Dados atualizados com sucesso!');
 
-                                console.log('apos a mensagem');
                                 <?php
                                 if(!$_POST['origem']){
                                 ?>
                                 let myOffCanvas = document.getElementById('offcanvasDireita');
                                 let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
                                 openedCanvas.hide();
+
+                                $(".popUpBeneficiados div").html('');
                                 
                                 <?php
                                 }
                                 ?>
-                                console.log('apos a fecha menu lateral direito');
 
                                 $.ajax({
                                     url:"<?=(($_POST['origem'])?"src/relatorios/telas/lista_beneficiados.php":"src/se/index.php")?>",
@@ -1002,7 +1002,6 @@
                                         <?php
                                         }
                                         ?>
-                                console.log('após o fechamento do reaload');
 
                                     },
                                     error:function(erro){
