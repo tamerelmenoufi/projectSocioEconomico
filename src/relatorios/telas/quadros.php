@@ -104,6 +104,7 @@
                             valor="<?=$ind?>" 
                             json="<?=$d->tipo?>"
                             rotulo_titulo="<?=$d->rotulo?>"
+                            sem_metas = "<?=$d->sem_metas?>"
                             rotulo_campo="<?=(($L[$ind])?:$d->legenda->$ind)?>"
                             data-bs-toggleX="offcanvas"
                             hrefX="#offcanvasDireita"
@@ -144,6 +145,7 @@
             json = $(this).attr("json")
             rotulo_titulo = $(this).attr("rotulo_titulo")
             rotulo_campo = $(this).attr("rotulo_campo")
+            sem_metas = $(this).attr("sem_metas")
             $(".LateralDireita").html('');
 
             Carregando();
@@ -154,6 +156,7 @@
                     campo,
                     valor,
                     json,
+                    sem_metas,
                     titulo:`${rotulo_titulo} - ${rotulo_campo}`
                 },
                 success:function(dados){

@@ -7,6 +7,7 @@
     if($_POST['campo'] and !$_POST['json']) $_SESSION['s_json'] = false;
     if($_POST['campo'] and !$_POST['valor']) $_SESSION['s_valor'] = false;
     if($_POST['titulo']) $_SESSION['s_titulo'] = $_POST['titulo'];
+    if($_POST['campo']) $_SESSION['sem_metas'] = $_POST['sem_metas'];
 
 
     $filtro = $f_usuario = $f_meta = $f_data = $f_campo = false;
@@ -26,6 +27,12 @@
         $f_campo = " and {$_SESSION['s_campo']} like '%\"{$_SESSION['s_valor']}\"%' ";
     }else if($_SESSION['s_campo']){
         $f_campo = " and {$_SESSION['s_campo']} = '{$_SESSION['s_valor']}' ";
+    }
+
+    if($_SESSION['sem_metas']){
+        $where = " (a.monitor_social = 0 or a.meta = 0) ";
+    }else{
+        $where = " a.monitor_social > 0 and a.meta > 0 ";
     }
 
     $filtro = $f_usuario . $f_meta . $f_data . $f_campo;
@@ -53,7 +60,9 @@
 <ul class="list-group">
 <?php
 
-    $query = "select a.* from se a where a.monitor_social > 0 and a.meta > 0 {$filtro}";
+
+
+    $query = "select a.* from se a where {$where} {$filtro}";
     $result = mysqli_query($con, $query);
     $t = 0;
     while($s = mysqli_fetch_object($result)){
@@ -88,7 +97,7 @@
 </ul>
 <script>
     $(function(){
-        
+
         Carregando('none');
 
         $("button[cod]").off('click').on('click',function(){
