@@ -31,7 +31,7 @@
         }
 
         if($d->sem_metas){
-            $where = "where (a.monitor_social = 0 or a.meta = 0)";
+            $where = "where (a.monitor_social = 0 or a.meta = 0) and a.situacao in ('c', 'n')";
         }else{
             $where = "where a.monitor_social > 0 and a.meta > 0";
         }
