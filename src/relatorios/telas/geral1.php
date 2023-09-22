@@ -79,7 +79,7 @@
         <div class="col-md-10">
             <div class="row">
                 <?php
-                $query = "select *, count(*) as qt from se group by situacao";
+                $query = "select situacao, count(*) as qt from se group by situacao";
                 $result = mysqli_query($con, $query);
                 $total = 0;
                 while($d = mysqli_fetch_object($result)){
