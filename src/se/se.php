@@ -932,7 +932,7 @@
 
                 e.preventDefault();
 
-                $(".oculto").remove();
+                // $(".oculto").remove();
 
                 codigo = $('#codigo').val();
                 campos = $(this).serializeArray();
@@ -944,12 +944,12 @@
                 campos.push({name: 'acao', value: 'salvar'})
 
                 console.log($("#cpf").val());
-                if($("#cpf").val() != undefined){
+                // if($("#cpf").val() != undefined){
                     if(!validarCPF($("#cpf").val())){
                         $.alert('Confira o CPF, o informado é inválido!');
                         return;
                     }
-                }
+                // }
 
                 Carregando();
 
