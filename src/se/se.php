@@ -918,6 +918,14 @@
             $("#data_nascimento").mask('99/99/9999');
             // $("#data").mask('99/99/9999');
 
+            <?php
+            if($d->situacao == 'f'){
+            ?>
+            $("form-<?= $md5 ?> input, form-<?= $md5 ?> select, form-<?= $md5 ?> textarea, form-<?= $md5 ?> button").attr("disabled","disabled");
+            <?php
+            }
+            ?>
+
 
 
             $('#form-<?=$md5?>').submit(function (e) {
