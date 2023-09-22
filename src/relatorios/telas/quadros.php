@@ -67,7 +67,7 @@
                 
             }else{
 
-                echo "($d->legenda->$cmp == 'c' or $d->legenda->$cmp == 'n')";
+                echo "({$d->legenda->$cmp} == 'c' or {$d->legenda->$cmp} == 'n')";
                 if($d->sem_metas and ($d->legenda->$cmp == 'c' or $d->legenda->$cmp == 'n')){
                     if($item) {$L[$s->campo] = $s->item;}
                     else if(!$d->legenda->$cmp) { $L[$s->campo] = ((trim($s->campo))?:'Não Informado'); }
