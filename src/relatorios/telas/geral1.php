@@ -31,7 +31,7 @@
         'c' => 'Concluído',
         'n' => 'Não encontrado',
         'f' => 'Finalizado',
-    ]
+    ];
 ?>
 
 <style>

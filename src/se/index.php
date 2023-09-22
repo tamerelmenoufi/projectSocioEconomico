@@ -1,6 +1,15 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php");
 
+    $R = [
+        '' => 'Não Definifo',
+        'i' => 'Iniciado',
+        'p' => 'Pendente',
+        'c' => 'Concluído',
+        'n' => 'Não encontrado',
+        'f' => 'Finalizado',
+    ];
+
     if($_POST['delFiltro']){
         $_SESSION[$_POST['delFiltro']] = false;
         // exit();
@@ -163,7 +172,7 @@
 
                         <h5 class="card-title"><?=$d->municipio?> - <?=$d->bairro_comunidade?> (<?=$d->local?>)</h5>
                         <p class="card-text">
-                            <?=$d->telefone?><br><?=$d->email?><br><?=$d->situacao?>
+                            <?=$d->telefone?><br><?=$d->email?><br><?=$R[$d->situacao]?>
                         </p>
 
                         <!-- <button
