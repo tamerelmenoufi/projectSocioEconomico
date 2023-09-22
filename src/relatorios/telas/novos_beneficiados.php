@@ -35,7 +35,7 @@
             <span class="percentual"><?=$s->telefone?></span>
             <span class="percentual"><?=dataBr($s->data)?></span>
             <?php
-            if($_SESSION['ProjectSeLogin']->perfil != 'sup'){
+            if($s->se){
             ?>
             <button 
                 cod="<?=$s->se?>" 
