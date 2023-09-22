@@ -39,6 +39,10 @@
             $attr[] = "acao = '0'";
             $attr[] = "acao_relatorio = '0'";
 
+            if($_POST['beneficiario_encontrado'] == 'Não'){
+                $attr[] = "situacao = 'p'";
+            }
+
             // if($pct == 100){
             //     $attr[] = "pesquisa_realizada = 'Sim'";
             //     $attr[] = "situacao = 'c'";
