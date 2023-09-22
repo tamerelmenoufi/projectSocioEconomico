@@ -70,12 +70,16 @@
     }
 
 </style>
-
+<?php
+    if($_SESSION['ProjectSeLogin']->perfil == 'adm'){
+?>
 <div class="alert alert-dark" role="alert">
     Sugestão para Cadastro de novos Beneficiados 
     <button lista_novos class="btn btn-warning btn-sm"><i class="fa fa-users"></i> Visualizar Lista</button>
 </div>
-    
+<?php
+    }
+?>    
     <div class="row mb-3 mt-3">
         <div class="col-md-12"><h3 style="color:#a1a1a1">Relatório Quantitativo das Metas</h3></div>
     </div>
