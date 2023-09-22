@@ -981,8 +981,6 @@
                                 let myOffCanvas = document.getElementById('offcanvasDireita');
                                 let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
                                 openedCanvas.hide();
-
-                                $(".popUpBeneficiados div").html('');
                                 
                                 <?php
                                 }
@@ -998,7 +996,14 @@
                                         <?php
                                         }else{
                                         ?>
+                                        $(".popUpBeneficiados div").html('');
+                                        $(".popUpBeneficiados h3").html('');
+                                        $(".popUpBeneficiados").css("display","none");
+
                                         $(".popUpBeneficiados div").html(dados);
+                                        $(".popUpBeneficiados h3").html('<?=$_SESSION['s_titulo']?>');
+                                        $(".popUpBeneficiados").css("display","block");
+
                                         <?php
                                         }
                                         ?>
