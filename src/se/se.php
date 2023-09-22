@@ -944,12 +944,12 @@
                 campos.push({name: 'acao', value: 'salvar'})
 
                 console.log($("#cpf").val());
-                // if($("#cpf").val() != undefined){
+                if($("#beneficiario_encontrado").val() == 'Sim'){
                     if(!validarCPF($("#cpf").val())){
                         $.alert('Confira o CPF, o informado é inválido!');
                         return;
                     }
-                // }
+                }
 
                 Carregando();
 
