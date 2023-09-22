@@ -174,7 +174,10 @@
 
     
 
+<?php
 
+/*
+?>
 
     <div class="card mb-3">
     <h5 class="card-header">Relatório de atividades nas metas</h5>
@@ -226,7 +229,10 @@
         </ul>
     </div>
     </div>
+    <?php
 
+//*/
+?>
 
 <script>
     $(function(){
