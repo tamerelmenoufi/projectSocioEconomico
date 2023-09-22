@@ -43,7 +43,7 @@
         if(mysqli_num_rows($result)){
         while($s = mysqli_fetch_object($result)){
 
-            $cmp = $s->campo;
+            $cmp = (($s->campo)?:'x');
 
             if($d->tipo == 'json'){
 
