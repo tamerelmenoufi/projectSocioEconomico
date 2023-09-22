@@ -235,14 +235,14 @@
         <div class="col-md-12"><h3 style="color:#a1a1a1">Relatório Completo</h3></div>
     </div>
 
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-10">
             <div class="row">
                 <?php
-                $query = "select *, count(*) as qt from se group by situacao";
-                $result = mysqli_query($con, $query);
-                $total = 0;
-                while($d = mysqli_fetch_object($result)){
+                // $query = "select *, count(*) as qt from se group by situacao";
+                // $result = mysqli_query($con, $query);
+                // $total = 0;
+                // while($d = mysqli_fetch_object($result)){
                 ?>
                 <div class="col-md-2 mb-2">
                     <div class="cartao dados">
@@ -251,8 +251,8 @@
                     </div>
                 </div>
                 <?php
-                $total = $total + $d->qt;
-                }
+                // $total = $total + $d->qt;
+                // }
                 ?>
             </div>
         </div>
@@ -262,7 +262,7 @@
                 <p><?=$total?></p>
             </div>            
         </div>        
-    </div>
+    </div> -->
 
     
 
