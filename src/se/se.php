@@ -956,16 +956,16 @@
                         $(`#municipio`).children(`option[value="${$(`#municipio`).val()}"]`).html();
 
                 address =  `${local}, Amazonas, Brasil`
-                console.log(address)
+                // console.log(address)
                 geocoder = new google.maps.Geocoder();
                 geocoder.geocode({ 'address':address, 'region': 'BR' }, (results, status) => {
-                    console.log(google.maps.GeocoderStatus.OK)
+                    // console.log(google.maps.GeocoderStatus.OK)
                     if (status == google.maps.GeocoderStatus.OK) {
                         var latitude = results[0].geometry.location.lat();
                         var longitude = results[0].geometry.location.lng();
                         coordenadas = `${latitude},${longitude}`;
                         campos.push({name: 'coordenadas', value: coordenadas})
-                        console.log(campos)
+                        // console.log(campos)
 
                         $.ajax({
                             url:"src/se/se.php",
