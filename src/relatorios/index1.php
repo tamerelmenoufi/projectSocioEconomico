@@ -26,6 +26,9 @@
         left:20px;
         right:20px;
     }
+    span[relatorioGeral]{
+        cursor:pointer;
+    }
 </style>
 
 
