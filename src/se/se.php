@@ -864,7 +864,7 @@
                                     <option value="i" <?=(($d->situacao == 'i')?'selected':false)?>>Iniciada</option>
                                     <option value="p" <?=(($d->situacao == 'p')?'selected':false)?>>Pendente</option>
                                     <option value="c" <?=(($d->situacao == 'c')?'selected':false)?>>Concluida</option>
-                                    <!-- <option value="f" <?=(($d->situacao == 'f')?'selected':false)?>>Finalizada</option> -->
+                                    <option value="f" <?=(($d->situacao == 'f')?'selected':false)?>>Finalizada</option>
                                 </select>
                                 <label for="situacao">Situação</label>
                             </div>
