@@ -32,8 +32,8 @@
             $pct = (100*$qt/$tot);
             $attr[] = "percentual = '" . $pct . "'";
             $attr[] = "data_nascimento = '" . dataMysql($_POST['data_nascimento']) . "'";
-            // $attr[] = "data = '" . dataMysql($_POST['data']) . "'";
-            $attr[] = "data = NOW()";
+            if($_POST['data']) { $attr[] = "data = '" . dataMysql($_POST['data']) . "'"; }
+            // $attr[] = "data = NOW()";
             // $attr[] = "monitor_social = '{$_SESSION['ProjectSeLogin']->codigo}'";
             $attr[] = "coordenador = '{$_SESSION['ProjectSeLogin']->coordenador}'";
             $attr[] = "acao = '0'";
