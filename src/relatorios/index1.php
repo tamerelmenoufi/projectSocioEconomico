@@ -96,6 +96,7 @@
 
 
 <div class="AreaDashboard">
+    <div metas></div>
     <div geral></div>
     <div questionario></div>
 </div>
@@ -105,10 +106,16 @@
             Carregando()
 
             $.ajax({
+                url:"src/relatorios/telas/metas.php",
+                success:function(dados){
+                    $("div[metas]").html(dados);
+                }
+            })
+
+            $.ajax({
                 url:"src/relatorios/telas/geral1.php",
                 success:function(dados){
                     $("div[geral]").html(dados);
-                    Carregando('none')
                 }
             })
             
