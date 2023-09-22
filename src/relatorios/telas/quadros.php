@@ -31,9 +31,9 @@
         }
 
         if($d->sem_metas){
-            $whare = "where (a.monitor_social = 0 or a.meta = 0)";
+            $where = "where (a.monitor_social = 0 or a.meta = 0)";
         }else{
-            $whare = "where a.monitor_social > 0 and a.meta > 0";
+            $where = "where a.monitor_social > 0 and a.meta > 0";
         }
 
 
