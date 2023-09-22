@@ -948,7 +948,7 @@
                     return;
                 }
 
-                Carregando();
+                // Carregando();
 
                 ////COORDENADAS
                 local = $(`#endereco`).val() + ',' +
@@ -975,6 +975,7 @@
                             success:function(dados){
                                 $.alert('Dados atualizados com sucesso!');
 
+                                console.log('apos a mensagem');
                                 <?php
                                 if(!$_POST['origem']){
                                 ?>
@@ -985,6 +986,7 @@
                                 <?php
                                 }
                                 ?>
+                                console.log('apos a fecha menu lateral direito');
 
                                 $.ajax({
                                     url:"<?=(($_POST['origem'])?"src/relatorios/telas/lista_beneficiados.php":"src/se/index.php")?>",
@@ -1000,6 +1002,8 @@
                                         <?php
                                         }
                                         ?>
+                                console.log('após o fechamento do reaload');
+
                                     },
                                     error:function(erro){
                                         $.alert('Ocorreu um erro!' + erro.toString());
