@@ -119,8 +119,9 @@
                 }
             })
 
-            
+
             $("span[relatorioGeral]").click(function(){
+                Carregando()
                 $.ajax({
                     url:"src/relatorios/telas/geral1.php",
                     success:function(dados){
