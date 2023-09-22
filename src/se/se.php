@@ -11,7 +11,7 @@
         unset($data['codigo']);
         unset($data['acao']);
         unset($data['data_nascimento']);
-        unset($data['data']);
+        // unset($data['data']);
         // unset($data['monitor_social']);
         unset($data['percentual']);
 
