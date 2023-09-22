@@ -828,11 +828,16 @@
                         <h5 class="card-header">Avaliação do Técnico</h5>
                         <div class="card-body">
 
-                            <!-- <div class="form-floating mb-3">
+                            <?php
+                            if($_SESSION['ProjectSeLogin']->perfil == 'adm'){
+                            ?>
+                            <div class="form-floating mb-3">
                                 <input type="text" name="data" required id="data" class="form-control" placeholder="Data da Pesquisa" value="<?=dataBr($d->data)?>">
                                 <label for="data">Data da Pesquisa*</label>
-                            </div> -->
-
+                            </div>
+                            <?php
+                            }
+                            ?>
                             <!-- <div class="form-floating mb-3">
                                 <select name="monitor_social" required id="monitor_social" class="form-control" >
                                     <option value="">::Selecione o Profissional</option>
@@ -948,7 +953,7 @@
                 }
 
                 campos.push({name: 'acao', value: 'salvar'})
-                
+
                 if($("#beneficiario_encontrado0").prop("checked")){
                     console.log($("#cpf").val());
                     if(!validarCPF($("#cpf").val())){
