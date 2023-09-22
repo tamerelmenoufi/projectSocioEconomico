@@ -131,9 +131,7 @@
     $(function(){
         $("button[campo]").off('click').on('click',function(){
 
-            $(".popUpBeneficiados div").html('');
-            $(".popUpBeneficiados h3").html('');
-            $(".popUpBeneficiados").css("display","none");
+
 
             campo = $(this).attr("campo")
             valor = $(this).attr("valor")
@@ -153,6 +151,10 @@
                     titulo:`${rotulo_titulo} - ${rotulo_campo}`
                 },
                 success:function(dados){
+
+                    $(".popUpBeneficiados div").html('');
+                    $(".popUpBeneficiados h3").html('');
+                    $(".popUpBeneficiados").css("display","none");
 
                     $(".popUpBeneficiados div").html(dados);
                     $(".popUpBeneficiados h3").html(`${rotulo_titulo} - ${rotulo_campo}`);
