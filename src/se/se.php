@@ -949,7 +949,7 @@
 
                 campos.push({name: 'acao', value: 'salvar'})
 
-                
+                console.log($("#beneficiario_encontrado").val());
                 if($("#beneficiario_encontrado").val() == 'Sim'){
                     console.log($("#cpf").val());
                     if(!validarCPF($("#cpf").val())){
