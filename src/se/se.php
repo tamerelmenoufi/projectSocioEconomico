@@ -948,6 +948,7 @@
                 }
 
                 campos.push({name: 'acao', value: 'salvar'})
+                
                 if($("#beneficiario_encontrado0").prop("checked")){
                     console.log($("#cpf").val());
                     if(!validarCPF($("#cpf").val())){
