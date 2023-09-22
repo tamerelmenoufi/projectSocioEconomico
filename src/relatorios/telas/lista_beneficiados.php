@@ -88,6 +88,7 @@
 </ul>
 <script>
     $(function(){
+        
         Carregando('none');
 
         $("button[cod]").off('click').on('click',function(){

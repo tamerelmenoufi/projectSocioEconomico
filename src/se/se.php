@@ -975,8 +975,6 @@
                             success:function(dados){
                                 $.alert('Dados atualizados com sucesso!');
 
-                                console.log(dados.query)
-
                                 <?php
                                 if(!$_POST['origem']){
                                 ?>
