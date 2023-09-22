@@ -185,7 +185,9 @@
                         >
                             <i class="fa-solid fa-pen-to-square"></i>
                         </button> -->
-
+                        <?php
+                        if($d->situacao != 'f'){
+                        ?>
                         <button
                             class="btn btn-primary"
                             data-bs-toggle="offcanvas"
@@ -207,6 +209,16 @@
                         >
                             <i class="fa-solid fa-users"></i>
                         </button>
+
+                        <?php
+                        }else{
+                        ?>
+                        <div class="alert alert-warning" role="alert">
+                            Pesquisa Finalizada - Edição não permitida
+                        </div>
+                        <?php
+                        }
+                        ?>
 
                         <!-- <button
                             class="btn btn-danger"
