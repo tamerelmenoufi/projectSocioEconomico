@@ -29,6 +29,7 @@
         if($d->item){
             $item = ", {$d->item} as item";
         }
+
         if($d->sem_metas){
             $whare = "where (a.monitor_social = 0 or a.meta = 0)";
         }else{
@@ -36,7 +37,7 @@
         }
 
 
-        $query = "select a.{$d->campo} as campo {$item} from se a {$join} {$where} {$filtro} ";
+        echo $query = "select a.{$d->campo} as campo {$item} from se a {$join} {$where} {$filtro} ";
         $result = mysqli_query($con, $query);
         $t = 0;
         if(mysqli_num_rows($result)){
