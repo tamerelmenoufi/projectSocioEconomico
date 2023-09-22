@@ -231,9 +231,9 @@
 
     
 
-    <div class="row mb-3 mt-3">
+    <!-- <div class="row mb-3 mt-3">
         <div class="col-md-12"><h3 style="color:#a1a1a1">Relatório Completo</h3></div>
-    </div>
+    </div> -->
 
     <!-- <div class="row">
         <div class="col-md-10">
