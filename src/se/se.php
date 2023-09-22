@@ -948,7 +948,7 @@
                     return;
                 }
 
-                // Carregando();
+                Carregando();
 
                 ////COORDENADAS
                 local = $(`#endereco`).val() + ',' +
