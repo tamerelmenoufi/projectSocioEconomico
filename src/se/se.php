@@ -40,7 +40,7 @@
             $attr[] = "acao_relatorio = '0'";
 
             if($_POST['beneficiario_encontrado'] == 'Não'){
-                $attr[] = "situacao = 'p'";
+                $attr[] = "situacao = 'n'";
             }
 
             // if($pct == 100){
@@ -864,7 +864,7 @@
 
                             <div class="form-floating mb-3">
                                 <select name="situacao" required id="situacao" class="form-control" >
-                                    <option value="n" <?=(($d->situacao == 'n')?'selected':false)?>>Nova</option>
+                                    <option value="n" <?=(($d->situacao == 'n')?'selected':false)?>>Não Encontrado</option>
                                     <option value="i" <?=(($d->situacao == 'i')?'selected':false)?>>Iniciada</option>
                                     <option value="p" <?=(($d->situacao == 'p')?'selected':false)?>>Pendente</option>
                                     <option value="c" <?=(($d->situacao == 'c')?'selected':false)?>>Concluida</option>
