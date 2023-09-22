@@ -97,7 +97,14 @@
 
 <div class="AreaDashboard">
     <div metas></div>
-    <div geral></div>
+    <div geral>
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-action list-group-item-light d-flex justify-content-between align-items-center">
+                <div><i class="fa-solid fa-angle-right"></i> Quadro quantitativo dos dados gerais</div>
+                <span class="badge bg-primary rounded-pill" relatorioGeral><i class="fa-solid fa-chart-line"></i> Visualizar</span>
+            </li>
+        </ul>
+    </div>
     <div questionario></div>
 </div>
 
@@ -112,12 +119,16 @@
                 }
             })
 
-            $.ajax({
-                url:"src/relatorios/telas/geral1.php",
-                success:function(dados){
-                    $("div[geral]").html(dados);
-                }
+            
+            $("span[relatorioGeral]").click(function(){
+                $.ajax({
+                    url:"src/relatorios/telas/geral1.php",
+                    success:function(dados){
+                        $("div[geral]").html(dados);
+                    }
+                })
             })
+
             
             $.ajax({
                 url:"src/relatorios/telas/questionario1.php",
