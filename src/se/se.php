@@ -949,8 +949,7 @@
 
                 campos.push({name: 'acao', value: 'salvar'})
 
-                console.log($("#beneficiario_encontrado").val());
-                if($("#beneficiario_encontrado").val() == 'Sim'){
+                if($("#beneficiario_encontrado0").prop("ckecked") == true){
                     console.log($("#cpf").val());
                     if(!validarCPF($("#cpf").val())){
                         $.alert('Confira o CPF, o informado é inválido!');
