@@ -42,7 +42,9 @@
             if($_POST['beneficiario_encontrado'] == 'Não'){
                 $attr[] = "situacao = 'n'";
             }
-
+            if($_POST['situacao'] == 'n'){
+                $attr[] = "beneficiario_encontrado = 'Não'";
+            }
             // if($pct == 100){
             //     $attr[] = "pesquisa_realizada = 'Sim'";
             //     $attr[] = "situacao = 'c'";
