@@ -15,7 +15,6 @@
 
 <?php
     }
-
 ?>
 <style>
     .popUpBeneficiados{
@@ -60,6 +59,29 @@
     <div class="popBody"></div>
 </div>
 
+
+<div class="row" style="margin-bottom:20px;">
+
+    <div class="row mb-3 mt-3">
+        <div class="col-md-12"><h3 style="color:#a1a1a1">Relatório Estatístico Fora das Metas</h3></div>
+    </div>
+    <ul class="list-group">
+    <?php
+        questoes([
+            'rotulo' => 'Situação da Pesquisa',
+            'campo' => 'situacao',
+            'legenda' => [
+                // 'i' => 'Iniciada',
+                'c' => 'Concluida',
+                'n' => 'Não encontrado',
+                // 'p' => 'Pendente',
+                // '' => 'Não Informada',
+            ],
+            'sem_metas' => true
+        ]);
+    ?>
+    </ul>
+</div>   
 
 <div class="row" style="margin-bottom:20px;">
 
