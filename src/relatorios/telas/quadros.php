@@ -68,7 +68,7 @@
             }else{
 
                 
-                if($d->sem_metas and ($cmp == 'c' or $cmp == 'n')){
+                if($d->sem_metas and ($d->campo == 'c' or $d->campo == 'n')){
                     if($item) {$L[$s->campo] = $s->item;}
                     else if(!$d->legenda->$cmp) { $L[$s->campo] = ((trim($s->campo))?:'Não Informado'); }
                 }else{
