@@ -12,7 +12,7 @@
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
-    <h5>Project Map Censo - AADESAM</h5>
+    <h5>Map Censo - AADESAM</h5>
     <?php
     if($_SESSION['ProjectSeLogin']->perfil == 'adm' or $_SESSION['ProjectSeLogin']->perfil == 'crd'){
     ?>
