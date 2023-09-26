@@ -70,7 +70,7 @@
         $Cmd[] = ['comando' => "INSERT INTO se (codigo, ".implode(", ", $campos).") VALUES (".implode(", ",$D).")"];
     } 
 
-    $Cmd[] = ['comandoXXX' => $_POST['perfil']];
+    $Cmd[] = ['comando' => $_POST['perfil']];
 
 
     $addTab = ['bairros_comunidades','municipios', 'metas','mensagens'];
