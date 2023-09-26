@@ -37,7 +37,7 @@
         }
 
 
-        echo $query = "select a.{$d->campo} as campo {$item} from se a {$join} {$where} {$filtro} ";
+        $query = "select a.{$d->campo} as campo {$item} from se a {$join} {$where} {$filtro} ";
         $result = mysqli_query($con, $query);
         $t = 0;
         if(mysqli_num_rows($result)){
@@ -125,6 +125,10 @@
     </ul>
   </div>
 </div>
+<?php
+        }else{
+?>
+<center><h1 style="color:#a1a1a1">NÃO CONSTA</h1></center>
 <?php
         }
     }
