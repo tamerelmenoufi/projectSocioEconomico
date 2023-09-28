@@ -163,7 +163,7 @@
                     </div>
 
                     <div class="form-floating mb-3">
-                        <select disabled name="municipio" id="municipio" class="form-control" >
+                        <select <?=(($_SESSION['ProjectSeLogin']->codigo != 2)?'disabled':false)?> name="municipio" id="municipio" class="form-control" >
                             <option value="">::Selecione o Município</option>
                             <?php
                                 $q = "select * from municipios order by municipio asc";
@@ -181,7 +181,7 @@
 
 
                     <div class="form-floating mb-3">
-                        <select disabled name="bairro_comunidade" id="bairro_comunidade" class="form-control" >
+                        <select <?=(($_SESSION['ProjectSeLogin']->codigo != 2)?'disabled':false)?> name="bairro_comunidade" id="bairro_comunidade" class="form-control" >
                             <option value="">::Selecione o Bairro/Comunidade</option>
                             <?php
                                 $q = "select * from bairros_comunidades where municipio='{$d->municipio}' order by descricao asc";
@@ -197,7 +197,7 @@
                     </div>
 
                     <div class="form-floating mb-3">
-                        <select disabled name="local" id="local" class="form-control" >
+                        <select <?=(($_SESSION['ProjectSeLogin']->codigo != 2)?'disabled':false)?> name="local" id="local" class="form-control" >
                             <option value="">::Selecione a Zona</option>
                             <option value="Urbano" <?=(($d->local == 'Urbano')?'selected':false)?>>Urbano</option>
                             <option value="Rural" <?=(($d->local == 'Rural')?'selected':false)?>>Rural</option>
