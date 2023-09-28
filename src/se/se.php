@@ -935,6 +935,43 @@
             $("#data_nascimento").mask('99/99/9999');
             // $("#data").mask('99/99/9999');
 
+
+            var filtro = (bairro_comunidade, tipo) => {
+                if(!municipio){
+                    $("#bairro_comunidade").html('<option value="">::Selecione a Localização::</option>');
+                    return false;
+                }
+                if(!tipo){
+                    $("#bairro_comunidade").html('<option value="">::Selecione a Localização::</option>');
+                    return false;
+                }
+                $.ajax({
+                    url:"src/se/filtro.php",
+                    type:"POST",
+                    data:{
+                        municipio,
+                        tipo,
+                        acao:'bairro_comunidade'
+                    },
+                    success:function(dados){
+                        $("#bairro_comunidade").html(dados);
+                    }
+                });
+            }
+
+            $("#tipo").change(function(){
+                municipio = $("#municipio").val();
+                tipo = $(this).val();
+                filtro(municipio, tipo);
+            });
+
+            $("#municipio").change(function(){
+                tipo = $("#tipo").val();
+                municipio = $(this).val();
+                filtro(municipio, tipo);
+            });
+            
+
             <?php
             if($d->situacao == 'f'){
             ?>
