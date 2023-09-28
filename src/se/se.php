@@ -959,16 +959,16 @@
                 });
             }
 
-            $("#tipo").change(function(){
+            $("#local").change(function(){
                 municipio = $("#municipio").val();
-                tipo = $(this).val();
-                filtro(municipio, tipo);
+                local = $(this).val();
+                filtro(municipio, local);
             });
 
             $("#municipio").change(function(){
-                tipo = $("#tipo").val();
+                local = $("#local").val();
                 municipio = $(this).val();
-                filtro(municipio, tipo);
+                filtro(municipio, local);
             });
 
 
