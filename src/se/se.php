@@ -938,11 +938,11 @@
 
             var filtro = (municipio, tipo) => {
                 if(!municipio){
-                    $("#bairro_comunidade").html('<option value="">::Selecione a Localização::</option>');
+                    $("#bairro_comunidade").html('<option value="">::Selecione a Localização xxx::</option>');
                     return false;
                 }
                 if(!tipo){
-                    $("#bairro_comunidade").html('<option value="">::Selecione a Localização::</option>');
+                    $("#bairro_comunidade").html('<option value="">::Selecione a Localização yyyy::</option>');
                     return false;
                 }
                 $.ajax({
