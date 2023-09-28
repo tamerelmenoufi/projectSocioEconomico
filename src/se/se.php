@@ -936,7 +936,7 @@
             // $("#data").mask('99/99/9999');
 
 
-            var filtro = (bairro_comunidade, tipo) => {
+            var filtro = (municipio, tipo) => {
                 if(!municipio){
                     $("#bairro_comunidade").html('<option value="">::Selecione a Localização::</option>');
                     return false;
@@ -970,7 +970,7 @@
                 municipio = $(this).val();
                 filtro(municipio, tipo);
             });
-            
+
 
             <?php
             if($d->situacao == 'f'){
