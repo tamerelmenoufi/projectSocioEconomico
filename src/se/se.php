@@ -178,6 +178,15 @@
                         <label for="email">Município</label>
                     </div>
 
+                    
+                    <div class="form-floating mb-3">
+                        <select <?=(($_SESSION['ProjectSeLogin']->codigo != 2)?'disabled':false)?> name="local" id="local" class="form-control" >
+                            <option value="">::Selecione a Zona</option>
+                            <option value="Urbano" <?=(($d->local == 'Urbano')?'selected':false)?>>Urbano</option>
+                            <option value="Rural" <?=(($d->local == 'Rural')?'selected':false)?>>Rural</option>
+                        </select>
+                        <label for="email">Zona</label>
+                    </div>
 
 
                     <div class="form-floating mb-3">
@@ -196,14 +205,7 @@
                         <label for="email">Bairro / Comunidade</label>
                     </div>
 
-                    <div class="form-floating mb-3">
-                        <select <?=(($_SESSION['ProjectSeLogin']->codigo != 2)?'disabled':false)?> name="local" id="local" class="form-control" >
-                            <option value="">::Selecione a Zona</option>
-                            <option value="Urbano" <?=(($d->local == 'Urbano')?'selected':false)?>>Urbano</option>
-                            <option value="Rural" <?=(($d->local == 'Rural')?'selected':false)?>>Rural</option>
-                        </select>
-                        <label for="email">Zona</label>
-                    </div>
+
 
                     <div class="form-floating mb-3">
                         <input type="text" name="endereco" id="endereco" class="form-control" placeholder="Endereço" value="<?=$d->endereco?>">
@@ -938,11 +940,11 @@
 
             var filtro = (municipio, tipo) => {
                 if(!municipio){
-                    $("#bairro_comunidade").html('<option value="">::Selecione a Localização xxx::</option>');
+                    $("#bairro_comunidade").html('<option value="">::Selecione a Localização::</option>');
                     return false;
                 }
                 if(!tipo){
-                    $("#bairro_comunidade").html('<option value="">::Selecione a Localização yyyy::</option>');
+                    $("#bairro_comunidade").html('<option value="">::Selecione a Localização::</option>');
                     return false;
                 }
                 $.ajax({
