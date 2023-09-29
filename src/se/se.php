@@ -15,7 +15,49 @@
         // unset($data['monitor_social']);
         unset($data['percentual']);
 
-        $tot = 53;
+        $CamposObrigatorios = [
+            'nome',
+            'cpf',
+            'rg',
+            'rg_orgao',
+            'data_nascimento',
+            'telefone',
+            'municipio',
+            'local',
+            'bairro_comunidade',
+            'endereco',
+            'cep',
+            'genero',
+            'estado_civil',
+            'redes_sociais',
+            'meio_transporte',
+            'tipo_imovel',
+            'tipo_moradia',
+            'quantidade_comodos',
+            'grau_escolaridade',
+            'curos_profissionais',
+            'intereese_curso',
+            'renda_mensal',
+            'renda_familiar',
+            'beneficio_social',
+            'servico_saude',
+            'condicoes_saude',
+            'vacina_covid',
+            'necessita_documentos',
+            'avaliacao_beneficios',
+            'atende_necessidades',
+            'opiniao_saude',
+            'opiniao_educacao',
+            'opiniao_cidadania',
+            'opiniao_infraestrutura',
+            'opiniao_assistencia_social',
+            'opiniao_direitos_humanos',
+            'opiniao_seguranca',
+            'opiniao_esporte_lazer',
+            'opiniao_outros'
+        ];
+
+        $tot = count($CamposObrigatorios);
         $qt = 0;
         $remov = ['[""]', 'null', '0', '0.00', ' ', 0, null];
         $log = false;
@@ -24,7 +66,9 @@
                 $value = json_encode($value,JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
             }
             // $qt = (($value)?($qt+1):$qt);
+            if(in_array($name, $CamposObrigatorios)){
             $qt = ((trim(str_replace($remov, false,$value)))?($qt+1):$qt);
+            }
             $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
         }
 
