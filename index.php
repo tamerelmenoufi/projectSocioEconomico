@@ -24,7 +24,7 @@
     include("lib/header.php");
     ?>
   </head>
-  <body>
+  <body translate="no">
 
     <div class="Carregando">
         <div><i class="fa-solid fa-rotate fa-pulse"></i></div>
