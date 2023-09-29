@@ -41,7 +41,7 @@
     $where = false;
     if($_SESSION['usuarioBuscaCampo'] and $_SESSION['usuarioBusca']){
       if($_SESSION['usuarioBuscaCampo'] == 'pac'){
-        $where = " and (a.{$_SESSION['usuarioBuscaCampo']} like '%{$_SESSION['usuarioBusca']}%' or b.{$_SESSION['usuarioBuscaCampo']} like '%{$_SESSION['usuarioBusca']}%')";
+        $where = " and (a.{$_SESSION['usuarioBuscaCampo']} = '{$_SESSION['usuarioBusca']}' or b.{$_SESSION['usuarioBuscaCampo']} = '{$_SESSION['usuarioBusca']}')";
       }else{
         $where = " and a.{$_SESSION['usuarioBuscaCampo']} like '%{$_SESSION['usuarioBusca']}%'";
       }
