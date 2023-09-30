@@ -53,8 +53,7 @@
             'opiniao_assistencia_social',
             'opiniao_direitos_humanos',
             'opiniao_seguranca',
-            'opiniao_esporte_lazer',
-            'opiniao_outros'
+            'opiniao_esporte_lazer'
         ];
 
         $tot = count($CamposObrigatorios);
@@ -73,6 +72,10 @@
             }
             $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
         }
+        if(dataMysql($_POST['data_nascimento'])){
+            $qt = ($qt+1);
+        }
+
             file_put_contents('lixo.txt', $Lixo);
 
             $pct = (100*$qt/$tot);
