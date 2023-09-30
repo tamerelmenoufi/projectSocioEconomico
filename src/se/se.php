@@ -61,6 +61,7 @@
         $qt = 0;
         $remov = ['[""]', 'null', '0', '0.00', ' ', 0, null];
         $log = false;
+        $Lixo = false;
         foreach ($data as $name => $value) {
             if(is_array($value)) {
                 $value = json_encode($value,JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
@@ -68,10 +69,11 @@
             // $qt = (($value)?($qt+1):$qt);
             if(in_array($name, $CamposObrigatorios) and (trim(str_replace($remov, false,$value))) ){
             $qt = ($qt+1);
+            $Lixo = $Lixo.$name."\n";
             }
             $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
         }
-
+            file_put_contents('lixo.txt', $Lixo);
 
             $pct = (100*$qt/$tot);
             $attr[] = "percentual = '" . $pct . "'";
