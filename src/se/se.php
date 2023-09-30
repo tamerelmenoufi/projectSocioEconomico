@@ -714,12 +714,12 @@
                             'rotulo' => 'Na Cidadania?',
                             'campo' => 'opiniao_cidadania',
                             'vetor' => [
-                                'Não Nacessita',
+                                'Não Necessita',
                                 'Sim Necessita'
                             ],
                             'dados' => $d->opiniao_cidadania,
                             'exibir' => [
-                                'Não Nacessita'=>false,
+                                'Não Necessita'=>false,
                                 'Sim Necessita'=>true
                             ],
                             'campo_destino'=>'opiniao_cidadania_descricao'
