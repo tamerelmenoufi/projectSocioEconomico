@@ -66,8 +66,8 @@
                 $value = json_encode($value,JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
             }
             // $qt = (($value)?($qt+1):$qt);
-            if(in_array($name, $CamposObrigatorios) and $value){
-            $qt = ((trim(str_replace($remov, false,$value)))?($qt+1):$qt);
+            if(in_array($name, $CamposObrigatorios) and (trim(str_replace($remov, false,$value))) ){
+            $qt = ($qt+1);
             }
             $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
         }
