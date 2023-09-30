@@ -72,6 +72,7 @@
             'campo' => 'situacao',
             'legenda' => [
                 // 'i' => 'Iniciada',
+                'f' => 'Finalizados',
                 'c' => 'Concluida',
                 'n' => 'Não encontrado',
                 // 'p' => 'Pendente',
