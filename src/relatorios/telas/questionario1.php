@@ -99,6 +99,7 @@
                 'c' => 'Concluida',
                 'n' => 'Não encontrado',
                 'p' => 'Pendente',
+                'f' => 'Finalizados',
                 '' => 'Não Informada',
             ]
         ]);
