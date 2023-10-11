@@ -79,7 +79,12 @@
     $reg['municipios'] = (($reg['municipios'])?" and codigo in (". @implode(",", $reg['municipios']).")":false);
     $reg['metas'] = (($metas)?" and codigo in (". $metas.")":false);
     $reg['mensagens'] = " and situacao = '1' and deletado != '1' ";
-    
+
+    if($metas){
+        $Cmd[] = ['comando' => "DELETE FROM metas WHERE codigo not in ($metas)"];
+    }else{
+        $Cmd[] = ['comando' => "DELETE FROM metas"];
+    }
 
     $query = "SELECT * FROM `COLUMNS` where TABLE_SCHEMA = 'app' and TABLE_NAME in('".implode("','", $addTab)."') order by TABLE_NAME";
  
