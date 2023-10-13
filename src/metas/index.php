@@ -7,12 +7,28 @@
       // $query = "delete from metas where codigo = '{$_POST['delete']}'";
       $query = "update metas set deletado = '1' where codigo = '{$_POST['delete']}'";
       mysqli_query($con, $query);
+      sisLog(
+        [
+            'query' => $query,
+            'file' => $_SERVER["PHP_SELF"],
+            'sessao' => $_SESSION,
+            'registro' => $_POST['delete']
+        ]
+    );
       mysqli_query($con, "update se set meta = '0', monitor_social = '0' where meta = '{$_POST['delete']}' and situacao not in('c', 'f', 'n')");
     }
 
     if($_POST['situacao']){
       $query = "update metas set situacao = '{$_POST['opc']}' where codigo = '{$_POST['situacao']}'";
       mysqli_query($con, $query);
+      sisLog(
+        [
+            'query' => $query,
+            'file' => $_SERVER["PHP_SELF"],
+            'sessao' => $_SESSION,
+            'registro' => $_POST['situacao']
+        ]
+    );
       exit();
     }
 
