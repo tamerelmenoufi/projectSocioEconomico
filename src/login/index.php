@@ -184,7 +184,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/app/projectSocioEconomico/lib/includes.php"
 
 <script>
     $(function(){
-        Carregando('none');
+        // Carregando('none');
         AcaoBotao = ()=>{
             login = $("#login").val();
             senha = $("#senha").val();
