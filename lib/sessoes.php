@@ -10,7 +10,7 @@
         }
     }
 
-    if(array_key_exists('ProjectSeLogin', $_SESSION)){
+    if($_SESSION['ProjectSeLogin']->codigo > 0){
         echo base64_encode(json_encode($_SESSION)); 
     }else{
         echo '<script>window.location.href="./?s=1"</script>';
