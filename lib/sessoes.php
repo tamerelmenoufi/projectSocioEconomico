@@ -10,4 +10,8 @@
         }
     }
 
-    echo base64_encode(json_encode($_SESSION));
+    if(array_key_exists('ProjectSeLogin', $_SESSION)){
+        echo base64_encode(json_encode($_SESSION)); 
+    }else{
+        echo '<script>window.location.href="./?s=1"</script>';
+    }
