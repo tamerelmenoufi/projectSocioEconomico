@@ -98,6 +98,8 @@
   $(function(){
     Carregando('none');
 
+    console.log(`<?=$query?>`)
+
 
     $('#pesquisa').keyup(function(e) {
       var termo = $('#pesquisa').val().toUpperCase();
