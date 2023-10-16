@@ -74,7 +74,7 @@
                       dados
                   },
                   success:function(dados){
-                      console.log(dados);
+                      // console.log(dados);
                       $("body").attr("session", dados);
                   },
                   error:function(){
