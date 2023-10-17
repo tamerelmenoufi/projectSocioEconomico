@@ -1104,6 +1104,8 @@
                             dataType:"JSON",
                             data: campos,
                             success:function(dados){
+
+                                console.log(dados)
                                 $.alert('Dados atualizados com sucesso!');
 
                                 <?php
