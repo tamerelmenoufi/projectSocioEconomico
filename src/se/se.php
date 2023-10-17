@@ -11,9 +11,10 @@
         unset($data['codigo']);
         unset($data['acao']);
         unset($data['data_nascimento']);
-        // unset($data['data']);
+        unset($data['data']);
         // unset($data['monitor_social']);
         unset($data['percentual']);
+        unset($data['situacao']);
 
         $CamposObrigatorios = [
             'nome',
@@ -89,11 +90,21 @@
             $attr[] = "acao_relatorio = '0'";
 
             if($_POST['beneficiario_encontrado'] == 'Não'){
-                $attr[] = "situacao = 'n'";
+                $situacao = "situacao = 'n'";
             }
             if($_POST['situacao'] == 'n'){
                 $attr[] = "beneficiario_encontrado = 'Não'";
             }
+
+            if($_POST['situacao'] == 'f'){
+                $situacao = "situacao = 'f'";
+            }
+
+            if($situacao){
+                $attr[] = $situacao;
+            }
+
+
             // if($pct == 100){
             //     $attr[] = "pesquisa_realizada = 'Sim'";
             //     $attr[] = "situacao = 'c'";
