@@ -77,7 +77,7 @@
     <?php
     }    
 
-    if($_SESSION['ProjectSeLogin']->perfil == 'adm'){
+    if($_SESSION['ProjectSeLogin']->perfil == 'adm' or $_SESSION['ProjectSeLogin']->perfil == 'crd'){
     ?>
     <div class="row mb-1">
       <div class="col">
