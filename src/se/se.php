@@ -91,20 +91,22 @@
 
             if($_POST['beneficiario_encontrado'] == 'Não'){
                 $situacao = "situacao = 'n'";
+            }else if($_POST['beneficiario_encontrado'] == 'Sim' and $_POST['situacao'] == 'n'){
+                $situacao = "situacao = 'p'";
+            }else{
+                $situacao = "situacao = '{$_POST['situacao']}'";
             }
 
-            if($_POST['situacao'] == 'n'){
-                $attr[] = "beneficiario_encontrado = 'Não'";
-            }
+            // if($_POST['situacao'] == 'n' and $_POST['beneficiario_encontrado'] == 'Não'){
+            //     $attr[] = "beneficiario_encontrado = 'Não'";
+            // }
 
-            if($_POST['situacao'] == 'f'){
-                $situacao = "situacao = 'f'";
-            }
+            // if($_POST['situacao'] == 'f'){
+            //     $situacao = "situacao = 'f'";
+            // }
 
             if($situacao){
                 $attr[] = $situacao;
-            }else{
-                $attr[] = "situacao = '{$_POST['situacao']}'";
             }
 
 
