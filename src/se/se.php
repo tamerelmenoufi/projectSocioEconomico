@@ -92,6 +92,7 @@
             if($_POST['beneficiario_encontrado'] == 'Não'){
                 $situacao = "situacao = 'n'";
             }
+
             if($_POST['situacao'] == 'n'){
                 $attr[] = "beneficiario_encontrado = 'Não'";
             }
@@ -102,6 +103,8 @@
 
             if($situacao){
                 $attr[] = $situacao;
+            }else{
+                $attr[] = "situacao = '{$_POST['situacao']}'";
             }
 
 
