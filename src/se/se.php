@@ -130,7 +130,7 @@
             $query = "update se set {$attr} where codigo = '{$_POST['codigo']}'";
             mysqli_query($con, $query);
             $cod = $_POST['codigo'];
-            sisLog(
+            $sisLogo = sisLog(
                 [
                     'query' => $query,
                     'file' => $_SERVER["PHP_SELF"],
@@ -142,7 +142,7 @@
             $query = "insert into se set data_cadastro = NOW(), {$attr}";
             mysqli_query($con, $query);
             $cod = mysqli_insert_id($con);
-            sisLog(
+            $sisLogo = sisLog(
                 [
                     'query' => $query,
                     'file' => $_SERVER["PHP_SELF"],
@@ -159,7 +159,7 @@
             'status' => true,
             'codigo' => $cod,
             'mensagem' => "Pesquisa registrada com sucesso!",
-            'query' => $query,
+            'query' => $sisLogo,
         ];
 
         echo json_encode($retorno);
