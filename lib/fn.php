@@ -143,7 +143,7 @@
     
         $query = addslashes($d['query']);
         $file = $d['file'];
-        $sessao = json_encode($d['sessao']);
+        $sessao = addslashes(json_encode($d['sessao']));
         $dados = json_encode($_POST);
         $registro = $d['registro'];
         $p = explode(" ",$query);
