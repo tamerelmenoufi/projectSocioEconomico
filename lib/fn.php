@@ -139,10 +139,12 @@
     function sisLog($d){
 
         global $con;
+        global $_POST;
     
         $query = addslashes($d['query']);
         $file = $d['file'];
         $sessao = json_encode($d['sessao']);
+        $dados = json_encode($_POST);
         $registro = $d['registro'];
         $p = explode(" ",$query);
         $operacao = strtoupper(trim($p[0]));
@@ -160,6 +162,7 @@
                                     operacao = '{$operacao}',
                                     registro = '{$registro}',
                                     sessao = '{$sessao}',
+                                    dados = '{$dados}',
                                     query = '{$query}',
                                     data = NOW()
         ");

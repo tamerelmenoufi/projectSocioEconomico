@@ -109,7 +109,6 @@
                 $attr[] = $situacao;
             }
 
-
             // if($pct == 100){
             //     $attr[] = "pesquisa_realizada = 'Sim'";
             //     $attr[] = "situacao = 'c'";
