@@ -167,5 +167,16 @@
                                     data = NOW()
         ");
         
+        return "
+            INSERT INTO sisLog set 
+                                    file = '{$file}',
+                                    tabela = '{$tabela}',
+                                    operacao = '{$operacao}',
+                                    registro = '{$registro}',
+                                    sessao = '{$sessao}',
+                                    dados = '{$dados}',
+                                    query = '{$query}',
+                                    data = NOW()
+        ";
     
     }
