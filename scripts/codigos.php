@@ -7,30 +7,39 @@ $query = "SELECT b.codigo as cod_municipio, b.municipio, a.codigo as cod_bairro,
 
 $result = mysqli_query($con, $query);
 ?>
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th>Cod. Município</th>
-            <th>Município</th>
-            <th>Cod. Bairro</th>
-            <th>Bairro</th>
-            <th>Zona</th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="container">
+    <div class="row">
+        <div class="col">
 
-<?php
-while($d = mysqli_fetch_object($result)){
-?>
-        <tr>
-            <td><?=$d->cod_municipio?></td>
-            <td><?=$d->municipio?></td>
-            <td><?=$d->cod_bairro?></td>
-            <td><?=$d->descricao?></td>
-            <td><?=$d->zona?></td>
-        </tr>
-<?php
-}
-?>
-    </tbody>
-</table>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Cod. Município</th>
+                        <th>Município</th>
+                        <th>Cod. Bairro</th>
+                        <th>Bairro</th>
+                        <th>Zona</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+            <?php
+            while($d = mysqli_fetch_object($result)){
+            ?>
+                    <tr>
+                        <td><?=$d->cod_municipio?></td>
+                        <td><?=$d->municipio?></td>
+                        <td><?=$d->cod_bairro?></td>
+                        <td><?=$d->descricao?></td>
+                        <td><?=$d->zona?></td>
+                    </tr>
+            <?php
+            }
+            ?>
+                </tbody>
+            </table>
+
+</div>
+    </div>
+</div>
