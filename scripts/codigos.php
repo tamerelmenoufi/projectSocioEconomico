@@ -43,3 +43,9 @@ $result = mysqli_query($con, $query);
 </div>
     </div>
 </div>
+
+<script>
+    $(function(){
+        Carregando('none');
+    })
+</script>
