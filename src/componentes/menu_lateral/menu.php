@@ -105,7 +105,7 @@
       </div>
     </div>
 
-    <div class="row mb-1" style="opacity:0">
+    <div class="row mb-1">
       <div class="col">
         <a url="scripts/codigos.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-clipboard-list"></i> Lista de Códigos
