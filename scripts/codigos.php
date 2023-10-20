@@ -31,7 +31,7 @@ $result = mysqli_query($con, $query);
                         <td><?=$d->cod_municipio?></td>
                         <td><?=$d->municipio?></td>
                         <td><?=$d->cod_bairro?></td>
-                        <td><?=$d->descricao?></td>
+                        <td><?=$d->bairro?></td>
                         <td><?=$d->zona?></td>
                     </tr>
             <?php
