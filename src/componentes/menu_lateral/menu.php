@@ -64,7 +64,6 @@
     <?php
     }
 
-
     if($_SESSION['ProjectSeLogin']->perfil == 'adm' ){
     ?>
     <div class="row mb-1">
