@@ -145,6 +145,131 @@
       </div>
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="row mt-3" style="opacity:0.3">
+      <div class="col">
+        <div class="card">
+          <h5 class="card-header">
+            <div class="d-flex justify-content-between">
+              <span>Lista de Metas expiradas (<?=$u->nome?>)</span>
+              <button class="btn btn-secondary btn-sm voltar">Voltar</button>
+            </div>
+          </h5>
+          <div class="card-body">
+            <div style="display:flex; justify-content:end">
+                <button
+                    novoCadastro
+                    class="btn btn-success"
+                    data-bs-toggle="offcanvas"
+                    href="#offcanvasDireita"
+                    role="button"
+                    aria-controls="offcanvasDireita"
+                >Novo</button>
+            </div>
+
+
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Código</th>
+                  <th scope="col">Município</th>
+                  <th scope="col">Bairro/Comunidade</th>
+                  <th scope="col">Zona</th>
+                  <th scope="col">Data</th>
+                  <th scope="col">Situação</th>
+                  <th scope="col">Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                  $query = "select a.*, 
+                                   b.municipio as municipio_nome, 
+                                   c.descricao as bairro_comunidade_nome,
+                                   (select count(*) from se where meta = a.codigo) as beneficiados
+                              from metas a 
+                                   left join municipios b on a.municipio = b.codigo 
+                                   left join bairros_comunidades c on a.bairro_comunidade = c.codigo 
+                              where usuario = '{$_SESSION['usuario']}' and a.deletado = '1'
+                              order by a.codigo desc";
+                  $result = mysqli_query($con, $query);
+                  while($d = mysqli_fetch_object($result)){
+                ?>
+                <tr>
+                  <td><?=str_pad($d->codigo, 6, "0", STR_PAD_LEFT)?></td>
+                  <td><?=$d->municipio_nome?></td>
+                  <td><?=$d->bairro_comunidade_nome?></td>
+                  <td><?=$d->zona?></td>
+                  <td><?=dataBr($d->data)?></td>
+                  <td>
+
+                  <div class="form-check form-switch">
+                    <input class="form-check-input situacao" type="checkbox" <?=(($d->situacao)?'checked':false)?> usuario="<?=$d->codigo?>">
+                  </div>
+
+                  </td>
+                    <td>
+
+                      <button
+                        class="btn btn-primary"
+                        beneficiados="<?=$d->codigo?>"
+                        data-bs-toggle="offcanvas"
+                        href="#offcanvasDireita"
+                        role="button"
+                        aria-controls="offcanvasDireita"
+                      >
+                        <?=$d->beneficiados?> Beneficiado(s)
+                      </button>
+
+                      <button
+                        class="btn btn-primary"
+                        edit="<?=$d->codigo?>"
+                        data-bs-toggle="offcanvas"
+                        href="#offcanvasDireita"
+                        role="button"
+                        aria-controls="offcanvasDireita"
+                        <?=(($d->quantidade)?'disabled':false)?>
+                      >
+                        Editar
+                      </button>
+
+                      <button 
+                        class="btn btn-danger" 
+                        delete="<?=$d->codigo?>" 
+                        <?=(($d->quantidade)?'disabled':false)?> 
+                      >
+                        Excluir
+                      </button>
+
+                  </td>
+                </tr>
+                <?php
+                  }
+                ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
