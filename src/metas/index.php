@@ -198,6 +198,10 @@
                               order by a.codigo desc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
+
+                    $grupos = explode("|",$d->grupos);
+                    $qt = count($grupos);
+
                 ?>
                 <tr>
                   <td><?=str_pad($d->codigo, 6, "0", STR_PAD_LEFT)?></td>
@@ -208,13 +212,13 @@
                   <td>
                       <button
                         class="btn btn-primary"
-                        beneficiados="<?=$d->codigo?>"
+                        beneficiados_historico="<?=$d->codigo?>"
                         data-bs-toggle="offcanvas"
                         href="#offcanvasDireita"
                         role="button"
                         aria-controls="offcanvasDireita"
                       >
-                        <?=$d->beneficiados?> Beneficiado(s)
+                        <?=$qt?> Beneficiado(s)
                       </button>
 
                   </td>
@@ -275,6 +279,25 @@
                 }
             })
         })
+
+
+        $("button[beneficiados_historico]").click(function(){
+            meta = $(this).attr("beneficiados_historico");
+            $(".LateralDireita").html('');
+            $.ajax({
+                url:"src/metas/beneficiados_historico.php",
+                type:"POST",
+                data:{
+                  meta
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            })
+        })
+
+
+
 
         $(".voltar").click(function(){
           Carregando();
