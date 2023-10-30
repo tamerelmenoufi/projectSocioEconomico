@@ -52,38 +52,21 @@
         <div style="position:absolute; top:350px; bottom:60px; padding-left:20px; padding-right:20px; left:0; right:0; overflow-y: scroll;">
           <table class="table table-hover">
               <?php
-              echo $query = "select * from se where codigo in (".(($grupos)?:0).") order by meta desc, endereco asc";
+              $query = "select * from se where codigo in (".(($grupos)?:0).") order by meta desc, endereco asc";
               $result = mysqli_query($con, $query);
               while($d = mysqli_fetch_object($result)){
               ?>
               <tr>
-                  <td>
-
-                  <div class="mb-3 form-check">
-                    <input 
-                            type="checkbox" 
-                            <?=(($d->meta == $_SESSION['meta'])?'checked':false)?> 
-                            <?=((in_array($d->situacao,['c', 'n', 'f'])?'disabled':false))?> 
-                            class="form-check-input opcoes" 
-                            value="<?=$d->codigo?>" 
-                            id="opc<?=$d->codigo?>"
-                    >
-                    <label class="form-check-label filtroDados" for="opc<?=$d->codigo?>">
-                      <?=$d->nome?><br>
-                      <small style="color:#a1a1a1"><?=str_replace("  ", " ",trim($d->endereco)).(($d->cep)?"- ".trim($d->cep):false)?></small>
-                    </label>
-                  </div>
-
-                    
-                  </td>
+                <td>
+                    <?=$d->nome?><br>
+                    <small style="color:#a1a1a1"><?=str_replace("  ", " ",trim($d->endereco)).(($d->cep)?"- ".trim($d->cep):false)?></small>  
+                </td>
               </tr>
               <?php
               }
               ?>
           </table>
-        </div>
-        
-        <button salvarMeta usuario="<?=$m->usuario?>" style="position:absolute; bottom:10px; right:30px;" class="btn btn-success">Salvar</button>
+        </div>        
       </div>
     </div>
 </div>
@@ -92,10 +75,6 @@
 
   $(function(){
     Carregando('none');
-
-    console.log(`<?=$query?>`)
-
-
     $('#pesquisa').keyup(function(e) {
       var termo = $('#pesquisa').val().toUpperCase();
       $('.filtroDados').each(function() { 
@@ -106,37 +85,6 @@
             $(this).parent("div").parent("td").parent("tr").show();
           }
       });
-    });
-
-
-    $("button[salvarMeta]").click(function(){
-      usuario = $(this).attr("usuario")
-      opcoes = [];
-      $(".opcoes").each(function(){
-        if($(this).prop("checked") == true){
-          opcoes.push($(this).val())
-        }
-      });
-      Carregando();
-      $.ajax({
-        url:"src/metas/beneficiados.php",
-        type:"POST",
-        data:{
-          opcoes,
-          usuario,
-          acao:"addBeneficiarios"
-        },
-        success:function(dados){
-          $(".LateralDireita").html(dados);
-          $.ajax({
-            url:"src/metas/index.php",
-            success:function(dados){
-              $("#paginaHome").html(dados);
-              
-            }
-          })
-        }
-      })
     });
   })
 
