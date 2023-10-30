@@ -182,15 +182,14 @@
                   <th scope="col">Bairro/Comunidade</th>
                   <th scope="col">Zona</th>
                   <th scope="col">Data</th>
-                  <th scope="col">Ações</th>
+                  <th scope="col">Previsão de metas</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
                   $query = "select a.*, 
                                    b.municipio as municipio_nome, 
-                                   c.descricao as bairro_comunidade_nome,
-                                   (select count(*) from se where meta = a.codigo) as beneficiados
+                                   c.descricao as bairro_comunidade_nome
                               from metas a 
                                    left join municipios b on a.municipio = b.codigo 
                                    left join bairros_comunidades c on a.bairro_comunidade = c.codigo 
