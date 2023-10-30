@@ -212,7 +212,7 @@
                   <td><?=dataBr($d->data)?></td>
                   <td>
                       <button
-                        class="btn btn-primary"
+                        class="btn btn-warning"
                         beneficiados_historico="<?=$d->codigo?>"
                         data-bs-toggle="offcanvas"
                         href="#offcanvasDireita"
