@@ -218,6 +218,7 @@
                         href="#offcanvasDireita"
                         role="button"
                         aria-controls="offcanvasDireita"
+                        <?=((!$qt)?'disabled':false)?>
                       >
                         <?=$qt?> Beneficiado(s)
                       </button>
