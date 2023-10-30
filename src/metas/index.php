@@ -164,7 +164,7 @@
 
 
 
-    <div class="row mt-3" style="opacity:0.3">
+    <div class="row mt-3">
       <div class="col">
         <div class="card">
           <h5 class="card-header">
