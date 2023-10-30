@@ -203,6 +203,7 @@
                     $grupos = array_filter($grupos);
                     $grupos = implode(", ", $grupos);
                     list($qt) = mysqli_fetch_row(mysqli_query($con, "select count(*) from se where codigo in(".(($grupos)?:0).")"));
+                    
                 ?>
                 <tr>
                   <td><?=str_pad($d->codigo, 6, "0", STR_PAD_LEFT)?></td>
