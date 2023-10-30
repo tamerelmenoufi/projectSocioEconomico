@@ -55,9 +55,18 @@
               $query = "select * from se where codigo in (".(($grupos)?:0).") order by meta desc, endereco asc";
               $result = mysqli_query($con, $query);
               while($d = mysqli_fetch_object($result)){
+                if(in_array($d->situacao, ['c','f','n'])){
+                    if($d->monitor_social == $m->usuario){
+                        $cor = '#000';
+                    }else{
+                        $cor = 'green';
+                    }
+                }else{
+                    $cor = '#ccc';
+                }
               ?>
               <tr>
-                <td style="color:green">
+                <td style="color:<?=$cor?>">
                     <?=$d->nome?><br>
                     <small style="color:#a1a1a1"><?=str_replace("  ", " ",trim($d->endereco)).(($d->cep)?"- ".trim($d->cep):false)?></small>  
                 </td>
