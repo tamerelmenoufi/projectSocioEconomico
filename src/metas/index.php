@@ -182,7 +182,6 @@
                   <th scope="col">Bairro/Comunidade</th>
                   <th scope="col">Zona</th>
                   <th scope="col">Data</th>
-                  <th scope="col">Situação</th>
                   <th scope="col">Ações</th>
                 </tr>
               </thead>
@@ -207,14 +206,6 @@
                   <td><?=$d->zona?></td>
                   <td><?=dataBr($d->data)?></td>
                   <td>
-
-                  <div class="form-check form-switch">
-                    <input class="form-check-input situacao" type="checkbox" <?=(($d->situacao)?'checked':false)?> usuario="<?=$d->codigo?>">
-                  </div>
-
-                  </td>
-                    <td>
-
                       <button
                         class="btn btn-primary"
                         beneficiados="<?=$d->codigo?>"
