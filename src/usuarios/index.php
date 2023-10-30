@@ -386,6 +386,7 @@
 
         $("button[metas]").click(function(){
             usuario = $(this).attr("metas");
+            Carregando()
             $.ajax({
                 url:"src/metas/index.php",
                 type:"POST",
