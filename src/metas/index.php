@@ -170,21 +170,9 @@
           <h5 class="card-header">
             <div class="d-flex justify-content-between">
               <span>Lista de Metas expiradas (<?=$u->nome?>)</span>
-              <button class="btn btn-secondary btn-sm voltar">Voltar</button>
             </div>
           </h5>
           <div class="card-body">
-            <div style="display:flex; justify-content:end">
-                <button
-                    novoCadastro
-                    class="btn btn-success"
-                    data-bs-toggle="offcanvas"
-                    href="#offcanvasDireita"
-                    role="button"
-                    aria-controls="offcanvasDireita"
-                >Novo</button>
-            </div>
-
 
             <table class="table table-striped table-hover">
               <thead>
