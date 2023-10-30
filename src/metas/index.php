@@ -238,26 +238,6 @@
                         <?=$d->beneficiados?> Beneficiado(s)
                       </button>
 
-                      <button
-                        class="btn btn-primary"
-                        edit="<?=$d->codigo?>"
-                        data-bs-toggle="offcanvas"
-                        href="#offcanvasDireita"
-                        role="button"
-                        aria-controls="offcanvasDireita"
-                        <?=(($d->quantidade)?'disabled':false)?>
-                      >
-                        Editar
-                      </button>
-
-                      <button 
-                        class="btn btn-danger" 
-                        delete="<?=$d->codigo?>" 
-                        <?=(($d->quantidade)?'disabled':false)?> 
-                      >
-                        Excluir
-                      </button>
-
                   </td>
                 </tr>
                 <?php
