@@ -206,7 +206,7 @@
                   </td>
                   <td>
                     <?php
-                    if(in_array($_SESSION['ProjectSeLogin']->perfil, ['adm', 'sup'])){
+                    if(in_array($_SESSION['ProjectSeLogin']->perfil, ['adm', 'sup']) and $d->perfil == 'usr'){
                     ?>
                     <button
                       class="btn btn-primary"
