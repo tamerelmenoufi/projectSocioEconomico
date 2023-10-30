@@ -18,7 +18,7 @@
 
     $grupos = explode("|", $m->grupos);
     $grupos = array_filter($grupos);
-    $grupos = implode(",", $grupos);
+    $grupos = implode(", ", $grupos);
 
 ?>
 <style>
