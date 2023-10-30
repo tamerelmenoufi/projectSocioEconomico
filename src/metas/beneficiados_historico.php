@@ -57,7 +57,7 @@
               while($d = mysqli_fetch_object($result)){
               ?>
               <tr>
-                <td>
+                <td style="color:green">
                     <?=$d->nome?><br>
                     <small style="color:#a1a1a1"><?=str_replace("  ", " ",trim($d->endereco)).(($d->cep)?"- ".trim($d->cep):false)?></small>  
                 </td>
