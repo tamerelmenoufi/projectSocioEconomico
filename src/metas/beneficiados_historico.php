@@ -52,7 +52,7 @@
         <div style="position:absolute; top:350px; bottom:60px; padding-left:20px; padding-right:20px; left:0; right:0; overflow-y: scroll;">
           <table class="table table-hover">
               <?php
-              $query = "select * from se where codigo in (".(($grupos)?:0).") order by meta desc, endereco asc";
+              echo $query = "select * from se where codigo in (".(($grupos)?:0).") order by meta desc, endereco asc";
               $result = mysqli_query($con, $query);
               while($d = mysqli_fetch_object($result)){
               ?>
