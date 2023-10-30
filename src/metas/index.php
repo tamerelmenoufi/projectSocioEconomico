@@ -198,12 +198,14 @@
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
 
-                    $grupos = explode("|",$d->grupos);
+                    $grupos = str_replace("|",",",$d->grupos);
+                    $grupos = explode(",",$grupos);
+                    $grupos = array_filter($grupos);
                     $qt = count($grupos);
 
                 ?>
                 <tr>
-                  <td><?=str_pad($d->codigo, 6, "0", STR_PAD_LEFT)?><br><?=$d->grupos?></td>
+                  <td><?=str_pad($d->codigo, 6, "0", STR_PAD_LEFT)?></td>
                   <td><?=$d->municipio_nome?></td>
                   <td><?=$d->bairro_comunidade_nome?></td>
                   <td><?=$d->zona?></td>
