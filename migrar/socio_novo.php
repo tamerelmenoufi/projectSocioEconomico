@@ -8,10 +8,8 @@
     while($d = mysqli_fetch_object($result)){
         $r[$d->codigo] = (($d->tem)?'1':'2');
     }
-    $q = [];
+    
     foreach($r as $i => $v){
-        $q[] = "update se set acao_relatorio = '{$v}' where codigo = '{$i}'";
+        $q = "update se set acao_relatorio = '{$v}' where codigo = '{$i}'";
+        mysqli_query($con, $q);
     }
-    echo $q = implode(", ", $q);
-
-    // mysqli_query($con, $q);
