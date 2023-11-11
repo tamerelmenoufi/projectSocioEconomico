@@ -118,7 +118,7 @@
         }
             $pct = (100*$qt/$tot);
             $campos[] = "percentual = '{$pct}'";
-            $campos[] = "acao_relatorio = '0'";
+            // $campos[] = "acao_relatorio = '0'";
 
         //////////////////////////////////////////////////////////////////////////////
 

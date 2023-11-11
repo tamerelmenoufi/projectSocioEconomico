@@ -15,6 +15,7 @@
         // unset($data['monitor_social']);
         unset($data['percentual']);
         unset($data['situacao']);
+        unset($data['acao_relatorio']);
 
         $CamposObrigatorios = [
             'nome',
@@ -87,7 +88,7 @@
             // $attr[] = "monitor_social = '{$_SESSION['ProjectSeLogin']->codigo}'";
             $attr[] = "coordenador = '{$_SESSION['ProjectSeLogin']->coordenador}'";
             $attr[] = "acao = '0'";
-            $attr[] = "acao_relatorio = '0'";
+            // $attr[] = "acao_relatorio = '0'";
 
             if($_POST['beneficiario_encontrado'] == 'Não'){
                 $situacao = "situacao = 'n'";
