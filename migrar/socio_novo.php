@@ -19,5 +19,5 @@
 ?>
 
 <script>
-    window.location.href='./socio_novo.php';
+    window.location.href='./socio_novo.php?ordem=<?=$ordem?>';
 </script>
