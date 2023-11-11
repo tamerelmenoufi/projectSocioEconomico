@@ -4,7 +4,7 @@
     
     $ordem = (($_GET['ordem'])?:'asc');
 
-    $query = "select a.codigo, (select cpf from mapcenso_novo where cpf = a.cpf limit 1 ) as tem from se a where a.acao_relatorio = '0' order by a.codgo {$ordem} limit 30";
+    $query = "select a.codigo, (select cpf from mapcenso_novo where cpf = a.cpf limit 1 ) as tem from se a where a.acao_relatorio = '0' order by a.codigo {$ordem} limit 30";
     $result = mysqli_query($con, $query);
     $r = [];
     while($d = mysqli_fetch_object($result)){
