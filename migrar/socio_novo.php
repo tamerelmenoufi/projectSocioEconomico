@@ -10,6 +10,7 @@
     }
     
     foreach($r as $i => $v){
-        $q = "update se set acao_relatorio = '{$v}' where codigo = '{$i}'";
+        echo $q = "update se set acao_relatorio = '{$v}' where codigo = '{$i}'";
+        echo "<br>";
         mysqli_query($con, $q);
     }
