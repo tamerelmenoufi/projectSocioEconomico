@@ -14,3 +14,8 @@
         echo "<br>";
         mysqli_query($con, $q);
     }
+?>
+
+<script>
+    window.location.href='./socio_novo.php';
+</script>
