@@ -935,7 +935,7 @@
                         <select name="monitor_social" required id="monitor_social" class="form-control" >
                             <option value="">::Selecione o Profissional</option>
                             <?php
-                                $q = "select * from usuarios where situacao = '1' and perfil = 'usr' order by nome asc";
+                                $q = "select * from usuarios where situacao = '1' and deletado != '1' and perfil = 'usr' order by nome asc";
                                 $r = mysqli_query($con, $q);
                                 while($s = mysqli_fetch_object($r)){
                             ?>
