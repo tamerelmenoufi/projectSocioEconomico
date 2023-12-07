@@ -920,7 +920,7 @@
                 <div class="card-body">
 
                     <?php
-                    if($_SESSION['ProjectSeLogin']->perfil == 'adm'){
+                    if($_SESSION['ProjectSeLogin']->perfil == 'adm' or $_SESSION['ProjectSeLogin']->perfil == 'crd'){
                     ?>
                     <div class="form-floating mb-3">
                         <input type="text" name="data" required id="data" class="form-control" placeholder="Data da Pesquisa" value="<?=dataBr($d->data)?>">
