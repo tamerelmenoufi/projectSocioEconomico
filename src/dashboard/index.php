@@ -83,7 +83,6 @@
     </div>
 </div>
 
-<div ResultadoMapa style="position:relative"></div>
 <div ResultadoDashboard style="position:relative"></div>
 <script>
     $(function(){
@@ -100,13 +99,6 @@
         <?php
         }
         ?>
-
-        $.ajax({
-            url:"src/dashboard/geral/mapa/geral.php",
-            success:function(dados){
-                $("div[ResultadoMapa]").html(dados);
-            }
-        });
 
     $("button[filtrar]").click(function(){
         Carregando();
